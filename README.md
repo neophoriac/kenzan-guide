@@ -1,11 +1,11 @@
-# Like a Dragon: Kenzan! Substories Guide
+[![Like a Dragon: Kenzan! Side Content Guide](assets/kenzan-readme-hero.png)](https://neophoriac.github.io/kenzan-guide/)
 
-**Version 0.1.** This fan guide covers all 140 substories in the English translation of Like a Dragon: Kenzan! It includes an interactive map, story objective filters, and checklists for training, inventions, and collectibles, plus yūjo routes and Revelations.
+**Version 0.1.** This fan guide covers all 140 substories in the English translation of Like a Dragon: Kenzan! It includes detailed walkthroughs, an interactive map, story objective filters, and checklists for training, inventions, and collectibles, plus yūjo routes and Revelations.
 
 This fan project was vibe-coded with AI assistance while playing the English translation.
 
-- [Guide](index.html)
-- [Interactive map](map.html)
+- [Open the live Side Content Guide](https://neophoriac.github.io/kenzan-guide/)
+- [Open the interactive map](https://neophoriac.github.io/kenzan-guide/#quest-map)
 
 Progress and story objective preferences are saved in the browser.
 
