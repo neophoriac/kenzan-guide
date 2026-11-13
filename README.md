@@ -9,6 +9,8 @@ This fan project was vibe-coded with AI assistance while playing the English tra
 
 Progress and story objective preferences are saved in the browser.
 
+The guide can also import a Kenzan `USERDATA` save file. Your browser reads the file on your device and stores the resulting checkmarks locally.
+
 Thanks to the guide authors and translation team who made this project possible.
 
 - Patrick Coffman (ThePatrick) for his walkthroughs. [GameFAQs](https://gamefaqs.gamespot.com/ps3/943326-ryu-ga-gotoku-kenzan/faqs/52464) · [Scribd](https://www.scribd.com/document/480711319/Ry%C5%AB-ga-Gotoku-Kenzan-sub-story-guide)
