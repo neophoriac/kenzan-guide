@@ -18,7 +18,7 @@
   <meta property="og:image:height" content="590">
   <meta property="og:image:alt" content="Like a Dragon: Kenzan! Side Content Guide banner with Musashi">
   <meta name="twitter:card" content="summary_large_image">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; connect-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'; img-src 'self' data:; style-src 'unsafe-inline'; script-src 'self' 'sha256-kAHOt7vbQOl3g6UAX3zB42Jr2bJtsVBqsqQ67eUX5Uk=' 'sha256-6+AYehQdJSstFvDu7Sej3qWe0puLSl1PZpKqKOkK7ag=' 'sha256-29trEXib28O1W+q0ptZPxBn4Q8usHkyV70ccIcPu3Gk=' 'sha256-WYA7fFqmTBTkQkhgKWVpH9wULsQ/Q/jkP43M1bTp8Pw=' 'sha256-8Db7pAkTaA5/FA7etZubXEvamzKsSawYki8GQcmLQ98=' 'sha256-IRm93FXXW6WLnvKWA5FNaTQnZvgfbR7RAE1SHS9Jy4g=' 'sha256-AcGoYmjiK7jgqQ6EuF8GT6T2BI7Rg8xi9/uKXWaS4B4=' 'sha256-VyYIlwVEmRHR/6TU4480M7vZ81HB+J6JWLUUZW8dcmI=' 'sha256-Iag7kkPhEtbrPDo/m9Q3TUaeRcqxVpg55uhbbkfBOPU='">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; connect-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'; img-src 'self' data:; style-src 'unsafe-inline'; script-src 'self' 'sha256-lvYQY4nMPYx54BP+wqlj1SIKg26GTHbMx0GJUMOdEiM=' 'sha256-6+AYehQdJSstFvDu7Sej3qWe0puLSl1PZpKqKOkK7ag=' 'sha256-29trEXib28O1W+q0ptZPxBn4Q8usHkyV70ccIcPu3Gk=' 'sha256-WYA7fFqmTBTkQkhgKWVpH9wULsQ/Q/jkP43M1bTp8Pw=' 'sha256-8Db7pAkTaA5/FA7etZubXEvamzKsSawYki8GQcmLQ98=' 'sha256-IRm93FXXW6WLnvKWA5FNaTQnZvgfbR7RAE1SHS9Jy4g=' 'sha256-AcGoYmjiK7jgqQ6EuF8GT6T2BI7Rg8xi9/uKXWaS4B4=' 'sha256-VyYIlwVEmRHR/6TU4480M7vZ81HB+J6JWLUUZW8dcmI=' 'sha256-Iag7kkPhEtbrPDo/m9Q3TUaeRcqxVpg55uhbbkfBOPU='">
   <style>.sidebar-dock {
   position: relative; z-index: 5; display: grid; grid-template-rows: 2.75rem minmax(0, 1fr);
   min-width: 0; min-height: 0; background: var(--sidebar); border-right: 1px solid var(--line);
@@ -429,6 +429,7 @@ span.atlas-district-label { color: #ffe2ed; -webkit-text-stroke-color: #4f2b48; 
 .atlas-map-group { position: absolute; border: 2px solid #647268; border-radius: 18px; background: #303a33; }
 .atlas-map-group span { position: absolute; top: 14px; left: 20px; color: #fcf3dd; font: 500 32px/1.15 Georgia, serif; }
 #atlas-markers, #atlas-places, #atlas-pins, #atlas-step-pins { position: absolute; inset: 0; pointer-events: none; }
+#atlas-markers { transform-origin: 0 0; }
 #atlas-map[data-dragging] :is(#atlas-world, #atlas-markers) { will-change: transform; }
 #atlas-map[data-dragging] :is(.atlas-pin, .atlas-place) { pointer-events: none; }
 #atlas-places { z-index: 1; }
@@ -446,7 +447,7 @@ span.atlas-district-label { color: #ffe2ed; -webkit-text-stroke-color: #4f2b48; 
 #atlas-collectible-tooltip {
   position: absolute; top: 0; left: 0; z-index: 5; width: min(21rem, calc(100% - 16px));
   border: 1px solid #e1b869; border-radius: .5rem; color: #fff5df; background: #29251e;
-  box-shadow: 0 4px 16px #101511b8; font: .875rem/1.4 'Source Sans 3', 'Segoe UI', sans-serif; cursor: default;
+  box-shadow: 0 4px 16px #101511b8; font: .875rem/1.4 'Source Sans 3', 'Segoe UI', sans-serif; pointer-events: none;
 }
 #atlas-collectible-tooltip::after {
   content: ''; position: absolute; left: var(--tooltip-arrow-x); top: -5px; width: 9px; height: 9px;
@@ -588,15 +589,16 @@ span.atlas-district-label { color: #ffe2ed; -webkit-text-stroke-color: #4f2b48; 
 .atlas-note { margin: .35rem 0 .65rem; }
 .atlas-shell .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 @media (max-width: 48rem) {
-  .atlas-shell { grid-template: auto minmax(22rem, 55dvh) auto / minmax(0, 1fr); min-height: 100dvh; height: auto; }
-  .atlas-stage { grid-column: 1; grid-row: 2; }
+  .atlas-shell { grid-template: auto auto auto / minmax(0, 1fr); min-height: 100dvh; height: auto; }
+  .atlas-stage { grid-column: 1; grid-row: 2; display: grid; grid-template-rows: auto minmax(18rem, 48dvh) auto auto; }
+  #atlas-map { position: relative; grid-row: 2; }
   .atlas-shell > .sidebar-dock { grid-row: 3; border-top: 1px solid var(--line); }
   .atlas-fields { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .atlas-shared-filters { grid-template-columns: minmax(0, 1fr); }
-  .atlas-tools { top: .5rem; right: .5rem; }
-  .atlas-selection { top: .5rem; left: .5rem; width: min(23rem, calc(100% - 1rem)); }
-  .atlas-selection:not([hidden]) ~ .atlas-tools { top: auto; bottom: .5rem; }
-  .atlas-selection:not([hidden]) ~ .atlas-legend { bottom: 3.7rem; }
+  .atlas-tools, .atlas-selection, .atlas-legend { position: static; margin: .4rem .5rem; }
+  .atlas-tools { grid-row: 3; max-width: none; }
+  .atlas-selection { grid-row: 1; width: auto; }
+  .atlas-legend { grid-row: 4; }
   .atlas-legend-items { max-height: 16dvh; }
   .atlas-header { padding-inline: .75rem; }
 }
@@ -9641,8 +9643,8 @@ span.atlas-district-label { color: #ffe2ed; -webkit-text-stroke-color: #4f2b48; 
         <div id="atlas-pins"></div>
         <div id="atlas-step-pins"></div>
       </div>
+      <div id="atlas-collectible-tooltip" role="tooltip" hidden><div class="atlas-tooltip-content"></div></div>
     </div>
-    <div id="atlas-collectible-tooltip" role="tooltip" hidden><div class="atlas-tooltip-content"></div></div>
     <section class="atlas-selection" id="atlas-selection" aria-labelledby="atlas-selection-name" hidden>
       <div class="atlas-selection-header">
         <p id="atlas-selection-name" role="status"></p>
@@ -9873,6 +9875,7 @@ span.atlas-district-label { color: #ffe2ed; -webkit-text-stroke-color: #4f2b48; 
   const fit = document.querySelector('#atlas-fit');
   const coarse = matchMedia('(pointer: coarse)');
   const compact = matchMedia('(max-width: 48rem)');
+  const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
   const pointers = new Map();
   const camera = { x: 0, y: 0, scale: 1 };
   const panMargin = 160;
@@ -9890,6 +9893,7 @@ span.atlas-district-label { color: #ffe2ed; -webkit-text-stroke-color: #4f2b48; 
   let viewportOrigin;
   let panelBounds;
   let frame;
+  let cameraMotion;
   let fullDrawNeeded = false;
   let markerView;
   let markersTranslated = false;
@@ -9915,8 +9919,8 @@ span.atlas-district-label { color: #ffe2ed; -webkit-text-stroke-color: #4f2b48; 
   let markerFocus;
   let previousSize;
   let overview = true;
+  let fittedSteps;
   let mapTooltipPin;
-  let mapTooltipDismissal;
 
   function clamp(value, min, max) {
     return Math.max(min, Math.min(value, max));
@@ -9945,7 +9949,7 @@ span.atlas-district-label { color: #ffe2ed; -webkit-text-stroke-color: #4f2b48; 
   }
 
   function getPanelBounds() {
-    panelBounds ??= new Map(mapPanels.filter(panel => !panel.hidden).map(panel => [panel, {
+    panelBounds ??= new Map((compact.matches ? [] : mapPanels.filter(panel => !panel.hidden)).map(panel => [panel, {
       x: panel.offsetLeft, y: panel.offsetTop, w: panel.offsetWidth, h: panel.offsetHeight,
     }]));
     return panelBounds;
@@ -10084,14 +10088,13 @@ span.atlas-district-label { color: #ffe2ed; -webkit-text-stroke-color: #4f2b48; 
   }
 
   function hideMapTooltip() {
-    clearTimeout(mapTooltipDismissal);
     mapTooltipPin?.removeAttribute('aria-describedby');
     mapTooltipPin = undefined;
     mapTooltip.hidden = true;
   }
 
   function showMapTooltip(pin, name, renderDetails) {
-    if (pointers.size) return;
+    if (pointers.size || cameraMotion) return;
     hideMapTooltip();
     mapTooltipPin = pin;
     const title = document.createElement('strong');
@@ -10129,22 +10132,18 @@ span.atlas-district-label { color: #ffe2ed; -webkit-text-stroke-color: #4f2b48; 
     pin.setAttribute('aria-describedby', mapTooltip.id);
   }
 
-  function scheduleMapTooltipDismissal() {
-    clearTimeout(mapTooltipDismissal);
-    mapTooltipDismissal = setTimeout(() => {
-      if (!mapTooltipPin?.matches(':hover, :focus-visible') && !mapTooltip.matches(':hover')) hideMapTooltip();
-    }, 150);
-  }
-
   function addMapTooltip(pin, name, renderDetails) {
+    const dismiss = () => {
+      if (mapTooltipPin === pin) hideMapTooltip();
+    };
     pin.addEventListener('pointerenter', event => {
       if (event.pointerType !== 'touch' && event.buttons === 0) showMapTooltip(pin, name, renderDetails);
     });
-    pin.addEventListener('pointerleave', scheduleMapTooltipDismissal);
+    pin.addEventListener('pointerleave', dismiss);
     pin.addEventListener('focus', () => {
       if (pin.matches(':focus-visible')) showMapTooltip(pin, name, renderDetails);
     });
-    pin.addEventListener('blur', scheduleMapTooltipDismissal);
+    pin.addEventListener('blur', dismiss);
   }
 
   function visible(id) {
@@ -10199,34 +10198,58 @@ span.atlas-district-label { color: #ffe2ed; -webkit-text-stroke-color: #4f2b48; 
       (viewportHeight - padding * 2) / world.height));
   }
 
-  function centerAt(x, y, scale, targetY = viewportHeight / 2) {
-    expanded = undefined;
-    camera.scale = clamp(scale, fitScale(), maxScale);
-    camera.x = viewportWidth / 2 - x * camera.scale;
-    camera.y = targetY - y * camera.scale;
+  function moveCamera(destination, animate) {
+    destination.x = clamp(destination.x, 32 - world.width * destination.scale, viewportWidth - 32);
+    destination.y = clamp(destination.y, 32 - world.height * destination.scale, viewportHeight - 32);
+    if (animate && markerView && !reducedMotion.matches) {
+      const target = cameraMotion?.destination ?? camera;
+      if (target.x === destination.x && target.y === destination.y && target.scale === destination.scale) {
+        requestDraw();
+        return;
+      }
+      cameraMotion = { start: { ...camera }, destination, time: performance.now() };
+    } else {
+      cameraMotion = undefined;
+      Object.assign(camera, destination);
+    }
     requestDraw();
   }
 
-  function fitAll() {
+  function centerAt(x, y, scale, targetY = viewportHeight / 2, animate = true) {
+    fittedSteps = undefined;
+    expanded = undefined;
+    const next = clamp(scale, fitScale(), maxScale);
+    moveCamera({ x: viewportWidth / 2 - x * next, y: targetY - y * next, scale: next }, animate);
+  }
+
+  function fitAll(animate = true) {
     overview = true;
     area.value = '';
-    centerAt(world.width / 2, world.height / 2, fitScale());
+    centerAt(world.width / 2, world.height / 2, fitScale(), viewportHeight / 2, animate);
   }
 
-  function zoomAt(scale, anchor, target = anchor) {
+  function zoomAt(scale, anchor, target = anchor, animate = false, from = camera) {
+    if (!animate && cameraMotion) {
+      cameraMotion = undefined;
+      requestDraw();
+    }
     const next = clamp(scale, fitScale(), maxScale);
-    if (next === camera.scale && target.x === anchor.x && target.y === anchor.y) return;
+    if (next === from.scale && target.x === anchor.x && target.y === anchor.y) return;
+    fittedSteps = undefined;
     expanded = undefined;
-    const factor = next / camera.scale;
-    camera.x = target.x - (anchor.x - camera.x) * factor;
-    camera.y = target.y - (anchor.y - camera.y) * factor;
-    camera.scale = next;
+    const factor = next / from.scale;
     overview = false;
-    requestDraw();
+    moveCamera({
+      x: target.x - (anchor.x - from.x) * factor,
+      y: target.y - (anchor.y - from.y) * factor,
+      scale: next,
+    }, animate);
   }
 
   function zoomBy(factor) {
-    zoomAt(camera.scale * factor, { x: viewportWidth / 2, y: viewportHeight / 2 });
+    const anchor = { x: viewportWidth / 2, y: viewportHeight / 2 };
+    const target = cameraMotion?.destination ?? camera;
+    zoomAt(target.scale * factor, anchor, anchor, true, target);
   }
 
   function worldPoint(point) {
@@ -10248,7 +10271,7 @@ span.atlas-district-label { color: #ffe2ed; -webkit-text-stroke-color: #4f2b48; 
     const panel = point && !selectionPanel.hidden ? getPanelBounds().get(selectionPanel) : undefined;
     if (panel && panel.x + panel.w + 16 >= viewportWidth / 2) {
       const top = panel.y + panel.h + 18;
-      const bottom = (compact.matches ? getPanelBounds().get(mapTools).y : viewportHeight) - 18;
+      const bottom = viewportHeight - 18;
       if (top < bottom) targetY = (top + bottom) / 2;
     }
     centerAt(position.x, position.y, scale, targetY);
@@ -10289,7 +10312,10 @@ span.atlas-district-label { color: #ffe2ed; -webkit-text-stroke-color: #4f2b48; 
       ? saved.step : 0;
     const lastMapped = quest.steps.slice(0, step + 1).findLast(entry => quest.locations[entry.letter]);
     const viewPoint = quest.locations[lastMapped?.letter] ?? quest.pin;
-    showQuest(quest, quest.pin, { recenter: true, step, viewPoint });
+    showQuest(quest, quest.pin, {
+      recenter: true, step, viewPoint, fitRoute: Boolean(explicitQuest) || step === 0,
+      scrollToDetail: Boolean(explicitQuest),
+    });
   }
 
   function setSelectedDone(event) {
@@ -10368,12 +10394,24 @@ span.atlas-district-label { color: #ffe2ed; -webkit-text-stroke-color: #4f2b48; 
     const ys = points.map(({ y }) => y);
     const left = Math.min(...xs), right = Math.max(...xs);
     const top = Math.min(...ys), bottom = Math.max(...ys);
-    const scale = Math.min(viewportWidth * .76 / Math.max(70, right - left),
-      viewportHeight * .76 / Math.max(70, bottom - top), 4);
+    const panels = getPanelBounds();
+    const selection = panels.get(selectionPanel);
+    const tools = panels.get(mapTools);
+    const key = panels.get(legend);
+    let frameTop = Math.max(selection ? selection.y + selection.h : 0, tools ? tools.y + tools.h : 0);
+    let frameBottom = key?.y ?? viewportHeight;
+    const verticalSpan = Math.max(70, bottom - top);
+    if (frameBottom - frameTop < verticalSpan * fitScale() + 64) {
+      frameTop = 0;
+      frameBottom = viewportHeight;
+    }
+    const inset = Math.min(coarse.matches ? 60 : 52, Math.max(32, (frameBottom - frameTop - verticalSpan * fitScale()) / 2));
+    const scale = Math.min((viewportWidth - 2 * inset) / Math.max(70, right - left),
+      (frameBottom - frameTop - 2 * inset) / verticalSpan, 4);
     overview = false;
     area.value = '';
-    centerAt((left + right) / 2, (top + bottom) / 2, scale);
-    viewport.scrollIntoView({ block: 'nearest' });
+    centerAt((left + right) / 2, (top + bottom) / 2, scale, (frameTop + frameBottom) / 2);
+    fittedSteps = locations;
   }
 
   function appendRouteSteps(route, current, selectStep, label) {
@@ -10496,12 +10534,16 @@ span.atlas-district-label { color: #ffe2ed; -webkit-text-stroke-color: #4f2b48; 
     guideNote.classList.toggle('quest-prerequisite-warning', Boolean(note?.prerequisiteWarning));
   }
 
-  function showQuest(quest, point, { recenter = false, step = 0, viewPoint = quest.locations[quest.steps[step].letter] ?? point } = {}) {
+  function showQuest(quest, point, {
+    recenter = false, step = 0, viewPoint = quest.locations[quest.steps[step].letter] ?? point,
+    fitRoute = true, scrollToDetail = true,
+  } = {}) {
     selectedRevelation = undefined;
     selectedPlace = undefined;
     selectedCollectibleEntry = undefined;
     focusPlaceSelection = false;
     selectedCluster = undefined;
+    fittedSteps = undefined;
     linkedRevelationSteps = false;
     expanded = undefined;
     if (spotlight !== quest) spotlight = undefined;
@@ -10539,16 +10581,20 @@ span.atlas-district-label { color: #ffe2ed; -webkit-text-stroke-color: #4f2b48; 
       toggle.textContent = inside ? 'Show building' : 'Show inside';
       toggle.addEventListener('click', () => {
         const destination = inside ? quest.pin : quest.interior;
-        showQuest(quest, destination, { recenter: true, step: selected.step, viewPoint: destination });
+        showQuest(quest, destination, { recenter: true, step: selected.step, viewPoint: destination, fitRoute: false, scrollToDetail: false });
         detail.querySelector('button').focus({ preventScroll: true });
       });
       actions.append(toggle);
     }
-    if (Object.keys(quest.locations).length > 1) {
+    const hasMultiplePins = Object.keys(quest.locations).length > 1;
+    if (hasMultiplePins) {
       const fitSteps = document.createElement('button');
       fitSteps.type = 'button';
       fitSteps.textContent = 'Fit step pins';
-      fitSteps.addEventListener('click', () => fitQuestSteps(quest.locations));
+      fitSteps.addEventListener('click', () => {
+        fitQuestSteps(quest.locations);
+        viewport.scrollIntoView({ block: 'nearest' });
+      });
       actions.append(fitSteps);
     }
     const clear = document.createElement('button');
@@ -10570,14 +10616,21 @@ span.atlas-district-label { color: #ffe2ed; -webkit-text-stroke-color: #4f2b48; 
     detail.append(actions);
     appendRouteSteps(quest, selected.step, index => activateStep(index, true), 'Quest steps');
     markCurrentResult();
-    if (recenter || viewPoint !== point) focusTile(byArea.get(viewPoint.area), viewPoint);
+    if (scrollToDetail) {
+      atlasSidebar.open();
+      requestAnimationFrame(() => {
+        if (selected?.quest === quest) detail.scrollIntoView({
+          block: 'start', inline: 'nearest', behavior: reducedMotion.matches ? 'instant' : 'smooth',
+        });
+      });
+    }
+    if (fitRoute && hasMultiplePins) fitQuestSteps(quest.locations);
+    else if (recenter || viewPoint !== point) focusTile(byArea.get(viewPoint.area), viewPoint);
     else requestDraw();
   }
 
   function openQuestResult(quest, point) {
     showQuest(quest, point, { recenter: true });
-    if (compact.matches) viewport.scrollIntoView({ block: 'start' });
-    else if (!atlasSidebar.collapsed) detail.scrollIntoView({ block: 'start' });
   }
 
   function resetQuestSelection(forgetSelection = true) {
@@ -10587,6 +10640,7 @@ span.atlas-district-label { color: #ffe2ed; -webkit-text-stroke-color: #4f2b48; 
     selectedPlace = undefined;
     focusPlaceSelection = false;
     selectedCluster = undefined;
+    fittedSteps = undefined;
     linkedRevelationSteps = false;
     if (forget) saveSelection();
     spotlight = undefined;
@@ -10759,6 +10813,7 @@ span.atlas-district-label { color: #ffe2ed; -webkit-text-stroke-color: #4f2b48; 
         fitSteps.addEventListener('click', () => {
           if (entry !== selectedRevelation) showPlace(entry.place, entry);
           fitQuestSteps(entry.locations);
+          viewport.scrollIntoView({ block: 'nearest' });
         });
         actions.append(fitSteps);
       }
@@ -10897,7 +10952,8 @@ span.atlas-district-label { color: #ffe2ed; -webkit-text-stroke-color: #4f2b48; 
     const { x, y } = group.entries[0].point;
     const sharedStart = group.entries.every(({ point }) => point.x === x && point.y === y);
     if (group.entries.length > 8 && camera.scale < maxScale && !sharedStart) {
-      zoomAt(camera.scale * 1.7, { x: group.x, y: group.y });
+      const anchor = { x: group.x, y: group.y };
+      zoomAt(camera.scale * 1.7, anchor, anchor, true);
       list.querySelector('button').focus({ preventScroll: true });
       return;
     }
@@ -11166,21 +11222,45 @@ span.atlas-district-label { color: #ffe2ed; -webkit-text-stroke-color: #4f2b48; 
     }
   }
 
-  function draw() {
+  function advanceCamera(now) {
+    if (!cameraMotion) return false;
+    const { start, destination, time } = cameraMotion;
+    const progress = clamp((now - time) / 320, 0, 1);
+    if (progress === 1 || reducedMotion.matches) {
+      Object.assign(camera, destination);
+      cameraMotion = undefined;
+      fullDrawNeeded = true;
+      return false;
+    }
+    const eased = progress * progress * (3 - 2 * progress);
+    camera.scale = start.scale * (destination.scale / start.scale) ** eased;
+    const from = (1 - eased) * camera.scale / start.scale;
+    const to = eased * camera.scale / destination.scale;
+    camera.x = viewportWidth / 2 + (start.x - viewportWidth / 2) * from + (destination.x - viewportWidth / 2) * to;
+    camera.y = viewportHeight / 2 + (start.y - viewportHeight / 2) * from + (destination.y - viewportHeight / 2) * to;
+    requestPan();
+    return true;
+  }
+
+  function draw(now) {
     frame = undefined;
     if (!viewportWidth || !viewportHeight) return;
+    const moving = advanceCamera(now);
     camera.x = clamp(camera.x, 32 - world.width * camera.scale, viewportWidth - 32);
     camera.y = clamp(camera.y, 32 - world.height * camera.scale, viewportHeight - 32);
     moveElement(canvas, camera.x, camera.y, ` scale(${camera.scale})`);
     updateMapImages();
-    const margin = pointers.size === 1 ? panMargin : 0;
-    const dx = markerView ? camera.x - markerView.x : 0;
-    const dy = markerView ? camera.y - markerView.y : 0;
+    const margin = pointers.size === 1 || moving ? panMargin : 0;
+    const ratio = markerView ? camera.scale / markerView.scale : 1;
+    const dx = markerView ? camera.x - markerView.x * ratio : 0;
+    const dy = markerView ? camera.y - markerView.y * ratio : 0;
     // Pins stay at their last computed positions inside the layer during a drag.
     // The extra area supplies pins entering the viewport between layout passes.
-    if (!fullDrawNeeded && margin && markerView?.margin === margin && markerView.scale === camera.scale
-      && Math.max(Math.abs(dx), Math.abs(dy)) <= margin - 24) {
-      moveElement(markerLayer, dx, dy);
+    const offset = Math.max(Math.abs(dx), Math.abs(dy),
+      Math.abs(dx + viewportWidth * (ratio - 1)), Math.abs(dy + viewportHeight * (ratio - 1)));
+    if (!fullDrawNeeded && margin && markerView?.margin === margin && ratio >= .85 && ratio <= 1.18
+      && offset <= margin - 24) {
+      moveElement(markerLayer, dx, dy, moving ? ` scale(${ratio})` : '');
       markersTranslated = true;
       return;
     }
@@ -11457,8 +11537,6 @@ span.atlas-district-label { color: #ffe2ed; -webkit-text-stroke-color: #4f2b48; 
     return { x: (a.x + b.x) / 2, y: (a.y + b.y) / 2 };
   }
 
-  mapTooltip.addEventListener('pointerenter', () => clearTimeout(mapTooltipDismissal));
-  mapTooltip.addEventListener('pointerleave', scheduleMapTooltipDismissal);
   document.addEventListener('keydown', event => {
     if (event.key !== 'Escape' || mapTooltip.hidden) return;
     hideMapTooltip();
@@ -11468,6 +11546,7 @@ span.atlas-district-label { color: #ffe2ed; -webkit-text-stroke-color: #4f2b48; 
   viewport.addEventListener('pointerdown', event => {
     hideMapTooltip();
     if (event.button !== 0 || event.target.closest('button') || pointers.size >= 2) return;
+    cameraMotion = undefined;
     expanded = undefined;
     pointers.set(event.pointerId, localPoint(event));
     viewport.setPointerCapture(event.pointerId);
@@ -11486,6 +11565,7 @@ span.atlas-district-label { color: #ffe2ed; -webkit-text-stroke-color: #4f2b48; 
       const newDistance = Math.hypot(after.x - other.x, after.y - other.y);
       if (oldDistance > 1) zoomAt(camera.scale * newDistance / oldDistance, midpoint(before, other), midpoint(after, other));
     } else {
+      fittedSteps = undefined;
       camera.x += after.x - before.x;
       camera.y += after.y - before.y;
       overview = false;
@@ -11516,6 +11596,8 @@ span.atlas-district-label { color: #ffe2ed; -webkit-text-stroke-color: #4f2b48; 
     const offsets = { ArrowLeft: [55, 0], ArrowRight: [-55, 0], ArrowUp: [0, 55], ArrowDown: [0, -55] };
     if (offsets[event.key]) {
       const [x, y] = offsets[event.key];
+      cameraMotion = undefined;
+      fittedSteps = undefined;
       expanded = undefined;
       camera.x += x;
       camera.y += y;
@@ -11531,7 +11613,7 @@ span.atlas-district-label { color: #ffe2ed; -webkit-text-stroke-color: #4f2b48; 
   legend.open = !compact.matches;
   legend.addEventListener('toggle', requestDraw);
   minus.addEventListener('click', () => zoomBy(1 / 1.35));
-  fit.addEventListener('click', fitAll);
+  fit.addEventListener('click', () => fitAll());
   showSteps.addEventListener('click', () => {
     atlasSidebar.open();
     requestAnimationFrame(() => detail.scrollIntoView({ block: 'start' }));
@@ -11692,6 +11774,7 @@ span.atlas-district-label { color: #ffe2ed; -webkit-text-stroke-color: #4f2b48; 
     document.addEventListener('kenzan:atlas-close', () => {
       if (frame !== undefined) cancelAnimationFrame(frame);
       frame = undefined;
+      cameraMotion = undefined;
       markerView = undefined;
       pointers.clear();
       viewport.removeAttribute('data-dragging');
@@ -11711,14 +11794,16 @@ span.atlas-district-label { color: #ffe2ed; -webkit-text-stroke-color: #4f2b48; 
     const size = { width: Math.round(contentRect.width), height: Math.round(contentRect.height) };
     if (!size.width || !size.height || (size.width === viewportWidth && size.height === viewportHeight)) return;
     updateViewportSize(size.width, size.height);
-    if (overview || !previousSize) fitAll();
+    if (overview || !previousSize) fitAll(Boolean(cameraMotion));
+    else if (fittedSteps) fitQuestSteps(fittedSteps);
     else centerAt((previousSize.width / 2 - camera.x) / camera.scale,
-      (previousSize.height / 2 - camera.y) / camera.scale, camera.scale);
+      (previousSize.height / 2 - camera.y) / camera.scale, camera.scale, viewportHeight / 2, false);
     previousSize = size;
   }).observe(viewport);
   const panelObserver = new ResizeObserver(() => {
     panelBounds = undefined;
-    requestDraw();
+    if (fittedSteps) fitQuestSteps(fittedSteps);
+    else requestDraw();
   });
   for (const panel of mapPanels) panelObserver.observe(panel, { box: 'border-box' });
   window.addEventListener('scroll', () => { viewportOrigin = undefined; }, { capture: true, passive: true });
