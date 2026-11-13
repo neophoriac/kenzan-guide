@@ -18,7 +18,7 @@
   <meta property="og:image:height" content="590">
   <meta property="og:image:alt" content="Like a Dragon: Kenzan! Side Content Guide banner with Musashi">
   <meta name="twitter:card" content="summary_large_image">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; connect-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'; img-src 'self' data:; style-src 'unsafe-inline'; script-src 'self' 'sha256-kAHOt7vbQOl3g6UAX3zB42Jr2bJtsVBqsqQ67eUX5Uk=' 'sha256-6+AYehQdJSstFvDu7Sej3qWe0puLSl1PZpKqKOkK7ag=' 'sha256-29trEXib28O1W+q0ptZPxBn4Q8usHkyV70ccIcPu3Gk=' 'sha256-WYA7fFqmTBTkQkhgKWVpH9wULsQ/Q/jkP43M1bTp8Pw=' 'sha256-8Db7pAkTaA5/FA7etZubXEvamzKsSawYki8GQcmLQ98=' 'sha256-IRm93FXXW6WLnvKWA5FNaTQnZvgfbR7RAE1SHS9Jy4g=' 'sha256-qyTvR77olOq1XpzxM4W1Ff/lwXv7zQ/SzAJnGpm7Ifs=' 'sha256-Iag7kkPhEtbrPDo/m9Q3TUaeRcqxVpg55uhbbkfBOPU='">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; connect-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'; img-src 'self' data:; style-src 'unsafe-inline'; script-src 'self' 'sha256-kAHOt7vbQOl3g6UAX3zB42Jr2bJtsVBqsqQ67eUX5Uk=' 'sha256-6+AYehQdJSstFvDu7Sej3qWe0puLSl1PZpKqKOkK7ag=' 'sha256-29trEXib28O1W+q0ptZPxBn4Q8usHkyV70ccIcPu3Gk=' 'sha256-WYA7fFqmTBTkQkhgKWVpH9wULsQ/Q/jkP43M1bTp8Pw=' 'sha256-8Db7pAkTaA5/FA7etZubXEvamzKsSawYki8GQcmLQ98=' 'sha256-IRm93FXXW6WLnvKWA5FNaTQnZvgfbR7RAE1SHS9Jy4g=' 'sha256-AcGoYmjiK7jgqQ6EuF8GT6T2BI7Rg8xi9/uKXWaS4B4=' 'sha256-VyYIlwVEmRHR/6TU4480M7vZ81HB+J6JWLUUZW8dcmI=' 'sha256-Iag7kkPhEtbrPDo/m9Q3TUaeRcqxVpg55uhbbkfBOPU='">
   <style>.sidebar-dock {
   position: relative; z-index: 5; display: grid; grid-template-rows: 2.75rem minmax(0, 1fr);
   min-width: 0; min-height: 0; background: var(--sidebar); border-right: 1px solid var(--line);
@@ -1131,6 +1131,23 @@ span.atlas-district-label { color: #ffe2ed; -webkit-text-stroke-color: #4f2b48; 
     <details class="completion-group" id="save-sync" hidden>
       <summary>Sync from a Kenzan save</summary>
       <div class="save-sync-body">
+        <div id="save-folder-sync">
+          <p id="save-folder-privacy">Choose your RPCS3 <code>dev_hdd0/home/&lt;user&gt;/savedata</code> folder. The browser grants read access to that folder. This guide checks only <code>USERDATA</code> inside Kenzan’s immediate <code>BLJM60064-LIST-*</code> and <code>BLJM60064-FIXED-</code> slots. Use the original folders and files. Browsers don’t expose filesystem links or Windows junctions to the guide for checking.</p>
+          <p id="save-folder-storage">Saves are processed on this device. The browser remembers the folder, sync settings, and checkmarks. Use <strong>Forget folder</strong> to disconnect it. Browser site settings control the underlying read grant. Use manual import below to grant access to one file at a time.</p>
+          <div class="save-sync-actions">
+            <button id="save-folder-choose" type="button">Choose save folder</button>
+            <button id="save-folder-reconnect" type="button" hidden>Reconnect folder</button>
+            <button id="save-folder-now" type="button" hidden>Sync now</button>
+            <button id="save-folder-forget" type="button" hidden>Forget folder</button>
+          </div>
+          <div id="save-folder-settings" hidden>
+            <label for="save-folder-slot">Gameplay slot</label>
+            <select id="save-folder-slot"></select>
+            <label class="save-auto-label"><input id="save-folder-auto" type="checkbox" autocomplete="off"> Automatically sync when I save</label>
+            <p>Auto-sync checks for changes while this tab is visible. Connecting reads the selected or newest gameplay save for chapter and playtime. Checkmarks are applied when you use Sync now or enable auto-sync. Ultimate Match is read from the system save. If the browser asks for access again, use Reconnect folder.</p>
+          </div>
+          <p id="save-folder-status" role="status"></p>
+        </div>
         <details class="save-sync-subgroup">
           <summary>Import a save manually</summary>
           <p>Save files are processed in this browser. The guide saves your checkmarks here.</p>
@@ -12794,7 +12811,479 @@ showLinkedTournament();
   else window.readKenzanSaveStory = readStory;
 })();
 </script>
+<script>(() => {
+  const slotPattern = /^BLJM60064-LIST-(\d+)$/;
+  const systemSlot = 'BLJM60064-FIXED-';
+  const readAccess = { mode: 'read' };
+  const existingOnly = { create: false };
+  const interval = 5000;
+  const publicGuidePath = '/kenzan-guide/';
+  const publicGuideOrigin = 'https://neophoriac.github.io';
 
+  function isSaveFolder(folder) {
+    return folder?.kind === 'directory' && folder.name === 'savedata' && typeof folder.resolve === 'function';
+  }
+
+  function matchesPath(path, ...expected) {
+    return path?.length === expected.length && expected.every((part, index) => path[index] === part);
+  }
+
+  function isSaveSlot(name) {
+    return name === systemSlot || slotPattern.test(name);
+  }
+
+  async function listSaveSlots(folder, live) {
+    const slots = [];
+    if (!isSaveFolder(folder) || !live()) return slots;
+    for await (const [name, entry] of folder.entries()) {
+      if (!live()) break;
+      if (entry.kind === 'directory' && isSaveSlot(name)) slots.push(name);
+    }
+    return slots;
+  }
+
+  async function openSave(folder, slot, live) {
+    if (!isSaveFolder(folder) || !isSaveSlot(slot) || !live()) return null;
+    try {
+      // Accept exactly one slot directory and its USERDATA child from the chosen root.
+      const entry = await folder.getDirectoryHandle(slot, existingOnly);
+      if (!live() || entry.kind !== 'directory' || entry.name !== slot) return null;
+      if (!matchesPath(await folder.resolve(entry), slot) || !live()) return null;
+      const handle = await entry.getFileHandle('USERDATA', existingOnly);
+      if (!live() || handle.kind !== 'file' || handle.name !== 'USERDATA') return null;
+      if (!matchesPath(await folder.resolve(handle), slot, 'USERDATA') || !live()) return null;
+      const file = await handle.getFile();
+      return live() && file.name === 'USERDATA' ? file : null;
+    } catch (error) {
+      // RPCS3 can replace the slot directory while saving. Get new handles on the next scan.
+      if (!['NotFoundError', 'NotReadableError', 'TypeMismatchError'].includes(error.name)) throw error;
+      return null;
+    }
+  }
+
+  async function scanSaveFolder(folder, live = () => true, { slot, includeSystem = true } = {}) {
+    const names = await listSaveSlots(folder, live);
+    const files = [];
+    for (const name of names) {
+      if (!live()) break;
+      if (name === systemSlot ? !includeSystem : slot && name !== slot) continue;
+      files.push({ slot: name, file: await openSave(folder, name, live) });
+    }
+    return { names, files };
+  }
+
+  function selectSaves(files, slot) {
+    const gameplay = files.filter(({ slot }) => slotPattern.test(slot));
+    const choices = slot ? gameplay.filter(entry => entry.slot === slot)
+      : [...gameplay].sort((a, b) => (b.file?.lastModified ?? -1) - (a.file?.lastModified ?? -1)
+        || a.slot.localeCompare(b.slot, 'en', { numeric: true }));
+    const system = files.find(({ slot }) => slot === systemSlot);
+    return { gameplay, current: choices[0], system };
+  }
+
+  function storedFolder(key, change, connectionToForget, replace = false) {
+    return new Promise((resolve, reject) => {
+      const open = indexedDB.open('kenzan-guide-save-folder', 1);
+      open.onupgradeneeded = () => open.result.createObjectStore('folders');
+      open.onerror = () => reject(open.error);
+      open.onblocked = () => reject(new Error('Folder storage is busy.'));
+      open.onsuccess = () => {
+        const db = open.result;
+        try {
+          const transaction = db.transaction('folders', change === undefined ? 'readonly' : 'readwrite');
+          const store = transaction.objectStore('folders');
+          const request = replace ? store.put(change, key) : store.get(key);
+          if (change !== undefined && !replace) request.onsuccess = () => {
+            if (!request.result) return;
+            const savedConnection = request.result?.connection ?? null;
+            if (change === null && savedConnection === connectionToForget) store.delete(key);
+            if (change && savedConnection === change.connection) store.put(change, key);
+          };
+          transaction.oncomplete = () => { db.close(); resolve(request.result); };
+          transaction.onabort = () => { db.close(); reject(transaction.error); };
+        } catch (error) {
+          db.close();
+          reject(error);
+        }
+      };
+    });
+  }
+
+  function initSaveFolderSync({ parse, hasSaveHeader, add, showStory }) {
+    const root = document.querySelector('#save-folder-sync');
+    const node = id => root.querySelector('#save-folder-' + id);
+    const choose = node('choose');
+    const reconnect = node('reconnect');
+    const now = node('now');
+    const forget = node('forget');
+    const settings = node('settings');
+    const slotPicker = node('slot');
+    const autoPicker = node('auto');
+    const status = node('status');
+    const localGuide = location.protocol === 'file:' && !location.hostname;
+    const publicGuide = location.origin === publicGuideOrigin
+      && [publicGuidePath, publicGuidePath + 'index.html'].includes(location.pathname);
+    if (!window.isSecureContext || window.top !== window.self || (!localGuide && !publicGuide)) {
+      choose.hidden = true;
+      node('privacy').hidden = true;
+      node('storage').hidden = true;
+      status.textContent = 'Open the official guide on GitHub Pages or open the downloaded guide directly to use folder sync. You can still import a single save below.';
+      return;
+    }
+    if (typeof window.showDirectoryPicker !== 'function') {
+      choose.hidden = true;
+      status.textContent = 'Folder sync isn’t available in this browser. Open this guide in desktop Chrome or Edge, or import a save manually below.';
+      return;
+    }
+
+    let config;
+    let revision = 0;
+    let autoRevision = 0;
+    let busy = false;
+    let requested = false;
+    let timer;
+    let picking = false;
+    let persistent = true;
+    let lastStatus = '';
+    let slots = [];
+    let slotsKey;
+    let latestTime = -1;
+    let storySlot;
+    const seen = new Map();
+    const storageKey = publicGuide ? publicGuidePath : location.pathname;
+    let connectionEvents;
+    try {
+      connectionEvents = new BroadcastChannel('kenzan-save-folder:' + storageKey);
+    } catch {
+      // A browser can disable cross-tab coordination for local pages.
+    }
+
+    function clearStory() {
+      storySlot = undefined;
+      showStory();
+    }
+
+    function message(value) {
+      if (value === lastStatus) return;
+      lastStatus = value;
+      status.textContent = value;
+    }
+
+    function controls(connected) {
+      reconnect.hidden = !config || connected;
+      now.hidden = !connected;
+      settings.hidden = !connected;
+      forget.hidden = !config;
+      choose.textContent = config ? 'Change save folder' : 'Choose save folder';
+      autoPicker.checked = Boolean(config?.auto);
+    }
+
+    function setSlotOptions(gameplay) {
+      const names = [...gameplay];
+      if (config.slot && !names.includes(config.slot)) names.push(config.slot);
+      const key = names.sort((a, b) => a.localeCompare(b, 'en', { numeric: true })).join();
+      if (slotsKey !== key) {
+        slotsKey = key;
+        slotPicker.replaceChildren(new Option('Most recently saved', ''), ...names.map(name =>
+          new Option('Slot ' + slotPattern.exec(name)[1], name)));
+      }
+      slotPicker.value = config.slot;
+    }
+
+    function stop() {
+      clearInterval(timer);
+      timer = undefined;
+    }
+
+    function schedule() {
+      stop();
+      if (config?.auto && !document.hidden && !picking) timer = setInterval(() => scan('auto'), interval);
+    }
+
+    function disconnect() {
+      revision++;
+      config = undefined;
+      stop();
+      requested = false;
+      slots = [];
+      seen.clear();
+      latestTime = -1;
+      clearStory();
+      controls(false);
+    }
+
+    connectionEvents?.addEventListener('message', ({ data }) => {
+      if (data?.type !== 'forget' || !config || data.connection !== config.connection) return;
+      disconnect();
+      message('The save folder was disconnected in another tab.');
+    });
+
+    let storageQueue = Promise.resolve();
+    function persist(connectionToForget, replace = false) {
+      const value = config ?? null;
+      const save = () => storedFolder(storageKey, value, connectionToForget, replace)
+        .then(() => { persistent = true; }, () => { persistent = false; });
+      storageQueue = storageQueue.then(save);
+      return storageQueue;
+    }
+
+    async function scan(mode) {
+      if (!config || picking || (mode === 'auto' && (!config.auto || document.hidden))) return;
+      if (busy) {
+        if (mode !== 'auto' || !requested) requested = mode;
+        return;
+      }
+      const active = config;
+      const scanRevision = revision;
+      const autoScanRevision = autoRevision;
+      const live = () => revision === scanRevision
+        && (mode !== 'auto' || (autoRevision === autoScanRevision && !document.hidden));
+      busy = true;
+      now.disabled = true;
+      try {
+        const permission = await active.handle.queryPermission(readAccess);
+        if (!live()) return;
+        if (permission !== 'granted') {
+          stop();
+          controls(false);
+          clearStory();
+          message('Saved folder: ' + active.handle.name + '. Reconnect to give this browser read access again.');
+          return;
+        }
+        const { names, files } = await scanSaveFolder(active.handle, live, { slot: active.slot, includeSystem: mode !== 'inspect' });
+        if (!live()) return;
+        controls(true);
+        const { current, system } = selectSaves(files, active.slot);
+        slots = names.filter(name => slotPattern.test(name));
+        setSlotOptions(slots);
+        const prefix = persistent ? 'Folder: ' + active.handle.name + '. ' : 'Folder access is available for this tab only. ';
+        const nextStep = active.auto ? 'Auto-sync is on.' : 'Auto-sync is off. Use Sync now to import from this folder.';
+        const source = current ? ' Gameplay slot ' + slotPattern.exec(current.slot)[1] + '.' : '';
+        const pending = [];
+        let retry = false;
+        for (const entry of (mode === 'inspect' ? [current] : [current, system]).filter(Boolean)) {
+          const { slot, file } = entry;
+          // When the current slot is briefly missing during a save, don't import an older slot.
+          if (mode === 'auto' && !active.slot && slot !== systemSlot && file?.lastModified < latestTime) {
+            retry = true;
+            continue;
+          }
+          if (!file || (mode === 'auto' && Date.now() - file.lastModified < 1000)) {
+            retry = true;
+            continue;
+          }
+          const stamp = file.lastModified + ':' + file.size;
+          if (mode === 'auto' && seen.get(slot) === stamp) continue;
+          try {
+            const expected = slot === systemSlot ? 'system' : 'gameplay';
+            if (!live()) return;
+            if (!await hasSaveHeader(file, expected)) {
+              retry = true;
+              continue;
+            }
+            if (!live()) return;
+            const buffer = await file.arrayBuffer();
+            if (!live()) return;
+            pending.push({ slot, stamp, parsed: parse(buffer) });
+          } catch {
+            retry = true;
+          }
+        }
+        if (!live()) return;
+        const gameplayResult = pending.find(({ slot }) => slot === current?.slot);
+        if (gameplayResult) {
+          storySlot = gameplayResult.slot;
+          showStory(gameplayResult.parsed.story, 'Slot ' + slotPattern.exec(storySlot)[1], gameplayResult.parsed.progress);
+        } else if (current?.slot !== storySlot || mode !== 'auto') {
+          clearStory();
+        }
+        if (mode === 'inspect') {
+          message(prefix + nextStep + source + (retry ? ' The story position could not be read yet.'
+            : current ? '' : ' No Kenzan gameplay save was found.'));
+          return;
+        }
+        if (pending.length) {
+          const count = add(pending.flatMap(({ parsed }) => parsed.progress));
+          for (const { slot, stamp } of pending) {
+            seen.set(slot, stamp);
+            if (!active.slot && slot === current?.slot) latestTime = current.file.lastModified;
+          }
+          message(prefix + (count ? 'Added ' + count + ' checkmark' + (count === 1 ? '' : 's') + '. ' : 'No new checkmarks. ')
+            + nextStep + source + (retry ? ' A save is not ready yet.' : ''));
+        } else if (retry) {
+          message(prefix + 'A save is unreadable or still being written. ' + (active.auto ? 'The guide will try again.' : 'Try Sync now after RPCS3 finishes saving.'));
+        } else if (!current) {
+          message(prefix + (active.slot ? 'The selected gameplay slot was not found. ' : 'No Kenzan gameplay save was found. ') + nextStep);
+        } else if (mode !== 'auto') {
+          message(prefix + nextStep + source);
+        }
+      } catch (error) {
+        if (!live()) return;
+        if (['NotAllowedError', 'SecurityError'].includes(error.name)) {
+          stop();
+          controls(false);
+          clearStory();
+          message('Folder access is unavailable. Reconnect the saved folder, or import a file manually.');
+        } else if (error.name === 'NotFoundError') {
+          clearStory();
+          message('The saved folder is unavailable. Check the drive or choose the folder again.');
+        } else {
+          message('Could not sync from the folder. Try Sync now, reconnect it, or import a save manually.');
+        }
+      } finally {
+        busy = false;
+        now.disabled = false;
+        const next = requested;
+        requested = false;
+        if (next && (next !== 'auto' || config?.auto)) void scan(next);
+      }
+    }
+
+    async function restore() {
+      const start = revision;
+      try {
+        const saved = await storedFolder(storageKey);
+        if (revision !== start || !saved) return;
+        if (!isSaveFolder(saved.handle)) {
+          message('The remembered folder isn’t an RPCS3 savedata folder. Choose your savedata folder to reconnect.');
+          return;
+        }
+        config = { handle: saved.handle, auto: saved.auto === true,
+          slot: typeof saved.slot === 'string' && slotPattern.test(saved.slot) ? saved.slot : '',
+          connection: typeof saved.connection === 'string' ? saved.connection : null };
+        controls(false);
+        schedule();
+        await scan(config.auto ? 'auto' : 'inspect');
+      } catch {
+        persistent = false;
+      }
+    }
+
+    choose.addEventListener('click', async () => {
+      choose.disabled = true;
+      picking = true;
+      const pickerRevision = ++revision;
+      const live = () => revision === pickerRevision;
+      stop();
+      requested = false;
+      let changed = false;
+      try {
+        const handle = await window.showDirectoryPicker({ ...readAccess, id: 'kenzan-rpcs3-saves', ...(config && { startIn: config.handle }) });
+        if (!live()) return;
+        if (!isSaveFolder(handle)) {
+          message('Choose the RPCS3 folder named savedata.');
+          return;
+        }
+        const names = await listSaveSlots(handle, live);
+        let recognized = false;
+        for (const slot of names) {
+          if (!live()) return;
+          const file = await openSave(handle, slot, live);
+          if (!live()) return;
+          if (file && await hasSaveHeader(file, slot === systemSlot ? 'system' : 'gameplay')) {
+            recognized = true;
+            break;
+          }
+        }
+        if (!live()) return;
+        if (!recognized) {
+          message('No readable Kenzan USERDATA was found in this savedata folder.');
+          return;
+        }
+        clearStory();
+        seen.clear();
+        latestTime = -1;
+        slots = [];
+        config = { handle, auto: false, slot: '', connection: crypto.randomUUID() };
+        changed = true;
+        await persist(undefined, true);
+      } catch (error) {
+        if (error.name === 'AbortError' || !live()) return;
+        message('The folder picker couldn’t connect. Try desktop Chrome or Edge, or import a save file below.');
+      } finally {
+        picking = false;
+        choose.disabled = false;
+        schedule();
+        if (changed && live()) await scan('inspect');
+      }
+    });
+
+    reconnect.addEventListener('click', async () => {
+      if (!config) return;
+      const active = config;
+      const reconnectRevision = revision;
+      try {
+        const permission = await active.handle.requestPermission(readAccess);
+        if (revision !== reconnectRevision) return;
+        if (permission !== 'granted') {
+          message('Read access wasn’t granted. You can reconnect again or import a save file.');
+          return;
+        }
+        if (active !== config) return;
+        schedule();
+        await scan(config.auto ? 'auto' : 'inspect');
+      } catch {
+        if (revision !== reconnectRevision) return;
+        message('Could not reconnect this folder. Choose it again or import a save file below.');
+      }
+    });
+
+    forget.addEventListener('click', async () => {
+      const connection = config?.connection;
+      disconnect();
+      const forgetRevision = revision;
+      connectionEvents?.postMessage({ type: 'forget', connection });
+      await persist(connection);
+      connectionEvents?.postMessage({ type: 'forget', connection });
+      if (revision !== forgetRevision) return;
+      message(persistent ? 'Folder forgotten. Existing checkmarks were kept.' : 'Folder disconnected. Browser storage could not be cleared. Revoke access in site settings.');
+    });
+
+    autoPicker.addEventListener('change', async () => {
+      if (!config) return;
+      revision++;
+      const active = config = { ...config, auto: autoPicker.checked };
+      seen.clear();
+      schedule();
+      await persist();
+      if (active === config) await scan(active.auto ? 'auto' : 'inspect');
+    });
+
+    slotPicker.addEventListener('change', async () => {
+      if (!config) return;
+      revision++;
+      const active = config = { ...config, slot: slotPicker.value };
+      clearStory();
+      setSlotOptions(slots);
+      seen.clear();
+      latestTime = -1;
+      await persist();
+      if (active === config) await scan(active.auto ? 'auto' : 'inspect');
+    });
+
+    now.addEventListener('click', () => scan('now'));
+    const refresh = () => { if (config?.auto && !document.hidden) void scan('auto'); };
+    window.addEventListener('focus', refresh);
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) autoRevision++;
+      schedule();
+      refresh();
+    });
+    window.addEventListener('pagehide', () => {
+      autoRevision++;
+      stop();
+    });
+    window.addEventListener('pageshow', () => {
+      schedule();
+      refresh();
+    });
+    void restore();
+  }
+
+  if (typeof module === 'object' && module.exports) module.exports = { scanSaveFolder, selectSaves };
+  else window.initSaveFolderSync = initSaveFolderSync;
+})();
+</script>
 <script>(() => {
   const fileSize = 0x13750;
   const systemSize = 0x33c;
@@ -13061,6 +13550,7 @@ showLinkedTournament();
     refreshWeaponReviews();
   }
 
+  const showFolderStory = (story, source, progress) => showStory('folder', story, source, progress);
   const parse = buffer => readSaveDetails(buffer, groups, storyWindows);
 
   function pendingKeys(progress = reviewed) {
@@ -13185,6 +13675,7 @@ showLinkedTournament();
     }
   }
 
+  window.initSaveFolderSync({ parse, hasSaveHeader, add: addCheckmarks, showStory: showFolderStory });
   listUnsupported();
   section.hidden = false;
 })();

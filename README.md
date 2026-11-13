@@ -9,7 +9,7 @@ This fan project was vibe-coded with AI assistance while playing the English tra
 
 Progress and story objective preferences are saved in the browser.
 
-The guide can also import a Kenzan `USERDATA` save file. Your browser reads the file on your device and stores the resulting checkmarks locally.
+Import a Kenzan `USERDATA` save file or choose your RPCS3 `savedata` folder in desktop Chrome or Edge to enable read-only auto-sync. The guide processes save files on your device and stores the resulting checkmarks in your browser.
 
 Thanks to the guide authors and translation team who made this project possible.
 
