@@ -13,7 +13,7 @@
   <meta property="og:image:height" content="590">
   <meta property="og:image:alt" content="Like a Dragon: Kenzan! Side Content Guide banner with Musashi">
   <meta name="twitter:card" content="summary_large_image">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; connect-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'; img-src 'self' data:; font-src data:; style-src 'unsafe-inline'; script-src 'self' 'sha256-LUZ00l+pCKIyF2cYb3YfScxezw+GWxoLcu/2bdDIDj8='"><style>/*
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; connect-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'; img-src 'self' data:; font-src data:; style-src 'unsafe-inline'; script-src 'self' 'sha256-3YcdiPmYH262LNgo4R3cHUNFFwV9NgtCwVIsHsdWCH8='"><style>/*
 Copyright 2010-2022 Adobe (http://www.adobe.com/), with Reserved Font Name 'Source'. All Rights Reserved. Source is a trademark of Adobe in the United States and/or other countries.
 
 This Font Software is licensed under the SIL Open Font License, Version 1.1.
@@ -243,6 +243,8 @@ span.atlas-district-label { color: #ffe2ed; -webkit-text-stroke-color: #4f2b48; 
 .atlas-map-group span { position: absolute; top: 14px; left: 20px; color: #fcf3dd; font: 500 32px/1.15 Georgia, serif; }
 #atlas-markers, #atlas-places, #atlas-pins, #atlas-step-pins { position: absolute; inset: 0; pointer-events: none; }
 #atlas-markers { transform-origin: 0 0; }
+.atlas-motion-markers { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+#atlas-map[data-motion-markers] #atlas-markers { visibility: hidden; }
 #atlas-map:is([data-dragging], [data-zooming]) > :is(#atlas-world, #atlas-markers) { will-change: transform; }
 #atlas-map[data-dragging] :is(.atlas-pin, .atlas-place) { pointer-events: none; }
 #atlas-places { z-index: 1; }
@@ -1219,9 +1221,148 @@ span.atlas-district-label { color: #ffe2ed; -webkit-text-stroke-color: #4f2b48; 
 
 const viewSignal = new AbortController().signal;
 const viewState = {};
+function createMotionMarkerLayer(markerLayer, signal) {
+  const padding = 6;
+  const sprites = new Map();
+  let canvas;
+  let context;
+  let unavailable = false;
+  let pixelRatio;
+  let lastRecords;
+  let prepared;
+
+  function paintSprite(style, ratio) {
+    const key = JSON.stringify(style);
+    const cached = sprites.get(key);
+    if (cached) return cached;
+    const { text, width, height, radius, font, fill, border, color, shadow, outline } = style;
+    const w = width + padding * 2, h = height + padding * 2;
+    const bitmap = document.createElement('canvas');
+    bitmap.width = Math.ceil(w * ratio);
+    bitmap.height = Math.ceil(h * ratio);
+    const pen = bitmap.getContext('2d');
+    if (!pen || typeof pen.roundRect !== 'function') return undefined;
+    pen.scale(bitmap.width / w, bitmap.height / h);
+    pen.beginPath();
+    pen.roundRect(padding + .5, padding + .5, width - 1, height - 1, radius);
+    pen.fillStyle = fill;
+    if (shadow) {
+      pen.shadowColor = '#101511a8';
+      pen.shadowBlur = 4 * ratio;
+      pen.shadowOffsetY = ratio;
+    }
+    pen.fill();
+    pen.shadowColor = 'transparent';
+    pen.strokeStyle = border;
+    pen.stroke();
+    if (outline) {
+      pen.beginPath();
+      pen.roundRect(padding - 2, padding - 2, width + 4, height + 4, radius + 2);
+      pen.strokeStyle = outline;
+      pen.lineWidth = 2;
+      pen.stroke();
+    }
+    pen.font = font;
+    pen.fillStyle = color;
+    pen.textAlign = 'center';
+    pen.textBaseline = 'middle';
+    pen.fillText(text, w / 2, h / 2);
+    const sprite = { bitmap, w, h };
+    if (sprites.size >= 512) sprites.delete(sprites.keys().next().value);
+    sprites.set(key, sprite);
+    return sprite;
+  }
+
+  function hide() {
+    if (!canvas || canvas.hidden) return;
+    canvas.hidden = true;
+    canvas.width = canvas.height = 0;
+    lastRecords = undefined;
+    prepared = undefined;
+  }
+
+  function draw(records, { width, height, ratio, dx, dy }) {
+    if (unavailable || signal.aborted) return false;
+    if (!canvas) {
+      canvas = document.createElement('canvas');
+      canvas.className = 'atlas-motion-markers';
+      canvas.dataset.renderer = 'canvas';
+      canvas.setAttribute('aria-hidden', 'true');
+      context = canvas.getContext('2d');
+      if (!context) {
+        unavailable = true;
+        return false;
+      }
+      markerLayer.before(canvas);
+    }
+    if (typeof context.roundRect !== 'function' || context.isContextLost?.()) return false;
+    const scale = devicePixelRatio || 1;
+    if (pixelRatio !== scale) {
+      sprites.clear();
+      lastRecords = undefined;
+      pixelRatio = scale;
+    }
+    if (records !== lastRecords) {
+      prepared = records.map(({ sprite, caption, ...record }) => ({
+        ...record,
+        sprite: sprite && paintSprite(sprite, scale),
+        caption: caption && { ...caption, image: paintSprite(caption.sprite, scale) },
+      }));
+      if (prepared.some((record, i) => (records[i].sprite && !record.sprite) || (record.caption && !record.caption.image))) {
+        prepared = undefined;
+        return false;
+      }
+      lastRecords = records;
+    }
+    const pixelWidth = Math.round(width * scale), pixelHeight = Math.round(height * scale);
+    if (canvas.width !== pixelWidth || canvas.height !== pixelHeight) {
+      canvas.width = pixelWidth;
+      canvas.height = pixelHeight;
+    }
+    canvas.hidden = false;
+    context.setTransform(pixelWidth / width, 0, 0, pixelHeight / height, 0, 0);
+    context.clearRect(0, 0, width, height);
+    const change = ratio - 1;
+    for (const { x, y, anchor, sprite, caption, lines } of prepared) {
+      const left = x + dx + anchor.x * change;
+      const top = y + dy + anchor.y * change;
+      const margin = Math.max(40, caption?.image.w ?? 0);
+      if (left < -margin || top < -80 || left > width + margin || top > height + 80) continue;
+      for (const line of lines ?? []) {
+        context.beginPath();
+        context.moveTo(left, top);
+        context.lineTo(left + line.dx, top + line.dy);
+        context.lineWidth = line.width;
+        context.strokeStyle = line.color;
+        context.stroke();
+        if (line.dot) {
+          context.beginPath();
+          context.arc(left, top, line.dot, 0, 2 * Math.PI);
+          context.fillStyle = line.color;
+          context.fill();
+        }
+      }
+      if (sprite) context.drawImage(sprite.bitmap, left - sprite.w / 2, top - sprite.h / 2, sprite.w, sprite.h);
+      if (caption) {
+        const { image } = caption;
+        context.drawImage(image.bitmap, left + caption.x - padding, top + caption.y - padding, image.w, image.h);
+      }
+    }
+    return true;
+  }
+
+  signal.addEventListener('abort', () => {
+    hide();
+    sprites.clear();
+    canvas?.remove();
+  }, { once: true });
+  return { draw, hide };
+}
+
 (() => {
   const { world, tiles, quests, objectives, places, placeSymbols } = JSON.parse(document.querySelector('#atlas-data').textContent);
   const byArea = new Map(tiles.map(tile => [tile.id, tile]));
+  const mapPositions = new WeakMap();
   const revelations = places.filter(place => place.type === 'revelation').flatMap(place =>
     place.revelations.map(entry => ({ ...entry, place, chapter: entry.window.split('-')[0], type: 'Revelations' })));
   const shichigoro = places.find(place => place.id === 'shichigoro');
@@ -1261,6 +1402,10 @@ const viewState = {};
   const districtLabels = document.querySelector('#atlas-districts');
   const pins = document.querySelector('#atlas-pins');
   const stepPins = document.querySelector('#atlas-step-pins');
+  const motionMarkers = createMotionMarkerLayer(markerLayer, viewSignal);
+  const placePinColors = { landmark: '#405a50', travel: '#405a50', save: '#3a643f',
+    palanquin: '#35577e', revelation: '#176667', 'locker-key': '#6d5423' };
+  const questPinColors = { request: '#7c332a', commission: '#285e60', bounty: '#6b4f87', cluster: '#454a36' };
   const placeLayer = document.querySelector('#atlas-places');
   const mapTooltip = document.querySelector('#atlas-collectible-tooltip');
   const tooltipContent = mapTooltip.querySelector('.atlas-tooltip-content');
@@ -1285,7 +1430,9 @@ const viewState = {};
   const legendItems = [...legend.querySelectorAll('[data-legend]')];
   const routes = document.querySelector('.atlas-routes');
   const textMeasure = document.createElement('canvas').getContext('2d');
-  textMeasure.font = '600 12px "Segoe UI", sans-serif';
+  const captionFont = '600 12px "Segoe UI", sans-serif';
+  textMeasure.font = captionFont;
+  const markerTextMeasure = document.createElement('canvas').getContext('2d');
   const captionMetrics = new Map();
   const placeTypes = { building: 'Building', landmark: 'Landmark', save: 'Save point',
     palanquin: 'Palanquin', travel: 'Entrance', revelation: 'Revelation' };
@@ -1331,6 +1478,7 @@ const viewState = {};
   const camera = { x: 0, y: 0, scale: 1 };
   const panMargin = 160;
   const maxScale = 12;
+  const canvasMarkerThreshold = 140;
   const wheelDuration = 200;
   const wheelStartAdvance = 5;
   const wheelRate = .006;
@@ -1349,6 +1497,11 @@ const viewState = {};
   const pinPositions = new WeakMap();
   const preferredCaptionSlots = new WeakMap();
   const placeControls = new Map();
+  let questControls = new Map();
+  const motionPaint = new WeakMap();
+  const placeMotionText = '750 11px "Segoe UI", "Segoe UI Symbol", sans-serif';
+  const questMotionText = '700 12.48px "Segoe UI", sans-serif';
+  markerTextMeasure.font = questMotionText;
   const mapPanels = [mapTools, selectionPanel, legend];
   let viewportWidth = 0;
   let viewportHeight = 0;
@@ -1362,6 +1515,7 @@ const viewState = {};
   let markersTranslated = false;
   let markerProjectionScale = 1;
   let projectedMarkers = [];
+  let motionMarkerRecords;
   let captionView;
   let lastCaptionLayout;
   let matches = [];
@@ -1392,8 +1546,9 @@ const viewState = {};
   }
 
   function movePin(pin, x, y, anchor = { x, y }) {
+    const previous = pinPositions.get(pin);
     pinPositions.set(pin, { x, y, anchor });
-    moveElement(pin, x, y);
+    if (markerProjectionScale !== 1 || previous?.x !== x || previous?.y !== y) moveElement(pin, x, y);
   }
 
   function moveLine(line, x, y, dx, dy, trim = 0) {
@@ -1403,6 +1558,7 @@ const viewState = {};
     if (pinLine) {
       const position = { x, y };
       pinPositions.set(line, { x, y, anchor: position, line: true });
+      motionPaint.set(line, { dx, dy, color: '#ffe3a5', width: 2, dot: 3 });
       line.style.translate = `${x}px ${y}px`;
       line.style.transform = shape;
       line.style.setProperty('--pin-line-dot-scale', 1 / length);
@@ -1773,8 +1929,13 @@ const viewState = {};
   }
 
   function worldPoint(point) {
-    const tile = byArea.get(point.area);
-    return { x: tile.x + point.x * tile.w, y: tile.y + point.y * tile.h };
+    let position = mapPositions.get(point);
+    if (!position) {
+      const tile = byArea.get(point.area);
+      position = { x: tile.x + point.x * tile.w, y: tile.y + point.y * tile.h };
+      mapPositions.set(point, position);
+    }
+    return position;
   }
 
   function routeZoomRatio(previous, next) {
@@ -2504,8 +2665,10 @@ const viewState = {};
 
   function pinGroups(focusedQuest, margin) {
     const distance = coarse.matches ? 34 : 29;
+    const distanceSquared = distance * distance;
     const edge = margin + 20;
     const groups = [];
+    const byArea = new Map();
     const candidates = spotlight && !matches.includes(spotlight) ? [...matches, spotlight] : matches;
     for (const quest of focusedQuest ? [focusedQuest] : candidates) {
       if (quest !== spotlight && !visible(questLayer(quest))) continue;
@@ -2514,9 +2677,15 @@ const viewState = {};
         if (expanded?.entries.some(entry => entry.point === point)) continue;
         const { x, y } = screenPoint(point);
         if (x < -edge || x > viewportWidth + edge || y < -edge || y > viewportHeight + edge) continue;
-        const group = groups.find(item => item.area === point.area && Math.hypot(item.x - x, item.y - y) < distance);
+        let areaGroups = byArea.get(point.area);
+        if (!areaGroups) byArea.set(point.area, areaGroups = []);
+        const group = areaGroups.find(item => (item.x - x) ** 2 + (item.y - y) ** 2 < distanceSquared);
         if (group) group.entries.push({ quest, point });
-        else groups.push({ x, y, area: point.area, entries: [{ quest, point }] });
+        else {
+          const group = { x, y, area: point.area, entries: [{ quest, point }] };
+          groups.push(group);
+          areaGroups.push(group);
+        }
       }
     }
     return groups;
@@ -2803,7 +2972,7 @@ const viewState = {};
     return `${areaId}:${entries.map(entry => entry.quest.id).join(',')}`;
   }
 
-  function marker(group, anchor) {
+  function createQuestControl(group, key, spread) {
     const { quest, point } = group.entries[0];
     const multiple = group.entries.length > 1;
     const button = document.createElement('button');
@@ -2811,9 +2980,8 @@ const viewState = {};
     const markerType = multiple ? 'cluster' : questLayer(quest);
     button.className = `atlas-pin ${markerType}`;
     button.dataset.markerType = markerType;
-    if (anchor) button.classList.add('spread');
-    button.dataset.marker = markerKey(group.area, group.entries);
-    movePin(button, group.x, group.y, anchor);
+    if (spread) button.classList.add('spread');
+    button.dataset.marker = key;
     button.textContent = multiple ? `×${group.entries.length}` : quest.id;
     const name = multiple ? clusterName(group) : `#${quest.id} ${quest.name}`;
     button.setAttribute('aria-label', name);
@@ -2821,12 +2989,26 @@ const viewState = {};
       if (multiple) container.append(clusterList(group, false));
       else appendRouteSummary(container, quest, point);
     } });
-    button.setAttribute('aria-pressed', String(group.entries.some(entry => entry.quest === selected?.quest && entry.point === selected.point)));
-    button.addEventListener('click', () => multiple ? showCluster(group) : showQuest(quest, point));
+    const control = { button, group };
+    button.addEventListener('click', () => multiple ? showCluster(control.group) : showQuest(quest, point));
+    return control;
+  }
+
+  function marker(group, anchor, controls) {
+    const key = markerKey(group.area, group.entries);
+    const locations = group.entries.map(({ quest, point }) => point === quest.interior ? 'i' : 'o').join('');
+    const cacheKey = `${key}:${locations}:${Boolean(anchor)}`;
+    const control = questControls.get(cacheKey) ?? createQuestControl(group, key, anchor);
+    control.group = group;
+    controls.set(cacheKey, control);
+    const { button } = control;
+    movePin(button, group.x, group.y, anchor);
+    const pressed = String(group.entries.some(entry => entry.quest === selected?.quest && entry.point === selected.point));
+    if (button.getAttribute('aria-pressed') !== pressed) button.setAttribute('aria-pressed', pressed);
     return button;
   }
 
-  function expandedMarkers() {
+  function expandedMarkers(controls) {
     if (!expanded) return [];
     const { area: areaId, entries } = expanded;
     const spacing = coarse.matches ? 44 : 36;
@@ -2858,7 +3040,7 @@ const viewState = {};
       line.setAttribute('aria-hidden', 'true');
       moveLine(line, anchor.x, anchor.y, dx, dy);
       lines.push(line);
-      return marker({ ...position, area: areaId, entries: [entry] }, anchor);
+      return marker({ ...position, area: areaId, entries: [entry] }, anchor, controls);
     });
     return [...lines, ...buttons];
   }
@@ -3187,6 +3369,71 @@ const viewState = {};
     if (!previous) advanceCamera(now);
   }
 
+  function prepareMotionMarkers() {
+    const placeByButton = new Map(captionView.controls.map(control => [control.button, control]));
+    const records = [];
+    for (const { element, line, x, y, anchor } of projectedMarkers) {
+      const control = placeByButton.get(element);
+      if (control) {
+        const { place, captionX, captionY, captionVisible, leaderVisible, text } = control;
+        const sprite = {
+          text: element.firstElementChild.textContent, width: 18, height: 18, radius: 4, font: placeMotionText,
+          color: place.roof ? '#382714' : '#fff6e7', fill: place.roof ? '#f2cc7b' : placePinColors[place.type] ?? place.color ?? '#5b4932',
+          border: '#f4e9cc', shadow: true, outline: selectedPlace === place ? '#ffe3a5' : undefined,
+        };
+        const lines = [];
+        if (anchor.x !== x || anchor.y !== y) lines.push({ dx: anchor.x - x, dy: anchor.y - y, color: '#9ce3da', width: 1 });
+        let caption;
+        if (captionVisible) {
+          const width = getCaptionMetrics(text).width;
+          caption = { x: captionX, y: captionY, sprite: { text, width, height: captionHeight, radius: 4,
+            font: captionFont, fill: '#242c27f2', border: '#b9ac8690', color: '#fff7e4' } };
+          if (leaderVisible) lines.push({
+            dx: clamp(0, captionX, captionX + width), dy: clamp(0, captionY, captionY + captionHeight), color: '#e5d3a2', width: 1,
+          });
+        }
+        records.push({ x, y, anchor, sprite, caption, lines });
+        continue;
+      }
+      if (line) {
+        records.push({ x, y, anchor, lines: [motionPaint.get(element)] });
+        continue;
+      }
+      const active = element.getAttribute('aria-pressed') === 'true';
+      const step = Boolean(element.dataset.stepPin);
+      const minimum = coarse.matches && (step || element.classList.contains('spread')) ? 32 : step ? 28.8 : 26.4;
+      const text = element.textContent;
+      const width = Math.max(minimum, markerTextMeasure.measureText(text).width + 9.68);
+      const fill = step ? active ? '#ffe3a5' : '#8c352c' : questPinColors[element.dataset.markerType];
+      records.push({ x, y, anchor, sprite: { text, width, height: minimum, radius: minimum / 2,
+        font: questMotionText, fill, color: step && active ? '#3b2517' : '#fff', border: '#fff8e6',
+        shadow: true, outline: active ? '#ffdd7e' : undefined } });
+    }
+    return records;
+  }
+
+  function hideMotionMarkers() {
+    if (!viewport.hasAttribute('data-motion-markers')) return;
+    motionMarkers.hide();
+    viewport.removeAttribute('data-motion-markers');
+    motionMarkerRecords = undefined;
+  }
+
+  function drawMotionMarkers(ratio, dx, dy) {
+    // Keep native controls when a pin has keyboard focus, and use the DOM at sparse zoom levels.
+    if (projectedMarkers.length < canvasMarkerThreshold || markerLayer.contains(document.activeElement)) {
+      hideMotionMarkers();
+      return false;
+    }
+    motionMarkerRecords ??= prepareMotionMarkers();
+    if (!motionMarkers.draw(motionMarkerRecords, { width: viewportWidth, height: viewportHeight, ratio, dx, dy })) {
+      hideMotionMarkers();
+      return false;
+    }
+    viewport.toggleAttribute('data-motion-markers', true);
+    return true;
+  }
+
   function draw(now) {
     frame = undefined;
     if (!viewportWidth || !viewportHeight) return;
@@ -3205,6 +3452,7 @@ const viewState = {};
     constrainCamera(camera);
     moveElement(canvas, camera.x, camera.y, ` scale(${camera.scale})`);
     updateMapImages(moving || pointers.size > 0);
+    if (!zooming) hideMotionMarkers();
     if (!fullDrawNeeded && markerView?.margin === 0 && !moving && !pointers.size
       && camera.x === markerView.x && camera.y === markerView.y && camera.scale === markerView.scale) return;
     const margin = pointers.size || moving ? panMargin : 0;
@@ -3218,15 +3466,17 @@ const viewState = {};
     if (!fullDrawNeeded && margin && markerView?.margin === margin && ratio >= .85 && ratio <= 1.18
       && offset <= margin - 24) {
       moveElement(markerLayer, dx, dy);
-      projectMarkers(ratio);
+      if (!zooming || !drawMotionMarkers(ratio, dx, dy)) projectMarkers(ratio);
       markersTranslated = true;
-      if (!zooming) updateDragCaptions(now, dx, dy, ratio);
+      if (!zooming) {
+        updateDragCaptions(now, dx, dy, ratio);
+        motionMarkerRecords = undefined;
+      }
       return;
     }
     fullDrawNeeded = false;
     if (markersTranslated) markerLayer.style.removeProperty('transform');
     markersTranslated = false;
-    markerProjectionScale = 1;
     markerView = { ...camera, margin };
     canvas.classList.toggle('hide-area-names', !visible('area'));
     routes.toggleAttribute('hidden', !visible('routes'));
@@ -3242,7 +3492,9 @@ const viewState = {};
     const focusedQuest = focus ? selected?.quest : undefined;
     const focusedMapPlace = focus && focusPlaceSelection ? selectedPlace : undefined;
     const isolated = Boolean(focusedQuest || focusedMapPlace);
-    const markers = focusedMapPlace ? [] : [...pinGroups(focusedQuest, margin).map(group => marker(group)), ...expandedMarkers()];
+    const controlsByQuest = new Map();
+    const markers = focusedMapPlace ? [] : [...pinGroups(focusedQuest, margin).map(group => marker(group, undefined, controlsByQuest)),
+      ...expandedMarkers(controlsByQuest)];
     const stepElements = drawStepPins(margin);
     const steps = stepElements.filter(element => element.dataset.stepPin);
     const starts = markers.filter(element => element.dataset.markerType);
@@ -3259,11 +3511,21 @@ const viewState = {};
     if (grid) addMarkerObstacles(grid, questMarkers, margin, 0, 0, 1);
     positionPlacePins(grid, candidates, margin);
     hideMapTooltip();
-    pins.replaceChildren(...markers);
+    for (const [key, { button }] of questControls) {
+      if (!controlsByQuest.has(key)) button.remove();
+    }
+    questControls = controlsByQuest;
+    for (const node of pins.querySelectorAll('.atlas-pin-line')) node.remove();
+    let nextMarker = pins.firstChild;
+    for (const element of markers) {
+      if (element === nextMarker) nextMarker = element.nextSibling;
+      else pins.insertBefore(element, nextMarker);
+    }
     stepPins.replaceChildren(...stepElements);
     const controls = updatePlaceControls(candidates);
     projectedMarkers = [...markers, ...stepElements, ...controls.map(control => control.button)]
       .map(element => ({ element, ...pinPositions.get(element) }));
+    markerProjectionScale = 1;
     captionView = { controls, questMarkers };
     let nextPlace = null;
     for (let i = controls.length - 1; i >= 0; i--) {
@@ -3272,9 +3534,11 @@ const viewState = {};
       nextPlace = button;
     }
     if (grid) layoutPlaceCaptions(now, 0, 0, 1, grid);
+    motionMarkerRecords = undefined;
+    if (zooming) drawMotionMarkers(1, 0, 0);
     if (focused) {
       const marker = markers.find(button => button.dataset.marker === focused);
-      (marker ?? viewport).focus({ preventScroll: true });
+      if (marker !== document.activeElement) (marker ?? viewport).focus({ preventScroll: true });
     } else if (focusedStep !== null) {
       (steps.find(button => button.dataset.stepPin === focusedStep) ?? viewport).focus({ preventScroll: true });
     } else if (focusedPlace !== null) {
