@@ -13,7 +13,7 @@
   <meta property="og:image:height" content="590">
   <meta property="og:image:alt" content="Like a Dragon: Kenzan! Side Content Guide banner with Musashi">
   <meta name="twitter:card" content="summary_large_image">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; connect-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'; img-src 'self' data:; font-src data:; style-src 'unsafe-inline'; script-src 'self' 'sha256-3YcdiPmYH262LNgo4R3cHUNFFwV9NgtCwVIsHsdWCH8='"><style>/*
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; connect-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'; img-src 'self' data:; font-src data:; style-src 'unsafe-inline'; script-src 'self' 'sha256-dtIWFazM+n8zj+U/MrJKhsqWbw08O9SdB7bemD0A6I0='"><style>/*
 Copyright 2010-2022 Adobe (http://www.adobe.com/), with Reserved Font Name 'Source'. All Rights Reserved. Source is a trademark of Adobe in the United States and/or other countries.
 
 This Font Software is licensed under the SIL Open Font License, Version 1.1.
@@ -245,7 +245,9 @@ span.atlas-district-label { color: #ffe2ed; -webkit-text-stroke-color: #4f2b48; 
 #atlas-markers { transform-origin: 0 0; }
 .atlas-motion-markers { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
 #atlas-map[data-motion-markers] #atlas-markers { visibility: hidden; }
-#atlas-map:is([data-dragging], [data-zooming]) > :is(#atlas-world, #atlas-markers) { will-change: transform; }
+/* During zoom, let Chrome manage the artwork layer's raster scale as the view widens. */
+#atlas-map:is([data-dragging], [data-inertia]):not([data-zooming]) > #atlas-world,
+#atlas-map:is([data-dragging], [data-zooming], [data-inertia]) > #atlas-markers { will-change: transform; }
 #atlas-map[data-dragging] :is(.atlas-pin, .atlas-place) { pointer-events: none; }
 #atlas-places { z-index: 1; }
 #atlas-pins { z-index: 2; }
@@ -1475,8 +1477,15 @@ function createMotionMarkerLayer(markerLayer, signal) {
   const compact = matchMedia('(max-width: 48rem)');
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
   const pointers = new Map();
+  const dragSamples = [];
   const camera = { x: 0, y: 0, scale: 1 };
   const panMargin = 160;
+  const panVelocityWindow = 64;
+  const panHistoryLimit = 160;
+  const panIdleLimit = 85;
+  // CSS pixels per millisecond and per millisecond squared.
+  const panMaxSpeed = 1.35;
+  const panDeceleration = .00225;
   const maxScale = 12;
   const canvasMarkerThreshold = 140;
   const wheelDuration = 200;
@@ -1489,6 +1498,7 @@ function createMotionMarkerLayer(markerLayer, signal) {
   const captionMoveThreshold = 4;
   const captionReturnClearance = 8;
   const collisionCellSize = 64;
+  const placeMoveDuration = 180;
   const pinOffsetSteps = [0, 22, -22, 44, -44, 66, -66];
   const pinOffsets = pinOffsetSteps.flatMap(dy => pinOffsetSteps.map(dx => ({ dx, dy })))
     .sort((a, b) => Math.hypot(a.dx, a.dy) - Math.hypot(b.dx, b.dy));
@@ -1497,6 +1507,7 @@ function createMotionMarkerLayer(markerLayer, signal) {
   const pinPositions = new WeakMap();
   const preferredCaptionSlots = new WeakMap();
   const placeControls = new Map();
+  const placeMoves = new Map();
   let questControls = new Map();
   const motionPaint = new WeakMap();
   const placeMotionText = '750 11px "Segoe UI", "Segoe UI Symbol", sans-serif';
@@ -1732,7 +1743,7 @@ function createMotionMarkerLayer(markerLayer, signal) {
   }
 
   function showMapTooltip(pin) {
-    if (pin === mapTooltipPin || pointers.size || cameraMotion || pendingWheel) return;
+    if (pin === mapTooltipPin || pointers.size || cameraMotion || pendingWheel || placeMoves.has(pin)) return;
     const { name, renderDetails } = tooltipDetails.get(pin);
     hideMapTooltip();
     mapTooltipPin = pin;
@@ -1852,6 +1863,40 @@ function createMotionMarkerLayer(markerLayer, signal) {
     return view;
   }
 
+  function recordDragPosition(time) {
+    const last = dragSamples.at(-1);
+    if (last?.x === camera.x && last.y === camera.y) return;
+    while (dragSamples.length && dragSamples[0].time < time - panHistoryLimit) dragSamples.shift();
+    dragSamples.push({ x: camera.x, y: camera.y, time });
+  }
+
+  function startPanInertia(time) {
+    const last = dragSamples.at(-1);
+    if (reducedMotion.matches || dragSamples.length < 2 || time - last.time >= panIdleLimit) return false;
+    // Time between the last movement and mouse-up counts as part of the velocity sample.
+    let index = dragSamples.length - 2;
+    while (index > 0 && dragSamples[index - 1].time >= time - panVelocityWindow) index--;
+    const first = dragSamples[index];
+    if (time - first.time > panHistoryLimit) return false;
+    const elapsed = Math.max(16, time - first.time);
+    const dx = last.x - first.x;
+    const dy = last.y - first.y;
+    const distance = Math.hypot(dx, dy);
+    const speed = Math.min(distance / elapsed, panMaxSpeed);
+    if (speed < .06) return false;
+
+    // Constant deceleration travels half the initial speed times the stopping time.
+    const duration = speed / panDeceleration;
+    const travel = speed * duration / (2 * distance);
+    const start = { ...camera };
+    const destination = constrainCamera({
+      x: start.x + dx * travel, y: start.y + dy * travel, scale: start.scale,
+    });
+    if (Math.hypot(destination.x - start.x, destination.y - start.y) < 2) return false;
+    cameraMotion = { start, destination, duration, inertia: true, time: performance.now() };
+    return true;
+  }
+
   function moveCamera(destination, animate, { fly = false, stepZoomRatio } = {}) {
     pendingWheel = undefined;
     constrainCamera(destination);
@@ -1905,7 +1950,7 @@ function createMotionMarkerLayer(markerLayer, signal) {
   }
 
   function zoomAt(scale, anchor, { target = anchor, animate = false, from = camera } = {}) {
-    if (!animate && cameraMotion) {
+    if (cameraMotion && (!animate || cameraMotion.inertia)) {
       cameraMotion = undefined;
       requestDraw();
     }
@@ -1924,7 +1969,7 @@ function createMotionMarkerLayer(markerLayer, signal) {
 
   function zoomBy(factor) {
     const anchor = { x: viewportWidth / 2, y: viewportHeight / 2 };
-    const target = cameraMotion?.destination ?? camera;
+    const target = cameraMotion?.inertia ? camera : cameraMotion?.destination ?? camera;
     zoomAt(target.scale * factor, anchor, { animate: true, from: target });
   }
 
@@ -2788,7 +2833,8 @@ function createMotionMarkerLayer(markerLayer, signal) {
       if (grid) {
         const fits = ({ dx, dy }) => x + dx >= 10 - margin && x + dx <= width - 10 && y + dy >= 10 - margin && y + dy <= height - 10
           && !grid.overlaps({ x: x + dx - 10, y: y + dy - 10, w: 20, h: 20 });
-        if (!offset || !fits(offset)) offset = pinOffsets.find(fits);
+        // Keep valid offsets in motion. At rest, try the real anchor first.
+        if (!margin || !offset || !fits(offset)) offset = pinOffsets.find(fits);
       }
       if (offset) Object.assign(candidate, { x: x + offset.dx, y: y + offset.dy, anchor: { x, y }, offset });
       grid?.add({ x: candidate.x - 10, y: candidate.y - 10, w: 20, h: 20, owner: candidate.place });
@@ -2800,6 +2846,58 @@ function createMotionMarkerLayer(markerLayer, signal) {
     line.className = `atlas-place-line ${className}`;
     line.setAttribute('aria-hidden', 'true');
     return line;
+  }
+
+  function paintPlaceOffset(control, dx, dy) {
+    const { button, pinLine, pinOffset } = control;
+    const x = dx - (pinOffset?.dx ?? 0);
+    const y = dy - (pinOffset?.dy ?? 0);
+    // Keep the camera transform separate from the animation's screen-space displacement.
+    if (x || y) button.style.translate = `calc(-50% + ${x}px) calc(-50% + ${y}px)`;
+    else button.style.removeProperty('translate');
+    pinLine.hidden = !dx && !dy;
+    if (!pinLine.hidden) moveElement(pinLine, 8, 8, ` rotate(${Math.atan2(-dy, -dx)}rad) scaleX(${Math.hypot(dx, dy)})`);
+  }
+
+  function updatePlaceOffset(control, offset, animate, now) {
+    const { button, pinOffset: previous } = control;
+    const from = previous ?? pinOffsets[0];
+    const to = offset ?? pinOffsets[0];
+    control.pinOffset = offset;
+    if (from.dx === to.dx && from.dy === to.dy) return;
+
+    if (!control.pinLine) {
+      control.pinLine = makePlaceLine('atlas-revelation-line');
+      button.insertBefore(control.pinLine, control.leader);
+    }
+    const start = placeMoves.get(button)?.current ?? from;
+    if (animate && button.isConnected && (start.dx !== to.dx || start.dy !== to.dy)) {
+      placeMoves.set(button, { control, start, to, time: now, current: start });
+      paintPlaceOffset(control, start.dx, start.dy);
+      requestPan();
+    } else {
+      placeMoves.delete(button);
+      paintPlaceOffset(control, to.dx, to.dy);
+    }
+  }
+
+  function advancePlaceMoves(now) {
+    for (const [button, movement] of placeMoves) {
+      const { control, start, to, time } = movement;
+      const progress = reducedMotion.matches ? 1 : clamp((now - time) / placeMoveDuration, 0, 1);
+      if (progress === 1) {
+        placeMoves.delete(button);
+        paintPlaceOffset(control, to.dx, to.dy);
+        if (button.matches(':hover, :focus-visible')) showMapTooltip(button);
+      } else {
+        const remaining = (1 - progress) ** 3;
+        const dx = to.dx + (start.dx - to.dx) * remaining;
+        const dy = to.dy + (start.dy - to.dy) * remaining;
+        movement.current = { dx, dy };
+        paintPlaceOffset(control, dx, dy);
+      }
+    }
+    if (placeMoves.size) requestPan();
   }
 
   function createPlaceControl(index, place) {
@@ -2840,7 +2938,7 @@ function createMotionMarkerLayer(markerLayer, signal) {
     return { button, place, caption, leader, text };
   }
 
-  function updatePlaceControls(candidates) {
+  function updatePlaceControls(candidates, animateOffsets, now) {
     const active = new Set();
     const controls = [];
     for (const { index, place, x, y, anchor, offset } of candidates) {
@@ -2851,22 +2949,15 @@ function createMotionMarkerLayer(markerLayer, signal) {
         placeControls.set(index, control);
       }
       const { button } = control;
-      control.pinOffset = offset;
       movePin(button, x, y, anchor);
+      updatePlaceOffset(control, offset, animateOffsets, now);
       if (canOffsetPin(place) || selectedPlace === place) button.setAttribute('aria-pressed', String(selectedPlace === place));
       else button.removeAttribute('aria-pressed');
-      if (anchor && (anchor.x !== x || anchor.y !== y)) {
-        if (!control.pinLine) {
-          control.pinLine = makePlaceLine('atlas-revelation-line');
-          button.insertBefore(control.pinLine, control.leader);
-        }
-        control.pinLine.hidden = false;
-        moveLine(control.pinLine, 8, 8, anchor.x - x, anchor.y - y);
-      } else if (control.pinLine) control.pinLine.hidden = true;
       controls.push(control);
     }
     for (const [index, { button }] of placeControls) {
       if (!active.has(index)) {
+        placeMoves.delete(button);
         button.remove();
         placeControls.delete(index);
       }
@@ -2960,7 +3051,7 @@ function createMotionMarkerLayer(markerLayer, signal) {
   }
 
   function updateDragCaptions(now, dx, dy, ratio) {
-    if (pointers.size !== 1 || !captionView?.controls.length) return;
+    if ((pointers.size !== 1 && !cameraMotion?.inertia) || !captionView?.controls.length) return;
     const elapsed = now - lastCaptionLayout.time;
     const movement = Math.max(Math.abs(camera.x - lastCaptionLayout.x), Math.abs(camera.y - lastCaptionLayout.y));
     if (movement < captionMoveThreshold) return;
@@ -3201,7 +3292,7 @@ function createMotionMarkerLayer(markerLayer, signal) {
     }
   }
 
-  function updateDetailTiles(areaImage, enabled) {
+  function updateDetailTiles(areaImage, enabled, inMotion = false) {
     const { tiles, bounds } = areaImage;
     if (!tiles) return;
     const { x, y, scale } = camera;
@@ -3215,7 +3306,7 @@ function createMotionMarkerLayer(markerLayer, signal) {
         && top + tile.h * scaleY >= -margin && top <= viewportHeight + margin;
       if (needed) {
         if (!tile.image) loadDetailTile(areaImage, tile);
-      } else {
+      } else if (!(enabled && inMotion && tile.ready)) {
         imageQueue.delete(tile);
         if (tile.image) {
           if (tile.ready) cacheImage(tile.image);
@@ -3229,7 +3320,7 @@ function createMotionMarkerLayer(markerLayer, signal) {
     if (areaImage.needsPaint) paintDetailTiles(areaImage);
   }
 
-  function updateMapImages(inMotion) {
+  function updateMapImages(inMotion, zooming) {
     const { x, y, scale } = camera;
     const pixelScale = scale * (window.devicePixelRatio || 1);
     for (const tile of mapImages) {
@@ -3239,7 +3330,11 @@ function createMotionMarkerLayer(markerLayer, signal) {
         && y + (bounds.y + bounds.h) * scale >= -margin && y + bounds.y * scale <= viewportHeight + margin;
       if (!nearby) {
         if (inMotion) {
-          if (imageQueue.delete(tile)) tile.source = undefined;
+          if (imageQueue.delete(tile)) tile.source = tile.image.getAttribute('src') ?? undefined;
+          if (!zooming && tile.detailTilesActive) {
+            // Stop fetching offscreen crops but keep the displayed raster until the pan ends.
+            for (const crop of tile.tiles) imageQueue.delete(crop);
+          }
           continue;
         }
         tile.detailTilesActive = false;
@@ -3247,8 +3342,8 @@ function createMotionMarkerLayer(markerLayer, signal) {
         loadMapImage(tile);
         continue;
       }
-      if (inMotion) {
-        // Keep the current bitmap during motion and use previews for newly exposed areas.
+      if (zooming) {
+        // Hold the current tiers until scale settles. At a fixed scale, panning can load detail.
         if (!tile.source) loadMapImage(tile, tile.preview ?? tile.medium ?? tile.detail);
         continue;
       }
@@ -3259,28 +3354,36 @@ function createMotionMarkerLayer(markerLayer, signal) {
       const mediumThreshold = tile.source === tile.medium ? 176 : 208;
       const useDetail = !overview && pixels >= detailThreshold;
       tile.detailTilesActive = Boolean(tile.tiles && !tile.detailTilesFailed && useDetail);
-      updateDetailTiles(tile, tile.detailTilesActive);
       let desired = tile.preview ?? tile.medium ?? tile.detail;
       if (useDetail && !tile.detailTilesActive) desired = tile.detail;
       else if (!overview && tile.medium && pixels >= mediumThreshold) desired = tile.medium;
       // Start from the small image on first entry, then promote after it decodes.
-      if (!tile.image.hasAttribute('src') && tile.preview) desired = tile.preview;
+      const hasFallback = tile.image.hasAttribute('src');
+      if (!hasFallback && tile.preview) desired = tile.preview;
       loadMapImage(tile, desired);
+      // Keep decoded tiles through a pan and wait for the fallback before compositing new ones.
+      updateDetailTiles(tile, tile.detailTilesActive && hasFallback, inMotion);
     }
     pumpImageQueue();
   }
 
   function advanceCamera(now) {
     if (!cameraMotion) return;
-    const { start, destination, duration, flight, wheel, time } = cameraMotion;
+    const { start, destination, duration, flight, wheel, inertia, time } = cameraMotion;
     const elapsed = now - time;
     if (elapsed >= duration || reducedMotion.matches) {
-      Object.assign(camera, destination);
+      if (!inertia || !reducedMotion.matches) Object.assign(camera, destination);
       cameraMotion = undefined;
       fullDrawNeeded = true;
       return;
     }
     const progress = clamp(elapsed / duration, 0, 1);
+    if (inertia) {
+      const eased = progress * (2 - progress);
+      camera.x = start.x + (destination.x - start.x) * eased;
+      camera.y = start.y + (destination.y - start.y) * eased;
+      return;
+    }
     if (wheel) {
       const easing = sampleWheelEasing(wheel.control, progress);
       const factor = Math.exp(wheel.logChange * easing.value);
@@ -3421,7 +3524,7 @@ function createMotionMarkerLayer(markerLayer, signal) {
 
   function drawMotionMarkers(ratio, dx, dy) {
     // Keep native controls when a pin has keyboard focus, and use the DOM at sparse zoom levels.
-    if (projectedMarkers.length < canvasMarkerThreshold || markerLayer.contains(document.activeElement)) {
+    if (projectedMarkers.length < canvasMarkerThreshold || placeMoves.size || markerLayer.contains(document.activeElement)) {
       hideMotionMarkers();
       return false;
     }
@@ -3439,19 +3542,24 @@ function createMotionMarkerLayer(markerLayer, signal) {
     if (!viewportWidth || !viewportHeight) return;
     const wheel = pendingWheel;
     pendingWheel = undefined;
-    if (wheel?.delta && !cameraMotion?.wheel) cameraMotion = undefined;
+    if (wheel?.delta && !cameraMotion?.wheel) {
+      if (cameraMotion?.inertia) fullDrawNeeded = true;
+      cameraMotion = undefined;
+    }
     advanceCamera(now);
     constrainCamera(camera);
     // Advance the existing curve before applying new input, even on consecutive wheel frames.
     if (wheel?.delta) applyWheelZoom(now, wheel);
+    advancePlaceMoves(now);
     const moving = Boolean(cameraMotion);
     if (moving) requestPan();
     const zooming = pointers.size === 2 || Boolean(cameraMotion
       && (cameraMotion.flight || cameraMotion.start.scale !== cameraMotion.destination.scale));
     viewport.toggleAttribute('data-zooming', zooming);
+    viewport.toggleAttribute('data-inertia', Boolean(cameraMotion?.inertia));
     constrainCamera(camera);
     moveElement(canvas, camera.x, camera.y, ` scale(${camera.scale})`);
-    updateMapImages(moving || pointers.size > 0);
+    updateMapImages(moving || pointers.size > 0, zooming);
     if (!zooming) hideMotionMarkers();
     if (!fullDrawNeeded && markerView?.margin === 0 && !moving && !pointers.size
       && camera.x === markerView.x && camera.y === markerView.y && camera.scale === markerView.scale) return;
@@ -3522,7 +3630,7 @@ function createMotionMarkerLayer(markerLayer, signal) {
       else pins.insertBefore(element, nextMarker);
     }
     stepPins.replaceChildren(...stepElements);
-    const controls = updatePlaceControls(candidates);
+    const controls = updatePlaceControls(candidates, !margin && !reducedMotion.matches, now);
     projectedMarkers = [...markers, ...stepElements, ...controls.map(control => control.button)]
       .map(element => ({ element, ...pinPositions.get(element) }));
     markerProjectionScale = 1;
@@ -3806,12 +3914,19 @@ function createMotionMarkerLayer(markerLayer, signal) {
   }, { capture: true, signal: viewSignal });
   viewport.addEventListener('pointerdown', event => {
     hideMapTooltip();
-    if (event.button !== 0 || event.target.closest('button') || pointers.size >= 2) return;
+    if (event.button !== 0 || pointers.size >= 2) return;
+    if (cameraMotion?.inertia) {
+      cameraMotion = undefined;
+      requestDraw();
+    }
+    if (event.target.closest('button')) return;
     event.preventDefault();
     cameraMotion = undefined;
     pendingWheel = undefined;
     expanded = undefined;
     pointers.set(event.pointerId, localPoint(event));
+    dragSamples.length = 0;
+    if (pointers.size === 1) recordDragPosition(event.timeStamp);
     viewport.setPointerCapture(event.pointerId);
     viewport.setAttribute('data-dragging', '');
     viewport.focus({ preventScroll: true });
@@ -3822,8 +3937,10 @@ function createMotionMarkerLayer(markerLayer, signal) {
     if (!before) return;
     const after = localPoint(event);
     pointers.set(event.pointerId, after);
-    const other = [...pointers.entries()].find(([id]) => id !== event.pointerId)?.[1];
-    if (other) {
+    if (pointers.size === 2) {
+      const ids = pointers.keys();
+      const first = ids.next().value;
+      const other = pointers.get(first === event.pointerId ? ids.next().value : first);
       const oldDistance = Math.hypot(before.x - other.x, before.y - other.y);
       const newDistance = Math.hypot(after.x - other.x, after.y - other.y);
       if (oldDistance > 1) zoomAt(camera.scale * newDistance / oldDistance, midpoint(before, other), { target: midpoint(after, other) });
@@ -3831,6 +3948,8 @@ function createMotionMarkerLayer(markerLayer, signal) {
       fittedSteps = undefined;
       camera.x += after.x - before.x;
       camera.y += after.y - before.y;
+      constrainCamera(camera);
+      recordDragPosition(event.timeStamp);
       overview = false;
       requestPan();
     }
@@ -3838,7 +3957,18 @@ function createMotionMarkerLayer(markerLayer, signal) {
   for (const event of ['pointerup', 'pointercancel', 'lostpointercapture']) {
     viewport.addEventListener(event, pointer => {
       if (!pointers.delete(pointer.pointerId)) return;
-      if (!pointers.size) viewport.removeAttribute('data-dragging');
+      if (!pointers.size) {
+        viewport.removeAttribute('data-dragging');
+        const coasting = event === 'pointerup' && startPanInertia(pointer.timeStamp);
+        dragSamples.length = 0;
+        if (coasting) {
+          requestPan();
+          return;
+        }
+      } else {
+        dragSamples.length = 0;
+        recordDragPosition(pointer.timeStamp);
+      }
       requestDraw();
     });
   }
@@ -4094,7 +4224,8 @@ function createMotionMarkerLayer(markerLayer, signal) {
     requestDraw();
   }, { signal: viewSignal });
   viewSignal.addEventListener('abort', () => {
-    const { x, y, scale } = cameraMotion?.destination ?? camera;
+    placeMoves.clear();
+    const { x, y, scale } = cameraMotion?.inertia ? camera : cameraMotion?.destination ?? camera;
     Object.assign(viewState, {
       camera: { x: (viewportWidth / 2 - x) / scale, y: (viewportHeight / 2 - y) / scale, scale }, overview,
       chapter: chapter.value, firstWindow: firstWindow.value, type: type.value, area: area.value, fitSteps: Boolean(fittedSteps),
