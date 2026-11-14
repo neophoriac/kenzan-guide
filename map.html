@@ -13,7 +13,7 @@
   <meta property="og:image:height" content="590">
   <meta property="og:image:alt" content="Like a Dragon: Kenzan! Side Content Guide banner with Musashi">
   <meta name="twitter:card" content="summary_large_image">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; connect-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'; img-src 'self' data:; style-src 'unsafe-inline'; script-src 'self' 'sha256-lvYQY4nMPYx54BP+wqlj1SIKg26GTHbMx0GJUMOdEiM='"><style>body{margin:0}.sidebar-dock {
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; connect-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'; img-src 'self' data:; style-src 'unsafe-inline'; script-src 'self' 'sha256-a6l4TAvb+Eco9AUS1cJUf9yYJydn0qIBzzA9OEOKCh8='"><style>body{margin:0}.sidebar-dock {
   position: relative; z-index: 5; display: grid; grid-template-rows: 2.75rem minmax(0, 1fr);
   min-width: 0; min-height: 0; background: var(--sidebar); border-right: 1px solid var(--line);
 }
@@ -1412,7 +1412,7 @@ span.atlas-district-label { color: #ffe2ed; -webkit-text-stroke-color: #4f2b48; 
       (viewportHeight - padding * 2) / world.height));
   }
 
-  function moveCamera(destination, animate) {
+  function moveCamera(destination, animate, fly = false) {
     destination.x = clamp(destination.x, 32 - world.width * destination.scale, viewportWidth - 32);
     destination.y = clamp(destination.y, 32 - world.height * destination.scale, viewportHeight - 32);
     if (animate && markerView && !reducedMotion.matches) {
@@ -1421,7 +1421,25 @@ span.atlas-district-label { color: #ffe2ed; -webkit-text-stroke-color: #4f2b48; 
         requestDraw();
         return;
       }
-      cameraMotion = { start: { ...camera }, destination, time: performance.now() };
+      const start = { ...camera };
+      const centerX = viewportWidth / 2;
+      const centerY = viewportHeight / 2;
+      const dx = (centerX - destination.x) / destination.scale - (centerX - start.x) / start.scale;
+      const dy = (centerY - destination.y) / destination.scale - (centerY - start.y) / start.scale;
+      const widerScale = Math.min(start.scale, destination.scale);
+      // Measure how many screens we cross at the wider of the two views.
+      const travel = Math.max(Math.abs(dx) / viewportWidth, Math.abs(dy) / viewportHeight) * widerScale;
+      const zoomChange = Math.abs(Math.log2(destination.scale / start.scale));
+      const duration = 520 + Math.min(880, 220 * Math.log2(1 + travel) + 145 * zoomChange);
+      const widestScale = fly && travel > .55
+        ? Math.max(fitScale(), widerScale / (1 + 1.3 * (travel - .55)))
+        : widerScale;
+      const arc = widestScale < widerScale ? {
+        scale: widestScale,
+        start: Math.sqrt(Math.log(start.scale / widestScale)),
+        end: Math.sqrt(Math.log(destination.scale / widestScale)),
+      } : undefined;
+      cameraMotion = { start, destination, duration, arc, time: performance.now() };
     } else {
       cameraMotion = undefined;
       Object.assign(camera, destination);
@@ -1433,7 +1451,7 @@ span.atlas-district-label { color: #ffe2ed; -webkit-text-stroke-color: #4f2b48; 
     fittedSteps = undefined;
     expanded = undefined;
     const next = clamp(scale, fitScale(), maxScale);
-    moveCamera({ x: viewportWidth / 2 - x * next, y: targetY - y * next, scale: next }, animate);
+    moveCamera({ x: viewportWidth / 2 - x * next, y: targetY - y * next, scale: next }, animate, true);
   }
 
   function fitAll(animate = true) {
@@ -2438,8 +2456,8 @@ span.atlas-district-label { color: #ffe2ed; -webkit-text-stroke-color: #4f2b48; 
 
   function advanceCamera(now) {
     if (!cameraMotion) return false;
-    const { start, destination, time } = cameraMotion;
-    const progress = clamp((now - time) / 320, 0, 1);
+    const { start, destination, duration, arc, time } = cameraMotion;
+    const progress = clamp((now - time) / duration, 0, 1);
     if (progress === 1 || reducedMotion.matches) {
       Object.assign(camera, destination);
       cameraMotion = undefined;
@@ -2447,7 +2465,13 @@ span.atlas-district-label { color: #ffe2ed; -webkit-text-stroke-color: #4f2b48; 
       return false;
     }
     const eased = progress * progress * (3 - 2 * progress);
-    camera.scale = start.scale * (destination.scale / start.scale) ** eased;
+    if (arc) {
+      // A quadratic in log scale reaches its widest point with no change in zoom velocity there.
+      const distanceFromWidest = (1 - eased) * arc.start - eased * arc.end;
+      camera.scale = arc.scale * Math.exp(distanceFromWidest ** 2);
+    } else {
+      camera.scale = start.scale * (destination.scale / start.scale) ** eased;
+    }
     const from = (1 - eased) * camera.scale / start.scale;
     const to = eased * camera.scale / destination.scale;
     camera.x = viewportWidth / 2 + (start.x - viewportWidth / 2) * from + (destination.x - viewportWidth / 2) * to;
