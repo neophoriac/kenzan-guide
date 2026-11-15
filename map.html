@@ -15,7 +15,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta http-equiv="Content-Security-Policy" content="default-src 'none'; connect-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'; img-src 'self' data:; font-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'sha256-ZEniU/D1Iqt4gY4yWggd8jHSidQBrHhOZ5jiMuS2iBk='"><link rel="stylesheet" href="assets/site.e21fa98ab7098c4a.css">
   <script defer src="assets/sidebar.4c16a0d7aee086ad.js"></script>
-  <script defer src="assets/atlas-runtime.e3f634da588b0e8a.js"></script>
+  <script defer src="assets/atlas-runtime.b7088fe7d98e2ce9.js"></script>
   <style>
 body{margin:0}
 .atlas-shell {
@@ -88,6 +88,10 @@ span.atlas-map-label {
 span.atlas-district-label { color: #ffe2ed; -webkit-text-stroke-color: #4f2b48; }
 .atlas-map-group { position: absolute; border: 2px solid #647268; border-radius: 18px; background: #303a33; }
 .atlas-map-group span { position: absolute; top: 14px; left: 20px; color: #fcf3dd; font: 500 32px/1.15 Georgia, serif; }
+@supports (-moz-appearance: none) {
+  /* Keep Firefox on the outlined glyph path as area titles scale during zoom. */
+  #atlas-map[data-wheel-zoom-out] :is(.tile-name, .atlas-map-group span) { -webkit-text-stroke: 0.025px currentColor; }
+}
 #atlas-markers, #atlas-places, #atlas-pins, #atlas-step-pins { position: absolute; inset: 0; pointer-events: none; }
 #atlas-markers { transform-origin: 0 0; }
 .atlas-motion-markers { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
