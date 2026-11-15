@@ -8,6 +8,27 @@ function createMotionMarkerLayer(markerLayer, signal) {
   let pixelRatio;
   let lastRecords;
   let prepared;
+  let warmup;
+
+  function warmSpriteCopy() {
+    if (canvas || signal.aborted) return;
+    const bitmap = document.createElement('canvas');
+    bitmap.width = bitmap.height = 64;
+    const pen = bitmap.getContext('2d');
+    const target = document.createElement('canvas');
+    target.width = target.height = 128;
+    const surface = target.getContext('2d');
+    if (!pen || !surface) return;
+    pen.fillRect(0, 0, bitmap.width, bitmap.height);
+    surface.drawImage(bitmap, 0, 0);
+  }
+
+  function warm() {
+    // Give the first map image a frame before initializing the sprite copy path.
+    requestAnimationFrame(() => {
+      if (!canvas && !signal.aborted) warmup = window.requestIdleCallback?.(warmSpriteCopy);
+    });
+  }
 
   function paintSprite(style, ratio) {
     const key = JSON.stringify(style);
@@ -130,16 +151,17 @@ function createMotionMarkerLayer(markerLayer, signal) {
   }
 
   signal.addEventListener('abort', () => {
+    if (warmup !== undefined) window.cancelIdleCallback(warmup);
     hide();
     sprites.clear();
     canvas?.remove();
   }, { once: true });
-  return { draw, hide };
+  return { draw, hide, warm };
 }
 
 // Levels are listed coarsest first. Crop coordinates are pixels in their level.
 // A missing grid cell is transparent. A level may also be a single whole image.
-function createAtlasPyramid({ levels, tileSize, fallback }) {
+function createAtlasPyramid({ levels, tileSize, fallback, wholeViewCoverage, preloadMargin = 64, opaque = false }) {
   const prepared = levels.map(level => {
     const onlyTile = level.tiles.length === 1 ? level.tiles[0] : undefined;
     const whole = onlyTile && onlyTile.x === 0 && onlyTile.y === 0 &&
@@ -154,6 +176,10 @@ function createAtlasPyramid({ levels, tileSize, fallback }) {
   return {
     fallback: prepared[0]?.whole ?? fallback,
     levels: prepared,
+    wholeViewCoverage,
+    wholeLevels: wholeViewCoverage ? prepared.filter(level => level.whole) : [],
+    preloadMargin,
+    opaque,
     requested: new Set(),
     painted: new Set(),
   };
@@ -197,14 +223,32 @@ function clearPyramidRaster(area) {
   area.element.removeAttribute('data-pyramid-composited');
 }
 
-function paintPyramidTiles(area, level, ready, ownerDocument) {
+function pyramidRasterBounds(level, candidates) {
+  let left = level.width, top = level.height, right = 0, bottom = 0;
+  for (const { tile } of candidates) {
+    left = Math.min(left, tile.x);
+    top = Math.min(top, tile.y);
+    right = Math.max(right, tile.x + tile.w);
+    bottom = Math.max(bottom, tile.y + tile.h);
+  }
+  // Leave space for filtering across the edge of the cropped canvas.
+  const x = Math.max(0, left - 2), y = Math.max(0, top - 2);
+  return { x, y, w: Math.min(level.width, right + 2) - x, h: Math.min(level.height, bottom + 2) - y };
+}
+
+function paintPyramidTiles(area, level, ready, ownerDocument, candidates) {
   const { pyramid, image } = area;
   if (!ready.length) {
     clearPyramidRaster(area);
     return true;
   }
   const base = image.naturalWidth ? image : undefined;
-  const sameLayer = pyramid.paintedLevel === level && pyramid.base === base;
+  const { width, height } = level;
+  const cropped = pyramid.opaque;
+  const { x, y, w, h } = cropped ? pyramidRasterBounds(level, candidates) : { x: 0, y: 0, w: width, h: height };
+  const previous = pyramid.raster;
+  const sameBounds = previous?.x === x && previous.y === y && previous.canvas.width === w && previous.canvas.height === h;
+  const sameLayer = sameBounds && pyramid.paintedLevel === level && pyramid.base === base;
   if (sameLayer && pyramid.painted.size === ready.length && ready.every(tile => pyramid.painted.has(tile))) return true;
 
   if (!pyramid.raster) {
@@ -217,7 +261,6 @@ function paintPyramidTiles(area, level, ready, ownerDocument) {
     area.element.append(canvas);
   }
   const { canvas, context } = pyramid.raster;
-  const { width, height } = level;
   const next = new Set(ready);
   // Keep the fallback and detail on one surface so the browser samples their join once.
   if (sameLayer) {
@@ -235,9 +278,17 @@ function paintPyramidTiles(area, level, ready, ownerDocument) {
       context.restore();
     }
   } else {
-    if (canvas.width !== width) canvas.width = width;
-    if (canvas.height !== height) canvas.height = height;
-    context.clearRect(0, 0, width, height);
+    if (canvas.width !== w) canvas.width = w;
+    if (canvas.height !== h) canvas.height = h;
+    pyramid.raster.x = x;
+    pyramid.raster.y = y;
+    if (cropped) {
+      canvas.style.width = 100 * w / width + '%';
+      canvas.style.height = 100 * h / height + '%';
+      canvas.style.transform = `translate(${100 * x / w}%, ${100 * y / h}%)`;
+    }
+    context.setTransform(1, 0, 0, 1, -x, -y);
+    context.clearRect(x, y, w, h);
     if (base) context.drawImage(base, 0, 0, width, height);
   }
 
@@ -247,7 +298,7 @@ function paintPyramidTiles(area, level, ready, ownerDocument) {
     context.clearRect(tile.x, tile.y, tile.w, tile.h);
     context.drawImage(tile.image, tile.x, tile.y);
   }
-  area.element.setAttribute('data-pyramid-composited', '');
+  area.element.toggleAttribute('data-pyramid-composited', !cropped);
   pyramid.paintedLevel = level;
   pyramid.base = base;
   pyramid.painted = next;
@@ -257,7 +308,7 @@ function paintPyramidTiles(area, level, ready, ownerDocument) {
 // All geometry is in world units. An optional overview uses the same origin and
 // covers disjoint area rectangles. The host owns the camera, controls, and data.
 function createAtlasImagery({ areas: mapImages, overviewLayer, overviewSources = [], world,
-  signal: viewSignal, onChange: requestPan, ownerDocument,
+  signal: viewSignal, onChange: requestPan, onFirstArtwork, ownerDocument,
   maxImageDecodes = 6, imageCacheBudget = 24 * 1024 * 1024 }) {
   const imageQueue = new Map();
   const imageCache = new Map();
@@ -328,6 +379,11 @@ function createAtlasImagery({ areas: mapImages, overviewLayer, overviewSources =
     while (cachedImageBytes > imageCacheBudget) takeCachedImage(imageCache.keys().next().value);
   }
 
+  function artworkReady() {
+    onFirstArtwork?.();
+    onFirstArtwork = undefined;
+  }
+
   function swapMapImage(tile, image) {
     cacheImage(tile.image);
     tile.image.replaceWith(image);
@@ -340,6 +396,7 @@ function createAtlasImagery({ areas: mapImages, overviewLayer, overviewSources =
         overviewChanges.add(tile);
       }
     }
+    if (image.naturalWidth) artworkReady();
   }
 
   function canLoadImage(tile, source) {
@@ -400,6 +457,7 @@ function createAtlasImagery({ areas: mapImages, overviewLayer, overviewSources =
       overviewPixels = choice.width;
       overviewLoad.pending = undefined;
       requestPan();
+      artworkReady();
     });
   }
 
@@ -555,17 +613,24 @@ function createAtlasImagery({ areas: mapImages, overviewLayer, overviewSources =
 
   function updatePyramid(area, camera, viewportWidth, viewportHeight, pixelRatio) {
     const { pyramid, bounds, element, image } = area;
-    const pixels = Math.max(bounds.w, bounds.h) * camera.scale * pixelRatio;
-    const level = pyramid.levels.find(item => Math.max(item.width, item.height) * 1.15 >= pixels) ?? pyramid.levels.at(-1);
+    const width = bounds.w * camera.scale, height = bounds.h * camera.scale;
+    const pixels = Math.max(width, height) * pixelRatio;
+    // Judge the size of the view independently of where it is panned.
+    const fitsWholeView = pyramid.wholeLevels.length &&
+      Math.min(1, viewportWidth / width) * Math.min(1, viewportHeight / height) >= pyramid.wholeViewCoverage;
+    const levels = fitsWholeView
+      ? pyramid.wholeLevels : pyramid.levels;
+    const level = levels.find(item => Math.max(item.width, item.height) * 1.15 >= pixels) ?? levels.at(-1);
     const shown = image.getAttribute('src');
     if (pyramid.level !== level) {
       pyramid.level = level;
       element.dataset.pyramidScale = level.scaleFactor;
     }
     const desired = level.whole ?? shown ?? pyramid.fallback;
-    const source = !shown && canLoadImage(area, pyramid.fallback) ? pyramid.fallback : desired;
+    const useFallback = !shown && !(pyramid.wholeLevels.length && canLoadImage(area, level.whole));
+    const source = useFallback && canLoadImage(area, pyramid.fallback) ? pyramid.fallback : desired;
     loadMapImage(area, chooseMapImage(area, source, true));
-    const candidates = level.whole ? [] : visiblePyramidTiles(level, bounds, camera, viewportWidth, viewportHeight, 64);
+    const candidates = level.whole ? [] : visiblePyramidTiles(level, bounds, camera, viewportWidth, viewportHeight, pyramid.preloadMargin);
     const requested = new Set(candidates.map(({ tile }) => tile));
     for (const tile of pyramid.requested) {
       if (!requested.has(tile)) {
@@ -581,7 +646,7 @@ function createAtlasImagery({ areas: mapImages, overviewLayer, overviewSources =
       return;
     }
     for (const { tile, onScreen, distance } of candidates) {
-      tile.rank = area.rank === 1 ? 1 : onScreen ? 2 : 3;
+      tile.rank = onScreen ? area.rank === 1 ? 1 : 2 : 3;
       tile.distance = distance;
       if (!tile.image) loadPyramidTile(tile);
     }
@@ -592,7 +657,7 @@ function createAtlasImagery({ areas: mapImages, overviewLayer, overviewSources =
     }
     const ready = candidates.filter(({ tile }) => tile.ready).map(({ tile }) => tile);
     const drawn = ready.length || pyramid.paintedLevel === level
-      ? paintPyramidTiles(area, level, ready, ownerDocument) : false;
+      ? paintPyramidTiles(area, level, ready, ownerDocument, candidates) : false;
     element.toggleAttribute('data-pyramid-ready', Boolean(drawn) && candidates.every(({ tile, onScreen }) => !onScreen || tile.ready));
   }
 
@@ -704,27 +769,27 @@ function createAtlasImagery({ areas: mapImages, overviewLayer, overviewSources =
   return { update };
 }
 
-return (() => {
-  const { world, tiles, quests, objectives, places, placeSymbols, imageryTrials } = JSON.parse(document.querySelector('#atlas-data').textContent);
+// Mounts the markup from atlas/render.cjs. The host owns its lifetime and game rules.
+function mountAtlas(root, { signal: viewSignal, state: viewState = {}, adapter = {}, autoOpen = true } = {}) {
+  const mapShell = root.querySelector('.atlas-shell');
+  const query = selector => mapShell.querySelector(selector);
+  const { world, tiles, quests, objectives, places, placeTypes, questTypes, imageryTrials, config } = JSON.parse(root.querySelector('#atlas-data').textContent);
   const byArea = new Map(tiles.map(tile => [tile.id, tile]));
   const mapPositions = new WeakMap();
-  const revelations = places.filter(place => place.type === 'revelation').flatMap(place =>
-    place.revelations.map(entry => ({ ...entry, place, chapter: entry.window.split('-')[0], type: 'Revelations' })));
-  const shichigoro = places.find(place => place.id === 'shichigoro');
-  const lockerKeys = new Map(places.filter(place => place.type === 'locker-key').map(place => [place.id, place]));
-  const revelationProgressKey = 'kenzan-guide:revelation-done:';
-  const sideProgressKey = 'kenzan-guide:side-done:';
-  const completedRevelations = new Set();
-  const viewport = document.querySelector('#atlas-map');
-  const mapShell = viewport.closest('.atlas-shell');
+  const { story, onCollectibleProgress, onRouteProgress, resolveLink } = adapter;
+  const linkedRouteType = config.linkedRouteType;
+  const linkedRouteLabel = config.linkedRouteLabel ?? 'Activity';
+  const linkedRoutes = places.flatMap(place => (place.routes ?? []).map(entry => ({ ...entry, place, type: linkedRouteType })));
+  const completedRoutes = new Set();
+  const viewport = query('#atlas-map');
   const atlasSidebar = setupSidebar(mapShell, true, undefined, viewSignal, viewState.sidebar);
-  const mapSection = viewport.closest('#quest-map');
-  const integrated = Boolean(mapSection?.hasAttribute('data-integrated'));
-  const atlasStory = integrated ? JSON.parse(document.querySelector('#atlas-story-data').textContent) : undefined;
-  const revelationAbilities = new Map(Object.entries(atlasStory?.revelationAbilities ?? {}));
-  const walkthroughFile = integrated ? '' : 'index.html';
-  const canvas = document.querySelector('#atlas-world');
-  const markerLayer = document.querySelector('#atlas-markers');
+  const storageKey = name => config.storageNamespace + ':' + name;
+  const guideHref = (anchor, prerequisite = false) => config.guideHref === undefined ? undefined
+    : config.guideHref + (prerequisite && config.guideHref ? '?prerequisite' : '') + '#' + anchor;
+  const routeProgressKey = id => adapter.routeProgressKey?.(id) ?? storageKey('route-done:' + id);
+  const canvas = query('#atlas-world');
+  const markerLayer = query('#atlas-markers');
+  const motionMarkers = createMotionMarkerLayer(markerLayer, viewSignal);
   const imageryOptions = new URLSearchParams(location.search);
   const mapImages = [...canvas.querySelectorAll('.atlas-area-image')].map(image => {
     const element = image.parentElement;
@@ -736,7 +801,7 @@ return (() => {
     return {
       element, bounds, image,
       pyramid: selected ? { levels: selected.levels, tileSize: selected.tileSize,
-        fallback: trial.variants.whole.levels[0].tiles[0].source } : undefined,
+        fallback: trial.variants.whole?.levels[0]?.tiles[0]?.source ?? image.dataset.detailSrc } : bounds.pyramid,
       imageTemplate: image.cloneNode(false),
       preview: image.dataset.previewSrc,
       medium: image.dataset.mediumSrc,
@@ -757,75 +822,72 @@ return (() => {
     world,
     signal: viewSignal,
     onChange: requestPan,
+    onFirstArtwork: motionMarkers.warm,
     ownerDocument: canvas.ownerDocument,
   });
-  const streetLabels = document.querySelector('#atlas-streets');
-  const districtLabels = document.querySelector('#atlas-districts');
-  const pins = document.querySelector('#atlas-pins');
-  const stepPins = document.querySelector('#atlas-step-pins');
-  const motionMarkers = createMotionMarkerLayer(markerLayer, viewSignal);
-  const placePinColors = { landmark: '#405a50', travel: '#405a50', save: '#3a643f',
-    palanquin: '#35577e', revelation: '#176667', 'locker-key': '#6d5423' };
-  const questPinColors = { request: '#7c332a', commission: '#285e60', bounty: '#6b4f87', cluster: '#454a36' };
-  const placeLayer = document.querySelector('#atlas-places');
-  const mapTooltip = document.querySelector('#atlas-collectible-tooltip');
+  const streetLabels = query('#atlas-streets');
+  const districtLabels = query('#atlas-districts');
+  const pins = query('#atlas-pins');
+  const stepPins = query('#atlas-step-pins');
+  const questPinColors = Object.fromEntries(Object.values(questTypes).map(({ layer, color }) => [layer, color]));
+  questPinColors.cluster = '#454a36';
+  const placeLayer = query('#atlas-places');
+  const mapTooltip = query('#atlas-collectible-tooltip');
   const tooltipContent = mapTooltip.querySelector('.atlas-tooltip-content');
   const tooltipDetails = new WeakMap();
-  const layerOptions = [...document.querySelectorAll('[data-layer]')];
+  const layerOptions = [...mapShell.querySelectorAll('[data-layer]')];
   const layerById = new Map(layerOptions.map(input => [input.dataset.layer, input]));
-  const collectibleTypes = new Set([...document.querySelectorAll('.atlas-collectibles [data-layer]')].map(input => input.dataset.layer));
-  const hideCollected = document.querySelector(integrated ? '#atlas-unfinished' : '#atlas-hide-collected');
+  const collectibleTypes = new Set([...mapShell.querySelectorAll('.atlas-collectibles [data-layer]')].map(input => input.dataset.layer));
+  const hideCollected = query(story ? '#atlas-unfinished' : '#atlas-hide-collected');
   const collected = new Set();
-  const collectibleProgressKey = 'kenzan-atlas:collected:';
-  const hideCollectedKey = 'kenzan-atlas:hide-collected';
-  const focusSelection = document.querySelector('#atlas-focus-selection');
-  const showAll = document.querySelector('#atlas-show-all');
-  const hideAll = document.querySelector('#atlas-hide-all');
-  const legend = document.querySelector('.atlas-legend');
+  const collectibleProgressKey = storageKey('collected:');
+  const hideCollectedKey = storageKey('hide-collected');
+  const focusSelection = query('#atlas-focus-selection');
+  const showAll = query('#atlas-show-all');
+  const hideAll = query('#atlas-hide-all');
+  const legend = query('.atlas-legend');
   const legendItems = [...legend.querySelectorAll('[data-legend]')];
-  const routes = document.querySelector('.atlas-routes');
+  const routes = query('.atlas-routes');
   const textMeasure = document.createElement('canvas').getContext('2d');
   const captionFont = '600 12px "Segoe UI", sans-serif';
   textMeasure.font = captionFont;
   const markerTextMeasure = document.createElement('canvas').getContext('2d');
   const captionMetrics = new Map();
-  const placeTypes = { building: 'Building', landmark: 'Landmark', save: 'Save point',
-    palanquin: 'Palanquin', travel: 'Entrance', revelation: 'Revelation' };
-  const layerKey = 'kenzan-atlas:visible-layers';
-  const focusKey = 'kenzan-atlas:focus-on-selection';
-  const selectionKey = 'kenzan-atlas:selection';
-  const chapter = document.querySelector('#atlas-chapter');
-  const firstWindow = document.querySelector('#atlas-window');
-  const type = document.querySelector('#atlas-type');
-  const area = document.querySelector('#atlas-area');
-  const objective = document.querySelector('#atlas-window-objective');
-  const revelationFilterNote = document.querySelector('#atlas-revelation-filter-note');
-  const count = document.querySelector('#atlas-count');
-  const results = document.querySelector('#atlas-results');
+  const layerKey = storageKey('visible-layers');
+  const focusKey = storageKey('focus-on-selection');
+  const selectionKey = storageKey('selection');
+  const chapter = query('#atlas-chapter');
+  const firstWindow = query('#atlas-window');
+  const type = query('#atlas-type');
+  const area = query('#atlas-area');
+  const objective = query('#atlas-window-objective');
+  const linkedRouteFilterNote = query('#atlas-route-filter-note');
+  const count = query('#atlas-count');
+  const results = query('#atlas-results');
   const resultRows = new Map();
   const resultCollator = new Intl.Collator(undefined, { numeric: true });
   const resultGroups = [...results.querySelectorAll('[data-result-type]')];
-  const collectibleResults = document.querySelector('#atlas-collectible-results');
+  const collectibleResults = query('#atlas-collectible-results');
   const collectibleResultGroups = [...collectibleResults.querySelectorAll('[data-collectible-result-type]')];
-  const detail = document.querySelector('#atlas-detail');
+  const detail = query('#atlas-detail');
   const sidebarCollectible = document.createElement('div');
   const guideNote = document.createElement('p');
-  const selectionPanel = document.querySelector('#atlas-selection');
-  const selectionName = document.querySelector('#atlas-selection-name');
-  const selectionDetails = document.querySelector('#atlas-selection-collectible');
-  const stepProgress = document.querySelector('#atlas-step-progress');
-  const stepText = document.querySelector('#atlas-step-text');
-  const previousStep = document.querySelector('#atlas-previous-step');
-  const nextStep = document.querySelector('#atlas-next-step');
+  const selectionPanel = query('#atlas-selection');
+  const selectionName = query('#atlas-selection-name');
+  const selectionDetails = query('#atlas-selection-collectible');
+  const stepProgress = query('#atlas-step-progress');
+  const stepText = query('#atlas-step-text');
+  const previousStep = query('#atlas-previous-step');
+  const nextStep = query('#atlas-next-step');
   const currentStep = stepText.parentElement;
   const stepControls = previousStep.parentElement;
-  const selectionDone = document.querySelector('#atlas-selection-done');
-  const clearMapSelection = document.querySelector('#atlas-clear-selection');
-  const showSteps = document.querySelector('#atlas-show-steps');
+  const selectionDone = query('#atlas-selection-done');
+  const clearMapSelection = query('#atlas-clear-selection');
+  const showSteps = query('#atlas-show-steps');
   const mapTools = showSteps.parentElement;
-  const plus = document.querySelector('#atlas-plus');
-  const minus = document.querySelector('#atlas-minus');
-  const fit = document.querySelector('#atlas-fit');
+  const plus = query('#atlas-plus');
+  const minus = query('#atlas-minus');
+  const fit = query('#atlas-fit');
   const coarse = matchMedia('(pointer: coarse)');
   const compact = matchMedia('(max-width: 48rem)');
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
@@ -839,13 +901,13 @@ return (() => {
   // CSS pixels per millisecond and per millisecond squared.
   const panMaxSpeed = 1.35;
   const panDeceleration = .00225;
-  const maxScale = 12;
+  const maxScale = config.maxScale ?? 12;
   const canvasMarkerThreshold = 140;
   const wheelDuration = 200;
   const wheelStartAdvance = 5;
   const wheelRate = .006;
   const defaultWheelControl = { x: .25, y: .1 };
-  const mapLabelScale = 1.7;
+  const mapLabelScale = config.mapLabelScale ?? 1.7;
   const captionHeight = 21;
   const captionInterval = 32;
   const captionMoveThreshold = 4;
@@ -883,14 +945,14 @@ return (() => {
   let captionView;
   let lastCaptionLayout;
   let matches = [];
-  let matchingRevelations = [];
-  let selectedRevelation;
+  let matchingRoutes = [];
+  let selectedRoute;
   let selectedPlace;
   let selectedCollectibleEntry;
   let focusPlaceSelection = false;
   let selectedCluster;
-  let linkedRevelationSteps = false;
-  let revelationStep = 0;
+  let showLinkedRouteSteps = false;
+  let linkedRouteStep = 0;
   let selected;
   let guideState;
   let spotlight;
@@ -969,13 +1031,8 @@ return (() => {
     return labelBounds.get(layer);
   }
 
-  function lockerKeyInfo(place) {
-    return [place.indoor && 'Indoors', place.roof ? 'Roof' : place.surface !== 'Interior' && place.surface,
-      (place.lookUp || place.roof) && 'Look up'].filter(Boolean).join(' · ');
-  }
-
   function placeInfo(place) {
-    return [place.location || byArea.get(place.area).label, place.groupLabel ?? placeTypes[place.type],
+    return [place.location || byArea.get(place.area).label, place.groupLabel ?? placeTypes[place.type]?.label,
       place.approximate && 'Approximate pin'].filter(Boolean).join(' · ');
   }
 
@@ -989,7 +1046,7 @@ return (() => {
 
   function appendRouteSummary(container, route, point, interactive = false) {
     const location = point?.location || (point && byArea.get(point.area).label);
-    appendSummaryText(container, [route.type, `First window ${route.window}`, location].filter(Boolean).join(' · '), 'quest-meta');
+    appendSummaryText(container, [route.type, route.window && `First window ${route.window}`, location].filter(Boolean).join(' · '), 'quest-meta');
     appendSummaryText(container, objectives[route.window]);
     appendSummaryText(container, route.where);
     appendSummaryText(container, route.target && `Target · ${route.target}`);
@@ -999,9 +1056,9 @@ return (() => {
   }
 
   function collectibleProgressIds(place) {
-    if (place.type === 'wild-turtle') return [];
-    if (place.type === 'locker-key') return [`locker-key:${place.id}`];
-    return (place.entries ?? []).map(entry => entry.progressId);
+    if (place.repeatable) return [];
+    if (place.pickup) return [place.pickup.progressId];
+    return (place.entries ?? []).map(entry => entry.progressId).filter(Boolean);
   }
 
   function isCollected(place) {
@@ -1037,30 +1094,31 @@ return (() => {
       container.append(label);
     };
     const guideLink = (anchor, label) => {
-      if (!interactive || !anchor) return;
+      const href = anchor && guideHref(anchor);
+      if (!interactive || !href) return;
       const link = document.createElement('a');
-      link.href = `${walkthroughFile}#${anchor}`;
+      link.href = href;
       link.textContent = label;
       const line = document.createElement('p');
       line.append(link);
       container.append(line);
     };
 
-    if (place.type === 'locker-key') {
-      checkbox(`locker-key:${place.id}`, place.name);
-      const info = [lockerKeyInfo(place), place.mode].filter(Boolean).join(' · ');
+    if (place.pickup) {
+      const { progressId, summary: info, steps: directions, reward, note, link } = place.pickup;
+      checkbox(progressId, place.name);
       if (info) paragraph(info, 'quest-meta');
       const steps = document.createElement('ol');
       steps.className = 'atlas-step-list';
-      for (const step of place.steps) {
+      for (const step of directions ?? []) {
         const item = document.createElement('li');
         item.textContent = step;
         steps.append(item);
       }
       container.append(steps);
-      paragraph(`Locker reward · ${place.reward}`);
-      if (place.note) paragraph(place.note);
-      guideLink(`locker-key-${place.id}`, 'View in locker key guide');
+      if (reward) paragraph(reward);
+      if (note) paragraph(note);
+      if (link) guideLink(link.anchor, link.label);
       return;
     }
 
@@ -1074,15 +1132,13 @@ return (() => {
         heading.textContent = entry.name;
         container.append(heading);
       }
-      checkbox(place.type === 'wild-turtle' ? undefined : entry.progressId, entry.name);
+      checkbox(place.repeatable ? undefined : entry.progressId, entry.name);
       const info = [entry.window && `Story window ${entry.window}`, entry.approximate && 'Approximate location'].filter(Boolean).join(' · ');
       if (info) paragraph(info, 'quest-meta');
       paragraph(entry.detail);
-      if (entry.questId) guideLink(`quest-${entry.questId}`, `Open quest #${entry.questId}`);
-      else if (entry.revelationId) guideLink(`revelation-${entry.revelationId}`, 'Open Revelation');
-      else if (entry.lockerKeyId) guideLink(`locker-key-${entry.lockerKeyId}`, 'Open locker key entry');
-      if (place.entries.length === 1 || entry === selectedCollectibleEntry) {
-        guideLink(`collectible-${collectibleEntryKey(place, entry)}`, 'View in collectibles guide');
+      for (const link of entry.links ?? []) guideLink(link.anchor, link.label);
+      if ((place.entries.length === 1 || entry === selectedCollectibleEntry) && entry.guideLink) {
+        guideLink(entry.guideLink.anchor, entry.guideLink.label);
       }
     }
   }
@@ -1162,7 +1218,7 @@ return (() => {
   }
 
   function questLayer(quest) {
-    return quest.type === 'Bounties' ? 'bounty' : quest.type === 'Commissions' ? 'commission' : 'request';
+    return questTypes[quest.type].layer;
   }
 
   function isCollectible(place) {
@@ -1170,11 +1226,11 @@ return (() => {
   }
 
   function canOffsetPin(place) {
-    return place.type === 'revelation' || isCollectible(place);
+    return Boolean(place.routes) || isCollectible(place);
   }
 
   function updateLegend(focusedTypes) {
-    const showClusters = ['request', 'commission', 'bounty'].some(visible);
+    const showClusters = Object.values(questTypes).some(({ layer }) => visible(layer));
     for (const item of legendItems) {
       const layer = item.dataset.legend;
       const shown = focusedTypes && layer !== 'routes'
@@ -1371,9 +1427,9 @@ return (() => {
 
   function saveSelection() {
     try {
-      const route = selected?.quest ?? selectedRevelation;
-      if (route) localStorage.setItem(selectionKey, JSON.stringify({ id: route.id, step: selected?.step ?? revelationStep,
-        ...(selectedRevelation?.retry && { retry: true }) }));
+      const route = selected?.quest ?? selectedRoute;
+      if (route) localStorage.setItem(selectionKey, JSON.stringify({ id: route.id, step: selected?.step ?? linkedRouteStep,
+        ...(selectedRoute && { kind: 'route' }), ...(selectedRoute?.retry && { retry: true }) }));
       else localStorage.removeItem(selectionKey);
     } catch {
       // Selection still works in the current view when storage is unavailable.
@@ -1387,9 +1443,10 @@ return (() => {
     } catch {
       // An unreadable selection is treated as a fresh visit.
     }
-    if (explicitId === undefined && typeof saved?.id === 'string') {
-      const revelation = matchingRevelations.find(entry => entry.id === saved.id);
-      if (revelation) openRevelation(revelation, Boolean(saved.retry) === Boolean(revelation.retry) ? saved.step : 0);
+    if (explicitId === undefined && (saved?.kind === 'route'
+      || (typeof saved?.id === 'string' && !quests.some(quest => quest.id === saved.id)))) {
+      const linkedRoute = matchingRoutes.find(entry => entry.id === saved.id);
+      if (linkedRoute) openLinkedRoute(linkedRoute, Boolean(saved.retry) === Boolean(linkedRoute.retry) ? saved.step : 0);
       return;
     }
     const explicitQuest = quests.find(quest => quest.id === explicitId);
@@ -1408,15 +1465,14 @@ return (() => {
   }
 
   function setSelectedDone(event) {
-    if (selectedRevelation) {
-      setRevelationDone(selectedRevelation.id, event.currentTarget.checked);
+    if (selectedRoute) {
+      setRouteDone(selectedRoute.id, event.currentTarget.checked);
       return;
     }
     const checked = event.currentTarget.checked;
     const { id } = selected.quest;
     try {
-      if (checked) localStorage.setItem(questProgressPrefix + id, '1');
-      else localStorage.removeItem(questProgressPrefix + id);
+      story.setDone(id, checked);
     } catch {
       // Keep the current map state when file storage is unavailable.
     }
@@ -1427,13 +1483,13 @@ return (() => {
 
   function renderSelectionPanel() {
     panelBounds = undefined;
-    const route = selected?.quest ?? selectedRevelation;
+    const route = selected?.quest ?? selectedRoute;
     selectionPanel.hidden = !route && !selectedPlace && !selectedCluster;
     currentStep.hidden = !route;
     stepControls.hidden = !route;
     selectionDetails.hidden = selectionPanel.hidden;
     selectionDetails.replaceChildren();
-    const index = selected?.step ?? revelationStep;
+    const index = selected?.step ?? linkedRouteStep;
     const step = route?.steps[index];
     if (route) {
       const point = route.locations[step.letter] ?? selected?.point ?? selectedPlace;
@@ -1445,13 +1501,13 @@ return (() => {
     }
     selectionDetails.scrollTop = 0;
     showSteps.hidden = !route;
-    showSteps.textContent = selectedRevelation ? 'Revelation steps' : 'Quest steps';
+    showSteps.textContent = selectedRoute ? linkedRouteLabel + ' steps' : 'Quest steps';
     const name = selected ? `#${route.id} ${route.name}`
       : route?.name ?? selectedCollectibleEntry?.name ?? selectedPlace?.name ?? (selectedCluster && clusterName(selectedCluster));
     if (name && selectionName.textContent !== name) selectionName.textContent = name;
     if (!route) return;
-    selectionDone.parentElement.hidden = !selectedRevelation && !integrated;
-    selectionDone.checked = selectedRevelation ? completedRevelations.has(route.id) : Boolean(guideState?.completed.has(route.id));
+    selectionDone.parentElement.hidden = !selectedRoute && !story;
+    selectionDone.checked = selectedRoute ? completedRoutes.has(route.id) : Boolean(guideState?.completed.has(route.id));
     const label = step.letter === 'board' ? 'Board' : step.letter ? `Pin ${step.letter}` : '';
     stepProgress.textContent = `Step ${index + 1} of ${route.steps.length}${label ? ` · ${label}` : ''}`;
     stepText.textContent = step.text;
@@ -1461,13 +1517,13 @@ return (() => {
   }
 
   function activateStep(index, recenter) {
-    const route = selected?.quest ?? selectedRevelation;
+    const route = selected?.quest ?? selectedRoute;
     const step = route?.steps[index];
     if (!step) return;
-    const previousPoint = route.locations[route.steps[selected?.step ?? revelationStep]?.letter];
+    const previousPoint = route.locations[route.steps[selected?.step ?? linkedRouteStep]?.letter];
     const point = route.locations[step.letter];
     if (selected) selected.step = index;
-    else revelationStep = index;
+    else linkedRouteStep = index;
     saveSelection();
     renderSelectionPanel();
     for (const [rowIndex, row] of [...detail.querySelectorAll('.atlas-step-list > li')].entries()) {
@@ -1547,9 +1603,9 @@ return (() => {
   }
 
   function drawStepPins(margin) {
-    const route = selected?.quest ?? selectedRevelation;
-    if (!route || !(visible('steps') || linkedRevelationSteps)) return [];
-    const step = selected?.step ?? revelationStep;
+    const route = selected?.quest ?? selectedRoute;
+    if (!route || !(visible('steps') || showLinkedRouteSteps)) return [];
+    const step = selected?.step ?? linkedRouteStep;
     const drawn = [];
     const occupied = [];
     const gap = coarse.matches ? 40 : 32;
@@ -1589,7 +1645,7 @@ return (() => {
 
   function prerequisiteLink({ id, text }) {
     const link = document.createElement('a');
-    link.href = `${walkthroughFile}${integrated ? '' : '?prerequisite'}#quest-${id}`;
+    link.href = guideHref('quest-' + id, true);
     link.dataset.prerequisite = '';
     link.textContent = text;
     return link;
@@ -1598,13 +1654,13 @@ return (() => {
   function prerequisiteSummary(parts, interactive) {
     const note = document.createElement('p');
     note.className = 'atlas-prerequisites';
-    note.append('Requires · ', ...parts.map(part => interactive && part.id ? prerequisiteLink(part) : part.text));
+    note.append('Requires · ', ...parts.map(part => interactive && part.id && guideHref('quest-' + part.id) ? prerequisiteLink(part) : part.text));
     return note;
   }
 
   function appendPrerequisites({ parts, links }) {
     detail.append(prerequisiteSummary(parts, true));
-    if (links.length) {
+    if (links.length && config.guideHref !== undefined) {
       const group = document.createElement('details');
       group.className = 'quest-prerequisite-links';
       const summary = document.createElement('summary');
@@ -1632,13 +1688,13 @@ return (() => {
     recenter = false, step = 0, viewPoint = quest.locations[quest.steps[step].letter] ?? point,
     fitRoute = true, scrollToDetail = true,
   } = {}) {
-    selectedRevelation = undefined;
+    selectedRoute = undefined;
     selectedPlace = undefined;
     selectedCollectibleEntry = undefined;
     focusPlaceSelection = false;
     selectedCluster = undefined;
     fittedSteps = undefined;
-    linkedRevelationSteps = false;
+    showLinkedRouteSteps = false;
     expanded = undefined;
     if (spotlight !== quest) spotlight = undefined;
     selected = { quest, point, step };
@@ -1651,14 +1707,17 @@ return (() => {
     start.textContent = quest.where;
     const meta = document.createElement('p');
     meta.className = 'quest-meta';
-    meta.textContent = `${quest.window} · ${byArea.get(viewPoint.area).label}`;
+    meta.textContent = `${[quest.window, byArea.get(viewPoint.area).label].filter(Boolean).join(' · ')}`;
     const actions = document.createElement('div');
     actions.className = 'detail-actions';
-    const walkthrough = document.createElement('a');
-    walkthrough.href = `${walkthroughFile}#quest-${quest.id}`;
-    walkthrough.textContent = 'Open walkthrough';
-    actions.append(walkthrough);
-    if (integrated) {
+    const href = guideHref('quest-' + quest.id);
+    if (href) {
+      const walkthrough = document.createElement('a');
+      walkthrough.href = href;
+      walkthrough.textContent = 'Open walkthrough';
+      actions.append(walkthrough);
+    }
+    if (story) {
       const label = document.createElement('label');
       label.className = 'atlas-done';
       const checkbox = document.createElement('input');
@@ -1728,14 +1787,14 @@ return (() => {
   }
 
   function resetQuestSelection(forgetSelection = true) {
-    const forget = forgetSelection && (selected || selectedRevelation);
+    const forget = forgetSelection && (selected || selectedRoute);
     selected = undefined;
-    selectedRevelation = undefined;
+    selectedRoute = undefined;
     selectedPlace = undefined;
     focusPlaceSelection = false;
     selectedCluster = undefined;
     fittedSteps = undefined;
-    linkedRevelationSteps = false;
+    showLinkedRouteSteps = false;
     if (forget) saveSelection();
     spotlight = undefined;
     expanded = undefined;
@@ -1802,27 +1861,20 @@ return (() => {
         reference.href = place.reference;
         reference.target = '_blank';
         reference.rel = 'noopener noreferrer';
-        reference.textContent = place.type === 'revelation' ? 'Revelation reference' : 'Venue reference';
+        reference.textContent = place.referenceLabel ?? 'Reference';
         container.lastElementChild.append(' ', reference);
       }
     }
-    if (interactive && place.checklist) {
-      const paragraph = document.createElement('p');
-      const link = document.createElement('a');
-      link.href = `${walkthroughFile}#${place.checklist.anchor}`;
-      link.textContent = place.checklist.label;
-      paragraph.append(link);
-      container.append(paragraph);
-    }
-    for (const { id, title } of place.training ?? []) {
-      if (interactive) {
+    for (const { anchor, label, summary } of place.guideLinks ?? []) {
+      const href = interactive && guideHref(anchor);
+      if (href) {
         const paragraph = document.createElement('p');
         const link = document.createElement('a');
-        link.href = `${walkthroughFile}#training-${id}`;
-        link.textContent = `${title} checklist`;
+        link.href = href;
+        link.textContent = label;
         paragraph.append(link);
         container.append(paragraph);
-      } else appendSummaryText(container, title, 'quest-meta');
+      } else appendSummaryText(container, summary, 'quest-meta');
     }
     if (place.destinations?.length) {
       if (interactive) {
@@ -1859,8 +1911,8 @@ return (() => {
       return;
     }
     appendVenueDetails(container, place, interactive);
-    if (place.type !== 'revelation') return;
-    const entries = matchingRevelations.filter(entry => entry.place === place);
+    if (!place.routes) return;
+    const entries = matchingRoutes.filter(entry => entry.place === place);
     for (const entry of entries) {
       if (place.name !== entry.name || entries.length > 1) {
         const heading = document.createElement('h3');
@@ -1871,7 +1923,7 @@ return (() => {
     }
   }
 
-  function appendRevelationSteps(entries) {
+  function appendLinkedRouteSteps(entries) {
     for (const entry of entries) {
       const { id, name, window, time, picture } = entry;
       if (entries.length > 1) {
@@ -1881,13 +1933,14 @@ return (() => {
       }
       const meta = document.createElement('p');
       meta.className = 'quest-meta';
-      meta.textContent = [`First window ${window} · ${objectives[window]}`, time, picture && `Picture ${picture}`].filter(Boolean).join(' · ');
+      meta.textContent = [window && ['First window ' + window, objectives[window]].filter(Boolean).join(' · '), time, picture && `Picture ${picture}`].filter(Boolean).join(' · ');
       detail.append(meta);
-      appendRouteSteps(entry, entry === selectedRevelation ? revelationStep : -1,
-        index => entry === selectedRevelation ? activateStep(index, true) : openRevelation(entry, index), 'Quick steps');
+      appendRouteSteps(entry, entry === selectedRoute ? linkedRouteStep : -1,
+        index => entry === selectedRoute ? activateStep(index, true) : openLinkedRoute(entry, index), 'Quick steps');
       const link = document.createElement('a');
-      link.className = 'atlas-revelation-guide';
-      link.href = `${walkthroughFile}#revelation-${id}`;
+      link.className = 'atlas-linked-route-guide';
+      const href = entry.guideAnchor && guideHref(entry.guideAnchor);
+      if (href) link.href = href;
       link.textContent = 'Read in the guide';
       const actions = document.createElement('div');
       actions.className = 'detail-actions';
@@ -1895,17 +1948,18 @@ return (() => {
       label.className = 'atlas-done';
       const check = document.createElement('input');
       check.type = 'checkbox';
-      check.checked = completedRevelations.has(id);
-      check.dataset.revelationDone = id;
+      check.checked = completedRoutes.has(id);
+      check.dataset.routeDone = id;
       check.setAttribute('aria-label', `Mark ${name} done`);
       label.append(check, 'Done');
-      actions.append(link, label);
+      if (href) actions.append(link);
+      actions.append(label);
       if (Object.keys(entry.locations).length > 1) {
         const fitSteps = document.createElement('button');
         fitSteps.type = 'button';
         fitSteps.textContent = 'Fit step pins';
         fitSteps.addEventListener('click', () => {
-          if (entry !== selectedRevelation) showPlace(entry.place, entry);
+          if (entry !== selectedRoute) showPlace(entry.place, entry);
           fitQuestSteps(entry.locations);
           viewport.scrollIntoView({ block: 'nearest' });
         });
@@ -1915,7 +1969,7 @@ return (() => {
     }
   }
 
-  function showPlace(place, revelation, step = 0, {
+  function showPlace(place, linkedRoute, step = 0, {
     select = canOffsetPin(place) || (focusPlaceSelection && selectedPlace === place),
     collectibleEntry,
   } = {}) {
@@ -1923,13 +1977,13 @@ return (() => {
     selectedPlace = place;
     selectedCollectibleEntry = collectibleEntry;
     focusPlaceSelection = select;
-    selectedRevelation = revelation;
-    revelationStep = step;
-    if (revelation) saveSelection();
+    selectedRoute = linkedRoute;
+    linkedRouteStep = step;
+    if (linkedRoute) saveSelection();
     renderSelectionPanel();
     markCurrentResult();
     const title = document.createElement('h2');
-    title.textContent = revelation?.name ?? place.name;
+    title.textContent = linkedRoute?.name ?? place.name;
     const meta = document.createElement('p');
     meta.className = 'quest-meta';
     meta.textContent = placeInfo(place);
@@ -1941,9 +1995,9 @@ return (() => {
       appendCollectibleDetails(sidebarCollectible, place, true);
       detail.append(sidebarCollectible);
     }
-    if (place.type === 'revelation') {
-      const entries = revelation ? [revelation] : matchingRevelations.filter(entry => entry.place === place);
-      appendRevelationSteps(entries);
+    if (place.routes) {
+      const entries = linkedRoute ? [linkedRoute] : matchingRoutes.filter(entry => entry.place === place);
+      appendLinkedRouteSteps(entries);
       const actions = document.createElement('div');
       actions.className = 'detail-actions';
       const clear = document.createElement('button');
@@ -1952,44 +2006,44 @@ return (() => {
       clear.addEventListener('click', clearQuestSelection);
       actions.append(clear);
       detail.append(actions);
-      showSteps.textContent = 'Revelation steps';
+      showSteps.textContent = linkedRouteLabel + ' steps';
       showSteps.hidden = !entries.length;
-      if (revelation && !matchingRevelations.includes(revelation)) {
+      if (linkedRoute && !matchingRoutes.includes(linkedRoute)) {
         const note = document.createElement('p');
         note.className = 'quest-meta';
-        note.textContent = 'Opened from the guide. This Revelation is outside your current map filters.';
+        note.textContent = `Opened from the guide. This ${linkedRouteLabel} is outside your current map filters.`;
         meta.after(note);
       }
     }
     if (compact.matches) viewport.scrollIntoView({ block: 'nearest' });
-    else if (!atlasSidebar.collapsed && (place.type === 'building' || canOffsetPin(place)
+    else if (!atlasSidebar.collapsed && (placeTypes[place.type]?.scrollToDetail || canOffsetPin(place)
       || place.destinations?.length || place.catalogues?.length)) {
       detail.scrollIntoView({ block: 'start' });
     }
     requestDraw();
   }
 
-  function openRevelation(revelation, step = 0, showLinkedSteps = false) {
-    const { place } = revelation;
-    const index = revelation.steps[step] ? step : 0;
-    showPlace(place, revelation, index);
-    linkedRevelationSteps = showLinkedSteps;
-    const lastMapped = revelation.steps.slice(0, index + 1).findLast(({ letter }) => revelation.locations[letter]);
-    const point = revelation.locations[lastMapped?.letter] ?? place;
+  function openLinkedRoute(linkedRoute, step = 0, showLinkedSteps = false) {
+    const { place } = linkedRoute;
+    const index = linkedRoute.steps[step] ? step : 0;
+    showPlace(place, linkedRoute, index);
+    showLinkedRouteSteps = showLinkedSteps;
+    const lastMapped = linkedRoute.steps.slice(0, index + 1).findLast(({ letter }) => linkedRoute.locations[letter]);
+    const point = linkedRoute.locations[lastMapped?.letter] ?? place;
     focusTile(byArea.get(point.area), point);
     if (compact.matches) viewport.scrollIntoView({ block: 'start' });
   }
 
-  function revelationButton(revelation) {
+  function linkedRouteButton(linkedRoute) {
     const button = document.createElement('button');
     button.type = 'button';
-    button.dataset.revelation = revelation.id;
-    button.textContent = revelation.name;
+    button.dataset.linkedRoute = linkedRoute.id;
+    button.textContent = linkedRoute.name;
     const meta = document.createElement('small');
     meta.className = 'quest-meta';
-    meta.textContent = `Revelation · ${revelation.window}${completedRevelations.has(revelation.id) ? ' · Done' : ''}`;
+    meta.textContent = [linkedRouteLabel, linkedRoute.window, completedRoutes.has(linkedRoute.id) && 'Done'].filter(Boolean).join(' · ');
     button.append(meta);
-    button.addEventListener('click', () => openRevelation(revelation));
+    button.addEventListener('click', () => openLinkedRoute(linkedRoute));
     const row = document.createElement('li');
     row.append(button);
     return row;
@@ -2089,16 +2143,16 @@ return (() => {
     for (const [index, place] of places.entries()) {
       if (focused && place !== focusedPlace) continue;
       if (hideCollected.checked && place !== selectedPlace && isCollectible(place) && isCollected(place)) continue;
-      if (place === selectedPlace && selectedRevelation && (visible('steps') || linkedRevelationSteps)
-        && Object.values(selectedRevelation.locations).some(point => point.area === place.area && point.x === place.x && point.y === place.y)) continue;
+      if (place === selectedPlace && selectedRoute && (visible('steps') || showLinkedRouteSteps)
+        && Object.values(selectedRoute.locations).some(point => point.area === place.area && point.x === place.x && point.y === place.y)) continue;
       if (!visible(place.type) && selectedPlace !== place) continue;
-      if (place.type === 'revelation' && selectedPlace !== place
-        && !(place === shichigoro ? typeMatches({ type: 'Revelations' }) && !chapter.value && !firstWindow.value
-          && !guideState?.objective && !guideState?.missableOnly : matchingRevelations.some(entry => entry.place === place))) continue;
+      if (place.routes && selectedPlace !== place
+        && !(place.overviewOnly ? typeMatches({ type: linkedRouteType }) && !chapter.value && !firstWindow.value
+          && !guideState?.objective && !guideState?.missableOnly : matchingRoutes.some(entry => entry.place === place))) continue;
       const tile = byArea.get(place.area);
       const extent = Math.max(tile.w, tile.h) * camera.scale;
       if (place !== selectedPlace && !canOffsetPin(place)
-        && extent < (place.type === 'building' ? 225 : 185)) continue;
+        && extent < (placeTypes[place.type]?.minExtent ?? 185)) continue;
       const { x, y } = screenPoint(place);
       if (x < 10 - margin || x > viewportWidth - 10 + margin || y < 10 - margin || y > viewportHeight - 10 + margin) continue;
       candidates.push({ index, place, x, y });
@@ -2215,7 +2269,7 @@ return (() => {
     if (from.dx === to.dx && from.dy === to.dy) return;
 
     if (!control.pinLine) {
-      control.pinLine = makePlaceLine('atlas-revelation-line');
+      control.pinLine = makePlaceLine('atlas-offset-line');
       button.insertBefore(control.pinLine, control.leader);
     }
     const start = placeMoves.get(button)?.current ?? from;
@@ -2253,20 +2307,22 @@ return (() => {
     button.type = 'button';
     button.className = `atlas-place ${place.type}`;
     button.dataset.place = index;
-    const name = `${place.name}${place.roof ? ' · Roof' : ''}`;
+    const name = place.accessibleName ?? place.name;
     button.setAttribute('aria-label', name);
     tooltipDetails.set(button, { name, renderDetails: container => appendPlaceSummary(container, place, false) });
     const icon = document.createElement('span');
     icon.className = 'atlas-place-icon';
     icon.setAttribute('aria-hidden', 'true');
-    icon.textContent = place.type === 'locker-key' ? (place.roof ? '↑' : 'K') : place.symbol ?? placeSymbols[place.type];
+    icon.textContent = place.symbol ?? placeTypes[place.type]?.symbol ?? '•';
     button.append(icon);
-    if (place.color) button.style.setProperty('--collectible-color', place.color);
-    if (place.roof) button.classList.add('locker-roof');
-    if (place.type === 'revelation' && place !== shichigoro) {
+    const color = place.color ?? placeTypes[place.type]?.color;
+    if (color) button.style.setProperty('--collectible-color', color);
+    if (place.textColor) button.style.setProperty('--atlas-marker-ink', place.textColor);
+    if (place.variant) button.classList.add(place.variant);
+    if (place.routes?.length) {
       button.addEventListener('click', () => {
-        const entries = matchingRevelations.filter(entry => entry.place === place);
-        const entry = selectedRevelation?.place === place ? selectedRevelation : entries.length === 1 ? entries[0] : undefined;
+        const entries = matchingRoutes.filter(entry => entry.place === place);
+        const entry = selectedRoute?.place === place ? selectedRoute : entries.length === 1 ? entries[0] : undefined;
         if (entry) {
           const index = entry.steps.findIndex(({ letter }) => {
             const point = entry.locations[letter];
@@ -2278,7 +2334,7 @@ return (() => {
     } else button.addEventListener('click', () => showPlace(place));
     const caption = document.createElement('span');
     caption.className = 'atlas-place-name is-hidden';
-    const text = place.type === 'locker-key' ? `${place.code}${place.roof ? ' · Roof' : ''}` : place.caption ?? place.name;
+    const text = place.caption ?? place.name;
     caption.textContent = text;
     caption.setAttribute('aria-hidden', 'true');
     const leader = makePlaceLine('atlas-caption-line is-hidden');
@@ -2419,6 +2475,7 @@ return (() => {
     const markerType = multiple ? 'cluster' : questLayer(quest);
     button.className = `atlas-pin ${markerType}`;
     button.dataset.markerType = markerType;
+    if (questPinColors[markerType]) button.style.setProperty('--atlas-pin-color', questPinColors[markerType]);
     if (spread) button.classList.add('spread');
     button.dataset.marker = key;
     button.textContent = multiple ? `×${group.entries.length}` : quest.id;
@@ -2594,7 +2651,7 @@ return (() => {
         const { place, captionX, captionY, captionVisible, leaderVisible, text } = control;
         const sprite = {
           text: element.firstElementChild.textContent, width: 18, height: 18, radius: 4, font: placeMotionText,
-          color: place.roof ? '#382714' : '#fff6e7', fill: place.roof ? '#f2cc7b' : placePinColors[place.type] ?? place.color ?? '#5b4932',
+          color: place.textColor ?? '#fff6e7', fill: place.color ?? placeTypes[place.type]?.color ?? '#5b4932',
           border: '#f4e9cc', shadow: true, outline: selectedPlace === place ? '#ffe3a5' : undefined,
         };
         const lines = [];
@@ -2672,6 +2729,7 @@ return (() => {
     const zooming = pointers.size === 2 || Boolean(cameraMotion
       && (cameraMotion.flight || cameraMotion.start.scale !== cameraMotion.destination.scale));
     viewport.toggleAttribute('data-zooming', zooming);
+    viewport.toggleAttribute('data-wheel-zoom-out', (cameraMotion?.wheel?.logChange ?? 0) < 0);
     viewport.toggleAttribute('data-inertia', Boolean(cameraMotion?.inertia));
     moveElement(canvas, camera.x, camera.y, ` scale(${camera.scale})`);
     imagery.update({ camera, viewportWidth, viewportHeight, pixelRatio: window.devicePixelRatio || 1,
@@ -2727,7 +2785,7 @@ return (() => {
     if (isolated) {
       const types = new Set(starts.map(element => element.dataset.markerType));
       if (steps.length) types.add('steps');
-      for (const { place } of candidates) types.add(place.roof ? 'locker-roof' : place.type);
+      for (const { place } of candidates) types.add(place.variant ?? place.type);
       updateLegend(types);
     } else updateLegend();
     const questMarkers = [...starts, ...steps];
@@ -2772,7 +2830,7 @@ return (() => {
   }
 
   function requestPan() {
-    if (!viewSignal.aborted && !mapSection?.hidden && frame === undefined) frame = requestAnimationFrame(draw);
+    if (!viewSignal.aborted && !root.hidden && frame === undefined) frame = requestAnimationFrame(draw);
   }
 
   function requestDraw() {
@@ -2792,29 +2850,14 @@ return (() => {
     return !firstWindow.value || firstWindow.value === entry.window;
   }
 
-  function windowOrder(code) {
-    const [chapterNumber, windowNumber] = code.split('-').map(Number);
-    return chapterNumber * 100 + windowNumber;
-  }
-
-  function revelationAvailable(entry) {
-    if (guideState?.missableOnly && !entry.missable) return false;
-    const checkpoint = guideState?.checkpoint;
-    if ((checkpoint || guideState?.hideCompleted || guideState?.missableOnly) && completedRevelations.has(entry.id)) return false;
-    if (!checkpoint) return true;
-    const { order, clock, code } = checkpoint;
-    if (order < windowOrder(entry.window) || (entry.cutoff && order >= 1204)) return false;
-    if (entry.id === 'dry-leaf-smash') return entry.retry ? order >= 901 && Boolean(clock) : code === '8-8' || code === '8-9';
-    if (!clock) return entry.id === 'illusory-wolf' && code === '9-8';
-    return /^(Any time|Before|Start before)/i.test(entry.time) || entry.time.toLowerCase().includes(clock);
-  }
+  const windowOrder = new Map(Object.keys(objectives).map((code, index) => [code, index]));
 
   function setWindows() {
     const previous = firstWindow.value;
-    const codes = [...new Set([...quests, ...revelations].filter(entry => chapterMatches(entry) && typeMatches(entry))
-      .map(entry => entry.window))].sort((a, b) => windowOrder(a) - windowOrder(b));
+    const codes = [...new Set([...quests, ...linkedRoutes].filter(entry => entry.window && chapterMatches(entry) && typeMatches(entry))
+      .map(entry => entry.window))].sort((a, b) => windowOrder.get(a) - windowOrder.get(b));
     firstWindow.replaceChildren(new Option('All first windows', ''),
-      ...codes.map(code => new Option(`${code} · ${objectives[code]}`, code)));
+      ...codes.map(code => new Option(objectives[code] ? `${code} · ${objectives[code]}` : code, code)));
     if (codes.includes(previous)) firstWindow.value = previous;
   }
 
@@ -2837,7 +2880,7 @@ return (() => {
     const meta = document.createElement('small');
     meta.className = 'quest-meta';
     meta.textContent = [place.location || byArea.get(place.area).label, entry.window,
-      place.type === 'locker-key' && lockerKeyInfo(place),
+      place.pickup?.listMeta,
       collected.has(entry.progressId) && 'Collected'].filter(Boolean).join(' · ');
     button.append(meta);
     button.addEventListener('click', () => openCollectible(place, entry));
@@ -2847,14 +2890,14 @@ return (() => {
   }
 
   function renderCollectibleResults() {
-    if (mapSection?.hidden) return;
+    if (root.hidden) return;
     const active = document.activeElement;
     const activeGroup = active.closest('[data-collectible-result-type]');
     let total = 0;
     for (const group of collectibleResultGroups) {
       const entries = places.filter(place => place.type === group.dataset.collectibleResultType
         && !(hideCollected.checked && isCollected(place))).flatMap(place => {
-        const items = place.type === 'locker-key' ? [{ name: place.name, progressId: collectibleProgressIds(place)[0] }]
+        const items = place.pickup ? [{ name: place.name, progressId: place.pickup.progressId }]
           : visibleCollectibleEntries(place);
         return items.map(entry => ({ place, entry }));
       });
@@ -2890,14 +2933,14 @@ return (() => {
 
   function markCurrentResult({ expand = true } = {}) {
     results.querySelector('[aria-current]')?.removeAttribute('aria-current');
-    const selector = selected ? `[data-quest="${selected.quest.id}"]`
-      : selectedRevelation ? `[data-revelation="${selectedRevelation.id}"]`
+    const selector = selected ? `[data-quest="${CSS.escape(String(selected.quest.id))}"]`
+      : selectedRoute ? `[data-linked-route="${CSS.escape(selectedRoute.id)}"]`
         : selectedPlace && isCollectible(selectedPlace) ? `[data-collectible-result="${CSS.escape(selectedPlace.id)}"]` : '';
     if (!selector) return;
     const entrySelector = selectedCollectibleEntry
       && `[data-collectible-entry="${CSS.escape(collectibleEntryKey(selectedPlace, selectedCollectibleEntry))}"]`;
-    const group = selected || selectedRevelation
-      ? resultGroups.find(group => group.dataset.resultType === (selected?.quest.type ?? 'Revelations'))
+    const group = selected || selectedRoute
+      ? resultGroups.find(group => group.dataset.resultType === (selected?.quest.type ?? linkedRouteType))
       : collectibleResultGroups.find(group => group.dataset.collectibleResultType === selectedPlace?.type);
     if (expand && group) fillResultRows(group);
     const button = results.querySelector(entrySelector || selector);
@@ -2910,11 +2953,11 @@ return (() => {
   }
 
   function renderResults() {
-    if (mapSection?.hidden) return;
+    if (root.hidden) return;
     for (const group of resultGroups) {
       const groupType = group.dataset.resultType;
-      if (groupType === 'Revelations') {
-        setResultRows(group, [...matchingRevelations].sort((a, b) => windowOrder(a.window) - windowOrder(b.window)), revelationButton);
+      if (groupType === linkedRouteType) {
+        setResultRows(group, [...matchingRoutes].sort((a, b) => windowOrder.get(a.window) - windowOrder.get(b.window)), linkedRouteButton);
       } else {
         setResultRows(group, matches.filter(quest => quest.type === groupType),
           quest => questButton(quest, () => openQuestResult(quest, quest.pin)));
@@ -2925,7 +2968,7 @@ return (() => {
 
   for (const group of [...resultGroups, ...collectibleResultGroups]) {
     group.addEventListener('toggle', () => {
-      if (!group.open || mapSection?.hidden) return;
+      if (!group.open || root.hidden) return;
       fillResultRows(group);
       markCurrentResult({ expand: false });
     });
@@ -2934,23 +2977,23 @@ return (() => {
   function filterQuests({ keepSelection = false, forgetSelection = true } = {}) {
     matches = quests.filter(quest => (!guideState || guideState.eligible.has(quest.id))
       && chapterMatches(quest) && windowMatches(quest) && typeMatches(quest));
-    matchingRevelations = revelations.filter(entry => chapterMatches(entry) && windowMatches(entry) && typeMatches(entry)
-      && revelationAvailable(entry) && (guideState?.checkpoint || !entry.retry));
-    objective.hidden = !firstWindow.value;
-    if (firstWindow.value) objective.textContent = objectives[firstWindow.value];
-    revelationFilterNote.hidden = !guideState?.objective || !matchingRevelations.length;
+    matchingRoutes = linkedRoutes.filter(entry => chapterMatches(entry) && windowMatches(entry) && typeMatches(entry)
+      && (adapter.routeAvailable?.(entry, guideState, completedRoutes) ?? !entry.retry));
+    objective.hidden = !objectives[firstWindow.value];
+    if (firstWindow.value) objective.textContent = objectives[firstWindow.value] ?? '';
+    linkedRouteFilterNote.hidden = !guideState?.objective || !matchingRoutes.length;
     const counts = [];
-    if (type.value !== 'Revelations') counts.push(`${matches.length} ${matches.length === 1 ? 'quest' : 'quests'}`);
-    if (!type.value || type.value === 'Revelations') counts.push(`${matchingRevelations.length} ${matchingRevelations.length === 1 ? 'Revelation' : 'Revelations'}`);
+    if (Object.keys(questTypes).length && type.value !== linkedRouteType) counts.push(`${matches.length} ${matches.length === 1 ? 'quest' : 'quests'}`);
+    if (linkedRouteType && (!type.value || type.value === linkedRouteType)) counts.push(`${matchingRoutes.length} ${matchingRoutes.length === 1 ? linkedRouteLabel : linkedRouteType}`);
     count.textContent = counts.join(' · ');
     if (keepSelection && selected && matches.includes(selected.quest)) {
       selectionDone.checked = Boolean(guideState?.completed.has(selected.quest.id));
       const check = detail.querySelector('.atlas-done input');
       if (check) check.checked = selectionDone.checked;
       updateGuideNote(selected.quest.id);
-    } else if (keepSelection && selectedRevelation && matchingRevelations.includes(selectedRevelation)) {
-      selectionDone.checked = completedRevelations.has(selectedRevelation.id);
-      detail.querySelector('[data-revelation-done]').checked = completedRevelations.has(selectedRevelation.id);
+    } else if (keepSelection && selectedRoute && matchingRoutes.includes(selectedRoute)) {
+      selectionDone.checked = completedRoutes.has(selectedRoute.id);
+      detail.querySelector('[data-route-done]').checked = completedRoutes.has(selectedRoute.id);
     } else {
       const focusInSelection = selectionPanel.contains(document.activeElement) || detail.contains(document.activeElement);
       resetQuestSelection(forgetSelection);
@@ -2961,12 +3004,11 @@ return (() => {
     requestDraw();
   }
 
-  function loadRevelationProgress() {
+  function loadRouteProgress() {
     try {
-      for (const { id } of revelations) {
-        const ability = revelationAbilities.get(id);
-        if (localStorage.getItem(revelationProgressKey + id) === '1' || (ability && localStorage.getItem(sideProgressKey + ability) === '1')) completedRevelations.add(id);
-        else completedRevelations.delete(id);
+      for (const { id } of linkedRoutes) {
+        if (localStorage.getItem(routeProgressKey(id)) === '1' || adapter.routeDone?.(id)) completedRoutes.add(id);
+        else completedRoutes.delete(id);
       }
     } catch {
       // Use the current page's progress if file storage is unavailable.
@@ -2979,7 +3021,7 @@ return (() => {
       const saved = ids.filter(id => localStorage.getItem(collectibleProgressKey + id) === '1');
       collected.clear();
       for (const id of saved) collected.add(id);
-      if (!integrated) hideCollected.checked = localStorage.getItem(hideCollectedKey) === '1';
+      if (!story) hideCollected.checked = localStorage.getItem(hideCollectedKey) === '1';
     } catch {
       // Keep the current page's progress when storage is unavailable.
     }
@@ -3009,7 +3051,7 @@ return (() => {
     for (const check of mapShell.querySelectorAll('[data-collectible-collected]')) {
       check.checked = collected.has(check.dataset.collectibleCollected);
     }
-    document.dispatchEvent(new Event('kenzan:collectible-progress'));
+    onCollectibleProgress?.();
     renderCollectibleResults();
     requestDraw();
   }
@@ -3137,8 +3179,8 @@ return (() => {
   selectionDone?.addEventListener('change', setSelectedDone);
   for (const [button, offset, opposite] of [[previousStep, -1, nextStep], [nextStep, 1, previousStep]]) {
     button.addEventListener('click', () => {
-      if (!selected && !selectedRevelation) return;
-      activateStep((selected?.step ?? revelationStep) + offset, true);
+      if (!selected && !selectedRoute) return;
+      activateStep((selected?.step ?? linkedRouteStep) + offset, true);
       if (button.disabled) opposite.focus({ preventScroll: true });
     });
   }
@@ -3173,26 +3215,22 @@ return (() => {
     if (area.value) focusTile(byArea.get(area.value));
     else fitAll();
   });
-  function setRevelationDone(id, checked) {
-    if (checked) completedRevelations.add(id);
-    else completedRevelations.delete(id);
+  function setRouteDone(id, checked) {
+    if (checked) completedRoutes.add(id);
+    else completedRoutes.delete(id);
     try {
-      if (checked) localStorage.setItem(revelationProgressKey + id, '1');
-      else localStorage.removeItem(revelationProgressKey + id);
-      const ability = revelationAbilities.get(id);
-      if (ability) {
-        if (checked) localStorage.setItem(sideProgressKey + ability, '1');
-        else localStorage.removeItem(sideProgressKey + ability);
-      }
+      if (checked) localStorage.setItem(routeProgressKey(id), '1');
+      else localStorage.removeItem(routeProgressKey(id));
+      onRouteProgress?.(id, checked);
     } catch {
       // Progress still applies to the current view.
     }
-    for (const check of document.querySelectorAll(`[data-revelation-done="${id}"]`)) check.checked = checked;
+    for (const check of mapShell.querySelectorAll(`[data-route-done="${CSS.escape(id)}"]`)) check.checked = checked;
     filterQuests({ keepSelection: true });
   }
   mapShell.addEventListener('change', event => {
-    const id = event.target.dataset.revelationDone;
-    if (id) setRevelationDone(id, event.target.checked);
+    const id = event.target.dataset.routeDone;
+    if (id) setRouteDone(id, event.target.checked);
     const collectibleId = event.target.dataset.collectibleCollected;
     if (!collectibleId) return;
     if (event.target.checked) collected.add(collectibleId);
@@ -3205,7 +3243,7 @@ return (() => {
     }
     updateCollectibleProgress();
   });
-  if (!integrated) hideCollected.addEventListener('change', () => {
+  if (!story) hideCollected.addEventListener('change', () => {
     try {
       localStorage.setItem(hideCollectedKey, hideCollected.checked ? '1' : '0');
     } catch {
@@ -3214,12 +3252,12 @@ return (() => {
     updateCollectibleProgress(true);
   });
   window.addEventListener('storage', event => {
-    if (integrated && (event.key === null || event.key === storyWindowKey || event.key.startsWith(questProgressPrefix))) {
-      if (event.key === null || event.key === storyWindowKey) loadMapStoryObjective();
+    if (story && (event.key === null || story.observes(event.key))) {
+      if (event.key === null || story.isObjectiveKey(event.key)) loadMapStoryObjective();
       readMapStoryFilters(undefined, true);
     }
-    if (event.key === null || event.key.startsWith(revelationProgressKey) || event.key.startsWith(`${sideProgressKey}ability-`)) {
-      loadRevelationProgress();
+    if (event.key === null || event.key.startsWith(storageKey('route-done:')) || adapter.observesRouteProgress?.(event.key)) {
+      loadRouteProgress();
       filterQuests({ keepSelection: true });
     }
     if (event.key === null || event.key === hideCollectedKey || event.key.startsWith(collectibleProgressKey)) {
@@ -3230,10 +3268,9 @@ return (() => {
   }, { signal: viewSignal });
   function loadMapStoryObjective() {
     try {
-      const saved = localStorage.getItem(storyWindowKey);
-      document.querySelector('#atlas-objective').value = Object.hasOwn(atlasStory.checkpoints, saved) ? saved : '';
+      query('#atlas-objective').value = story.getObjective();
     } catch {
-      document.querySelector('#atlas-objective').value = viewState.filters.objective ?? '';
+      query('#atlas-objective').value = viewState.filters.objective ?? '';
     }
   }
 
@@ -3241,35 +3278,37 @@ return (() => {
     if (!completed) {
       completed = new Set();
       try {
-        for (const { id } of quests) if (localStorage.getItem(questProgressPrefix + id) === '1') completed.add(id);
+        for (const { id } of quests) if (story.isDone(id)) completed.add(id);
       } catch {
         completed = guideState?.completed ?? completed;
       }
     }
-    const picker = document.querySelector('#atlas-objective');
-    const context = document.querySelector('#atlas-story-context');
-    guideState = questMapFilter(atlasStory, quests.map(quest => quest.id), completed, picker.value,
-      hideCollected.checked, document.querySelector('#atlas-missable').checked);
+    const picker = query('#atlas-objective');
+    const context = query('#atlas-story-context');
+    guideState = story.filter(quests.map(quest => quest.id), completed, picker.value,
+      hideCollected.checked, query('#atlas-missable').checked);
     Object.assign(viewState.filters, { objective: picker.value, hideCompleted: guideState.hideCompleted,
       missableOnly: guideState.missableOnly });
     context.hidden = !guideState.objective;
     context.textContent = guideState.objective ? picker.selectedOptions[0].textContent : '';
-    if (!mapSection.hidden) filterQuests({ keepSelection });
+    if (!root.hidden) filterQuests({ keepSelection });
   }
 
-  if (integrated) {
-    const storyPicker = document.querySelector('#atlas-objective');
-    const missableOnly = document.querySelector('#atlas-missable');
+  chapter.value = viewState.chapter ?? '';
+  type.value = viewState.type ?? '';
+  setWindows();
+  firstWindow.value = viewState.firstWindow ?? '';
+
+  if (story) {
+    const storyPicker = query('#atlas-objective');
+    const missableOnly = query('#atlas-missable');
+    viewState.filters ??= {};
     loadMapStoryObjective();
     hideCollected.checked = viewState.filters.hideCompleted ?? false;
     missableOnly.checked = viewState.filters.missableOnly ?? false;
-    chapter.value = viewState.chapter ?? '';
-    type.value = viewState.type ?? '';
-    setWindows();
-    firstWindow.value = viewState.firstWindow ?? '';
     for (const input of [storyPicker, hideCollected, missableOnly]) input.addEventListener('change', () => {
       if (input === storyPicker) {
-        try { localStorage.setItem(storyWindowKey, input.value); } catch { /* The current view still applies it. */ }
+        try { story.setObjective(input.value); } catch { /* The current view still applies it. */ }
       }
       readMapStoryFilters(guideState.completed);
       if (input === hideCollected) updateCollectibleProgress(true);
@@ -3281,27 +3320,26 @@ return (() => {
     updateViewportSize(viewport.clientWidth, viewport.clientHeight);
     if (!previousSize) fitAll(false);
     previousSize = { width: viewportWidth, height: viewportHeight };
-    const { mapQuest, mapRevelation, mapLockerKey, mapPlace, mapCollectible, mapStep } = link;
-    const revelation = mapStep === undefined && matchingRevelations.find(entry => entry.id === mapRevelation)
-      || revelations.find(entry => entry.id === mapRevelation && !entry.retry);
-    let place = lockerKeys.get(mapLockerKey);
-    if (mapLockerKey === 'lockers') place = places.find(item => item.name === 'Storage Lockers');
-    if (shichigoro && mapRevelation === shichigoro.id) place = shichigoro;
-    if (mapPlace) place = places.find(item => `${item.area}:${item.name}` === mapPlace);
+    const { quest: questId, route: routeId, place: placeLink, collectible, step } = resolveLink?.(link) ?? link;
+    const linkedRoute = step === undefined && matchingRoutes.find(entry => entry.id === routeId)
+      || linkedRoutes.find(entry => entry.id === routeId && !entry.retry);
+    let place = places.find(item => placeLink !== undefined && (item.linkId === placeLink || item.id === placeLink || `${item.area}:${item.name}` === placeLink));
     let entry;
-    if (mapCollectible) {
-      const [placeId, progressId] = mapCollectible.split(':');
+    if (collectible) {
+      const separator = collectible.indexOf(':');
+      const placeId = separator < 0 ? collectible : collectible.slice(0, separator);
+      const progressId = separator < 0 ? undefined : collectible.slice(separator + 1);
       place = places.find(item => item.id === placeId && isCollectible(item));
       entry = place?.entries?.find(item => item.progressId === progressId);
     }
-    const restoring = !(mapQuest || mapRevelation || mapLockerKey || mapPlace || mapCollectible) && viewState.camera;
+    const restoring = questId === undefined && !(routeId || placeLink || collectible) && viewState.camera;
     if (place) openCollectible(place, entry);
-    else if (revelation) openRevelation(revelation, mapStep === undefined ? 0 : Number(mapStep), mapStep !== undefined);
-    else if (restoring && viewState.place !== undefined) {
+    else if (linkedRoute) openLinkedRoute(linkedRoute, step === undefined ? 0 : Number(step), step !== undefined);
+    else if (restoring && places[viewState.place]) {
       const previousPlace = places[viewState.place];
       const previousEntry = previousPlace.entries?.find(item => item.progressId === viewState.entry);
       showPlace(previousPlace, undefined, 0, { select: viewState.focusPlace, collectibleEntry: previousEntry });
-    } else restoreSelection(mapQuest ? Number(mapQuest) : restoring ? viewState.spotlight : undefined, Boolean(restoring));
+    } else restoreSelection(questId ?? (restoring ? viewState.spotlight : undefined), Boolean(restoring));
     if (restoring) {
       const { x, y, scale } = viewState.camera;
       area.value = viewState.area;
@@ -3346,14 +3384,14 @@ return (() => {
     Object.assign(viewState, {
       camera: { x: (viewportWidth / 2 - x) / scale, y: (viewportHeight / 2 - y) / scale, scale }, overview,
       chapter: chapter.value, firstWindow: firstWindow.value, type: type.value, area: area.value, fitSteps: Boolean(fittedSteps),
-      place: selectedPlace && !selectedRevelation ? places.indexOf(selectedPlace) : undefined,
+      place: selectedPlace && !selectedRoute ? places.indexOf(selectedPlace) : undefined,
       entry: selectedCollectibleEntry?.progressId, focusPlace: focusPlaceSelection, spotlight: spotlight?.id,
     });
     viewportObserver.disconnect();
     panelObserver.disconnect();
     if (frame !== undefined) cancelAnimationFrame(frame);
   }, { once: true });
-  loadRevelationProgress();
+  loadRouteProgress();
   loadCollectibleProgress();
   updateCollectibleProgress(false);
   setWindows();
@@ -3361,11 +3399,11 @@ return (() => {
   try {
     focusSelection.checked = localStorage.getItem(focusKey) !== 'off';
     const savedLayers = JSON.parse(localStorage.getItem(layerKey));
-    const hidden = Array.isArray(savedLayers) ? [...savedLayers, 'locker-key'] : savedLayers?.hidden;
+    const hidden = Array.isArray(savedLayers) ? [...savedLayers, ...(config.legacyLayerIds ?? [])] : savedLayers?.hidden;
     if (Array.isArray(hidden)) {
       const knownLayers = Array.isArray(savedLayers.layers) ? new Set(savedLayers.layers) : null;
       for (const [id, input] of layerById) {
-        const known = knownLayers ? knownLayers.has(id) : !collectibleTypes.has(id) || id === 'locker-key';
+        const known = knownLayers ? knownLayers.has(id) : !collectibleTypes.has(id) || config.legacyLayerIds?.includes(id);
         if (known) input.checked = !hidden.includes(id);
       }
     }
@@ -3373,10 +3411,74 @@ return (() => {
     // Keep the default layer settings when saved preferences cannot be read.
   }
   updateLayers(false);
-  if (!integrated) {
+  if (autoOpen) {
     openAtlas();
   }
   return { open: openAtlas };
-})();
+}
 
+// Kenzan's side guide shares story and progress with its map.
+function mountKenzanMap(signal, state) {
+  const integrated = document.querySelector('#quest-map[data-integrated]');
+  const root = integrated ?? document.body;
+  const storyData = integrated && JSON.parse(root.querySelector('#atlas-story-data').textContent);
+  const abilities = storyData?.revelationAbilities ?? {};
+  const revelationPrefix = 'kenzan-guide:revelation-done:';
+  const abilityPrefix = 'kenzan-guide:side-done:';
+
+  function writeProgress(key, checked) {
+    if (checked) localStorage.setItem(key, '1');
+    else localStorage.removeItem(key);
+  }
+
+  const story = storyData && {
+    getObjective() {
+      const saved = localStorage.getItem(storyWindowKey);
+      return Object.hasOwn(storyData.checkpoints, saved) ? saved : '';
+    },
+    setObjective: value => localStorage.setItem(storyWindowKey, value),
+    isDone: id => localStorage.getItem(questProgressPrefix + id) === '1',
+    setDone: (id, checked) => writeProgress(questProgressPrefix + id, checked),
+    observes: key => key === storyWindowKey || key.startsWith(questProgressPrefix),
+    isObjectiveKey: key => key === storyWindowKey,
+    filter: (...filters) => questMapFilter(storyData, ...filters),
+  };
+
+  const adapter = {
+    story,
+    routeProgressKey: id => revelationPrefix + id,
+    routeDone: id => abilities[id] && localStorage.getItem(abilityPrefix + abilities[id]) === '1',
+    observesRouteProgress: key => key.startsWith(revelationPrefix) || key.startsWith(abilityPrefix + 'ability-'),
+    onRouteProgress(id, checked) {
+      if (abilities[id]) writeProgress(abilityPrefix + abilities[id], checked);
+    },
+    onCollectibleProgress() {
+      document.dispatchEvent(new Event('kenzan:collectible-progress'));
+    },
+    routeAvailable(entry, guideState, completed) {
+      if (guideState?.missableOnly && !entry.missable) return false;
+      const checkpoint = guideState?.checkpoint;
+      if ((checkpoint || guideState?.hideCompleted || guideState?.missableOnly) && completed.has(entry.id)) return false;
+      if (!checkpoint) return !entry.retry;
+      const { order, clock, code } = checkpoint;
+      const [chapter, window] = entry.window.split('-').map(Number);
+      if (order < chapter * 100 + window || (entry.cutoff && order >= 1204)) return false;
+      if (entry.id === 'dry-leaf-smash') return entry.retry ? order >= 901 && Boolean(clock) : code === '8-8' || code === '8-9';
+      if (!clock) return entry.id === 'illusory-wolf' && code === '9-8';
+      return /^(Any time|Before|Start before)/i.test(entry.time) || entry.time.toLowerCase().includes(clock);
+    },
+    resolveLink({ mapQuest, mapRevelation, mapLockerKey, mapPlace, mapCollectible, mapStep }) {
+      return {
+        quest: mapQuest ? Number(mapQuest) : undefined,
+        route: mapRevelation,
+        place: mapPlace ?? (mapLockerKey ? 'locker:' + mapLockerKey : mapRevelation === 'shichigoro' ? mapRevelation : undefined),
+        collectible: mapCollectible,
+        step: mapStep,
+      };
+    },
+  };
+  return mountAtlas(root, { signal, state, adapter, autoOpen: !integrated });
+}
+
+return mountKenzanMap(viewSignal, viewState);
 }
