@@ -1,4 +1,43 @@
 function mountKenzanAtlas(viewSignal, viewState) {
+function atlasPinIconUrl(source) {
+  if (typeof source !== 'string' || !source.trim()) return undefined;
+  const url = source.trim();
+  if (/^data:image\/(?:apng|avif|bmp|gif|jpeg|png|svg\+xml|webp|x-icon|vnd\.microsoft\.icon)(?:;|,)/i.test(url)) return url;
+  try {
+    const { protocol } = new URL(url, 'https://atlas.invalid/');
+    if (protocol === 'http:' || protocol === 'https:' || protocol === 'file:') return url;
+  } catch {
+    // An invalid source leaves the built-in marker visible.
+  }
+}
+
+function attachAtlasPinIcon(target, source, signal, onLoad) {
+  const url = atlasPinIconUrl(source);
+  if (!url) return;
+  const document = target.ownerDocument;
+  const image = document.createElement('img');
+  image.className = 'atlas-marker-art';
+  image.alt = '';
+  image.draggable = false;
+  image.decoding = 'async';
+  image.referrerPolicy = 'no-referrer';
+  image.hidden = true;
+  const fallback = document.createElement('span');
+  fallback.textContent = target.textContent;
+  target.replaceChildren(fallback, image);
+  image.src = url;
+  image.decode().then(() => {
+    if (signal.aborted || !image.naturalWidth || !image.naturalHeight) return;
+    image.hidden = false;
+    // Preserve the marker's dimensions when replacing its glyph.
+    fallback.style.visibility = 'hidden';
+    if (image.isConnected) onLoad?.();
+  }, () => { /* A missing or unsupported image keeps the glyph visible. */ });
+  return image;
+}
+
+if (typeof module === 'object' && module.exports) module.exports = { atlasPinIconUrl };
+
 function createMotionMarkerLayer(markerLayer, signal) {
   const padding = 6;
   const sprites = new Map();
@@ -9,6 +48,7 @@ function createMotionMarkerLayer(markerLayer, signal) {
   let lastRecords;
   let prepared;
   let warmup;
+  let spriteWarmup;
 
   function warmSpriteCopy() {
     if (canvas || signal.aborted) return;
@@ -31,7 +71,8 @@ function createMotionMarkerLayer(markerLayer, signal) {
   }
 
   function paintSprite(style, ratio) {
-    const key = JSON.stringify(style);
+    const { icon, iconSize } = style;
+    const key = icon ? JSON.stringify([icon.src, style]) : JSON.stringify(style);
     const cached = sprites.get(key);
     if (cached) return cached;
     const { text, width, height, radius, font, fill, border, color, shadow, outline } = style;
@@ -61,15 +102,52 @@ function createMotionMarkerLayer(markerLayer, signal) {
       pen.lineWidth = 2;
       pen.stroke();
     }
-    pen.font = font;
-    pen.fillStyle = color;
-    pen.textAlign = 'center';
-    pen.textBaseline = 'middle';
-    pen.fillText(text, w / 2, h / 2);
+    if (icon?.naturalWidth && icon.naturalHeight) {
+      const scale = iconSize / Math.max(icon.naturalWidth, icon.naturalHeight);
+      const iconWidth = icon.naturalWidth * scale;
+      const iconHeight = icon.naturalHeight * scale;
+      pen.drawImage(icon, (w - iconWidth) / 2, (h - iconHeight) / 2, iconWidth, iconHeight);
+    } else {
+      pen.font = font;
+      pen.fillStyle = color;
+      pen.textAlign = 'center';
+      pen.textBaseline = 'middle';
+      pen.fillText(text, w / 2, h / 2);
+    }
     const sprite = { bitmap, w, h };
     if (sprites.size >= 512) sprites.delete(sprites.keys().next().value);
     sprites.set(key, sprite);
     return sprite;
+  }
+
+  function syncPixelRatio() {
+    const scale = devicePixelRatio || 1;
+    if (pixelRatio !== scale) {
+      sprites.clear();
+      lastRecords = undefined;
+      pixelRatio = scale;
+    }
+    return scale;
+  }
+
+  function warmSprites(getRecords) {
+    if (!window.requestIdleCallback || unavailable) return;
+    if (spriteWarmup !== undefined) window.cancelIdleCallback(spriteWarmup);
+    let next = 0;
+    function prepare(deadline) {
+      spriteWarmup = undefined;
+      const records = getRecords();
+      if (!records || signal.aborted) return;
+      const scale = syncPixelRatio();
+      // Only cache the current view's sprites. The viewport canvas stays unallocated.
+      while (next < records.length && deadline.timeRemaining() > 2) {
+        const { sprite, caption } = records[next++];
+        if (sprite && !paintSprite(sprite, scale)) return;
+        if (caption && !paintSprite(caption.sprite, scale)) return;
+      }
+      if (next < records.length) spriteWarmup = window.requestIdleCallback(prepare);
+    }
+    spriteWarmup = window.requestIdleCallback(prepare);
   }
 
   function hide() {
@@ -95,12 +173,7 @@ function createMotionMarkerLayer(markerLayer, signal) {
       markerLayer.before(canvas);
     }
     if (typeof context.roundRect !== 'function' || context.isContextLost?.()) return false;
-    const scale = devicePixelRatio || 1;
-    if (pixelRatio !== scale) {
-      sprites.clear();
-      lastRecords = undefined;
-      pixelRatio = scale;
-    }
+    const scale = syncPixelRatio();
     if (records !== lastRecords) {
       prepared = records.map(({ sprite, caption, ...record }) => ({
         ...record,
@@ -152,11 +225,12 @@ function createMotionMarkerLayer(markerLayer, signal) {
 
   signal.addEventListener('abort', () => {
     if (warmup !== undefined) window.cancelIdleCallback(warmup);
+    if (spriteWarmup !== undefined) window.cancelIdleCallback(spriteWarmup);
     hide();
     sprites.clear();
     canvas?.remove();
   }, { once: true });
-  return { draw, hide, warm };
+  return { draw, hide, warm, warmSprites };
 }
 
 // Levels are listed coarsest first. Crop coordinates are pixels in their level.
@@ -769,12 +843,46 @@ function createAtlasImagery({ areas: mapImages, overviewLayer, overviewSources =
   return { update };
 }
 
+function mountPhotoViewer(dialog, signal, fallbackFocus) {
+  const title = dialog.querySelector('h2');
+  const image = dialog.querySelector('img');
+  let returnFocus;
+  dialog.addEventListener('close', () => {
+    image.removeAttribute('src');
+    image.style.backgroundImage = '';
+    const previous = returnFocus;
+    returnFocus = undefined;
+    if (!signal?.aborted) (previous?.isConnected ? previous : fallbackFocus)?.focus({ preventScroll: true });
+  });
+  signal?.addEventListener('abort', () => {
+    if (dialog.open) dialog.close();
+  }, { once: true });
+
+  return function openPhoto(photo, name, trigger) {
+    if (dialog.open) return;
+    returnFocus = trigger;
+    title.textContent = name;
+    dialog.style.setProperty('--atlas-photo-ratio', photo.width / photo.height);
+    image.alt = `Location screenshot for ${name}`;
+    image.width = photo.width;
+    image.height = photo.height;
+    image.style.backgroundImage = `url(${JSON.stringify(photo.preview)})`;
+    image.src = photo.source;
+    dialog.showModal();
+  };
+}
+
 // Mounts the markup from atlas/render.cjs. The host owns its lifetime and game rules.
 function mountAtlas(root, { signal: viewSignal, state: viewState = {}, adapter = {}, autoOpen = true } = {}) {
   const mapShell = root.querySelector('.atlas-shell');
   const query = selector => mapShell.querySelector(selector);
-  const { world, tiles, quests, objectives, places, placeTypes, questTypes, imageryTrials, config } = JSON.parse(root.querySelector('#atlas-data').textContent);
+  const { world, tiles, quests, objectives, places, placeTypes, questTypes, layerIcons = {}, imageryTrials, mapLocations = [], config } = JSON.parse(root.querySelector('#atlas-data').textContent);
   const byArea = new Map(tiles.map(tile => [tile.id, tile]));
+  const locations = new Map(mapLocations.map(location => [location.key, location]));
+  for (const { id, label } of tiles) {
+    const key = 'area:' + id;
+    locations.set(key, { key, type: 'area', area: id, name: label });
+  }
   const mapPositions = new WeakMap();
   const { story, onCollectibleProgress, onRouteProgress, resolveLink } = adapter;
   const linkedRouteType = config.linkedRouteType;
@@ -790,6 +898,23 @@ function mountAtlas(root, { signal: viewSignal, state: viewState = {}, adapter =
   const canvas = query('#atlas-world');
   const markerLayer = query('#atlas-markers');
   const motionMarkers = createMotionMarkerLayer(markerLayer, viewSignal);
+  const markerImages = new WeakMap();
+  for (const symbol of mapShell.querySelectorAll('[data-atlas-icon]')) {
+    attachAtlasPinIcon(symbol, symbol.dataset.atlasIcon, viewSignal);
+  }
+
+  function addPinImage(button, target, source) {
+    const image = attachAtlasPinIcon(target, source, viewSignal, () => {
+      motionMarkerRecords = undefined;
+      requestPan();
+    });
+    if (image) markerImages.set(button, image);
+  }
+
+  function loadedPinImage(button) {
+    const image = markerImages.get(button);
+    return image?.hidden === false ? image : undefined;
+  }
   const imageryOptions = new URLSearchParams(location.search);
   const mapImages = [...canvas.querySelectorAll('.atlas-area-image')].map(image => {
     const element = image.parentElement;
@@ -825,8 +950,7 @@ function mountAtlas(root, { signal: viewSignal, state: viewState = {}, adapter =
     onFirstArtwork: motionMarkers.warm,
     ownerDocument: canvas.ownerDocument,
   });
-  const streetLabels = query('#atlas-streets');
-  const districtLabels = query('#atlas-districts');
+  const labelLayers = [['street', query('#atlas-streets')], ['district', query('#atlas-districts')]];
   const pins = query('#atlas-pins');
   const stepPins = query('#atlas-step-pins');
   const questPinColors = Object.fromEntries(Object.values(questTypes).map(({ layer, color }) => [layer, color]));
@@ -835,6 +959,9 @@ function mountAtlas(root, { signal: viewSignal, state: viewState = {}, adapter =
   const mapTooltip = query('#atlas-collectible-tooltip');
   const tooltipContent = mapTooltip.querySelector('.atlas-tooltip-content');
   const tooltipDetails = new WeakMap();
+  const photoThumbnail = query('#atlas-photo-thumbnail');
+  const photoViewer = query('#atlas-photo-viewer');
+  const openPhoto = photoViewer && mountPhotoViewer(photoViewer, viewSignal, viewport);
   const layerOptions = [...mapShell.querySelectorAll('[data-layer]')];
   const layerById = new Map(layerOptions.map(input => [input.dataset.layer, input]));
   const collectibleTypes = new Set([...mapShell.querySelectorAll('.atlas-collectibles [data-layer]')].map(input => input.dataset.layer));
@@ -902,7 +1029,7 @@ function mountAtlas(root, { signal: viewSignal, state: viewState = {}, adapter =
   const panMaxSpeed = 1.35;
   const panDeceleration = .00225;
   const maxScale = config.maxScale ?? 12;
-  const canvasMarkerThreshold = 140;
+  const canvasMarkerThreshold = 64;
   const wheelDuration = 200;
   const wheelStartAdvance = 5;
   const wheelRate = .006;
@@ -917,7 +1044,6 @@ function mountAtlas(root, { signal: viewSignal, state: viewState = {}, adapter =
   const pinOffsetSteps = [0, 22, -22, 44, -44, 66, -66];
   const pinOffsets = pinOffsetSteps.flatMap(dy => pinOffsetSteps.map(dx => ({ dx, dy })))
     .sort((a, b) => Math.hypot(a.dx, a.dy) - Math.hypot(b.dx, b.dy));
-  const labelLayers = [streetLabels, districtLabels];
   const labelBounds = new Map();
   const pinPositions = new WeakMap();
   const preferredCaptionSlots = new WeakMap();
@@ -937,6 +1063,7 @@ function mountAtlas(root, { signal: viewSignal, state: viewState = {}, adapter =
   let cameraMotion;
   let pendingWheel;
   let fullDrawNeeded = false;
+  let mapLabelsVisible = false;
   let markerView;
   let markersTranslated = false;
   let markerProjectionScale = 1;
@@ -948,6 +1075,8 @@ function mountAtlas(root, { signal: viewSignal, state: viewState = {}, adapter =
   let matchingRoutes = [];
   let selectedRoute;
   let selectedPlace;
+  let selectedLocation;
+  let selectedLocationElements = [];
   let selectedCollectibleEntry;
   let focusPlaceSelection = false;
   let selectedCluster;
@@ -1024,7 +1153,7 @@ function mountAtlas(root, { signal: viewSignal, state: viewState = {}, adapter =
       // Keep the rendered bounds of rotated and curved text in map coordinates.
       labelBounds.set(layer, [...layer.querySelectorAll('.atlas-map-label')].map(label => {
         const box = label.getBoundingClientRect();
-        return { x: (box.left - origin.left) / scale, y: (box.top - origin.top) / scale,
+        return { key: label.dataset.atlasLocation, x: (box.left - origin.left) / scale, y: (box.top - origin.top) / scale,
           w: box.width / scale, h: box.height / scale };
       }));
     }
@@ -1073,6 +1202,24 @@ function mountAtlas(root, { signal: viewSignal, state: viewState = {}, adapter =
     return remaining.length ? remaining : entries;
   }
 
+  function appendPhotoPreview(container, photo, name) {
+    const inTooltip = container === tooltipContent;
+    const button = photoThumbnail.content.firstElementChild.cloneNode(true);
+    button.setAttribute('aria-label', `Enlarge location photo for ${name}`);
+    if (inTooltip) button.tabIndex = -1;
+    const image = button.querySelector('img');
+    image.src = photo.preview;
+    image.width = photo.width;
+    image.height = photo.height;
+    button.addEventListener('click', () => {
+      const trigger = inTooltip ? mapTooltipPin : button;
+      hideMapTooltip();
+      openPhoto(photo, name, trigger);
+    });
+    if (inTooltip) container.prepend(button);
+    else container.append(button);
+  }
+
   function appendCollectibleDetails(container, place, interactive) {
     const paragraph = (text, className) => {
       const element = document.createElement('p');
@@ -1105,7 +1252,7 @@ function mountAtlas(root, { signal: viewSignal, state: viewState = {}, adapter =
     };
 
     if (place.pickup) {
-      const { progressId, summary: info, steps: directions, reward, note, link } = place.pickup;
+      const { progressId, summary: info, steps: directions, reward, note, link, photo } = place.pickup;
       checkbox(progressId, place.name);
       if (info) paragraph(info, 'quest-meta');
       const steps = document.createElement('ol');
@@ -1116,6 +1263,7 @@ function mountAtlas(root, { signal: viewSignal, state: viewState = {}, adapter =
         steps.append(item);
       }
       container.append(steps);
+      if (interactive && photo) appendPhotoPreview(container, photo, place.name);
       if (reward) paragraph(reward);
       if (note) paragraph(note);
       if (link) guideLink(link.anchor, link.label);
@@ -1152,14 +1300,23 @@ function mountAtlas(root, { signal: viewSignal, state: viewState = {}, adapter =
 
   function showMapTooltip(pin) {
     if (pin === mapTooltipPin || pointers.size || cameraMotion || pendingWheel || placeMoves.has(pin)) return;
-    const { name, renderDetails } = tooltipDetails.get(pin);
+    const { name, photo, renderDetails } = tooltipDetails.get(pin);
     hideMapTooltip();
     mapTooltipPin = pin;
     const title = document.createElement('strong');
     title.textContent = name;
     title.setAttribute('aria-hidden', 'true');
-    tooltipContent.replaceChildren(title);
-    renderDetails(tooltipContent);
+    const details = document.createElement('div');
+    details.className = 'atlas-tooltip-details';
+    details.append(title);
+    renderDetails(details);
+    tooltipContent.replaceChildren(details);
+    if (photo) appendPhotoPreview(tooltipContent, photo, name);
+    const hasPhoto = Boolean(photo);
+    mapTooltip.toggleAttribute('data-has-photo', hasPhoto);
+    mapTooltip.setAttribute('role', hasPhoto ? 'region' : 'tooltip');
+    if (hasPhoto) mapTooltip.setAttribute('aria-label', name);
+    else mapTooltip.removeAttribute('aria-label');
     tooltipContent.style.maxHeight = '';
     mapTooltip.hidden = false;
 
@@ -1201,16 +1358,20 @@ function mountAtlas(root, { signal: viewSignal, state: viewState = {}, adapter =
     if (pin && pin !== tooltipPin(event.relatedTarget)) showMapTooltip(pin);
   });
   markerLayer.addEventListener('pointerout', event => {
-    if (mapTooltipPin && tooltipPin(event.target) === mapTooltipPin && tooltipPin(event.relatedTarget) !== mapTooltipPin) {
+    if (mapTooltipPin && tooltipPin(event.target) === mapTooltipPin && tooltipPin(event.relatedTarget) !== mapTooltipPin
+      && !mapTooltip.contains(event.relatedTarget)) {
       hideMapTooltip();
     }
+  });
+  mapTooltip.addEventListener('pointerout', event => {
+    if (!mapTooltip.contains(event.relatedTarget) && tooltipPin(event.relatedTarget) !== mapTooltipPin) hideMapTooltip();
   });
   markerLayer.addEventListener('focusin', event => {
     const pin = tooltipPin(event.target);
     if (pin?.matches(':focus-visible')) showMapTooltip(pin);
   });
   markerLayer.addEventListener('focusout', event => {
-    if (event.target === mapTooltipPin) hideMapTooltip();
+    if (event.target === mapTooltipPin && !mapTooltip.contains(event.relatedTarget)) hideMapTooltip();
   });
 
   function visible(id) {
@@ -1259,10 +1420,10 @@ function mountAtlas(root, { signal: viewSignal, state: viewState = {}, adapter =
     requestDraw();
   }
 
-  function fitScale() {
+  function fitScale(width = world.width, height = world.height) {
     const padding = viewportWidth < 600 ? 18 : 40;
-    return Math.max(.01, Math.min((viewportWidth - padding * 2) / world.width,
-      (viewportHeight - padding * 2) / world.height));
+    return Math.max(.01, Math.min((viewportWidth - padding * 2) / width,
+      (viewportHeight - padding * 2) / height));
   }
 
   function constrainCamera(view) {
@@ -1406,11 +1567,10 @@ function mountAtlas(root, { signal: viewSignal, state: viewState = {}, adapter =
     return { x: camera.x + position.x * camera.scale, y: camera.y + position.y * camera.scale };
   }
 
-  function focusTile(tile, point, stepZoomRatio) {
+  function focusTile(tile, point, stepZoomRatio, { w, h } = tile) {
     const position = point ? worldPoint(point) : { x: tile.x + tile.w / 2, y: tile.y + tile.h / 2 };
-    const scale = Math.min(viewportWidth * .75 / tile.w, viewportHeight * .75 / tile.h);
+    const scale = Math.min(viewportWidth * .75 / w, viewportHeight * .75 / h);
     overview = false;
-    area.value = tile.id;
     let targetY = viewportHeight / 2;
     const panel = point && !selectionPanel.hidden ? getPanelBounds().get(selectionPanel) : undefined;
     if (panel && panel.x + panel.w + 16 >= viewportWidth / 2) {
@@ -1418,6 +1578,7 @@ function mountAtlas(root, { signal: viewSignal, state: viewState = {}, adapter =
       const bottom = viewportHeight - 18;
       if (top < bottom) targetY = (top + bottom) / 2;
     }
+    area.value = tile.id;
     centerAt(position.x, position.y, scale, targetY, true, stepZoomRatio);
   }
 
@@ -1484,36 +1645,46 @@ function mountAtlas(root, { signal: viewSignal, state: viewState = {}, adapter =
   function renderSelectionPanel() {
     panelBounds = undefined;
     const route = selected?.quest ?? selectedRoute;
-    selectionPanel.hidden = !route && !selectedPlace && !selectedCluster;
+    selectionPanel.hidden = !route && !selectedPlace && !selectedCluster && !selectedLocation;
     currentStep.hidden = !route;
     stepControls.hidden = !route;
     selectionDetails.hidden = selectionPanel.hidden;
     selectionDetails.replaceChildren();
     const index = selected?.step ?? linkedRouteStep;
     const step = route?.steps[index];
+    const name = selected ? `#${route.id} ${route.name}`
+      : route?.name ?? selectedCollectibleEntry?.name ?? selectedPlace?.name ?? selectedLocation?.name
+        ?? (selectedCluster && clusterName(selectedCluster));
+    const label = step?.letter === 'board' ? 'Board' : step?.letter ? `Pin ${step.letter}` : '';
     if (route) {
-      const point = route.locations[step.letter] ?? selected?.point ?? selectedPlace;
-      appendRouteSummary(selectionDetails, route, point, true);
+      const point = route.locations[step.letter];
+      if (point?.photo) appendPhotoPreview(selectionDetails, point.photo, `${name} · ${label}`);
+      appendRouteSummary(selectionDetails, route, point ?? selected?.point ?? selectedPlace, true);
     } else if (selectedPlace) {
       appendPlaceSummary(selectionDetails, selectedPlace, true);
     } else if (selectedCluster) {
       selectionDetails.append(clusterList(selectedCluster, true));
+    } else if (selectedLocation?.type === 'area') {
+      selectionDetails.hidden = true;
+    } else if (selectedLocation) {
+      const type = selectedLocation.type === 'street' ? 'Street' : 'District';
+      appendSummaryText(selectionDetails, `${type} · ${byArea.get(selectedLocation.area).label}`, 'quest-meta');
     }
-    selectionDetails.scrollTop = 0;
     showSteps.hidden = !route;
     showSteps.textContent = selectedRoute ? linkedRouteLabel + ' steps' : 'Quest steps';
-    const name = selected ? `#${route.id} ${route.name}`
-      : route?.name ?? selectedCollectibleEntry?.name ?? selectedPlace?.name ?? (selectedCluster && clusterName(selectedCluster));
     if (name && selectionName.textContent !== name) selectionName.textContent = name;
-    if (!route) return;
+    if (!route) {
+      selectionDetails.scrollTop = 0;
+      return;
+    }
     selectionDone.parentElement.hidden = !selectedRoute && !story;
     selectionDone.checked = selectedRoute ? completedRoutes.has(route.id) : Boolean(guideState?.completed.has(route.id));
-    const label = step.letter === 'board' ? 'Board' : step.letter ? `Pin ${step.letter}` : '';
     stepProgress.textContent = `Step ${index + 1} of ${route.steps.length}${label ? ` · ${label}` : ''}`;
     stepText.textContent = step.text;
-    stepText.scrollTop = 0;
     previousStep.disabled = index === 0;
     nextStep.disabled = index === route.steps.length - 1;
+    selectionDetails.scrollTop = 0;
+    stepText.scrollTop = 0;
   }
 
   function activateStep(index, recenter) {
@@ -1573,10 +1744,12 @@ function mountAtlas(root, { signal: viewSignal, state: viewState = {}, adapter =
     heading.textContent = label;
     const list = document.createElement('ol');
     list.className = 'atlas-step-list';
+    const shownPhotos = new Set();
     for (const [index, step] of route.steps.entries()) {
       const row = document.createElement('li');
       row.setAttribute('aria-current', index === current ? 'step' : 'false');
-      if (route.locations[step.letter]) {
+      const point = route.locations[step.letter];
+      if (point) {
         const button = document.createElement('button');
         button.type = 'button';
         button.dataset.stepIndex = index;
@@ -1586,13 +1759,16 @@ function mountAtlas(root, { signal: viewSignal, state: viewState = {}, adapter =
         badge.textContent = letterLabel(step.letter);
         const copy = document.createElement('span');
         const location = document.createElement('small');
-        const point = route.locations[step.letter];
         const precision = { approximate: ' · Approximate', building: ' · Building', entrance: ' · Entrance' }[point.precision] ?? '';
         location.textContent = byArea.get(point.area).label + precision;
         copy.append(step.text, location);
         button.append(badge, copy);
         button.addEventListener('click', () => selectStep(index));
         row.append(button);
+        if (point.photo && !shownPhotos.has(step.letter)) {
+          appendPhotoPreview(row, point.photo, `${route.name} · Pin ${letterLabel(step.letter)}`);
+          shownPhotos.add(step.letter);
+        }
       } else {
         row.textContent = step.text;
       }
@@ -1631,10 +1807,13 @@ function mountAtlas(root, { signal: viewSignal, state: viewState = {}, adapter =
       button.dataset.stepPin = letter;
       movePin(button, position.x, position.y, anchor);
       button.textContent = letterLabel(letter);
+      addPinImage(button, button, point.icon ?? layerIcons.steps);
       button.setAttribute('aria-label', `${letterLabel(letter)} · ${route.steps[index].text}`);
       const title = selected ? `#${route.id} ${route.name}` : route.name;
       const label = letter === 'board' ? 'Board' : `Pin ${letter}`;
-      tooltipDetails.set(button, { name: `${title} · ${label}`, renderDetails: container => appendRouteSummary(container, route, point) });
+      tooltipDetails.set(button, {
+        name: `${title} · ${label}`, photo: point.photo, renderDetails: container => appendRouteSummary(container, route, point),
+      });
       button.setAttribute('aria-controls', 'atlas-detail');
       button.setAttribute('aria-pressed', String(active));
       button.addEventListener('click', () => activateStep(index, false));
@@ -1690,6 +1869,7 @@ function mountAtlas(root, { signal: viewSignal, state: viewState = {}, adapter =
   } = {}) {
     selectedRoute = undefined;
     selectedPlace = undefined;
+    setSelectedLocation();
     selectedCollectibleEntry = undefined;
     focusPlaceSelection = false;
     selectedCluster = undefined;
@@ -1791,6 +1971,7 @@ function mountAtlas(root, { signal: viewSignal, state: viewState = {}, adapter =
     selected = undefined;
     selectedRoute = undefined;
     selectedPlace = undefined;
+    setSelectedLocation();
     focusPlaceSelection = false;
     selectedCluster = undefined;
     fittedSteps = undefined;
@@ -1799,15 +1980,39 @@ function mountAtlas(root, { signal: viewSignal, state: viewState = {}, adapter =
     spotlight = undefined;
     expanded = undefined;
     results.querySelector('[aria-current]')?.removeAttribute('aria-current');
-    renderSelectionPanel();
   }
 
   function clearQuestSelection(event) {
     const returnFocus = event.currentTarget === clearMapSelection ? viewport : results.querySelector('[aria-current]') ?? viewport;
     resetQuestSelection();
+    renderSelectionPanel();
     detail.hidden = true;
     returnFocus.focus({ preventScroll: true });
     requestDraw();
+  }
+
+  function setSelectedLocation(location) {
+    if (selectedLocation === location) return;
+    for (const element of selectedLocationElements) element.removeAttribute('data-location-selected');
+    selectedLocation = location;
+    selectedLocationElements = location ? [...canvas.querySelectorAll(`[data-atlas-location="${CSS.escape(location.key)}"]`)] : [];
+    for (const element of selectedLocationElements) element.setAttribute('data-location-selected', '');
+  }
+
+  function showLocation(location, recenter = true) {
+    resetQuestSelection();
+    setSelectedLocation(location);
+    renderSelectionPanel();
+    detail.hidden = true;
+    if (!recenter) return;
+    const tile = byArea.get(location.area);
+    if (location.bounds) {
+      const [left, top, right, bottom] = location.bounds;
+      focusTile(tile, { area: tile.id, x: (left + right) / 2, y: (top + bottom) / 2 }, undefined, {
+        w: tile.w * Math.max(.25, (right - left) * 1.2),
+        h: tile.h * Math.max(.25, (bottom - top) * 1.2),
+      });
+    } else focusTile(tile);
   }
 
   function catalogueSection(section, interactive = true) {
@@ -1980,7 +2185,6 @@ function mountAtlas(root, { signal: viewSignal, state: viewState = {}, adapter =
     selectedRoute = linkedRoute;
     linkedRouteStep = step;
     if (linkedRoute) saveSelection();
-    renderSelectionPanel();
     markCurrentResult();
     const title = document.createElement('h2');
     title.textContent = linkedRoute?.name ?? place.name;
@@ -1995,6 +2199,7 @@ function mountAtlas(root, { signal: viewSignal, state: viewState = {}, adapter =
       appendCollectibleDetails(sidebarCollectible, place, true);
       detail.append(sidebarCollectible);
     }
+    renderSelectionPanel();
     if (place.routes) {
       const entries = linkedRoute ? [linkedRoute] : matchingRoutes.filter(entry => entry.place === place);
       appendLinkedRouteSteps(entries);
@@ -2207,10 +2412,14 @@ function mountAtlas(root, { signal: viewSignal, state: viewState = {}, adapter =
         grid.add({ x: x - 20, y: y - 17, w: 40, h: 34 });
       }
     }
+    if (!mapLabelsVisible && !selectedLocation) return;
     const { x: mapX, y: mapY, scale } = camera;
-    for (const layer of labelLayers) {
+    for (const [type, layer] of labelLayers) {
       if (layer.hidden) continue;
+      const onlySelected = !mapLabelsVisible || layer.hasAttribute('data-location-only');
+      if (onlySelected && selectedLocation?.type !== type) continue;
       for (const box of getLabelBounds(layer)) {
+        if (onlySelected && box.key !== selectedLocation.key) continue;
         const x = mapX + box.x * scale - 2;
         const y = mapY + box.y * scale - 2;
         const w = box.w * scale + 4;
@@ -2309,12 +2518,13 @@ function mountAtlas(root, { signal: viewSignal, state: viewState = {}, adapter =
     button.dataset.place = index;
     const name = place.accessibleName ?? place.name;
     button.setAttribute('aria-label', name);
-    tooltipDetails.set(button, { name, renderDetails: container => appendPlaceSummary(container, place, false) });
+    tooltipDetails.set(button, { name, photo: place.pickup?.photo, renderDetails: container => appendPlaceSummary(container, place, false) });
     const icon = document.createElement('span');
     icon.className = 'atlas-place-icon';
     icon.setAttribute('aria-hidden', 'true');
     icon.textContent = place.symbol ?? placeTypes[place.type]?.symbol ?? '•';
     button.append(icon);
+    addPinImage(button, icon, place.icon ?? placeTypes[place.type]?.icon ?? layerIcons[place.type]);
     const color = place.color ?? placeTypes[place.type]?.color;
     if (color) button.style.setProperty('--collectible-color', color);
     if (place.textColor) button.style.setProperty('--atlas-marker-ink', place.textColor);
@@ -2479,6 +2689,7 @@ function mountAtlas(root, { signal: viewSignal, state: viewState = {}, adapter =
     if (spread) button.classList.add('spread');
     button.dataset.marker = key;
     button.textContent = multiple ? `×${group.entries.length}` : quest.id;
+    if (!multiple) addPinImage(button, button, point.icon ?? quest.icon ?? questTypes[quest.type]?.icon ?? layerIcons[markerType]);
     const name = multiple ? clusterName(group) : `#${quest.id} ${quest.name}`;
     button.setAttribute('aria-label', name);
     tooltipDetails.set(button, { name, renderDetails: container => {
@@ -2653,6 +2864,7 @@ function mountAtlas(root, { signal: viewSignal, state: viewState = {}, adapter =
           text: element.firstElementChild.textContent, width: 18, height: 18, radius: 4, font: placeMotionText,
           color: place.textColor ?? '#fff6e7', fill: place.color ?? placeTypes[place.type]?.color ?? '#5b4932',
           border: '#f4e9cc', shadow: true, outline: selectedPlace === place ? '#ffe3a5' : undefined,
+          icon: loadedPinImage(element), iconSize: 14,
         };
         const lines = [];
         if (anchor.x !== x || anchor.y !== y) lines.push({ dx: anchor.x - x, dy: anchor.y - y, color: '#9ce3da', width: 1 });
@@ -2680,7 +2892,7 @@ function mountAtlas(root, { signal: viewSignal, state: viewState = {}, adapter =
       const fill = step ? active ? '#ffe3a5' : '#8c352c' : questPinColors[element.dataset.markerType];
       records.push({ x, y, anchor, sprite: { text, width, height: minimum, radius: minimum / 2,
         font: questMotionText, fill, color: step && active ? '#3b2517' : '#fff', border: '#fff8e6',
-        shadow: true, outline: active ? '#ffdd7e' : undefined } });
+        shadow: true, outline: active ? '#ffdd7e' : undefined, icon: loadedPinImage(element), iconSize: 16 } });
     }
     return records;
   }
@@ -2693,8 +2905,10 @@ function mountAtlas(root, { signal: viewSignal, state: viewState = {}, adapter =
   }
 
   function drawMotionMarkers(ratio, dx, dy) {
-    // Keep native controls when a pin has keyboard focus, and use the DOM at sparse zoom levels.
-    if (projectedMarkers.length < canvasMarkerThreshold || placeMoves.size || markerLayer.contains(document.activeElement)) {
+    // Keep the current renderer as pins leave the view during a zoom.
+    const count = projectedMarkers.length;
+    const sparse = count < canvasMarkerThreshold && !viewport.hasAttribute('data-motion-markers');
+    if (!count || sparse || placeMoves.size || markerLayer.contains(document.activeElement)) {
       hideMotionMarkers();
       return false;
     }
@@ -2728,10 +2942,26 @@ function mountAtlas(root, { signal: viewSignal, state: viewState = {}, adapter =
     if (moving) requestPan();
     const zooming = pointers.size === 2 || Boolean(cameraMotion
       && (cameraMotion.flight || cameraMotion.start.scale !== cameraMotion.destination.scale));
+    // With a focused place, give map labels their own layers across the visibility threshold.
+    const focusedPlaceZoom = focusSelection.checked && focusPlaceSelection;
+    const labelZoom = zooming && (focusedPlaceZoom || (cameraMotion && (cameraMotion.flight?.scale
+      ?? Math.min(cameraMotion.start.scale, cameraMotion.destination.scale)) >= mapLabelScale));
     viewport.toggleAttribute('data-zooming', zooming);
+    viewport.toggleAttribute('data-label-zoom', Boolean(labelZoom));
     viewport.toggleAttribute('data-wheel-zoom-out', (cameraMotion?.wheel?.logChange ?? 0) < 0);
     viewport.toggleAttribute('data-inertia', Boolean(cameraMotion?.inertia));
     moveElement(canvas, camera.x, camera.y, ` scale(${camera.scale})`);
+    const nextMapLabelsVisible = camera.scale >= mapLabelScale;
+    if (fullDrawNeeded || mapLabelsVisible !== nextMapLabelsVisible) {
+      mapLabelsVisible = nextMapLabelsVisible;
+      canvas.toggleAttribute('data-hide-map-labels', !mapLabelsVisible);
+      for (const [type, layer] of labelLayers) {
+        const enabled = visible(type);
+        const selected = selectedLocation?.type === type;
+        layer.toggleAttribute('hidden', !enabled && !selected);
+        layer.toggleAttribute('data-location-only', !enabled && selected);
+      }
+    }
     imagery.update({ camera, viewportWidth, viewportHeight, pixelRatio: window.devicePixelRatio || 1,
       overview, inMotion: moving || pointers.size > 0, zooming,
       destination: cameraMotion && !cameraMotion.wheel && !cameraMotion.inertia ? cameraMotion.destination : undefined });
@@ -2748,9 +2978,11 @@ function mountAtlas(root, { signal: viewSignal, state: viewState = {}, adapter =
       Math.abs(dx + viewportWidth * (ratio - 1)), Math.abs(dy + viewportHeight * (ratio - 1)));
     if (!fullDrawNeeded && margin && markerView?.margin === margin && ratio >= .85 && ratio <= 1.18
       && offset <= margin - 24) {
-      moveElement(markerLayer, dx, dy);
-      if (!zooming || !drawMotionMarkers(ratio, dx, dy)) projectMarkers(ratio);
-      markersTranslated = true;
+      if (!zooming || !drawMotionMarkers(ratio, dx, dy)) {
+        moveElement(markerLayer, dx, dy);
+        projectMarkers(ratio);
+        markersTranslated = true;
+      }
       if (!zooming) {
         updateDragCaptions(now, dx, dy, ratio);
         motionMarkerRecords = undefined;
@@ -2763,8 +2995,6 @@ function mountAtlas(root, { signal: viewSignal, state: viewState = {}, adapter =
     markerView = { ...camera, margin };
     canvas.classList.toggle('hide-area-names', !visible('area'));
     routes.toggleAttribute('hidden', !visible('routes'));
-    streetLabels.toggleAttribute('hidden', !visible('street') || camera.scale < mapLabelScale);
-    districtLabels.toggleAttribute('hidden', !visible('district') || camera.scale < mapLabelScale);
     plus.disabled = camera.scale >= maxScale;
     minus.disabled = camera.scale <= fitScale();
     const focused = markerFocus ?? (pins.contains(document.activeElement) ? document.activeElement.dataset.marker : null);
@@ -2818,7 +3048,7 @@ function mountAtlas(root, { signal: viewSignal, state: viewState = {}, adapter =
     }
     if (grid) layoutPlaceCaptions(now, 0, 0, 1, grid);
     motionMarkerRecords = undefined;
-    if (zooming) drawMotionMarkers(1, 0, 0);
+    if (focused || focusedStep !== null || focusedPlace !== null) hideMotionMarkers();
     if (focused) {
       const marker = markers.find(button => button.dataset.marker === focused);
       if (marker !== document.activeElement) (marker ?? viewport).focus({ preventScroll: true });
@@ -2826,6 +3056,14 @@ function mountAtlas(root, { signal: viewSignal, state: viewState = {}, adapter =
       (steps.find(button => button.dataset.stepPin === focusedStep) ?? viewport).focus({ preventScroll: true });
     } else if (focusedPlace !== null) {
       (placeControls.get(Number(focusedPlace))?.button ?? viewport).focus({ preventScroll: true });
+    }
+    if (zooming) drawMotionMarkers(1, 0, 0);
+    else if (!margin && projectedMarkers.length >= canvasMarkerThreshold) {
+      const markers = projectedMarkers;
+      motionMarkers.warmSprites(() => {
+        if (markers !== projectedMarkers || cameraMotion || pendingWheel || pointers.size) return;
+        return motionMarkerRecords ??= prepareMotionMarkers();
+      });
     }
   }
 
@@ -2994,9 +3232,10 @@ function mountAtlas(root, { signal: viewSignal, state: viewState = {}, adapter =
     } else if (keepSelection && selectedRoute && matchingRoutes.includes(selectedRoute)) {
       selectionDone.checked = completedRoutes.has(selectedRoute.id);
       detail.querySelector('[data-route-done]').checked = completedRoutes.has(selectedRoute.id);
-    } else {
+    } else if (!keepSelection || !selectedLocation) {
       const focusInSelection = selectionPanel.contains(document.activeElement) || detail.contains(document.activeElement);
       resetQuestSelection(forgetSelection);
+      renderSelectionPanel();
       detail.hidden = true;
       if (focusInSelection) viewport.focus({ preventScroll: true });
     }
@@ -3032,6 +3271,7 @@ function mountAtlas(root, { signal: viewSignal, state: viewState = {}, adapter =
     if (selectedPlace && isCollectible(selectedPlace) && refreshEntries) {
       if (hideCollected.checked && isCollected(selectedPlace)) {
         resetQuestSelection();
+        renderSelectionPanel();
         detail.hidden = true;
         if (selectionPanel.contains(active) || detail.contains(active) || placeLayer.contains(active)) viewport.focus({ preventScroll: true });
       } else {
@@ -3072,6 +3312,7 @@ function mountAtlas(root, { signal: viewSignal, state: viewState = {}, adapter =
     event.stopPropagation();
   }, { capture: true, signal: viewSignal });
   viewport.addEventListener('pointerdown', event => {
+    if (mapTooltip.contains(event.target)) return;
     hideMapTooltip();
     if (event.button !== 0 || pointers.size >= 2) return;
     if (cameraMotion?.inertia) {
@@ -3132,6 +3373,7 @@ function mountAtlas(root, { signal: viewSignal, state: viewState = {}, adapter =
     });
   }
   viewport.addEventListener('wheel', event => {
+    if (mapTooltip.contains(event.target)) return;
     event.preventDefault();
     const delta = event.deltaY * (event.deltaMode === 1 ? 16 : event.deltaMode === 2 ? viewportHeight : 1);
     if (!delta || pointers.size) return;
@@ -3212,6 +3454,10 @@ function mountAtlas(root, { signal: viewSignal, state: viewState = {}, adapter =
     if (group) group.open = true;
   });
   area.addEventListener('change', () => {
+    if (selectedLocation) {
+      setSelectedLocation();
+      renderSelectionPanel();
+    }
     if (area.value) focusTile(byArea.get(area.value));
     else fitAll();
   });
@@ -3318,9 +3564,18 @@ function mountAtlas(root, { signal: viewSignal, state: viewState = {}, adapter =
 
   function openAtlas(link = {}) {
     updateViewportSize(viewport.clientWidth, viewport.clientHeight);
-    if (!previousSize) fitAll(false);
+    const { quest: questId, route: routeId, place: placeLink, collectible, step, area: areaLink, street } = resolveLink?.(link) ?? link;
+    const hasTarget = questId !== undefined || routeId || placeLink || collectible || areaLink || street;
+    if (!previousSize) {
+      const initial = !hasTarget && !viewState.camera && byArea.get(config.initialArea);
+      if (initial) {
+        overview = false;
+        area.value = initial.id;
+        centerAt(initial.x + initial.w / 2, initial.y + initial.h / 2,
+          fitScale(initial.w, initial.h), viewportHeight / 2, false);
+      } else fitAll(false);
+    }
     previousSize = { width: viewportWidth, height: viewportHeight };
-    const { quest: questId, route: routeId, place: placeLink, collectible, step } = resolveLink?.(link) ?? link;
     const linkedRoute = step === undefined && matchingRoutes.find(entry => entry.id === routeId)
       || linkedRoutes.find(entry => entry.id === routeId && !entry.retry);
     let place = places.find(item => placeLink !== undefined && (item.linkId === placeLink || item.id === placeLink || `${item.area}:${item.name}` === placeLink));
@@ -3332,9 +3587,13 @@ function mountAtlas(root, { signal: viewSignal, state: viewState = {}, adapter =
       place = places.find(item => item.id === placeId && isCollectible(item));
       entry = place?.entries?.find(item => item.progressId === progressId);
     }
-    const restoring = questId === undefined && !(routeId || placeLink || collectible) && viewState.camera;
+    const location = areaLink ? locations.get('area:' + areaLink) ?? locations.get('district:' + areaLink)
+      : street ? locations.get('street:' + street) : undefined;
+    const restoring = !hasTarget && viewState.camera;
     if (place) openCollectible(place, entry);
     else if (linkedRoute) openLinkedRoute(linkedRoute, step === undefined ? 0 : Number(step), step !== undefined);
+    else if (location) showLocation(location);
+    else if (restoring && locations.has(viewState.location)) showLocation(locations.get(viewState.location), false);
     else if (restoring && places[viewState.place]) {
       const previousPlace = places[viewState.place];
       const previousEntry = previousPlace.entries?.find(item => item.progressId === viewState.entry);
@@ -3385,6 +3644,7 @@ function mountAtlas(root, { signal: viewSignal, state: viewState = {}, adapter =
       camera: { x: (viewportWidth / 2 - x) / scale, y: (viewportHeight / 2 - y) / scale, scale }, overview,
       chapter: chapter.value, firstWindow: firstWindow.value, type: type.value, area: area.value, fitSteps: Boolean(fittedSteps),
       place: selectedPlace && !selectedRoute ? places.indexOf(selectedPlace) : undefined,
+      location: selectedLocation?.key,
       entry: selectedCollectibleEntry?.progressId, focusPlace: focusPlaceSelection, spotlight: spotlight?.id,
     });
     viewportObserver.disconnect();
@@ -3415,6 +3675,223 @@ function mountAtlas(root, { signal: viewSignal, state: viewState = {}, adapter =
     openAtlas();
   }
   return { open: openAtlas };
+}
+
+// Runs a single Atlas engine at a time and keeps each map's view state when switching.
+function mountAtlasProject(project, { signal, state = {}, adapters = {}, urlNavigation = false } = {}) {
+  const picker = project.querySelector('[data-atlas-project-picker]');
+  const tabs = [...picker.querySelectorAll('[data-atlas-open-map]')];
+  const landing = project.querySelector('[data-atlas-project-landing]');
+  const heading = landing.querySelector('.atlas-project-title');
+  const titleArt = heading.querySelector('[data-atlas-title-image]');
+  const view = project.querySelector('[data-atlas-project-view]');
+  const routeSource = project.querySelector('[data-atlas-project-routes]');
+  const projectRoutes = new Map((routeSource ? JSON.parse(routeSource.textContent) : []).map(route => [route.id, route]));
+  const routePanel = project.querySelector('[data-atlas-project-route]');
+  const routeName = routePanel?.querySelector('[data-atlas-route-name]');
+  const routeProgress = routePanel?.querySelector('[data-atlas-route-progress]');
+  const routeInstructions = routePanel?.querySelector('[data-atlas-route-instructions]');
+  const stepButtons = [...routePanel?.querySelectorAll('[data-atlas-project-step]') ?? []];
+  const templates = new Map([...project.querySelectorAll('template[data-atlas-map]')]
+    .map(template => [template.dataset.atlasMap, template]));
+  const fallback = project.dataset.defaultMap;
+  const states = state.maps ??= new Map();
+  const lifetime = new AbortController();
+  const listenerOptions = { signal: lifetime.signal };
+  let active;
+  let guided;
+
+  function unmountMap() {
+    if (!active) return;
+    active.controller.abort();
+    active = undefined;
+    picker.hidden = true;
+    project.append(picker);
+    if (routePanel && view.contains(routePanel)) {
+      routePanel.hidden = true;
+      project.append(routePanel);
+    }
+    view.replaceChildren();
+  }
+
+  function clearProjectRoute() {
+    guided = undefined;
+    delete state.projectRoute;
+    if (routePanel) routePanel.hidden = true;
+  }
+
+  function showLanding(focus = false) {
+    clearProjectRoute();
+    unmountMap();
+    delete state.map;
+    landing.hidden = false;
+    if (titleArt && !titleArt.hasAttribute('src')) titleArt.src = titleArt.dataset.atlasTitleImage;
+    for (const image of landing.querySelectorAll('[data-atlas-preview]:not([src])')) image.src = image.dataset.atlasPreview;
+    if (focus) heading.focus();
+  }
+
+  function showTitleImage() {
+    if (!titleArt.naturalWidth) return;
+    heading.querySelector('span').hidden = true;
+    titleArt.hidden = false;
+    heading.setAttribute('data-atlas-title-loaded', '');
+  }
+
+  function show({ map = active?.id ?? state.map ?? fallback, ...link } = {}) {
+    const template = templates.get(map);
+    if (!template || lifetime.signal.aborted) return false;
+    if (active?.id !== map) {
+      const keepFocus = picker.contains(document.activeElement);
+      unmountMap();
+      const content = template.content.cloneNode(true);
+      content.querySelector('[data-atlas-sidebar-top]').prepend(picker);
+      const currentTab = tabs.find(tab => tab.dataset.atlasOpenMap === map);
+      for (const tab of tabs) tab.removeAttribute('aria-current');
+      currentTab.setAttribute('aria-current', 'page');
+      picker.hidden = false;
+      landing.hidden = true;
+      view.replaceChildren(content);
+      if (keepFocus) currentTab.focus({ preventScroll: true });
+
+      if (!states.has(map)) states.set(map, {});
+      const controller = new AbortController();
+      const atlas = mountAtlas(view, {
+        signal: controller.signal,
+        state: states.get(map),
+        adapter: Object.hasOwn(adapters, map) ? adapters[map] : {},
+        autoOpen: false,
+      });
+      active = { id: map, controller, atlas };
+      state.map = map;
+      atlas.open(link);
+    } else if (Object.keys(link).length) {
+      active.atlas.open(link);
+    }
+    return true;
+  }
+
+  function showFromURL() {
+    const parameters = new URLSearchParams(location.hash.slice(1));
+    const route = projectRoutes.get(parameters.get('route'));
+    if (route) {
+      const value = parameters.get('step') ?? '';
+      const index = /^[1-9]\d*$/.test(value) ? Number(value) - 1 : 0;
+      showProjectRoute(route.id, route.steps[index] ? index : 0);
+      return;
+    }
+    clearProjectRoute();
+    const map = parameters.get('map');
+    if (!templates.has(map)) {
+      showLanding(view.contains(document.activeElement));
+      return;
+    }
+    const pin = parameters.get('pin');
+    show(pin ? { map, place: pin } : { map });
+  }
+
+  function updateHash(parameters = '') {
+    if (!urlNavigation) return;
+    const url = new URL(location.href);
+    url.hash = String(parameters);
+    if (location.hash !== url.hash) history.pushState(history.state, '', url);
+  }
+
+  function showProjectRoute(id, step = 0) {
+    const route = projectRoutes.get(id);
+    const target = Number.isInteger(step) && route?.steps[step];
+    if (!target) return false;
+    const focused = stepButtons.find(button => button === document.activeElement);
+    if (!show({ map: target.map, place: target.place })) return false;
+    guided = { route, step };
+    state.projectRoute = { id, step };
+    const selection = view.querySelector('#atlas-selection');
+    if (routePanel.parentNode !== selection) selection.append(routePanel);
+    routePanel.hidden = false;
+    routeName.textContent = route.label;
+    routeProgress.textContent = `Step ${step + 1} of ${route.steps.length} · ${target.mapLabel} · ${target.label}`;
+    routeInstructions.textContent = target.text;
+    for (const button of stepButtons) {
+      const adjacent = route.steps[step + Number(button.dataset.atlasProjectStep)];
+      button.disabled = !adjacent;
+      if (adjacent) button.setAttribute('aria-label', `${button.textContent}: ${adjacent.mapLabel} · ${adjacent.label}`);
+      else button.removeAttribute('aria-label');
+    }
+    if (matchMedia('(max-width: 48rem)').matches) selection.scrollIntoView({ block: 'nearest' });
+    if (focused) {
+      const target = focused.disabled ? stepButtons.find(button => !button.disabled) : focused;
+      target?.focus({ preventScroll: true });
+    }
+    return true;
+  }
+
+  function open(link = {}) {
+    if (link.projectRoute !== undefined) {
+      if (!showProjectRoute(link.projectRoute, link.step)) return false;
+      updateHash(new URLSearchParams({ map: active.id, route: guided.route.id, step: String(guided.step + 1) }));
+      return true;
+    }
+    if (!show(link)) return false;
+    clearProjectRoute();
+    if (urlNavigation) {
+      const parameters = new URLSearchParams({ map: active.id });
+      if (link.place !== undefined) parameters.set('pin', link.place);
+      updateHash(parameters);
+    }
+    return true;
+  }
+
+  function destroy() {
+    if (lifetime.signal.aborted) return;
+    lifetime.abort();
+    unmountMap();
+    landing.hidden = true;
+  }
+
+  if (signal?.aborted) {
+    destroy();
+  } else {
+    signal?.addEventListener('abort', destroy, { ...listenerOptions, once: true });
+    if (titleArt) {
+      titleArt.addEventListener('load', showTitleImage, { ...listenerOptions, once: true });
+      if (titleArt.complete) showTitleImage();
+    }
+    project.addEventListener('click', event => {
+      const stepButton = event.target.closest('button[data-atlas-project-step]');
+      if (stepButton && guided && !stepButton.disabled) {
+        open({ projectRoute: guided.route.id, step: guided.step + Number(stepButton.dataset.atlasProjectStep) });
+        return;
+      }
+      if (guided && event.target.closest('#atlas-clear-selection')) {
+        clearProjectRoute();
+        updateHash(new URLSearchParams({ map: active.id }));
+        return;
+      }
+      const link = event.target.closest('a[data-atlas-open-map], a[data-atlas-show-landing]');
+      if (!link || event.defaultPrevented || event.button !== 0
+        || event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
+      event.preventDefault();
+      if (link.hasAttribute('data-atlas-show-landing')) {
+        showLanding(true);
+        updateHash();
+        return;
+      }
+      const focusMap = landing.contains(link) || matchMedia('(max-width: 48rem)').matches;
+      if (open({ map: link.dataset.atlasOpenMap }) && focusMap) {
+        const viewport = view.querySelector('#atlas-map');
+        viewport.closest('.atlas-stage').scrollIntoView({ block: 'start' });
+        viewport.focus({ preventScroll: true });
+      }
+    }, listenerOptions);
+    if (urlNavigation) {
+      window.addEventListener('hashchange', showFromURL, listenerOptions);
+      showFromURL();
+    } else if (!showProjectRoute(state.projectRoute?.id, state.projectRoute?.step)) {
+      clearProjectRoute();
+      if (templates.has(state.map)) show({ map: state.map });
+      else showLanding();
+    }
+  }
+  return { open, destroy };
 }
 
 // Kenzan's side guide shares story and progress with its map.
@@ -3467,13 +3944,15 @@ function mountKenzanMap(signal, state) {
       if (!clock) return entry.id === 'illusory-wolf' && code === '9-8';
       return /^(Any time|Before|Start before)/i.test(entry.time) || entry.time.toLowerCase().includes(clock);
     },
-    resolveLink({ mapQuest, mapRevelation, mapLockerKey, mapPlace, mapCollectible, mapStep }) {
+    resolveLink({ mapQuest, mapRevelation, mapLockerKey, mapPlace, mapCollectible, mapStep, mapArea, mapStreet }) {
       return {
         quest: mapQuest ? Number(mapQuest) : undefined,
         route: mapRevelation,
         place: mapPlace ?? (mapLockerKey ? 'locker:' + mapLockerKey : mapRevelation === 'shichigoro' ? mapRevelation : undefined),
         collectible: mapCollectible,
         step: mapStep,
+        area: mapArea,
+        street: mapStreet,
       };
     },
   };

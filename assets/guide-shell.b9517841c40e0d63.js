@@ -96,6 +96,10 @@ function questMapFilter(story, ids, completed, objective, hideCompleted, missabl
     return name === systemSlot || slotPattern.test(name);
   }
 
+  function includeSlot(name, slot, includeSystem) {
+    return name === systemSlot ? includeSystem : !slot || name === slot;
+  }
+
   async function listSaveSlots(folder, live) {
     const slots = [];
     if (!isSaveFolder(folder) || !live()) return slots;
@@ -130,8 +134,53 @@ function questMapFilter(story, ids, completed, objective, hideCompleted, missabl
     const files = [];
     for (const name of names) {
       if (!live()) break;
-      if (name === systemSlot ? !includeSystem : slot && name !== slot) continue;
+      if (!includeSlot(name, slot, includeSystem)) continue;
       files.push({ slot: name, file: await openSave(folder, name, live) });
+    }
+    return { names, files };
+  }
+
+  function isDroppedSaveFolder(folder) {
+    return folder?.isDirectory && folder.name === 'savedata' && folder.fullPath === '/savedata'
+      && typeof folder.createReader === 'function';
+  }
+
+  async function* droppedEntries(folder, live) {
+    // Each legacy reader has one traversal. Start from the retained root on every scan.
+    const reader = folder.createReader();
+    while (live()) {
+      const batch = await new Promise((resolve, reject) => reader.readEntries(resolve, reject));
+      if (!batch.length) return;
+      for (const entry of batch) {
+        if (!live()) return;
+        yield entry;
+      }
+    }
+  }
+
+  async function readDroppedSave(slot, live) {
+    try {
+      for await (const entry of droppedEntries(slot, live)) {
+        if (!entry.isFile || entry.name !== 'USERDATA' || entry.fullPath !== slot.fullPath + '/USERDATA') continue;
+        const file = await new Promise((resolve, reject) => entry.file(resolve, reject));
+        return live() && file.name === 'USERDATA' ? file : null;
+      }
+    } catch (error) {
+      // A slot may briefly disappear when RPCS3 replaces it.
+      if (!['InvalidStateError', 'NotFoundError', 'NotReadableError', 'TypeMismatchError'].includes(error.name)) throw error;
+    }
+    return null;
+  }
+
+  async function scanDroppedFolder(folder, live, { slot, includeSystem = true } = {}) {
+    const names = [];
+    const files = [];
+    if (!isDroppedSaveFolder(folder) || !live()) return { names, files };
+    for await (const entry of droppedEntries(folder, live)) {
+      const { name } = entry;
+      if (!entry.isDirectory || !isSaveSlot(name) || entry.fullPath !== folder.fullPath + '/' + name) continue;
+      names.push(name);
+      if (includeSlot(name, slot, includeSystem)) files.push({ slot: name, file: await readDroppedSave(entry, live) });
     }
     return { names, files };
   }
@@ -178,7 +227,10 @@ function questMapFilter(story, ids, completed, objective, hideCompleted, missabl
     const publicGuide = location.origin === publicGuideOrigin
       && [publicGuidePath, publicGuidePath + 'index.html'].includes(location.pathname);
     const unsupportedLocation = !window.isSecureContext || window.top !== window.self || (!localGuide && !publicGuide);
-    if (unsupportedLocation || typeof window.showDirectoryPicker !== 'function') return { unsupportedLocation };
+    const pickerAvailable = typeof window.showDirectoryPicker === 'function';
+    const dropAvailable = !pickerAvailable && typeof window.DataTransferItem?.prototype.webkitGetAsEntry === 'function';
+    if (unsupportedLocation || (!pickerAvailable && !dropAvailable)) return { unsupportedLocation };
+    const scanFolder = pickerAvailable ? scanSaveFolder : scanDroppedFolder;
 
     let config;
     let revision = 0;
@@ -187,7 +239,7 @@ function questMapFilter(story, ids, completed, objective, hideCompleted, missabl
     let requested = false;
     let timer;
     let picking = false;
-    let persistent = true;
+    let persistent = pickerAvailable;
     let lastStatus = '';
     let slots = [];
     let slotNames = [];
@@ -199,9 +251,19 @@ function questMapFilter(story, ids, completed, objective, hideCompleted, missabl
     let storySlot;
     const seen = new Map();
     const storageKey = publicGuide ? publicGuidePath : location.pathname;
+    const dropPreferenceKey = 'kenzan-guide:dropped-save-folder:' + storageKey;
+    // A preference can survive a reload. The dropped entry stays in this tab's memory.
+    let dropPreference = null;
+    if (dropAvailable) {
+      try {
+        dropPreference = localStorage.getItem(dropPreferenceKey);
+      } catch {
+        // Dropping and reconnecting still work for this tab.
+      }
+    }
     let connectionEvents;
     try {
-      connectionEvents = new BroadcastChannel('kenzan-save-folder:' + storageKey);
+      if (pickerAvailable) connectionEvents = new BroadcastChannel('kenzan-save-folder:' + storageKey);
     } catch {
       // A browser can disable cross-tab coordination for local pages.
     }
@@ -225,8 +287,17 @@ function questMapFilter(story, ids, completed, objective, hideCompleted, missabl
     function controls(online, reconnect = false) {
       connected = online;
       needsReconnect = reconnect;
-      showFolderConnection(reconnect);
+      showFolderConnection(reconnect, dropAvailable && !config && dropPreference === null);
       updateView();
+    }
+
+    function rememberDrop(preference) {
+      dropPreference = preference;
+      try {
+        localStorage.setItem(dropPreferenceKey, preference);
+      } catch {
+        // Retry is still available with the in-memory preference.
+      }
     }
 
     function setSlotOptions(gameplay) {
@@ -267,6 +338,7 @@ function questMapFilter(story, ids, completed, objective, hideCompleted, missabl
 
     let storageQueue = Promise.resolve();
     function persist(connectionToForget, replace = false) {
+      if (!pickerAvailable) return;
       const value = config ?? null;
       const save = () => storedFolder(storageKey, value, connectionToForget, replace)
         .then(() => { persistent = true; }, () => { persistent = false; });
@@ -288,7 +360,7 @@ function questMapFilter(story, ids, completed, objective, hideCompleted, missabl
       busy = true;
       updateView();
       try {
-        const permission = await active.handle.queryPermission(readAccess);
+        const permission = pickerAvailable ? await active.handle.queryPermission(readAccess) : 'granted';
         if (!live()) return;
         if (permission !== 'granted') {
           stop();
@@ -297,7 +369,7 @@ function questMapFilter(story, ids, completed, objective, hideCompleted, missabl
           message('Saved folder: ' + active.handle.name + '. Reconnect to give this browser read access again.');
           return;
         }
-        const { names, files } = await scanSaveFolder(active.handle, live, { slot: active.slot, includeSystem: mode !== 'inspect' });
+        const { names, files } = await scanFolder(active.handle, live, { slot: active.slot, includeSystem: mode !== 'inspect' });
         if (!live()) return;
         controls(true);
         const { current, system } = selectSaves(files, active.slot);
@@ -367,7 +439,11 @@ function questMapFilter(story, ids, completed, objective, hideCompleted, missabl
         }
       } catch (error) {
         if (!live()) return;
-        if (['NotAllowedError', 'SecurityError', 'NotFoundError'].includes(error.name)) {
+        if (dropAvailable && ['InvalidStateError', 'NotAllowedError', 'SecurityError', 'NotFoundError'].includes(error.name)) {
+          disconnect();
+          controls(false, true);
+          message('Folder access was lost. Drop the RPCS3 savedata folder again.');
+        } else if (['NotAllowedError', 'SecurityError', 'NotFoundError'].includes(error.name)) {
           stop();
           controls(false, true);
           clearStory();
@@ -406,7 +482,7 @@ function questMapFilter(story, ids, completed, objective, hideCompleted, missabl
       }
     }
 
-    async function chooseFolder() {
+    async function connectFolder(getFolder) {
       if (picking) return;
       picking = true;
       updateView();
@@ -416,17 +492,15 @@ function questMapFilter(story, ids, completed, objective, hideCompleted, missabl
       requested = false;
       let changed = false;
       try {
-        const handle = await window.showDirectoryPicker({ ...readAccess, id: 'kenzan-rpcs3-saves', ...(config && { startIn: config.handle }) });
+        const handle = await getFolder();
         if (!live()) return;
-        if (!isSaveFolder(handle)) {
-          message('Choose the RPCS3 folder named savedata.');
+        if (!(pickerAvailable ? isSaveFolder(handle) : isDroppedSaveFolder(handle))) {
+          message(pickerAvailable ? 'Choose the RPCS3 folder named savedata.' : 'Drop one RPCS3 folder named savedata.');
           return;
         }
-        const names = await listSaveSlots(handle, live);
+        const { files } = await scanFolder(handle, live);
         let recognized = false;
-        for (const slot of names) {
-          if (!live()) return;
-          const file = await openSave(handle, slot, live);
+        for (const { slot, file } of files) {
           if (!live()) return;
           if (file && await hasSaveHeader(file, slot === systemSlot ? 'system' : 'gameplay')) {
             recognized = true;
@@ -444,17 +518,34 @@ function questMapFilter(story, ids, completed, objective, hideCompleted, missabl
         slots = [];
         slotNames = [];
         config = { handle, auto: false, slot: '', connection: crypto.randomUUID() };
+        if (dropAvailable) rememberDrop('connected');
         changed = true;
         await persist(undefined, true);
       } catch (error) {
         if (error.name === 'AbortError' || !live()) return;
-        message('The folder picker couldn’t connect. Try desktop Chrome or Edge, or import a save file below.');
+        message(pickerAvailable
+          ? 'The folder picker couldn’t connect. Try desktop Chrome or Edge, or import a save file below.'
+          : 'Could not read the dropped folder. Drop it again or import a save file below.');
       } finally {
         picking = false;
         updateView();
         schedule();
         if (changed && live()) await scan('inspect');
       }
+    }
+
+    function chooseFolder() {
+      return connectFolder(() => window.showDirectoryPicker({
+        ...readAccess, id: 'kenzan-rpcs3-saves', ...(config && { startIn: config.handle }),
+      }));
+    }
+
+    function dropFolder(entry) {
+      if (!isDroppedSaveFolder(entry)) {
+        message('Drop one RPCS3 folder named savedata.');
+        return;
+      }
+      return connectFolder(() => entry);
     }
 
     async function reconnectFolder() {
@@ -484,7 +575,12 @@ function questMapFilter(story, ids, completed, objective, hideCompleted, missabl
 
     async function forgetFolder() {
       const connection = config?.connection;
+      if (dropAvailable) rememberDrop('dismissed');
       disconnect();
+      if (dropAvailable) {
+        message('Folder disconnected. Existing checkmarks were kept.');
+        return;
+      }
       const forgetRevision = revision;
       connectionEvents?.postMessage({ type: 'forget', connection });
       await persist(connection);
@@ -530,8 +626,14 @@ function questMapFilter(story, ids, completed, objective, hideCompleted, missabl
       schedule();
       refresh();
     });
-    void restore();
-    return { chooseFolder, reconnectFolder, forgetFolder, setAuto, setSlot, syncNow: () => scan('now'),
+    if (pickerAvailable) void restore();
+    else {
+      const reconnect = dropPreference === 'connected';
+      controls(false, reconnect);
+      if (reconnect) message('Drop the RPCS3 savedata folder again to reconnect.');
+    }
+    return { chooseFolder: pickerAvailable ? chooseFolder : undefined, dropFolder: dropAvailable ? dropFolder : undefined,
+      reconnectFolder, forgetFolder, setAuto, setSlot, syncNow: () => scan('now'),
       subscribe(listener) {
         render = listener;
         updateView();
@@ -563,11 +665,32 @@ function questMapFilter(story, ids, completed, objective, hideCompleted, missabl
     const settings = node('settings');
     const slotPicker = node('slot');
     const autoPicker = node('auto');
+    const dropZone = node('drop');
+    choose.hidden = !service.chooseFolder;
+    if (service.dropFolder) {
+      dropZone.hidden = false;
+      node('storage').textContent = 'Saves are processed on this device. Drop the folder again after reloading this page. Your checkmarks are kept.';
+      forget.textContent = 'Disconnect folder';
+      dropZone.addEventListener('dragover', event => {
+        event.preventDefault();
+        event.dataTransfer.dropEffect = 'copy';
+        dropZone.setAttribute('data-dragging', '');
+      }, { signal });
+      dropZone.addEventListener('dragleave', () => dropZone.removeAttribute('data-dragging'), { signal });
+      dropZone.addEventListener('drop', event => {
+        event.preventDefault();
+        dropZone.removeAttribute('data-dragging');
+        const items = event.dataTransfer.items;
+        const entry = items.length === 1 && items[0].kind === 'file' ? items[0].webkitGetAsEntry() : null;
+        // Keep the entry itself. Firefox restricts access to DataTransferItem to the drop event.
+        void service.dropFolder(entry);
+      }, { signal });
+    }
     let slotsKey;
     let reconnectFocus;
     const unsubscribe = service.subscribe(state => {
       const previous = reconnect.disabled;
-      reconnect.hidden = !state.needsReconnect;
+      reconnect.hidden = !service.chooseFolder || !state.needsReconnect;
       reconnect.disabled = reconnectStory.disabled = state.reconnecting;
       now.hidden = settings.hidden = !state.connected;
       now.disabled = state.busy;
@@ -590,8 +713,16 @@ function questMapFilter(story, ids, completed, objective, hideCompleted, missabl
     });
     signal.addEventListener('abort', unsubscribe, { once: true });
     const actions = [[choose, service.chooseFolder], [forget, service.forgetFolder], [now, service.syncNow]];
-    for (const [button, action] of actions) button.addEventListener('click', action, { signal });
+    for (const [button, action] of actions) {
+      if (action) button.addEventListener('click', action, { signal });
+    }
     for (const button of [reconnect, reconnectStory]) button.addEventListener('click', () => {
+      if (service.dropFolder) {
+        root.closest('details').open = true;
+        dropZone.scrollIntoView({ block: 'nearest' });
+        dropZone.focus({ preventScroll: true });
+        return;
+      }
       reconnectFocus = document.activeElement === button ? button : undefined;
       void service.reconnectFolder();
     }, { signal });
@@ -859,10 +990,11 @@ function questMapFilter(story, ids, completed, objective, hideCompleted, missabl
     const stories = new Map();
     let lastSync = readLastSync();
     let folderDisconnected = false;
+    let suggestFolderDrop = false;
     let render;
 
     function updateView() {
-      if (render) render({ latest: [...stories.values()].at(-1), lastSync, folderDisconnected });
+      if (render) render({ latest: [...stories.values()].at(-1), lastSync, folderDisconnected, suggestFolderDrop });
     }
 
     function recordSync() {
@@ -887,9 +1019,10 @@ function questMapFilter(story, ids, completed, objective, hideCompleted, missabl
     const parse = buffer => readSaveDetails(buffer, groups, storyWindows);
     const folder = window.initSaveFolderSync({ parse, hasSaveHeader, add: addCheckmarks,
       showStory: (source, snapshot) => showStory('folder', source, snapshot),
-      showFolderConnection(disconnected) {
-        if (folderDisconnected === disconnected) return;
+      showFolderConnection(disconnected, offerDrop = false) {
+        if (folderDisconnected === disconnected && suggestFolderDrop === offerDrop) return;
         folderDisconnected = disconnected;
+        suggestFolderDrop = offerDrop;
         updateView();
       },
       recordSync,
@@ -1045,12 +1178,14 @@ function questMapFilter(story, ids, completed, objective, hideCompleted, missabl
       objective.dispatchEvent(new Event('change'));
     }, options);
 
-    function updateStoryBadge({ latest: sourceStory, lastSync, folderDisconnected }) {
+    function updateStoryBadge({ latest: sourceStory, lastSync, folderDisconnected, suggestFolderDrop }) {
       const latest = folderDisconnected ? undefined : sourceStory;
       const option = latest?.story.window && [...objective.options].find(({ value }) => value === latest.story.window);
       savedWindow = option?.value;
       refreshStoryAction();
-      const showChapter = folderDisconnected || Boolean(latest);
+      // A timestamp saved by an older guide could also come from a manual import.
+      const offerDrop = suggestFolderDrop && Boolean(lastSync) && !latest;
+      const showChapter = folderDisconnected || Boolean(latest) || offerDrop;
       storyBadge.hidden = !showChapter && !lastSync;
       storyChapter.hidden = !showChapter;
       storyMeta.hidden = !latest;
@@ -1060,9 +1195,15 @@ function questMapFilter(story, ids, completed, objective, hideCompleted, missabl
         lastSyncTime.dateTime = lastSync.toISOString();
         lastSyncTime.textContent = syncTimeFormat.format(lastSync);
       }
-      reconnectStory.hidden = !folderDisconnected;
-      if (folderDisconnected) {
-        if (storyChapter.textContent !== 'Disconnected') storyChapter.textContent = 'Disconnected';
+      reconnectStory.hidden = !folderDisconnected && !offerDrop;
+      const reconnectLabel = offerDrop ? 'Drop folder' : 'Reconnect';
+      if (reconnectStory.textContent !== reconnectLabel) {
+        reconnectStory.textContent = reconnectLabel;
+        reconnectStory.setAttribute('aria-label', offerDrop ? 'Drop a save folder' : 'Reconnect save folder');
+      }
+      if (folderDisconnected || offerDrop) {
+        const label = folderDisconnected ? 'Disconnected' : 'Chapter unavailable';
+        if (storyChapter.textContent !== label) storyChapter.textContent = label;
         storyChapter.removeAttribute('title');
       }
       if (!latest) return;
