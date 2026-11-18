@@ -24,7 +24,7 @@ function questMapFilter(story, ids, completed, objective, hideCompleted, missabl
   const checkpoint = story.checkpoints[objective];
   const eligible = new Set();
   const notes = {};
-  const unfinishedOnly = Boolean(checkpoint) || hideCompleted || missableOnly;
+  const unfinishedOnly = hideCompleted || missableOnly;
   for (const id of ids) {
     const done = completed.has(id);
     const timing = questStoryAvailability(story, id, checkpoint);
@@ -747,14 +747,295 @@ function questMapFilter(story, ids, completed, objective, hideCompleted, missabl
 })();
 
 (() => {
+  const turtleSlotsOffset = 0x8bb4;
+  const slotCount = 5;
+  const recordSize = 0x3c;
+  // Native rating uses maximum Stamina and Fullness and both values for Leg Power, Sand, Water, and Mud.
+  const ratingFields = [0x01, 0x05, 0x06, 0x08, 0x09, 0x0b, 0x0c, 0x0e, 0x0f, 0x12];
+  const growthCapFields = { stamina: 0x01, legPower: 0x06, fullness: 0x12, water: 0x0c, sand: 0x09, mud: 0x0f };
+  // Native growth tables are indexed by the stored growth type and age, from youngest to oldest.
+  const growthOutlooks = ['May slow', 'Likely steady', 'May improve'];
+  const growthPatterns = [
+    { name: 'Early Bloomer', factors: [1.5, 1.6, 1.4, 1.2, 1.1, .9, .8, .6, .4, .2], outlooks: [1, 1, 0, 0, 0, 0, 0, 0, 0, 1] },
+    { name: 'Normal', factors: [.7, 1, 1.2, 1.4, 1.5, 1.4, 1.1, .95, .8, .6], outlooks: [2, 2, 2, 1, 1, 0, 1, 1, 0, 1] },
+    { name: 'Late Bloomer', factors: [.8, .9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.4, 1], outlooks: [2, 2, 2, 2, 2, 2, 2, 1, 0, 1] },
+    { name: 'Unpredictable', factors: [1.5, .8, 1.1, 1.3, .7, 1.1, 1.2, .9, .7, .4], outlooks: [0, 2, 2, 0, 2, 1, 0, 0, 0, 1] },
+  ];
+  const speciesNames = ['Chinese Pond Turtle', 'Japanese Pond Turtle', 'Miyamoto Turtle',
+    'Temple Turtle', 'Farm Turtle', 'Riverbed Turtle', 'Eternal Turtle'];
+  const rankNames = ['Hiramaku', 'Komusubi', 'Sekiwake', 'Ozeki', 'Yokozuna', 'Musabetsu'];
+  const personalities = ['Timid', 'Normal', 'Clumsy', 'Unpredictable', 'Awful'];
+  // The native bucket screen derives form from two indices in the turtle record.
+  const formScores = [
+    [50, 70, 90, 70, 50, 30, 20, 30, 50],
+    [60, 60, 65, 70, 65, 60, 40, 40, 60],
+    [50, 30, 50, 70, 50, 60, 80, 40, 30],
+    [80, 70, 80, 70, 70, 50, 40, 30, 40],
+  ];
+  const nameDecoder = new TextDecoder('shift_jis');
+
+  function readTurtleName(data, offset, fallback = '') {
+    if (offset + 20 > data.byteLength) return fallback;
+    const bytes = new Uint8Array(data.buffer, data.byteOffset + offset, 20);
+    const terminator = bytes.indexOf(0);
+    const name = bytes.subarray(0, terminator === -1 ? bytes.length : terminator);
+    // Generated names use the Shift-JIS character 名 and a species control byte.
+    if (name[0] === 0x96 && name[1] === 0xbc) {
+      const speciesToken = bytes[2];
+      const defaultName = fallback || speciesNames[speciesToken <= 6 ? speciesToken : 0];
+      const tail = nameDecoder.decode(name.subarray(speciesToken <= 6 ? 3 : 2));
+      if (tail === '') return defaultName;
+      if (/^ [1-5]$/.test(tail)) return defaultName + tail;
+    }
+    return nameDecoder.decode(name).replace(/[\u0001-\u001f\u007f]/gu, '').trim() || fallback;
+  }
+
+  function turtleForm(score) {
+    if (score === undefined) return null;
+    if (score < 40) return 'Terrible';
+    if (score < 50) return 'Bad';
+    if (score < 60) return 'Okay';
+    return score < 80 ? 'Good' : 'Excellent';
+  }
+
+  function readRaceWins(mask, raceCount) {
+    const wins = [];
+    for (let index = 0; index < raceCount; index++) {
+      if (mask & (1 << index)) wins.push(index);
+    }
+    return wins;
+  }
+
+  function readGrowth(byte, life) {
+    const fields = Object.entries(growthCapFields);
+    const ceilings = Object.fromEntries(fields.map(([stat, field]) => [stat, byte(field + 1)]));
+    const points = Object.fromEntries(fields.map(([stat, field]) =>
+      [stat, Math.max(0, ceilings[stat] - byte(field))]));
+    const pattern = growthPatterns[byte(0x2d)];
+    if (!pattern || !life) return { ceilings, points, pattern: pattern?.name };
+    // Match the game's single-precision age calculation before indexing its growth tables.
+    const adjustedLife = Math.fround(life.initial * Math.fround(.05) + life.remaining);
+    const band = Math.trunc(Math.fround(Math.fround(adjustedLife / life.initial) * 10));
+    const age = 9 - Math.min(9, band);
+    return { ceilings, points, pattern: pattern.name, factor: pattern.factors[age], outlook: growthOutlooks[pattern.outlooks[age]] };
+  }
+
+  function readTurtles(data) {
+    const roster = [];
+    if (data.byteLength < turtleSlotsOffset + slotCount * recordSize) return roster;
+    for (let slot = 1; slot <= slotCount; slot++) {
+      const offset = turtleSlotsOffset + (slot - 1) * recordSize;
+      const byte = field => data.getUint8(offset + field);
+      const word = field => data.getUint16(offset + field);
+      // Bit 0 marks ownership. Bit 1 distinguishes the bucket from the inventory.
+      const flags = word(0x38);
+      if (!(flags & 1)) continue;
+      const stat = field => ({ value: byte(field), max: byte(field + 1) });
+      const terrainGrade = field => Math.min(2, Math.floor(byte(field) / 85));
+      const speciesId = byte(0x2b);
+      const species = speciesNames[speciesId] ?? null;
+      const rankId = byte(0x2c);
+      // Yokozuna wins survive demotion and are stored separately from current-rank wins.
+      const yokozunaRaceWins = readRaceWins(flags >>> 6, 10);
+      const rankRaceWins = rankId === 4 ? yokozunaRaceWins
+        : readRaceWins(word(0x3a), rankId < 4 ? 10 : rankId === 5 ? 13 : 0);
+      const formScore = formScores[byte(3)]?.[byte(4)];
+      const initialLife = word(0x34);
+      const remainingLife = word(0x36);
+      const life = initialLife > 0 && remainingLife <= initialLife ? { initial: initialLife, remaining: remainingLife } : null;
+      const ratingTotal = ratingFields.reduce((sum, field) => sum + byte(field), 0);
+      roster.push({
+        slot,
+        inBucket: Boolean(flags & 2),
+        name: readTurtleName(data, offset + 0x16, species ?? `Turtle ${slot}`),
+        species,
+        speciesId,
+        rank: rankNames[rankId] ?? null,
+        rankId,
+        rankStars: rankId === 4 || rankNames[rankId] === undefined ? null : Math.min(rankRaceWins.length, 3),
+        rankRaceWins,
+        yokozunaRaceWins,
+        adamantineEligible: Boolean(flags & 0x20),
+        personality: personalities[byte(0x15)] ?? null,
+        form: turtleForm(formScore),
+        formScore,
+        affinity: byte(0x14),
+        recentRaceFeedBonus: Boolean(flags & 8),
+        stamina: stat(0),
+        legPower: stat(5),
+        fullness: stat(0x11),
+        terrain: { water: terrainGrade(0xb), sand: terrainGrade(8), mud: terrainGrade(0xe) },
+        terrainStats: { water: stat(0xb), sand: stat(8), mud: stat(0xe) },
+        calculatedRating: Math.floor(ratingTotal * 100 / (ratingFields.length * 255)),
+        savedRating: byte(0x2a),
+        growth: readGrowth(byte, life),
+        lifespan: speciesId === 6 ? { eternal: true } : life,
+        wins: word(0x32),
+        races: word(0x30),
+        winStreak: byte(0x2e),
+        lossStreak: byte(0x2f),
+      });
+    }
+    return roster;
+  }
+
+  if (typeof module === 'object' && module.exports) module.exports = { readTurtles, readTurtleName };
+  else {
+    window.readKenzanTurtles = readTurtles;
+    window.readKenzanTurtleName = readTurtleName;
+  }
+})();
+
+(() => {
+  const readTurtleName = typeof module === 'object' && module.exports
+    ? require('./save-turtle-bucket.js').readTurtleName : window.readKenzanTurtleName;
+  const raceRecords = [
+    ['h', 0x8ce0, 10], ['k', 0x8da8, 10], ['s', 0x8e70, 10],
+    ['o', 0x8f38, 10], ['y', 0x9000, 10], ['m', 0x90c8, 13],
+  ].flatMap(([rank, start, count]) => Array.from({ length: count }, (_, index) => ({
+    id: 'turtle-race-' + rank + String(index).padStart(2, '0'),
+    offset: start + 20 * index,
+  })));
+
+  function readTurtleRaceResults(data) {
+    // The completion menu treats a nonempty winner name as a first-place finish.
+    return raceRecords.filter(({ offset }) => !data || data.getUint8(offset)).map(({ id, offset }) => ({
+      id,
+      winner: data ? readTurtleName(data, offset) || null : null,
+    }));
+  }
+
+  function streakProgress(count, label) {
+    return count >= 10 ? `Eligible · ${count} ${label} in a row` : `${count} / 10 ${label} in a row`;
+  }
+
+  function seniorProgress(lifespan) {
+    if (lifespan?.eternal) return 'Doesn’t age';
+    if (!lifespan) return 'Lifespan unavailable';
+    const { initial, remaining } = lifespan;
+    if (!remaining) return 'No lifespan left';
+    // Compare the stored values so display rounding never makes a turtle eligible.
+    return remaining * 10 <= initial ? 'Eligible' : 'Above the 10% limit';
+  }
+
+  function kenzanTurtleRaceView(section = document.querySelector('#minigame-turtle-racing')) {
+    const doc = section.ownerDocument;
+    const prompt = section.querySelector('[data-turtle-race-sync]');
+    const planner = section.querySelector('[data-turtle-race-entry]');
+    const qualifiers = [...section.querySelectorAll('[data-turtle-genbu-qualifier]')];
+    const genbuStatus = section.querySelector('[data-turtle-genbu-status]');
+    const empty = section.querySelector('[data-turtle-race-empty]');
+    const candidates = section.querySelector('[data-turtle-race-candidates]');
+    const entries = section.querySelector('[data-turtle-race-entries]');
+    const seniors = section.querySelector('[data-turtle-senior]');
+    const seniorEntries = section.querySelector('[data-turtle-senior-entries]');
+    const winners = [...section.querySelectorAll('tr[id^="turtle-race-"] > th[scope="row"]')].map(header => {
+      const label = doc.createElement('span');
+      label.className = 'turtle-race-winner';
+      label.dataset.turtleLastWinner = header.parentElement.id;
+      label.hidden = true;
+      header.append(label);
+      return label;
+    });
+    const listNames = new Intl.ListFormat('en');
+    let displayed;
+
+    return snapshot => {
+      if (displayed === snapshot) return;
+      displayed = snapshot;
+      const results = new Map(snapshot?.turtleRaceResults?.map(({ id, winner }) => [id, winner]));
+      for (const label of winners) {
+        const winner = results.get(label.dataset.turtleLastWinner);
+        label.hidden = !winner;
+        label.textContent = winner ? 'Last won by ' + winner : '';
+      }
+      const turtles = snapshot?.turtles ?? [];
+      const hasSave = Boolean(snapshot?.turtleRaceResults);
+      prompt.hidden = hasSave;
+      planner.hidden = !hasSave;
+      empty.hidden = Boolean(turtles.length);
+      candidates.hidden = !turtles.length;
+      seniors.open = false;
+
+      const allQualifiersWon = qualifiers.every(qualifier => results.has(qualifier.dataset.turtleGenbuQualifier));
+      for (const qualifier of qualifiers) {
+        const won = results.has(qualifier.dataset.turtleGenbuQualifier);
+        qualifier.textContent = won ? 'Won' : 'Still to win';
+      }
+      const sekiwake = turtles.filter(turtle => turtle.rankId === 2).map(turtle => turtle.name);
+      genbuStatus.textContent = sekiwake.length
+        ? (allQualifiersWon ? 'Eligible Sekiwake: ' : 'Sekiwake in this save: ') + listNames.format(sekiwake)
+        : 'No Sekiwake turtle in this save.';
+
+      entries.replaceChildren(...turtles.map(turtle => {
+        const row = doc.createElement('tr');
+        const name = doc.createElement('th');
+        name.scope = 'row';
+        name.textContent = turtle.name;
+        row.append(name);
+        const adamantine = turtle.adamantineEligible ? 'Eligible'
+          : `${turtle.yokozunaRaceWins.length} / 10 Yokozuna wins`;
+        for (const progress of [adamantine, streakProgress(turtle.winStreak, 'wins'), streakProgress(turtle.lossStreak, 'losses')]) {
+          const cell = doc.createElement('td');
+          cell.textContent = progress;
+          row.append(cell);
+        }
+        return row;
+      }));
+      seniorEntries.replaceChildren(...turtles.map(turtle => {
+        const item = doc.createElement('li');
+        const name = doc.createElement('strong');
+        name.textContent = turtle.name;
+        item.append(name, ' · ' + seniorProgress(turtle.lifespan));
+        return item;
+      }));
+    };
+  }
+
+  if (typeof module === 'object' && module.exports) module.exports = { readTurtleRaceResults };
+  else {
+    window.readKenzanTurtleRaceResults = readTurtleRaceResults;
+    window.kenzanTurtleRaceView = kenzanTurtleRaceView;
+  }
+})();
+
+(() => {
   const fileSize = 0x13750;
   const systemSize = 0x33c;
   const header = [0x4c013750, fileSize, 0x80, 0x190, 0x4690, 0x47f0, 0x4814, 0x70d8,
     0x70f8, 0x7138, 0x7258, 0x72d8, 0x73d8, 0x7be8, 0x8aa4, 0x8ba8, 0x9840];
+  // Cumulative experience required for levels 1–50, from the game's level table.
+  const levelThresholds = [
+    0, 1000, 2500, 4000, 5500, 7000, 8500, 10000, 11500, 13000,
+    15000, 17000, 19000, 21300, 23800, 26800, 30300, 34300, 39300, 45300,
+    52300, 61300, 71300, 83300, 98300, 115300, 134300, 155300, 178300, 203300,
+    229300, 256300, 284300, 313300, 343300, 373300, 403300, 433300, 463300, 493300,
+    523300, 553300, 583300, 613300, 643300, 673300, 703300, 738300, 778300, 826300,
+  ];
   // Native record order, with the guide quest ID and the scenario's final-letter flag.
   const yujoRecords = [
     ['suzukaze', 2, 37], ['momochika', 3, 33], ['kinuyo', 1, 34], ['hinagiku', 4, 33],
     ['hanamaru', 5, 29], ['shirayuki', 6, 35], ['asagiri', 7, 36],
+  ];
+  // MINIGAMECOMMON in scenario_state.bin, in native bit order.
+  const minigameIds = ['turtle-racing', 'shogi', 'mahjong', 'koi-koi', 'cho-han', 'cee-lo',
+    'tokkuri', 'konpira', 'karuta', 'tosenkyo', 'yabusame', 'melon', 'waterfall', 'scarecrow', 'jiraiya', 'kabuki'];
+  const minigameScoreGoals = [
+    ['mahjong-50000', 0x9260, 50000],
+    ['koi-koi-3', 0x9364, 20], ['koi-koi-6', 0x9368, 25], ['koi-koi-9', 0x936c, 35], ['koi-koi-12', 0x9370, 40],
+    ['cho-han-200000', 0x9358, 200000, true], ['cee-lo-200000', 0x9354, 200000, true],
+    ['kabuki-1000', 0x710c, 10000000, true],
+  ];
+  const readMinigameScore = (data, offset, signed) => signed ? data.getInt32(offset) : data.getUint32(offset);
+  const yabusameCourses = ['beginner', 'intermediate', 'advanced', 'expert'];
+  const readTurtleRaceResults = typeof module === 'object' && module.exports
+    ? require('./save-turtle-races.js').readTurtleRaceResults : window.readKenzanTurtleRaceResults;
+  // Chapter and the three chapter flags tested by each native rescue actor, in KAME flag order.
+  const turtleRescueWindows = [
+    { chapter: 1, opens: 32, closes: 36, completes: 59 },
+    { chapter: 2, opens: 2, closes: 5, completes: 14 },
+    { chapter: 3, opens: 6, closes: 8, completes: 23 },
+    { chapter: 7, opens: 12, closes: 13, completes: 56 },
   ];
 
   function saveType(data, size) {
@@ -780,16 +1061,39 @@ function questMapFilter(story, ids, completed, objective, hideCompleted, missabl
       throw new Error('This file is not a supported Kenzan save. Choose USERDATA from your RPCS3 save slot.');
     }
     const readStory = typeof module === 'object' && module.exports ? require('./save-story.js').readStory : window.readKenzanSaveStory;
-    const progress = readGameplay(data, groups);
+    const readTurtles = typeof module === 'object' && module.exports
+      ? require('./save-turtle-bucket.js').readTurtles : window.readKenzanTurtles;
+    const story = storyWindows ? readStory(data, storyWindows) : undefined;
+    const turtleProgress = readTurtleProgress(data, story);
+    const turtleRaceResults = readTurtleRaceResults(data);
+    const progress = readGameplay(data, groups, turtleRaceResults, turtleProgress.eternalLetterClaimed);
     const substories = new Set(progress.find(group => group.label === 'Substories')?.keys);
     return {
+      yabusame: readYabusameScores(data),
       progress, yujo: readYujo(data, substories), guidebook: readGuidebook(data, substories),
-      story: storyWindows ? readStory(data, storyWindows) : undefined,
+      story,
+      minigames: readMinigameSummary(data, progress),
+      playerLevel: readPlayerLevel(data),
+      turtles: readTurtles(data),
+      turtleProgress,
+      turtleRaceResults,
     };
   }
 
   function readSave(buffer, groups) {
     return readSaveDetails(buffer, groups).progress;
+  }
+
+  function readPlayerLevel(data) {
+    const level = data.getUint8(0x480c);
+    const totalXp = data.getUint32(0x4800);
+    const threshold = levelThresholds[level - 1];
+    if (threshold === undefined || totalXp > 999999) return undefined;
+    const nextThreshold = levelThresholds[level];
+    if (nextThreshold === undefined) return { level, totalXp };
+    const needed = nextThreshold - threshold;
+    const earned = Math.min(needed, Math.max(0, totalXp - threshold));
+    return { level, totalXp, next: { earned, needed } };
   }
 
   function scenarioFlag(data, group, state) {
@@ -867,17 +1171,51 @@ function questMapFilter(story, ids, completed, objective, hideCompleted, missabl
     return [{ label: 'Ultimate Match S ranks', keys }];
   }
 
-  function readGameplay(data, groups) {
+  function readMailFlags(data, mailId) {
+    const count = Math.min(256, data.getUint32(0x7bd8));
+    for (let index = 0; index < count; index++) {
+      const offset = 0x73d8 + index * 8;
+      if (data.getUint32(offset + 4) === mailId) return data.getUint32(offset);
+    }
+    return null;
+  }
+
+  function readTurtleProgress(data, story) {
+    const flag = state => scenarioFlag(data, 0x145, state);
+    const mailFlags = readMailFlags(data, 97);
+    const currentChapter = story?.chapter;
+    const storyEnded = story?.mode === 'clear' || story?.mode === 'adventure';
+    const rescues = turtleRescueWindows.map(({ chapter, opens, closes, completes }, index) => {
+      const chapterFlag = state => scenarioFlag(data, chapter + 7, state);
+      const passed = storyEnded || currentChapter > chapter || chapterFlag(closes) || chapterFlag(completes);
+      const upcoming = currentChapter < chapter || (currentChapter === chapter && !(chapterFlag(0) && chapterFlag(opens)));
+      const rescueWindow = passed ? 'missed' : upcoming ? 'upcoming' : 'open';
+      return { chapter, rescued: flag(index), collected: flag(8 + index), rescueWindow };
+    });
+    return {
+      bucketUnlocked: flag(13),
+      deathPending: flag(16),
+      recordedDeaths: data.getUint16(0x4520),
+      woodenTags: data.getUint32(0x70fc),
+      eternalLetterReceived: mailFlags !== null,
+      eternalLetterClaimed: Boolean(mailFlags & 0x10000000),
+      rescues,
+    };
+  }
+
+  function readGameplay(data, groups, turtleRaceResults = readTurtleRaceResults(), eternalTurtleClaimedByMail = false) {
     // The game stores 256 flags per group as eight big-endian words.
     const bit = (offset, state) => !data || Boolean(data.getUint32(offset + (state >>> 5) * 4) & (1 << (state & 31)));
     const byteBit = (offset, state) => !data || Boolean(data.getUint8(offset + (state >>> 3)) & (1 << (state & 7)));
     const flag = (group, state) => !data || scenarioFlag(data, group, state);
+    // The yūjo completion letter and outdoor Eternal Turtle pickup have independent claim flags.
     const progress = groups.map(({ label, offset, byteBits, checks }) => ({ label, keys: [...new Set(checks
-      .filter(([, group, state, excluding]) => !data || (offset === undefined
+      .filter(([key, group, state, excluding]) => !data ||
+        (key === 'kenzan-atlas:collected:eternal-turtle' && eternalTurtleClaimedByMail) || (offset === undefined
         ? flag(group, state) && (excluding === undefined || !flag(group, excluding))
         : (byteBits ? byteBit : bit)(offset, state)))
       .map(([key]) => key))] }));
-    progress.push(...readMinigameRecords(data));
+    progress.push(...readMinigameRecords(data, turtleRaceResults));
     // Native Yujo Completion List order; its final event flag is independent of the substory display.
     progress.push({ label: 'Yujo final events', keys: yujoRecords
       .filter((_, index) => !data || yujoFlags(data, index) & 0x20000)
@@ -916,25 +1254,15 @@ function questMapFilter(story, ids, completed, objective, hideCompleted, missabl
     return [...progress, { label: 'Locker keys collected', keys: collected }, { label: 'Lockers opened', keys: opened }];
   }
 
-  function readMinigameRecords(data) {
+  function readMinigameRecords(data, turtleRaceResults) {
     // These are the saved scores and packed course ranks read by Kenzan's Completion menu.
-    const scoreGoals = [
-      ['minigame-mahjong-50000', 0x9260, 50000],
-      ['minigame-koi-koi-3', 0x9364, 20],
-      ['minigame-koi-koi-6', 0x9368, 25],
-      ['minigame-koi-koi-9', 0x936c, 35],
-      ['minigame-koi-koi-12', 0x9370, 40],
-      ['minigame-cho-han-200000', 0x9358, 200000, true],
-      ['minigame-cee-lo-200000', 0x9354, 200000, true],
-      ['minigame-kabuki-1000', 0x710c, 10000000, true],
-    ];
-    const scores = scoreGoals.filter(([, offset, threshold, signed]) =>
-      !data || (signed ? data.getInt32(offset) : data.getUint32(offset)) >= threshold)
-      .map(([key]) => 'kenzan-guide:side-done:' + key);
+    const scores = minigameScoreGoals.filter(([, offset, threshold, signed]) =>
+      !data || readMinigameScore(data, offset, signed) >= threshold)
+      .map(([key]) => 'kenzan-guide:side-done:minigame-' + key);
     const jiraiyaCourses = ['first-chamber', 'earth-chamber', 'water-chamber', 'fire-chamber', 'wind-chamber', 'heavenly-chamber', 'ultimate-chamber'];
     const jiraiya = data?.getUint32(0x9744);
     const courses = [
-      ['yabusame', ['beginner', 'intermediate', 'advanced', 'expert'], data?.getUint16(0x8baa), 0, [5, 6, 7]],
+      ['yabusame', yabusameCourses, data?.getUint16(0x8baa), 0, [5, 6, 7]],
       ['waterfall', ['red-spirit', 'white-spirit', 'black-spirit', 'blue-spirit', 'yellow-spirit'], data?.getUint16(0x9328), 0, [4]],
       ['melon', ['foundational', 'applied', 'advanced', 'boar-scroll', 'snake-scroll', 'asura-scroll'], data?.getUint32(0x9334), 0, [5, 6]],
       ['jiraiya', jiraiyaCourses, jiraiya, 8, [4]],
@@ -944,19 +1272,35 @@ function questMapFilter(story, ids, completed, objective, hideCompleted, missabl
         ? ['kenzan-guide:side-done:mastery-' + group + '-' + entry] : []));
     const jiraiyaClears = jiraiyaCourses.flatMap((entry, index) => !data || jiraiya & (1 << index)
       ? ['kenzan-guide:training-done:jiraiya-' + entry] : []);
-    // Native race results are 20-byte records; Completion checks the saved win byte.
-    const races = [];
-    for (const [prefix, base, count] of [
-      ['h', 0x8ce0, 10], ['k', 0x8da8, 10], ['s', 0x8e70, 10], ['o', 0x8f38, 10], ['y', 0x9000, 10], ['m', 0x90c8, 13],
-    ]) {
-      for (let index = 0; index < count; index++) {
-        if (!data || data.getUint8(base + 20 * index)) races.push('kenzan-guide:side-done:turtle-race-' + prefix + String(index).padStart(2, '0'));
-      }
-    }
+    const races = turtleRaceResults.map(({ id }) => 'kenzan-guide:side-done:' + id);
     return [
       { label: 'Minigame score goals', keys: scores }, { label: 'Training mastery ranks', keys: mastery },
       { label: 'Jiraiya first clears', keys: jiraiyaClears }, { label: 'Turtle Racing wins', keys: races },
     ];
+  }
+
+  function readMinigameSummary(data, progress) {
+    const keys = label => (progress.find(group => group.label === label)?.keys ?? [])
+      .map(key => key.replace(/^kenzan-guide:side-done:/, ''));
+    const count = (entries, prefix) => entries.filter(key => key.startsWith(prefix)).length;
+    const shogi = keys('Shogi');
+    const mastery = [...keys('Training mastery ranks'), ...keys('Training mastery')];
+    const victories = keys('Parlor game wins');
+    return {
+      attempted: Object.fromEntries(minigameIds.map((id, index) => [id, scenarioFlag(data, 0x153, index)])),
+      scores: Object.fromEntries(minigameScoreGoals.map(([id, offset, , signed]) => [id, readMinigameScore(data, offset, signed)])),
+      turtleRacesWon: keys('Turtle Racing wins').length,
+      shogiChallengesWon: count(shogi, 'shogi-challenge-'),
+      shogiKing: shogi.includes('shogi-rank-21'),
+      victories,
+      mastered: Object.fromEntries(['yabusame', 'melon', 'waterfall', 'scarecrow', 'jiraiya']
+        .map(id => [id, count(mastery, 'mastery-' + id + '-')])),
+    };
+  }
+
+  function readYabusameScores(data) {
+    // Four big-endian best scores follow the packed ranks in the Yabusame record.
+    return Object.fromEntries(yabusameCourses.map((course, index) => [course, data.getUint16(0x8bac + 2 * index)]));
   }
 
   function supportedKeys(groups) {
@@ -975,6 +1319,7 @@ function questMapFilter(story, ids, completed, objective, hideCompleted, missabl
   const collectiblePrefix = 'kenzan-atlas:collected:';
   const lastSyncKey = 'kenzan-guide:last-save-sync';
   const syncTimeFormat = new Intl.DateTimeFormat(undefined, { dateStyle: 'medium', timeStyle: 'medium' });
+  const xpFormat = new Intl.NumberFormat();
   let service;
 
   function pendingKeys(progress) {
@@ -1019,7 +1364,15 @@ function questMapFilter(story, ids, completed, objective, hideCompleted, missabl
       stories.delete(key);
       if (snapshot?.story) {
         const acquired = new Set(snapshot.progress.find(group => group.label === 'Weapons acquired')?.keys);
-        stories.set(key, { story: snapshot.story, yujo: snapshot.yujo, guidebook: snapshot.guidebook, source, acquired });
+        stories.set(key, {
+          story: snapshot.story, yujo: snapshot.yujo, guidebook: snapshot.guidebook, source, acquired,
+          yabusame: snapshot.yabusame,
+          minigames: snapshot.minigames,
+          playerLevel: snapshot.playerLevel,
+          turtles: snapshot.turtles,
+          turtleProgress: snapshot.turtleProgress,
+          turtleRaceResults: snapshot.turtleRaceResults,
+        });
       }
       updateView();
     }
@@ -1094,6 +1447,279 @@ function questMapFilter(story, ids, completed, objective, hideCompleted, missabl
     };
   }
 
+  function minigameProgressView() {
+    const prompt = document.querySelector('[data-minigame-save-prompt]');
+    const source = document.querySelector('[data-minigame-save-source]');
+    const attempts = [...document.querySelectorAll('[data-minigame-attempt]')];
+    const results = [...document.querySelectorAll('[data-minigame-result]')];
+    const wins = [...document.querySelectorAll('[data-minigame-victory]')];
+    let displayed;
+    return snapshot => {
+      const record = snapshot?.minigames;
+      if (displayed === record) return;
+      displayed = record;
+      prompt.hidden = Boolean(record);
+      source.hidden = !record;
+      source.textContent = record ? 'Gameplay save · ' + snapshot.source : '';
+      for (const cell of attempts) {
+        cell.textContent = record ? record.attempted[cell.dataset.minigameAttempt] ? 'Attempted' : 'Not attempted' : '—';
+      }
+      const victories = new Set(record?.victories);
+      for (const cell of wins) {
+        cell.textContent = record ? victories.has(cell.dataset.minigameVictory) ? 'Victory' : 'No victory' : '—';
+      }
+      const entries = {};
+      if (record) {
+        const { scores, attempted, mastered } = record;
+        const points = value => value.toLocaleString('en') + ' points';
+        const earnings = scores['kabuki-1000'];
+        const mon = Math.abs(earnings) % 10000;
+        const payout = `${earnings < 0 ? '−' : ''}${Math.floor(Math.abs(earnings) / 10000).toLocaleString('en')} ryō`
+          + (mon ? ` ${mon.toLocaleString('en')} mon` : '');
+        Object.assign(entries, {
+          'turtle-racing': `${record.turtleRacesWon} of 63 races won`,
+          shogi: `${record.shogiChallengesWon} of 11 challenges won · ${record.shogiKing ? 'Shogi King' : 'Seio victory pending'}`,
+          mahjong: attempted.mahjong ? points(scores['mahjong-50000']) : '—',
+          'koi-koi': attempted['koi-koi'] ? [3, 6, 9, 12].map(rounds =>
+            `${rounds} rounds · ${points(scores['koi-koi-' + rounds])}`).join(' / ') : '—',
+          'cho-han': attempted['cho-han'] ? points(scores['cho-han-200000']) : '—',
+          'cee-lo': attempted['cee-lo'] ? points(scores['cee-lo-200000']) : '—',
+          kabuki: attempted.kabuki ? payout : '—',
+        });
+        for (const [game, total] of [['yabusame', 4], ['melon', 6], ['waterfall', 5], ['scarecrow', 12], ['jiraiya', 7]]) {
+          entries[game] = `${mastered[game]} of ${total} mastery targets met`;
+        }
+        for (const game of ['tokkuri', 'konpira', 'karuta', 'tosenkyo']) {
+          entries[game] = `${record.victories.filter(key => key.startsWith('minigame-' + game + '-')).length} of 4 opponents beaten`;
+        }
+      }
+      for (const cell of results) cell.textContent = entries[cell.dataset.minigameResult] ?? '—';
+    };
+  }
+
+  function mountTurtleStatTips(section, signal) {
+    const tooltip = section.querySelector('[data-turtle-stat-callout]');
+    document.body.append(tooltip);
+    const options = { signal };
+    let anchor;
+    let pinned = false;
+    let dismissTimer;
+    const trigger = target => target.closest?.('[data-turtle-stat-tip]');
+    const contains = (element, target) => target instanceof Node && element?.contains(target);
+    const inside = target => contains(anchor, target) || contains(tooltip, target);
+
+    function hide() {
+      clearTimeout(dismissTimer);
+      tooltip.hidden = true;
+      anchor = undefined;
+      pinned = false;
+    }
+
+    function position() {
+      if (!anchor) return;
+      const bounds = anchor.getBoundingClientRect();
+      const viewportWidth = document.documentElement.clientWidth;
+      const viewportHeight = window.innerHeight;
+      if (!bounds.width || !bounds.height || bounds.right <= 0 || bounds.left >= viewportWidth
+        || bounds.bottom <= 0 || bounds.top >= viewportHeight) {
+        hide();
+        return;
+      }
+      const width = tooltip.offsetWidth;
+      const height = tooltip.offsetHeight;
+      const left = bounds.left + (bounds.width - width) / 2;
+      const above = bounds.top - height - 6;
+      const top = above >= 8 ? above : bounds.bottom + 6;
+      tooltip.style.left = Math.max(8, Math.min(left, viewportWidth - width - 8)) + 'px';
+      tooltip.style.top = Math.max(8, Math.min(top, viewportHeight - height - 8)) + 'px';
+    }
+
+    function show(button, pin = false) {
+      clearTimeout(dismissTimer);
+      pinned = pin || (anchor === button && pinned);
+      anchor = button;
+      tooltip.textContent = button.dataset.turtleStatTip;
+      tooltip.hidden = false;
+      position();
+    }
+
+    section.addEventListener('pointerover', event => {
+      if (event.pointerType === 'touch') return;
+      const button = trigger(event.target);
+      if (button && !contains(button, event.relatedTarget)) show(button);
+      else if (inside(event.target)) clearTimeout(dismissTimer);
+    }, options);
+    function scheduleDismiss(event) {
+      if (anchor && !pinned && inside(event.target) && !inside(event.relatedTarget) && !anchor.matches(':focus-visible')) {
+        clearTimeout(dismissTimer);
+        dismissTimer = setTimeout(hide, 220);
+      }
+    }
+    section.addEventListener('pointerout', scheduleDismiss, options);
+    tooltip.addEventListener('pointerenter', () => clearTimeout(dismissTimer), options);
+    tooltip.addEventListener('pointerleave', scheduleDismiss, options);
+    section.addEventListener('focusin', event => {
+      const button = trigger(event.target);
+      if (button?.matches(':focus-visible')) show(button);
+    }, options);
+    section.addEventListener('focusout', event => {
+      if (event.target === anchor) hide();
+    }, options);
+    section.addEventListener('click', event => {
+      const button = trigger(event.target);
+      if (!button) return;
+      if (button === anchor && pinned) hide();
+      else show(button, true);
+    }, options);
+    document.addEventListener('pointerdown', event => {
+      if (anchor && !inside(event.target)) hide();
+    }, options);
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && anchor) hide();
+    }, options);
+    window.addEventListener('scroll', position, { capture: true, signal });
+    window.addEventListener('resize', position, options);
+    signal.addEventListener('abort', () => {
+      hide();
+      tooltip.remove();
+    }, { once: true });
+    return hide;
+  }
+
+  function turtleRosterView(signal) {
+    const section = document.querySelector('#my-turtles');
+    const prompt = section.querySelector('[data-turtle-sync]');
+    const status = section.querySelector('[data-turtle-status]');
+    const roster = section.querySelector('[data-turtle-roster]');
+    const template = section.querySelector('#turtle-card-template');
+    const hideStatTip = mountTurtleStatTips(section, signal);
+    // Race tables remove their rows while closed. Capture titles before they detach.
+    const raceTitles = new Map([...document.querySelectorAll('#minigame-turtle-racing tr[id^="turtle-race-"] > th[scope="row"]')]
+      .map(header => [header.parentElement.id, header.textContent.trim()]));
+    const raceRanks = ['h', 'k', 's', 'o', 'y', 'm'];
+    const terrainGrades = ['Low', 'Medium', 'High'];
+    const lifePercent = new Intl.NumberFormat(undefined, { style: 'percent', maximumFractionDigits: 1 });
+    let displayed;
+
+    return snapshot => {
+      if (displayed === snapshot) return;
+      displayed = snapshot;
+      hideStatTip();
+      const turtles = snapshot?.turtles;
+      prompt.hidden = Boolean(snapshot);
+      roster.hidden = !turtles?.length;
+      status.hidden = !snapshot || !roster.hidden;
+      status.textContent = status.hidden ? '' : turtles ? 'You have no turtles in this save.'
+        : 'The guide couldn’t read your turtles from this save.';
+      roster.replaceChildren(...(turtles ?? []).map(turtle => {
+        const card = template.content.firstElementChild.cloneNode(true);
+        card.dataset.turtleSlot = turtle.slot;
+        if (turtle.species) card.dataset.turtleSpeciesId = turtle.speciesId;
+        const hearts = card.querySelector('[data-turtle-affinity]');
+        const formButton = card.querySelector('[data-turtle-form-tip]');
+        hearts.dataset.turtleStatTip = `Trust ${turtle.affinity} / 255, shown as up to five hearts. ${hearts.dataset.turtleStatTip}`;
+        if (turtle.formScore !== undefined) {
+          formButton.dataset.turtleStatTip = `Form score ${turtle.formScore}. ${formButton.dataset.turtleStatTip}`;
+        }
+        for (const button of card.querySelectorAll('[data-turtle-terrain-tip]')) {
+          const { value, max } = turtle.terrainStats[button.dataset.turtleTerrainTip];
+          button.dataset.turtleStatTip = `Current ability ${value}, trained cap ${max}. ${button.dataset.turtleStatTip}`;
+        }
+        card.querySelector('[data-turtle-feed-bonus]').hidden = !turtle.recentRaceFeedBonus;
+        card.querySelector('[data-turtle-affinity-warning]').hidden = turtle.affinity !== 0;
+        for (const [index, button] of [...card.querySelectorAll('[data-turtle-stat-tip]')].entries()) {
+          const description = document.createElement('span');
+          description.id = `turtle-stat-tip-${turtle.slot}-${index}`;
+          description.hidden = true;
+          description.textContent = button.dataset.turtleStatTip;
+          button.setAttribute('aria-describedby', description.id);
+          button.after(description);
+        }
+        const text = (field, value) => { card.querySelector('[data-turtle-' + field + ']').textContent = value ?? '—'; };
+        text('name', turtle.name);
+        text('species', turtle.species);
+        text('location', turtle.inBucket ? 'In bucket' : 'Carried');
+        text('form', turtle.form);
+        text('personality', turtle.personality);
+        text('rank', turtle.rank);
+        text('rating', turtle.savedRating ? `${turtle.savedRating} / 100` : 'Unevaluated');
+        text('calculated-rating', `${turtle.calculatedRating} / 100`);
+        const { growth, lifespan } = turtle;
+        text('growth-pattern', growth.pattern);
+        text('growth-rate', growth.factor === undefined ? null : `${growth.factor}×`);
+        text('growth-outlook', growth.outlook);
+        for (const value of card.querySelectorAll('[data-turtle-growth-points]')) {
+          value.textContent = '+' + growth.points[value.dataset.turtleGrowthPoints];
+        }
+        for (const value of card.querySelectorAll('[data-turtle-growth-ceiling]')) {
+          value.textContent = growth.ceilings[value.dataset.turtleGrowthCeiling];
+        }
+        let lifeStage;
+        let lifeUnits;
+        if (lifespan?.eternal) {
+          text('lifespan', 'Doesn’t age');
+        } else if (lifespan) {
+          const { remaining, initial } = lifespan;
+          text('lifespan', `${lifePercent.format(remaining / initial)} remaining`);
+          lifeUnits = `${remaining} / ${initial} life units`;
+          if (remaining > 0) {
+            lifeStage = remaining * 4 < initial ? 'Nearing the end of its life'
+              : remaining * 4 > initial * 3 ? 'Young and lively' : 'Still full of energy';
+          }
+        } else {
+          text('lifespan', null);
+        }
+        text('life-units', lifeUnits);
+        card.querySelector('[data-turtle-life-units]').hidden = !lifeUnits;
+        text('life-stage', lifeStage);
+        card.querySelector('[data-turtle-life-stage]').hidden = !lifeStage;
+        card.querySelector('[data-turtle-life-warning]').hidden = lifespan?.remaining !== 0;
+        text('record', `${turtle.wins} wins / ${turtle.races} races`);
+        text('streaks', `${turtle.winStreak}W · ${turtle.lossStreak}L`);
+        const stars = card.querySelector('[data-turtle-rank-stars]');
+        stars.hidden = turtle.rankStars === null;
+        if (!stars.hidden) {
+          stars.textContent = '★'.repeat(turtle.rankStars) + '☆'.repeat(3 - turtle.rankStars);
+          stars.setAttribute('aria-label', `${turtle.rankStars} of 3 rank stars`);
+        }
+        const wins = turtle.rankRaceWins.map(index => {
+          const id = 'turtle-race-' + raceRanks[turtle.rankId] + String(index).padStart(2, '0');
+          return raceTitles.get(id);
+        }).filter(Boolean);
+        if (wins.length) {
+          card.querySelector('[data-turtle-rank-races]').hidden = false;
+          text('rank-win-count', `${wins.length} event ${wins.length === 1 ? 'win' : 'wins'}`);
+          card.querySelector('[data-turtle-rank-win-list]').append(...wins.map(title => {
+            const item = document.createElement('li');
+            item.textContent = title;
+            return item;
+          }));
+        }
+        // The game rounds the remaining affinity up to one of four heart glyphs.
+        const remainder = turtle.affinity % 51;
+        const amount = Math.floor(turtle.affinity / 51) + (remainder ? (Math.floor(remainder / 13) + 1) / 4 : 0);
+        hearts.setAttribute('aria-label', `Affinity ${amount} of 5 hearts`);
+        [...hearts.children].forEach((icon, index) => {
+          const fill = Math.min(1, Math.max(0, amount - index));
+          icon.style.setProperty('--heart-fill', `${fill * 100}%`);
+        });
+        for (const row of card.querySelectorAll('[data-turtle-stat]')) {
+          const { value, max } = turtle[row.dataset.turtleStat];
+          const meter = row.querySelector('meter');
+          meter.hidden = max === 0;
+          meter.max = max || 1;
+          meter.value = value;
+          meter.style.inlineSize = `${max / 255 * 100}%`;
+          row.querySelector('[data-turtle-stat-value]').textContent = `${value} / ${max}`;
+        }
+        for (const cell of card.querySelectorAll('[data-turtle-terrain]')) {
+          cell.textContent = terrainGrades[turtle.terrain[cell.dataset.turtleTerrain]] ?? '—';
+        }
+        return card;
+      }));
+    };
+  }
+
   function guidebookProgressView() {
     const empty = document.querySelector('[data-guidebook-no-save]');
     const panel = document.querySelector('[data-guidebook-saved]');
@@ -1132,7 +1758,51 @@ function questMapFilter(story, ids, completed, objective, hideCompleted, missabl
     };
   }
 
-  function mountSaveSync(signal, viewState) {
+  function turtleProgressView(section) {
+    const bucket = section.querySelector('[data-turtle-bucket-status]');
+    const tags = section.querySelector('[data-turtle-tag-balance]');
+    const replacements = section.querySelector('[data-turtle-replacements]');
+    const deaths = replacements.querySelector('[data-turtle-death-count]');
+    const deathLabel = replacements.querySelector('[data-turtle-death-label]');
+    const pending = replacements.querySelector('[data-turtle-death-pending]');
+    const rewardMail = section.querySelector('[data-turtle-reward-mail]');
+    const milestones = [...replacements.querySelectorAll('[data-turtle-replacement]')];
+    const numbers = new Intl.NumberFormat();
+    let displayed;
+    return snapshot => {
+      const progress = snapshot?.turtleProgress;
+      if (progress === displayed) return;
+      displayed = progress;
+      for (const element of [bucket, tags, replacements, rewardMail]) element.hidden = !progress;
+      if (!progress) return;
+      const { bucketUnlocked, deathPending, recordedDeaths, woodenTags, eternalLetterReceived, eternalLetterClaimed, rescues } = progress;
+      bucket.textContent = bucketUnlocked ? 'Bucket unlocked' : 'Bucket needed';
+      bucket.dataset.ready = String(bucketUnlocked);
+      tags.textContent = `${numbers.format(woodenTags)} wooden tags`;
+      deaths.textContent = numbers.format(recordedDeaths);
+      deathLabel.textContent = recordedDeaths === 1 ? 'recorded death' : 'recorded deaths';
+      pending.hidden = !deathPending;
+      rewardMail.textContent = eternalLetterReceived
+        ? eternalLetterClaimed ? 'Yujo Complete letter received' : 'Yujo Complete letter received · Check your mail'
+        : 'Yujo Complete letter pending';
+      rewardMail.dataset.ready = String(eternalLetterReceived);
+      const hasSpace = snapshot.turtles.length < 5;
+      milestones.forEach((milestone, index) => {
+        const { chapter, rescued, collected, rescueWindow } = rescues[index];
+        const remaining = Math.max(0, index + 1 - recordedDeaths);
+        const ready = rescued && bucketUnlocked && remaining === 0 && hasSpace;
+        milestone.dataset.stage = collected ? 'collected' : ready ? 'available' : !rescued && rescueWindow === 'missed' ? 'missed' : 'waiting';
+        milestone.querySelector('[data-turtle-replacement-status]').textContent = collected ? 'Collected'
+          : !rescued ? ({ missed: 'Missed it', upcoming: `Upcoming · Chapter ${chapter}`, open: 'Rescue needed' })[rescueWindow]
+          : !bucketUnlocked ? 'Bucket needed'
+          : remaining === 1 && deathPending ? 'Record the pending death'
+          : remaining ? `${remaining} more ${remaining === 1 ? 'death' : 'deaths'}`
+          : !hasSpace ? 'Free a turtle slot' : 'Ready at Tatsuya';
+      });
+    };
+  }
+
+  function mountSaveSync(signal, viewState, mountTurtleRacePlanner) {
     const section = document.querySelector('#save-sync');
     const groups = JSON.parse(document.querySelector('#save-sync-data').textContent);
     const storyWindows = JSON.parse(document.querySelector('#save-story-data').textContent);
@@ -1149,6 +1819,10 @@ function questMapFilter(story, ids, completed, objective, hideCompleted, missabl
     const storyTime = storyBadge.querySelector('#save-story-time');
     const storyLastSync = storyBadge.querySelector('#save-story-last-sync');
     const lastSyncTime = storyLastSync.querySelector('time');
+    const levelInfo = storyBadge.querySelector('#save-player-level');
+    const levelNumber = levelInfo.querySelector('strong');
+    const xpBar = levelInfo.querySelector('progress');
+    const xpStatus = levelInfo.querySelector('#save-player-xp');
     const useStory = storyBadge.querySelector('#save-story-use');
     const reconnectStory = storyBadge.querySelector('#save-story-reconnect');
     const weaponReview = document.querySelector('#story-weapon-review');
@@ -1161,8 +1835,17 @@ function questMapFilter(story, ids, completed, objective, hideCompleted, missabl
     const apply = section.querySelector('#save-sync-apply');
     const status = section.querySelector('#save-sync-status');
     const preview = section.querySelector('#save-sync-preview');
+    // Keep references when closed checklist tables detach their bodies.
+    const yabusameScoreHelp = document.querySelector('[data-yabusame-score-help]');
+    const yabusameScores = [...document.querySelectorAll('[data-yabusame-score]')];
     const updateYujo = yujoProgressView();
     const updateGuidebook = guidebookProgressView();
+    const updateMinigames = minigameProgressView();
+    const updateTurtles = turtleRosterView(signal);
+    const turtleSection = document.querySelector('#minigame-turtle-racing');
+    const updateTurtleProgress = turtleProgressView(turtleSection);
+    const updateTurtleRaces = window.kenzanTurtleRaceView(turtleSection);
+    const updateTurtleRacePlanner = mountTurtleRacePlanner(turtleSection, signal);
     let reviewed = session.reviewed;
     let readId = 0;
     let latestStory;
@@ -1187,10 +1870,26 @@ function questMapFilter(story, ids, completed, objective, hideCompleted, missabl
       objective.dispatchEvent(new Event('change'));
     }, options);
 
+    function updateLevel(playerLevel) {
+      levelInfo.hidden = !playerLevel;
+      if (!playerLevel) return;
+      const { level, totalXp, next } = playerLevel;
+      const levelLabel = 'Level ' + level;
+      const xpLabel = next ? `${xpFormat.format(next.earned)} / ${xpFormat.format(next.needed)} XP` : 'Max level';
+      const barLabel = next ? 'Experience toward level ' + (level + 1) : 'Maximum level reached';
+      if (levelNumber.textContent !== levelLabel) levelNumber.textContent = levelLabel;
+      if (xpStatus.textContent !== xpLabel) xpStatus.textContent = xpLabel;
+      xpBar.max = next?.needed ?? 1;
+      xpBar.value = next?.earned ?? 1;
+      xpBar.setAttribute('aria-label', barLabel);
+      levelInfo.title = `${xpFormat.format(totalXp)} total XP`;
+    }
+
     function updateStoryBadge({ latest: sourceStory, lastSync, folderConnection }) {
       const disconnected = folderConnection === 'disconnected';
       const notConnected = folderConnection === 'unconnected';
       const latest = disconnected ? undefined : sourceStory;
+      updateLevel(latest?.playerLevel);
       const option = latest?.story.window && [...objective.options].find(({ value }) => value === latest.story.window);
       savedWindow = option?.value;
       refreshStoryAction();
@@ -1393,9 +2092,20 @@ function questMapFilter(story, ids, completed, objective, hideCompleted, missabl
     const unsubscribe = service.subscribe(state => {
       latestStory = state.latest;
       updateStoryBadge(state);
+      const scores = state.latest?.yabusame;
+      yabusameScoreHelp.hidden = Boolean(scores);
+      for (const cell of yabusameScores) {
+        const score = scores?.[cell.dataset.yabusameScore];
+        cell.textContent = score ? score.toLocaleString() : '—';
+      }
       // A manual import remains usable if the remembered folder needs reconnecting.
       updateYujo(state.latest);
       updateGuidebook(state.latest);
+      updateMinigames(state.latest);
+      updateTurtles(state.latest);
+      updateTurtleProgress(state.latest);
+      updateTurtleRaces(state.latest);
+      updateTurtleRacePlanner(state.latest);
       refreshWeaponReviews();
     });
     signal.addEventListener('abort', unsubscribe, { once: true });
@@ -1435,7 +2145,8 @@ const kenzanViews = (() => {
   let mapLink;
   let atlasRuntime;
 
-  const viewForHash = hash => hash === '#quest-map' ? 'map' : 'guide';
+  const mapSharePrefix = '#quest-map?';
+  const viewForHash = hash => hash === '#quest-map' || hash.startsWith(mapSharePrefix) ? 'map' : 'guide';
 
   function register(view, html, css, initialize) {
     definitions.set(view, { html, css, initialize });
@@ -1502,7 +2213,7 @@ const kenzanViews = (() => {
     const route = ++sequence;
     const hash = location.hash;
     const view = viewForHash(hash);
-    const link = mapLink;
+    const link = mapLink ?? (hash.startsWith(mapSharePrefix) ? { share: hash.slice(mapSharePrefix.length) } : undefined);
     mapLink = undefined;
     if (current?.view !== view && (loads.has(view) || !definitions.has(view))) {
       const loadingStatus = setTimeout(() => {

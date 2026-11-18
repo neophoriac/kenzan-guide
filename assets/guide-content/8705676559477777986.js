@@ -1,1 +1,0 @@
-document.currentScript.receiveGuideContent([[[1,"\u003ctd>Win a full game.\u003c/td>"]],[[1,"\u003ctd>Win a full game.\u003c/td>"]],[[1,"\u003ctd>Win a full game.\u003c/td>"]],[[1,"\u003ctd>Win a full game.\u003c/td>"]]]);
