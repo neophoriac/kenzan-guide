@@ -18,31 +18,10 @@
   <meta property="og:image:height" content="590">
   <meta property="og:image:alt" content="Like a Dragon: Kenzan! Side Content Guide banner with Musashi">
   <meta name="twitter:card" content="summary_large_image">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; connect-src 'self' blob:; base-uri 'none'; form-action 'none'; object-src 'none'; worker-src 'self' blob:; img-src 'self' data:; font-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'sha256-oNgz+Hz6Q7F1orqbpwHgf6FO48a88H0v5LyRJ6aditU='">
-  <script>
-    const kenzanViewAssets = {"guide":{"script":"assets/guide-view.0476b75fdeee16ae.js"},"map":{"script":"assets/atlas-view.d1797827894b9c3c.js","runtime":"assets/atlas-runtime.e5659570d42f9153.js"}};
-    const initialMapView = location.hash === '#quest-map' || location.hash.startsWith('#quest-map?');
-    const firstView = kenzanViewAssets[initialMapView ? 'map' : 'guide'];
-    for (const url of [firstView.script, firstView.runtime]) {
-      if (!url) continue;
-      const preload = document.createElement('link');
-      preload.rel = 'preload';
-      preload.as = 'script';
-      preload.href = url;
-      document.head.append(preload);
-    }
-    if (!initialMapView) {
-      const hero = document.createElement('link');
-      hero.rel = 'preload';
-      hero.as = 'image';
-      hero.href = 'assets/kenzan-banner.png';
-      document.head.append(hero);
-    }
-  </script>
-  <link rel="stylesheet" href="assets/site.cc2a8c92e6eae969.css">
-  <script defer src="assets/browser-storage.b68a9e21a321639c.js"></script>
-  <script defer src="assets/sidebar.dcedac1e20715a45.js"></script>
-  <script defer src="assets/guide-shell.702e3543115a307f.js"></script>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; connect-src 'self' blob:; base-uri 'none'; form-action 'none'; object-src 'none'; worker-src 'self' blob:; img-src 'self' data:; font-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' ">
+  <script defer src="assets/guide-config.ad582d375dc24e5d.js"></script>
+  <script defer src="assets/guide-shell.0e023550d93a5bfe.js"></script>
+  <link rel="stylesheet" href="assets/site.f4a75579f7849884.css">
   <style>
 
 /* A persistent, in-flow warning; it never competes with the mobile tracker dock. */
@@ -66,16 +45,16 @@
   flex: none;
   min-block-size: 2.75rem;
   padding: .35rem .7rem;
-  border: 1px solid #7c332a;
+  border: 1px solid var(--ui-accent, #35646e);
   border-radius: .3rem;
   background: #fbf8f2;
-  color: #7c332a;
+  color: var(--ui-accent, #35646e);
   font: inherit;
   font-weight: 650;
   cursor: pointer;
 }
 #browser-storage-notice button:hover { background: #fbf8f2; text-decoration: underline; text-underline-offset: .18em; }
-#browser-storage-notice button:focus-visible { outline: 2px solid #7c332a; outline-offset: 3px; }
+#browser-storage-notice button:focus-visible { outline: 2px solid var(--ui-accent, #35646e); outline-offset: 3px; }
 html[data-kenzan-storage-notice] { scroll-padding-top: calc(var(--storage-notice-height, 0px) + 1.5rem); }
 html[data-kenzan-storage-notice] .layout > .sidebar-dock {
   top: var(--storage-notice-height, 0px);
@@ -103,6 +82,5 @@ html[data-kenzan-storage-notice] .atlas-skip { top: calc(var(--storage-notice-he
 <noscript><p>This guide requires JavaScript. <a href="map.html">Open the standalone map</a>.</p></noscript>
 <div id="guide-view" hidden></div>
 <section id="quest-map" aria-label="Interactive map" data-integrated hidden></section>
-
 </body>
 </html>
