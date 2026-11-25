@@ -1,0 +1,4240 @@
+[
+  {
+    "id": "st_gion",
+    "label": "Gion",
+    "file": "assets/st_gion.png",
+    "width": 654,
+    "height": 744,
+    "sourceTexture": "bin/map/st_gion/2d_yk_st_gion.dds",
+    "sourceGeometry": "bin/map/st_gion/st_gion.gmd",
+    "textureSize": [
+      1024,
+      1024
+    ],
+    "worldQuad": [
+      {
+        "x": -76.17777252197266,
+        "z": -93.71590423583984,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -76.17777252197266,
+        "z": 86.24516296386719,
+        "u": 0.0,
+        "v": 1.0
+      },
+      {
+        "x": 81.15618133544922,
+        "z": 86.24516296386719,
+        "u": 1.0,
+        "v": 1.0
+      },
+      {
+        "x": 81.15618133544922,
+        "z": -93.71590423583984,
+        "u": 1.0,
+        "v": 0.0
+      }
+    ],
+    "textureBounds": [
+      0.1809999942779541,
+      0.1769999861717224,
+      0.8191877603530884,
+      0.9039999842643738
+    ]
+  },
+  {
+    "id": "st_rakugaicho",
+    "label": "Rakugai",
+    "file": "assets/st_rakugaicho.png",
+    "width": 797,
+    "height": 509,
+    "sourceTexture": "bin/map/st_rakugaicho/2d_yk_st_rakugaicho.dds",
+    "sourceGeometry": "bin/map/st_rakugaicho/st_rakugaicho.gmd",
+    "textureSize": [
+      1024,
+      512
+    ],
+    "worldQuad": [
+      {
+        "x": -87.4798812866211,
+        "z": -26.92458152770996,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -87.48121643066406,
+        "z": 118.94001770019531,
+        "u": 0.0,
+        "v": 1.0
+      },
+      {
+        "x": 141.77801513671875,
+        "z": 118.94001770019531,
+        "u": 1.0,
+        "v": 1.0
+      },
+      {
+        "x": 141.77932739257812,
+        "z": -26.924575805664062,
+        "u": 1.0,
+        "v": 0.0
+      }
+    ],
+    "textureBounds": [
+      0.22190862894058228,
+      0.0033861398696899414,
+      1.0004403591156006,
+      0.9969362020492554
+    ]
+  },
+  {
+    "id": "st_kaido_rakunai",
+    "label": "Kawaramachi",
+    "file": "assets/st_kaido_rakunai.png",
+    "width": 1014,
+    "height": 509,
+    "sourceTexture": "bin/map/st_kaido_rakunai/2d_yk_st_kaido_rakunai.dds",
+    "sourceGeometry": "bin/map/st_kaido_rakunai/st_kaido_rakunai.gmd",
+    "textureSize": [
+      1024,
+      512
+    ],
+    "worldQuad": [
+      {
+        "x": -125.5718765258789,
+        "z": -74.17044830322266,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -125.5718765258789,
+        "z": 29.861083984375,
+        "u": 0.0,
+        "v": 1.0
+      },
+      {
+        "x": 81.15620422363281,
+        "z": 29.8610782623291,
+        "u": 1.0,
+        "v": 1.0
+      },
+      {
+        "x": 81.15620422363281,
+        "z": -74.17044830322266,
+        "u": 1.0,
+        "v": 0.0
+      }
+    ],
+    "textureBounds": [
+      0.0051675899885594845,
+      0.001167595386505127,
+      0.9950201511383057,
+      0.9956573247909546
+    ]
+  },
+  {
+    "id": "st_kaido_kawa",
+    "label": "Riverside Path",
+    "file": "assets/st_kaido_kawa.png",
+    "width": 457,
+    "height": 1016,
+    "sourceTexture": "bin/map/st_kaido_kawa/2d_yk_st_kaido_kawa.dds",
+    "sourceGeometry": "bin/map/st_kaido_kawa/st_kaido_kawa.gmd",
+    "textureSize": [
+      512,
+      1024
+    ],
+    "worldQuad": [
+      {
+        "x": -66.02739715576172,
+        "z": -11.534222602844238,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -66.02739715576172,
+        "z": 190.55882263183594,
+        "u": 0.0,
+        "v": 1.0
+      },
+      {
+        "x": 25.501434326171875,
+        "z": 190.55882263183594,
+        "u": 1.0,
+        "v": 1.0
+      },
+      {
+        "x": 25.501434326171875,
+        "z": -11.534222602844238,
+        "u": 1.0,
+        "v": 0.0
+      }
+    ],
+    "textureBounds": [
+      0.10243657976388931,
+      0.003038167953491211,
+      0.9950201511383057,
+      0.9956573247909546
+    ]
+  },
+  {
+    "id": "st_kawa_jnt",
+    "label": "Riverside Teahouse",
+    "file": "assets/st_kawa_jnt.png",
+    "width": 512,
+    "height": 444,
+    "sourceTexture": "bin/map/st_kawa_jnt/2d_yk_st_kawa_jnt.dds",
+    "sourceGeometry": "bin/map/st_kawa_jnt/st_kawa_jnt.gmd",
+    "textureSize": [
+      512,
+      512
+    ],
+    "worldQuad": [
+      {
+        "x": -27.701318740844727,
+        "z": -14.484448432922363,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -27.701309204101562,
+        "z": 51.57577133178711,
+        "u": 0.0,
+        "v": 1.0
+      },
+      {
+        "x": 46.93565368652344,
+        "z": 51.57574462890625,
+        "u": 1.0,
+        "v": 1.0
+      },
+      {
+        "x": 46.93567657470703,
+        "z": -14.484457969665527,
+        "u": 1.0,
+        "v": 0.0
+      }
+    ],
+    "textureBounds": [
+      0.0,
+      0.11784511804580688,
+      1.0,
+      0.9850355386734009
+    ]
+  },
+  {
+    "id": "st_kaido_rindo",
+    "label": "Forest Path",
+    "file": "assets/st_kaido_rindo.png",
+    "width": 2034,
+    "height": 252,
+    "sourceTexture": "bin/map/st_kaido_rindo/2d_yk_st_kaido_rindo.dds",
+    "sourceGeometry": "bin/map/st_kaido_rindo/st_kaido_rindo.gmd",
+    "textureSize": [
+      2048,
+      256
+    ],
+    "worldQuad": [
+      {
+        "x": 2.843780517578125,
+        "z": -26.212646484375,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -16.87788200378418,
+        "z": 4.736486911773682,
+        "u": 0.0,
+        "v": 1.0
+      },
+      {
+        "x": 158.58055114746094,
+        "z": 116.89165496826172,
+        "u": 1.0,
+        "v": 1.0
+      },
+      {
+        "x": 178.30218505859375,
+        "z": 85.94252014160156,
+        "u": 1.0,
+        "v": 0.0
+      }
+    ],
+    "textureBounds": [
+      0.0023058399092406034,
+      0.005751430988311768,
+      0.9955199956893921,
+      0.9918579459190369
+    ]
+  },
+  {
+    "id": "st_kaido_yama",
+    "label": "Mountain Path",
+    "file": "assets/st_kaido_yama.png",
+    "width": 512,
+    "height": 2048,
+    "sourceTexture": "bin/map/st_kaido_yama/2d_yk_st_kaido_yama.dds",
+    "sourceGeometry": "bin/map/st_kaido_yama/st_kaido_yama.gmd",
+    "textureSize": [
+      512,
+      2048
+    ],
+    "worldQuad": [
+      {
+        "x": -6.37939977645874,
+        "z": -204.32176208496094,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -6.37939977645874,
+        "z": 3.7167484760284424,
+        "u": 0.0,
+        "v": 1.0
+      },
+      {
+        "x": 48.688228607177734,
+        "z": 3.7167603969573975,
+        "u": 1.0,
+        "v": 1.0
+      },
+      {
+        "x": 48.688228607177734,
+        "z": -204.32176208496094,
+        "u": 1.0,
+        "v": 0.0
+      }
+    ],
+    "textureBounds": [
+      0.0,
+      0.0,
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "id": "st_taki",
+    "label": "Waterfall",
+    "file": "assets/st_taki.png",
+    "width": 512,
+    "height": 1024,
+    "sourceTexture": "bin/map/st_taki/2d_yk_st_taki.dds",
+    "sourceGeometry": "bin/map/st_taki/st_taki.gmd",
+    "textureSize": [
+      512,
+      1024
+    ],
+    "worldQuad": [
+      {
+        "x": -52.478267669677734,
+        "z": -49.19895553588867,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -6.788679599761963,
+        "z": 56.7540283203125,
+        "u": 0.0,
+        "v": 1.0
+      },
+      {
+        "x": 46.18781661987305,
+        "z": 33.90924072265625,
+        "u": 1.0,
+        "v": 1.0
+      },
+      {
+        "x": 0.4982505738735199,
+        "z": -72.04375457763672,
+        "u": 1.0,
+        "v": 0.0
+      }
+    ],
+    "textureBounds": [
+      0.0,
+      0.0,
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "id": "st_kaido_tani",
+    "label": "Cliffside Path",
+    "file": "assets/st_kaido_tani.png",
+    "width": 512,
+    "height": 510,
+    "sourceTexture": "bin/map/st_kaido_tani/2d_yk_st_kaido_tani.dds",
+    "sourceGeometry": "bin/map/st_kaido_tani/st_kaido_tani.gmd",
+    "textureSize": [
+      512,
+      512
+    ],
+    "worldQuad": [
+      {
+        "x": -69.33558654785156,
+        "z": -62.55747604370117,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -69.60279083251953,
+        "z": 72.38804626464844,
+        "u": 0.0,
+        "v": 1.0
+      },
+      {
+        "x": 66.9718246459961,
+        "z": 72.38804626464844,
+        "u": 1.0,
+        "v": 0.992485134717539
+      },
+      {
+        "x": 67.2391128540039,
+        "z": -62.55747604370117,
+        "u": 1.0,
+        "v": 0.0
+      }
+    ],
+    "textureBounds": [
+      0.0,
+      0.0,
+      1.0,
+      0.9956573247909546
+    ]
+  },
+  {
+    "id": "st_kaido_tanbo",
+    "label": "Countryside Path",
+    "file": "assets/st_kaido_tanbo.png",
+    "width": 1024,
+    "height": 512,
+    "sourceTexture": "bin/map/st_kaido_tanbo/2d_yk_st_kaido_tanbo.dds",
+    "sourceGeometry": "bin/map/st_kaido_tanbo/st_kaido_tanbo.gmd",
+    "textureSize": [
+      1024,
+      512
+    ],
+    "worldQuad": [
+      {
+        "x": -101.58708953857422,
+        "z": -83.66246795654297,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -101.58709716796875,
+        "z": 33.925819396972656,
+        "u": 0.0,
+        "v": 1.0
+      },
+      {
+        "x": 98.82989501953125,
+        "z": 33.925819396972656,
+        "u": 1.0,
+        "v": 1.0
+      },
+      {
+        "x": 98.82989501953125,
+        "z": -83.66246795654297,
+        "u": 1.0,
+        "v": 0.0
+      }
+    ],
+    "textureBounds": [
+      0.0,
+      0.0,
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "id": "st_yoshioka_jnt",
+    "label": "Yoshioka Dojo · grounds",
+    "file": "assets/st_yoshioka_jnt.png",
+    "width": 512,
+    "height": 256,
+    "sourceTexture": "bin/map/st_yoshioka_jnt/2d_yk_st_yoshioka_jnt.dds",
+    "sourceGeometry": "bin/map/st_yoshioka_jnt/st_yoshioka_jnt.gmd",
+    "textureSize": [
+      512,
+      256
+    ],
+    "worldQuad": [
+      {
+        "x": -44.77891159057617,
+        "z": -12.263768196105957,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -44.77891159057617,
+        "z": 28.80010414123535,
+        "u": 0.0,
+        "v": 1.0
+      },
+      {
+        "x": 37.34883499145508,
+        "z": 28.80010414123535,
+        "u": 1.0,
+        "v": 1.0
+      },
+      {
+        "x": 37.34883499145508,
+        "z": -12.263768196105957,
+        "u": 1.0,
+        "v": 0.0
+      }
+    ],
+    "textureBounds": [
+      0.0,
+      0.0,
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "id": "st_kiyomizu_jnt",
+    "label": "Kiyomizudera · approach",
+    "file": "assets/st_kiyomizu_jnt.png",
+    "width": 512,
+    "height": 510,
+    "sourceTexture": "bin/map/st_kiyomizu_jnt/2d_yk_st_kiyomizu_jnt.dds",
+    "sourceGeometry": "bin/map/st_kiyomizu_jnt/st_kiyomizu_jnt.gmd",
+    "textureSize": [
+      512,
+      512
+    ],
+    "worldQuad": [
+      {
+        "x": -221.5192413330078,
+        "z": -108.44964599609375,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -221.5192413330078,
+        "z": -44.27848434448242,
+        "u": 0.0,
+        "v": 1.0
+      },
+      {
+        "x": -156.96914672851562,
+        "z": -44.27848434448242,
+        "u": 1.0,
+        "v": 0.992485134717539
+      },
+      {
+        "x": -156.96914672851562,
+        "z": -108.44964599609375,
+        "u": 1.0,
+        "v": 0.0
+      }
+    ],
+    "textureBounds": [
+      0.0,
+      0.0,
+      1.0,
+      0.9956573247909546
+    ]
+  },
+  {
+    "id": "st_kiyomizu",
+    "label": "Kiyomizudera · Chapter 10 grounds",
+    "file": "assets/st_kiyomizu.png",
+    "width": 1978,
+    "height": 995,
+    "sourceTexture": "bin/map/st_kiyomizu/2d_yk_st_kiyomizu.dds",
+    "sourceGeometry": "bin/map/st_kiyomizu/st_kiyomizu.gmd",
+    "textureSize": [
+      2048,
+      1024
+    ],
+    "worldQuad": [
+      {
+        "x": -223.385986328125,
+        "z": -104.80537414550781,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -223.385986328125,
+        "z": 62.4403190612793,
+        "u": 0.0,
+        "v": 1.0
+      },
+      {
+        "x": 67.34565734863281,
+        "z": 62.4403190612793,
+        "u": 1.0,
+        "v": 1.0
+      },
+      {
+        "x": 67.34565734863281,
+        "z": -104.80537414550781,
+        "u": 1.0,
+        "v": 0.0
+      }
+    ],
+    "textureBounds": [
+      0.0013184900162741542,
+      0.015488028526306152,
+      0.9669540524482727,
+      0.9876196980476379
+    ]
+  },
+  {
+    "id": "st_sanjusangen_jnt",
+    "label": "Sanjusangendo · grounds",
+    "file": "assets/st_sanjusangen_jnt.png",
+    "width": 462,
+    "height": 393,
+    "sourceTexture": "bin/map/st_sanjusangen_jnt/2d_yk_st_sanjusangen_jnt.dds",
+    "sourceGeometry": "bin/map/st_sanjusangen_jnt/st_sanjusangen_jnt.gmd",
+    "textureSize": [
+      512,
+      512
+    ],
+    "worldQuad": [
+      {
+        "x": -22.170791625976562,
+        "z": 49.58869552612305,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -22.17078399658203,
+        "z": 95.10042572021484,
+        "u": 0.0,
+        "v": 0.9998184610665319
+      },
+      {
+        "x": 30.158859252929688,
+        "z": 95.10042572021484,
+        "u": 1.0,
+        "v": 1.0
+      },
+      {
+        "x": 32.53638458251953,
+        "z": 49.58868408203125,
+        "u": 1.0,
+        "v": 4.616054077500212e-05
+      }
+    ],
+    "textureBounds": [
+      0.050860460847616196,
+      0.06102544069290161,
+      0.9538679122924805,
+      0.8293172121047974
+    ]
+  },
+  {
+    "id": "st_sanjusangendo",
+    "label": "Sanjusangendo · temple",
+    "file": "assets/st_sanjusangendo.png",
+    "width": 512,
+    "height": 512,
+    "sourceTexture": "bin/map/st_sanjusangendo/2d_yk_st_sanjusangendo.dds",
+    "sourceGeometry": "bin/map/st_sanjusangendo/st_sanjusangendo.gmd",
+    "textureSize": [
+      512,
+      512
+    ],
+    "worldQuad": [
+      {
+        "x": -49.730682373046875,
+        "z": -33.076148986816406,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -49.730682373046875,
+        "z": 64.51499938964844,
+        "u": 0.0,
+        "v": 1.0
+      },
+      {
+        "x": 47.3077507019043,
+        "z": 64.51499938964844,
+        "u": 1.0,
+        "v": 1.0
+      },
+      {
+        "x": 47.3077507019043,
+        "z": -33.076148986816406,
+        "u": 1.0,
+        "v": 0.0
+      }
+    ],
+    "textureBounds": [
+      0.0,
+      0.0,
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "id": "st_hozoin",
+    "label": "Hozoin",
+    "file": "assets/st_hozoin.png",
+    "width": 511,
+    "height": 511,
+    "sourceTexture": "bin/map/st_hozoin/2d_yk_st_hozoin.dds",
+    "sourceGeometry": "bin/map/st_hozoin/st_hozoin.gmd",
+    "textureSize": [
+      512,
+      512
+    ],
+    "worldQuad": [
+      {
+        "x": -28.05023193359375,
+        "z": -10.5460844039917,
+        "u": 2.702371080610211e-07,
+        "v": 0.0
+      },
+      {
+        "x": -28.05023193359375,
+        "z": 52.12114334106445,
+        "u": 0.0,
+        "v": 0.9999997613429946
+      },
+      {
+        "x": 27.2371768951416,
+        "z": 52.12114334106445,
+        "u": 0.9999997613429938,
+        "v": 1.0
+      },
+      {
+        "x": 27.2371768951416,
+        "z": -10.5460844039917,
+        "u": 1.0,
+        "v": 1.1932850271666252e-07
+      }
+    ],
+    "textureBounds": [
+      0.0004994900082238019,
+      0.0004995465278625488,
+      0.9995004534721375,
+      0.9995005130767822
+    ]
+  },
+  {
+    "id": "st_rendaino_jnt",
+    "label": "Rendaino",
+    "file": "assets/st_rendaino_jnt.png",
+    "width": 229,
+    "height": 448,
+    "sourceTexture": "bin/map/st_rendaino_jnt/2d_yk_st_rendaino_jnt.dds",
+    "sourceGeometry": "bin/map/st_rendaino_jnt/st_rendaino_jnt.gmd",
+    "textureSize": [
+      512,
+      512
+    ],
+    "worldQuad": [
+      {
+        "x": -7.695156097412109,
+        "z": -12.364423751831055,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -7.695156097412109,
+        "z": 16.937870025634766,
+        "u": 0.0,
+        "v": 1.0
+      },
+      {
+        "x": 7.239009380340576,
+        "z": 16.937870025634766,
+        "u": 1.0,
+        "v": 1.0
+      },
+      {
+        "x": 7.239009380340576,
+        "z": -12.364423751831055,
+        "u": 1.0,
+        "v": 0.0
+      }
+    ],
+    "textureBounds": [
+      0.2712308466434479,
+      0.04302281141281128,
+      0.717545747756958,
+      0.9176954627037048
+    ]
+  },
+  {
+    "id": "st_dokutsu_soto",
+    "label": "Cave Entrance",
+    "file": "assets/st_dokutsu_soto.png",
+    "width": 1024,
+    "height": 256,
+    "sourceTexture": "bin/map/st_dokutsu_soto/2d_yk_st_dokutsu_soto.dds",
+    "sourceGeometry": "bin/map/st_dokutsu_soto/st_dokutsu_soto.gmd",
+    "textureSize": [
+      1024,
+      256
+    ],
+    "worldQuad": [
+      {
+        "x": 26.131643295288086,
+        "z": 11.365036010742188,
+        "u": 1.0,
+        "v": 1.0
+      },
+      {
+        "x": 26.131643295288086,
+        "z": -8.232357025146484,
+        "u": 1.0,
+        "v": 0.0
+      },
+      {
+        "x": -13.081158638000488,
+        "z": -8.543627738952637,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -13.081153869628906,
+        "z": 11.053763389587402,
+        "u": 0.0,
+        "v": 1.0
+      }
+    ],
+    "textureBounds": [
+      0.0,
+      0.0,
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "id": "st_tatsuya",
+    "label": "Tatsuya",
+    "file": "assets/st_tatsuya.png",
+    "width": 512,
+    "height": 319,
+    "sourceTexture": "bin/map/st_tatsuya/2d_yk_st_tatsuya.dds",
+    "sourceGeometry": "bin/map/st_tatsuya/st_tatsuya.gmd",
+    "textureSize": [
+      512,
+      512
+    ],
+    "worldQuad": [
+      {
+        "x": -5.189820766448975,
+        "z": -2.5859453678131104,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -5.189820766448975,
+        "z": 4.8332414627075195,
+        "u": 0.0,
+        "v": 1.0
+      },
+      {
+        "x": 6.668616771697998,
+        "z": 4.8332414627075195,
+        "u": 1.0,
+        "v": 1.0
+      },
+      {
+        "x": 6.668616771697998,
+        "z": -2.5859453678131104,
+        "u": 1.0,
+        "v": 0.0
+      }
+    ],
+    "textureBounds": [
+      0.0,
+      0.1870558261871338,
+      1.0,
+      0.8092031478881836
+    ]
+  },
+  {
+    "id": "st_hatsumeika",
+    "label": "Gyotensai's House",
+    "file": "assets/st_hatsumeika.png",
+    "width": 504,
+    "height": 503,
+    "sourceTexture": "bin/map/st_hatsumeika/2d_yk_st_hatsumeika.dds",
+    "sourceGeometry": "bin/map/st_hatsumeika/st_hatsumeika.gmd",
+    "textureSize": [
+      512,
+      512
+    ],
+    "worldQuad": [
+      {
+        "x": -6.470996856689453,
+        "z": -6.057260990142822,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -6.470996856689453,
+        "z": 6.024953365325928,
+        "u": 0.0,
+        "v": 1.0
+      },
+      {
+        "x": 5.579692363739014,
+        "z": 6.0249528884887695,
+        "u": 1.0,
+        "v": 1.0
+      },
+      {
+        "x": 5.579693794250488,
+        "z": -6.057260990142822,
+        "u": 1.0,
+        "v": 0.0
+      }
+    ],
+    "textureBounds": [
+      0.008908700197935104,
+      0.008649826049804688,
+      0.9931496381759644,
+      0.9919162392616272
+    ]
+  },
+  {
+    "id": "st_kajiya",
+    "label": "Blacksmith",
+    "file": "assets/st_kajiya.png",
+    "width": 512,
+    "height": 512,
+    "sourceTexture": "bin/map/st_kajiya/2d_yk_st_kajiya.dds",
+    "sourceGeometry": "bin/map/st_kajiya/st_kajiya.gmd",
+    "textureSize": [
+      512,
+      512
+    ],
+    "worldQuad": [
+      {
+        "x": -3.8310399055480957,
+        "z": -3.895163059234619,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -3.8310399055480957,
+        "z": 12.850848197937012,
+        "u": 0.0,
+        "v": 1.0
+      },
+      {
+        "x": 12.914972305297852,
+        "z": 12.850848197937012,
+        "u": 1.0,
+        "v": 1.0
+      },
+      {
+        "x": 12.914972305297852,
+        "z": -3.895163059234619,
+        "u": 1.0,
+        "v": 0.0
+      }
+    ],
+    "textureBounds": [
+      0.0,
+      0.0,
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "id": "st_udon",
+    "label": "Shirohebi Udon",
+    "file": "assets/st_udon.png",
+    "width": 512,
+    "height": 512,
+    "sourceTexture": "bin/map/st_udon/2d_yk_st_udon.dds",
+    "sourceGeometry": "bin/map/st_udon/st_udon.gmd",
+    "textureSize": [
+      512,
+      512
+    ],
+    "worldQuad": [
+      {
+        "x": -6.683220863342285,
+        "z": -6.8069586753845215,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -6.683207988739014,
+        "z": 6.705585479736328,
+        "u": 0.0,
+        "v": 1.0
+      },
+      {
+        "x": 6.82934045791626,
+        "z": 6.70557165145874,
+        "u": 1.0,
+        "v": 1.0
+      },
+      {
+        "x": 6.829325199127197,
+        "z": -6.806973457336426,
+        "u": 1.0,
+        "v": 0.0
+      }
+    ],
+    "textureBounds": [
+      0.0,
+      0.0,
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "id": "st_sakaya_01",
+    "label": "Sake Ikkonya",
+    "file": "assets/st_sakaya_01.png",
+    "width": 512,
+    "height": 512,
+    "sourceTexture": "bin/map/st_sakaya_01/2d_yk_st_sakaya_01.dds",
+    "sourceGeometry": "bin/map/st_sakaya_01/st_sakaya_01.gmd",
+    "textureSize": [
+      512,
+      512
+    ],
+    "worldQuad": [
+      {
+        "x": 4.471489906311035,
+        "z": 1.6846002340316772,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": 4.471484661102295,
+        "z": -6.865833282470703,
+        "u": 0.0,
+        "v": 1.0
+      },
+      {
+        "x": -4.078949928283691,
+        "z": -6.865828990936279,
+        "u": 1.0,
+        "v": 1.0
+      },
+      {
+        "x": -4.078944683074951,
+        "z": 1.6846048831939697,
+        "u": 1.0,
+        "v": 0.0
+      }
+    ],
+    "textureBounds": [
+      0.0,
+      0.0,
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "id": "st_sakaya_02",
+    "label": "Sake Nakanokura",
+    "file": "assets/st_sakaya_02.png",
+    "width": 511,
+    "height": 388,
+    "sourceTexture": "bin/map/st_sakaya_02/2d_yk_st_sakaya_02.dds",
+    "sourceGeometry": "bin/map/st_sakaya_02/st_sakaya_02.gmd",
+    "textureSize": [
+      512,
+      512
+    ],
+    "worldQuad": [
+      {
+        "x": -3.009228467941284,
+        "z": -6.640260219573975,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -3.0092272758483887,
+        "z": 1.3256731033325195,
+        "u": 0.0,
+        "v": 1.0
+      },
+      {
+        "x": 7.4685540199279785,
+        "z": 1.3256731033325195,
+        "u": 1.0,
+        "v": 1.0
+      },
+      {
+        "x": 7.4685540199279785,
+        "z": -6.640260219573975,
+        "u": 1.0,
+        "v": 0.0
+      }
+    ],
+    "textureBounds": [
+      0.0014264800120145082,
+      0.1208832859992981,
+      0.9987612962722778,
+      0.8778122067451477
+    ]
+  },
+  {
+    "id": "st_shichiya",
+    "label": "Ebisuya Pawn",
+    "file": "assets/st_shichiya.png",
+    "width": 512,
+    "height": 512,
+    "sourceTexture": "bin/map/st_shichiya/2d_yk_st_shichiya.dds",
+    "sourceGeometry": "bin/map/st_shichiya/st_shichiya.gmd",
+    "textureSize": [
+      512,
+      512
+    ],
+    "worldQuad": [
+      {
+        "x": -4.105025291442871,
+        "z": -3.1054184436798096,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -4.105025291442871,
+        "z": 9.059457778930664,
+        "u": 0.0,
+        "v": 1.0
+      },
+      {
+        "x": 8.05985164642334,
+        "z": 9.059457778930664,
+        "u": 1.0,
+        "v": 1.0
+      },
+      {
+        "x": 8.05985164642334,
+        "z": -3.1054184436798096,
+        "u": 1.0,
+        "v": 0.0
+      }
+    ],
+    "textureBounds": [
+      0.0,
+      0.0,
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "id": "st_tsuruya_1f",
+    "label": "Tsuruya 1F",
+    "file": "assets/st_tsuruya_1f.png",
+    "width": 502,
+    "height": 503,
+    "sourceTexture": "bin/map/st_tsuruya_1f/2d_yk_st_tsuruya_1f.dds",
+    "sourceGeometry": "bin/map/st_tsuruya_1f/st_tsuruya_1f.gmd",
+    "textureSize": [
+      512,
+      512
+    ],
+    "worldQuad": [
+      {
+        "x": -14.432846069335938,
+        "z": -6.80551290512085,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -14.432846069335938,
+        "z": 13.421429634094238,
+        "u": 0.0,
+        "v": 1.0
+      },
+      {
+        "x": 5.783620357513428,
+        "z": 13.421426773071289,
+        "u": 1.0,
+        "v": 0.9997958710630641
+      },
+      {
+        "x": 5.783621311187744,
+        "z": -6.80551290512085,
+        "u": 1.0,
+        "v": 0.0
+      }
+    ],
+    "textureBounds": [
+      0.0037411199882626534,
+      0.0074822306632995605,
+      0.9850355386734009,
+      0.9900456666946411
+    ]
+  },
+  {
+    "id": "st_dokutsu_01",
+    "label": "Shishido Baiken's Cave · interior",
+    "file": "assets/st_dokutsu_01.png",
+    "width": 1024,
+    "height": 256,
+    "sourceTexture": "bin/map/st_dokutsu_01/2d_yk_st_dokutsu_01_00.dds",
+    "sourceGeometry": "bin/map/st_dokutsu_01/st_dokutsu_01.gmd",
+    "textureSize": [
+      1024,
+      256
+    ],
+    "worldQuad": [
+      {
+        "x": -9.269012451171875,
+        "z": -16.291513442993164,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -9.269012451171875,
+        "z": 9.708351135253906,
+        "u": 0.0,
+        "v": 1.0
+      },
+      {
+        "x": 65.27678680419922,
+        "z": 9.708351135253906,
+        "u": 1.0,
+        "v": 1.0
+      },
+      {
+        "x": 65.27678680419922,
+        "z": -16.291513442993164,
+        "u": 1.0,
+        "v": 0.0
+      }
+    ],
+    "textureBounds": [
+      0.0,
+      0.0,
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "id": "st_dokutsu_02",
+    "label": "Shishido Baiken's Cave · tunnels",
+    "file": "assets/st_dokutsu_02.png",
+    "width": 1024,
+    "height": 256,
+    "sourceTexture": "bin/map/st_dokutsu_02/2d_yk_st_dokutsu_02.dds",
+    "sourceGeometry": "bin/map/st_dokutsu_02/st_dokutsu_02.gmd",
+    "textureSize": [
+      1024,
+      256
+    ],
+    "worldQuad": [
+      {
+        "x": 91.01100158691406,
+        "z": 11.820368766784668,
+        "u": 1.0,
+        "v": 1.0
+      },
+      {
+        "x": 91.01100158691406,
+        "z": -24.47472381591797,
+        "u": 1.0,
+        "v": 0.0
+      },
+      {
+        "x": -4.124108791351318,
+        "z": -24.47472381591797,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -4.124108791351318,
+        "z": 11.820365905761719,
+        "u": 0.0,
+        "v": 1.0
+      }
+    ],
+    "textureBounds": [
+      0.0,
+      0.0,
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "id": "st_dokutsu_03_rasen",
+    "label": "Shishido Baiken's Cave · spiral passage",
+    "file": "assets/st_dokutsu_03_rasen.png",
+    "width": 512,
+    "height": 512,
+    "sourceTexture": "bin/map/st_dokutsu_03_rasen/2d_yk_st_dokutsu_03_rasen.dds",
+    "sourceGeometry": "bin/map/st_dokutsu_03_rasen/st_dokutsu_03_rasen.gmd",
+    "textureSize": [
+      512,
+      512
+    ],
+    "worldQuad": [
+      {
+        "x": -15.795143127441406,
+        "z": -25.5382137298584,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -15.795143127441406,
+        "z": 16.326351165771484,
+        "u": 0.0,
+        "v": 1.0
+      },
+      {
+        "x": 26.06941795349121,
+        "z": 16.326351165771484,
+        "u": 1.0,
+        "v": 1.0
+      },
+      {
+        "x": 26.06941795349121,
+        "z": -25.5382137298584,
+        "u": 1.0,
+        "v": 0.0
+      }
+    ],
+    "textureBounds": [
+      0.0,
+      0.0,
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "id": "st_dokutsu_03_rasen_a00",
+    "stageId": "st_dokutsu_03_rasen",
+    "label": "Shishido Baiken's Cave · spiral ring",
+    "file": "assets/st_dokutsu_03_rasen_a00.png",
+    "width": 512,
+    "height": 512,
+    "sourceTexture": "bin/map/st_dokutsu_03_rasen/2d_yk_st_dokutsu_03_rasen_a00.dds",
+    "sourceGeometry": "bin/map/st_dokutsu_03_rasen/st_dokutsu_03_rasen_a00.gmd",
+    "textureSize": [
+      512,
+      512
+    ],
+    "worldQuad": [
+      {
+        "x": -15.795143127441406,
+        "z": -25.538211822509766,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -15.795143127441406,
+        "z": 16.326353073120117,
+        "u": 0.0,
+        "v": 1.0
+      },
+      {
+        "x": 26.069416046142578,
+        "z": 16.326353073120117,
+        "u": 1.0,
+        "v": 1.0
+      },
+      {
+        "x": 26.069416046142578,
+        "z": -25.538211822509766,
+        "u": 1.0,
+        "v": 0.0
+      }
+    ],
+    "textureBounds": [
+      0.0,
+      0.0,
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "id": "st_dokutsu_03_rasen_a01",
+    "stageId": "st_dokutsu_03_rasen",
+    "label": "Shishido Baiken's Cave · spiral ring with exit",
+    "file": "assets/st_dokutsu_03_rasen_a01.png",
+    "width": 512,
+    "height": 512,
+    "sourceTexture": "bin/map/st_dokutsu_03_rasen/2d_yk_st_dokutsu_03_rasen_a01.dds",
+    "sourceGeometry": "bin/map/st_dokutsu_03_rasen/st_dokutsu_03_rasen_a01.gmd",
+    "textureSize": [
+      512,
+      512
+    ],
+    "worldQuad": [
+      {
+        "x": -15.795143127441406,
+        "z": -25.538211822509766,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -15.795143127441406,
+        "z": 16.326353073120117,
+        "u": 0.0,
+        "v": 1.0
+      },
+      {
+        "x": 26.069416046142578,
+        "z": 16.326353073120117,
+        "u": 1.0,
+        "v": 1.0
+      },
+      {
+        "x": 26.069416046142578,
+        "z": -25.538211822509766,
+        "u": 1.0,
+        "v": 0.0
+      }
+    ],
+    "textureBounds": [
+      0.0,
+      0.0,
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "id": "st_dokutsu_04_boss",
+    "label": "Shishido Baiken's Cave · inner chamber",
+    "file": "assets/st_dokutsu_04_boss.png",
+    "width": 1024,
+    "height": 256,
+    "sourceTexture": "bin/map/st_dokutsu_04_boss/2d_yk_st_dokutsu_04_boss.dds",
+    "sourceGeometry": "bin/map/st_dokutsu_04_boss/st_dokutsu_04_boss.gmd",
+    "textureSize": [
+      1024,
+      256
+    ],
+    "worldQuad": [
+      {
+        "x": 32.73626708984375,
+        "z": 15.10460376739502,
+        "u": 1.0,
+        "v": 1.0
+      },
+      {
+        "x": 32.73626708984375,
+        "z": -12.267637252807617,
+        "u": 1.0,
+        "v": 0.0
+      },
+      {
+        "x": -24.541122436523438,
+        "z": -12.267637252807617,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -24.541122436523438,
+        "z": 15.10460376739502,
+        "u": 0.0,
+        "v": 1.0
+      }
+    ],
+    "textureBounds": [
+      0.0,
+      0.0,
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "id": "st_yagyu_sato",
+    "label": "Yagyu Village",
+    "file": "assets/st_yagyu_sato.png",
+    "width": 509,
+    "height": 700,
+    "sourceTexture": "bin/map/st_yagyu_sato/2d_yk_st_yagyu_sato.dds",
+    "sourceGeometry": "bin/map/st_yagyu_sato/st_yagyu_sato.gmd",
+    "textureSize": [
+      512,
+      1024
+    ],
+    "worldQuad": [
+      {
+        "x": -28.2677059173584,
+        "z": -70.8246078491211,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -28.2677059173584,
+        "z": 5.259293556213379,
+        "u": 0.0,
+        "v": 1.0
+      },
+      {
+        "x": 26.92949867248535,
+        "z": 5.259293556213379,
+        "u": 1.0,
+        "v": 1.0
+      },
+      {
+        "x": 26.92949867248535,
+        "z": -70.8246078491211,
+        "u": 1.0,
+        "v": 0.0
+      }
+    ],
+    "textureBounds": [
+      0.007038140203803778,
+      0.16951775550842285,
+      1.0006318092346191,
+      0.8534949421882629
+    ]
+  },
+  {
+    "id": "st_yagyu_naka",
+    "label": "Yagyu Mansion",
+    "file": "assets/st_yagyu_naka.png",
+    "width": 288,
+    "height": 338,
+    "sourceTexture": "bin/map/st_yagyu_naka/2d_yk_st_yagyu_naka.dds",
+    "sourceGeometry": "bin/map/st_yagyu_naka/st_yagyu_naka.gmd",
+    "textureSize": [
+      512,
+      512
+    ],
+    "worldQuad": [
+      {
+        "x": -9.369791030883789,
+        "z": -4.795071601867676,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -9.369791030883789,
+        "z": 2.624986410140991,
+        "u": 0.0,
+        "v": 1.0
+      },
+      {
+        "x": -2.8733813762664795,
+        "z": 2.624986410140991,
+        "u": 1.0,
+        "v": 1.0
+      },
+      {
+        "x": -2.873379945755005,
+        "z": -4.795071601867676,
+        "u": 1.0,
+        "v": 0.0
+      }
+    ],
+    "textureBounds": [
+      0.2015761137008667,
+      0.2181522250175476,
+      0.7649415731430054,
+      0.8778122067451477
+    ]
+  },
+  {
+    "id": "st_ganryu_hama",
+    "label": "Ganryujima Beach",
+    "file": "assets/st_ganryu_hama.png",
+    "width": 512,
+    "height": 652,
+    "sourceTexture": "bin/map/st_ganryu_hama/2d_yk_st_ganryu_hama.dds",
+    "sourceGeometry": "bin/map/st_ganryu_hama/st_ganryu_hama.gmd",
+    "textureSize": [
+      512,
+      1024
+    ],
+    "worldQuad": [
+      {
+        "x": -37.29419708251953,
+        "z": -59.6135139465332,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -37.29419708251953,
+        "z": 42.282752990722656,
+        "u": 0.0,
+        "v": 1.0
+      },
+      {
+        "x": 43.48884963989258,
+        "z": 42.28275680541992,
+        "u": 1.0,
+        "v": 1.0
+      },
+      {
+        "x": 43.48884963989258,
+        "z": -59.6135139465332,
+        "u": 1.0,
+        "v": 0.0
+      }
+    ],
+    "textureBounds": [
+      0.0,
+      0.0,
+      1.0,
+      0.6371118426322937
+    ]
+  },
+  {
+    "id": "st_ganryu_yosai_01",
+    "label": "Fortress · mine and swamp",
+    "file": "assets/st_ganryu_yosai_01.png",
+    "width": 1024,
+    "height": 1024,
+    "sourceTexture": "bin/map/st_ganryu_yosai_01/2d_yk_st_ganryu_yosai_01.dds",
+    "sourceGeometry": "bin/map/st_ganryu_yosai_01/st_ganryu_yosai_01.gmd",
+    "textureSize": [
+      1024,
+      1024
+    ],
+    "worldQuad": [
+      {
+        "x": -49.467288970947266,
+        "z": -135.18539428710938,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -49.467288970947266,
+        "z": 9.922614097595215,
+        "u": 0.0,
+        "v": 1.0
+      },
+      {
+        "x": 96.31780242919922,
+        "z": 9.922614097595215,
+        "u": 1.0,
+        "v": 0.9943883419036865
+      },
+      {
+        "x": 96.31780242919922,
+        "z": -135.18539428710938,
+        "u": 1.0,
+        "v": 0.001870572566986084
+      }
+    ],
+    "textureBounds": [
+      0.0,
+      0.0,
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "id": "st_ganryu_yosai_01b",
+    "stageId": "st_ganryu_yosai_01",
+    "label": "Fortress · mine corridor",
+    "file": "assets/st_ganryu_yosai_01b.png",
+    "width": 512,
+    "height": 67,
+    "sourceTexture": "bin/map/st_ganryu_yosai_01/2d_yk_st_ganryu_yosai_01b.dds",
+    "sourceGeometry": "bin/map/st_ganryu_yosai_01/st_ganryu_yosai_01b.gmd",
+    "textureSize": [
+      512,
+      128
+    ],
+    "worldQuad": [
+      {
+        "x": 104.9211196899414,
+        "z": -41.92198944091797,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": 104.9211196899414,
+        "z": -37.78170394897461,
+        "u": 0.0,
+        "v": 1.0
+      },
+      {
+        "x": 137.84555053710938,
+        "z": -37.78170394897461,
+        "u": 1.0,
+        "v": 1.0
+      },
+      {
+        "x": 137.84555053710938,
+        "z": -41.92198944091797,
+        "u": 1.0,
+        "v": 0.0
+      }
+    ],
+    "textureBounds": [
+      0.0,
+      0.09913957118988037,
+      1.0,
+      0.6202768087387085
+    ]
+  },
+  {
+    "id": "st_ganryu_yosai_02",
+    "label": "Fortress · wharf",
+    "file": "assets/st_ganryu_yosai_02.png",
+    "width": 1024,
+    "height": 1024,
+    "sourceTexture": "bin/map/st_ganryu_yosai_02/2d_yk_st_ganryu_yosai_02.dds",
+    "sourceGeometry": "bin/map/st_ganryu_yosai_02/st_ganryu_yosai_02.gmd",
+    "textureSize": [
+      1024,
+      1024
+    ],
+    "worldQuad": [
+      {
+        "x": -80.70508575439453,
+        "z": -42.12636184692383,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -80.48649597167969,
+        "z": 46.68729019165039,
+        "u": 0.0,
+        "v": 1.0
+      },
+      {
+        "x": 9.006744384765625,
+        "z": 46.68729019165039,
+        "u": 1.0,
+        "v": 0.9943883419036865
+      },
+      {
+        "x": 8.788146018981934,
+        "z": -42.12636184692383,
+        "u": 1.0,
+        "v": 0.001870572566986084
+      }
+    ],
+    "textureBounds": [
+      0.0,
+      0.0,
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "id": "st_ganryu_yosai_02b",
+    "stageId": "st_ganryu_yosai_02",
+    "label": "Fortress · wharf corridor",
+    "file": "assets/st_ganryu_yosai_02b.png",
+    "width": 1001,
+    "height": 392,
+    "sourceTexture": "bin/map/st_ganryu_yosai_02/2d_yk_st_ganryu_yosai_02b.dds",
+    "sourceGeometry": "bin/map/st_ganryu_yosai_02/st_ganryu_yosai_02b.gmd",
+    "textureSize": [
+      1024,
+      512
+    ],
+    "worldQuad": [
+      {
+        "x": -4.163293361663818,
+        "z": 143.84339904785156,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -4.163293361663818,
+        "z": 176.60787963867188,
+        "u": 0.0,
+        "v": 1.0
+      },
+      {
+        "x": 78.44937133789062,
+        "z": 176.60787963867188,
+        "u": 1.0,
+        "v": 1.0
+      },
+      {
+        "x": 78.44937133789062,
+        "z": 143.84339904785156,
+        "u": 1.0,
+        "v": 0.0
+      }
+    ],
+    "textureBounds": [
+      0.007482230197638273,
+      0.10662174224853516,
+      0.9850355386734009,
+      0.8728021383285522
+    ]
+  },
+  {
+    "id": "st_ganryu_yosai_03",
+    "label": "Fortress · Large Tea Room, Garden and Backyard",
+    "file": "assets/st_ganryu_yosai_03.png",
+    "width": 1024,
+    "height": 512,
+    "sourceTexture": "bin/map/st_ganryu_yosai_03/2d_yk_st_ganryu_yosai_03.dds",
+    "sourceGeometry": "bin/map/st_ganryu_yosai_03/st_ganryu_yosai_03.gmd",
+    "textureSize": [
+      1024,
+      512
+    ],
+    "worldQuad": [
+      {
+        "x": -56.7852783203125,
+        "z": -20.87775230407715,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -56.7852783203125,
+        "z": 21.005643844604492,
+        "u": 0.0,
+        "v": 1.0
+      },
+      {
+        "x": 26.389541625976562,
+        "z": 21.005643844604492,
+        "u": 1.0,
+        "v": 0.9943883419036865
+      },
+      {
+        "x": 26.389545440673828,
+        "z": -20.87775230407715,
+        "u": 1.0,
+        "v": 0.001870572566986084
+      }
+    ],
+    "textureBounds": [
+      0.0,
+      0.0,
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "id": "st_ganryu_yosai_04",
+    "label": "Fortress · Evacuation Passage, Wharf and Cliff",
+    "file": "assets/st_ganryu_yosai_04.png",
+    "width": 1607,
+    "height": 1024,
+    "sourceTexture": "bin/map/st_ganryu_yosai_04/2d_yk_st_ganryu_yosai_04.dds",
+    "sourceGeometry": "bin/map/st_ganryu_yosai_04/st_ganryu_yosai_04.gmd",
+    "textureSize": [
+      2048,
+      1024
+    ],
+    "worldQuad": [
+      {
+        "x": -120.4446029663086,
+        "z": -13.463452339172363,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -120.4446029663086,
+        "z": 96.6483154296875,
+        "u": 0.0,
+        "v": 1.0
+      },
+      {
+        "x": 54.101173400878906,
+        "z": 96.6483154296875,
+        "u": 1.0,
+        "v": 1.0
+      },
+      {
+        "x": 54.101173400878906,
+        "z": -13.463452339172363,
+        "u": 1.0,
+        "v": 0.0
+      }
+    ],
+    "textureBounds": [
+      0.1515151560306549,
+      0.0,
+      0.9364010691642761,
+      1.0
+    ]
+  },
+  {
+    "id": "st_rendaino_01",
+    "label": "Rendaino · battlefield 1",
+    "file": "assets/st_rendaino_01.png",
+    "width": 292,
+    "height": 332,
+    "sourceTexture": "bin/map/st_rendaino_01/2d_yk_st_rendaino_01.dds",
+    "sourceGeometry": "bin/map/st_rendaino_01/st_rendaino_01.gmd",
+    "textureSize": [
+      512,
+      512
+    ],
+    "worldQuad": [
+      {
+        "x": -11.441977500915527,
+        "z": -11.796433448791504,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -11.441977500915527,
+        "z": 10.370650291442871,
+        "u": 0.0,
+        "v": 1.0
+      },
+      {
+        "x": 8.869877815246582,
+        "z": 10.370650291442871,
+        "u": 1.0,
+        "v": 1.0
+      },
+      {
+        "x": 8.869877815246582,
+        "z": -11.796433448791504,
+        "u": 1.0,
+        "v": 0.0
+      }
+    ],
+    "textureBounds": [
+      0.19453799724578857,
+      0.1646091341972351,
+      0.7643097639083862,
+      0.812944233417511
+    ]
+  },
+  {
+    "id": "st_rendaino_02",
+    "label": "Rendaino · battlefield 2",
+    "file": "assets/st_rendaino_02.png",
+    "width": 307,
+    "height": 332,
+    "sourceTexture": "bin/map/st_rendaino_02/2d_yk_st_rendaino_02.dds",
+    "sourceGeometry": "bin/map/st_rendaino_02/st_rendaino_02.gmd",
+    "textureSize": [
+      512,
+      512
+    ],
+    "worldQuad": [
+      {
+        "x": -9.305865287780762,
+        "z": -9.389565467834473,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -9.305865287780762,
+        "z": 7.352046489715576,
+        "u": 0.0,
+        "v": 1.0
+      },
+      {
+        "x": 6.333462715148926,
+        "z": 7.352046489715576,
+        "u": 1.0,
+        "v": 1.0
+      },
+      {
+        "x": 6.333462715148926,
+        "z": -9.389565467834473,
+        "u": 1.0,
+        "v": 0.0
+      }
+    ],
+    "textureBounds": [
+      0.16647964715957642,
+      0.13842129707336426,
+      0.7661802172660828,
+      0.7867564558982849
+    ]
+  },
+  {
+    "id": "st_rendaino_03",
+    "label": "Rendaino · battlefield 3",
+    "file": "assets/st_rendaino_03.png",
+    "width": 324,
+    "height": 392,
+    "sourceTexture": "bin/map/st_rendaino_03/2d_yk_st_rendaino_03.dds",
+    "sourceGeometry": "bin/map/st_rendaino_03/st_rendaino_03.gmd",
+    "textureSize": [
+      512,
+      512
+    ],
+    "worldQuad": [
+      {
+        "x": -4.487731456756592,
+        "z": -6.458413600921631,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -4.254934787750244,
+        "z": 6.808713436126709,
+        "u": 0.0,
+        "v": 1.0
+      },
+      {
+        "x": 7.160899639129639,
+        "z": 6.529951572418213,
+        "u": 1.0,
+        "v": 1.0
+      },
+      {
+        "x": 6.928103923797607,
+        "z": -6.737172603607178,
+        "u": 1.0,
+        "v": 0.0
+      }
+    ],
+    "textureBounds": [
+      0.26000750064849854,
+      0.1384214162826538,
+      0.8933782577514648,
+      0.9046015739440918
+    ]
+  },
+  {
+    "id": "st_rendaino_04",
+    "label": "Rendaino · battlefield 4",
+    "file": "assets/st_rendaino_04.png",
+    "width": 307,
+    "height": 332,
+    "sourceTexture": "bin/map/st_rendaino_04/2d_yk_st_rendaino_04.dds",
+    "sourceGeometry": "bin/map/st_rendaino_04/st_rendaino_04.gmd",
+    "textureSize": [
+      512,
+      512
+    ],
+    "worldQuad": [
+      {
+        "x": -5.82593297958374,
+        "z": -6.096461772918701,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -4.669448375701904,
+        "z": 7.122215270996094,
+        "u": 0.0,
+        "v": 1.0
+      },
+      {
+        "x": 7.599166393280029,
+        "z": 6.048849582672119,
+        "u": 1.0,
+        "v": 1.0
+      },
+      {
+        "x": 6.44268274307251,
+        "z": -7.169826507568359,
+        "u": 1.0,
+        "v": 0.0
+      }
+    ],
+    "textureBounds": [
+      0.26000750064849854,
+      0.17957359552383423,
+      0.8597081303596497,
+      0.8279087543487549
+    ]
+  },
+  {
+    "id": "st_rendaino_05",
+    "label": "Rendaino · battlefield 5",
+    "file": "assets/st_rendaino_05.png",
+    "width": 499,
+    "height": 501,
+    "sourceTexture": "bin/map/st_rendaino_05/2d_yk_st_rendaino_05.dds",
+    "sourceGeometry": "bin/map/st_rendaino_05/st_rendaino_05.gmd",
+    "textureSize": [
+      512,
+      512
+    ],
+    "worldQuad": [
+      {
+        "x": -12.325169563293457,
+        "z": -12.901822090148926,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -12.325169563293457,
+        "z": 12.436217308044434,
+        "u": 0.0,
+        "v": 1.0
+      },
+      {
+        "x": 12.531004905700684,
+        "z": 12.436217308044434,
+        "u": 1.0,
+        "v": 1.0
+      },
+      {
+        "x": 12.531004905700684,
+        "z": -12.901820182800293,
+        "u": 1.0,
+        "v": 0.0
+      }
+    ],
+    "textureBounds": [
+      0.013093899935483932,
+      0.007482290267944336,
+      0.9869060516357422,
+      0.986906111240387
+    ]
+  },
+  {
+    "id": "st_rendaino_06",
+    "label": "Rendaino · battlefield 6",
+    "file": "assets/st_rendaino_06.png",
+    "width": 473,
+    "height": 444,
+    "sourceTexture": "bin/map/st_rendaino_06/2d_yk_st_rendaino_06.dds",
+    "sourceGeometry": "bin/map/st_rendaino_06/st_rendaino_06.gmd",
+    "textureSize": [
+      512,
+      512
+    ],
+    "worldQuad": [
+      {
+        "x": -11.96858024597168,
+        "z": -10.314839363098145,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -11.968578338623047,
+        "z": 8.58841609954834,
+        "u": 0.0,
+        "v": 1.0
+      },
+      {
+        "x": 8.584688186645508,
+        "z": 8.58841609954834,
+        "u": 1.0,
+        "v": 1.0
+      },
+      {
+        "x": 8.584688186645508,
+        "z": -10.314839363098145,
+        "u": 1.0,
+        "v": 0.0
+      }
+    ],
+    "textureBounds": [
+      0.013093899935483932,
+      0.04115229845046997,
+      0.9364010691642761,
+      0.9083426594734192
+    ]
+  },
+  {
+    "id": "st_rendaino_boss",
+    "label": "Rendaino · final battlefield",
+    "file": "assets/st_rendaino_boss.png",
+    "width": 241,
+    "height": 233,
+    "sourceTexture": "bin/map/st_rendaino_boss/2d_yk_st_rendaino_boss.dds",
+    "sourceGeometry": "bin/map/st_rendaino_boss/st_rendaino_boss.gmd",
+    "textureSize": [
+      512,
+      512
+    ],
+    "worldQuad": [
+      {
+        "x": -6.59624719619751,
+        "z": -6.40484619140625,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -6.59624719619751,
+        "z": 6.426163673400879,
+        "u": 0.0,
+        "v": 1.0
+      },
+      {
+        "x": 6.5141730308532715,
+        "z": 6.426163673400879,
+        "u": 1.0,
+        "v": 1.0
+      },
+      {
+        "x": 6.5141730308532715,
+        "z": -6.40484619140625,
+        "u": 1.0,
+        "v": 0.0
+      }
+    ],
+    "textureBounds": [
+      0.27871304750442505,
+      0.2861953377723694,
+      0.7493453025817871,
+      0.7418630719184875
+    ]
+  },
+  {
+    "id": "st_tsuruya_2f",
+    "label": "Tsuruya 2F",
+    "file": "assets/st_tsuruya_2f.png",
+    "width": 1024,
+    "height": 1020,
+    "sourceTexture": "bin/map/st_tsuruya_2f/2d_yk_st_tsuruya_2f.dds",
+    "sourceGeometry": "bin/map/st_tsuruya_2f/st_tsuruya_2f.gmd",
+    "textureSize": [
+      1024,
+      1024
+    ],
+    "worldQuad": [
+      {
+        "x": -32.52408981323242,
+        "z": -17.362272262573242,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -32.52408981323242,
+        "z": 29.35458755493164,
+        "u": 0.0,
+        "v": 1.0
+      },
+      {
+        "x": 14.567520141601562,
+        "z": 29.35458755493164,
+        "u": 1.0,
+        "v": 0.992485134717539
+      },
+      {
+        "x": 14.567520141601562,
+        "z": -17.362272262573242,
+        "u": 1.0,
+        "v": 0.0
+      }
+    ],
+    "textureBounds": [
+      0.0,
+      0.0,
+      1.0,
+      0.9956573247909546
+    ]
+  },
+  {
+    "id": "st_tsuruya_3f",
+    "label": "Tsuruya 3F",
+    "file": "assets/st_tsuruya_3f.png",
+    "width": 1198,
+    "height": 730,
+    "sourceTexture": "bin/map/st_tsuruya_3f/2d_yk_st_tsuruya_3f.dds",
+    "sourceGeometry": "bin/map/st_tsuruya_3f/st_tsuruya_3f.gmd",
+    "textureSize": [
+      2048,
+      1024
+    ],
+    "worldQuad": [
+      {
+        "x": -44.81071090698242,
+        "z": -12.983511924743652,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -44.81071090698242,
+        "z": 23.302946090698242,
+        "u": 0.0,
+        "v": 1.0
+      },
+      {
+        "x": 14.61618709564209,
+        "z": 23.302946090698242,
+        "u": 1.0,
+        "v": 0.9996690502293164
+      },
+      {
+        "x": 14.61618709564209,
+        "z": -12.983508110046387,
+        "u": 1.0,
+        "v": 0.0
+      }
+    ],
+    "textureBounds": [
+      0.4040404260158539,
+      0.14403295516967773,
+      0.9887767434120178,
+      0.8572360277175903
+    ]
+  },
+  {
+    "id": "st_tsuruya_4f",
+    "label": "Tsuruya 4F",
+    "file": "assets/st_tsuruya_4f.png",
+    "width": 980,
+    "height": 730,
+    "sourceTexture": "bin/map/st_tsuruya_4f/2d_yk_st_tsuruya_4f.dds",
+    "sourceGeometry": "bin/map/st_tsuruya_4f/st_tsuruya_4f.gmd",
+    "textureSize": [
+      1024,
+      1024
+    ],
+    "worldQuad": [
+      {
+        "x": -32.779510498046875,
+        "z": -12.561965942382812,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -32.779510498046875,
+        "z": 22.8659610748291,
+        "u": 0.0,
+        "v": 1.0
+      },
+      {
+        "x": 14.531340599060059,
+        "z": 22.865964889526367,
+        "u": 1.0,
+        "v": 0.9996690502293164
+      },
+      {
+        "x": 14.531338691711426,
+        "z": -12.561962127685547,
+        "u": 1.0,
+        "v": 0.0
+      }
+    ],
+    "textureBounds": [
+      0.0,
+      0.14403295516967773,
+      0.9569771885871887,
+      0.8572360277175903
+    ]
+  },
+  {
+    "id": "st_tsuruya_dance",
+    "label": "Tsuruya · Yoshino's Room and Guest Room",
+    "file": "assets/st_tsuruya_dance.png",
+    "width": 358,
+    "height": 498,
+    "sourceTexture": "bin/map/st_tsuruya_dance/2d_yk_st_tsuruya_dance.dds",
+    "sourceGeometry": "bin/map/st_tsuruya_dance/st_tsuruya_dance.gmd",
+    "textureSize": [
+      512,
+      512
+    ],
+    "worldQuad": [
+      {
+        "x": 1.872390627861023,
+        "z": -10.548972129821777,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": 1.872390627861023,
+        "z": 0.1930854767560959,
+        "u": 0.0,
+        "v": 1.0
+      },
+      {
+        "x": 9.565627098083496,
+        "z": 0.1930854767560959,
+        "u": 1.0,
+        "v": 1.0
+      },
+      {
+        "x": 9.498892784118652,
+        "z": -10.548972129821777,
+        "u": 1.0,
+        "v": 0.0
+      }
+    ],
+    "textureBounds": [
+      0.15481218695640564,
+      0.019873201847076416,
+      0.8547284007072449,
+      0.9926644563674927
+    ]
+  },
+  {
+    "id": "st_tsuruya_yoshino",
+    "label": "Tsuruya (Yoshino's Room)",
+    "file": "assets/st_tsuruya_yoshino.png",
+    "width": 980,
+    "height": 730,
+    "sourceTexture": "bin/map/st_tsuruya_yoshino/2d_yk_st_tsuruya_yoshino.dds",
+    "sourceGeometry": "bin/map/st_tsuruya_yoshino/st_tsuruya_yoshino.gmd",
+    "textureSize": [
+      1024,
+      1024
+    ],
+    "worldQuad": [
+      {
+        "x": -29.767866134643555,
+        "z": -11.408564567565918,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -29.767866134643555,
+        "z": 20.807722091674805,
+        "u": 0.0,
+        "v": 1.0
+      },
+      {
+        "x": 13.202844619750977,
+        "z": 20.80772590637207,
+        "u": 1.0,
+        "v": 0.9996690502293164
+      },
+      {
+        "x": 13.202841758728027,
+        "z": -11.40856647491455,
+        "u": 1.0,
+        "v": 0.0
+      }
+    ],
+    "textureBounds": [
+      0.0,
+      0.14403295516967773,
+      0.9569771885871887,
+      0.8572360277175903
+    ]
+  },
+  {
+    "id": "st_annai",
+    "label": "Information Booth · Gion",
+    "file": "assets/st_annai.png",
+    "width": 313,
+    "height": 413,
+    "sourceTexture": "bin/map/st_annai/2d_yk_st_annai.dds",
+    "sourceGeometry": "bin/map/st_annai/st_annai.gmd",
+    "textureSize": [
+      512,
+      512
+    ],
+    "worldQuad": [
+      {
+        "x": -4.547545433044434,
+        "z": -4.204235553741455,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -4.547545433044434,
+        "z": 3.8501625061035156,
+        "u": 0.0,
+        "v": 1.0
+      },
+      {
+        "x": 1.534140706062317,
+        "z": 3.8501625061035156,
+        "u": 1.0,
+        "v": 1.0
+      },
+      {
+        "x": 1.534140706062317,
+        "z": -4.204235553741455,
+        "u": 1.0,
+        "v": 0.0
+      }
+    ],
+    "textureBounds": [
+      0.19260701537132263,
+      0.09647113084793091,
+      0.8048846125602722,
+      0.9024651050567627
+    ]
+  },
+  {
+    "id": "st_jiujitsu",
+    "label": "Gion Martial Arts Dojo",
+    "file": "assets/st_jiujitsu.png",
+    "width": 388,
+    "height": 330,
+    "sourceTexture": "bin/map/st_jiujitsu/2d_yk_st_jiujitsu.dds",
+    "sourceGeometry": "bin/map/st_jiujitsu/st_jiujitsu.gmd",
+    "textureSize": [
+      512,
+      512
+    ],
+    "worldQuad": [
+      {
+        "x": -6.190135478973389,
+        "z": -6.204909801483154,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -6.1901350021362305,
+        "z": 5.197566509246826,
+        "u": 0.0,
+        "v": 1.0
+      },
+      {
+        "x": 7.220929145812988,
+        "z": 5.197566032409668,
+        "u": 1.0,
+        "v": 1.0
+      },
+      {
+        "x": 7.220930576324463,
+        "z": -6.204909801483154,
+        "u": 1.0,
+        "v": 0.0
+      }
+    ],
+    "textureBounds": [
+      0.12114214897155762,
+      0.1769999861717224,
+      0.8790456056594849,
+      0.8216954469680786
+    ]
+  },
+  {
+    "id": "st_kusuriya_02",
+    "label": "Tenguya Drugs",
+    "file": "assets/st_kusuriya_02.png",
+    "width": 479,
+    "height": 335,
+    "sourceTexture": "bin/map/st_kusuriya_02/2d_yk_st_kusuriya_02.dds",
+    "sourceGeometry": "bin/map/st_kusuriya_02/st_kusuriya_02.gmd",
+    "textureSize": [
+      512,
+      512
+    ],
+    "worldQuad": [
+      {
+        "x": -6.949965000152588,
+        "z": -4.371383190155029,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -6.949965000152588,
+        "z": 4.447063446044922,
+        "u": 0.0,
+        "v": 1.0
+      },
+      {
+        "x": 5.491687297821045,
+        "z": 4.447063446044922,
+        "u": 1.0,
+        "v": 1.0
+      },
+      {
+        "x": 5.491687297821045,
+        "z": -4.3713836669921875,
+        "u": 1.0,
+        "v": 0.0
+      }
+    ],
+    "textureBounds": [
+      0.024317249655723572,
+      0.17583239078521729,
+      0.9607183337211609,
+      0.8297792673110962
+    ]
+  },
+  {
+    "id": "st_sushiya",
+    "label": "Sushi Ginya",
+    "file": "assets/st_sushiya.png",
+    "width": 512,
+    "height": 512,
+    "sourceTexture": "bin/map/st_sushiya/2d_yk_st_sushiya.dds",
+    "sourceGeometry": "bin/map/st_sushiya/st_sushiya.gmd",
+    "textureSize": [
+      512,
+      512
+    ],
+    "worldQuad": [
+      {
+        "x": -5.916144371032715,
+        "z": -8.737008094787598,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -5.916144371032715,
+        "z": 3.1214284896850586,
+        "u": 0.0,
+        "v": 1.0
+      },
+      {
+        "x": 5.942294597625732,
+        "z": 3.1214284896850586,
+        "u": 1.0,
+        "v": 1.0
+      },
+      {
+        "x": 5.942294597625732,
+        "z": -8.737008094787598,
+        "u": 1.0,
+        "v": 0.0
+      }
+    ],
+    "textureBounds": [
+      0.0,
+      0.0,
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "id": "st_toba",
+    "label": "Gambling Den · Gion",
+    "file": "assets/st_toba.png",
+    "width": 505,
+    "height": 389,
+    "sourceTexture": "bin/map/st_toba/2d_yk_st_toba.dds",
+    "sourceGeometry": "bin/map/st_toba/st_toba.gmd",
+    "textureSize": [
+      512,
+      512
+    ],
+    "worldQuad": [
+      {
+        "x": -8.05541706085205,
+        "z": -7.240655422210693,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -8.05541706085205,
+        "z": 6.173182964324951,
+        "u": 0.0,
+        "v": 1.0
+      },
+      {
+        "x": 9.205657005310059,
+        "z": 6.173182964324951,
+        "u": 1.0,
+        "v": 1.0
+      },
+      {
+        "x": 9.205657005310059,
+        "z": -7.240657329559326,
+        "u": 1.0,
+        "v": 0.0
+      }
+    ],
+    "textureBounds": [
+      0.00803321972489357,
+      0.11858081817626953,
+      0.9946035742759705,
+      0.878799557685852
+    ]
+  },
+  {
+    "id": "st_yorozuya_01",
+    "label": "Arigataya Market · Gion",
+    "file": "assets/st_yorozuya_01.png",
+    "width": 512,
+    "height": 512,
+    "sourceTexture": "bin/map/st_yorozuya_01/2d_yk_st_yorozuya_01.dds",
+    "sourceGeometry": "bin/map/st_yorozuya_01/st_yorozuya_01.gmd",
+    "textureSize": [
+      512,
+      512
+    ],
+    "worldQuad": [
+      {
+        "x": -5.071198463439941,
+        "z": -3.2070515155792236,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -5.071198463439941,
+        "z": 6.908370494842529,
+        "u": 0.0,
+        "v": 1.0
+      },
+      {
+        "x": 5.044223308563232,
+        "z": 6.908370494842529,
+        "u": 1.0,
+        "v": 1.0
+      },
+      {
+        "x": 5.044223308563232,
+        "z": -3.2070515155792236,
+        "u": 1.0,
+        "v": 0.0
+      }
+    ],
+    "textureBounds": [
+      0.0,
+      0.0,
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "id": "st_bukiya",
+    "label": "Arms Dealer · Rakugai",
+    "file": "assets/st_bukiya.png",
+    "width": 450,
+    "height": 413,
+    "sourceTexture": "bin/map/st_bukiya/2d_yk_st_bukiya.dds",
+    "sourceGeometry": "bin/map/st_bukiya/st_bukiya.gmd",
+    "textureSize": [
+      512,
+      512
+    ],
+    "worldQuad": [
+      {
+        "x": -5.83009672164917,
+        "z": -4.809357643127441,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -5.83009672164917,
+        "z": 2.544314384460449,
+        "u": 0.0,
+        "v": 1.0
+      },
+      {
+        "x": 2.120723009109497,
+        "z": 2.544314384460449,
+        "u": 1.0,
+        "v": 1.0
+      },
+      {
+        "x": 2.120723009109497,
+        "z": -4.809357643127441,
+        "u": 1.0,
+        "v": 0.0
+      }
+    ],
+    "textureBounds": [
+      0.020576130598783493,
+      0.06734007596969604,
+      0.8989899158477783,
+      0.8746726512908936
+    ]
+  },
+  {
+    "id": "st_kusuriya_01",
+    "label": "Etchuya Drugs",
+    "file": "assets/st_kusuriya_01.png",
+    "width": 512,
+    "height": 512,
+    "sourceTexture": "bin/map/st_kusuriya_01/2d_yk_st_kusuriya_01.dds",
+    "sourceGeometry": "bin/map/st_kusuriya_01/st_kusuriya_01.gmd",
+    "textureSize": [
+      512,
+      512
+    ],
+    "worldQuad": [
+      {
+        "x": -1.3631260395050049,
+        "z": -4.6465630531311035,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -1.3631260395050049,
+        "z": 4.624967098236084,
+        "u": 0.0,
+        "v": 1.0
+      },
+      {
+        "x": 7.9084038734436035,
+        "z": 4.624967098236084,
+        "u": 1.0,
+        "v": 1.0
+      },
+      {
+        "x": 7.9084038734436035,
+        "z": -4.6465630531311035,
+        "u": 1.0,
+        "v": 0.0
+      }
+    ],
+    "textureBounds": [
+      0.0,
+      0.0,
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "id": "st_mahjong",
+    "label": "Mahjong Parlor · Rakugai",
+    "file": "assets/st_mahjong.png",
+    "width": 485,
+    "height": 332,
+    "sourceTexture": "bin/map/st_mahjong/2d_yk_st_mahjong.dds",
+    "sourceGeometry": "bin/map/st_mahjong/st_mahjong.gmd",
+    "textureSize": [
+      512,
+      512
+    ],
+    "worldQuad": [
+      {
+        "x": -4.665169715881348,
+        "z": -3.2015938758850098,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -4.665168762207031,
+        "z": 3.240121603012085,
+        "u": 0.0,
+        "v": 1.0
+      },
+      {
+        "x": 4.702020645141602,
+        "z": 3.240121603012085,
+        "u": 1.0,
+        "v": 1.0
+      },
+      {
+        "x": 4.702019691467285,
+        "z": -3.2015938758850098,
+        "u": 1.0,
+        "v": 0.0
+      }
+    ],
+    "textureBounds": [
+      0.027614280581474304,
+      0.13210654258728027,
+      0.9744439721107483,
+      0.7805432081222534
+    ]
+  },
+  {
+    "id": "st_misemono",
+    "label": "Circus · Rakugai",
+    "file": "assets/st_misemono.png",
+    "width": 486,
+    "height": 407,
+    "sourceTexture": "bin/map/st_misemono/2d_yk_st_misemono.dds",
+    "sourceGeometry": "bin/map/st_misemono/st_misemono.gmd",
+    "textureSize": [
+      512,
+      512
+    ],
+    "worldQuad": [
+      {
+        "x": -2.4785969257354736,
+        "z": -4.855659008026123,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -2.4785969257354736,
+        "z": 4.841519832611084,
+        "u": 0.0,
+        "v": 1.0
+      },
+      {
+        "x": 9.06335735321045,
+        "z": 4.841519832611084,
+        "u": 1.0,
+        "v": 1.0
+      },
+      {
+        "x": 9.06335735321045,
+        "z": -4.855659484863281,
+        "u": 1.0,
+        "v": 0.0
+      }
+    ],
+    "textureBounds": [
+      0.024317249655723572,
+      0.09726899862289429,
+      0.9738121628761292,
+      0.8915076851844788
+    ]
+  },
+  {
+    "id": "st_rakugai_dojo",
+    "label": "Zanki Dojo · grounds",
+    "file": "assets/st_rakugai_dojo.png",
+    "width": 433,
+    "height": 503,
+    "sourceTexture": "bin/map/st_rakugai_dojo/2d_yk_st_rakugai_dojo.dds",
+    "sourceGeometry": "bin/map/st_rakugai_dojo/st_rakugai_dojo.gmd",
+    "textureSize": [
+      512,
+      512
+    ],
+    "worldQuad": [
+      {
+        "x": -11.728741645812988,
+        "z": -17.869726181030273,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -11.728743553161621,
+        "z": 11.063753128051758,
+        "u": 0.0,
+        "v": 1.0
+      },
+      {
+        "x": 13.230880737304688,
+        "z": 11.063753128051758,
+        "u": 1.0,
+        "v": 1.0
+      },
+      {
+        "x": 13.230883598327637,
+        "z": -17.869726181030273,
+        "u": 1.0,
+        "v": 0.0
+      }
+    ],
+    "textureBounds": [
+      0.09682489931583405,
+      0.001167595386505127,
+      0.9426445364952087,
+      0.9844340085983276
+    ]
+  },
+  {
+    "id": "st_shogi",
+    "label": "Shogi Narikin",
+    "file": "assets/st_shogi.png",
+    "width": 333,
+    "height": 285,
+    "sourceTexture": "bin/map/st_shogi/2d_yk_st_shogi.dds",
+    "sourceGeometry": "bin/map/st_shogi/st_shogi.gmd",
+    "textureSize": [
+      512,
+      512
+    ],
+    "worldQuad": [
+      {
+        "x": -4.00946569442749,
+        "z": -3.489495038986206,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -4.00946569442749,
+        "z": 3.454913377761841,
+        "u": 0.0,
+        "v": 1.0
+      },
+      {
+        "x": 4.028804779052734,
+        "z": 3.454913377761841,
+        "u": 1.0,
+        "v": 1.0
+      },
+      {
+        "x": 4.028804779052734,
+        "z": -3.489495038986206,
+        "u": 1.0,
+        "v": 0.0
+      }
+    ],
+    "textureBounds": [
+      0.12862437963485718,
+      0.08347207307815552,
+      0.7799060940742493,
+      0.6409995555877686
+    ]
+  },
+  {
+    "id": "st_yorozuya_02",
+    "label": "Arigataya Market · Rakugai",
+    "file": "assets/st_yorozuya_02.png",
+    "width": 263,
+    "height": 495,
+    "sourceTexture": "bin/map/st_yorozuya_02/2d_yk_st_yorozuya_02.dds",
+    "sourceGeometry": "bin/map/st_yorozuya_02/st_yorozuya_02.gmd",
+    "textureSize": [
+      512,
+      512
+    ],
+    "worldQuad": [
+      {
+        "x": -3.8455746173858643,
+        "z": -7.209261417388916,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -3.8455746173858643,
+        "z": 7.194943904876709,
+        "u": 0.0,
+        "v": 1.0
+      },
+      {
+        "x": 3.8556721210479736,
+        "z": 7.194943904876709,
+        "u": 1.0,
+        "v": 1.0
+      },
+      {
+        "x": 3.8556721210479736,
+        "z": -7.209261417388916,
+        "u": 1.0,
+        "v": 0.0
+      }
+    ],
+    "textureBounds": [
+      0.23381967842578888,
+      0.009352803230285645,
+      0.747474730014801,
+      0.9756827354431152
+    ]
+  },
+  {
+    "id": "st_minka_binbo",
+    "label": "Private House · old man's house",
+    "file": "assets/st_minka_binbo.png",
+    "width": 432,
+    "height": 449,
+    "sourceTexture": "bin/map/st_minka_binbo/2d_yk_st_minka_binbo.dds",
+    "sourceGeometry": "bin/map/st_minka_binbo/st_minka_binbo.gmd",
+    "textureSize": [
+      512,
+      512
+    ],
+    "worldQuad": [
+      {
+        "x": -2.455090045928955,
+        "z": -2.302499532699585,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -2.455087661743164,
+        "z": 2.651104211807251,
+        "u": 0.0,
+        "v": 0.9998408565385257
+      },
+      {
+        "x": 2.465946912765503,
+        "z": 2.651104211807251,
+        "u": 1.0,
+        "v": 1.0
+      },
+      {
+        "x": 2.465949773788452,
+        "z": -2.302499532699585,
+        "u": 1.0,
+        "v": 4.058464181980174e-05
+      }
+    ],
+    "textureBounds": [
+      0.08453050255775452,
+      0.07598984241485596,
+      0.9276800751686096,
+      0.9527740478515625
+    ]
+  },
+  {
+    "id": "st_minka_default",
+    "label": "Private House · residence 1",
+    "file": "assets/st_minka_default.png",
+    "width": 505,
+    "height": 194,
+    "sourceTexture": "bin/map/st_minka_default/2d_yk_st_minka_default01.dds",
+    "sourceGeometry": "bin/map/st_minka_default/st_minka_default01.gmd",
+    "textureSize": [
+      512,
+      256
+    ],
+    "worldQuad": [
+      {
+        "x": -5.889164924621582,
+        "z": -12.263437271118164,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -5.889164924621582,
+        "z": -7.720158576965332,
+        "u": 0.0,
+        "v": 1.0
+      },
+      {
+        "x": 5.888953685760498,
+        "z": -7.720158576965332,
+        "u": 1.0,
+        "v": 1.0
+      },
+      {
+        "x": 5.888953685760498,
+        "z": -12.26343822479248,
+        "u": 1.0,
+        "v": 0.0
+      }
+    ],
+    "textureBounds": [
+      0.0093527901917696,
+      0.05424618721008301,
+      0.9962588548660278,
+      0.812944233417511
+    ]
+  },
+  {
+    "id": "st_minka_default02",
+    "stageId": "st_minka_default",
+    "label": "Private House · residence 2",
+    "file": "assets/st_minka_default02.png",
+    "width": 505,
+    "height": 194,
+    "sourceTexture": "bin/map/st_minka_default/2d_yk_st_minka_default02.dds",
+    "sourceGeometry": "bin/map/st_minka_default/st_minka_default02.gmd",
+    "textureSize": [
+      512,
+      256
+    ],
+    "worldQuad": [
+      {
+        "x": -5.889164924621582,
+        "z": -7.241483211517334,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -5.889164924621582,
+        "z": -2.698204755783081,
+        "u": 0.0,
+        "v": 1.0
+      },
+      {
+        "x": 5.888953685760498,
+        "z": -2.698204755783081,
+        "u": 1.0,
+        "v": 1.0
+      },
+      {
+        "x": 5.888953685760498,
+        "z": -7.241485118865967,
+        "u": 1.0,
+        "v": 0.0
+      }
+    ],
+    "textureBounds": [
+      0.0093527901917696,
+      0.05424618721008301,
+      0.9962588548660278,
+      0.812944233417511
+    ]
+  },
+  {
+    "id": "st_minka_default03",
+    "stageId": "st_minka_default",
+    "label": "Private House · residence 3",
+    "file": "assets/st_minka_default03.png",
+    "width": 505,
+    "height": 194,
+    "sourceTexture": "bin/map/st_minka_default/2d_yk_st_minka_default03.dds",
+    "sourceGeometry": "bin/map/st_minka_default/st_minka_default03.gmd",
+    "textureSize": [
+      512,
+      256
+    ],
+    "worldQuad": [
+      {
+        "x": -5.889164924621582,
+        "z": -2.2375378608703613,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -5.889164924621582,
+        "z": 2.3057408332824707,
+        "u": 0.0,
+        "v": 1.0
+      },
+      {
+        "x": 5.888953685760498,
+        "z": 2.3057408332824707,
+        "u": 1.0,
+        "v": 1.0
+      },
+      {
+        "x": 5.888953685760498,
+        "z": -2.237539291381836,
+        "u": 1.0,
+        "v": 0.0
+      }
+    ],
+    "textureBounds": [
+      0.0093527901917696,
+      0.05424618721008301,
+      0.9962588548660278,
+      0.812944233417511
+    ]
+  },
+  {
+    "id": "st_minka_default04",
+    "stageId": "st_minka_default",
+    "label": "Private House · residence 4",
+    "file": "assets/st_minka_default04.png",
+    "width": 505,
+    "height": 194,
+    "sourceTexture": "bin/map/st_minka_default/2d_yk_st_minka_default04.dds",
+    "sourceGeometry": "bin/map/st_minka_default/st_minka_default04.gmd",
+    "textureSize": [
+      512,
+      256
+    ],
+    "worldQuad": [
+      {
+        "x": -5.889164924621582,
+        "z": 2.748833179473877,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -5.889164924621582,
+        "z": 7.292111873626709,
+        "u": 0.0,
+        "v": 1.0
+      },
+      {
+        "x": 5.888953685760498,
+        "z": 7.292111873626709,
+        "u": 1.0,
+        "v": 1.0
+      },
+      {
+        "x": 5.888953685760498,
+        "z": 2.7488315105438232,
+        "u": 1.0,
+        "v": 0.0
+      }
+    ],
+    "textureBounds": [
+      0.0093527901917696,
+      0.05424618721008301,
+      0.9962588548660278,
+      0.812944233417511
+    ]
+  },
+  {
+    "id": "st_minka_gaka",
+    "label": "Private House · painter's house",
+    "file": "assets/st_minka_gaka.png",
+    "width": 505,
+    "height": 194,
+    "sourceTexture": "bin/map/st_minka_gaka/2d_yk_st_minka_gaka01.dds",
+    "sourceGeometry": "bin/map/st_minka_gaka/st_minka_gaka01.gmd",
+    "textureSize": [
+      512,
+      256
+    ],
+    "worldQuad": [
+      {
+        "x": -5.889164924621582,
+        "z": -7.241483211517334,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -5.889164924621582,
+        "z": -2.698204755783081,
+        "u": 0.0,
+        "v": 1.0
+      },
+      {
+        "x": 5.888953685760498,
+        "z": -2.698204755783081,
+        "u": 1.0,
+        "v": 1.0
+      },
+      {
+        "x": 5.888953685760498,
+        "z": -7.241485118865967,
+        "u": 1.0,
+        "v": 0.0
+      }
+    ],
+    "textureBounds": [
+      0.0093527901917696,
+      0.05424618721008301,
+      0.9962588548660278,
+      0.812944233417511
+    ]
+  },
+  {
+    "id": "st_minka_gaka02",
+    "stageId": "st_minka_gaka",
+    "label": "Private House · painter's house, second room",
+    "file": "assets/st_minka_gaka02.png",
+    "width": 505,
+    "height": 194,
+    "sourceTexture": "bin/map/st_minka_gaka/2d_yk_st_minka_gaka02.dds",
+    "sourceGeometry": "bin/map/st_minka_gaka/st_minka_gaka02.gmd",
+    "textureSize": [
+      512,
+      256
+    ],
+    "worldQuad": [
+      {
+        "x": -5.889164924621582,
+        "z": -2.2314398288726807,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -5.889164924621582,
+        "z": 2.3118388652801514,
+        "u": 0.0,
+        "v": 1.0
+      },
+      {
+        "x": 5.888953685760498,
+        "z": 2.3118388652801514,
+        "u": 1.0,
+        "v": 1.0
+      },
+      {
+        "x": 5.888953685760498,
+        "z": -2.2314412593841553,
+        "u": 1.0,
+        "v": 0.0
+      }
+    ],
+    "textureBounds": [
+      0.0093527901917696,
+      0.05424618721008301,
+      0.9962588548660278,
+      0.812944233417511
+    ]
+  },
+  {
+    "id": "st_hozoin_budo",
+    "label": "Hozoin Coliseum",
+    "file": "assets/st_hozoin_budo.png",
+    "width": 494,
+    "height": 495,
+    "sourceTexture": "bin/map/st_hozoin_budo/2d_yk_st_hozoin_budo.dds",
+    "sourceGeometry": "bin/map/st_hozoin_budo/st_hozoin_budo.gmd",
+    "textureSize": [
+      512,
+      512
+    ],
+    "worldQuad": [
+      {
+        "x": -5.709088325500488,
+        "z": -5.709904670715332,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -5.70908784866333,
+        "z": 5.731414794921875,
+        "u": 0.0,
+        "v": 1.0
+      },
+      {
+        "x": 5.732133388519287,
+        "z": 5.731414794921875,
+        "u": 1.0,
+        "v": 1.0
+      },
+      {
+        "x": 5.732132911682129,
+        "z": -5.709904670715332,
+        "u": 1.0,
+        "v": 0.0
+      }
+    ],
+    "textureBounds": [
+      0.018261490389704704,
+      0.018002569675445557,
+      0.9837968349456787,
+      0.9844340085983276
+    ]
+  },
+  {
+    "id": "st_koetsu_chika",
+    "label": "Koetsu's Mansion (Underground)",
+    "file": "assets/st_koetsu_chika.png",
+    "width": 237,
+    "height": 903,
+    "sourceTexture": "bin/map/st_koetsu_chika/2d_yk_st_koetsu_chika.dds",
+    "sourceGeometry": "bin/map/st_koetsu_chika/st_koetsu_chika.gmd",
+    "textureSize": [
+      256,
+      1024
+    ],
+    "worldQuad": [
+      {
+        "x": -4.900180816650391,
+        "z": -20.829784393310547,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -4.900180816650391,
+        "z": 16.845823287963867,
+        "u": 0.0,
+        "v": 1.0
+      },
+      {
+        "x": 4.974412441253662,
+        "z": 16.845823287963867,
+        "u": 1.0,
+        "v": 1.0
+      },
+      {
+        "x": 4.974412441253662,
+        "z": -20.829784393310547,
+        "u": 1.0,
+        "v": 0.0
+      }
+    ],
+    "textureBounds": [
+      0.038837630301713943,
+      0.04606086015701294,
+      0.9632207155227661,
+      0.9283172488212585
+    ]
+  },
+  {
+    "id": "st_yoshioka_ienonaka",
+    "label": "Yoshioka Dojo · interior",
+    "file": "assets/st_yoshioka_ienonaka.png",
+    "width": 419,
+    "height": 382,
+    "sourceTexture": "bin/map/st_yoshioka_ienonaka/2d_yk_st_yoshioka_ienonaka.dds",
+    "sourceGeometry": "bin/map/st_yoshioka_ienonaka/st_yoshioka_ienonaka.gmd",
+    "textureSize": [
+      512,
+      512
+    ],
+    "worldQuad": [
+      {
+        "x": -11.51414680480957,
+        "z": -9.240649223327637,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -11.51414680480957,
+        "z": 9.183710098266602,
+        "u": 0.0,
+        "v": 1.0
+      },
+      {
+        "x": 8.818617820739746,
+        "z": 9.183710098266602,
+        "u": 1.0,
+        "v": 1.0
+      },
+      {
+        "x": 8.818617820739746,
+        "z": -9.240649223327637,
+        "u": 1.0,
+        "v": 0.0
+      }
+    ],
+    "textureBounds": [
+      0.08186045289039612,
+      0.1227537989616394,
+      0.8996217846870422,
+      0.8684594035148621
+    ]
+  },
+  {
+    "id": "st_akimoto",
+    "label": "Akimoto’s room",
+    "file": "assets/st_akimoto.png",
+    "width": 344,
+    "height": 395,
+    "sourceTexture": "bin/map/st_akimoto/2d_yk_st_akimoto.dds",
+    "sourceGeometry": "bin/map/st_akimoto/st_akimoto.gmd",
+    "textureSize": [
+      512,
+      512
+    ],
+    "worldQuad": [
+      {
+        "x": -3.2019004821777344,
+        "z": -4.333555698394775,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -3.2018990516662598,
+        "z": 3.148329973220825,
+        "u": 0.0,
+        "v": 0.9998192635836426
+      },
+      {
+        "x": 3.294541120529175,
+        "z": 3.148329496383667,
+        "u": 1.0,
+        "v": 1.0
+      },
+      {
+        "x": 3.2945427894592285,
+        "z": -4.333555698394775,
+        "u": 1.0,
+        "v": 4.593685080421143e-05
+      }
+    ],
+    "textureBounds": [
+      0.09388328343629837,
+      0.09843653440475464,
+      0.7649415731430054,
+      0.8704695105552673
+    ]
+  },
+  {
+    "id": "st_akudaikan",
+    "label": "Daikan's Mansion",
+    "file": "assets/st_akudaikan.png",
+    "width": 446,
+    "height": 275,
+    "sourceTexture": "bin/map/st_akudaikan/2d_yk_st_akudaikan.dds",
+    "sourceGeometry": "bin/map/st_akudaikan/st_akudaikan.gmd",
+    "textureSize": [
+      512,
+      512
+    ],
+    "worldQuad": [
+      {
+        "x": -9.814465522766113,
+        "z": -5.201451301574707,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -9.814464569091797,
+        "z": 3.1228013038635254,
+        "u": 0.0,
+        "v": 0.9997398408172532
+      },
+      {
+        "x": 3.554401397705078,
+        "z": 3.1228013038635254,
+        "u": 1.0,
+        "v": 1.0
+      },
+      {
+        "x": 3.554403781890869,
+        "z": -5.201451301574707,
+        "u": 1.0,
+        "v": 6.62344608787157e-05
+      }
+    ],
+    "textureBounds": [
+      0.08453050255775452,
+      0.3472207188606262,
+      0.9557384252548218,
+      0.8835633993148804
+    ]
+  },
+  {
+    "id": "st_inei",
+    "label": "In'ei's House",
+    "file": "assets/st_inei.png",
+    "width": 512,
+    "height": 512,
+    "sourceTexture": "bin/map/st_inei/2d_yk_st_inei.dds",
+    "sourceGeometry": "bin/map/st_inei/st_inei.gmd",
+    "textureSize": [
+      512,
+      512
+    ],
+    "worldQuad": [
+      {
+        "x": -17.30403709411621,
+        "z": -6.328890323638916,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -17.30403709411621,
+        "z": 29.821060180664062,
+        "u": 0.0,
+        "v": 1.0
+      },
+      {
+        "x": 18.751596450805664,
+        "z": 29.821060180664062,
+        "u": 1.0,
+        "v": 1.0
+      },
+      {
+        "x": 18.751602172851562,
+        "z": -6.328890323638916,
+        "u": 1.0,
+        "v": 0.0
+      }
+    ],
+    "textureBounds": [
+      0.0,
+      0.0,
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "id": "st_karyu",
+    "label": "Lower Kamo River",
+    "file": "assets/st_karyu.png",
+    "width": 1013,
+    "height": 506,
+    "sourceTexture": "bin/map/st_karyu/2d_yk_st_karyu.dds",
+    "sourceGeometry": "bin/map/st_karyu/st_karyu.gmd",
+    "textureSize": [
+      1024,
+      512
+    ],
+    "worldQuad": [
+      {
+        "x": -69.19408416748047,
+        "z": -19.17937660217285,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -69.19408416748047,
+        "z": 54.440887451171875,
+        "u": 0.0,
+        "v": 1.0
+      },
+      {
+        "x": 76.79827117919922,
+        "z": 54.440887451171875,
+        "u": 1.0,
+        "v": 1.0
+      },
+      {
+        "x": 76.79827117919922,
+        "z": -19.17937660217285,
+        "u": 1.0,
+        "v": 0.0
+      }
+    ],
+    "textureBounds": [
+      0.0056116702035069466,
+      0.0056116580963134766,
+      0.9943883419036865,
+      0.9943883419036865
+    ]
+  },
+  {
+    "id": "st_miya_dojo",
+    "label": "Miyamoto Village Dojo · grounds",
+    "file": "assets/st_miya_dojo.png",
+    "width": 499,
+    "height": 508,
+    "sourceTexture": "bin/map/st_miya_dojo/2d_yk_st_miya_dojo.dds",
+    "sourceGeometry": "bin/map/st_miya_dojo/st_miya_dojo.gmd",
+    "textureSize": [
+      512,
+      512
+    ],
+    "worldQuad": [
+      {
+        "x": -15.634648323059082,
+        "z": -28.798742294311523,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -15.634648323059082,
+        "z": 21.138370513916016,
+        "u": 0.0,
+        "v": 1.0
+      },
+      {
+        "x": 34.30245590209961,
+        "z": 21.138370513916016,
+        "u": 1.0,
+        "v": 1.0
+      },
+      {
+        "x": 34.30245590209961,
+        "z": -28.798742294311523,
+        "u": 1.0,
+        "v": 0.0
+      }
+    ],
+    "textureBounds": [
+      0.022002609446644783,
+      0.008649826049804688,
+      0.9968907833099365,
+      1.001268982887268
+    ]
+  },
+  {
+    "id": "st_miya_dojo_hanare",
+    "label": "Miyamoto Village Dojo (Barn)",
+    "file": "assets/st_miya_dojo_hanare.png",
+    "width": 426,
+    "height": 323,
+    "sourceTexture": "bin/map/st_miya_dojo_hanare/2d_yk_st_miya_dojo_hanare.dds",
+    "sourceGeometry": "bin/map/st_miya_dojo_hanare/st_miya_dojo_hanare.gmd",
+    "textureSize": [
+      512,
+      512
+    ],
+    "worldQuad": [
+      {
+        "x": 11.88071346282959,
+        "z": -23.87390899658203,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": 11.880719184875488,
+        "z": -18.353410720825195,
+        "u": 0.0,
+        "v": 1.0
+      },
+      {
+        "x": 19.2222957611084,
+        "z": -18.353410720825195,
+        "u": 1.0,
+        "v": 1.0
+      },
+      {
+        "x": 19.2222900390625,
+        "z": -23.873916625976562,
+        "u": 1.0,
+        "v": 0.0
+      }
+    ],
+    "textureBounds": [
+      0.07538346201181412,
+      0.17702949047088623,
+      0.9083240032196045,
+      0.8071642518043518
+    ]
+  },
+  {
+    "id": "st_miya_dojo_naka",
+    "label": "Miyamoto Village Dojo · interior",
+    "file": "assets/st_miya_dojo_naka.png",
+    "width": 502,
+    "height": 844,
+    "sourceTexture": "bin/map/st_miya_dojo_naka/2d_yk_st_miya_dojo_naka.dds",
+    "sourceGeometry": "bin/map/st_miya_dojo_naka/st_miya_dojo_naka.gmd",
+    "textureSize": [
+      512,
+      1024
+    ],
+    "worldQuad": [
+      {
+        "x": 5.003627300262451,
+        "z": 8.869889259338379,
+        "u": 1.0,
+        "v": 1.0
+      },
+      {
+        "x": 5.003627300262451,
+        "z": -8.09177017211914,
+        "u": 1.0,
+        "v": 0.0
+      },
+      {
+        "x": -5.063992977142334,
+        "z": -8.09177017211914,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -5.063992977142334,
+        "z": 8.869889259338379,
+        "u": 0.0,
+        "v": 1.0
+      }
+    ],
+    "textureBounds": [
+      0.0093527901917696,
+      0.07108110189437866,
+      0.9906471967697144,
+      0.8952487707138062
+    ]
+  },
+  {
+    "id": "st_noh",
+    "label": "Noh Stage",
+    "file": "assets/st_noh.png",
+    "width": 858,
+    "height": 444,
+    "sourceTexture": "bin/map/st_noh/2d_yk_st_noh.dds",
+    "sourceGeometry": "bin/map/st_noh/st_noh.gmd",
+    "textureSize": [
+      1024,
+      512
+    ],
+    "worldQuad": [
+      {
+        "x": -18.58780288696289,
+        "z": -7.185767650604248,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -18.58780288696289,
+        "z": 5.243285179138184,
+        "u": 0.0,
+        "v": 0.9998390719218639
+      },
+      {
+        "x": 5.413791179656982,
+        "z": 5.243285179138184,
+        "u": 1.0,
+        "v": 1.0
+      },
+      {
+        "x": 5.413793087005615,
+        "z": -7.185767650604248,
+        "u": 1.0,
+        "v": 4.0953516041444133e-05
+      }
+    ],
+    "textureBounds": [
+      0.058342691510915756,
+      0.07411926984786987,
+      0.8958805799484253,
+      0.9415507316589355
+    ]
+  },
+  {
+    "id": "st_sanmon",
+    "label": "Temple Main Gate",
+    "file": "assets/st_sanmon.png",
+    "width": 250,
+    "height": 502,
+    "sourceTexture": "bin/map/st_sanmon/2d_yk_st_sanmon.dds",
+    "sourceGeometry": "bin/map/st_sanmon/st_sanmon.gmd",
+    "textureSize": [
+      256,
+      512
+    ],
+    "worldQuad": [
+      {
+        "x": -19.491561889648438,
+        "z": -20.519502639770508,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -19.491561889648438,
+        "z": 58.643672943115234,
+        "u": 0.0,
+        "v": 1.0
+      },
+      {
+        "x": 20.071548461914062,
+        "z": 58.643672943115234,
+        "u": 1.0,
+        "v": 1.0
+      },
+      {
+        "x": 20.071548461914062,
+        "z": -20.519502639770508,
+        "u": 1.0,
+        "v": 0.0
+      }
+    ],
+    "textureBounds": [
+      0.010779259726405144,
+      0.012390971183776855,
+      0.9875379800796509,
+      0.9919161796569824
+    ]
+  },
+  {
+    "id": "st_toaru_tani",
+    "label": "Suspension Bridge",
+    "file": "assets/st_toaru_tani.png",
+    "width": 508,
+    "height": 993,
+    "sourceTexture": "bin/map/st_toaru_tani/2d_yk_st_toaru_tani.dds",
+    "sourceGeometry": "bin/map/st_toaru_tani/st_toaru_tani.gmd",
+    "textureSize": [
+      512,
+      1024
+    ],
+    "worldQuad": [
+      {
+        "x": -29.940610885620117,
+        "z": -54.83993148803711,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -29.940610885620117,
+        "z": 43.5797233581543,
+        "u": 0.0,
+        "v": 1.0
+      },
+      {
+        "x": 33.09955596923828,
+        "z": 43.5797233581543,
+        "u": 1.0,
+        "v": 1.0
+      },
+      {
+        "x": 33.09955596923828,
+        "z": -54.83993148803711,
+        "u": 1.0,
+        "v": 0.0
+      }
+    ],
+    "textureBounds": [
+      0.0051675899885594845,
+      0.016131997108459473,
+      0.9968907833099365,
+      0.986304521560669
+    ]
+  },
+  {
+    "id": "st_toaru_tera",
+    "label": "Temple Grounds",
+    "file": "assets/st_toaru_tera.png",
+    "width": 241,
+    "height": 986,
+    "sourceTexture": "bin/map/st_toaru_tera/2d_yk_st_toaru_tera.dds",
+    "sourceGeometry": "bin/map/st_toaru_tera/st_toaru_tera.gmd",
+    "textureSize": [
+      256,
+      1024
+    ],
+    "worldQuad": [
+      {
+        "x": -10.795234680175781,
+        "z": -12.012451171875,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -10.795234680175781,
+        "z": 49.30730056762695,
+        "u": 0.0,
+        "v": 1.0
+      },
+      {
+        "x": 10.792071342468262,
+        "z": 49.30730056762695,
+        "u": 1.0,
+        "v": 1.0
+      },
+      {
+        "x": 10.792071342468262,
+        "z": -12.012451171875,
+        "u": 1.0,
+        "v": 0.0
+      }
+    ],
+    "textureBounds": [
+      0.016390930861234665,
+      -0.0025734901428222656,
+      0.959479570388794,
+      0.9601167440414429
+    ]
+  },
+  {
+    "id": "st_toaru_yashiki",
+    "label": "Mansion",
+    "file": "assets/st_toaru_yashiki.png",
+    "width": 499,
+    "height": 275,
+    "sourceTexture": "bin/map/st_toaru_yashiki/2d_yk_st_toaru_yashiki.dds",
+    "sourceGeometry": "bin/map/st_toaru_yashiki/st_toaru_yashiki.gmd",
+    "textureSize": [
+      512,
+      512
+    ],
+    "worldQuad": [
+      {
+        "x": -9.593849182128906,
+        "z": -5.162524700164795,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -9.593849182128906,
+        "z": 6.073763847351074,
+        "u": 0.0,
+        "v": 1.0
+      },
+      {
+        "x": 10.804656028747559,
+        "z": 6.073763847351074,
+        "u": 1.0,
+        "v": 1.0
+      },
+      {
+        "x": 10.804656028747559,
+        "z": -5.162524223327637,
+        "u": 1.0,
+        "v": 0.0
+      }
+    ],
+    "textureBounds": [
+      0.020132049918174744,
+      0.24059897661209106,
+      0.9950201511383057,
+      0.7768020629882812
+    ]
+  },
+  {
+    "id": "st_ufo",
+    "label": "Ufo",
+    "file": "assets/st_ufo.png",
+    "width": 332,
+    "height": 507,
+    "sourceTexture": "bin/map/st_ufo/2d_yk_st_ufo.dds",
+    "sourceGeometry": "bin/map/st_ufo/st_ufo.gmd",
+    "textureSize": [
+      512,
+      512
+    ],
+    "worldQuad": [
+      {
+        "x": -16.543270111083984,
+        "z": -19.357868194580078,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -16.543256759643555,
+        "z": 26.36386489868164,
+        "u": 0.0,
+        "v": 0.9998591824134534
+      },
+      {
+        "x": 12.757131576538086,
+        "z": 26.363859176635742,
+        "u": 1.0,
+        "v": 1.0
+      },
+      {
+        "x": 12.7571439743042,
+        "z": -19.35787010192871,
+        "u": 1.0,
+        "v": 3.585103869361702e-05
+      }
+    ],
+    "textureBounds": [
+      0.10323607176542282,
+      0.004908740520477295,
+      0.7518476843833923,
+      0.9957968592643738
+    ]
+  },
+  {
+    "id": "st_ukiyo_ienonaka",
+    "label": "Ukiyo's House",
+    "file": "assets/st_ukiyo_ienonaka.png",
+    "width": 1004,
+    "height": 475,
+    "sourceTexture": "bin/map/st_ukiyo_ienonaka/2d_yk_st_ukiyo_ienonaka_b.dds",
+    "sourceGeometry": "bin/map/st_ukiyo_ienonaka/st_ukiyo_ienonaka.gmd",
+    "textureSize": [
+      1024,
+      512
+    ],
+    "worldQuad": [
+      {
+        "x": -6.544217109680176,
+        "z": -18.961101531982422,
+        "u": 1.0,
+        "v": 0.9999998714239215
+      },
+      {
+        "x": -6.544217109680176,
+        "z": 7.777408123016357,
+        "u": 0.9999998176298452,
+        "v": 0.0
+      },
+      {
+        "x": 41.451988220214844,
+        "z": 7.777408123016357,
+        "u": 0.0,
+        "v": 2.571521568669301e-07
+      },
+      {
+        "x": 41.451988220214844,
+        "z": -18.961101531982422,
+        "u": 1.2205502547538192e-07,
+        "v": 1.0
+      }
+    ],
+    "textureBounds": [
+      0.0051675401628017426,
+      0.016131997108459473,
+      0.9856675267219543,
+      0.9432818293571472
+    ]
+  },
+  {
+    "id": "st_ukiyo_ienosoto",
+    "label": "Paddy Field",
+    "file": "assets/st_ukiyo_ienosoto.png",
+    "width": 1004,
+    "height": 475,
+    "sourceTexture": "bin/map/st_ukiyo_ienosoto/2d_yk_st_ukiyo_ienosoto.dds",
+    "sourceGeometry": "bin/map/st_ukiyo_ienosoto/st_ukiyo_ienosoto.gmd",
+    "textureSize": [
+      1024,
+      512
+    ],
+    "worldQuad": [
+      {
+        "x": -8.734237670898438,
+        "z": -19.020904541015625,
+        "u": 1.0,
+        "v": 0.9999998714239133
+      },
+      {
+        "x": -8.734237670898438,
+        "z": 7.717602729797363,
+        "u": 0.9999998176298452,
+        "v": 0.0
+      },
+      {
+        "x": 39.26197052001953,
+        "z": 7.717602729797363,
+        "u": 0.0,
+        "v": 1.9286413004905435e-07
+      },
+      {
+        "x": 39.26197052001953,
+        "z": -19.020904541015625,
+        "u": 1.2205502547538192e-07,
+        "v": 1.0
+      }
+    ],
+    "textureBounds": [
+      0.0051675401628017426,
+      0.016132056713104248,
+      0.9856675267219543,
+      0.9432818293571472
+    ]
+  },
+  {
+    "id": "st_yashiro",
+    "label": "Shrine",
+    "file": "assets/st_yashiro.png",
+    "width": 309,
+    "height": 348,
+    "sourceTexture": "bin/map/st_yashiro/2d_yk_st_yashiro.dds",
+    "sourceGeometry": "bin/map/st_yashiro/st_yashiro.gmd",
+    "textureSize": [
+      512,
+      512
+    ],
+    "worldQuad": [
+      {
+        "x": -3.2482247352600098,
+        "z": -4.2531561851501465,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -3.2482192516326904,
+        "z": 3.2057387828826904,
+        "u": 0.0,
+        "v": 1.0
+      },
+      {
+        "x": 3.2449142932891846,
+        "z": 3.205738067626953,
+        "u": 1.0,
+        "v": 1.0
+      },
+      {
+        "x": 3.244910478591919,
+        "z": -4.253161907196045,
+        "u": 1.0,
+        "v": 0.0
+      }
+    ],
+    "textureBounds": [
+      0.19884026050567627,
+      0.11156004667282104,
+      0.8017022609710693,
+      0.7921997904777527
+    ]
+  },
+  {
+    "id": "st_yuuki_nakaniwa",
+    "label": "Yuki Estate (Courtyard)",
+    "file": "assets/st_yuuki_nakaniwa.png",
+    "width": 786,
+    "height": 873,
+    "sourceTexture": "bin/map/st_yuuki_nakaniwa/2d_yk_st_yuuki_nakaniwa.dds",
+    "sourceGeometry": "bin/map/st_yuuki_nakaniwa/st_yuuki_nakaniwa.gmd",
+    "textureSize": [
+      1024,
+      1024
+    ],
+    "worldQuad": [
+      {
+        "x": -3.09690260887146,
+        "z": -54.66740798950195,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -3.09690260887146,
+        "z": 23.97331428527832,
+        "u": 0.0,
+        "v": 1.0
+      },
+      {
+        "x": 67.5078353881836,
+        "z": 23.97331428527832,
+        "u": 1.0,
+        "v": 1.0
+      },
+      {
+        "x": 67.5078353881836,
+        "z": -54.66740798950195,
+        "u": 1.0,
+        "v": 0.0
+      }
+    ],
+    "textureBounds": [
+      0.1248832568526268,
+      0.08160161972045898,
+      0.8921396136283875,
+      0.933928906917572
+    ]
+  },
+  {
+    "id": "st_yuuki_shinshitsu",
+    "label": "Mansion · Yuki Estate",
+    "file": "assets/st_yuuki_shinshitsu.png",
+    "width": 786,
+    "height": 873,
+    "sourceTexture": "bin/map/st_yuuki_shinshitsu/2d_yk_st_yuuki_shinshitsu.dds",
+    "sourceGeometry": "bin/map/st_yuuki_shinshitsu/st_yuuki_shinshitsu.gmd",
+    "textureSize": [
+      1024,
+      1024
+    ],
+    "worldQuad": [
+      {
+        "x": -5.372674465179443,
+        "z": -52.554168701171875,
+        "u": 0.0,
+        "v": 0.0
+      },
+      {
+        "x": -5.372674465179443,
+        "z": 26.0865535736084,
+        "u": 0.0,
+        "v": 1.0
+      },
+      {
+        "x": 65.23207092285156,
+        "z": 26.0865535736084,
+        "u": 1.0,
+        "v": 1.0
+      },
+      {
+        "x": 65.23207092285156,
+        "z": -52.554168701171875,
+        "u": 1.0,
+        "v": 0.0
+      }
+    ],
+    "textureBounds": [
+      0.1248832568526268,
+      0.08160156011581421,
+      0.8921395540237427,
+      0.933928906917572
+    ]
+  }
+]

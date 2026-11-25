@@ -16,7 +16,7 @@ const icon = path => `<svg viewBox="0 0 24 24" width="20" height="20" fill="none
 
 function weaponSaveCatalogue() {
   const byId = new Map(data.weapons.map(weapon => [weapon.id, weapon]));
-  // Native item.bin row count at +0x08; see weapon-extra-research.md and its source hash.
+  // Native item.bin row count at +0x08; its source hash is in weaponExtra.sources.itemTable.
   const itemCount = 667;
   assert(data.weapons.every(weapon => weapon.itemId > 0 && weapon.itemId < itemCount));
   return {

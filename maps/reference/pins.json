@@ -1,0 +1,962 @@
+{
+  "1": {
+    "area": "st_gion",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/001.png",
+    "x": 0.84951,
+    "y": 0.43422
+  },
+  "2": {
+    "area": "st_gion",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/002.png",
+    "x": 0.51898,
+    "y": 0.5766
+  },
+  "3": {
+    "area": "st_gion",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/003.png",
+    "x": 0.86481,
+    "y": 0.51481
+  },
+  "4": {
+    "area": "st_gion",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/004.png",
+    "x": 0.83114,
+    "y": 0.53093
+  },
+  "5": {
+    "area": "st_gion",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/005.png",
+    "x": 0.13949,
+    "y": 0.84929
+  },
+  "6": {
+    "area": "st_gion",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/006.png",
+    "x": 0.52357,
+    "y": 0.90168
+  },
+  "7": {
+    "area": "st_gion",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/007.png",
+    "x": 0.81278,
+    "y": 0.5175
+  },
+  "8": {
+    "area": "st_gion",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/008.png",
+    "x": 0.52204,
+    "y": 0.90974
+  },
+  "9": {
+    "area": "st_gion",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/009.png",
+    "x": 0.69649,
+    "y": 0.28914
+  },
+  "10": {
+    "area": "st_rakugaicho",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/010.png",
+    "x": 0.75671,
+    "y": 0.16074
+  },
+  "11": {
+    "area": "st_rakugaicho",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/011.png",
+    "x": 0.46947,
+    "y": 0.83304
+  },
+  "12": {
+    "area": "st_rakugaicho",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/012.png",
+    "x": 0.16465,
+    "y": 0.15877
+  },
+  "13": {
+    "area": "st_rakugaicho",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/013.png",
+    "x": 0.28257,
+    "y": 0.7839
+  },
+  "14": {
+    "area": "st_rakugaicho",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/014.png",
+    "x": 0.51337,
+    "y": 0.6168
+  },
+  "15": {
+    "area": "st_rakugaicho",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/015.png",
+    "x": 0.34905,
+    "y": 0.58338
+  },
+  "16": {
+    "area": "st_kaido_rakunai",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/016.png",
+    "x": 0.04953,
+    "y": 0.76182
+  },
+  "17": {
+    "area": "st_kaido_rakunai",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/017a.png",
+    "x": 0.53887,
+    "y": 0.752
+  },
+  "18": {
+    "area": "st_rakugaicho",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/018.png",
+    "x": 0.53971,
+    "y": 0.57356
+  },
+  "19": {
+    "area": "st_rakugaicho",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/019.png",
+    "x": 0.17594,
+    "y": 0.76227
+  },
+  "20": {
+    "area": "st_rakugaicho",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/020.png",
+    "x": 0.17594,
+    "y": 0.76227
+  },
+  "21": {
+    "area": "st_rakugaicho",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/021a.png",
+    "x": 0.1333,
+    "y": 0.81338
+  },
+  "22": {
+    "area": "st_rakugaicho",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/022.png",
+    "x": 0.39797,
+    "y": 0.57749
+  },
+  "23": {
+    "area": "st_gion",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/023.png",
+    "x": 0.39809,
+    "y": 0.72168
+  },
+  "24": {
+    "area": "st_rakugaicho",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/024.png",
+    "x": 0.55476,
+    "y": 0.43988
+  },
+  "25": {
+    "area": "st_rakugaicho",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/025.png",
+    "x": 0.19727,
+    "y": 0.44185
+  },
+  "26": {
+    "area": "st_rakugaicho",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/026.png",
+    "x": 0.28257,
+    "y": 0.23544
+  },
+  "27": {
+    "area": "st_rakugaicho",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/027a.png",
+    "x": 0.191,
+    "y": 0.1686
+  },
+  "28": {
+    "area": "st_kaido_rakunai",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/028.png",
+    "x": 0.5882,
+    "y": 0.76378
+  },
+  "29": {
+    "area": "st_kaido_rakunai",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/029.png",
+    "x": 0.12057,
+    "y": 0.76575
+  },
+  "30": {
+    "area": "st_gion",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/030a.png",
+    "x": 0.63069,
+    "y": 0.52556
+  },
+  "31": {
+    "area": "st_rakugaicho",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/031.png",
+    "x": 0.47197,
+    "y": 0.13911
+  },
+  "32": {
+    "area": "st_rakugaicho",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/032.png",
+    "x": 0.86208,
+    "y": 0.19612
+  },
+  "33": {
+    "area": "st_gion",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/033.png",
+    "x": 0.10276,
+    "y": 0.86138
+  },
+  "34": {
+    "area": "st_gion",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/034.png",
+    "x": 0.39503,
+    "y": 0.87481
+  },
+  "35": {
+    "area": "st_gion",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/035a.png",
+    "x": 0.84951,
+    "y": 0.50675
+  },
+  "36": {
+    "area": "st_rakugaicho",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/036a.png",
+    "x": 0.76173,
+    "y": 0.16467
+  },
+  "37": {
+    "area": "st_rakugaicho",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/012.png",
+    "x": 0.16465,
+    "y": 0.15877
+  },
+  "38": {
+    "area": "st_rakugaicho",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/038.png",
+    "x": 0.53971,
+    "y": 0.22168
+  },
+  "39": {
+    "area": "st_rakugaicho",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/039a.png",
+    "x": 0.58988,
+    "y": 0.79373
+  },
+  "40": {
+    "area": "st_rakugaicho",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/018.png",
+    "x": 0.53971,
+    "y": 0.57356
+  },
+  "41": {
+    "area": "st_rakugaicho",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/041.png",
+    "x": 0.57232,
+    "y": 0.42415
+  },
+  "42": {
+    "area": "st_kaido_rakunai",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/042.png",
+    "x": 0.03967,
+    "y": 0.65969
+  },
+  "43": {
+    "area": "st_kaido_rakunai",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/043.png",
+    "x": 0.34748,
+    "y": 0.6538
+  },
+  "44": {
+    "area": "st_rakugaicho",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/044a.png",
+    "x": 0.6087,
+    "y": 0.84287
+  },
+  "45": {
+    "area": "st_rakugaicho",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/013.png",
+    "x": 0.28257,
+    "y": 0.7839
+  },
+  "46": {
+    "area": "st_rakugaicho",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/046.png",
+    "x": 0.5372,
+    "y": 0.8409
+  },
+  "47": {
+    "area": "st_kaido_rindo",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/047.png",
+    "x": 0.34353,
+    "y": 0.80821
+  },
+  "48": {
+    "area": "st_rakugaicho",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/048a.png",
+    "x": 0.08312,
+    "y": 0.21774
+  },
+  "49": {
+    "area": "st_rakugaicho",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/049a.png",
+    "x": 0.42682,
+    "y": 0.47133
+  },
+  "50": {
+    "area": "st_rakugaicho",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/012.png",
+    "x": 0.16465,
+    "y": 0.15877
+  },
+  "51": {
+    "area": "st_rakugaicho",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/013.png",
+    "x": 0.28257,
+    "y": 0.7839
+  },
+  "52": {
+    "area": "st_rakugaicho",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/052.png",
+    "x": 0.54724,
+    "y": 0.42415
+  },
+  "53": {
+    "area": "st_rakugaicho",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/013.png",
+    "x": 0.28257,
+    "y": 0.7839
+  },
+  "54": {
+    "area": "st_kaido_kawa",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/054a.png",
+    "x": 0.48479,
+    "y": 0.42589
+  },
+  "55": {
+    "area": "st_rakugaicho",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/055.png",
+    "x": 0.51337,
+    "y": 0.6227
+  },
+  "56": {
+    "area": "st_rakugaicho",
+    "note": "Enter the blacksmith and go to the rear of the shop.",
+    "precision": "entrance",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/056.png",
+    "x": 0.58863,
+    "y": 0.62073
+  },
+  "57": {
+    "area": "st_kaido_rakunai",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/057.png",
+    "x": 0.51125,
+    "y": 0.72647
+  },
+  "58": {
+    "area": "st_kaido_rakunai",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/058.png",
+    "x": 0.27941,
+    "y": 0.64398
+  },
+  "59": {
+    "area": "st_kaido_rakunai",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/059a.png",
+    "x": 0.66516,
+    "y": 0.73825
+  },
+  "60": {
+    "area": "st_rakugaicho",
+    "note": "Enter Ikkonya and listen to the thieves at the back table.",
+    "precision": "entrance",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/060a.png",
+    "x": 0.551,
+    "y": 0.26886
+  },
+  "61": {
+    "area": "st_rakugaicho",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/010.png",
+    "x": 0.75671,
+    "y": 0.16074
+  },
+  "62": {
+    "area": "st_rakugaicho",
+    "note": "Enter Whitesnake Udon and talk to the employee away from the counter.",
+    "precision": "entrance",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/062.png",
+    "x": 0.24243,
+    "y": 0.25706
+  },
+  "63": {
+    "area": "st_rakugaicho",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/063.png",
+    "x": 0.69274,
+    "y": 0.22364
+  },
+  "64": {
+    "area": "st_kaido_yama",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/064.png",
+    "x": 0.42285,
+    "y": 0.8103
+  },
+  "65": {
+    "area": "st_kaido_kawa",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/065.png",
+    "x": 0.52637,
+    "y": 0.71611
+  },
+  "66": {
+    "area": "st_rakugaicho",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/066.png",
+    "x": 0.54473,
+    "y": 0.50279
+  },
+  "67": {
+    "area": "st_gion",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/067.png",
+    "x": 0.09052,
+    "y": 0.43556
+  },
+  "68": {
+    "area": "st_rakugaicho",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/068a.png",
+    "x": 0.55727,
+    "y": 0.81535
+  },
+  "69": {
+    "area": "st_rakugaicho",
+    "note": "Enter Whitesnake Udon and speak to the owner.",
+    "precision": "entrance",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/069.png",
+    "x": 0.24243,
+    "y": 0.26099
+  },
+  "70": {
+    "area": "st_rakugaicho",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/070a.png",
+    "x": 0.54598,
+    "y": 0.73475
+  },
+  "71": {
+    "area": "st_kaido_rindo",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/071.png",
+    "x": 0.49839,
+    "y": 0.61015
+  },
+  "72": {
+    "area": "st_rakugaicho",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/072.png",
+    "x": 0.64633,
+    "y": 0.1627
+  },
+  "73": {
+    "area": "st_kaido_kawa",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/073a.png",
+    "x": 0.48479,
+    "y": 0.25568
+  },
+  "74": {
+    "area": "st_kaido_kawa",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/074a.png",
+    "x": 0.65547,
+    "y": 0.16714
+  },
+  "75": {
+    "area": "st_rakugaicho",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/075.png",
+    "x": 0.36034,
+    "y": 0.75441
+  },
+  "76": {
+    "area": "st_kaido_rakunai",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/076a.png",
+    "x": 0.78946,
+    "y": 0.7304
+  },
+  "77": {
+    "area": "st_kaido_kawa",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/077.png",
+    "x": 0.52637,
+    "y": 0.25077
+  },
+  "78": {
+    "area": "st_kaido_kawa",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/078.png",
+    "x": 0.6511,
+    "y": 0.14451
+  },
+  "79": {
+    "area": "st_kaido_rakunai",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/079a.png",
+    "x": 0.07223,
+    "y": 0.75593
+  },
+  "80": {
+    "area": "st_kaido_rakunai",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/080.png",
+    "x": 0.4491,
+    "y": 0.76771
+  },
+  "81": {
+    "area": "st_kaido_tanbo",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/081.png",
+    "x": 0.16309,
+    "y": 0.33203
+  },
+  "82": {
+    "area": "st_gion",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/082a.png",
+    "x": 0.12725,
+    "y": 0.74989
+  },
+  "83": {
+    "area": "st_gion",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/083a.png",
+    "x": 0.10429,
+    "y": 0.85601
+  },
+  "84": {
+    "area": "st_gion",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/082a.png",
+    "x": 0.12725,
+    "y": 0.74989
+  },
+  "85": {
+    "area": "st_gion",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/085.png",
+    "x": 0.38432,
+    "y": 0.65854
+  },
+  "86": {
+    "area": "st_rakugaicho",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/086a.png",
+    "x": 0.35532,
+    "y": 0.4045
+  },
+  "87": {
+    "area": "st_kaido_tanbo",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/087.png",
+    "x": 0.24316,
+    "y": 0.6543
+  },
+  "88": {
+    "area": "st_kaido_tanbo",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/088.png",
+    "x": 0.53418,
+    "y": 0.6543
+  },
+  "89": {
+    "area": "st_kaido_tanbo",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/089a.png",
+    "x": 0.66309,
+    "y": 0.77539
+  },
+  "90": {
+    "area": "st_yoshioka_jnt",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/090a.png",
+    "x": 0.12988,
+    "y": 0.38086
+  },
+  "91": {
+    "area": "st_yoshioka_jnt",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/091.png",
+    "x": 0.27637,
+    "y": 0.38477
+  },
+  "92": {
+    "area": "st_rakugaicho",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/092a.png",
+    "x": 0.6526,
+    "y": 0.15877
+  },
+  "93": {
+    "area": "st_kawa_jnt",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/093a.png",
+    "x": 0.65527,
+    "y": 0.4373
+  },
+  "94": {
+    "area": "st_kaido_tani",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/094.png",
+    "x": 0.53613,
+    "y": 0.83076
+  },
+  "95": {
+    "area": "st_kaido_tanbo",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/095.png",
+    "x": 0.12109,
+    "y": 0.49414
+  },
+  "96": {
+    "area": "st_yoshioka_jnt",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/090a.png",
+    "x": 0.12988,
+    "y": 0.38086
+  },
+  "97": {
+    "area": "st_gion",
+    "note": "Enter Gyotensai’s house to trigger the conversation.",
+    "precision": "entrance",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/097a.png",
+    "x": 0.90918,
+    "y": 0.13735
+  },
+  "98": {
+    "area": "st_kawa_jnt",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/098a.png",
+    "x": 0.46582,
+    "y": 0.57919
+  },
+  "99": {
+    "area": "st_kaido_rindo",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/099a.png",
+    "x": 0.82532,
+    "y": 0.49527
+  },
+  "100": {
+    "area": "st_rakugaicho",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/100a.png",
+    "x": 0.11824,
+    "y": 0.1627
+  },
+  "101": {
+    "area": "st_gion",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/101.png",
+    "x": 0.18233,
+    "y": 0.31467
+  },
+  "102": {
+    "area": "st_gion",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/102.png",
+    "x": 0.41646,
+    "y": 0.89362
+  },
+  "103": {
+    "area": "st_gion",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/103.png",
+    "x": 0.47613,
+    "y": 0.87213
+  },
+  "104": {
+    "area": "st_gion",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/104.png",
+    "x": 0.64293,
+    "y": 0.8466
+  },
+  "105": {
+    "area": "st_gion",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/105.png",
+    "x": 0.60773,
+    "y": 0.82645
+  },
+  "106": {
+    "area": "st_gion",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/106.png",
+    "x": 0.24966,
+    "y": 0.40198
+  },
+  "107": {
+    "area": "st_gion",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/107.png",
+    "x": 0.49909,
+    "y": 0.86272
+  },
+  "108": {
+    "area": "st_gion",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/108.png",
+    "x": 0.60773,
+    "y": 0.20452
+  },
+  "109": {
+    "area": "st_gion",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/109a.png",
+    "x": 0.39656,
+    "y": 0.90705
+  },
+  "110": {
+    "area": "st_gion",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/110.png",
+    "x": 0.55265,
+    "y": 0.43959
+  },
+  "111": {
+    "area": "st_gion",
+    "note": "Read the letter from Ebisuya at the post box inside Tatsuya.",
+    "precision": "entrance",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/111.png",
+    "x": 0.33842,
+    "y": 0.8963
+  },
+  "112": {
+    "area": "st_gion",
+    "note": "Read the letter from Sake Nakanokura at the post box inside Tatsuya.",
+    "precision": "entrance",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/112a.png",
+    "x": 0.32923,
+    "y": 0.8963
+  },
+  "113": {
+    "area": "st_gion",
+    "note": "Read the letter at the post box inside Tatsuya.",
+    "precision": "entrance",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/113.png",
+    "x": 0.33229,
+    "y": 0.89362
+  },
+  "114": {
+    "area": "st_gion",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/114.png",
+    "x": 0.42717,
+    "y": 0.88153
+  },
+  "115": {
+    "area": "st_gion",
+    "note": "Read the letter from Kikuya at the post box inside Tatsuya.",
+    "precision": "entrance",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/115a.png",
+    "x": 0.34607,
+    "y": 0.89093
+  },
+  "116": {
+    "area": "st_rakugaicho",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/116a.png",
+    "x": 0.30013,
+    "y": 0.15877
+  },
+  "117": {
+    "area": "st_gion",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/117a.png",
+    "x": 0.39809,
+    "y": 0.90705
+  },
+  "118": {
+    "area": "st_gion",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/118a.png",
+    "x": 0.41187,
+    "y": 0.88019
+  },
+  "119": {
+    "area": "st_gion",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/119.png",
+    "x": 0.41493,
+    "y": 0.89496
+  },
+  "120": {
+    "area": "st_gion",
+    "note": "Start marker A registered from the walkthrough map to the installed game map.",
+    "precision": "exact",
+    "reference": "https://www.khhsubs.com/kenzan/graphics/substory/steps_map/120.png",
+    "x": 0.41493,
+    "y": 0.89496
+  }
+}

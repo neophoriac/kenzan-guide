@@ -1,5 +1,5 @@
 // Kenzan host enrichment: curated labelled facts, with fail-closed source checks.
-// Provenance and generation: research/kenzan60/atlas-details-implementation-20261120/data/.
+// Each labelled value is checked against its expected source prose before enrichment.
 // This module supplements the original prose. It never edits instructions, IDs or coordinates.
 const assert = require('node:assert/strict');
 const weaponBindings = require('../../data/weapons/weapon-pickup-bindings.json');

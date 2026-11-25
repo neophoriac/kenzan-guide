@@ -1,0 +1,160 @@
+{
+  "schemaVersion": 1,
+  "omittedDuplicates": [
+    { "itemId": 56, "replacementItemIds": [32918] },
+    { "itemId": 209, "replacementItemIds": [32784, 32920] },
+    { "itemId": 32826, "replacementItemIds": [32896] },
+    { "itemId": 32827, "replacementItemIds": [32897] },
+    { "itemId": 32828, "replacementItemIds": [32898] },
+    { "itemId": 32829, "replacementItemIds": [32899] },
+    { "itemId": 32830, "replacementItemIds": [32900] },
+    { "itemId": 32858, "replacementItemIds": [192] }
+  ],
+  "items": [
+    {
+      "itemId": 56,
+      "heading": "Related quest",
+      "lead": { "label": "#106 Poor Client, Great Master", "href": "#quest-106" },
+      "detail": "The old calligrapher gives an Incomprehensible Scroll during this request.",
+      "qualification": "The confirmed reward is the Valuables version below. A separate pickup of this Items version has not been confirmed."
+    },
+    {
+      "itemId": 60,
+      "heading": "Related meal",
+      "lead": { "label": "Sushi Ginya · Futomaki", "href": "#restaurant-menu-10" },
+      "detail": "Sushi Ginya serves Futomaki for 50 mon.",
+      "qualification": "This is a meal eaten at the restaurant. A carried portion from normal play has not been confirmed."
+    },
+    {
+      "itemId": 209,
+      "heading": "Related quest",
+      "lead": { "label": "Kamotaro · #47 Talent", "href": "#quest-47" },
+      "detail": "Kamotaro is the painter encountered on the Forest Path. His quest gives two bundles of Washi.",
+      "links": [
+        { "label": "Washi · flying machine", "href": "#inventory-item-32784" },
+        { "label": "Washi · Back Pain Remedy", "href": "#inventory-item-32920" }
+      ],
+      "qualification": "Washi is the verified quest reward; a separate pickup named Blank Paper has not been confirmed."
+    },
+    {
+      "itemId": 388,
+      "heading": "Similar quest title",
+      "lead": { "label": "#26 The Cursed Teacup", "href": "#quest-26" },
+      "detail": "This quest’s confirmed reward is the Yamanoi Teacup.",
+      "links": [{ "label": "Yamanoi Teacup", "href": "#inventory-item-34" }],
+      "qualification": "The matching quest title does not establish a source for this separate Cursed Teacup entry. Its pickup remains unconfirmed."
+    },
+    {
+      "itemId": 32776,
+      "heading": "Related story location",
+      "lead": { "label": "In’ei · Hozoin", "href": "#quest-map", "mapData": { "mapArea": "st_hozoin" } },
+      "detail": "In’ei’s recommendation belongs to the Chapter 8 Hozoin story sequence.",
+      "links": [{ "label": "Hozoin competitions", "href": "#coliseum-title" }],
+      "qualification": "The story recommendation is identified; acquisition of this carried letter and a held-letter requirement for competitions remain unconfirmed."
+    },
+    {
+      "itemId": 32777,
+      "heading": "Place named in the description",
+      "lead": { "label": "Yūki Estate", "href": "#quest-map", "mapData": { "mapArea": "st_yuuki_nakaniwa" } },
+      "detail": "The description identifies Hideyasu Yūki’s watchtower.",
+      "qualification": "The map link shows the estate, not a verified key pickup. The key’s acquisition and exact watchtower interaction remain unconfirmed."
+    },
+    {
+      "itemId": 32826,
+      "heading": "Related training",
+      "lead": { "label": "Exam 3 · Fist Reversal", "href": "#training-komaki-komaki-fist-reversal" },
+      "detail": "Komaki Sōzaemon at the Gion Martial Arts Dojo in southeast Gion.",
+      "links": [{ "label": "Fist Reversal Certificate", "href": "#inventory-item-32896" }],
+      "qualification": "The lesson awards a Certificate. This separate Training Manual entry has no confirmed pickup."
+    },
+    {
+      "itemId": 32827,
+      "heading": "Related training",
+      "lead": { "label": "Exam 1 · Swordless Catch", "href": "#training-komaki-komaki-swordless-catch" },
+      "detail": "Komaki Sōzaemon at the Gion Martial Arts Dojo in southeast Gion.",
+      "links": [{ "label": "Swordless Catch Certificate", "href": "#inventory-item-32897" }],
+      "qualification": "The lesson awards a Certificate. This separate Training Manual entry has no confirmed pickup."
+    },
+    {
+      "itemId": 32828,
+      "heading": "Related training",
+      "lead": { "label": "Exam 2 · Bowl Crusher", "href": "#training-komaki-komaki-bowl-crusher" },
+      "detail": "Komaki Sōzaemon at the Gion Martial Arts Dojo in southeast Gion.",
+      "links": [{ "label": "Bowl Crusher Certificate", "href": "#inventory-item-32898" }],
+      "qualification": "The lesson awards a Certificate. This separate Training Manual entry has no confirmed pickup."
+    },
+    {
+      "itemId": 32829,
+      "heading": "Related training",
+      "lead": { "label": "Exam 4 · Shot Stopper", "href": "#training-komaki-komaki-shot-stopper" },
+      "detail": "Komaki Sōzaemon at the Gion Martial Arts Dojo in southeast Gion.",
+      "links": [{ "label": "Shot Stopper Certificate", "href": "#inventory-item-32899" }],
+      "qualification": "The lesson awards a Certificate. This separate Training Manual entry has no confirmed pickup."
+    },
+    {
+      "itemId": 32830,
+      "heading": "Related training",
+      "lead": { "label": "Komaki’s final training · Swordless Justice", "href": "#training-komaki-komaki-swordless-justice" },
+      "detail": "This route continues through Zanki Dojo and Sanjusangendo, ending with Komaki’s farewell outside Zanki Dojo.",
+      "links": [{ "label": "Swordless Justice Certificate", "href": "#inventory-item-32900" }],
+      "qualification": "The route awards a Certificate. This separate Training Manual entry has no confirmed pickup."
+    },
+    {
+      "itemId": 32839,
+      "heading": "Related quest",
+      "lead": { "label": "Sasemon · #24 The Dual Sword Man", "href": "#quest-24" },
+      "detail": "The owner of Sake Ikkonya gives you a letter arranging a meeting with Sasemon at Rakugai Shrine.",
+      "qualification": "The letter exchange is confirmed in this quest; whether it adds this inventory entry has not been confirmed."
+    },
+    {
+      "itemId": 32858,
+      "heading": "Related quest",
+      "lead": { "label": "#83 The Red Diary", "href": "#quest-83" },
+      "detail": "Arigataya Market in Rakugai sells the Red Hairpiece used for Omayu’s gift.",
+      "qualification": "The quest uses the Items version below. Acquisition of this separate Valuables version has not been confirmed."
+    },
+    {
+      "itemId": 32852,
+      "heading": "Related story scene",
+      "lead": { "label": "Majima’s sword · Ukiyo’s house", "href": "#quest-map", "mapData": { "mapArea": "st_ukiyo_ienonaka" } },
+      "detail": "The early-story sword delivery at Ukiyo’s house refers to this valuable.",
+      "qualification": "The handover is identified, but its earlier inventory grant remains unconfirmed. This is a story valuable, not an equippable sword."
+    },
+    {
+      "itemId": 32866,
+      "heading": "Related ticket venue",
+      "lead": { "label": "Theatre · Rakugai", "href": "#quest-map", "mapData": { "mapPlace": "st_rakugaicho:Theatre" } },
+      "detail": "The description identifies a sideshow ticket.",
+      "qualification": "The Theatre is the venue for the other sideshow tickets. A Talking Dog performance, ticket reward or redemption has not been confirmed."
+    },
+    {
+      "itemId": 32867,
+      "heading": "Turtle-keeping context",
+      "lead": { "label": "Turtle Seller · Rakugai", "href": "#quest-map", "mapData": { "mapPlace": "st_rakugaicho:Turtle Seller" } },
+      "detail": "The seller provides a free bucket delivered to Tatsuya for keeping turtles.",
+      "links": [{ "label": "Getting started with turtles", "href": "#turtle-race-start" }],
+      "qualification": "The home turtle-keeping feature is confirmed. A carried copy of this separate Valuables entry has not been confirmed."
+    },
+    {
+      "itemId": 32772,
+      "heading": "Assessment",
+      "lead": { "label": "Possible development remnant" },
+      "detail": "The description presents this as a bun-related thank-you gift, but no matching exchange has been identified.",
+      "qualification": "No giver, quest or pickup is confirmed. “Kasumi” has not been established as a character; the original Japanese name remains unverified."
+    },
+    {
+      "itemId": 352,
+      "heading": "Assessment",
+      "lead": { "label": "Possible unused ingredient" },
+      "detail": "No current source or crafting recipe is confirmed.",
+      "qualification": "大蛇の血 (“giant-serpent blood”) is an inferred reading of its internal name, not recovered Japanese menu text. The description does not establish a usable curse mechanic."
+    },
+    {
+      "itemId": 32870,
+      "heading": "Assessment",
+      "lead": { "label": "Likely retired forging manual" },
+      "detail": "Its stored page says the book has already been lost, and no current recipe requires it.",
+      "qualification": "The cover reads 拾遺伝・血吹雪乱心. That is observed artwork text, not a recovered Japanese menu label. Its source and any intended weapon remain unconfirmed."
+    }
+  ]
+}

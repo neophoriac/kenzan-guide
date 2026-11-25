@@ -1,0 +1,242 @@
+[
+  {
+    "id": "zanki",
+    "title": "Zanki Dojo",
+    "intro": "Train with Shibusawa Zankisai in southeast Rakugai to learn single-sword techniques. The first lesson is free. The four paid lessons have individual fees, and Donate Whatever You Want funds the separate grading matches. Leave the grounds and return if you need to trigger Shibusawa’s update about recruiting more students.",
+    "source": {"label": "KHHSubs training guide", "url": "https://www.khhsubs.com/kenzan/training/"},
+    "map": {"area": "st_rakugaicho", "name": "Zanki Dojo"},
+    "entries": [
+      {
+        "id": "rock-cutter",
+        "name": "Introductory Lesson",
+        "window": "6-3",
+        "requires": "Reach the Chapter 6 objective to train for the Yoshioka Dojo entrance exam.",
+        "steps": "Talk to Shibusawa. Hold R1, push the left stick toward him and press Triangle. Land Rock Cutter five times.",
+        "reward": "Zanki Style - Rock Cutter. An upward single-sword slash from your fighting stance."
+      },
+      {
+        "id": "serene-soul",
+        "name": "Zanki Style - Serene Soul",
+        "window": "7-5",
+        "requires": "Complete the introductory lesson and pay 3,000 mon.",
+        "steps": "Block ten of Shibusawa’s attacks. Press L1 again as soon as he breaks your guard.",
+        "reward": "Zanki Style - Serene Soul. Lets you restore your guard immediately after it breaks."
+      },
+      {
+        "id": "chasing-slice",
+        "name": "Zanki Style - Chasing Slice",
+        "window": "7-5",
+        "requires": "Complete the introductory lesson and pay 5,300 mon.",
+        "steps": "Run toward Shibusawa and press Triangle to land the running strike. Complete the practice prompt.",
+        "reward": "Zanki Style - Chasing Slice. A single-sword strike powered by your run."
+      },
+      {
+        "id": "whirlwind-slash",
+        "name": "Zanki Style - Whirlwind Slash",
+        "window": "7-5",
+        "requires": "Complete the introductory lesson and pay 1 ryō and 500 mon. The payment dialogue incorrectly displays 5,000 mon for the remainder.",
+        "steps": "Hold R1, push the left stick away from Shibusawa and press Triangle to perform the sweep. Complete the practice prompt.",
+        "reward": "Zanki Style - Whirlwind Slash. A sweeping single-sword attack that targets the legs."
+      },
+      {
+        "id": "riposte",
+        "name": "Zanki Style - Riposte",
+        "window": "7-5",
+        "requires": "Complete the introductory lesson and pay 2 ryō and 5,000 mon. The lesson menu incorrectly displays 500 mon for the remainder.",
+        "steps": "Press L1 just as Shibusawa’s attack is about to land. After the parry, quickly press Triangle. Complete the practice prompt.",
+        "reward": "Zanki Style - Riposte. Follow a timed parry with a single-sword counterattack."
+      },
+      {
+        "id": "zanki-blade-first",
+        "name": "Zanki Blade - 1st Degree",
+        "window": "7-5",
+        "requires": "Donate a total of 1 ryō through Donate Whatever You Want.",
+        "steps": "Accept the first grading match and defeat all 30 opponents before you run out of health.",
+        "reward": "Zanki Blade. Hold and release Triangle to deliver a powerful thrust."
+      },
+      {
+        "id": "zanki-blade-second",
+        "name": "Zanki Blade - 2nd Degree",
+        "window": "7-5",
+        "requires": "Learn 1st Degree and raise your total donations to 3 ryō.",
+        "steps": "Accept the second grading match and defeat all 50 opponents.",
+        "reward": "Zanki Blade - 2nd Degree. Press Triangle after the initial Zanki Blade to follow up."
+      },
+      {
+        "id": "zanki-blade-third",
+        "name": "Zanki Blade - 3rd Degree",
+        "window": "7-5",
+        "requires": "Learn 2nd Degree and raise your total donations to 5 ryō.",
+        "steps": "Defeat 100 opponents in the final grading match. Shibusawa is the last opponent. Bring healing items.",
+        "reward": "Zanki Blade - 3rd Degree. Press Triangle again after 2nd Degree to finish the chain.",
+        "links": [{"label": "Finale follow-up · Swordless Justice", "href": "#revelation-swordless-justice"}]
+      }
+    ]
+  },
+  {
+    "id": "scarecrow",
+    "title": "Scarecrow Formations",
+    "intro": "Bring the dango from the Riverside Tea House to Kōetsu during Chapter 6, then speak to him in his basement in Kawaramachi and choose Scarecrow Training. Each formation supplies its own weapon. Cut down every scarecrow before the pass time, use stronger attacks on armored targets, and guard or dodge when archers line up a shot.",
+    "source": {"label": "KHHSubs training and pass-rank reference", "url": "https://www.khhsubs.com/kenzan/playspots/"},
+    "map": {"area": "st_kaido_rakunai", "name": "Koetsu’s Mansion"},
+    "entries": [
+      {
+        "id": "single-formation",
+        "name": "Single Formation",
+        "window": "6-6",
+        "requires": "Return to Kōetsu with the dango and enter the basement.",
+        "steps": "Use the supplied single sword and clear all targets within 2:00.",
+        "reward": "Single Sword - Slash Combo Extension. Adds one hit to the standard single-sword combo."
+      },
+      {
+        "id": "twin-formation",
+        "name": "Twin Formation",
+        "window": "7-4",
+        "requires": "Use the first floor after returning to Gion in Chapter 7.",
+        "steps": "Use the supplied dual swords and clear all targets within 2:10.",
+        "reward": "Dual Sword - Slash Combo Extension. Adds one hit to the standard dual-sword combo."
+      },
+      {
+        "id": "oni-formation",
+        "name": "Oni Formation",
+        "window": "7-4",
+        "requires": "Use the first floor after returning to Gion in Chapter 7.",
+        "steps": "Use the supplied greatsword and clear all targets within 2:00. Prioritize sweeping attacks when armored targets are close together.",
+        "reward": "Great Sword - Haymaker. Hold Triangle and release at full charge for a spinning slash."
+      },
+      {
+        "id": "shinobi-formation",
+        "name": "Shinobi Formation",
+        "window": "7-4",
+        "requires": "Use the first floor after returning to Gion in Chapter 7.",
+        "steps": "Use the supplied short sword and clear all targets within 2:00.",
+        "reward": "Short Sword - Running Stab. Press Triangle while running to stab."
+      },
+      {
+        "id": "single-strength-formation",
+        "name": "Single Strength Formation",
+        "window": "9-1",
+        "requires": "Clear the four first-floor formations.",
+        "steps": "Use the supplied single sword and clear all targets within 2:30.",
+        "reward": "Single Sword - Dodge Strike. Press Triangle after a quickstep to attack."
+      },
+      {
+        "id": "twin-strength-formation",
+        "name": "Twin Strength Formation",
+        "window": "9-1",
+        "requires": "Clear the four first-floor formations.",
+        "steps": "Use the supplied dual swords and clear all targets within 2:35.",
+        "reward": "Dual Sword - Slash Combo Extension 2. Extends the standard dual-sword combo again."
+      },
+      {
+        "id": "great-strength-formation",
+        "name": "Great Strength Formation",
+        "window": "9-1",
+        "requires": "Clear the four first-floor formations.",
+        "steps": "Use the supplied greatsword and clear all targets within 2:25. Guard or evade the archer targets’ shots.",
+        "reward": "Greatest Fighting Spirit Tome - Chapter 1. Increases maximum Heat."
+      },
+      {
+        "id": "enduring-strength-formation",
+        "name": "Enduring Strength Formation",
+        "window": "9-1",
+        "requires": "Clear the four first-floor formations.",
+        "steps": "Use the supplied short sword and clear all targets within 2:55.",
+        "reward": "Iron Body Discipline. Makes you harder to knock down in Heat Mode."
+      },
+      {
+        "id": "enlightenment-formation",
+        "name": "Enlightenment Formation",
+        "window": "10-9",
+        "requires": "Clear the four second-floor formations.",
+        "steps": "Use the supplied single sword and clear all targets within 2:35.",
+        "reward": "Greatest Fighting Spirit Tome - Chapter 2. Increases maximum Heat."
+      },
+      {
+        "id": "two-heavens-formation",
+        "name": "Two Heavens Formation",
+        "window": "10-9",
+        "requires": "Clear the four second-floor formations.",
+        "steps": "Use the supplied dual swords and clear all targets within 2:55.",
+        "reward": "True Iron Body Discipline. Further reduces knockdowns in Heat Mode."
+      },
+      {
+        "id": "ultimate-formation",
+        "name": "Ultimate Formation",
+        "window": "10-9",
+        "requires": "Clear the four second-floor formations.",
+        "steps": "Use the supplied greatsword and clear all targets within 2:35.",
+        "reward": "Greatest Fighting Spirit Tome - Chapter 3. Increases maximum Heat."
+      },
+      {
+        "id": "purgatory-formation",
+        "name": "Purgatory Formation",
+        "window": "10-9",
+        "requires": "Clear the four second-floor formations.",
+        "steps": "Use the supplied short sword and clear all targets within 2:55.",
+        "reward": "Masamune Tanto."
+      }
+    ]
+  },
+  {
+    "id": "jiraiya",
+    "title": "Jiraiya Chambers",
+    "intro": "Speak to Kōetsu in his basement in Kawaramachi and choose Jiraiya Training. Throw shuriken at the moving targets. Avoid human-shaped targets. Quick Shots and multiple hits with one throw add bonus points. Three consecutive hits speed up the targets, while a miss slows them down. Reaching top speed quickly can reveal a bonus target.",
+    "source": {"label": "KHHSubs training and pass-rank reference", "url": "https://www.khhsubs.com/kenzan/playspots/"},
+    "map": {"area": "st_kaido_rakunai", "name": "Koetsu’s Mansion"},
+    "entries": [
+      {"id": "first-chamber", "name": "First Chamber", "window": "6-6", "requires": "Return to Kōetsu with the dango and enter the basement.", "steps": "Score at least 6,000 points.", "reward": "Juzumaru."},
+      {"id": "earth-chamber", "name": "Earth Chamber", "window": "8-1", "requires": "Pass First Chamber.", "steps": "Score at least 14,000 points.", "reward": "Mikazuki Munechika."},
+      {"id": "water-chamber", "name": "Water Chamber", "window": "9-1", "requires": "Pass Earth Chamber.", "steps": "Score at least 17,000 points.", "reward": "Onimaru Kunitsuna."},
+      {"id": "fire-chamber", "name": "Fire Chamber", "window": "9-1", "requires": "Pass Water Chamber.", "steps": "Score at least 16,000 points. Hitting the girl target costs 900 points on this course.", "reward": "Dojigiri Yasutsuna."},
+      {"id": "wind-chamber", "name": "Wind Chamber", "window": "10-9", "requires": "Pass Water Chamber.", "steps": "Score at least 26,000 points.", "reward": "Odenta."},
+      {"id": "heavenly-chamber", "name": "Heavenly Chamber", "window": "11-1", "requires": "Pass Fire Chamber and Wind Chamber.", "steps": "Score at least 26,000 points.", "reward": "Muramasa."},
+      {"id": "ultimate-chamber", "name": "Ultimate Chamber", "window": "11-1", "requires": "Pass Heavenly Chamber.", "steps": "Score at least 54,000 points.", "reward": "Masamune."}
+    ]
+  },
+  {
+    "id": "tengu",
+    "title": "Tengu Mask Battles",
+    "intro": "Buy the mysterious masks from the Sanjusangendo Peddler for 2 ryō each. Buy his earlier offers and leave and re-enter the area to bring up the next offer. After buying a mask, follow the letter to Rendai Field in the evening. Hand over the mask, accept the challenge and win the duel.",
+    "source": {"label": "KHHSubs training guide", "url": "https://www.khhsubs.com/kenzan/training/"},
+    "map": {"area": "st_rendaino_jnt", "name": "Tengu Mask Training"},
+    "entries": [
+      {
+        "id": "tengu-first",
+        "name": "First Encounter",
+        "window": "10-9",
+        "requires": "Evening. Buy Mysterious Small Tengu Mask, the peddler’s first offer.",
+        "steps": "Give the man the mask and choose the top replies to fight him. Beat him.",
+        "reward": "Small Tengu Mask and Dual Sword - Cartwheel Slash. Roll sideways with two quicksteps and press Triangle for a spinning slash.",
+        "links": [{"label": "Find the mask", "href": "#collectible-recipe-oni-forging:tengu-mask-small"}]
+      },
+      {
+        "id": "tengu-second",
+        "name": "Second Encounter",
+        "window": "10-9",
+        "requires": "Evening. Buy Mysterious Raven Tengu Mask, the peddler’s eighth offer.",
+        "steps": "Hand over the raven mask, accept the challenge and win the duel.",
+        "reward": "Raven Tengu Mask and Dual Sword - Onmyo Reversal. Parry with a timed L1, then press Triangle to counter.",
+        "links": [{"label": "Find the mask", "href": "#collectible-recipe-oni-forging:tengu-mask-raven"}]
+      },
+      {
+        "id": "tengu-third",
+        "name": "Third Encounter",
+        "window": "11-1",
+        "requires": "Evening. Buy Mysterious Tengu Mask, the peddler’s tenth offer.",
+        "steps": "Hand over the mask, accept the challenge and win the duel.",
+        "reward": "Tengu Mask and Dual Sword - Tengu Drop. Hold R1 and press Triangle as an enemy attacks to counter with a dual thrust.",
+        "links": [{"label": "Find the mask", "href": "#collectible-recipe-oni-forging:tengu-mask-standard"}]
+      },
+      {
+        "id": "tengu-final",
+        "name": "Final Encounter",
+        "window": "12-1",
+        "requires": "Evening. Buy Mysterious Great Tengu Mask, the peddler’s twelfth offer.",
+        "steps": "Hand over the great mask, accept the challenge and win the final duel.",
+        "reward": "Great Tengu Mask and Hidden Body - Tengu Step. Quickstep with Cross during a Square attack by spending Heat.",
+        "links": [{"label": "Find the mask", "href": "#collectible-recipe-oni-forging:tengu-mask-great"}]
+      }
+    ]
+  }
+]

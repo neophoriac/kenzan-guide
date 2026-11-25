@@ -85,8 +85,8 @@ table, re-sign the save or change its ownership.
   work. The existing full-header validator and save parser admit decoded bytes;
   an already-readable save skips decryption. Existing personal snapshot and
   story-follow behavior remains; completion still waits for Apply checkmarks.
-- `build_guide.cjs` writes the two separate ESM assets. They load only when a
-  PS3 import is requested. `build_pages.cjs` fingerprints both before rewriting
+- The authoring pipeline writes two separate ESM assets. They load only when a
+  PS3 import is requested. Release staging fingerprints both before rewriting
   the save runtime's literal URLs, preserving nested deployment paths.
 
 ## Browser crypto and limits
@@ -122,9 +122,9 @@ A failed read cannot apply checkmarks or replace a previous successful snapshot.
 
 ## Evidence
 
-`research/kenzan60/save-import-issue-1-20261125/` contains pinned source manifests,
-the private attachment/copy hashes, the independent Node reference diagnostic,
-browser-native decoder comparison, adversarial archive fixtures and focused
-tests. It is excluded from public site assets. The original attachment remains
-unchanged. Its decoded plaintext SHA-256 is
-`076adc82328d9afd5b3907866b0572ad513b1e8b3fd74c0daed82db1fcfb20ba`.
+Validation compared an independent Node reference decoder with the browser's
+native WebCrypto decoder. Focused checks also covered malformed archives,
+missing or mismatched files, cancellation and the plaintext-import path.
+The original save was kept unchanged. Private saves, account data and their
+test fixtures are excluded from this repository; these notes describe the
+implementation and its limits without requiring access to those fixtures.

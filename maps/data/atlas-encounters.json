@@ -1,0 +1,775 @@
+{
+  "st_gion": [
+    {
+      "section": "0c7c064c",
+      "sites": [
+        {
+          "actor": "007c064d",
+          "x": 0.239921,
+          "y": 0.867276,
+          "behavior": "EncountLine"
+        },
+        {
+          "actor": "007c064e",
+          "x": 0.069774,
+          "y": 0.743027,
+          "behavior": "Idle"
+        }
+      ]
+    },
+    {
+      "section": "0c7c064f",
+      "sites": [
+        {
+          "actor": "007c0650",
+          "x": 0.179095,
+          "y": 0.437294,
+          "behavior": "EncountLine"
+        },
+        {
+          "actor": "007c0651",
+          "x": 0.232993,
+          "y": 0.376948,
+          "behavior": "EncountCircle"
+        }
+      ]
+    },
+    {
+      "section": "0c7c0652",
+      "sites": [
+        {
+          "actor": "007c0656",
+          "x": 0.758309,
+          "y": 0.834658,
+          "behavior": "EncountLine"
+        },
+        {
+          "actor": "007c0657",
+          "x": 0.90208,
+          "y": 0.701796,
+          "behavior": "Idle"
+        }
+      ]
+    },
+    {
+      "section": "0c7c0655",
+      "sites": [
+        {
+          "actor": "007c0653",
+          "x": 0.902207,
+          "y": 0.377337,
+          "behavior": "EncountLine"
+        },
+        {
+          "actor": "007c0654",
+          "x": 0.795618,
+          "y": 0.565989,
+          "behavior": "EncountLine"
+        }
+      ]
+    }
+  ],
+  "st_kaido_kawa": [
+    {
+      "section": "0c7c0233",
+      "sites": [
+        {
+          "actor": "007c0289",
+          "x": 0.830639,
+          "y": 0.142628,
+          "behavior": "EncountLine"
+        },
+        {
+          "actor": "007c028a",
+          "x": 0.659982,
+          "y": 0.169794,
+          "behavior": "EncountLine"
+        }
+      ]
+    },
+    {
+      "section": "0c7c0234",
+      "sites": [
+        {
+          "actor": "007c028b",
+          "x": 0.599892,
+          "y": 0.26861,
+          "behavior": "EncountCircle"
+        },
+        {
+          "actor": "007c028c",
+          "x": 0.555643,
+          "y": 0.365298,
+          "behavior": "EncountCircle"
+        }
+      ]
+    },
+    {
+      "section": "0c7c0235",
+      "sites": [
+        {
+          "actor": "007c028d",
+          "x": 0.558266,
+          "y": 0.460057,
+          "behavior": "EncountCircle"
+        },
+        {
+          "actor": "007c028e",
+          "x": 0.58689,
+          "y": 0.49895,
+          "behavior": "EncountLine"
+        }
+      ]
+    },
+    {
+      "section": "0c7c0236",
+      "sites": [
+        {
+          "actor": "007c028f",
+          "x": 0.523085,
+          "y": 0.595984,
+          "behavior": "EncountLine"
+        },
+        {
+          "actor": "007c0290",
+          "x": 0.536196,
+          "y": 0.666941,
+          "behavior": "Idle"
+        }
+      ]
+    },
+    {
+      "section": "0c7c0237",
+      "sites": [
+        {
+          "actor": "007c0291",
+          "x": 0.568426,
+          "y": 0.737453,
+          "behavior": "EncountCircle"
+        },
+        {
+          "actor": "007c0292",
+          "x": 0.546029,
+          "y": 0.783571,
+          "behavior": "EncountLine"
+        }
+      ]
+    }
+  ],
+  "st_kaido_rakunai": [
+    {
+      "section": "0c7c0238",
+      "sites": [
+        {
+          "actor": "007c025c",
+          "x": 0.865542,
+          "y": 0.741895,
+          "behavior": "EncountCircle"
+        },
+        {
+          "actor": "007c025d",
+          "x": 0.874346,
+          "y": 0.682586,
+          "behavior": "Idle"
+        },
+        {
+          "actor": "007c025e",
+          "x": 0.832794,
+          "y": 0.741799,
+          "behavior": "Idle"
+        },
+        {
+          "actor": "007c025f",
+          "x": 0.814654,
+          "y": 0.682297,
+          "behavior": "EncountCircle"
+        },
+        {
+          "actor": "007c0261",
+          "x": 0.733775,
+          "y": 0.681721,
+          "behavior": "Idle"
+        },
+        {
+          "actor": "007c0262",
+          "x": 0.716312,
+          "y": 0.741126,
+          "behavior": "Idle"
+        },
+        {
+          "actor": "007c0263",
+          "x": 0.700156,
+          "y": 0.67951,
+          "behavior": "Idle"
+        }
+      ]
+    },
+    {
+      "section": "0c7c0239",
+      "sites": [
+        {
+          "actor": "007c0264",
+          "x": 0.574774,
+          "y": 0.66884,
+          "behavior": "Idle"
+        },
+        {
+          "actor": "007c0265",
+          "x": 0.567034,
+          "y": 0.752853,
+          "behavior": "EncountCircle"
+        },
+        {
+          "actor": "007c0266",
+          "x": 0.527417,
+          "y": 0.66884,
+          "behavior": "Idle"
+        },
+        {
+          "actor": "007c0267",
+          "x": 0.448279,
+          "y": 0.749296,
+          "behavior": "Idle"
+        },
+        {
+          "actor": "007c0268",
+          "x": 0.426802,
+          "y": 0.66288,
+          "behavior": "EncountCircle"
+        }
+      ]
+    },
+    {
+      "section": "0c7c023a",
+      "sites": [
+        {
+          "actor": "007c026a",
+          "x": 0.321059,
+          "y": 0.722958,
+          "behavior": "EncountCircle"
+        },
+        {
+          "actor": "007c026b",
+          "x": 0.289858,
+          "y": 0.761889,
+          "behavior": "Idle"
+        },
+        {
+          "actor": "007c026d",
+          "x": 0.250435,
+          "y": 0.716998,
+          "behavior": "Idle"
+        },
+        {
+          "actor": "007c026e",
+          "x": 0.238535,
+          "y": 0.663073,
+          "behavior": "EncountCircle"
+        }
+      ]
+    },
+    {
+      "section": "0c7c023b",
+      "sites": [
+        {
+          "actor": "007c026f",
+          "x": 0.164234,
+          "y": 0.664034,
+          "behavior": "EncountCircle"
+        },
+        {
+          "actor": "007c0270",
+          "x": 0.167185,
+          "y": 0.760447,
+          "behavior": "EncountLine"
+        },
+        {
+          "actor": "007c0271",
+          "x": 0.048866,
+          "y": 0.713346,
+          "behavior": "EncountLine"
+        }
+      ]
+    }
+  ],
+  "st_kaido_rindo": [
+    {
+      "section": "0c7c023c",
+      "sites": [
+        {
+          "actor": "007c0293",
+          "x": 0.878496,
+          "y": 0.548798,
+          "behavior": "EncountLine"
+        },
+        {
+          "actor": "007c0294",
+          "x": 0.856697,
+          "y": 0.594191,
+          "behavior": "Idle"
+        },
+        {
+          "actor": "007c0295",
+          "x": 0.84019,
+          "y": 0.499562,
+          "behavior": "Idle"
+        }
+      ]
+    },
+    {
+      "section": "0c7c023d",
+      "sites": [
+        {
+          "actor": "007c0299",
+          "x": 0.589552,
+          "y": 0.550948,
+          "behavior": "EncountLine"
+        },
+        {
+          "actor": "007c029a",
+          "x": 0.543999,
+          "y": 0.644618,
+          "behavior": "Idle"
+        }
+      ]
+    },
+    {
+      "section": "0c7c023e",
+      "sites": [
+        {
+          "actor": "007c029d",
+          "x": 0.420462,
+          "y": 0.680333,
+          "behavior": "EncountLine"
+        },
+        {
+          "actor": "007c029e",
+          "x": 0.385467,
+          "y": 0.764498,
+          "behavior": "Idle"
+        },
+        {
+          "actor": "007c029f",
+          "x": 0.292795,
+          "y": 0.851207,
+          "behavior": "Idle"
+        }
+      ]
+    },
+    {
+      "section": "0c7c023f",
+      "sites": [
+        {
+          "actor": "007c02a3",
+          "x": 0.191816,
+          "y": 0.77222,
+          "behavior": "Idle"
+        },
+        {
+          "actor": "007c02a4",
+          "x": 0.171855,
+          "y": 0.817737,
+          "behavior": "EncountLine"
+        }
+      ]
+    }
+  ],
+  "st_kaido_tanbo": [
+    {
+      "section": "0c7c0240",
+      "sites": [
+        {
+          "actor": "007c02a7",
+          "x": 0.806354,
+          "y": 0.690736,
+          "behavior": "Idle"
+        },
+        {
+          "actor": "007c02a8",
+          "x": 0.770379,
+          "y": 0.706384,
+          "behavior": "Idle"
+        },
+        {
+          "actor": "007c02a9",
+          "x": 0.720833,
+          "y": 0.715824,
+          "behavior": "EncountLine"
+        }
+      ]
+    },
+    {
+      "section": "0c7c0241",
+      "sites": [
+        {
+          "actor": "007c02ab",
+          "x": 0.600483,
+          "y": 0.772632,
+          "behavior": "Idle"
+        },
+        {
+          "actor": "007c02ac",
+          "x": 0.576384,
+          "y": 0.735809,
+          "behavior": "EncountLine"
+        }
+      ]
+    },
+    {
+      "section": "0c7c0242",
+      "sites": [
+        {
+          "actor": "007c02ad",
+          "x": 0.45843,
+          "y": 0.775693,
+          "behavior": "Idle"
+        },
+        {
+          "actor": "007c02ae",
+          "x": 0.42485,
+          "y": 0.82927,
+          "behavior": "Idle"
+        },
+        {
+          "actor": "007c02af",
+          "x": 0.275162,
+          "y": 0.687164,
+          "behavior": "Idle"
+        },
+        {
+          "actor": "007c02b0",
+          "x": 0.301407,
+          "y": 0.75792,
+          "behavior": "Idle"
+        }
+      ]
+    },
+    {
+      "section": "0c7c0243",
+      "sites": [
+        {
+          "actor": "007c02b1",
+          "x": 0.236692,
+          "y": 0.494288,
+          "behavior": "EncountCircle"
+        },
+        {
+          "actor": "007c02b2",
+          "x": 0.229058,
+          "y": 0.370211,
+          "behavior": "EncountLine"
+        },
+        {
+          "actor": "007c02b3",
+          "x": 0.104168,
+          "y": 0.330241,
+          "behavior": "EncountLine"
+        },
+        {
+          "actor": "007c02b4",
+          "x": 0.120634,
+          "y": 0.397425,
+          "behavior": "EncountCircle"
+        }
+      ]
+    }
+  ],
+  "st_kaido_tani": [
+    {
+      "section": "0c7c063e",
+      "sites": [
+        {
+          "actor": "007c063f",
+          "x": 0.427874,
+          "y": 0.936701,
+          "behavior": "Idle"
+        },
+        {
+          "actor": "007c0640",
+          "x": 0.388631,
+          "y": 0.901129,
+          "behavior": "Idle"
+        }
+      ]
+    },
+    {
+      "section": "0c7c0641",
+      "sites": [
+        {
+          "actor": "007c0642",
+          "x": 0.511667,
+          "y": 0.801276,
+          "behavior": "Idle"
+        },
+        {
+          "actor": "007c0643",
+          "x": 0.543759,
+          "y": 0.737157,
+          "behavior": "EncountLine"
+        },
+        {
+          "actor": "007c0644",
+          "x": 0.380143,
+          "y": 0.641903,
+          "behavior": "EncountLine"
+        }
+      ]
+    },
+    {
+      "section": "0c7c0645",
+      "sites": [
+        {
+          "actor": "007c0646",
+          "x": 0.3552,
+          "y": 0.467798,
+          "behavior": "EncountCircle"
+        },
+        {
+          "actor": "007c0647",
+          "x": 0.512311,
+          "y": 0.457297,
+          "behavior": "EncountLine"
+        },
+        {
+          "actor": "007c0648",
+          "x": 0.660792,
+          "y": 0.415596,
+          "behavior": "EncountCircle"
+        }
+      ]
+    },
+    {
+      "section": "0c7c0649",
+      "sites": [
+        {
+          "actor": "007c064a",
+          "x": 0.699437,
+          "y": 0.296156,
+          "behavior": "Idle"
+        },
+        {
+          "actor": "007c064b",
+          "x": 0.729849,
+          "y": 0.123982,
+          "behavior": "EncountLine"
+        }
+      ]
+    }
+  ],
+  "st_kaido_yama": [
+    {
+      "section": "0c7c0244",
+      "sites": [
+        {
+          "actor": "007c02b5",
+          "x": 0.142723,
+          "y": 0.893449,
+          "behavior": "EncountLine"
+        },
+        {
+          "actor": "007c02b6",
+          "x": 0.198472,
+          "y": 0.835335,
+          "behavior": "Idle"
+        },
+        {
+          "actor": "007c02b7",
+          "x": 0.303071,
+          "y": 0.782364,
+          "behavior": "EncountLine"
+        }
+      ]
+    },
+    {
+      "section": "0c7c0245",
+      "sites": [
+        {
+          "actor": "007c02b8",
+          "x": 0.427645,
+          "y": 0.695264,
+          "behavior": "Idle"
+        },
+        {
+          "actor": "007c02b9",
+          "x": 0.57056,
+          "y": 0.654503,
+          "behavior": "Idle"
+        }
+      ]
+    },
+    {
+      "section": "0c7c0246",
+      "sites": [
+        {
+          "actor": "007c02ba",
+          "x": 0.622133,
+          "y": 0.549618,
+          "behavior": "Idle"
+        },
+        {
+          "actor": "007c02bb",
+          "x": 0.828062,
+          "y": 0.479968,
+          "behavior": "EncountCircle"
+        },
+        {
+          "actor": "007c02bc",
+          "x": 0.914864,
+          "y": 0.460548,
+          "behavior": "Idle"
+        }
+      ]
+    },
+    {
+      "section": "0c7c0247",
+      "sites": [
+        {
+          "actor": "007c02bd",
+          "x": 0.862383,
+          "y": 0.382582,
+          "behavior": "Idle"
+        },
+        {
+          "actor": "007c02be",
+          "x": 0.861475,
+          "y": 0.340859,
+          "behavior": "Idle"
+        },
+        {
+          "actor": "007c02bf",
+          "x": 0.790108,
+          "y": 0.313989,
+          "behavior": "EncountLine"
+        }
+      ]
+    }
+  ],
+  "st_rakugaicho": [
+    {
+      "section": "0c7c022d",
+      "sites": [
+        {
+          "actor": "007c0248",
+          "x": 0.243002,
+          "y": 0.422821,
+          "behavior": "Idle"
+        },
+        {
+          "actor": "007c0249",
+          "x": 0.260362,
+          "y": 0.451477,
+          "behavior": "Idle"
+        }
+      ]
+    },
+    {
+      "section": "0c7c022e",
+      "sites": [
+        {
+          "actor": "007c024a",
+          "x": 0.309215,
+          "y": 0.407807,
+          "behavior": "Idle"
+        },
+        {
+          "actor": "007c024b",
+          "x": 0.340446,
+          "y": 0.422135,
+          "behavior": "Idle"
+        }
+      ]
+    },
+    {
+      "section": "0c7c022f",
+      "sites": [
+        {
+          "actor": "007c024c",
+          "x": 0.395667,
+          "y": 0.397386,
+          "behavior": "Idle"
+        },
+        {
+          "actor": "007c024e",
+          "x": 0.416125,
+          "y": 0.419324,
+          "behavior": "Idle"
+        }
+      ]
+    },
+    {
+      "section": "0c7c0230",
+      "sites": [
+        {
+          "actor": "007c024f",
+          "x": 0.488837,
+          "y": 0.393684,
+          "behavior": "Idle"
+        },
+        {
+          "actor": "007c0250",
+          "x": 0.48164,
+          "y": 0.407533,
+          "behavior": "Idle"
+        }
+      ]
+    },
+    {
+      "section": "0c7c0231",
+      "sites": [
+        {
+          "actor": "007c0251",
+          "x": 0.317853,
+          "y": 0.576662,
+          "behavior": "Idle"
+        },
+        {
+          "actor": "007c0252",
+          "x": 0.322084,
+          "y": 0.597435,
+          "behavior": "Idle"
+        },
+        {
+          "actor": "007c0254",
+          "x": 0.380271,
+          "y": 0.569121,
+          "behavior": "Idle"
+        },
+        {
+          "actor": "007c0255",
+          "x": 0.353228,
+          "y": 0.619099,
+          "behavior": "Idle"
+        }
+      ]
+    },
+    {
+      "section": "0c7c0232",
+      "sites": [
+        {
+          "actor": "007c0257",
+          "x": 0.425023,
+          "y": 0.469371,
+          "behavior": "Idle"
+        },
+        {
+          "actor": "007c0259",
+          "x": 0.444914,
+          "y": 0.544029,
+          "behavior": "Idle"
+        },
+        {
+          "actor": "007c025a",
+          "x": 0.426158,
+          "y": 0.564733,
+          "behavior": "Idle"
+        },
+        {
+          "actor": "007c025b",
+          "x": 0.428339,
+          "y": 0.609432,
+          "behavior": "Idle"
+        }
+      ]
+    }
+  ]
+}

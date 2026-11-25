@@ -1,0 +1,714 @@
+[
+  {
+    "id": "cat-search-b",
+    "group": "quest-find",
+    "name": "Missing cat B",
+    "questId": 58,
+    "step": 1,
+    "window": "7-5",
+    "detail": "Catch the cat on Kōetsu’s mansion grounds during #58’s two-minute search. Each catch takes you back to Tsuchiura. Choose the first option to keep looking."
+  },
+  {
+    "id": "cat-search-c",
+    "group": "quest-find",
+    "name": "Missing cat C",
+    "questId": 58,
+    "step": 2,
+    "window": "7-5",
+    "detail": "Catch the cat by the maple before Shijo Bridge during #58’s two-minute search. Each catch takes you back to Tsuchiura. Choose the first option to keep looking."
+  },
+  {
+    "id": "cat-search-d",
+    "group": "quest-find",
+    "name": "Missing cat D",
+    "questId": 58,
+    "step": 3,
+    "window": "7-5",
+    "detail": "Catch the cat near the Rakugai exit across Shijo Bridge during #58’s two-minute search. Each catch takes you back to Tsuchiura. Choose the first option to keep looking."
+  },
+  {
+    "id": "cat-search-e",
+    "group": "quest-find",
+    "name": "Missing cat E",
+    "questId": 58,
+    "step": 4,
+    "window": "7-5",
+    "detail": "Catch the cat near Tsuchiura during #58’s two-minute search. Each catch takes you back to Tsuchiura. Choose the first option to keep looking."
+  },
+  {
+    "id": "cat-search-f",
+    "group": "quest-find",
+    "name": "Missing cat F",
+    "questId": 58,
+    "step": 5,
+    "window": "7-5",
+    "detail": "Catch the cat by the exit to Yoshioka Dojo during #58’s two-minute search. Each catch takes you back to Tsuchiura. Choose the first option to keep looking."
+  },
+  {
+    "id": "white-snake-b",
+    "progressId": "white-snake",
+    "group": "quest-find",
+    "name": "White Snake · Spot B",
+    "questId": 49,
+    "step": 1,
+    "window": "7-5",
+    "detail": "After speaking to the group at Rakugai Shrine in #49, check south of the smithy for the white snake. If it is absent, check C and D. Use the first option to catch it."
+  },
+  {
+    "id": "white-snake-c",
+    "progressId": "white-snake",
+    "group": "quest-find",
+    "name": "White Snake · Spot C",
+    "questId": 49,
+    "step": 2,
+    "window": "7-5",
+    "detail": "Check this hiding spot during #49. If the white snake is absent, check B and D. Use the first option to catch it."
+  },
+  {
+    "id": "white-snake-d",
+    "progressId": "white-snake",
+    "group": "quest-find",
+    "name": "White Snake · Spot D",
+    "questId": 49,
+    "step": 3,
+    "window": "7-5",
+    "detail": "Check this hiding spot during #49. If the white snake is absent, check B and C. Use the first option to catch it."
+  },
+  {
+    "id": "shishido-eyepatch",
+    "group": "quest-find",
+    "name": "Shishido's Eyepatch",
+    "questId": 60,
+    "step": 2,
+    "window": "7-5",
+    "detail": "In #60, enter Shishido’s Cave and inspect the old gate chain. Beat the thieves to take the eyepatch, which is needed for Bounty #140."
+  },
+  {
+    "id": "buried-jomon-pottery",
+    "group": "quest-find",
+    "name": "Jomon Pottery",
+    "area": "st_kaido_kawa",
+    "x": 0.541659,
+    "y": 0.615529,
+    "questId": 65,
+    "step": 3,
+    "window": "7-6",
+    "detail": "In #65, feed the rescued dog three Raw Chicken, one at a time. Follow it to the dig spot on Riverside Path and choose the first option to dig. Other foods yield different rewards."
+  },
+  {
+    "id": "paper-in-field",
+    "group": "quest-find",
+    "name": "Scrap of Paper",
+    "questId": 81,
+    "step": 1,
+    "window": "9-5",
+    "detail": "In #81, talk to the farmer by the pattern in the western field and ask about the deity. Pick up the paper in the pattern and show it to him."
+  },
+  {
+    "id": "red-diary",
+    "group": "quest-find",
+    "name": "Red Book",
+    "questId": 83,
+    "step": 0,
+    "window": "9-5",
+    "detail": "Pick up the red diary on the ground in front of Suiten Inari Shrine in southwest Gion. Agree to find its owner to begin #83."
+  },
+  {
+    "id": "inventor-rake",
+    "group": "quest-find",
+    "name": "Rake",
+    "questId": 97,
+    "step": 1,
+    "window": "10-11",
+    "detail": "After encouraging Gyotensai’s flying machine idea in #97, pick up the rake beside the stable halfway along Countryside Path."
+  },
+  {
+    "id": "inventor-bamboo",
+    "group": "quest-find",
+    "name": "Bamboo Sticks",
+    "questId": 97,
+    "step": 3,
+    "window": "10-11",
+    "detail": "Give Gyotensai the rake during #97, then collect the bamboo sticks south of the Rakugai Blacksmith."
+  },
+  {
+    "id": "oni-key-yellow",
+    "group": "quest-find",
+    "name": "Yellow Oni's Key",
+    "area": "st_ganryu_yosai_01",
+    "x": 0.231487,
+    "y": 0.75259,
+    "window": "12-9",
+    "detail": "Examine the defeated Yellow Oni to take his key. Use the key on the nearby gate."
+  },
+  {
+    "id": "oni-key-white",
+    "group": "quest-find",
+    "name": "White Oni's Key",
+    "area": "st_ganryu_yosai_01",
+    "x": 0.783532,
+    "y": 0.262101,
+    "window": "12-11",
+    "detail": "Examine the defeated White Oni to take his key. Use the key on the nearby gate."
+  },
+  {
+    "id": "oni-key-black",
+    "group": "quest-find",
+    "name": "Black Oni's Key",
+    "area": "st_ganryu_yosai_01",
+    "x": 0.52994,
+    "y": 0.169973,
+    "window": "12-13",
+    "detail": "Examine the defeated Black Oni to take his key. Use the key on the nearby gate."
+  },
+  {
+    "id": "oni-key-blue",
+    "group": "quest-find",
+    "name": "Blue Oni's Key",
+    "area": "st_ganryu_yosai_02",
+    "x": 0.190317,
+    "y": 0.287135,
+    "window": "12-15",
+    "detail": "Examine the defeated Blue Oni to take his key. Use the key on the nearby gate."
+  },
+  {
+    "id": "oni-key-red",
+    "group": "quest-find",
+    "name": "Red Oni's Key",
+    "area": "st_ganryu_yosai_03",
+    "x": 0.694144,
+    "y": 0.559313,
+    "window": "12-17",
+    "detail": "Examine the defeated Red Oni to take his key. Break the chain to lower the bridge, then use the key at the gate across it."
+  },
+  {
+    "id": "eternal-turtle",
+    "group": "collection-reward",
+    "name": "Eternal Turtle",
+    "area": "st_tatsuya",
+    "x": 0.581849,
+    "y": 0.564205,
+    "detail": "Complete all seven yūjo requests (#1–7) and receive their final letters. Open the reward letter at Tatsuya and claim the attached turtle with a free inventory space and turtle slot. It can keep racing without dying of old age and can reach the maximum in every stat."
+  },
+  {
+    "id": "eternal-turtle-gion",
+    "progressId": "eternal-turtle",
+    "group": "collection-reward",
+    "name": "Eternal Turtle · Gion route",
+    "area": "st_gion",
+    "x": 0.38223,
+    "y": 0.880223,
+    "detail": "With the Turtle Bucket unlocked, collect all four replacement turtles and record five turtle deaths at Tatsuya. Then check this spot in southern Gion. Either route counts toward the Eternal Turtle reward."
+  },
+  {
+    "id": "revelation-picture-oblivious-cat",
+    "group": "collection-reward",
+    "name": "Painting of a Playful Cat",
+    "revelationId": "oblivious-cat",
+    "step": 1,
+    "window": "5-4",
+    "detail": "After Itō tells you about Kōetsu, meet Shichigoro in the alley behind Tsuruya. Follow him to Gion Inari Shrine for the painting, Paintbrush and Inkwell."
+  },
+  {
+    "id": "revelation-picture-spectacular-squirrel",
+    "group": "collection-reward",
+    "name": "Painting of a Flying Squirrel",
+    "revelationId": "spectacular-squirrel",
+    "step": 0,
+    "window": "5-4",
+    "detail": "After learning Oblivious Cat, report back to Shichigoro at Gion Inari Shrine to collect the painting."
+  },
+  {
+    "id": "revelation-picture-two-bones",
+    "group": "collection-reward",
+    "name": "Painting of a Dog",
+    "revelationId": "two-bones",
+    "step": 0,
+    "window": "5-4",
+    "detail": "After learning Oblivious Cat, reach level 15 and speak to Shichigoro at Gion Inari Shrine for the painting."
+  },
+  {
+    "id": "revelation-picture-true-dual-sword-dance",
+    "group": "collection-reward",
+    "name": "Portrait of a Beauty",
+    "revelationId": "true-dual-sword-dance",
+    "step": 0,
+    "window": "5-13",
+    "detail": "After Kōetsu tells you about the bandits in his basement, complete substory #18, Water from the Ladle 1, to receive the portrait. Any answer in that substory gives you the portrait."
+  },
+  {
+    "id": "revelation-picture-monkey-drop",
+    "group": "collection-reward",
+    "name": "Painting of a Monkey",
+    "revelationId": "monkey-drop",
+    "step": 0,
+    "window": "5-13",
+    "detail": "Learn Oblivious Cat and finish the greatsword tutorial, then reach level 17 and get the painting from Shichigoro at Gion Inari Shrine."
+  },
+  {
+    "id": "revelation-picture-dancing-cat",
+    "group": "collection-reward",
+    "name": "Painting of a Sleeping Cat",
+    "revelationId": "dancing-cat",
+    "step": 0,
+    "window": "5-13",
+    "detail": "After learning Oblivious Cat and finishing the greatsword tutorial, reach level 18 and collect the painting from Shichigoro at Gion Inari Shrine."
+  },
+  {
+    "id": "revelation-picture-karakuri-spin",
+    "group": "collection-reward",
+    "name": "Schematic of a Clock",
+    "revelationId": "karakuri-spin",
+    "step": 0,
+    "window": "6-1",
+    "detail": "Buy the schematic for 2,000 mon from the man inside Ebisuya Pawn in Gion."
+  },
+  {
+    "id": "revelation-picture-diving-swallow",
+    "group": "collection-reward",
+    "name": "Painting of a Swallow",
+    "revelationId": "diving-swallow",
+    "step": 0,
+    "window": "6-1",
+    "detail": "After learning Oblivious Cat, check Shichigoro’s Chapter 6 letter and collect the painting at Gion Inari Shrine."
+  },
+  {
+    "id": "revelation-picture-ascending-fish",
+    "group": "collection-reward",
+    "name": "Painting of Swimming Fish",
+    "revelationId": "ascending-fish",
+    "step": 0,
+    "window": "6-1",
+    "detail": "After learning Oblivious Cat, check Shichigoro’s Chapter 6 letter and collect the painting at Gion Inari Shrine."
+  },
+  {
+    "id": "revelation-picture-soundless-serpent",
+    "group": "collection-reward",
+    "name": "Painting of a Snake",
+    "revelationId": "soundless-serpent",
+    "step": 0,
+    "window": "7-4",
+    "detail": "Collect the painting from Shichigoro after his Chapter 7 letter. Collect Painting of a Kite first if he has both to hand out."
+  },
+  {
+    "id": "revelation-picture-orochi-bladestorm",
+    "group": "collection-reward",
+    "name": "Crude Painting of Yamata no Orochi",
+    "revelationId": "orochi-bladestorm",
+    "step": 0,
+    "window": "7-5",
+    "detail": "Complete substory #53, Terakoya Homework - The Letter, to obtain the painting."
+  },
+  {
+    "id": "revelation-picture-snatching-kite",
+    "group": "collection-reward",
+    "name": "Painting of a Kite",
+    "revelationId": "snatching-kite",
+    "step": 0,
+    "window": "7-4",
+    "detail": "After learning Oblivious Cat, check Shichigoro’s Chapter 7 letter and collect the painting at Gion Inari Shrine."
+  },
+  {
+    "id": "revelation-picture-dragon-catch",
+    "group": "collection-reward",
+    "name": "Painting of a Coiled Dragon",
+    "revelationId": "dragon-catch",
+    "step": 0,
+    "window": "8-1",
+    "detail": "Speak to the retired man sitting at the Riverside Tea House to get the painting."
+  },
+  {
+    "id": "revelation-picture-enmei",
+    "group": "collection-reward",
+    "name": "Painting of a Meditating Monk",
+    "revelationId": "enmei",
+    "step": 0,
+    "window": "9-1",
+    "detail": "Learn Two Bones first. In substory #75, Enkiridera, agree to stay after the first fight and finish the rest of the request to get the painting. Leaving early forfeits it."
+  },
+  {
+    "id": "revelation-picture-fly-swatter",
+    "group": "collection-reward",
+    "name": "Diagram of a Fly's Anatomy",
+    "revelationId": "fly-swatter",
+    "step": 2,
+    "window": "9-5",
+    "detail": "In #85, agree to look for Ken-san. Ask at Sushi Ginya, then find Ken by Gion Main Gate and defeat Wakamatsu’s group to get the diagram."
+  },
+  {
+    "id": "revelation-picture-devastating-duo",
+    "group": "collection-reward",
+    "name": "Painting of a Running Bull",
+    "revelationId": "devastating-duo",
+    "step": 0,
+    "detail": "Reach level 25 and speak to Shichigoro at Gion Inari Shrine. He can give you the painting after the Sleeping Cat painting, before the countryside event opens."
+  },
+  {
+    "id": "revelation-picture-raging-bull",
+    "group": "collection-reward",
+    "name": "Painting of a Rampaging Bull",
+    "revelationId": "raging-bull",
+    "step": 0,
+    "window": "9-5",
+    "detail": "Learn Devastating Duo, then collect this second bull painting from Shichigoro at Gion Inari Shrine in Chapter 9."
+  },
+  {
+    "id": "revelation-picture-illusory-wolf",
+    "group": "collection-reward",
+    "name": "Painting of a Wolf",
+    "revelationId": "illusory-wolf",
+    "step": 0,
+    "detail": "Reach level 30 and get the painting from Shichigoro at Gion Inari Shrine after the Running Bull painting."
+  },
+  {
+    "id": "recipe-beautiful-sword-appraisal",
+    "group": "collection-reward",
+    "name": "Beautiful Sword Appraisal Guide",
+    "lockerKeyId": "F-5",
+    "detail": "Find key F-5 at this pin, then use it at the Gion storage lockers to get the book."
+  },
+  {
+    "id": "recipe-lion-swordfighting",
+    "group": "collection-reward",
+    "name": "Book of Lion Swordfighting",
+    "lockerKeyId": "G-1",
+    "detail": "Find key G-1 at this pin, then use it at the Gion storage lockers to get the book."
+  },
+  {
+    "id": "recipe-hundred-nights",
+    "group": "collection-reward",
+    "name": "Book of 100 Nights and 1,000 Darknesses",
+    "lockerKeyId": "C-3",
+    "detail": "Find key C-3 at this pin, then use it at the Gion storage lockers to get the book."
+  },
+  {
+    "id": "recipe-suijin-offerings",
+    "group": "collection-reward",
+    "name": "Book of Offerings to Suijin",
+    "lockerKeyId": "J-2",
+    "detail": "Find key J-2 at this pin, then use it at the Gion storage lockers to get the book."
+  },
+  {
+    "id": "recipe-yamimaro-2",
+    "group": "collection-reward",
+    "name": "Archive of Yamimaro - Volume 2",
+    "lockerKeyId": "A-5",
+    "detail": "Find key A-5 at this pin, then use it at the Gion storage lockers to get the book."
+  },
+  {
+    "id": "recipe-yamimaro-3",
+    "group": "collection-reward",
+    "name": "Archive of Yamimaro - Volume 3",
+    "lockerKeyId": "H-4",
+    "detail": "Find key H-4 at this pin, then use it at the Gion storage lockers to get the book."
+  },
+  {
+    "id": "recipe-resurrection",
+    "group": "collection-reward",
+    "name": "Book of Resurrection",
+    "lockerKeyId": "D-5",
+    "detail": "Find key D-5 at this pin, then use it at the Gion storage lockers to get the book."
+  },
+  {
+    "id": "recipe-strange-tengu",
+    "group": "collection-reward",
+    "name": "Strange Tale of the Tengu",
+    "lockerKeyId": "H-2",
+    "detail": "Find key H-2 at this pin, then use it at the Gion storage lockers to get the book."
+  },
+  {
+    "id": "recipe-treasure-sword",
+    "group": "collection-reward",
+    "name": "Treasure Sword Manual",
+    "area": "st_kajiya",
+    "x": 0.662309,
+    "y": 0.300081,
+    "window": "5-13",
+    "detail": "Finish the greatsword lesson at the Rakugai Blacksmith. You receive the manual automatically."
+  },
+  {
+    "id": "recipe-tetsumarusai",
+    "group": "collection-reward",
+    "name": "Tetsumarusai's Last Will",
+    "questId": 123,
+    "step": 1,
+    "window": "6-5",
+    "detail": "Defeat Baian unarmed on the riverbank during Bounty #123 to earn the book."
+  },
+  {
+    "id": "recipe-nue-mizuchi",
+    "group": "collection-reward",
+    "name": "Legend of the Defeat of the Nue and Mizuchi",
+    "questId": 41,
+    "step": 0,
+    "window": "6-3",
+    "detail": "During #41, pay Zenjiro 100 mon to try drawing the sword. Defeat him and the Takeo Family to get the book."
+  },
+  {
+    "id": "recipe-holy-spirit",
+    "group": "collection-reward",
+    "name": "Scroll of the Holy Spirit",
+    "area": "st_koetsu_chika",
+    "x": 0.663337,
+    "y": 0.116515,
+    "window": "6-6",
+    "detail": "Speak to Ninja No. 7 in Kōetsu’s basement for the scroll."
+  },
+  {
+    "id": "recipe-oni-forging",
+    "group": "collection-reward",
+    "name": "Oni Blade Forging Guide",
+    "area": "st_sanjusangen_jnt",
+    "x": 0.554171,
+    "y": 0.208782,
+    "detail": "From Chapter 10, buy this book for 2 ryō as the merchant’s third offer at Sanjūsangendō. Buy each earlier offer and leave and re-enter to see the next one."
+  },
+  {
+    "id": "recipe-twin-dragon",
+    "group": "collection-reward",
+    "name": "Twin Dragon Conquest Book",
+    "questId": 139,
+    "step": 1,
+    "window": "11-2",
+    "detail": "Defeat Kamaitachi Nobutaka on northern Cliffside Path during Bounty #139 to earn the book."
+  },
+  {
+    "id": "recipe-steel-odachi",
+    "group": "collection-reward",
+    "name": "Legend of the Mighty Steel Odachi",
+    "area": "st_kaido_rakunai",
+    "x": 0.608925,
+    "y": 0.67528,
+    "window": "6-3",
+    "detail": "After beginning training in Chapter 6, speak to the monk near Shijo Bridge on Kawaramachi and choose the first option to hear him out."
+  },
+  {
+    "id": "recipe-ancient",
+    "group": "collection-reward",
+    "name": "Ancient Scroll",
+    "area": "st_kajiya",
+    "x": 0.346413,
+    "y": 0.178261,
+    "window": "5-13",
+    "detail": "After the Rakugai Blacksmith opens for crafting, ask him about the Ancient Shichishito to get this scroll."
+  },
+  {
+    "id": "recipe-divine-age",
+    "group": "collection-reward",
+    "name": "Ancient Scroll of the Divine Age",
+    "area": "st_hatsumeika",
+    "x": 0.576813,
+    "y": 0.551824,
+    "window": "9-1",
+    "detail": "Speak to Gyotensai inside his Gion workshop to get the scroll."
+  },
+  {
+    "id": "recipe-yatsuka",
+    "group": "collection-reward",
+    "name": "Book of the Yatsuka",
+    "area": "st_koetsu_chika",
+    "x": 0.698781,
+    "y": 0.603037,
+    "window": "11-1",
+    "detail": "Speak to Ninja No. 16 in Kōetsu’s basement for the book."
+  },
+  {
+    "id": "recipe-celestial-steel",
+    "group": "collection-reward",
+    "name": "Story of the Celestial Steel",
+    "questId": 129,
+    "step": 1,
+    "window": "9-4",
+    "detail": "Read Matsu’s Bounty #129 poster from 8-1, then identify and defeat him during the first free-roam night at 9-4 or a later night. Defeating him unarmed raises the cash payout. You get the book either way."
+  },
+  {
+    "id": "recipe-yamimaro-1",
+    "group": "collection-reward",
+    "name": "Archive of Yamimaro - Volume 1",
+    "questId": 56,
+    "step": 1,
+    "window": "7-5",
+    "detail": "Win both fights at the Rakugai Blacksmith during #56 to get the book."
+  },
+  {
+    "id": "recipe-rare-swords",
+    "group": "collection-reward",
+    "name": "The Dazzling World of Rare Swords",
+    "area": "st_kiyomizu_jnt",
+    "x": 0.61362,
+    "y": 0.532032,
+    "window": "8-1",
+    "detail": "Talk to the old man at the Kiyomizudera entrance. Tell him you listened carefully, then answer “the blade.”"
+  },
+  {
+    "id": "recipe-onigami",
+    "group": "collection-reward",
+    "name": "Ancient Scroll of the Onigami",
+    "questId": 140,
+    "step": 2,
+    "window": "12-1",
+    "detail": "Defeat Kuroshima Raiden in Shishido’s Cave during Bounty #140. You need #60’s eyepatch and the earlier bounties to open it."
+  },
+  {
+    "id": "sideshow-ticket-nude-dance",
+    "group": "collection-reward",
+    "name": "Ticket (Nude Dance)",
+    "area": "st_sushiya",
+    "x": 0.494681,
+    "y": 0.148165,
+    "detail": "Order 4 times at Sushi Ginya to earn the ticket. Redeem it at the Rakugai Sideshow Tent."
+  },
+  {
+    "id": "sideshow-ticket-erotic-dance",
+    "group": "collection-reward",
+    "name": "Ticket (Erotic Dance)",
+    "area": "st_gion",
+    "x": 0.214252,
+    "y": 0.669871,
+    "detail": "Order 3 times at Koyoro to earn the ticket. Redeem it at the Rakugai Sideshow Tent."
+  },
+  {
+    "id": "sideshow-ticket-snake-eating",
+    "group": "collection-reward",
+    "name": "Ticket (Snake-Eating Woman)",
+    "area": "st_sakaya_01",
+    "x": 0.639907,
+    "y": 0.52098,
+    "detail": "Order 4 times at Sake Ikkonya to earn the ticket. Redeem it at the Rakugai Sideshow Tent."
+  },
+  {
+    "id": "sideshow-ticket-flaming-man",
+    "group": "collection-reward",
+    "name": "Ticket (Flaming Man)",
+    "area": "st_sakaya_02",
+    "x": 0.142132,
+    "y": 0.485851,
+    "detail": "Order 4 times at Sake Nakanokura to earn the ticket. Redeem it at the Rakugai Sideshow Tent."
+  },
+  {
+    "id": "sideshow-ticket-naked-couple",
+    "group": "collection-reward",
+    "name": "Ticket (Naked Couple)",
+    "area": "st_gion",
+    "x": 0.084672,
+    "y": 0.496259,
+    "detail": "Order 3 times at Hatsukaze to earn the ticket. Redeem it at the Rakugai Sideshow Tent."
+  },
+  {
+    "id": "sideshow-ticket-sword-dance-nonaka",
+    "progressId": "sideshow-ticket-sword-dance",
+    "group": "collection-reward",
+    "name": "Ticket (Sword Dance)",
+    "area": "st_yoshioka_jnt",
+    "x": 0.674302,
+    "y": 0.64007,
+    "detail": "Order 5 times at Nonaka Tea House to earn the ticket. Redeem it at the Rakugai Sideshow Tent. You can also earn it at Riverside Tea House."
+  },
+  {
+    "id": "sideshow-ticket-sword-dance-riverside",
+    "progressId": "sideshow-ticket-sword-dance",
+    "group": "collection-reward",
+    "name": "Ticket (Sword Dance)",
+    "area": "st_kawa_jnt",
+    "x": 0.556712,
+    "y": 0.489772,
+    "detail": "Order 5 times at Riverside Tea House to earn the ticket. Redeem it at the Rakugai Sideshow Tent. You can also earn it at Nonaka Tea House."
+  },
+  {
+    "id": "sideshow-ticket-leaping-monkey",
+    "group": "collection-reward",
+    "name": "Ticket (Leaping Monkey)",
+    "area": "st_udon",
+    "x": 0.352503,
+    "y": 0.431966,
+    "detail": "Order 4 times at Shirohebi Udon to earn the ticket. Redeem it at the Rakugai Sideshow Tent."
+  },
+  {
+    "id": "tengu-mask-small",
+    "group": "collection-reward",
+    "name": "Mysterious Small Tengu Mask",
+    "area": "st_sanjusangen_jnt",
+    "x": 0.554171,
+    "y": 0.208782,
+    "window": "10-9",
+    "detail": "Buy this mask for 2 ryō as the Sanjūsangendō merchant’s offer #1. Buy each earlier offer and leave and re-enter to reveal the next one. Bring the mask to Rendai Field in the evening and win its duel to receive the finished mask."
+  },
+  {
+    "id": "tengu-mask-raven",
+    "group": "collection-reward",
+    "name": "Mysterious Raven Tengu Mask",
+    "area": "st_sanjusangen_jnt",
+    "x": 0.554171,
+    "y": 0.208782,
+    "window": "10-9",
+    "detail": "Buy this mask for 2 ryō as the Sanjūsangendō merchant’s offer #8. Buy each earlier offer and leave and re-enter to reveal the next one. Bring the mask to Rendai Field in the evening and win its duel to receive the finished mask."
+  },
+  {
+    "id": "tengu-mask-standard",
+    "group": "collection-reward",
+    "name": "Mysterious Tengu Mask",
+    "area": "st_sanjusangen_jnt",
+    "x": 0.554171,
+    "y": 0.208782,
+    "window": "11-1",
+    "detail": "Buy this mask for 2 ryō as the Sanjūsangendō merchant’s offer #10. Buy each earlier offer and leave and re-enter to reveal the next one. Bring the mask to Rendai Field in the evening and win its duel to receive the finished mask."
+  },
+  {
+    "id": "tengu-mask-great",
+    "group": "collection-reward",
+    "name": "Mysterious Great Tengu Mask",
+    "area": "st_sanjusangen_jnt",
+    "x": 0.554171,
+    "y": 0.208782,
+    "window": "12-1",
+    "detail": "Buy this mask for 2 ryō as the Sanjūsangendō merchant’s offer #12. Buy each earlier offer and leave and re-enter to reveal the next one. Bring the mask to Rendai Field in the evening and win its duel to receive the finished mask."
+  },
+  {
+    "id": "enchanted-sword-bassarimaru",
+    "group": "collection-reward",
+    "name": "Bassarimaru",
+    "area": "st_shichiya",
+    "x": 0.306212,
+    "y": 0.482982,
+    "questId": 20,
+    "step": 0,
+    "window": "6-1",
+    "detail": "Buy the sword inside Ebisuya Pawn for 34,000 mon from Chapter 6 onward, before Gion closes. Keep it for #20, the Enchanted Swords request at the Rakugai Blacksmith."
+  },
+  {
+    "id": "enchanted-sword-drunken-blade",
+    "group": "collection-reward",
+    "name": "Drunken Blade",
+    "questId": 25,
+    "step": 1,
+    "window": "6-1",
+    "detail": "Defeat Hikobei outside Sake Ikkonya during #25 to receive the sword. Keep it for #20, the Enchanted Swords request at the Rakugai Blacksmith."
+  },
+  {
+    "id": "enchanted-sword-beckoning-sword",
+    "group": "collection-reward",
+    "name": "Beckoning Sword",
+    "questId": 42,
+    "step": 2,
+    "window": "6-3",
+    "detail": "Get the sword from the seller in #42, then give it to either merchant and defeat both groups of thugs. Keep it for #20, the Enchanted Swords request at the Rakugai Blacksmith."
+  },
+  {
+    "id": "enchanted-sword-greedy-katana",
+    "group": "collection-reward",
+    "name": "Greedy Katana",
+    "questId": 43,
+    "step": 1,
+    "window": "6-3",
+    "detail": "Follow Kichiemon toward Shijo Bridge and defeat the thugs during #43 to receive the sword. Keep it for #20, the Enchanted Swords request at the Rakugai Blacksmith."
+  },
+  {
+    "id": "enchanted-sword-mortal-blade",
+    "group": "collection-reward",
+    "name": "Mortal Blade",
+    "questId": 136,
+    "step": 1,
+    "window": "10-11",
+    "detail": "Defeat Heinosuke’s ambush on southern Cliffside Path in Bounty #136 to receive the sword. Keep it for #20, the Enchanted Swords request at the Rakugai Blacksmith."
+  }
+]

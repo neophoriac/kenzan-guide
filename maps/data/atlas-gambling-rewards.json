@@ -1,0 +1,81 @@
+{
+  "gambling-den": {
+    "places": [
+      {"area": "st_gion", "name": "Gambling Den"},
+      {"area": "st_rakugaicho", "name": "Outdoor Cee-Lo"},
+      {"area": "st_rakugaicho", "name": "Outdoor Hanafuda"}
+    ],
+    "sections": [
+      {
+        "label": "Wooden tag prize exchange",
+        "currency": "wooden tags",
+        "items": [
+          {"name": "Manju", "price": 10},
+          {"name": "Orange", "price": 10},
+          {"name": "Special All-Purpose Medicine", "price": 500},
+          {"name": "Lapis Lazuli", "price": 5000},
+          {"name": "Sacred Waterfall Water", "price": 200},
+          {"name": "Dragon Whisker", "price": 1500}
+        ]
+      },
+      {
+        "label": "Cash exchange",
+        "currency": "wooden tags",
+        "items": [
+          {"name": "1 ryo", "price": 10000},
+          {"name": "10 ryo", "price": 100000}
+        ]
+      }
+    ],
+    "source": "bin/item/shop/shop0041.bin, bin/pausepar/pause.par item.bin and bin/wdr_par/wdr.par uid00b00062, uid00b00059, uid00830420"
+  },
+  "mahjong": {
+    "places": [
+      {"area": "st_gion", "name": "Outdoor Mahjong"},
+      {"area": "st_rakugaicho", "name": "Mahjong Parlor"}
+    ],
+    "sections": [
+      {
+        "label": "Mahjong prize exchange",
+        "currency": "mahjong points",
+        "items": [
+          {"name": "Nada Sake", "price": 600},
+          {"name": "Nara Morohaku", "price": 1400},
+          {"name": "Scrap Iron", "price": 500},
+          {"name": "Dragon Scale", "price": 20000}
+        ]
+      },
+      {
+        "label": "Cash exchange",
+        "currency": "mahjong points",
+        "items": [
+          {"name": "100 mon", "price": 1000},
+          {"name": "1,000 mon", "price": 10000}
+        ]
+      }
+    ],
+    "source": "bin/item/shop/shop0042.bin, bin/pausepar/pause.par item.bin and bin/wdr_par/wdr.par uid00830291, uid00830427"
+  },
+  "turtle-racing": {
+    "places": [
+      {"area": "st_gion", "name": "Gambling Den"}
+    ],
+    "sections": [
+      {
+        "label": "Turtle race prize money",
+        "currency": "mon",
+        "priceLabel": "Top first-place payout",
+        "note": "These amounts are for entering your own turtle and winning. Successful bets pay wooden tags according to the race odds.",
+        "items": [
+          {"name": "Hiramaku", "price": 1200, "note": "10 races. Minimum first-place payout is 1,000 mon."},
+          {"name": "Komusubi", "price": 2500, "note": "10 races. Minimum first-place payout is 1,800 mon."},
+          {"name": "Sekiwake", "price": 3500, "note": "10 races. Minimum first-place payout is 3,000 mon."},
+          {"name": "Ozeki", "price": 5000, "note": "10 races. Minimum first-place payout is 4,000 mon."},
+          {"name": "Yokozuna", "price": 8000, "note": "10 races. Minimum first-place payout is 7,000 mon."},
+          {"name": "Musabetsu (open rank)", "price": 8000, "note": "13 races. Minimum first-place payout is 6,000 mon."}
+        ]
+      }
+    ],
+    "source": "bin/kame/race.bin prize money column, bin/wdr_par/wdr.par uid00b0007c"
+  }
+}

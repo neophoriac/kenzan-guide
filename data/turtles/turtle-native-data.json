@@ -1,0 +1,7262 @@
+{
+  "sourceSha256": {
+    "bin/kame/race.bin": "3b407f8b857c5d43291ff9516ad49e10f349931a2befd894f2af11c56cd47d9b",
+    "bin/kame/kame_race.bin": "93cb94de6c5f08948182229bff4255ae18c5ec1680112dca4ca037c196a40304",
+    "bin/kame/jikkyou.bin": "24d326495e0ab129eb3f42d15a073711f76e43e5de4dc6682cd149c6d1c6d557",
+    "kenzan_english.elf": "aa11d061b53b081f04f728a3da6e3b8cf9ec8ab13430e754d3b450366757d781",
+    "bin/pausepar/pause.par::item.bin": "83aec44a4815b3917a8ac10354180bda889d8eb2b868234a6ce7cbe656eaac27"
+  },
+  "events": [
+    {
+      "id": "H00",
+      "guideId": "turtle-race-h00",
+      "guideName": "Dawn GP",
+      "nativeName": "あけぼの賞",
+      "entryFeeMon": 500,
+      "prizeMon": 1000,
+      "sections": [
+        "Normal",
+        "Normal"
+      ],
+      "playerRule": "NONE",
+      "rivalRule": "NONE"
+    },
+    {
+      "id": "H01",
+      "guideId": "turtle-race-h01",
+      "guideName": "Novice Turtle Cup",
+      "nativeName": "新亀杯",
+      "entryFeeMon": 500,
+      "prizeMon": 1000,
+      "sections": [
+        "Normal",
+        "Normal"
+      ],
+      "playerRule": "NONE",
+      "rivalRule": "NONE"
+    },
+    {
+      "id": "H02",
+      "guideId": "turtle-race-h02",
+      "guideName": "Dragon Gate Award",
+      "nativeName": "登竜門記念",
+      "entryFeeMon": 500,
+      "prizeMon": 1200,
+      "sections": [
+        "Random",
+        "Random",
+        "Random"
+      ],
+      "playerRule": "NONE",
+      "rivalRule": "NONE"
+    },
+    {
+      "id": "H03",
+      "guideId": "turtle-race-h03",
+      "guideName": "Crystal Cup",
+      "nativeName": "水晶杯",
+      "entryFeeMon": 500,
+      "prizeMon": 1000,
+      "sections": [
+        "Water",
+        "Water"
+      ],
+      "playerRule": "NONE",
+      "rivalRule": "NONE"
+    },
+    {
+      "id": "H04",
+      "guideId": "turtle-race-h04",
+      "guideName": "Iron Trophy GP",
+      "nativeName": "鉄杯賞",
+      "entryFeeMon": 500,
+      "prizeMon": 1000,
+      "sections": [
+        "Normal",
+        "Sand"
+      ],
+      "playerRule": "NONE",
+      "rivalRule": "NONE"
+    },
+    {
+      "id": "H05",
+      "guideId": "turtle-race-h05",
+      "guideName": "White Chrysanthemum Cup",
+      "nativeName": "白菊杯",
+      "entryFeeMon": 500,
+      "prizeMon": 1000,
+      "sections": [
+        "Random",
+        "Random"
+      ],
+      "playerRule": "NONE",
+      "rivalRule": "NONE"
+    },
+    {
+      "id": "H06",
+      "guideId": "turtle-race-h06",
+      "guideName": "Autumn Leaf Cup",
+      "nativeName": "紅葉杯",
+      "entryFeeMon": 500,
+      "prizeMon": 1000,
+      "sections": [
+        "Sand",
+        "Normal"
+      ],
+      "playerRule": "NONE",
+      "rivalRule": "NONE"
+    },
+    {
+      "id": "H07",
+      "guideId": "turtle-race-h07",
+      "guideName": "Beginner's Spirit Cup",
+      "nativeName": "初心杯",
+      "entryFeeMon": 500,
+      "prizeMon": 1000,
+      "sections": [
+        "Normal",
+        "Random"
+      ],
+      "playerRule": "NONE",
+      "rivalRule": "NONE"
+    },
+    {
+      "id": "H08",
+      "guideId": "turtle-race-h08",
+      "guideName": "Hololeion Cup",
+      "nativeName": "水蘭杯",
+      "entryFeeMon": 500,
+      "prizeMon": 1000,
+      "sections": [
+        "Normal",
+        "Water"
+      ],
+      "playerRule": "NONE",
+      "rivalRule": "NONE"
+    },
+    {
+      "id": "H09",
+      "guideId": "turtle-race-h09",
+      "guideName": "Rising Turtle GP",
+      "nativeName": "昇亀賞",
+      "entryFeeMon": 500,
+      "prizeMon": 1200,
+      "sections": [
+        "Sand",
+        "Water",
+        "Mud"
+      ],
+      "playerRule": "NONE",
+      "rivalRule": "NONE"
+    },
+    {
+      "id": "K00",
+      "guideId": "turtle-race-k00",
+      "guideName": "Bronze Trophy GP",
+      "nativeName": "銅杯賞",
+      "entryFeeMon": 1000,
+      "prizeMon": 1800,
+      "sections": [
+        "Mud",
+        "Normal",
+        "Mud"
+      ],
+      "playerRule": "NONE",
+      "rivalRule": "NONE"
+    },
+    {
+      "id": "K01",
+      "guideId": "turtle-race-k01",
+      "guideName": "Tsukuyomi GP",
+      "nativeName": "月読賞",
+      "entryFeeMon": 1000,
+      "prizeMon": 2000,
+      "sections": [
+        "Normal",
+        "Sand",
+        "Normal"
+      ],
+      "playerRule": "NONE",
+      "rivalRule": "NONE"
+    },
+    {
+      "id": "K02",
+      "guideId": "turtle-race-k02",
+      "guideName": "Falcon GP",
+      "nativeName": "はやぶさ賞",
+      "entryFeeMon": 1000,
+      "prizeMon": 2500,
+      "sections": [
+        "Random",
+        "Random",
+        "Random"
+      ],
+      "playerRule": "NONE",
+      "rivalRule": "NONE"
+    },
+    {
+      "id": "K03",
+      "guideId": "turtle-race-k03",
+      "guideName": "Rosewood Cup",
+      "nativeName": "紫檀杯",
+      "entryFeeMon": 1000,
+      "prizeMon": 2000,
+      "sections": [
+        "Normal",
+        "Normal",
+        "Normal"
+      ],
+      "playerRule": "NONE",
+      "rivalRule": "NONE"
+    },
+    {
+      "id": "K04",
+      "guideId": "turtle-race-k04",
+      "guideName": "Big Dipper GP",
+      "nativeName": "北斗賞",
+      "entryFeeMon": 1000,
+      "prizeMon": 2000,
+      "sections": [
+        "Sand",
+        "Random",
+        "Sand"
+      ],
+      "playerRule": "NONE",
+      "rivalRule": "NONE"
+    },
+    {
+      "id": "K05",
+      "guideId": "turtle-race-k05",
+      "guideName": "Ruby Cup",
+      "nativeName": "紅玉杯",
+      "entryFeeMon": 1000,
+      "prizeMon": 2500,
+      "sections": [
+        "Random",
+        "Random",
+        "Random"
+      ],
+      "playerRule": "NONE",
+      "rivalRule": "NONE"
+    },
+    {
+      "id": "K06",
+      "guideId": "turtle-race-k06",
+      "guideName": "Red Clover Cup",
+      "nativeName": "紅萩杯",
+      "entryFeeMon": 1000,
+      "prizeMon": 2500,
+      "sections": [
+        "Random",
+        "Random",
+        "Random"
+      ],
+      "playerRule": "NONE",
+      "rivalRule": "NONE"
+    },
+    {
+      "id": "K07",
+      "guideId": "turtle-race-k07",
+      "guideName": "Grey Heron GP",
+      "nativeName": "あおさぎ賞",
+      "entryFeeMon": 1000,
+      "prizeMon": 2500,
+      "sections": [
+        "Random",
+        "Water",
+        "Random"
+      ],
+      "playerRule": "NONE",
+      "rivalRule": "NONE"
+    },
+    {
+      "id": "K08",
+      "guideId": "turtle-race-k08",
+      "guideName": "First Storm GP",
+      "nativeName": "初嵐賞",
+      "entryFeeMon": 1000,
+      "prizeMon": 2200,
+      "sections": [
+        "Mud",
+        "Random",
+        "Mud"
+      ],
+      "playerRule": "NONE",
+      "rivalRule": "NONE"
+    },
+    {
+      "id": "K09",
+      "guideId": "turtle-race-k09",
+      "guideName": "Silver Dragon Cup",
+      "nativeName": "銀竜杯",
+      "entryFeeMon": 1000,
+      "prizeMon": 2200,
+      "sections": [
+        "Sand",
+        "Random",
+        "Sand"
+      ],
+      "playerRule": "NONE",
+      "rivalRule": "NONE"
+    },
+    {
+      "id": "S00",
+      "guideId": "turtle-race-s00",
+      "guideName": "Green Jade Cup",
+      "nativeName": "翡翠杯",
+      "entryFeeMon": 1000,
+      "prizeMon": 3500,
+      "sections": [
+        "Random",
+        "Random",
+        "Random"
+      ],
+      "playerRule": "NONE",
+      "rivalRule": "NONE"
+    },
+    {
+      "id": "S01",
+      "guideId": "turtle-race-s01",
+      "guideName": "Silver Trophy GP",
+      "nativeName": "銀杯賞",
+      "entryFeeMon": 1000,
+      "prizeMon": 3000,
+      "sections": [
+        "Mud",
+        "Normal",
+        "Mud",
+        "Normal"
+      ],
+      "playerRule": "NONE",
+      "rivalRule": "NONE"
+    },
+    {
+      "id": "S02",
+      "guideId": "turtle-race-s02",
+      "guideName": "Great Fortune Cup",
+      "nativeName": "吉祥杯",
+      "entryFeeMon": 1000,
+      "prizeMon": 3500,
+      "sections": [
+        "Random",
+        "Random",
+        "Random",
+        "Random"
+      ],
+      "playerRule": "NONE",
+      "rivalRule": "NONE"
+    },
+    {
+      "id": "S03",
+      "guideId": "turtle-race-s03",
+      "guideName": "Genbu Cup",
+      "nativeName": "玄武杯",
+      "entryFeeMon": 1000,
+      "prizeMon": 3500,
+      "sections": [
+        "Random",
+        "Random",
+        "Random"
+      ],
+      "playerRule": "OTHER3_WIN",
+      "rivalRule": "S_WIN"
+    },
+    {
+      "id": "S04",
+      "guideId": "turtle-race-s04",
+      "guideName": "Byakko Cup",
+      "nativeName": "白虎杯",
+      "entryFeeMon": 1000,
+      "prizeMon": 3000,
+      "sections": [
+        "Normal",
+        "Sand",
+        "Normal"
+      ],
+      "playerRule": "NONE",
+      "rivalRule": "NONE"
+    },
+    {
+      "id": "S05",
+      "guideId": "turtle-race-s05",
+      "guideName": "Suzaku Cup",
+      "nativeName": "朱雀杯",
+      "entryFeeMon": 1000,
+      "prizeMon": 3500,
+      "sections": [
+        "Water",
+        "Random",
+        "Water"
+      ],
+      "playerRule": "NONE",
+      "rivalRule": "NONE"
+    },
+    {
+      "id": "S06",
+      "guideId": "turtle-race-s06",
+      "guideName": "Seiryu Cup",
+      "nativeName": "青龍杯",
+      "entryFeeMon": 1000,
+      "prizeMon": 3000,
+      "sections": [
+        "Water",
+        "Sand",
+        "Water"
+      ],
+      "playerRule": "NONE",
+      "rivalRule": "NONE"
+    },
+    {
+      "id": "S07",
+      "guideId": "turtle-race-s07",
+      "guideName": "Ultramarine Cup",
+      "nativeName": "群青杯",
+      "entryFeeMon": 1000,
+      "prizeMon": 3000,
+      "sections": [
+        "Water",
+        "Normal",
+        "Water"
+      ],
+      "playerRule": "NONE",
+      "rivalRule": "NONE"
+    },
+    {
+      "id": "S08",
+      "guideId": "turtle-race-s08",
+      "guideName": "Swift Wind GP",
+      "nativeName": "疾風賞",
+      "entryFeeMon": 1000,
+      "prizeMon": 3000,
+      "sections": [
+        "Normal",
+        "Normal",
+        "Normal"
+      ],
+      "playerRule": "NONE",
+      "rivalRule": "NONE"
+    },
+    {
+      "id": "S09",
+      "guideId": "turtle-race-s09",
+      "guideName": "November Rain Cup",
+      "nativeName": "時雨杯",
+      "entryFeeMon": 1000,
+      "prizeMon": 3500,
+      "sections": [
+        "Random",
+        "Random",
+        "Random"
+      ],
+      "playerRule": "NONE",
+      "rivalRule": "NONE"
+    },
+    {
+      "id": "O00",
+      "guideId": "turtle-race-o00",
+      "guideName": "Nirvana GP",
+      "nativeName": "彼岸賞",
+      "entryFeeMon": 2000,
+      "prizeMon": 5000,
+      "sections": [
+        "Random",
+        "Random",
+        "Random",
+        "Random"
+      ],
+      "playerRule": "NONE",
+      "rivalRule": "NONE"
+    },
+    {
+      "id": "O01",
+      "guideId": "turtle-race-o01",
+      "guideName": "Silver Grass Special Cup",
+      "nativeName": "すすき特別杯",
+      "entryFeeMon": 2000,
+      "prizeMon": 5000,
+      "sections": [
+        "Normal",
+        "Sand",
+        "Normal",
+        "Sand"
+      ],
+      "playerRule": "NONE",
+      "rivalRule": "NONE"
+    },
+    {
+      "id": "O02",
+      "guideId": "turtle-race-o02",
+      "guideName": "Heian Special Cup",
+      "nativeName": "平安特別杯",
+      "entryFeeMon": 2000,
+      "prizeMon": 5000,
+      "sections": [
+        "Random",
+        "Random",
+        "Random",
+        "Random"
+      ],
+      "playerRule": "NONE",
+      "rivalRule": "NONE"
+    },
+    {
+      "id": "O03",
+      "guideId": "turtle-race-o03",
+      "guideName": "Gold Trophy GP",
+      "nativeName": "金杯賞",
+      "entryFeeMon": 2000,
+      "prizeMon": 4000,
+      "sections": [
+        "Mud",
+        "Normal",
+        "Mud",
+        "Normal",
+        "Mud"
+      ],
+      "playerRule": "NONE",
+      "rivalRule": "NONE"
+    },
+    {
+      "id": "O04",
+      "guideId": "turtle-race-o04",
+      "guideName": "Water Turtle Special Cup",
+      "nativeName": "水亀特別杯",
+      "entryFeeMon": 2000,
+      "prizeMon": 4000,
+      "sections": [
+        "Normal",
+        "Normal",
+        "Water",
+        "Water"
+      ],
+      "playerRule": "NONE",
+      "rivalRule": "O_WATER"
+    },
+    {
+      "id": "O05",
+      "guideId": "turtle-race-o05",
+      "guideName": "Sand Turtle Special Cup",
+      "nativeName": "砂亀特別杯",
+      "entryFeeMon": 2000,
+      "prizeMon": 4000,
+      "sections": [
+        "Normal",
+        "Normal",
+        "Sand",
+        "Sand"
+      ],
+      "playerRule": "NONE",
+      "rivalRule": "O_SAND"
+    },
+    {
+      "id": "O06",
+      "guideId": "turtle-race-o06",
+      "guideName": "Mud Turtle Special Cup",
+      "nativeName": "泥亀特別杯",
+      "entryFeeMon": 2000,
+      "prizeMon": 4000,
+      "sections": [
+        "Normal",
+        "Normal",
+        "Mud",
+        "Mud"
+      ],
+      "playerRule": "NONE",
+      "rivalRule": "O_MUD"
+    },
+    {
+      "id": "O07",
+      "guideId": "turtle-race-o07",
+      "guideName": "Indigo Cup",
+      "nativeName": "紫紺杯",
+      "entryFeeMon": 2000,
+      "prizeMon": 5000,
+      "sections": [
+        "Random",
+        "Random",
+        "Random",
+        "Random"
+      ],
+      "playerRule": "NONE",
+      "rivalRule": "NONE"
+    },
+    {
+      "id": "O08",
+      "guideId": "turtle-race-o08",
+      "guideName": "Hibiscus Cup",
+      "nativeName": "芙蓉杯",
+      "entryFeeMon": 2000,
+      "prizeMon": 4000,
+      "sections": [
+        "Mud",
+        "Random",
+        "Random",
+        "Mud"
+      ],
+      "playerRule": "NONE",
+      "rivalRule": "NONE"
+    },
+    {
+      "id": "O09",
+      "guideId": "turtle-race-o09",
+      "guideName": "Golden Wind Cup",
+      "nativeName": "金風賞",
+      "entryFeeMon": 2000,
+      "prizeMon": 4000,
+      "sections": [
+        "Normal",
+        "Sand",
+        "Water",
+        "Mud"
+      ],
+      "playerRule": "NONE",
+      "rivalRule": "NONE"
+    },
+    {
+      "id": "Y00",
+      "guideId": "turtle-race-y00",
+      "guideName": "Japan Cup",
+      "nativeName": "日ノ本杯",
+      "entryFeeMon": 3000,
+      "prizeMon": 8000,
+      "sections": [
+        "Random",
+        "Random",
+        "Random",
+        "Random"
+      ],
+      "playerRule": "NONE",
+      "rivalRule": "NONE"
+    },
+    {
+      "id": "Y01",
+      "guideId": "turtle-race-y01",
+      "guideName": "Gion Cup",
+      "nativeName": "祗園杯",
+      "entryFeeMon": 3000,
+      "prizeMon": 7000,
+      "sections": [
+        "Normal",
+        "Water",
+        "Normal",
+        "Water"
+      ],
+      "playerRule": "NONE",
+      "rivalRule": "NONE"
+    },
+    {
+      "id": "Y02",
+      "guideId": "turtle-race-y02",
+      "guideName": "Skanda GP",
+      "nativeName": "韋駄天賞",
+      "entryFeeMon": 3000,
+      "prizeMon": 7000,
+      "sections": [
+        "Normal",
+        "Normal",
+        "Normal",
+        "Normal",
+        "Normal"
+      ],
+      "playerRule": "NONE",
+      "rivalRule": "NONE"
+    },
+    {
+      "id": "Y03",
+      "guideId": "turtle-race-y03",
+      "guideName": "Water King Special Cup",
+      "nativeName": "水王特別杯",
+      "entryFeeMon": 3000,
+      "prizeMon": 7000,
+      "sections": [
+        "Water",
+        "Water",
+        "Water",
+        "Water",
+        "Water"
+      ],
+      "playerRule": "NONE",
+      "rivalRule": "Y_WATER"
+    },
+    {
+      "id": "Y04",
+      "guideId": "turtle-race-y04",
+      "guideName": "Sand King Special Cup",
+      "nativeName": "砂王特別杯",
+      "entryFeeMon": 3000,
+      "prizeMon": 7000,
+      "sections": [
+        "Sand",
+        "Sand",
+        "Sand",
+        "Sand",
+        "Sand"
+      ],
+      "playerRule": "NONE",
+      "rivalRule": "Y_SAND"
+    },
+    {
+      "id": "Y05",
+      "guideId": "turtle-race-y05",
+      "guideName": "Mud King Special Cup",
+      "nativeName": "泥王特別杯",
+      "entryFeeMon": 3000,
+      "prizeMon": 7000,
+      "sections": [
+        "Mud",
+        "Mud",
+        "Mud",
+        "Mud",
+        "Mud"
+      ],
+      "playerRule": "NONE",
+      "rivalRule": "Y_MUD"
+    },
+    {
+      "id": "Y06",
+      "guideId": "turtle-race-y06",
+      "guideName": "Long-Distance King Cup",
+      "nativeName": "長距離王杯",
+      "entryFeeMon": 3000,
+      "prizeMon": 7000,
+      "sections": [
+        "Normal",
+        "Normal",
+        "Normal",
+        "Normal",
+        "Normal"
+      ],
+      "playerRule": "NONE",
+      "rivalRule": "Y_ENERGY"
+    },
+    {
+      "id": "Y07",
+      "guideId": "turtle-race-y07",
+      "guideName": "Mid-Autumn GP",
+      "nativeName": "中秋賞",
+      "entryFeeMon": 3000,
+      "prizeMon": 7000,
+      "sections": [
+        "Sand",
+        "Water",
+        "Sand"
+      ],
+      "playerRule": "NONE",
+      "rivalRule": "NONE"
+    },
+    {
+      "id": "Y08",
+      "guideId": "turtle-race-y08",
+      "guideName": "Autumn Breeze Award",
+      "nativeName": "秋風記念",
+      "entryFeeMon": 3000,
+      "prizeMon": 7500,
+      "sections": [
+        "Random",
+        "Sand",
+        "Random",
+        "Sand"
+      ],
+      "playerRule": "NONE",
+      "rivalRule": "NONE"
+    },
+    {
+      "id": "Y09",
+      "guideId": "turtle-race-y09",
+      "guideName": "Sunrise GP",
+      "nativeName": "日輪賞",
+      "entryFeeMon": 3000,
+      "prizeMon": 8000,
+      "sections": [
+        "Random",
+        "Random",
+        "Random",
+        "Random"
+      ],
+      "playerRule": "NONE",
+      "rivalRule": "NONE"
+    },
+    {
+      "id": "M00",
+      "guideId": "turtle-race-m00",
+      "guideName": "Adamantine Cup",
+      "nativeName": "金剛杯",
+      "entryFeeMon": 3000,
+      "prizeMon": 7000,
+      "sections": [
+        "Random",
+        "Random",
+        "Random",
+        "Random"
+      ],
+      "playerRule": "YOKOZUNA_COMP",
+      "rivalRule": "M_WIN"
+    },
+    {
+      "id": "M01",
+      "guideId": "turtle-race-m01",
+      "guideName": "Shiranui Cup",
+      "nativeName": "不知火杯",
+      "entryFeeMon": 3000,
+      "prizeMon": 6000,
+      "sections": [
+        "Mud",
+        "Random",
+        "Mud",
+        "Random"
+      ],
+      "playerRule": "NONE",
+      "rivalRule": "NONE"
+    },
+    {
+      "id": "M02",
+      "guideId": "turtle-race-m02",
+      "guideName": "Vaisravana Cup",
+      "nativeName": "毘沙門杯",
+      "entryFeeMon": 3000,
+      "prizeMon": 7000,
+      "sections": [
+        "Random",
+        "Random",
+        "Random",
+        "Random"
+      ],
+      "playerRule": "NONE",
+      "rivalRule": "NONE"
+    },
+    {
+      "id": "M03",
+      "guideId": "turtle-race-m03",
+      "guideName": "Meteor Cup",
+      "nativeName": "流星杯",
+      "entryFeeMon": 3000,
+      "prizeMon": 6000,
+      "sections": [
+        "Normal",
+        "Normal",
+        "Random",
+        "Random"
+      ],
+      "playerRule": "NONE",
+      "rivalRule": "NONE"
+    },
+    {
+      "id": "M04",
+      "guideId": "turtle-race-m04",
+      "guideName": "Phoenix GP",
+      "nativeName": "鳳凰賞",
+      "entryFeeMon": 3000,
+      "prizeMon": 6000,
+      "sections": [
+        "Mud",
+        "Mud",
+        "Mud"
+      ],
+      "playerRule": "NONE",
+      "rivalRule": "NONE"
+    },
+    {
+      "id": "M05",
+      "guideId": "turtle-race-m05",
+      "guideName": "Divine Wind Cup",
+      "nativeName": "神風賞",
+      "entryFeeMon": 3000,
+      "prizeMon": 7000,
+      "sections": [
+        "Random",
+        "Random",
+        "Water",
+        "Random",
+        "Random"
+      ],
+      "playerRule": "NONE",
+      "rivalRule": "NONE"
+    },
+    {
+      "id": "M06",
+      "guideId": "turtle-race-m06",
+      "guideName": "Mt. Fuji Cup",
+      "nativeName": "富士杯",
+      "entryFeeMon": 3000,
+      "prizeMon": 6000,
+      "sections": [
+        "Random",
+        "Normal",
+        "Water",
+        "Sand",
+        "Random"
+      ],
+      "playerRule": "NONE",
+      "rivalRule": "NONE"
+    },
+    {
+      "id": "M07",
+      "guideId": "turtle-race-m07",
+      "guideName": "Dazzling GP",
+      "nativeName": "絢爛賞",
+      "entryFeeMon": 3000,
+      "prizeMon": 7000,
+      "sections": [
+        "Random",
+        "Random",
+        "Random",
+        "Random"
+      ],
+      "playerRule": "NONE",
+      "rivalRule": "NONE"
+    },
+    {
+      "id": "M08",
+      "guideId": "turtle-race-m08",
+      "guideName": "Hundred Flower Cup",
+      "nativeName": "百花杯",
+      "entryFeeMon": 3000,
+      "prizeMon": 6000,
+      "sections": [
+        "Water",
+        "Normal",
+        "Water",
+        "Normal"
+      ],
+      "playerRule": "NONE",
+      "rivalRule": "NONE"
+    },
+    {
+      "id": "M09",
+      "guideId": "turtle-race-m09",
+      "guideName": "Senior's GP",
+      "nativeName": "白寿賞",
+      "entryFeeMon": 3000,
+      "prizeMon": 6000,
+      "sections": [
+        "Normal",
+        "Normal",
+        "Normal",
+        "Random"
+      ],
+      "playerRule": "LIFE_OLD",
+      "rivalRule": "M_LIFE"
+    },
+    {
+      "id": "M10",
+      "guideId": "turtle-race-m10",
+      "guideName": "Endurance King GP",
+      "nativeName": "持久王賞",
+      "entryFeeMon": 3000,
+      "prizeMon": 8000,
+      "sections": [
+        "Random",
+        "Random",
+        "Random",
+        "Random",
+        "Random"
+      ],
+      "playerRule": "NONE",
+      "rivalRule": "M_ENERGY"
+    },
+    {
+      "id": "M11",
+      "guideId": "turtle-race-m11",
+      "guideName": "Strongest Undefeated GP",
+      "nativeName": "最強無敗賞",
+      "entryFeeMon": 3000,
+      "prizeMon": 8000,
+      "sections": [
+        "Random",
+        "Random",
+        "Random",
+        "Random"
+      ],
+      "playerRule": "10WIN",
+      "rivalRule": "M_WIN"
+    },
+    {
+      "id": "M12",
+      "guideId": "turtle-race-m12",
+      "guideName": "Biggest Loser Cup",
+      "nativeName": "最強敗者杯",
+      "entryFeeMon": 3000,
+      "prizeMon": 8000,
+      "sections": [
+        "Random",
+        "Random",
+        "Random",
+        "Random"
+      ],
+      "playerRule": "10LOSE",
+      "rivalRule": "M_LOSE"
+    }
+  ],
+  "rivals": [
+    {
+      "id": "H00",
+      "name": "Kamegami",
+      "rankPool": "H",
+      "speciesId": 0,
+      "personalityId": 3,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 120,
+          "amplitude": 30
+        },
+        "legPower": {
+          "base": 69,
+          "amplitude": 4
+        },
+        "sand": {
+          "base": 56,
+          "amplitude": 1
+        },
+        "water": {
+          "base": 55,
+          "amplitude": 0
+        },
+        "mud": {
+          "base": 73,
+          "amplitude": 2
+        },
+        "fullness": {
+          "base": 150,
+          "amplitude": 51
+        }
+      }
+    },
+    {
+      "id": "H01",
+      "name": "Ebisugo",
+      "rankPool": "H",
+      "speciesId": 1,
+      "personalityId": 3,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 63,
+          "amplitude": 2
+        },
+        "legPower": {
+          "base": 50,
+          "amplitude": 4
+        },
+        "sand": {
+          "base": 66,
+          "amplitude": 7
+        },
+        "water": {
+          "base": 69,
+          "amplitude": 9
+        },
+        "mud": {
+          "base": 82,
+          "amplitude": 3
+        },
+        "fullness": {
+          "base": 51,
+          "amplitude": 81
+        }
+      }
+    },
+    {
+      "id": "H02",
+      "name": "Bishamon",
+      "rankPool": "H",
+      "speciesId": 0,
+      "personalityId": 1,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 61,
+          "amplitude": 3
+        },
+        "legPower": {
+          "base": 89,
+          "amplitude": 1
+        },
+        "sand": {
+          "base": 64,
+          "amplitude": 9
+        },
+        "water": {
+          "base": 75,
+          "amplitude": 6
+        },
+        "mud": {
+          "base": 97,
+          "amplitude": 5
+        },
+        "fullness": {
+          "base": 54,
+          "amplitude": 100
+        }
+      }
+    },
+    {
+      "id": "H03",
+      "name": "Baramon",
+      "rankPool": "H",
+      "speciesId": 0,
+      "personalityId": 3,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 60,
+          "amplitude": 10
+        },
+        "legPower": {
+          "base": 52,
+          "amplitude": 10
+        },
+        "sand": {
+          "base": 84,
+          "amplitude": 7
+        },
+        "water": {
+          "base": 66,
+          "amplitude": 4
+        },
+        "mud": {
+          "base": 77,
+          "amplitude": 7
+        },
+        "fullness": {
+          "base": 43,
+          "amplitude": 151
+        }
+      }
+    },
+    {
+      "id": "H04",
+      "name": "Enma",
+      "rankPool": "H",
+      "speciesId": 1,
+      "personalityId": 0,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 75,
+          "amplitude": 8
+        },
+        "legPower": {
+          "base": 99,
+          "amplitude": 0
+        },
+        "sand": {
+          "base": 73,
+          "amplitude": 9
+        },
+        "water": {
+          "base": 59,
+          "amplitude": 3
+        },
+        "mud": {
+          "base": 86,
+          "amplitude": 7
+        },
+        "fullness": {
+          "base": 78,
+          "amplitude": 78
+        }
+      }
+    },
+    {
+      "id": "H05",
+      "name": "Daienma",
+      "rankPool": "H",
+      "speciesId": 1,
+      "personalityId": 2,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 10,
+          "amplitude": 100
+        },
+        "legPower": {
+          "base": 20,
+          "amplitude": 80
+        },
+        "sand": {
+          "base": 20,
+          "amplitude": 60
+        },
+        "water": {
+          "base": 20,
+          "amplitude": 60
+        },
+        "mud": {
+          "base": 20,
+          "amplitude": 60
+        },
+        "fullness": {
+          "base": 108,
+          "amplitude": 108
+        }
+      }
+    },
+    {
+      "id": "H06",
+      "name": "Onigoro",
+      "rankPool": "H",
+      "speciesId": 0,
+      "personalityId": 3,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 68,
+          "amplitude": 7
+        },
+        "legPower": {
+          "base": 85,
+          "amplitude": 9
+        },
+        "sand": {
+          "base": 84,
+          "amplitude": 2
+        },
+        "water": {
+          "base": 55,
+          "amplitude": 6
+        },
+        "mud": {
+          "base": 76,
+          "amplitude": 8
+        },
+        "fullness": {
+          "base": 79,
+          "amplitude": 99
+        }
+      }
+    },
+    {
+      "id": "H07",
+      "name": "Hohoemitaro",
+      "rankPool": "H",
+      "speciesId": 1,
+      "personalityId": 0,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 53,
+          "amplitude": 7
+        },
+        "legPower": {
+          "base": 62,
+          "amplitude": 4
+        },
+        "sand": {
+          "base": 79,
+          "amplitude": 2
+        },
+        "water": {
+          "base": 93,
+          "amplitude": 7
+        },
+        "mud": {
+          "base": 82,
+          "amplitude": 3
+        },
+        "fullness": {
+          "base": 190,
+          "amplitude": 9
+        }
+      }
+    },
+    {
+      "id": "H08",
+      "name": "Ikigire",
+      "rankPool": "H",
+      "speciesId": 0,
+      "personalityId": 0,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 38,
+          "amplitude": 20
+        },
+        "legPower": {
+          "base": 100,
+          "amplitude": 10
+        },
+        "sand": {
+          "base": 55,
+          "amplitude": 3
+        },
+        "water": {
+          "base": 78,
+          "amplitude": 6
+        },
+        "mud": {
+          "base": 99,
+          "amplitude": 8
+        },
+        "fullness": {
+          "base": 26,
+          "amplitude": 27
+        }
+      }
+    },
+    {
+      "id": "H09",
+      "name": "Dongame",
+      "rankPool": "H",
+      "speciesId": 0,
+      "personalityId": 1,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 130,
+          "amplitude": 9
+        },
+        "legPower": {
+          "base": 51,
+          "amplitude": 7
+        },
+        "sand": {
+          "base": 75,
+          "amplitude": 5
+        },
+        "water": {
+          "base": 69,
+          "amplitude": 10
+        },
+        "mud": {
+          "base": 92,
+          "amplitude": 2
+        },
+        "fullness": {
+          "base": 73,
+          "amplitude": 89
+        }
+      }
+    },
+    {
+      "id": "H10",
+      "name": "Saikobi",
+      "rankPool": "H",
+      "speciesId": 0,
+      "personalityId": 2,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 91,
+          "amplitude": 7
+        },
+        "legPower": {
+          "base": 100,
+          "amplitude": 7
+        },
+        "sand": {
+          "base": 75,
+          "amplitude": 8
+        },
+        "water": {
+          "base": 61,
+          "amplitude": 8
+        },
+        "mud": {
+          "base": 76,
+          "amplitude": 6
+        },
+        "fullness": {
+          "base": 81,
+          "amplitude": 90
+        }
+      }
+    },
+    {
+      "id": "H11",
+      "name": "Katatsumuri",
+      "rankPool": "H",
+      "speciesId": 1,
+      "personalityId": 0,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 100,
+          "amplitude": 4
+        },
+        "legPower": {
+          "base": 60,
+          "amplitude": 2
+        },
+        "sand": {
+          "base": 89,
+          "amplitude": 8
+        },
+        "water": {
+          "base": 82,
+          "amplitude": 10
+        },
+        "mud": {
+          "base": 78,
+          "amplitude": 4
+        },
+        "fullness": {
+          "base": 163,
+          "amplitude": 4
+        }
+      }
+    },
+    {
+      "id": "H12",
+      "name": "Dozaemon",
+      "rankPool": "H",
+      "speciesId": 0,
+      "personalityId": 0,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 53,
+          "amplitude": 9
+        },
+        "legPower": {
+          "base": 88,
+          "amplitude": 5
+        },
+        "sand": {
+          "base": 90,
+          "amplitude": 5
+        },
+        "water": {
+          "base": 10,
+          "amplitude": 3
+        },
+        "mud": {
+          "base": 80,
+          "amplitude": 0
+        },
+        "fullness": {
+          "base": 2,
+          "amplitude": 180
+        }
+      }
+    },
+    {
+      "id": "H13",
+      "name": "Doroiyan",
+      "rankPool": "H",
+      "speciesId": 1,
+      "personalityId": 0,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 80,
+          "amplitude": 2
+        },
+        "legPower": {
+          "base": 109,
+          "amplitude": 1
+        },
+        "sand": {
+          "base": 105,
+          "amplitude": 4
+        },
+        "water": {
+          "base": 85,
+          "amplitude": 4
+        },
+        "mud": {
+          "base": 5,
+          "amplitude": 10
+        },
+        "fullness": {
+          "base": 71,
+          "amplitude": 99
+        }
+      }
+    },
+    {
+      "id": "H14",
+      "name": "Onichiro",
+      "rankPool": "H",
+      "speciesId": 0,
+      "personalityId": 3,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 57,
+          "amplitude": 3
+        },
+        "legPower": {
+          "base": 97,
+          "amplitude": 4
+        },
+        "sand": {
+          "base": 60,
+          "amplitude": 8
+        },
+        "water": {
+          "base": 55,
+          "amplitude": 3
+        },
+        "mud": {
+          "base": 69,
+          "amplitude": 6
+        },
+        "fullness": {
+          "base": 70,
+          "amplitude": 100
+        }
+      }
+    },
+    {
+      "id": "H15",
+      "name": "Onijiro",
+      "rankPool": "H",
+      "speciesId": 0,
+      "personalityId": 1,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 86,
+          "amplitude": 7
+        },
+        "legPower": {
+          "base": 70,
+          "amplitude": 7
+        },
+        "sand": {
+          "base": 75,
+          "amplitude": 2
+        },
+        "water": {
+          "base": 77,
+          "amplitude": 2
+        },
+        "mud": {
+          "base": 91,
+          "amplitude": 5
+        },
+        "fullness": {
+          "base": 40,
+          "amplitude": 80
+        }
+      }
+    },
+    {
+      "id": "H16",
+      "name": "Onisaburo",
+      "rankPool": "H",
+      "speciesId": 0,
+      "personalityId": 1,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 99,
+          "amplitude": 2
+        },
+        "legPower": {
+          "base": 79,
+          "amplitude": 3
+        },
+        "sand": {
+          "base": 70,
+          "amplitude": 1
+        },
+        "water": {
+          "base": 85,
+          "amplitude": 7
+        },
+        "mud": {
+          "base": 85,
+          "amplitude": 4
+        },
+        "fullness": {
+          "base": 10,
+          "amplitude": 60
+        }
+      }
+    },
+    {
+      "id": "H17",
+      "name": "Inari Hayate",
+      "rankPool": "H",
+      "speciesId": 1,
+      "personalityId": 2,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 84,
+          "amplitude": 4
+        },
+        "legPower": {
+          "base": 97,
+          "amplitude": 4
+        },
+        "sand": {
+          "base": 99,
+          "amplitude": 5
+        },
+        "water": {
+          "base": 70,
+          "amplitude": 4
+        },
+        "mud": {
+          "base": 68,
+          "amplitude": 1
+        },
+        "fullness": {
+          "base": 55,
+          "amplitude": 97
+        }
+      }
+    },
+    {
+      "id": "H18",
+      "name": "Otohime",
+      "rankPool": "H",
+      "speciesId": 0,
+      "personalityId": 2,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 57,
+          "amplitude": 8
+        },
+        "legPower": {
+          "base": 87,
+          "amplitude": 2
+        },
+        "sand": {
+          "base": 81,
+          "amplitude": 9
+        },
+        "water": {
+          "base": 90,
+          "amplitude": 1
+        },
+        "mud": {
+          "base": 93,
+          "amplitude": 6
+        },
+        "fullness": {
+          "base": 187,
+          "amplitude": 6
+        }
+      }
+    },
+    {
+      "id": "H19",
+      "name": "Omoikane",
+      "rankPool": "H",
+      "speciesId": 0,
+      "personalityId": 2,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 88,
+          "amplitude": 5
+        },
+        "legPower": {
+          "base": 70,
+          "amplitude": 10
+        },
+        "sand": {
+          "base": 58,
+          "amplitude": 1
+        },
+        "water": {
+          "base": 64,
+          "amplitude": 3
+        },
+        "mud": {
+          "base": 80,
+          "amplitude": 4
+        },
+        "fullness": {
+          "base": 156,
+          "amplitude": 9
+        }
+      }
+    },
+    {
+      "id": "H20",
+      "name": "Kaguya Ichigo",
+      "rankPool": "H",
+      "speciesId": 1,
+      "personalityId": 2,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 64,
+          "amplitude": 1
+        },
+        "legPower": {
+          "base": 85,
+          "amplitude": 7
+        },
+        "sand": {
+          "base": 88,
+          "amplitude": 10
+        },
+        "water": {
+          "base": 72,
+          "amplitude": 1
+        },
+        "mud": {
+          "base": 58,
+          "amplitude": 3
+        },
+        "fullness": {
+          "base": 158,
+          "amplitude": 9
+        }
+      }
+    },
+    {
+      "id": "H21",
+      "name": "Omitake",
+      "rankPool": "H",
+      "speciesId": 1,
+      "personalityId": 3,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 60,
+          "amplitude": 5
+        },
+        "legPower": {
+          "base": 76,
+          "amplitude": 7
+        },
+        "sand": {
+          "base": 60,
+          "amplitude": 1
+        },
+        "water": {
+          "base": 55,
+          "amplitude": 4
+        },
+        "mud": {
+          "base": 94,
+          "amplitude": 2
+        },
+        "fullness": {
+          "base": 81,
+          "amplitude": 102
+        }
+      }
+    },
+    {
+      "id": "H22",
+      "name": "Idatengo",
+      "rankPool": "H",
+      "speciesId": 1,
+      "personalityId": 3,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 75,
+          "amplitude": 10
+        },
+        "legPower": {
+          "base": 110,
+          "amplitude": 8
+        },
+        "sand": {
+          "base": 56,
+          "amplitude": 8
+        },
+        "water": {
+          "base": 62,
+          "amplitude": 7
+        },
+        "mud": {
+          "base": 75,
+          "amplitude": 1
+        },
+        "fullness": {
+          "base": 90,
+          "amplitude": 107
+        }
+      }
+    },
+    {
+      "id": "H23",
+      "name": "Mizuiyan",
+      "rankPool": "H",
+      "speciesId": 0,
+      "personalityId": 0,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 120,
+          "amplitude": 9
+        },
+        "legPower": {
+          "base": 84,
+          "amplitude": 1
+        },
+        "sand": {
+          "base": 89,
+          "amplitude": 20
+        },
+        "water": {
+          "base": 5,
+          "amplitude": 10
+        },
+        "mud": {
+          "base": 62,
+          "amplitude": 2
+        },
+        "fullness": {
+          "base": 96,
+          "amplitude": 98
+        }
+      }
+    },
+    {
+      "id": "H24",
+      "name": "Sunaiyan",
+      "rankPool": "H",
+      "speciesId": 0,
+      "personalityId": 1,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 101,
+          "amplitude": 2
+        },
+        "legPower": {
+          "base": 93,
+          "amplitude": 10
+        },
+        "sand": {
+          "base": 5,
+          "amplitude": 10
+        },
+        "water": {
+          "base": 95,
+          "amplitude": 9
+        },
+        "mud": {
+          "base": 84,
+          "amplitude": 10
+        },
+        "fullness": {
+          "base": 97,
+          "amplitude": 96
+        }
+      }
+    },
+    {
+      "id": "H25",
+      "name": "Akanyan",
+      "rankPool": "H",
+      "speciesId": 1,
+      "personalityId": 0,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 73,
+          "amplitude": 2
+        },
+        "legPower": {
+          "base": 59,
+          "amplitude": 5
+        },
+        "sand": {
+          "base": 52,
+          "amplitude": 2
+        },
+        "water": {
+          "base": 84,
+          "amplitude": 8
+        },
+        "mud": {
+          "base": 88,
+          "amplitude": 8
+        },
+        "fullness": {
+          "base": 56,
+          "amplitude": 88
+        }
+      }
+    },
+    {
+      "id": "H26",
+      "name": "Nametonnoka",
+      "rankPool": "H",
+      "speciesId": 0,
+      "personalityId": 0,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 62,
+          "amplitude": 7
+        },
+        "legPower": {
+          "base": 60,
+          "amplitude": 9
+        },
+        "sand": {
+          "base": 83,
+          "amplitude": 3
+        },
+        "water": {
+          "base": 94,
+          "amplitude": 4
+        },
+        "mud": {
+          "base": 59,
+          "amplitude": 5
+        },
+        "fullness": {
+          "base": 196,
+          "amplitude": 3
+        }
+      }
+    },
+    {
+      "id": "H27",
+      "name": "Gion no Kaze",
+      "rankPool": "H",
+      "speciesId": 0,
+      "personalityId": 2,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 77,
+          "amplitude": 3
+        },
+        "legPower": {
+          "base": 74,
+          "amplitude": 9
+        },
+        "sand": {
+          "base": 70,
+          "amplitude": 8
+        },
+        "water": {
+          "base": 66,
+          "amplitude": 9
+        },
+        "mud": {
+          "base": 79,
+          "amplitude": 1
+        },
+        "fullness": {
+          "base": 72,
+          "amplitude": 109
+        }
+      }
+    },
+    {
+      "id": "H28",
+      "name": "Yarimasse",
+      "rankPool": "H",
+      "speciesId": 0,
+      "personalityId": 1,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 95,
+          "amplitude": 1
+        },
+        "legPower": {
+          "base": 89,
+          "amplitude": 1
+        },
+        "sand": {
+          "base": 82,
+          "amplitude": 4
+        },
+        "water": {
+          "base": 68,
+          "amplitude": 4
+        },
+        "mud": {
+          "base": 71,
+          "amplitude": 0
+        },
+        "fullness": {
+          "base": 197,
+          "amplitude": 8
+        }
+      }
+    },
+    {
+      "id": "H29",
+      "name": "Bikkurigo",
+      "rankPool": "H",
+      "speciesId": 0,
+      "personalityId": 1,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 89,
+          "amplitude": 2
+        },
+        "legPower": {
+          "base": 67,
+          "amplitude": 8
+        },
+        "sand": {
+          "base": 89,
+          "amplitude": 9
+        },
+        "water": {
+          "base": 55,
+          "amplitude": 4
+        },
+        "mud": {
+          "base": 61,
+          "amplitude": 7
+        },
+        "fullness": {
+          "base": 9,
+          "amplitude": 157
+        }
+      }
+    },
+    {
+      "id": "H30",
+      "name": "Tamarande",
+      "rankPool": "H",
+      "speciesId": 1,
+      "personalityId": 1,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 82,
+          "amplitude": 1
+        },
+        "legPower": {
+          "base": 58,
+          "amplitude": 5
+        },
+        "sand": {
+          "base": 57,
+          "amplitude": 7
+        },
+        "water": {
+          "base": 68,
+          "amplitude": 10
+        },
+        "mud": {
+          "base": 58,
+          "amplitude": 3
+        },
+        "fullness": {
+          "base": 170,
+          "amplitude": 9
+        }
+      }
+    },
+    {
+      "id": "K00",
+      "name": "Kamegoro",
+      "rankPool": "K",
+      "speciesId": 0,
+      "personalityId": 1,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 117,
+          "amplitude": 9
+        },
+        "legPower": {
+          "base": 74,
+          "amplitude": 4
+        },
+        "sand": {
+          "base": 50,
+          "amplitude": 0
+        },
+        "water": {
+          "base": 120,
+          "amplitude": 11
+        },
+        "mud": {
+          "base": 70,
+          "amplitude": 9
+        },
+        "fullness": {
+          "base": 73,
+          "amplitude": 120
+        }
+      }
+    },
+    {
+      "id": "K01",
+      "name": "Shichifuku",
+      "rankPool": "K",
+      "speciesId": 0,
+      "personalityId": 2,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 96,
+          "amplitude": 1
+        },
+        "legPower": {
+          "base": 101,
+          "amplitude": 11
+        },
+        "sand": {
+          "base": 57,
+          "amplitude": 3
+        },
+        "water": {
+          "base": 103,
+          "amplitude": 7
+        },
+        "mud": {
+          "base": 58,
+          "amplitude": 6
+        },
+        "fullness": {
+          "base": 80,
+          "amplitude": 112
+        }
+      }
+    },
+    {
+      "id": "K02",
+      "name": "Jurojin",
+      "rankPool": "K",
+      "speciesId": 0,
+      "personalityId": 1,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 119,
+          "amplitude": 9
+        },
+        "legPower": {
+          "base": 76,
+          "amplitude": 5
+        },
+        "sand": {
+          "base": 114,
+          "amplitude": 6
+        },
+        "water": {
+          "base": 56,
+          "amplitude": 1
+        },
+        "mud": {
+          "base": 120,
+          "amplitude": 6
+        },
+        "fullness": {
+          "base": 90,
+          "amplitude": 106
+        }
+      }
+    },
+    {
+      "id": "K03",
+      "name": "Fukurokuju",
+      "rankPool": "K",
+      "speciesId": 0,
+      "personalityId": 2,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 99,
+          "amplitude": 9
+        },
+        "legPower": {
+          "base": 107,
+          "amplitude": 2
+        },
+        "sand": {
+          "base": 106,
+          "amplitude": 4
+        },
+        "water": {
+          "base": 52,
+          "amplitude": 1
+        },
+        "mud": {
+          "base": 113,
+          "amplitude": 5
+        },
+        "fullness": {
+          "base": 81,
+          "amplitude": 102
+        }
+      }
+    },
+    {
+      "id": "K04",
+      "name": "Benzaiten",
+      "rankPool": "K",
+      "speciesId": 1,
+      "personalityId": 2,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 88,
+          "amplitude": 30
+        },
+        "legPower": {
+          "base": 109,
+          "amplitude": 1
+        },
+        "sand": {
+          "base": 63,
+          "amplitude": 5
+        },
+        "water": {
+          "base": 89,
+          "amplitude": 2
+        },
+        "mud": {
+          "base": 76,
+          "amplitude": 1
+        },
+        "fullness": {
+          "base": 219,
+          "amplitude": 12
+        }
+      }
+    },
+    {
+      "id": "K05",
+      "name": "Hotei",
+      "rankPool": "K",
+      "speciesId": 1,
+      "personalityId": 2,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 101,
+          "amplitude": 5
+        },
+        "legPower": {
+          "base": 80,
+          "amplitude": 50
+        },
+        "sand": {
+          "base": 75,
+          "amplitude": 6
+        },
+        "water": {
+          "base": 70,
+          "amplitude": 6
+        },
+        "mud": {
+          "base": 67,
+          "amplitude": 8
+        },
+        "fullness": {
+          "base": 194,
+          "amplitude": 5
+        }
+      }
+    },
+    {
+      "id": "K06",
+      "name": "Susanoo",
+      "rankPool": "K",
+      "speciesId": 1,
+      "personalityId": 1,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 97,
+          "amplitude": 8
+        },
+        "legPower": {
+          "base": 104,
+          "amplitude": 10
+        },
+        "sand": {
+          "base": 62,
+          "amplitude": 1
+        },
+        "water": {
+          "base": 103,
+          "amplitude": 5
+        },
+        "mud": {
+          "base": 107,
+          "amplitude": 1
+        },
+        "fullness": {
+          "base": 212,
+          "amplitude": 8
+        }
+      }
+    },
+    {
+      "id": "K07",
+      "name": "Izanagi",
+      "rankPool": "K",
+      "speciesId": 0,
+      "personalityId": 2,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 106,
+          "amplitude": 5
+        },
+        "legPower": {
+          "base": 84,
+          "amplitude": 2
+        },
+        "sand": {
+          "base": 79,
+          "amplitude": 2
+        },
+        "water": {
+          "base": 103,
+          "amplitude": 7
+        },
+        "mud": {
+          "base": 78,
+          "amplitude": 6
+        },
+        "fullness": {
+          "base": 203,
+          "amplitude": 2
+        }
+      }
+    },
+    {
+      "id": "K08",
+      "name": "Izanami",
+      "rankPool": "K",
+      "speciesId": 0,
+      "personalityId": 2,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 103,
+          "amplitude": 4
+        },
+        "legPower": {
+          "base": 70,
+          "amplitude": 9
+        },
+        "sand": {
+          "base": 78,
+          "amplitude": 8
+        },
+        "water": {
+          "base": 57,
+          "amplitude": 4
+        },
+        "mud": {
+          "base": 120,
+          "amplitude": 7
+        },
+        "fullness": {
+          "base": 199,
+          "amplitude": 0
+        }
+      }
+    },
+    {
+      "id": "K09",
+      "name": "Sarutahiko",
+      "rankPool": "K",
+      "speciesId": 0,
+      "personalityId": 1,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 116,
+          "amplitude": 9
+        },
+        "legPower": {
+          "base": 103,
+          "amplitude": 4
+        },
+        "sand": {
+          "base": 50,
+          "amplitude": 4
+        },
+        "water": {
+          "base": 105,
+          "amplitude": 1
+        },
+        "mud": {
+          "base": 102,
+          "amplitude": 3
+        },
+        "fullness": {
+          "base": 218,
+          "amplitude": 3
+        }
+      }
+    },
+    {
+      "id": "K10",
+      "name": "Takeru",
+      "rankPool": "K",
+      "speciesId": 1,
+      "personalityId": 0,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 73,
+          "amplitude": 10
+        },
+        "legPower": {
+          "base": 80,
+          "amplitude": 5
+        },
+        "sand": {
+          "base": 91,
+          "amplitude": 3
+        },
+        "water": {
+          "base": 53,
+          "amplitude": 3
+        },
+        "mud": {
+          "base": 103,
+          "amplitude": 12
+        },
+        "fullness": {
+          "base": 191,
+          "amplitude": 2
+        }
+      }
+    },
+    {
+      "id": "K11",
+      "name": "Tairago",
+      "rankPool": "K",
+      "speciesId": 0,
+      "personalityId": 1,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 56,
+          "amplitude": 1
+        },
+        "legPower": {
+          "base": 93,
+          "amplitude": 6
+        },
+        "sand": {
+          "base": 103,
+          "amplitude": 4
+        },
+        "water": {
+          "base": 56,
+          "amplitude": 6
+        },
+        "mud": {
+          "base": 82,
+          "amplitude": 5
+        },
+        "fullness": {
+          "base": 94,
+          "amplitude": 101
+        }
+      }
+    },
+    {
+      "id": "K12",
+      "name": "Minamoto",
+      "rankPool": "K",
+      "speciesId": 1,
+      "personalityId": 0,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 104,
+          "amplitude": 9
+        },
+        "legPower": {
+          "base": 103,
+          "amplitude": 8
+        },
+        "sand": {
+          "base": 101,
+          "amplitude": 3
+        },
+        "water": {
+          "base": 64,
+          "amplitude": 12
+        },
+        "mud": {
+          "base": 66,
+          "amplitude": 0
+        },
+        "fullness": {
+          "base": 103,
+          "amplitude": 103
+        }
+      }
+    },
+    {
+      "id": "K13",
+      "name": "Kameo",
+      "rankPool": "K",
+      "speciesId": 0,
+      "personalityId": 3,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 102,
+          "amplitude": 5
+        },
+        "legPower": {
+          "base": 86,
+          "amplitude": 11
+        },
+        "sand": {
+          "base": 71,
+          "amplitude": 8
+        },
+        "water": {
+          "base": 75,
+          "amplitude": 1
+        },
+        "mud": {
+          "base": 69,
+          "amplitude": 7
+        },
+        "fullness": {
+          "base": 103,
+          "amplitude": 108
+        }
+      }
+    },
+    {
+      "id": "K14",
+      "name": "Kameten",
+      "rankPool": "K",
+      "speciesId": 1,
+      "personalityId": 0,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 74,
+          "amplitude": 5
+        },
+        "legPower": {
+          "base": 117,
+          "amplitude": 8
+        },
+        "sand": {
+          "base": 64,
+          "amplitude": 3
+        },
+        "water": {
+          "base": 107,
+          "amplitude": 7
+        },
+        "mud": {
+          "base": 89,
+          "amplitude": 5
+        },
+        "fullness": {
+          "base": 103,
+          "amplitude": 108
+        }
+      }
+    },
+    {
+      "id": "K15",
+      "name": "Amaterasu",
+      "rankPool": "K",
+      "speciesId": 0,
+      "personalityId": 1,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 101,
+          "amplitude": 6
+        },
+        "legPower": {
+          "base": 56,
+          "amplitude": 11
+        },
+        "sand": {
+          "base": 96,
+          "amplitude": 8
+        },
+        "water": {
+          "base": 94,
+          "amplitude": 2
+        },
+        "mud": {
+          "base": 80,
+          "amplitude": 3
+        },
+        "fullness": {
+          "base": 204,
+          "amplitude": 3
+        }
+      }
+    },
+    {
+      "id": "K16",
+      "name": "Kamui",
+      "rankPool": "K",
+      "speciesId": 1,
+      "personalityId": 1,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 109,
+          "amplitude": 7
+        },
+        "legPower": {
+          "base": 52,
+          "amplitude": 2
+        },
+        "sand": {
+          "base": 75,
+          "amplitude": 5
+        },
+        "water": {
+          "base": 87,
+          "amplitude": 10
+        },
+        "mud": {
+          "base": 101,
+          "amplitude": 12
+        },
+        "fullness": {
+          "base": 197,
+          "amplitude": 5
+        }
+      }
+    },
+    {
+      "id": "K17",
+      "name": "Hikari",
+      "rankPool": "K",
+      "speciesId": 1,
+      "personalityId": 1,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 78,
+          "amplitude": 8
+        },
+        "legPower": {
+          "base": 64,
+          "amplitude": 7
+        },
+        "sand": {
+          "base": 102,
+          "amplitude": 11
+        },
+        "water": {
+          "base": 67,
+          "amplitude": 9
+        },
+        "mud": {
+          "base": 70,
+          "amplitude": 12
+        },
+        "fullness": {
+          "base": 90,
+          "amplitude": 108
+        }
+      }
+    },
+    {
+      "id": "K18",
+      "name": "Kikuichigo",
+      "rankPool": "K",
+      "speciesId": 1,
+      "personalityId": 0,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 97,
+          "amplitude": 3
+        },
+        "legPower": {
+          "base": 50,
+          "amplitude": 6
+        },
+        "sand": {
+          "base": 80,
+          "amplitude": 6
+        },
+        "water": {
+          "base": 68,
+          "amplitude": 10
+        },
+        "mud": {
+          "base": 116,
+          "amplitude": 6
+        },
+        "fullness": {
+          "base": 75,
+          "amplitude": 139
+        }
+      }
+    },
+    {
+      "id": "K19",
+      "name": "Raiden",
+      "rankPool": "K",
+      "speciesId": 0,
+      "personalityId": 1,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 61,
+          "amplitude": 1
+        },
+        "legPower": {
+          "base": 86,
+          "amplitude": 1
+        },
+        "sand": {
+          "base": 117,
+          "amplitude": 4
+        },
+        "water": {
+          "base": 56,
+          "amplitude": 9
+        },
+        "mud": {
+          "base": 84,
+          "amplitude": 3
+        },
+        "fullness": {
+          "base": 80,
+          "amplitude": 80
+        }
+      }
+    },
+    {
+      "id": "K20",
+      "name": "Dairaiden",
+      "rankPool": "K",
+      "speciesId": 0,
+      "personalityId": 1,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 61,
+          "amplitude": 10
+        },
+        "legPower": {
+          "base": 81,
+          "amplitude": 9
+        },
+        "sand": {
+          "base": 67,
+          "amplitude": 5
+        },
+        "water": {
+          "base": 114,
+          "amplitude": 5
+        },
+        "mud": {
+          "base": 118,
+          "amplitude": 8
+        },
+        "fullness": {
+          "base": 120,
+          "amplitude": 120
+        }
+      }
+    },
+    {
+      "id": "K21",
+      "name": "Inazuma",
+      "rankPool": "K",
+      "speciesId": 1,
+      "personalityId": 1,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 110,
+          "amplitude": 11
+        },
+        "legPower": {
+          "base": 70,
+          "amplitude": 12
+        },
+        "sand": {
+          "base": 108,
+          "amplitude": 5
+        },
+        "water": {
+          "base": 78,
+          "amplitude": 6
+        },
+        "mud": {
+          "base": 102,
+          "amplitude": 2
+        },
+        "fullness": {
+          "base": 112,
+          "amplitude": 102
+        }
+      }
+    },
+    {
+      "id": "K22",
+      "name": "Taiho",
+      "rankPool": "K",
+      "speciesId": 1,
+      "personalityId": 1,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 100,
+          "amplitude": 6
+        },
+        "legPower": {
+          "base": 68,
+          "amplitude": 6
+        },
+        "sand": {
+          "base": 57,
+          "amplitude": 4
+        },
+        "water": {
+          "base": 116,
+          "amplitude": 3
+        },
+        "mud": {
+          "base": 103,
+          "amplitude": 10
+        },
+        "fullness": {
+          "base": 72,
+          "amplitude": 193
+        }
+      }
+    },
+    {
+      "id": "K23",
+      "name": "Fuji Hayate",
+      "rankPool": "K",
+      "speciesId": 1,
+      "personalityId": 1,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 101,
+          "amplitude": 1
+        },
+        "legPower": {
+          "base": 80,
+          "amplitude": 2
+        },
+        "sand": {
+          "base": 113,
+          "amplitude": 3
+        },
+        "water": {
+          "base": 108,
+          "amplitude": 11
+        },
+        "mud": {
+          "base": 84,
+          "amplitude": 6
+        },
+        "fullness": {
+          "base": 82,
+          "amplitude": 193
+        }
+      }
+    },
+    {
+      "id": "K24",
+      "name": "Kurama Tengu",
+      "rankPool": "K",
+      "speciesId": 1,
+      "personalityId": 0,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 101,
+          "amplitude": 7
+        },
+        "legPower": {
+          "base": 81,
+          "amplitude": 2
+        },
+        "sand": {
+          "base": 82,
+          "amplitude": 12
+        },
+        "water": {
+          "base": 56,
+          "amplitude": 12
+        },
+        "mud": {
+          "base": 84,
+          "amplitude": 12
+        },
+        "fullness": {
+          "base": 216,
+          "amplitude": 0
+        }
+      }
+    },
+    {
+      "id": "K25",
+      "name": "Toroiyan",
+      "rankPool": "K",
+      "speciesId": 0,
+      "personalityId": 2,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 87,
+          "amplitude": 30
+        },
+        "legPower": {
+          "base": 70,
+          "amplitude": 25
+        },
+        "sand": {
+          "base": 101,
+          "amplitude": 5
+        },
+        "water": {
+          "base": 76,
+          "amplitude": 3
+        },
+        "mud": {
+          "base": 75,
+          "amplitude": 7
+        },
+        "fullness": {
+          "base": 196,
+          "amplitude": 9
+        }
+      }
+    },
+    {
+      "id": "S00",
+      "name": "Edo Nishiki",
+      "rankPool": "S",
+      "speciesId": 1,
+      "personalityId": 2,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 95,
+          "amplitude": 25
+        },
+        "legPower": {
+          "base": 133,
+          "amplitude": 31
+        },
+        "sand": {
+          "base": 51,
+          "amplitude": 14
+        },
+        "water": {
+          "base": 105,
+          "amplitude": 10
+        },
+        "mud": {
+          "base": 102,
+          "amplitude": 4
+        },
+        "fullness": {
+          "base": 212,
+          "amplitude": 1
+        }
+      }
+    },
+    {
+      "id": "S01",
+      "name": "Shimano",
+      "rankPool": "S",
+      "speciesId": 0,
+      "personalityId": 2,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 94,
+          "amplitude": 32
+        },
+        "legPower": {
+          "base": 148,
+          "amplitude": 5
+        },
+        "sand": {
+          "base": 101,
+          "amplitude": 12
+        },
+        "water": {
+          "base": 73,
+          "amplitude": 7
+        },
+        "mud": {
+          "base": 111,
+          "amplitude": 7
+        },
+        "fullness": {
+          "base": 124,
+          "amplitude": 102
+        }
+      }
+    },
+    {
+      "id": "S02",
+      "name": "Tetsujin",
+      "rankPool": "S",
+      "speciesId": 1,
+      "personalityId": 1,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 100,
+          "amplitude": 15
+        },
+        "legPower": {
+          "base": 127,
+          "amplitude": 5
+        },
+        "sand": {
+          "base": 123,
+          "amplitude": 4
+        },
+        "water": {
+          "base": 104,
+          "amplitude": 10
+        },
+        "mud": {
+          "base": 101,
+          "amplitude": 12
+        },
+        "fullness": {
+          "base": 137,
+          "amplitude": 102
+        }
+      }
+    },
+    {
+      "id": "S03",
+      "name": "Hanahibiki",
+      "rankPool": "S",
+      "speciesId": 0,
+      "personalityId": 0,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 59,
+          "amplitude": 50
+        },
+        "legPower": {
+          "base": 113,
+          "amplitude": 6
+        },
+        "sand": {
+          "base": 138,
+          "amplitude": 9
+        },
+        "water": {
+          "base": 117,
+          "amplitude": 10
+        },
+        "mud": {
+          "base": 57,
+          "amplitude": 7
+        },
+        "fullness": {
+          "base": 137,
+          "amplitude": 109
+        }
+      }
+    },
+    {
+      "id": "S04",
+      "name": "Musashimaru",
+      "rankPool": "S",
+      "speciesId": 1,
+      "personalityId": 2,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 130,
+          "amplitude": 20
+        },
+        "legPower": {
+          "base": 120,
+          "amplitude": 4
+        },
+        "sand": {
+          "base": 57,
+          "amplitude": 2
+        },
+        "water": {
+          "base": 78,
+          "amplitude": 14
+        },
+        "mud": {
+          "base": 90,
+          "amplitude": 1
+        },
+        "fullness": {
+          "base": 192,
+          "amplitude": 12
+        }
+      }
+    },
+    {
+      "id": "S05",
+      "name": "Kamezakura",
+      "rankPool": "S",
+      "speciesId": 0,
+      "personalityId": 0,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 71,
+          "amplitude": 55
+        },
+        "legPower": {
+          "base": 120,
+          "amplitude": 11
+        },
+        "sand": {
+          "base": 104,
+          "amplitude": 2
+        },
+        "water": {
+          "base": 57,
+          "amplitude": 6
+        },
+        "mud": {
+          "base": 90,
+          "amplitude": 7
+        },
+        "fullness": {
+          "base": 110,
+          "amplitude": 108
+        }
+      }
+    },
+    {
+      "id": "S06",
+      "name": "Kikujiro",
+      "rankPool": "S",
+      "speciesId": 1,
+      "personalityId": 1,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 88,
+          "amplitude": 50
+        },
+        "legPower": {
+          "base": 102,
+          "amplitude": 8
+        },
+        "sand": {
+          "base": 124,
+          "amplitude": 9
+        },
+        "water": {
+          "base": 68,
+          "amplitude": 4
+        },
+        "mud": {
+          "base": 105,
+          "amplitude": 0
+        },
+        "fullness": {
+          "base": 225,
+          "amplitude": 3
+        }
+      }
+    },
+    {
+      "id": "S07",
+      "name": "Chiyo",
+      "rankPool": "S",
+      "speciesId": 0,
+      "personalityId": 2,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 131,
+          "amplitude": 14
+        },
+        "legPower": {
+          "base": 127,
+          "amplitude": 16
+        },
+        "sand": {
+          "base": 107,
+          "amplitude": 11
+        },
+        "water": {
+          "base": 85,
+          "amplitude": 5
+        },
+        "mud": {
+          "base": 52,
+          "amplitude": 5
+        },
+        "fullness": {
+          "base": 198,
+          "amplitude": 3
+        }
+      }
+    },
+    {
+      "id": "S08",
+      "name": "Shippudoto",
+      "rankPool": "S",
+      "speciesId": 0,
+      "personalityId": 0,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 100,
+          "amplitude": 20
+        },
+        "legPower": {
+          "base": 144,
+          "amplitude": 50
+        },
+        "sand": {
+          "base": 137,
+          "amplitude": 12
+        },
+        "water": {
+          "base": 116,
+          "amplitude": 5
+        },
+        "mud": {
+          "base": 114,
+          "amplitude": 14
+        },
+        "fullness": {
+          "base": 105,
+          "amplitude": 105
+        }
+      }
+    },
+    {
+      "id": "S09",
+      "name": "Furinkazan",
+      "rankPool": "S",
+      "speciesId": 0,
+      "personalityId": 2,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 74,
+          "amplitude": 5
+        },
+        "legPower": {
+          "base": 116,
+          "amplitude": 4
+        },
+        "sand": {
+          "base": 137,
+          "amplitude": 0
+        },
+        "water": {
+          "base": 90,
+          "amplitude": 9
+        },
+        "mud": {
+          "base": 118,
+          "amplitude": 6
+        },
+        "fullness": {
+          "base": 103,
+          "amplitude": 123
+        }
+      }
+    },
+    {
+      "id": "S10",
+      "name": "Goten",
+      "rankPool": "S",
+      "speciesId": 0,
+      "personalityId": 2,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 100,
+          "amplitude": 30
+        },
+        "legPower": {
+          "base": 139,
+          "amplitude": 20
+        },
+        "sand": {
+          "base": 68,
+          "amplitude": 11
+        },
+        "water": {
+          "base": 76,
+          "amplitude": 3
+        },
+        "mud": {
+          "base": 50,
+          "amplitude": 40
+        },
+        "fullness": {
+          "base": 119,
+          "amplitude": 103
+        }
+      }
+    },
+    {
+      "id": "S11",
+      "name": "Daiokame",
+      "rankPool": "S",
+      "speciesId": 0,
+      "personalityId": 0,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 114,
+          "amplitude": 11
+        },
+        "legPower": {
+          "base": 133,
+          "amplitude": 9
+        },
+        "sand": {
+          "base": 85,
+          "amplitude": 7
+        },
+        "water": {
+          "base": 101,
+          "amplitude": 5
+        },
+        "mud": {
+          "base": 100,
+          "amplitude": 11
+        },
+        "fullness": {
+          "base": 225,
+          "amplitude": 5
+        }
+      }
+    },
+    {
+      "id": "S12",
+      "name": "Kibariya",
+      "rankPool": "S",
+      "speciesId": 1,
+      "personalityId": 2,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 55,
+          "amplitude": 3
+        },
+        "legPower": {
+          "base": 122,
+          "amplitude": 60
+        },
+        "sand": {
+          "base": 125,
+          "amplitude": 6
+        },
+        "water": {
+          "base": 61,
+          "amplitude": 5
+        },
+        "mud": {
+          "base": 129,
+          "amplitude": 13
+        },
+        "fullness": {
+          "base": 91,
+          "amplitude": 101
+        }
+      }
+    },
+    {
+      "id": "S13",
+      "name": "Mt. Fuji",
+      "rankPool": "S",
+      "speciesId": 0,
+      "personalityId": 2,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 98,
+          "amplitude": 10
+        },
+        "legPower": {
+          "base": 126,
+          "amplitude": 12
+        },
+        "sand": {
+          "base": 139,
+          "amplitude": 5
+        },
+        "water": {
+          "base": 79,
+          "amplitude": 5
+        },
+        "mud": {
+          "base": 83,
+          "amplitude": 6
+        },
+        "fullness": {
+          "base": 111,
+          "amplitude": 102
+        }
+      }
+    },
+    {
+      "id": "S14",
+      "name": "Sakurajima",
+      "rankPool": "S",
+      "speciesId": 0,
+      "personalityId": 0,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 120,
+          "amplitude": 0
+        },
+        "legPower": {
+          "base": 136,
+          "amplitude": 5
+        },
+        "sand": {
+          "base": 66,
+          "amplitude": 7
+        },
+        "water": {
+          "base": 97,
+          "amplitude": 9
+        },
+        "mud": {
+          "base": 126,
+          "amplitude": 14
+        },
+        "fullness": {
+          "base": 113,
+          "amplitude": 130
+        }
+      }
+    },
+    {
+      "id": "S15",
+      "name": "Kame no Ryu",
+      "rankPool": "S",
+      "speciesId": 1,
+      "personalityId": 2,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 87,
+          "amplitude": 13
+        },
+        "legPower": {
+          "base": 115,
+          "amplitude": 6
+        },
+        "sand": {
+          "base": 120,
+          "amplitude": 8
+        },
+        "water": {
+          "base": 126,
+          "amplitude": 5
+        },
+        "mud": {
+          "base": 57,
+          "amplitude": 5
+        },
+        "fullness": {
+          "base": 96,
+          "amplitude": 120
+        }
+      }
+    },
+    {
+      "id": "S16",
+      "name": "Noborigame",
+      "rankPool": "S",
+      "speciesId": 1,
+      "personalityId": 0,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 100,
+          "amplitude": 3
+        },
+        "legPower": {
+          "base": 127,
+          "amplitude": 9
+        },
+        "sand": {
+          "base": 91,
+          "amplitude": 3
+        },
+        "water": {
+          "base": 105,
+          "amplitude": 6
+        },
+        "mud": {
+          "base": 79,
+          "amplitude": 6
+        },
+        "fullness": {
+          "base": 98,
+          "amplitude": 112
+        }
+      }
+    },
+    {
+      "id": "S17",
+      "name": "Hyottoko",
+      "rankPool": "S",
+      "speciesId": 0,
+      "personalityId": 0,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 99,
+          "amplitude": 10
+        },
+        "legPower": {
+          "base": 139,
+          "amplitude": 4
+        },
+        "sand": {
+          "base": 137,
+          "amplitude": 1
+        },
+        "water": {
+          "base": 112,
+          "amplitude": 7
+        },
+        "mud": {
+          "base": 122,
+          "amplitude": 11
+        },
+        "fullness": {
+          "base": 227,
+          "amplitude": 1
+        }
+      }
+    },
+    {
+      "id": "S18",
+      "name": "Okamekame",
+      "rankPool": "S",
+      "speciesId": 0,
+      "personalityId": 3,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 135,
+          "amplitude": 7
+        },
+        "legPower": {
+          "base": 118,
+          "amplitude": 1
+        },
+        "sand": {
+          "base": 54,
+          "amplitude": 13
+        },
+        "water": {
+          "base": 97,
+          "amplitude": 6
+        },
+        "mud": {
+          "base": 125,
+          "amplitude": 0
+        },
+        "fullness": {
+          "base": 99,
+          "amplitude": 111
+        }
+      }
+    },
+    {
+      "id": "S19",
+      "name": "Daitenshi",
+      "rankPool": "S",
+      "speciesId": 0,
+      "personalityId": 1,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 68,
+          "amplitude": 12
+        },
+        "legPower": {
+          "base": 136,
+          "amplitude": 3
+        },
+        "sand": {
+          "base": 74,
+          "amplitude": 2
+        },
+        "water": {
+          "base": 120,
+          "amplitude": 0
+        },
+        "mud": {
+          "base": 88,
+          "amplitude": 9
+        },
+        "fullness": {
+          "base": 215,
+          "amplitude": 6
+        }
+      }
+    },
+    {
+      "id": "S20",
+      "name": "Mamemoyashi",
+      "rankPool": "S",
+      "speciesId": 0,
+      "personalityId": 0,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 100,
+          "amplitude": 8
+        },
+        "legPower": {
+          "base": 142,
+          "amplitude": 1
+        },
+        "sand": {
+          "base": 114,
+          "amplitude": 5
+        },
+        "water": {
+          "base": 128,
+          "amplitude": 4
+        },
+        "mud": {
+          "base": 95,
+          "amplitude": 3
+        },
+        "fullness": {
+          "base": 14,
+          "amplitude": 197
+        }
+      }
+    },
+    {
+      "id": "S21",
+      "name": "Hayao",
+      "rankPool": "S",
+      "speciesId": 1,
+      "personalityId": 0,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 125,
+          "amplitude": 10
+        },
+        "legPower": {
+          "base": 141,
+          "amplitude": 2
+        },
+        "sand": {
+          "base": 123,
+          "amplitude": 11
+        },
+        "water": {
+          "base": 125,
+          "amplitude": 5
+        },
+        "mud": {
+          "base": 116,
+          "amplitude": 9
+        },
+        "fullness": {
+          "base": 111,
+          "amplitude": 123
+        }
+      }
+    },
+    {
+      "id": "S22",
+      "name": "Haseo",
+      "rankPool": "S",
+      "speciesId": 0,
+      "personalityId": 1,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 102,
+          "amplitude": 6
+        },
+        "legPower": {
+          "base": 102,
+          "amplitude": 12
+        },
+        "sand": {
+          "base": 67,
+          "amplitude": 6
+        },
+        "water": {
+          "base": 63,
+          "amplitude": 12
+        },
+        "mud": {
+          "base": 57,
+          "amplitude": 2
+        },
+        "fullness": {
+          "base": 118,
+          "amplitude": 112
+        }
+      }
+    },
+    {
+      "id": "S23",
+      "name": "Nakibokuro",
+      "rankPool": "S",
+      "speciesId": 0,
+      "personalityId": 3,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 88,
+          "amplitude": 10
+        },
+        "legPower": {
+          "base": 121,
+          "amplitude": 7
+        },
+        "sand": {
+          "base": 126,
+          "amplitude": 10
+        },
+        "water": {
+          "base": 107,
+          "amplitude": 7
+        },
+        "mud": {
+          "base": 77,
+          "amplitude": 7
+        },
+        "fullness": {
+          "base": 103,
+          "amplitude": 108
+        }
+      }
+    },
+    {
+      "id": "S24",
+      "name": "Doro Hayate",
+      "rankPool": "S",
+      "speciesId": 0,
+      "personalityId": 0,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 98,
+          "amplitude": 30
+        },
+        "legPower": {
+          "base": 145,
+          "amplitude": 31
+        },
+        "sand": {
+          "base": 80,
+          "amplitude": 10
+        },
+        "water": {
+          "base": 59,
+          "amplitude": 1
+        },
+        "mud": {
+          "base": 200,
+          "amplitude": 10
+        },
+        "fullness": {
+          "base": 95,
+          "amplitude": 120
+        }
+      }
+    },
+    {
+      "id": "S25",
+      "name": "Kawaikochan",
+      "rankPool": "S",
+      "speciesId": 1,
+      "personalityId": 1,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 93,
+          "amplitude": 6
+        },
+        "legPower": {
+          "base": 107,
+          "amplitude": 12
+        },
+        "sand": {
+          "base": 70,
+          "amplitude": 8
+        },
+        "water": {
+          "base": 84,
+          "amplitude": 2
+        },
+        "mud": {
+          "base": 120,
+          "amplitude": 2
+        },
+        "fullness": {
+          "base": 198,
+          "amplitude": 4
+        }
+      }
+    },
+    {
+      "id": "S26",
+      "name": "Mokari Makka",
+      "rankPool": "S",
+      "speciesId": 0,
+      "personalityId": 1,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 72,
+          "amplitude": 13
+        },
+        "legPower": {
+          "base": 137,
+          "amplitude": 30
+        },
+        "sand": {
+          "base": 116,
+          "amplitude": 9
+        },
+        "water": {
+          "base": 108,
+          "amplitude": 13
+        },
+        "mud": {
+          "base": 139,
+          "amplitude": 6
+        },
+        "fullness": {
+          "base": 224,
+          "amplitude": 4
+        }
+      }
+    },
+    {
+      "id": "S27",
+      "name": "Bochi Bochi Denna",
+      "rankPool": "S",
+      "speciesId": 0,
+      "personalityId": 2,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 71,
+          "amplitude": 5
+        },
+        "legPower": {
+          "base": 107,
+          "amplitude": 1
+        },
+        "sand": {
+          "base": 132,
+          "amplitude": 8
+        },
+        "water": {
+          "base": 124,
+          "amplitude": 4
+        },
+        "mud": {
+          "base": 112,
+          "amplitude": 1
+        },
+        "fullness": {
+          "base": 91,
+          "amplitude": 116
+        }
+      }
+    },
+    {
+      "id": "S28",
+      "name": "Robinyan",
+      "rankPool": "S",
+      "speciesId": 0,
+      "personalityId": 1,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 100,
+          "amplitude": 25
+        },
+        "legPower": {
+          "base": 151,
+          "amplitude": 37
+        },
+        "sand": {
+          "base": 55,
+          "amplitude": 9
+        },
+        "water": {
+          "base": 37,
+          "amplitude": 10
+        },
+        "mud": {
+          "base": 50,
+          "amplitude": 8
+        },
+        "fullness": {
+          "base": 20,
+          "amplitude": 200
+        }
+      }
+    },
+    {
+      "id": "O00",
+      "name": "Kameko",
+      "rankPool": "O",
+      "speciesId": 1,
+      "personalityId": 1,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 194,
+          "amplitude": 20
+        },
+        "legPower": {
+          "base": 200,
+          "amplitude": 30
+        },
+        "sand": {
+          "base": 130,
+          "amplitude": 5
+        },
+        "water": {
+          "base": 70,
+          "amplitude": 12
+        },
+        "mud": {
+          "base": 77,
+          "amplitude": 10
+        },
+        "fullness": {
+          "base": 100,
+          "amplitude": 130
+        }
+      }
+    },
+    {
+      "id": "O01",
+      "name": "Shuten-doji",
+      "rankPool": "O",
+      "speciesId": 1,
+      "personalityId": 1,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 198,
+          "amplitude": 30
+        },
+        "legPower": {
+          "base": 197,
+          "amplitude": 15
+        },
+        "sand": {
+          "base": 125,
+          "amplitude": 4
+        },
+        "water": {
+          "base": 74,
+          "amplitude": 6
+        },
+        "mud": {
+          "base": 98,
+          "amplitude": 14
+        },
+        "fullness": {
+          "base": 123,
+          "amplitude": 111
+        }
+      }
+    },
+    {
+      "id": "O02",
+      "name": "Rikuo",
+      "rankPool": "O",
+      "speciesId": 0,
+      "personalityId": 1,
+      "nativeTags": "老",
+      "stats": {
+        "stamina": {
+          "base": 172,
+          "amplitude": 10
+        },
+        "legPower": {
+          "base": 193,
+          "amplitude": 30
+        },
+        "sand": {
+          "base": 101,
+          "amplitude": 7
+        },
+        "water": {
+          "base": 80,
+          "amplitude": 14
+        },
+        "mud": {
+          "base": 138,
+          "amplitude": 6
+        },
+        "fullness": {
+          "base": 238,
+          "amplitude": 3
+        }
+      }
+    },
+    {
+      "id": "O03",
+      "name": "Benten",
+      "rankPool": "O",
+      "speciesId": 1,
+      "personalityId": 3,
+      "nativeTags": "老",
+      "stats": {
+        "stamina": {
+          "base": 190,
+          "amplitude": 25
+        },
+        "legPower": {
+          "base": 152,
+          "amplitude": 35
+        },
+        "sand": {
+          "base": 112,
+          "amplitude": 7
+        },
+        "water": {
+          "base": 83,
+          "amplitude": 30
+        },
+        "mud": {
+          "base": 82,
+          "amplitude": 4
+        },
+        "fullness": {
+          "base": 218,
+          "amplitude": 6
+        }
+      }
+    },
+    {
+      "id": "O04",
+      "name": "Kota",
+      "rankPool": "O",
+      "speciesId": 0,
+      "personalityId": 3,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 188,
+          "amplitude": 7
+        },
+        "legPower": {
+          "base": 187,
+          "amplitude": 20
+        },
+        "sand": {
+          "base": 152,
+          "amplitude": 2
+        },
+        "water": {
+          "base": 115,
+          "amplitude": 4
+        },
+        "mud": {
+          "base": 92,
+          "amplitude": 10
+        },
+        "fullness": {
+          "base": 108,
+          "amplitude": 112
+        }
+      }
+    },
+    {
+      "id": "O05",
+      "name": "Daikichi",
+      "rankPool": "O",
+      "speciesId": 1,
+      "personalityId": 0,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 177,
+          "amplitude": 12
+        },
+        "legPower": {
+          "base": 153,
+          "amplitude": 8
+        },
+        "sand": {
+          "base": 129,
+          "amplitude": 6
+        },
+        "water": {
+          "base": 56,
+          "amplitude": 7
+        },
+        "mud": {
+          "base": 138,
+          "amplitude": 15
+        },
+        "fullness": {
+          "base": 125,
+          "amplitude": 125
+        }
+      }
+    },
+    {
+      "id": "O06",
+      "name": "Orochimaru",
+      "rankPool": "O",
+      "speciesId": 0,
+      "personalityId": 0,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 172,
+          "amplitude": 13
+        },
+        "legPower": {
+          "base": 165,
+          "amplitude": 8
+        },
+        "sand": {
+          "base": 110,
+          "amplitude": 10
+        },
+        "water": {
+          "base": 58,
+          "amplitude": 12
+        },
+        "mud": {
+          "base": 121,
+          "amplitude": 13
+        },
+        "fullness": {
+          "base": 248,
+          "amplitude": 4
+        }
+      }
+    },
+    {
+      "id": "O07",
+      "name": "Ayanami",
+      "rankPool": "O",
+      "speciesId": 0,
+      "personalityId": 1,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 185,
+          "amplitude": 2
+        },
+        "legPower": {
+          "base": 177,
+          "amplitude": 12
+        },
+        "sand": {
+          "base": 51,
+          "amplitude": 14
+        },
+        "water": {
+          "base": 69,
+          "amplitude": 3
+        },
+        "mud": {
+          "base": 115,
+          "amplitude": 11
+        },
+        "fullness": {
+          "base": 100,
+          "amplitude": 110
+        }
+      }
+    },
+    {
+      "id": "O08",
+      "name": "Sazanami",
+      "rankPool": "O",
+      "speciesId": 1,
+      "personalityId": 1,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 190,
+          "amplitude": 12
+        },
+        "legPower": {
+          "base": 197,
+          "amplitude": 12
+        },
+        "sand": {
+          "base": 144,
+          "amplitude": 8
+        },
+        "water": {
+          "base": 96,
+          "amplitude": 8
+        },
+        "mud": {
+          "base": 140,
+          "amplitude": 6
+        },
+        "fullness": {
+          "base": 112,
+          "amplitude": 120
+        }
+      }
+    },
+    {
+      "id": "O09",
+      "name": "Kongo",
+      "rankPool": "O",
+      "speciesId": 1,
+      "personalityId": 0,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 199,
+          "amplitude": 13
+        },
+        "legPower": {
+          "base": 181,
+          "amplitude": 30
+        },
+        "sand": {
+          "base": 93,
+          "amplitude": 4
+        },
+        "water": {
+          "base": 60,
+          "amplitude": 10
+        },
+        "mud": {
+          "base": 144,
+          "amplitude": 13
+        },
+        "fullness": {
+          "base": 130,
+          "amplitude": 120
+        }
+      }
+    },
+    {
+      "id": "O10",
+      "name": "Yamato",
+      "rankPool": "O",
+      "speciesId": 0,
+      "personalityId": 2,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 182,
+          "amplitude": 9
+        },
+        "legPower": {
+          "base": 196,
+          "amplitude": 11
+        },
+        "sand": {
+          "base": 135,
+          "amplitude": 12
+        },
+        "water": {
+          "base": 112,
+          "amplitude": 9
+        },
+        "mud": {
+          "base": 116,
+          "amplitude": 0
+        },
+        "fullness": {
+          "base": 219,
+          "amplitude": 7
+        }
+      }
+    },
+    {
+      "id": "O11",
+      "name": "Kikka",
+      "rankPool": "O",
+      "speciesId": 0,
+      "personalityId": 1,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 188,
+          "amplitude": 6
+        },
+        "legPower": {
+          "base": 152,
+          "amplitude": 35
+        },
+        "sand": {
+          "base": 145,
+          "amplitude": 1
+        },
+        "water": {
+          "base": 108,
+          "amplitude": 8
+        },
+        "mud": {
+          "base": 140,
+          "amplitude": 7
+        },
+        "fullness": {
+          "base": 100,
+          "amplitude": 107
+        }
+      }
+    },
+    {
+      "id": "O12",
+      "name": "Mt. Haruna",
+      "rankPool": "O",
+      "speciesId": 0,
+      "personalityId": 1,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 174,
+          "amplitude": 5
+        },
+        "legPower": {
+          "base": 153,
+          "amplitude": 4
+        },
+        "sand": {
+          "base": 145,
+          "amplitude": 8
+        },
+        "water": {
+          "base": 96,
+          "amplitude": 8
+        },
+        "mud": {
+          "base": 77,
+          "amplitude": 0
+        },
+        "fullness": {
+          "base": 114,
+          "amplitude": 112
+        }
+      }
+    },
+    {
+      "id": "O13",
+      "name": "Fuso",
+      "rankPool": "O",
+      "speciesId": 0,
+      "personalityId": 1,
+      "nativeTags": "老",
+      "stats": {
+        "stamina": {
+          "base": 175,
+          "amplitude": 5
+        },
+        "legPower": {
+          "base": 176,
+          "amplitude": 10
+        },
+        "sand": {
+          "base": 101,
+          "amplitude": 11
+        },
+        "water": {
+          "base": 90,
+          "amplitude": 2
+        },
+        "mud": {
+          "base": 97,
+          "amplitude": 13
+        },
+        "fullness": {
+          "base": 107,
+          "amplitude": 106
+        }
+      }
+    },
+    {
+      "id": "O14",
+      "name": "Nagato",
+      "rankPool": "O",
+      "speciesId": 0,
+      "personalityId": 1,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 198,
+          "amplitude": 9
+        },
+        "legPower": {
+          "base": 169,
+          "amplitude": 7
+        },
+        "sand": {
+          "base": 134,
+          "amplitude": 1
+        },
+        "water": {
+          "base": 159,
+          "amplitude": 11
+        },
+        "mud": {
+          "base": 114,
+          "amplitude": 4
+        },
+        "fullness": {
+          "base": 143,
+          "amplitude": 109
+        }
+      }
+    },
+    {
+      "id": "O15",
+      "name": "Soryu",
+      "rankPool": "O",
+      "speciesId": 1,
+      "personalityId": 1,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 183,
+          "amplitude": 6
+        },
+        "legPower": {
+          "base": 151,
+          "amplitude": 5
+        },
+        "sand": {
+          "base": 130,
+          "amplitude": 6
+        },
+        "water": {
+          "base": 66,
+          "amplitude": 12
+        },
+        "mud": {
+          "base": 59,
+          "amplitude": 14
+        },
+        "fullness": {
+          "base": 114,
+          "amplitude": 110
+        }
+      }
+    },
+    {
+      "id": "O16",
+      "name": "Hiryu",
+      "rankPool": "O",
+      "speciesId": 0,
+      "personalityId": 2,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 186,
+          "amplitude": 13
+        },
+        "legPower": {
+          "base": 190,
+          "amplitude": 6
+        },
+        "sand": {
+          "base": 114,
+          "amplitude": 5
+        },
+        "water": {
+          "base": 62,
+          "amplitude": 12
+        },
+        "mud": {
+          "base": 145,
+          "amplitude": 2
+        },
+        "fullness": {
+          "base": 245,
+          "amplitude": 8
+        }
+      }
+    },
+    {
+      "id": "O17",
+      "name": "Shokaku",
+      "rankPool": "O",
+      "speciesId": 1,
+      "personalityId": 0,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 182,
+          "amplitude": 14
+        },
+        "legPower": {
+          "base": 152,
+          "amplitude": 3
+        },
+        "sand": {
+          "base": 131,
+          "amplitude": 4
+        },
+        "water": {
+          "base": 122,
+          "amplitude": 5
+        },
+        "mud": {
+          "base": 74,
+          "amplitude": 13
+        },
+        "fullness": {
+          "base": 114,
+          "amplitude": 111
+        }
+      }
+    },
+    {
+      "id": "O18",
+      "name": "Zuikaku",
+      "rankPool": "O",
+      "speciesId": 1,
+      "personalityId": 2,
+      "nativeTags": "老",
+      "stats": {
+        "stamina": {
+          "base": 178,
+          "amplitude": 13
+        },
+        "legPower": {
+          "base": 180,
+          "amplitude": 10
+        },
+        "sand": {
+          "base": 118,
+          "amplitude": 10
+        },
+        "water": {
+          "base": 124,
+          "amplitude": 10
+        },
+        "mud": {
+          "base": 83,
+          "amplitude": 14
+        },
+        "fullness": {
+          "base": 128,
+          "amplitude": 110
+        }
+      }
+    },
+    {
+      "id": "O19",
+      "name": "Aobago",
+      "rankPool": "O",
+      "speciesId": 1,
+      "personalityId": 2,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 195,
+          "amplitude": 12
+        },
+        "legPower": {
+          "base": 161,
+          "amplitude": 13
+        },
+        "sand": {
+          "base": 57,
+          "amplitude": 5
+        },
+        "water": {
+          "base": 141,
+          "amplitude": 12
+        },
+        "mud": {
+          "base": 157,
+          "amplitude": 7
+        },
+        "fullness": {
+          "base": 133,
+          "amplitude": 100
+        }
+      }
+    },
+    {
+      "id": "O20",
+      "name": "Daifubuki",
+      "rankPool": "O",
+      "speciesId": 1,
+      "personalityId": 1,
+      "nativeTags": "老",
+      "stats": {
+        "stamina": {
+          "base": 174,
+          "amplitude": 12
+        },
+        "legPower": {
+          "base": 163,
+          "amplitude": 14
+        },
+        "sand": {
+          "base": 154,
+          "amplitude": 7
+        },
+        "water": {
+          "base": 66,
+          "amplitude": 3
+        },
+        "mud": {
+          "base": 100,
+          "amplitude": 3
+        },
+        "fullness": {
+          "base": 210,
+          "amplitude": 15
+        }
+      }
+    },
+    {
+      "id": "O21",
+      "name": "Yugiri",
+      "rankPool": "O",
+      "speciesId": 0,
+      "personalityId": 1,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 172,
+          "amplitude": 10
+        },
+        "legPower": {
+          "base": 189,
+          "amplitude": 8
+        },
+        "sand": {
+          "base": 201,
+          "amplitude": 9
+        },
+        "water": {
+          "base": 168,
+          "amplitude": 9
+        },
+        "mud": {
+          "base": 211,
+          "amplitude": 14
+        },
+        "fullness": {
+          "base": 138,
+          "amplitude": 100
+        }
+      }
+    },
+    {
+      "id": "O22",
+      "name": "Hatsuyuki",
+      "rankPool": "O",
+      "speciesId": 1,
+      "personalityId": 1,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 173,
+          "amplitude": 5
+        },
+        "legPower": {
+          "base": 159,
+          "amplitude": 14
+        },
+        "sand": {
+          "base": 75,
+          "amplitude": 9
+        },
+        "water": {
+          "base": 117,
+          "amplitude": 9
+        },
+        "mud": {
+          "base": 103,
+          "amplitude": 5
+        },
+        "fullness": {
+          "base": 105,
+          "amplitude": 105
+        }
+      }
+    },
+    {
+      "id": "O23",
+      "name": "Dansetsu",
+      "rankPool": "O",
+      "speciesId": 0,
+      "personalityId": 2,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 200,
+          "amplitude": 14
+        },
+        "legPower": {
+          "base": 156,
+          "amplitude": 11
+        },
+        "sand": {
+          "base": 143,
+          "amplitude": 10
+        },
+        "water": {
+          "base": 57,
+          "amplitude": 13
+        },
+        "mud": {
+          "base": 52,
+          "amplitude": 11
+        },
+        "fullness": {
+          "base": 102,
+          "amplitude": 110
+        }
+      }
+    },
+    {
+      "id": "O24",
+      "name": "Shigurego",
+      "rankPool": "O",
+      "speciesId": 0,
+      "personalityId": 1,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 180,
+          "amplitude": 7
+        },
+        "legPower": {
+          "base": 161,
+          "amplitude": 5
+        },
+        "sand": {
+          "base": 154,
+          "amplitude": 9
+        },
+        "water": {
+          "base": 123,
+          "amplitude": 6
+        },
+        "mud": {
+          "base": 72,
+          "amplitude": 14
+        },
+        "fullness": {
+          "base": 145,
+          "amplitude": 110
+        }
+      }
+    },
+    {
+      "id": "O25",
+      "name": "Kogurego",
+      "rankPool": "O",
+      "speciesId": 0,
+      "personalityId": 1,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 196,
+          "amplitude": 13
+        },
+        "legPower": {
+          "base": 153,
+          "amplitude": 1
+        },
+        "sand": {
+          "base": 106,
+          "amplitude": 11
+        },
+        "water": {
+          "base": 63,
+          "amplitude": 1
+        },
+        "mud": {
+          "base": 136,
+          "amplitude": 5
+        },
+        "fullness": {
+          "base": 147,
+          "amplitude": 103
+        }
+      }
+    },
+    {
+      "id": "O26",
+      "name": "Nanbo no Monjai",
+      "rankPool": "O",
+      "speciesId": 0,
+      "personalityId": 3,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 177,
+          "amplitude": 11
+        },
+        "legPower": {
+          "base": 163,
+          "amplitude": 30
+        },
+        "sand": {
+          "base": 105,
+          "amplitude": 7
+        },
+        "water": {
+          "base": 136,
+          "amplitude": 14
+        },
+        "mud": {
+          "base": 63,
+          "amplitude": 10
+        },
+        "fullness": {
+          "base": 12,
+          "amplitude": 200
+        }
+      }
+    },
+    {
+      "id": "O27",
+      "name": "Onodan",
+      "rankPool": "O",
+      "speciesId": 1,
+      "personalityId": 1,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 204,
+          "amplitude": 0
+        },
+        "legPower": {
+          "base": 160,
+          "amplitude": 0
+        },
+        "sand": {
+          "base": 160,
+          "amplitude": 0
+        },
+        "water": {
+          "base": 160,
+          "amplitude": 0
+        },
+        "mud": {
+          "base": 160,
+          "amplitude": 0
+        },
+        "fullness": {
+          "base": 0,
+          "amplitude": 204
+        }
+      }
+    },
+    {
+      "id": "Y00",
+      "name": "Samidarego",
+      "rankPool": "Y",
+      "speciesId": 1,
+      "personalityId": 0,
+      "nativeTags": "強",
+      "stats": {
+        "stamina": {
+          "base": 255,
+          "amplitude": 0
+        },
+        "legPower": {
+          "base": 255,
+          "amplitude": 0
+        },
+        "sand": {
+          "base": 100,
+          "amplitude": 150
+        },
+        "water": {
+          "base": 100,
+          "amplitude": 150
+        },
+        "mud": {
+          "base": 100,
+          "amplitude": 150
+        },
+        "fullness": {
+          "base": 103,
+          "amplitude": 120
+        }
+      }
+    },
+    {
+      "id": "Y01",
+      "name": "Shiranui",
+      "rankPool": "Y",
+      "speciesId": 1,
+      "personalityId": 3,
+      "nativeTags": "老強",
+      "stats": {
+        "stamina": {
+          "base": 165,
+          "amplitude": 7
+        },
+        "legPower": {
+          "base": 230,
+          "amplitude": 16
+        },
+        "sand": {
+          "base": 187,
+          "amplitude": 12
+        },
+        "water": {
+          "base": 200,
+          "amplitude": 5
+        },
+        "mud": {
+          "base": 141,
+          "amplitude": 3
+        },
+        "fullness": {
+          "base": 121,
+          "amplitude": 122
+        }
+      }
+    },
+    {
+      "id": "Y02",
+      "name": "Oyashio",
+      "rankPool": "Y",
+      "speciesId": 0,
+      "personalityId": 0,
+      "nativeTags": "老",
+      "stats": {
+        "stamina": {
+          "base": 213,
+          "amplitude": 1
+        },
+        "legPower": {
+          "base": 200,
+          "amplitude": 15
+        },
+        "sand": {
+          "base": 100,
+          "amplitude": 12
+        },
+        "water": {
+          "base": 106,
+          "amplitude": 13
+        },
+        "mud": {
+          "base": 146,
+          "amplitude": 8
+        },
+        "fullness": {
+          "base": 107,
+          "amplitude": 113
+        }
+      }
+    },
+    {
+      "id": "Y03",
+      "name": "Izumo",
+      "rankPool": "Y",
+      "speciesId": 0,
+      "personalityId": 1,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 179,
+          "amplitude": 15
+        },
+        "legPower": {
+          "base": 182,
+          "amplitude": 15
+        },
+        "sand": {
+          "base": 55,
+          "amplitude": 15
+        },
+        "water": {
+          "base": 147,
+          "amplitude": 5
+        },
+        "mud": {
+          "base": 142,
+          "amplitude": 14
+        },
+        "fullness": {
+          "base": 122,
+          "amplitude": 102
+        }
+      }
+    },
+    {
+      "id": "Y04",
+      "name": "Mutsusaburo",
+      "rankPool": "Y",
+      "speciesId": 0,
+      "personalityId": 1,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 140,
+          "amplitude": 15
+        },
+        "legPower": {
+          "base": 178,
+          "amplitude": 9
+        },
+        "sand": {
+          "base": 80,
+          "amplitude": 13
+        },
+        "water": {
+          "base": 72,
+          "amplitude": 3
+        },
+        "mud": {
+          "base": 156,
+          "amplitude": 1
+        },
+        "fullness": {
+          "base": 250,
+          "amplitude": 0
+        }
+      }
+    },
+    {
+      "id": "Y05",
+      "name": "Kisaragigo",
+      "rankPool": "Y",
+      "speciesId": 0,
+      "personalityId": 3,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 130,
+          "amplitude": 5
+        },
+        "legPower": {
+          "base": 192,
+          "amplitude": 30
+        },
+        "sand": {
+          "base": 186,
+          "amplitude": 3
+        },
+        "water": {
+          "base": 127,
+          "amplitude": 6
+        },
+        "mud": {
+          "base": 160,
+          "amplitude": 9
+        },
+        "fullness": {
+          "base": 145,
+          "amplitude": 110
+        }
+      }
+    },
+    {
+      "id": "Y06",
+      "name": "Yayoigo",
+      "rankPool": "Y",
+      "speciesId": 0,
+      "personalityId": 1,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 187,
+          "amplitude": 1
+        },
+        "legPower": {
+          "base": 155,
+          "amplitude": 15
+        },
+        "sand": {
+          "base": 120,
+          "amplitude": 11
+        },
+        "water": {
+          "base": 94,
+          "amplitude": 5
+        },
+        "mud": {
+          "base": 168,
+          "amplitude": 2
+        },
+        "fullness": {
+          "base": 138,
+          "amplitude": 102
+        }
+      }
+    },
+    {
+      "id": "Y07",
+      "name": "Uzukigo",
+      "rankPool": "Y",
+      "speciesId": 0,
+      "personalityId": 0,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 179,
+          "amplitude": 2
+        },
+        "legPower": {
+          "base": 157,
+          "amplitude": 9
+        },
+        "sand": {
+          "base": 99,
+          "amplitude": 2
+        },
+        "water": {
+          "base": 149,
+          "amplitude": 16
+        },
+        "mud": {
+          "base": 172,
+          "amplitude": 10
+        },
+        "fullness": {
+          "base": 140,
+          "amplitude": 108
+        }
+      }
+    },
+    {
+      "id": "Y08",
+      "name": "Minazukigo",
+      "rankPool": "Y",
+      "speciesId": 1,
+      "personalityId": 2,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 126,
+          "amplitude": 9
+        },
+        "legPower": {
+          "base": 188,
+          "amplitude": 4
+        },
+        "sand": {
+          "base": 161,
+          "amplitude": 14
+        },
+        "water": {
+          "base": 104,
+          "amplitude": 12
+        },
+        "mud": {
+          "base": 94,
+          "amplitude": 8
+        },
+        "fullness": {
+          "base": 129,
+          "amplitude": 110
+        }
+      }
+    },
+    {
+      "id": "Y09",
+      "name": "Mirai",
+      "rankPool": "Y",
+      "speciesId": 0,
+      "personalityId": 0,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 175,
+          "amplitude": 9
+        },
+        "legPower": {
+          "base": 190,
+          "amplitude": 20
+        },
+        "sand": {
+          "base": 77,
+          "amplitude": 5
+        },
+        "water": {
+          "base": 149,
+          "amplitude": 6
+        },
+        "mud": {
+          "base": 154,
+          "amplitude": 11
+        },
+        "fullness": {
+          "base": 141,
+          "amplitude": 109
+        }
+      }
+    },
+    {
+      "id": "Y10",
+      "name": "Satsukigo",
+      "rankPool": "Y",
+      "speciesId": 0,
+      "personalityId": 1,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 109,
+          "amplitude": 5
+        },
+        "legPower": {
+          "base": 200,
+          "amplitude": 13
+        },
+        "sand": {
+          "base": 190,
+          "amplitude": 3
+        },
+        "water": {
+          "base": 140,
+          "amplitude": 0
+        },
+        "mud": {
+          "base": 168,
+          "amplitude": 9
+        },
+        "fullness": {
+          "base": 149,
+          "amplitude": 100
+        }
+      }
+    },
+    {
+      "id": "Y11",
+      "name": "Fuzukigo",
+      "rankPool": "Y",
+      "speciesId": 1,
+      "personalityId": 1,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 129,
+          "amplitude": 9
+        },
+        "legPower": {
+          "base": 150,
+          "amplitude": 60
+        },
+        "sand": {
+          "base": 59,
+          "amplitude": 8
+        },
+        "water": {
+          "base": 88,
+          "amplitude": 10
+        },
+        "mud": {
+          "base": 86,
+          "amplitude": 2
+        },
+        "fullness": {
+          "base": 103,
+          "amplitude": 102
+        }
+      }
+    },
+    {
+      "id": "Y12",
+      "name": "Hazukigo",
+      "rankPool": "Y",
+      "speciesId": 0,
+      "personalityId": 1,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 168,
+          "amplitude": 15
+        },
+        "legPower": {
+          "base": 184,
+          "amplitude": 23
+        },
+        "sand": {
+          "base": 128,
+          "amplitude": 9
+        },
+        "water": {
+          "base": 110,
+          "amplitude": 13
+        },
+        "mud": {
+          "base": 119,
+          "amplitude": 14
+        },
+        "fullness": {
+          "base": 142,
+          "amplitude": 103
+        }
+      }
+    },
+    {
+      "id": "Y13",
+      "name": "Nagatsukigo",
+      "rankPool": "Y",
+      "speciesId": 0,
+      "personalityId": 0,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 103,
+          "amplitude": 13
+        },
+        "legPower": {
+          "base": 180,
+          "amplitude": 2
+        },
+        "sand": {
+          "base": 59,
+          "amplitude": 15
+        },
+        "water": {
+          "base": 107,
+          "amplitude": 7
+        },
+        "mud": {
+          "base": 156,
+          "amplitude": 14
+        },
+        "fullness": {
+          "base": 105,
+          "amplitude": 100
+        }
+      }
+    },
+    {
+      "id": "Y14",
+      "name": "Kannazukigo",
+      "rankPool": "Y",
+      "speciesId": 1,
+      "personalityId": 0,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 154,
+          "amplitude": 0
+        },
+        "legPower": {
+          "base": 208,
+          "amplitude": 3
+        },
+        "sand": {
+          "base": 144,
+          "amplitude": 14
+        },
+        "water": {
+          "base": 154,
+          "amplitude": 5
+        },
+        "mud": {
+          "base": 122,
+          "amplitude": 14
+        },
+        "fullness": {
+          "base": 131,
+          "amplitude": 102
+        }
+      }
+    },
+    {
+      "id": "Y15",
+      "name": "Shimotsukigo",
+      "rankPool": "Y",
+      "speciesId": 0,
+      "personalityId": 0,
+      "nativeTags": "強",
+      "stats": {
+        "stamina": {
+          "base": 150,
+          "amplitude": 15
+        },
+        "legPower": {
+          "base": 250,
+          "amplitude": 4
+        },
+        "sand": {
+          "base": 150,
+          "amplitude": 25
+        },
+        "water": {
+          "base": 151,
+          "amplitude": 11
+        },
+        "mud": {
+          "base": 160,
+          "amplitude": 7
+        },
+        "fullness": {
+          "base": 135,
+          "amplitude": 120
+        }
+      }
+    },
+    {
+      "id": "Y16",
+      "name": "Shiwasugo",
+      "rankPool": "Y",
+      "speciesId": 0,
+      "personalityId": 0,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 132,
+          "amplitude": 6
+        },
+        "legPower": {
+          "base": 163,
+          "amplitude": 11
+        },
+        "sand": {
+          "base": 177,
+          "amplitude": 4
+        },
+        "water": {
+          "base": 105,
+          "amplitude": 9
+        },
+        "mud": {
+          "base": 170,
+          "amplitude": 4
+        },
+        "fullness": {
+          "base": 216,
+          "amplitude": 14
+        }
+      }
+    },
+    {
+      "id": "Y17",
+      "name": "Koganego",
+      "rankPool": "Y",
+      "speciesId": 0,
+      "personalityId": 3,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 109,
+          "amplitude": 9
+        },
+        "legPower": {
+          "base": 180,
+          "amplitude": 15
+        },
+        "sand": {
+          "base": 185,
+          "amplitude": 14
+        },
+        "water": {
+          "base": 100,
+          "amplitude": 11
+        },
+        "mud": {
+          "base": 106,
+          "amplitude": 4
+        },
+        "fullness": {
+          "base": 243,
+          "amplitude": 9
+        }
+      }
+    },
+    {
+      "id": "Y18",
+      "name": "Shirogane",
+      "rankPool": "Y",
+      "speciesId": 0,
+      "personalityId": 0,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 155,
+          "amplitude": 3
+        },
+        "legPower": {
+          "base": 177,
+          "amplitude": 13
+        },
+        "sand": {
+          "base": 57,
+          "amplitude": 14
+        },
+        "water": {
+          "base": 203,
+          "amplitude": 13
+        },
+        "mud": {
+          "base": 98,
+          "amplitude": 9
+        },
+        "fullness": {
+          "base": 239,
+          "amplitude": 9
+        }
+      }
+    },
+    {
+      "id": "Y19",
+      "name": "Wakakusataro",
+      "rankPool": "Y",
+      "speciesId": 1,
+      "personalityId": 1,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 180,
+          "amplitude": 20
+        },
+        "legPower": {
+          "base": 211,
+          "amplitude": 1
+        },
+        "sand": {
+          "base": 155,
+          "amplitude": 7
+        },
+        "water": {
+          "base": 160,
+          "amplitude": 15
+        },
+        "mud": {
+          "base": 210,
+          "amplitude": 20
+        },
+        "fullness": {
+          "base": 16,
+          "amplitude": 230
+        }
+      }
+    },
+    {
+      "id": "Y20",
+      "name": "Fujin",
+      "rankPool": "Y",
+      "speciesId": 1,
+      "personalityId": 2,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 210,
+          "amplitude": 5
+        },
+        "legPower": {
+          "base": 180,
+          "amplitude": 30
+        },
+        "sand": {
+          "base": 59,
+          "amplitude": 14
+        },
+        "water": {
+          "base": 250,
+          "amplitude": 5
+        },
+        "mud": {
+          "base": 200,
+          "amplitude": 15
+        },
+        "fullness": {
+          "base": 221,
+          "amplitude": 13
+        }
+      }
+    },
+    {
+      "id": "Y21",
+      "name": "Raijin",
+      "rankPool": "Y",
+      "speciesId": 0,
+      "personalityId": 1,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 167,
+          "amplitude": 5
+        },
+        "legPower": {
+          "base": 200,
+          "amplitude": 12
+        },
+        "sand": {
+          "base": 250,
+          "amplitude": 4
+        },
+        "water": {
+          "base": 146,
+          "amplitude": 12
+        },
+        "mud": {
+          "base": 250,
+          "amplitude": 1
+        },
+        "fullness": {
+          "base": 233,
+          "amplitude": 5
+        }
+      }
+    },
+    {
+      "id": "Y22",
+      "name": "Yamabukimaru",
+      "rankPool": "Y",
+      "speciesId": 1,
+      "personalityId": 2,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 193,
+          "amplitude": 15
+        },
+        "legPower": {
+          "base": 153,
+          "amplitude": 14
+        },
+        "sand": {
+          "base": 160,
+          "amplitude": 10
+        },
+        "water": {
+          "base": 88,
+          "amplitude": 8
+        },
+        "mud": {
+          "base": 174,
+          "amplitude": 1
+        },
+        "fullness": {
+          "base": 149,
+          "amplitude": 102
+        }
+      }
+    },
+    {
+      "id": "Y23",
+      "name": "Tatsujinmaru",
+      "rankPool": "Y",
+      "speciesId": 0,
+      "personalityId": 1,
+      "nativeTags": "老",
+      "stats": {
+        "stamina": {
+          "base": 150,
+          "amplitude": 50
+        },
+        "legPower": {
+          "base": 167,
+          "amplitude": 20
+        },
+        "sand": {
+          "base": 140,
+          "amplitude": 7
+        },
+        "water": {
+          "base": 177,
+          "amplitude": 5
+        },
+        "mud": {
+          "base": 162,
+          "amplitude": 2
+        },
+        "fullness": {
+          "base": 21,
+          "amplitude": 220
+        }
+      }
+    },
+    {
+      "id": "Y24",
+      "name": "Edo no Hikari",
+      "rankPool": "Y",
+      "speciesId": 0,
+      "personalityId": 1,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 197,
+          "amplitude": 20
+        },
+        "legPower": {
+          "base": 190,
+          "amplitude": 23
+        },
+        "sand": {
+          "base": 132,
+          "amplitude": 15
+        },
+        "water": {
+          "base": 159,
+          "amplitude": 13
+        },
+        "mud": {
+          "base": 189,
+          "amplitude": 2
+        },
+        "fullness": {
+          "base": 134,
+          "amplitude": 102
+        }
+      }
+    },
+    {
+      "id": "Y25",
+      "name": "Kyo no Yume",
+      "rankPool": "Y",
+      "speciesId": 0,
+      "personalityId": 3,
+      "nativeTags": "老",
+      "stats": {
+        "stamina": {
+          "base": 100,
+          "amplitude": 30
+        },
+        "legPower": {
+          "base": 221,
+          "amplitude": 11
+        },
+        "sand": {
+          "base": 230,
+          "amplitude": 2
+        },
+        "water": {
+          "base": 231,
+          "amplitude": 4
+        },
+        "mud": {
+          "base": 225,
+          "amplitude": 2
+        },
+        "fullness": {
+          "base": 14,
+          "amplitude": 230
+        }
+      }
+    },
+    {
+      "id": "Y26",
+      "name": "Hakuginmaru",
+      "rankPool": "Y",
+      "speciesId": 0,
+      "personalityId": 2,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 179,
+          "amplitude": 30
+        },
+        "legPower": {
+          "base": 166,
+          "amplitude": 13
+        },
+        "sand": {
+          "base": 138,
+          "amplitude": 7
+        },
+        "water": {
+          "base": 144,
+          "amplitude": 7
+        },
+        "mud": {
+          "base": 133,
+          "amplitude": 4
+        },
+        "fullness": {
+          "base": 129,
+          "amplitude": 120
+        }
+      }
+    },
+    {
+      "id": "Y27",
+      "name": "Ogonnokaze",
+      "rankPool": "Y",
+      "speciesId": 0,
+      "personalityId": 0,
+      "nativeTags": "強",
+      "stats": {
+        "stamina": {
+          "base": 212,
+          "amplitude": 20
+        },
+        "legPower": {
+          "base": 180,
+          "amplitude": 30
+        },
+        "sand": {
+          "base": 188,
+          "amplitude": 6
+        },
+        "water": {
+          "base": 160,
+          "amplitude": 56
+        },
+        "mud": {
+          "base": 170,
+          "amplitude": 14
+        },
+        "fullness": {
+          "base": 240,
+          "amplitude": 6
+        }
+      }
+    },
+    {
+      "id": "Y28",
+      "name": "Mugen",
+      "rankPool": "Y",
+      "speciesId": 1,
+      "personalityId": 0,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 134,
+          "amplitude": 5
+        },
+        "legPower": {
+          "base": 210,
+          "amplitude": 20
+        },
+        "sand": {
+          "base": 180,
+          "amplitude": 15
+        },
+        "water": {
+          "base": 200,
+          "amplitude": 6
+        },
+        "mud": {
+          "base": 190,
+          "amplitude": 30
+        },
+        "fullness": {
+          "base": 231,
+          "amplitude": 15
+        }
+      }
+    },
+    {
+      "id": "Y29",
+      "name": "Jugemu",
+      "rankPool": "Y",
+      "speciesId": 1,
+      "personalityId": 3,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 200,
+          "amplitude": 11
+        },
+        "legPower": {
+          "base": 199,
+          "amplitude": 20
+        },
+        "sand": {
+          "base": 150,
+          "amplitude": 20
+        },
+        "water": {
+          "base": 157,
+          "amplitude": 15
+        },
+        "mud": {
+          "base": 160,
+          "amplitude": 15
+        },
+        "fullness": {
+          "base": 228,
+          "amplitude": 4
+        }
+      }
+    },
+    {
+      "id": "Y30",
+      "name": "Horai",
+      "rankPool": "Y",
+      "speciesId": 1,
+      "personalityId": 1,
+      "nativeTags": "無",
+      "stats": {
+        "stamina": {
+          "base": 190,
+          "amplitude": 30
+        },
+        "legPower": {
+          "base": 201,
+          "amplitude": 50
+        },
+        "sand": {
+          "base": 250,
+          "amplitude": 30
+        },
+        "water": {
+          "base": 120,
+          "amplitude": 4
+        },
+        "mud": {
+          "base": 130,
+          "amplitude": 0
+        },
+        "fullness": {
+          "base": 219,
+          "amplitude": 1
+        }
+      }
+    },
+    {
+      "id": "Y31",
+      "name": "Tairyoku Jiman",
+      "rankPool": "Y",
+      "speciesId": 1,
+      "personalityId": 2,
+      "nativeTags": "老",
+      "stats": {
+        "stamina": {
+          "base": 250,
+          "amplitude": 5
+        },
+        "legPower": {
+          "base": 170,
+          "amplitude": 30
+        },
+        "sand": {
+          "base": 178,
+          "amplitude": 10
+        },
+        "water": {
+          "base": 91,
+          "amplitude": 60
+        },
+        "mud": {
+          "base": 145,
+          "amplitude": 0
+        },
+        "fullness": {
+          "base": 229,
+          "amplitude": 12
+        }
+      }
+    },
+    {
+      "id": "Y32",
+      "name": "Takessan",
+      "rankPool": "Y",
+      "speciesId": 0,
+      "personalityId": 3,
+      "nativeTags": "強",
+      "stats": {
+        "stamina": {
+          "base": 200,
+          "amplitude": 50
+        },
+        "legPower": {
+          "base": 155,
+          "amplitude": 12
+        },
+        "sand": {
+          "base": 155,
+          "amplitude": 12
+        },
+        "water": {
+          "base": 155,
+          "amplitude": 12
+        },
+        "mud": {
+          "base": 155,
+          "amplitude": 12
+        },
+        "fullness": {
+          "base": 35,
+          "amplitude": 220
+        }
+      }
+    },
+    {
+      "id": "Y33",
+      "name": "Tokuharan",
+      "rankPool": "Y",
+      "speciesId": 1,
+      "personalityId": 3,
+      "nativeTags": "強",
+      "stats": {
+        "stamina": {
+          "base": 129,
+          "amplitude": 63
+        },
+        "legPower": {
+          "base": 233,
+          "amplitude": 10
+        },
+        "sand": {
+          "base": 127,
+          "amplitude": 78
+        },
+        "water": {
+          "base": 124,
+          "amplitude": 89
+        },
+        "mud": {
+          "base": 128,
+          "amplitude": 77
+        },
+        "fullness": {
+          "base": 0,
+          "amplitude": 196
+        }
+      }
+    },
+    {
+      "id": "Y34",
+      "name": "Water Shogun",
+      "rankPool": "Y",
+      "speciesId": 1,
+      "personalityId": 1,
+      "nativeTags": "最",
+      "stats": {
+        "stamina": {
+          "base": 225,
+          "amplitude": 20
+        },
+        "legPower": {
+          "base": 230,
+          "amplitude": 20
+        },
+        "sand": {
+          "base": 220,
+          "amplitude": 22
+        },
+        "water": {
+          "base": 255,
+          "amplitude": 0
+        },
+        "mud": {
+          "base": 221,
+          "amplitude": 17
+        },
+        "fullness": {
+          "base": 0,
+          "amplitude": 128
+        }
+      }
+    },
+    {
+      "id": "Y35",
+      "name": "Mud Shogun",
+      "rankPool": "Y",
+      "speciesId": 1,
+      "personalityId": 1,
+      "nativeTags": "最",
+      "stats": {
+        "stamina": {
+          "base": 230,
+          "amplitude": 28
+        },
+        "legPower": {
+          "base": 229,
+          "amplitude": 10
+        },
+        "sand": {
+          "base": 219,
+          "amplitude": 22
+        },
+        "water": {
+          "base": 222,
+          "amplitude": 20
+        },
+        "mud": {
+          "base": 255,
+          "amplitude": 0
+        },
+        "fullness": {
+          "base": 0,
+          "amplitude": 125
+        }
+      }
+    },
+    {
+      "id": "Y36",
+      "name": "Sand Shogun",
+      "rankPool": "Y",
+      "speciesId": 1,
+      "personalityId": 1,
+      "nativeTags": "最",
+      "stats": {
+        "stamina": {
+          "base": 228,
+          "amplitude": 20
+        },
+        "legPower": {
+          "base": 231,
+          "amplitude": 20
+        },
+        "sand": {
+          "base": 255,
+          "amplitude": 0
+        },
+        "water": {
+          "base": 221,
+          "amplitude": 23
+        },
+        "mud": {
+          "base": 227,
+          "amplitude": 21
+        },
+        "fullness": {
+          "base": 0,
+          "amplitude": 120
+        }
+      }
+    },
+    {
+      "id": "Y37",
+      "name": "Turtle Shogun",
+      "rankPool": "Y",
+      "speciesId": 0,
+      "personalityId": 1,
+      "nativeTags": "最",
+      "stats": {
+        "stamina": {
+          "base": 255,
+          "amplitude": 0
+        },
+        "legPower": {
+          "base": 255,
+          "amplitude": 0
+        },
+        "sand": {
+          "base": 245,
+          "amplitude": 10
+        },
+        "water": {
+          "base": 245,
+          "amplitude": 10
+        },
+        "mud": {
+          "base": 245,
+          "amplitude": 10
+        },
+        "fullness": {
+          "base": 0,
+          "amplitude": 67
+        }
+      }
+    }
+  ],
+  "commentaryCueVariants": {
+    "AcdDakou": 4,
+    "AcdDakou2": 4,
+    "AcdDown": 4,
+    "AcdDownSecond": 4,
+    "AcdDownTop": 4,
+    "AcdStopGoal": 4,
+    "AcdStopGoal2": 4,
+    "AcdStopStart": 4,
+    "AcdStopStart2": 4,
+    "AcdUp": 4,
+    "AcdUpLate": 4,
+    "AcdUpSame0": 4,
+    "AcdUpSame1": 4,
+    "AcdUpSame2": 4,
+    "Course1Bottom": 4,
+    "Course1Same": 4,
+    "Course1Top1": 4,
+    "Course1Top2": 4,
+    "Course1_12": 4,
+    "Course22Same1": 4,
+    "Course22Same2": 4,
+    "Course22Top": 4,
+    "Course22_12": 4,
+    "Course22_123K": 4,
+    "Course22_12K1": 4,
+    "Course22_12K2": 4,
+    "Course2Bara": 4,
+    "Course2Bottom": 4,
+    "Course2Same": 4,
+    "Course2Second": 4,
+    "Course2Top1": 4,
+    "Course2Top2": 4,
+    "Course2Top3": 4,
+    "Course2Top4": 4,
+    "Course32Bara": 4,
+    "Course32Same": 4,
+    "Course32Second11": 4,
+    "Course32Second12": 4,
+    "Course32Second2": 4,
+    "Course32Top1": 4,
+    "Course32Top2": 4,
+    "Course32_12": 4,
+    "Course3Bara1": 4,
+    "Course3Bara2": 4,
+    "Course3Bottom": 4,
+    "Course3Fourth": 4,
+    "Course3Same": 4,
+    "Course3Second": 4,
+    "Course3Third": 4,
+    "Course3Top1": 4,
+    "Course3Top2": 4,
+    "Course3Top3": 4,
+    "Course3Top4": 4,
+    "Course3_12": 4,
+    "Course42Second11": 4,
+    "Course42Second12": 4,
+    "Course42Second13": 4,
+    "Course42Second2": 4,
+    "Course42Third1": 4,
+    "Course42Third2": 4,
+    "Course42Top1": 4,
+    "Course42Top2": 4,
+    "Course42Top31": 4,
+    "Course42Top32": 4,
+    "Course42Top4": 4,
+    "Course42Top5": 4,
+    "Course42Top61": 4,
+    "Course42Top62": 4,
+    "Course4Same": 4,
+    "Course4Top0": 4,
+    "Course4Top1": 4,
+    "Course4Top2": 4,
+    "Course4Top30": 4,
+    "Course4Top31": 4,
+    "Course4Top32": 4,
+    "Course4Top33": 4,
+    "Course4Top4": 4,
+    "Course4_12": 4,
+    "End": 1,
+    "GoalSecond1": 4,
+    "GoalSecond2": 4,
+    "GoalSecond3": 4,
+    "GoalSecond4": 4,
+    "GoalSecond5": 4,
+    "GoalSecond6": 4,
+    "GoalSecond7": 4,
+    "GoalSecondResult": 4,
+    "GoalSecondSame1": 4,
+    "GoalSecondSame2": 4,
+    "GoalTop1": 4,
+    "GoalTop2": 4,
+    "GoalTop21": 4,
+    "GoalTop22": 4,
+    "GoalTop23": 4,
+    "GoalTop24": 4,
+    "GoalTop31": 4,
+    "GoalTop32": 4,
+    "GoalTop4": 4,
+    "GoalTop5": 4,
+    "Hima11": 4,
+    "Hima12": 4,
+    "Hima2": 4,
+    "Start": 4,
+    "Start2Same": 4,
+    "Start2Top": 4
+  },
+  "spawnPools": [
+    {
+      "actorId": "00b0014e",
+      "areaId": 12,
+      "poolId": 0,
+      "delayOverride": -1.0
+    },
+    {
+      "actorId": "00b00151",
+      "areaId": 12,
+      "poolId": 0,
+      "delayOverride": -1.0
+    },
+    {
+      "actorId": "00b00219",
+      "areaId": 12,
+      "poolId": 0,
+      "delayOverride": -1.0
+    },
+    {
+      "actorId": "00b0021a",
+      "areaId": 12,
+      "poolId": 0,
+      "delayOverride": -1.0
+    },
+    {
+      "actorId": "00b00086",
+      "areaId": 1,
+      "poolId": 1,
+      "delayOverride": -1.0
+    },
+    {
+      "actorId": "00b000ab",
+      "areaId": 1,
+      "poolId": 1,
+      "delayOverride": -1.0
+    },
+    {
+      "actorId": "00b0014f",
+      "areaId": 10,
+      "poolId": 2,
+      "delayOverride": -1.0
+    },
+    {
+      "actorId": "00b00150",
+      "areaId": 10,
+      "poolId": 2,
+      "delayOverride": -1.0
+    },
+    {
+      "actorId": "00b00211",
+      "areaId": 10,
+      "poolId": 2,
+      "delayOverride": -1.0
+    },
+    {
+      "actorId": "00b00212",
+      "areaId": 10,
+      "poolId": 2,
+      "delayOverride": -1.0
+    },
+    {
+      "actorId": "00b00213",
+      "areaId": 10,
+      "poolId": 2,
+      "delayOverride": -1.0
+    },
+    {
+      "actorId": "00b00214",
+      "areaId": 10,
+      "poolId": 14,
+      "delayOverride": -1.0
+    },
+    {
+      "actorId": "00b00215",
+      "areaId": 10,
+      "poolId": 14,
+      "delayOverride": -1.0
+    },
+    {
+      "actorId": "00b00216",
+      "areaId": 10,
+      "poolId": 14,
+      "delayOverride": -1.0
+    },
+    {
+      "actorId": "00b00217",
+      "areaId": 10,
+      "poolId": 14,
+      "delayOverride": -1.0
+    },
+    {
+      "actorId": "00b00218",
+      "areaId": 10,
+      "poolId": 14,
+      "delayOverride": -1.0
+    },
+    {
+      "actorId": "00b001da",
+      "areaId": 29,
+      "poolId": 3,
+      "delayOverride": -1.0
+    },
+    {
+      "actorId": "00b001dc",
+      "areaId": 29,
+      "poolId": 3,
+      "delayOverride": -1.0
+    },
+    {
+      "actorId": "00b001e0",
+      "areaId": 29,
+      "poolId": 3,
+      "delayOverride": -1.0
+    },
+    {
+      "actorId": "00b001e5",
+      "areaId": 29,
+      "poolId": 3,
+      "delayOverride": -1.0
+    },
+    {
+      "actorId": "00b001ee",
+      "areaId": 1,
+      "poolId": 4,
+      "delayOverride": -1.0
+    },
+    {
+      "actorId": "00b001f4",
+      "areaId": 7,
+      "poolId": 5,
+      "delayOverride": -1.0
+    },
+    {
+      "actorId": "00b001f5",
+      "areaId": 7,
+      "poolId": 5,
+      "delayOverride": -1.0
+    },
+    {
+      "actorId": "00b001f6",
+      "areaId": 7,
+      "poolId": 5,
+      "delayOverride": -1.0
+    },
+    {
+      "actorId": "00b001f7",
+      "areaId": 7,
+      "poolId": 5,
+      "delayOverride": -1.0
+    },
+    {
+      "actorId": "00b0021d",
+      "areaId": 7,
+      "poolId": 5,
+      "delayOverride": -1.0
+    },
+    {
+      "actorId": "00b0020b",
+      "areaId": 19,
+      "poolId": 6,
+      "delayOverride": -1.0
+    },
+    {
+      "actorId": "00b0020c",
+      "areaId": 8,
+      "poolId": 7,
+      "delayOverride": -1.0
+    },
+    {
+      "actorId": "00b0020d",
+      "areaId": 8,
+      "poolId": 7,
+      "delayOverride": -1.0
+    },
+    {
+      "actorId": "00b0020e",
+      "areaId": 8,
+      "poolId": 7,
+      "delayOverride": -1.0
+    },
+    {
+      "actorId": "00b0020f",
+      "areaId": 8,
+      "poolId": 7,
+      "delayOverride": -1.0
+    },
+    {
+      "actorId": "00b00210",
+      "areaId": 8,
+      "poolId": 7,
+      "delayOverride": -1.0
+    },
+    {
+      "actorId": "00b0021b",
+      "areaId": 86,
+      "poolId": 8,
+      "delayOverride": -1.0
+    },
+    {
+      "actorId": "00b0021c",
+      "areaId": 86,
+      "poolId": 8,
+      "delayOverride": -1.0
+    },
+    {
+      "actorId": "00b0021e",
+      "areaId": 11,
+      "poolId": 9,
+      "delayOverride": -1.0
+    },
+    {
+      "actorId": "00b0021f",
+      "areaId": 11,
+      "poolId": 9,
+      "delayOverride": -1.0
+    },
+    {
+      "actorId": "00b00220",
+      "areaId": 9,
+      "poolId": 10,
+      "delayOverride": -1.0
+    },
+    {
+      "actorId": "00b00221",
+      "areaId": 9,
+      "poolId": 10,
+      "delayOverride": -1.0
+    },
+    {
+      "actorId": "00b00222",
+      "areaId": 57,
+      "poolId": 11,
+      "delayOverride": -1.0
+    },
+    {
+      "actorId": "00b00223",
+      "areaId": 94,
+      "poolId": 12,
+      "delayOverride": -1.0
+    },
+    {
+      "actorId": "00b00224",
+      "areaId": 94,
+      "poolId": 12,
+      "delayOverride": -1.0
+    },
+    {
+      "actorId": "00b00225",
+      "areaId": 94,
+      "poolId": 13,
+      "delayOverride": -1.0
+    },
+    {
+      "actorId": "00b00226",
+      "areaId": 94,
+      "poolId": 13,
+      "delayOverride": -1.0
+    },
+    {
+      "actorId": "00b00227",
+      "areaId": 94,
+      "poolId": 13,
+      "delayOverride": -1.0
+    },
+    {
+      "actorId": "00b00228",
+      "areaId": 94,
+      "poolId": 13,
+      "delayOverride": -1.0
+    },
+    {
+      "actorId": "00b00229",
+      "areaId": 94,
+      "poolId": 13,
+      "delayOverride": -1.0
+    },
+    {
+      "actorId": "00b0022a",
+      "areaId": 94,
+      "poolId": 13,
+      "delayOverride": -1.0
+    },
+    {
+      "actorId": "00b0022b",
+      "areaId": 94,
+      "poolId": 13,
+      "delayOverride": -1.0
+    },
+    {
+      "actorId": "00b0022c",
+      "areaId": 94,
+      "poolId": 13,
+      "delayOverride": -1.0
+    },
+    {
+      "actorId": "00b0022d",
+      "areaId": 94,
+      "poolId": 13,
+      "delayOverride": -1.0
+    },
+    {
+      "actorId": "00b0022e",
+      "areaId": 94,
+      "poolId": 13,
+      "delayOverride": -1.0
+    },
+    {
+      "actorId": "00b0022f",
+      "areaId": 94,
+      "poolId": 13,
+      "delayOverride": -1.0
+    },
+    {
+      "actorId": "00b00230",
+      "areaId": 94,
+      "poolId": 13,
+      "delayOverride": -1.0
+    }
+  ],
+  "itemEffectsSource": "bin/pausepar/pause.par::item.bin columns 13–16",
+  "itemEffects": [
+    {
+      "id": 21,
+      "name": "Vitality Pill",
+      "category": "FULLNESS",
+      "fullnessBeforeMultipliers": 60,
+      "currentEffectPacked": 5,
+      "capEffectPacked": 3
+    },
+    {
+      "id": 22,
+      "name": "Deluxe Vitality Pill",
+      "category": "FULLNESS",
+      "fullnessBeforeMultipliers": 80,
+      "currentEffectPacked": 8,
+      "capEffectPacked": 4
+    },
+    {
+      "id": 23,
+      "name": "Special Vitality Pill",
+      "category": "FULLNESS",
+      "fullnessBeforeMultipliers": 100,
+      "currentEffectPacked": 10,
+      "capEffectPacked": 5
+    },
+    {
+      "id": 24,
+      "name": "Passion Pill",
+      "category": "ENERGY",
+      "fullnessBeforeMultipliers": 60,
+      "currentEffectPacked": 5,
+      "capEffectPacked": 3
+    },
+    {
+      "id": 25,
+      "name": "Deluxe Passion Pill",
+      "category": "ENERGY",
+      "fullnessBeforeMultipliers": 80,
+      "currentEffectPacked": 8,
+      "capEffectPacked": 4
+    },
+    {
+      "id": 26,
+      "name": "Special Passion Pill",
+      "category": "ENERGY",
+      "fullnessBeforeMultipliers": 100,
+      "currentEffectPacked": 10,
+      "capEffectPacked": 5
+    },
+    {
+      "id": 27,
+      "name": "All-Purpose Medicine",
+      "category": "LEG",
+      "fullnessBeforeMultipliers": 60,
+      "currentEffectPacked": 5,
+      "capEffectPacked": 3
+    },
+    {
+      "id": 28,
+      "name": "Deluxe All-Purpose Medicine",
+      "category": "LEG",
+      "fullnessBeforeMultipliers": 80,
+      "currentEffectPacked": 8,
+      "capEffectPacked": 4
+    },
+    {
+      "id": 29,
+      "name": "Special All-Purpose Medicine",
+      "category": "LEG",
+      "fullnessBeforeMultipliers": 100,
+      "currentEffectPacked": 10,
+      "capEffectPacked": 5
+    },
+    {
+      "id": 30,
+      "name": "Ultra All-Purpose Medicine",
+      "category": "LEG",
+      "fullnessBeforeMultipliers": 75,
+      "currentEffectPacked": 20,
+      "capEffectPacked": 10
+    },
+    {
+      "id": 31,
+      "name": "Sober Pill",
+      "category": "ENERGY",
+      "fullnessBeforeMultipliers": 5,
+      "currentEffectPacked": -10,
+      "capEffectPacked": -2
+    },
+    {
+      "id": 32,
+      "name": "Hunger Pill",
+      "category": "FULLNESS",
+      "fullnessBeforeMultipliers": -100,
+      "currentEffectPacked": -50,
+      "capEffectPacked": -20
+    },
+    {
+      "id": 33,
+      "name": "Manju",
+      "category": "SAND",
+      "fullnessBeforeMultipliers": 60,
+      "currentEffectPacked": 0,
+      "capEffectPacked": 0
+    },
+    {
+      "id": 35,
+      "name": "Ohagi",
+      "category": "LEG",
+      "fullnessBeforeMultipliers": 230,
+      "currentEffectPacked": 6,
+      "capEffectPacked": 3
+    },
+    {
+      "id": 36,
+      "name": "Apple Candy",
+      "category": "ENERGY",
+      "fullnessBeforeMultipliers": 50,
+      "currentEffectPacked": 10,
+      "capEffectPacked": 4
+    },
+    {
+      "id": 37,
+      "name": "Apricot Candy",
+      "category": "ENERGY",
+      "fullnessBeforeMultipliers": 40,
+      "currentEffectPacked": 10,
+      "capEffectPacked": 2
+    },
+    {
+      "id": 38,
+      "name": "Eternal Turtle Candy",
+      "category": "ENERGY",
+      "fullnessBeforeMultipliers": 80,
+      "currentEffectPacked": 20,
+      "capEffectPacked": 5
+    },
+    {
+      "id": 39,
+      "name": "Golden Candy",
+      "category": "LEG",
+      "fullnessBeforeMultipliers": 110,
+      "currentEffectPacked": 15,
+      "capEffectPacked": 11
+    },
+    {
+      "id": 40,
+      "name": "Onigiri",
+      "category": "NONE",
+      "fullnessBeforeMultipliers": 0,
+      "currentEffectPacked": 0,
+      "capEffectPacked": 3
+    },
+    {
+      "id": 46,
+      "name": "Grilled Dango",
+      "category": "MUD_WATER",
+      "fullnessBeforeMultipliers": 200,
+      "currentEffectPacked": 50005,
+      "capEffectPacked": 20002
+    },
+    {
+      "id": 50,
+      "name": "Togarashi",
+      "category": "ENERGY",
+      "fullnessBeforeMultipliers": 30,
+      "currentEffectPacked": -50,
+      "capEffectPacked": -10
+    },
+    {
+      "id": 61,
+      "name": "Saba Oshizushi",
+      "category": "WATER",
+      "fullnessBeforeMultipliers": 100,
+      "currentEffectPacked": 10,
+      "capEffectPacked": 2
+    },
+    {
+      "id": 80,
+      "name": "Grilled Dango",
+      "category": "MUD_WATER",
+      "fullnessBeforeMultipliers": 200,
+      "currentEffectPacked": 50005,
+      "capEffectPacked": 20002
+    },
+    {
+      "id": 81,
+      "name": "Matcha Dango",
+      "category": "LEG_ENERGY",
+      "fullnessBeforeMultipliers": 200,
+      "currentEffectPacked": 70004,
+      "capEffectPacked": 30001
+    },
+    {
+      "id": 82,
+      "name": "Three Color Dango",
+      "category": "SAND",
+      "fullnessBeforeMultipliers": 200,
+      "currentEffectPacked": 10,
+      "capEffectPacked": 3
+    },
+    {
+      "id": 83,
+      "name": "Kusa Dango",
+      "category": "MUD",
+      "fullnessBeforeMultipliers": 200,
+      "currentEffectPacked": 8,
+      "capEffectPacked": 7
+    },
+    {
+      "id": 84,
+      "name": "Ohagi",
+      "category": "LEG",
+      "fullnessBeforeMultipliers": 230,
+      "currentEffectPacked": 6,
+      "capEffectPacked": 3
+    },
+    {
+      "id": 85,
+      "name": "Cloudy Sake",
+      "category": "WATER",
+      "fullnessBeforeMultipliers": 120,
+      "currentEffectPacked": 10,
+      "capEffectPacked": 1
+    },
+    {
+      "id": 86,
+      "name": "Nada Sake",
+      "category": "ENERGY",
+      "fullnessBeforeMultipliers": 140,
+      "currentEffectPacked": 8,
+      "capEffectPacked": 11
+    },
+    {
+      "id": 87,
+      "name": "Satsuma Sweet Potato Shochu",
+      "category": "LEG",
+      "fullnessBeforeMultipliers": 80,
+      "currentEffectPacked": 7,
+      "capEffectPacked": 10
+    },
+    {
+      "id": 88,
+      "name": "Sweet Sake",
+      "category": "SAND",
+      "fullnessBeforeMultipliers": 100,
+      "currentEffectPacked": 8,
+      "capEffectPacked": 10
+    },
+    {
+      "id": 89,
+      "name": "Itami Morohaku",
+      "category": "WATER",
+      "fullnessBeforeMultipliers": 80,
+      "currentEffectPacked": 10,
+      "capEffectPacked": 5
+    },
+    {
+      "id": 90,
+      "name": "Itami Sake",
+      "category": "FULLNESS",
+      "fullnessBeforeMultipliers": 90,
+      "currentEffectPacked": 12,
+      "capEffectPacked": 11
+    },
+    {
+      "id": 91,
+      "name": "Taro Sake",
+      "category": "ENERGY",
+      "fullnessBeforeMultipliers": 100,
+      "currentEffectPacked": 12,
+      "capEffectPacked": 12
+    },
+    {
+      "id": 92,
+      "name": "Nara Morohaku",
+      "category": "LEG",
+      "fullnessBeforeMultipliers": 110,
+      "currentEffectPacked": 18,
+      "capEffectPacked": 15
+    },
+    {
+      "id": 93,
+      "name": "Onigiri",
+      "category": "ENERGY_LEG",
+      "fullnessBeforeMultipliers": 250,
+      "currentEffectPacked": 150010,
+      "capEffectPacked": 100008
+    },
+    {
+      "id": 104,
+      "name": "Large Saba Oshizushi",
+      "category": "WATER",
+      "fullnessBeforeMultipliers": 100,
+      "currentEffectPacked": 10,
+      "capEffectPacked": 2
+    },
+    {
+      "id": 139,
+      "name": "Ageha's Onigiri",
+      "category": "MUD",
+      "fullnessBeforeMultipliers": 150,
+      "currentEffectPacked": 250,
+      "capEffectPacked": 50
+    },
+    {
+      "id": 140,
+      "name": "Blazing Fire Pill",
+      "category": "ENERGY",
+      "fullnessBeforeMultipliers": 30,
+      "currentEffectPacked": 1,
+      "capEffectPacked": 20
+    },
+    {
+      "id": 141,
+      "name": "Exotic Pill",
+      "category": "SAND",
+      "fullnessBeforeMultipliers": 30,
+      "currentEffectPacked": 1,
+      "capEffectPacked": 20
+    },
+    {
+      "id": 142,
+      "name": "Gold Pill",
+      "category": "WATER",
+      "fullnessBeforeMultipliers": 30,
+      "currentEffectPacked": 1,
+      "capEffectPacked": 20
+    },
+    {
+      "id": 143,
+      "name": "Jet-Black Pill",
+      "category": "MUD",
+      "fullnessBeforeMultipliers": 30,
+      "currentEffectPacked": 1,
+      "capEffectPacked": 20
+    },
+    {
+      "id": 187,
+      "name": "Raw Chicken",
+      "category": "LEG",
+      "fullnessBeforeMultipliers": 80,
+      "currentEffectPacked": 10,
+      "capEffectPacked": 8
+    },
+    {
+      "id": 188,
+      "name": "Leftovers",
+      "category": "ENERGY",
+      "fullnessBeforeMultipliers": 90,
+      "currentEffectPacked": 11,
+      "capEffectPacked": 7
+    },
+    {
+      "id": 194,
+      "name": "Shiso",
+      "category": "MUD_SAND",
+      "fullnessBeforeMultipliers": 30,
+      "currentEffectPacked": 50005,
+      "capEffectPacked": 50005
+    },
+    {
+      "id": 195,
+      "name": "Sansho",
+      "category": "SAND_WATER",
+      "fullnessBeforeMultipliers": 25,
+      "currentEffectPacked": 30006,
+      "capEffectPacked": 40005
+    },
+    {
+      "id": 196,
+      "name": "Ginger",
+      "category": "WATER_MUD",
+      "fullnessBeforeMultipliers": 30,
+      "currentEffectPacked": 30007,
+      "capEffectPacked": 40006
+    },
+    {
+      "id": 197,
+      "name": "Nori",
+      "category": "ENERGY_MUD",
+      "fullnessBeforeMultipliers": 40,
+      "currentEffectPacked": 70006,
+      "capEffectPacked": 30005
+    },
+    {
+      "id": 198,
+      "name": "Sesame",
+      "category": "ENERGY_WATER",
+      "fullnessBeforeMultipliers": 40,
+      "currentEffectPacked": 80001,
+      "capEffectPacked": 60002
+    },
+    {
+      "id": 199,
+      "name": "Orange",
+      "category": "SAND_FULLNESS",
+      "fullnessBeforeMultipliers": 50,
+      "currentEffectPacked": 80002,
+      "capEffectPacked": 40002
+    },
+    {
+      "id": 200,
+      "name": "3-Blend Togarashi",
+      "category": "MUD",
+      "fullnessBeforeMultipliers": 10,
+      "currentEffectPacked": -15,
+      "capEffectPacked": -10
+    },
+    {
+      "id": 201,
+      "name": "5-Blend Togarashi",
+      "category": "LEG",
+      "fullnessBeforeMultipliers": 10,
+      "currentEffectPacked": -15,
+      "capEffectPacked": -10
+    },
+    {
+      "id": 202,
+      "name": "7-Blend Togarashi",
+      "category": "ENERGY",
+      "fullnessBeforeMultipliers": 10,
+      "currentEffectPacked": -15,
+      "capEffectPacked": -10
+    },
+    {
+      "id": 203,
+      "name": "Village's Offering",
+      "category": "LEG",
+      "fullnessBeforeMultipliers": 100,
+      "currentEffectPacked": 40,
+      "capEffectPacked": 40
+    },
+    {
+      "id": 204,
+      "name": "Kyo Parsley",
+      "category": "ENERGY",
+      "fullnessBeforeMultipliers": 50,
+      "currentEffectPacked": 12,
+      "capEffectPacked": 15
+    },
+    {
+      "id": 205,
+      "name": "Kujo Negi",
+      "category": "MUD",
+      "fullnessBeforeMultipliers": 70,
+      "currentEffectPacked": 18,
+      "capEffectPacked": 15
+    },
+    {
+      "id": 206,
+      "name": "Horikawa Burdock",
+      "category": "ENERGY",
+      "fullnessBeforeMultipliers": 60,
+      "currentEffectPacked": 17,
+      "capEffectPacked": 15
+    },
+    {
+      "id": 208,
+      "name": "Dried Agar",
+      "category": "FULLNESS",
+      "fullnessBeforeMultipliers": 40,
+      "currentEffectPacked": 25,
+      "capEffectPacked": 30
+    },
+    {
+      "id": 211,
+      "name": "Castella",
+      "category": "WATER_SAND",
+      "fullnessBeforeMultipliers": 150,
+      "currentEffectPacked": 150015,
+      "capEffectPacked": 200020
+    },
+    {
+      "id": 214,
+      "name": "Dried Saury",
+      "category": "LEG",
+      "fullnessBeforeMultipliers": 100,
+      "currentEffectPacked": 30,
+      "capEffectPacked": 10
+    },
+    {
+      "id": 219,
+      "name": "Trips Yokan",
+      "category": "SAND_WATER",
+      "fullnessBeforeMultipliers": 200,
+      "currentEffectPacked": 900075,
+      "capEffectPacked": 250030
+    },
+    {
+      "id": 245,
+      "name": "Tuna Sashimi",
+      "category": "LEG",
+      "fullnessBeforeMultipliers": 75,
+      "currentEffectPacked": 10,
+      "capEffectPacked": 15
+    },
+    {
+      "id": 258,
+      "name": "Konpeito",
+      "category": "MUD",
+      "fullnessBeforeMultipliers": 60,
+      "currentEffectPacked": 12,
+      "capEffectPacked": 15
+    },
+    {
+      "id": 324,
+      "name": "Worms (Small)",
+      "category": "ENERGY",
+      "fullnessBeforeMultipliers": 20,
+      "currentEffectPacked": 50,
+      "capEffectPacked": 1
+    },
+    {
+      "id": 325,
+      "name": "Worms (Medium)",
+      "category": "ENERGY",
+      "fullnessBeforeMultipliers": 50,
+      "currentEffectPacked": 100,
+      "capEffectPacked": 3
+    },
+    {
+      "id": 326,
+      "name": "Worms (Large)",
+      "category": "ENERGY",
+      "fullnessBeforeMultipliers": 80,
+      "currentEffectPacked": 150,
+      "capEffectPacked": 5
+    },
+    {
+      "id": 327,
+      "name": "Super Worms",
+      "category": "ENERGY",
+      "fullnessBeforeMultipliers": 120,
+      "currentEffectPacked": 200,
+      "capEffectPacked": 15
+    },
+    {
+      "id": 328,
+      "name": "Corbicula Clam",
+      "category": "SAND",
+      "fullnessBeforeMultipliers": 80,
+      "currentEffectPacked": 5,
+      "capEffectPacked": 1
+    },
+    {
+      "id": 329,
+      "name": "Manila Clam",
+      "category": "SAND",
+      "fullnessBeforeMultipliers": 120,
+      "currentEffectPacked": 10,
+      "capEffectPacked": 3
+    },
+    {
+      "id": 330,
+      "name": "Scallop",
+      "category": "SAND",
+      "fullnessBeforeMultipliers": 150,
+      "currentEffectPacked": 15,
+      "capEffectPacked": 5
+    },
+    {
+      "id": 331,
+      "name": "Sakura Shrimp",
+      "category": "MUD",
+      "fullnessBeforeMultipliers": 80,
+      "currentEffectPacked": 5,
+      "capEffectPacked": 1
+    },
+    {
+      "id": 332,
+      "name": "Prawn",
+      "category": "MUD",
+      "fullnessBeforeMultipliers": 120,
+      "currentEffectPacked": 10,
+      "capEffectPacked": 3
+    },
+    {
+      "id": 333,
+      "name": "Lobster",
+      "category": "MUD",
+      "fullnessBeforeMultipliers": 150,
+      "currentEffectPacked": 15,
+      "capEffectPacked": 5
+    },
+    {
+      "id": 334,
+      "name": "Ricefish",
+      "category": "WATER",
+      "fullnessBeforeMultipliers": 80,
+      "currentEffectPacked": 5,
+      "capEffectPacked": 3
+    },
+    {
+      "id": 335,
+      "name": "Goldfish",
+      "category": "WATER",
+      "fullnessBeforeMultipliers": 120,
+      "currentEffectPacked": 10,
+      "capEffectPacked": 5
+    },
+    {
+      "id": 336,
+      "name": "Sweetfish",
+      "category": "WATER",
+      "fullnessBeforeMultipliers": 150,
+      "currentEffectPacked": 15,
+      "capEffectPacked": 7
+    },
+    {
+      "id": 337,
+      "name": "Eel Liver",
+      "category": "ENERGY",
+      "fullnessBeforeMultipliers": 80,
+      "currentEffectPacked": 5,
+      "capEffectPacked": 3
+    },
+    {
+      "id": 338,
+      "name": "Mullet Roe",
+      "category": "ENERGY",
+      "fullnessBeforeMultipliers": 120,
+      "currentEffectPacked": 10,
+      "capEffectPacked": 5
+    },
+    {
+      "id": 339,
+      "name": "Salmon Roe",
+      "category": "ENERGY",
+      "fullnessBeforeMultipliers": 150,
+      "currentEffectPacked": 15,
+      "capEffectPacked": 7
+    },
+    {
+      "id": 340,
+      "name": "Snail",
+      "category": "LEG",
+      "fullnessBeforeMultipliers": 80,
+      "currentEffectPacked": 5,
+      "capEffectPacked": 3
+    },
+    {
+      "id": 341,
+      "name": "Loach",
+      "category": "LEG",
+      "fullnessBeforeMultipliers": 120,
+      "currentEffectPacked": 10,
+      "capEffectPacked": 5
+    },
+    {
+      "id": 342,
+      "name": "Crawfish",
+      "category": "LEG",
+      "fullnessBeforeMultipliers": 150,
+      "currentEffectPacked": 15,
+      "capEffectPacked": 7
+    },
+    {
+      "id": 343,
+      "name": "Horse Meat",
+      "category": "LEG",
+      "fullnessBeforeMultipliers": 50,
+      "currentEffectPacked": 20,
+      "capEffectPacked": 8
+    },
+    {
+      "id": 344,
+      "name": "Boar Meat",
+      "category": "ENERGY_LEG",
+      "fullnessBeforeMultipliers": 255,
+      "currentEffectPacked": 180017,
+      "capEffectPacked": 50004
+    }
+  ]
+}

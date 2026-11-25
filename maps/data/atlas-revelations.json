@@ -1,0 +1,21 @@
+{
+  "0": {"area":"st_kaido_kawa","x":0.441581,"y":0.550361,"location":"Riverside Path · angler by the river","source":"wdr.par pac_ST_KAIDO_KAWA.bin uid007c02e3, TENKEI 0"},
+  "1": {"area":"st_kaido_rindo","x":0.631216,"y":0.460708,"location":"Forest Path · snake by the uphill side trail","source":"wdr.par pac_ST_KAIDO_RINDO.bin uid007c02e4, TENKEI 1"},
+  "2": {"area":"st_kaido_rakunai","x":0.793370,"y":0.713826,"location":"Kawaramachi · middle of Shijo Bridge","source":"wdr.par pac_ST_KAIDO_RAKUNAI.bin uid017c0333, TENKEI 2"},
+  "3": {"area":"st_kaido_rindo","x":0.573830,"y":0.529728,"location":"Forest Path · flying squirrel west of the side-trail junction","source":"wdr.par pac_ST_KAIDO_RINDO.bin uid007c01af, TENKEI 3"},
+  "4": {"area":"st_gion","x":0.923245,"y":0.455187,"location":"Gion · cat on the far side of Gion Inari Shrine","source":"wdr.par pac_ST_GION.bin uid007c01b0, TENKEI 4"},
+  "5": {"area":"st_kaido_yama","x":0.917588,"y":0.473046,"location":"Mountain Path · man watching birds","source":"wdr.par pac_ST_KAIDO_YAMA.bin uid007c01b1, TENKEI 5"},
+  "6": {"area":"st_kaido_tanbo","x":0.611660,"y":0.681551,"location":"Countryside Path · farmer in the fields east of the stream crossing","source":"wdr.par pac_ST_KAIDO_TANBO.bin uid007c01b3, TENKEI 6"},
+  "7": {"area":"st_yoshioka_jnt","x":0.693419,"y":0.717511,"location":"Yoshioka Dojo approach · man by Nonaka Tea House","source":"wdr.par pac_ST_YOSHIOKA_JNT.bin uid007c02e6, TENKEI 7"},
+  "8": {"area":"st_hatsumeika","x":0.576813,"y":0.551824,"location":"Gion · speak to Gyotensai inside his workshop","source":"wdr.par pac_ST_HATSUMEIKA.bin Gyotensai uid007c01b5; Revelation success handler uid017c02d6, TENKEI 44"},
+  "9": {"area":"st_misemono","x":0.387161,"y":0.487323,"location":"Rakugai · watch the jumping monkey show inside the theatre","source":"wdr.par pac_ST_MISEMONO.bin show controller uid01b00069, TENKEI 45 and MISEMONO 24"},
+  "10": {"area":"st_gion","x":0.076193,"y":0.112279,"location":"Gion · woman by the well behind Tsuruya","source":"wdr.par pac_ST_GION.bin uid007c01b6, TENKEI 10"},
+  "11": {"area":"st_kaido_tanbo","x":0.161848,"y":0.362132,"location":"Countryside Path · farmer on the western half of the route","source":"wdr.par pac_ST_KAIDO_TANBO.bin uid007c00cb, TENKEI 11"},
+  "12": {"area":"st_kiyomizu_jnt","x":0.736780,"y":0.350459,"location":"Kiyomizudera entrance · look at the cat","source":"wdr.par pac_ST_KIYOMIZU_JNT.bin uid017c06e4, TENKEI 12"},
+  "13": {"area":"st_rakugaicho","x":0.197597,"y":0.761285,"location":"Rakugai · dog at Yamato Alley South","source":"wdr.par pac_ST_RAKUGAICHO.bin uid007c02e7, TENKEI 13"},
+  "14": {"area":"st_rakugaicho","x":0.793207,"y":0.150445,"location":"Rakugai · storyteller with children on Shijo Avenue","source":"wdr.par pac_ST_RAKUGAICHO.bin storyteller uid007c0431, TENKEI 14"},
+  "15": {"area":"st_kawa_jnt","x":0.545324,"y":0.387290,"location":"Riverside Tea House · the two boys north of the building","source":"wdr.par pac_ST_KAWA_JNT.bin uid007c01b7 and uid007c01b8, TENKEI 15"},
+  "16": {"area":"st_kaido_tani","x":0.325706,"y":0.662098,"location":"Cliffside Path · look up at the wolf from the bend in the trail","source":"wdr.par pac_ST_KAIDO_TANI.bin uid007c0438, TENKEI 16"},
+  "17": {"area":"st_rakugaicho","x":0.165973,"y":0.734822,"location":"Rakugai · dog at Yamato Alley South","source":"wdr.par pac_ST_RAKUGAICHO.bin uid007c01b9, TENKEI 17"},
+  "shichigoro": {"area":"st_gion","x":0.854220,"y":0.475525,"location":"Gion Inari Shrine · speak to Shichigoro by the shrine","source":"wdr.par pac_ST_GION.bin Shichigoro actors uid007c03fa and uid007c063a"}
+}

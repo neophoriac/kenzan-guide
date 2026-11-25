@@ -1,0 +1,137 @@
+[
+  {
+    "id": "swordless-catch",
+    "name": "Gion Martial Arts - Swordless Catch",
+    "window": "6-1",
+    "time": "Any time",
+    "steps": [
+      "Visit Komaki Sōzaemon at the Gion Martial Arts Dojo in southeast Gion. If this is your first visit, agree to join the dojo. The introductory spar is optional.",
+      "At level 20 or higher, select Gion Martial Arts Dojo Secret Technique Initiation Exam 1. Pass the sparring exam, then watch Komaki’s demonstration to learn Swordless Catch."
+    ],
+    "pin": {"area":"st_gion","x":0.850343,"y":0.858441,"location":"Gion Martial Arts Dojo entrance","source":"wdr.par pac_ST_GION.bin uid017c021b and pac_ST_JIUJITSU.bin uid007c0164"},
+    "source": "wdr.par uid007c0164.msg and scenario_state.bin KOMAKI 59/77. Level and story window cross-checked with KHHsubs training guide."
+  },
+  {
+    "id": "bowl-crusher",
+    "name": "Gion Martial Arts - Bowl Crusher",
+    "window": "7-4",
+    "time": "Any time",
+    "steps": [
+      "Go to Komaki at the Gion Martial Arts Dojo in southeast Gion. Reach level 25 if the lesson is still locked.",
+      "Select Gion Martial Arts Dojo Secret Technique Initiation Exam 2. Pass the sparring exam, then watch Komaki’s demonstration to learn Bowl Crusher."
+    ],
+    "pin": {"area":"st_gion","x":0.850343,"y":0.858441,"location":"Gion Martial Arts Dojo entrance","source":"wdr.par pac_ST_GION.bin uid017c021b and pac_ST_JIUJITSU.bin uid007c0164"},
+    "source": "wdr.par uid007c0164.msg and scenario_state.bin KOMAKI 62/78. Level and story window cross-checked with KHHsubs training guide."
+  },
+  {
+    "id": "fist-reversal",
+    "name": "Gion Martial Arts - Fist Reversal",
+    "window": "9-2",
+    "time": "Any time",
+    "steps": [
+      "Go to Komaki at the Gion Martial Arts Dojo in southeast Gion. Reach level 32 if the lesson is still locked.",
+      "Select Gion Martial Arts Dojo Secret Technique Initiation Exam 3. Pass the sparring exam, then watch Komaki’s demonstration to learn Fist Reversal."
+    ],
+    "pin": {"area":"st_gion","x":0.850343,"y":0.858441,"location":"Gion Martial Arts Dojo entrance","source":"wdr.par pac_ST_GION.bin uid017c021b and pac_ST_JIUJITSU.bin uid007c0164"},
+    "source": "wdr.par uid007c0164.msg and scenario_state.bin KOMAKI 68/80. Level and story window cross-checked with KHHsubs training guide."
+  },
+  {
+    "id": "shot-stopper",
+    "name": "Gion Martial Arts - Shot Stopper",
+    "window": "11-1",
+    "time": "Any time",
+    "steps": [
+      "Go to Komaki at the Gion Martial Arts Dojo in southeast Gion. Reach level 35 if the lesson is still locked.",
+      "Select Gion Martial Arts Dojo Secret Technique Initiation Exam 4. Pass the sparring exam, then watch Komaki’s demonstration to learn Shot Stopper."
+    ],
+    "pin": {"area":"st_gion","x":0.850343,"y":0.858441,"location":"Gion Martial Arts Dojo entrance","source":"wdr.par pac_ST_GION.bin uid017c021b and pac_ST_JIUJITSU.bin uid007c0164"},
+    "source": "wdr.par uid007c0164.msg and scenario_state.bin KOMAKI 71/81. Level and story window cross-checked with KHHsubs training guide."
+  },
+  {
+    "id": "dry-leaf-smash",
+    "name": "Ultimate Sword Secret - Dry Leaf Smash",
+    "window": "8-8",
+    "time": "Story sequence",
+    "steps": [
+      "Speak to En no Ozuma at Hozoin Temple during the Chapter 8 tournament story sequence.",
+      "Accept Special Lecture - Boar Scroll. Finish the watermelon-cutting exercise with the training gauge at or above 3,500 to learn Dry Leaf Smash.",
+      "If you leave Hozoin without learning it, take the same lesson from En no Ozuma on Riverside Path from 9-1. Learn it at Hozoin if you want to use it in the Chapter 8 fight against Inshun."
+    ],
+    "pin": {"area":"st_hozoin","x":0.457251,"y":0.613017,"location":"Hozoin Temple grounds","source":"wdr.par pac_ST_HOZOIN.bin uid007c0356 actor position"},
+    "source": "wdr.par uid007c0356.msg, scenario_state.bin SUIKA 9/16 and suika.par courses.bin course 4."
+  },
+  {
+    "id": "flowing-stream",
+    "name": "Ultimate Sword Secret - Flowing Stream",
+    "window": "9-1",
+    "time": "Any time",
+    "steps": [
+      "Find En no Ozuma on Riverside Path after the Hozoin tournament.",
+      "Choose Foundational Training. Finish the watermelon-cutting exercise with the training gauge at or above 4,200 to learn Flowing Stream."
+    ],
+    "pin": {"area":"st_kaido_kawa","x":0.634198,"y":0.252825,"location":"Riverside Path, En no Ozuma","source":"wdr.par pac_ST_KAIDO_KAWA.bin uid007c0442 actor position"},
+    "source": "wdr.par uid007c0442.msg, pac_ST_KAIDO_KAWA.bin CHAPTER09 state 0 and suika.par courses.bin course 1."
+  },
+  {
+    "id": "strong-judgment",
+    "name": "Ultimate Sword Secret - Strong Judgment",
+    "window": "9-1",
+    "time": "Any time",
+    "steps": [
+      "Clear Special Lecture - Boar Scroll and Foundational Training, then return to En no Ozuma on Riverside Path.",
+      "Choose Applied Training. Finish with the training gauge at or above 5,000 to learn Strong Judgment."
+    ],
+    "pin": {"area":"st_kaido_kawa","x":0.634198,"y":0.252825,"location":"Riverside Path, En no Ozuma","source":"wdr.par pac_ST_KAIDO_KAWA.bin uid007c0442 actor position"},
+    "source": "wdr.par uid007c0442.msg, scenario_state.bin SUIKA 7/14/19 and suika.par courses.bin course 2. Course prerequisites cross-checked with KHHsubs training guide."
+  },
+  {
+    "id": "heavens-converge",
+    "name": "Ultimate Sword Secret - Heavens Converge",
+    "window": "10-9",
+    "time": "Any time",
+    "steps": [
+      "Clear Applied Training. Once you can roam again after the Chapter 10 tour, return to En no Ozuma on Riverside Path.",
+      "Choose Advanced Training. Finish with the training gauge at or above 5,000 to learn Heavens Converge."
+    ],
+    "pin": {"area":"st_kaido_kawa","x":0.634198,"y":0.252825,"location":"Riverside Path, En no Ozuma","source":"wdr.par pac_ST_KAIDO_KAWA.bin uid007c0442 actor position"},
+    "source": "wdr.par uid007c0442.msg, scenario_state.bin SUIKA 8/15/20 and suika.par courses.bin course 3. First free-roam window and course prerequisite cross-checked with KHHsubs training guide."
+  },
+  {
+    "id": "unshackling-slash",
+    "name": "Ultimate Sword Secret - Unshackling Slash",
+    "window": "10-11",
+    "time": "Any time after the letter",
+    "steps": [
+      "On the way from Tsuruya to Tatsuya during the Chapter 10 rescue preparations, receive En no Ozuma’s letter near Gion’s south gate. It directs you to Riverside Path.",
+      "Talk to En no Ozuma and take Special Lecture - Snake Scroll. Finish with the training gauge at or above 4,000 to learn Unshackling Slash."
+    ],
+    "pin": {"area":"st_kaido_kawa","x":0.633324,"y":0.252825,"location":"Riverside Path, En no Ozuma","source":"wdr.par pac_ST_KAIDO_KAWA.bin uid007c050a actor position"},
+    "source": "wdr.par pac_ST_GION.bin uid017c0509 letter trigger and uid007c050a.msg, scenario_state.bin CHAPTER10 states 56 and 59 and SUIKA 2/10, and suika.par courses.bin course 5."
+  },
+  {
+    "id": "swallow-drop",
+    "name": "Ultimate Sword Secret - Swallow Drop",
+    "window": "12-4",
+    "time": "Before sailing to Ganryu Island",
+    "steps": [
+      "Clear En no Ozuma’s other five courses. After receiving the route to Ganryu Island from Koetsu, collect En no Ozuma’s final letter on the road through Kawaramachi and go to Riverside Path.",
+      "Accept Special Lecture - Asura Scroll. Finish with the training gauge at or above 5,000 to learn Swallow Drop."
+    ],
+    "pin": {"area":"st_kaido_kawa","x":0.633324,"y":0.252825,"location":"Riverside Path, En no Ozuma","source":"wdr.par pac_ST_KAIDO_KAWA.bin uid007c050a actor position"},
+    "source": "wdr.par pac_ST_KAIDO_RAKUNAI.bin uid017c050b letter trigger and uid007c050a.msg, scenario_state.bin CHAPTER12 states 19 and 21 and SUIKA 3/11/21, and suika.par courses.bin course 6."
+  },
+  {
+    "id": "swordless-justice",
+    "name": "Gion Martial Arts - Swordless Justice",
+    "window": "12-2",
+    "time": "Start before Gion closes",
+    "related": true,
+    "steps": [
+      "Complete Komaki’s Gion Martial Arts Dojo training and Shibusawa’s Zanki Dojo training. Speak to Komaki and pick the top reply twice to hear about Shibusawa.",
+      "Start the conversation with Komaki before leaving Gion in 12-3. You can continue outside Gion if you already spoke to him. Talk to the students outside Zanki Dojo, then ask the woman in the group where Shibusawa went. Watch the duel at Sanjusangendo.",
+      "Return to the students outside Zanki Dojo. Speak to the group to watch Komaki’s farewell and learn Swordless Justice."
+    ],
+    "pin": {"area":"st_rakugaicho","x":0.499526,"y":0.825112,"location":"Outside Zanki Dojo","source":"wdr.par pac_ST_RAKUGAICHO.bin uid007c06e6 actor position"},
+    "source": "wdr.par uid007c0164.msg, uid007c06e5.msg, uid017c0627.msg and uid007c06e6.msg. The last event grants skill 0x84 after KOMAKI 87 (the duel) is set. The finale window and training prerequisites are cross-checked with KHHsubs."
+  }
+]

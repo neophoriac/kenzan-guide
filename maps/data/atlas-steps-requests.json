@@ -1,0 +1,1284 @@
+{
+  "1": [
+    {
+      "letter": "A",
+      "text": "Meet Kinuyo at Gion Inari Shrine."
+    },
+    {
+      "letter": "B",
+      "text": "Approach Tsurumaru and the yujo at Gion Main Gate."
+    },
+    {
+      "letter": "A",
+      "text": "Tell Kinuyo what you saw."
+    },
+    {
+      "letter": "C",
+      "text": "Find Tsurumaru again in the lane just south of Nakatsuji, west of the main street. Wait for the yujo to leave, then talk to him and win the fight."
+    },
+    {
+      "letter": "A",
+      "text": "Report back to Kinuyo."
+    }
+  ],
+  "2": [
+    {
+      "letter": "A",
+      "text": "Speak to the owner outside Yumejiya."
+    },
+    {
+      "letter": "B",
+      "text": "Go around the corner and approach Suzukaze and her father. Speak to her after he leaves."
+    },
+    {
+      "letter": "C",
+      "text": "Confront her father outside Azamiya and beat him. The follow-up takes place at Yumejiya."
+    }
+  ],
+  "3": [
+    {
+      "letter": "A",
+      "text": "Approach Momochika and the man at Gion Inari Shrine. Follow the scene into the den."
+    },
+    {
+      "text": "Reach 1,000,000 chips to finish without a fight. If you run out, defeat the lender outside. Either outcome completes the request."
+    }
+  ],
+  "4": [
+    {
+      "letter": "A",
+      "text": "Meet Hinagiku at Gion Inari Shrine. The walk takes you to Suiten Inari Shrine."
+    },
+    {
+      "text": "Defeat the three attackers. Take out the short-sword wielder first if he keeps interrupting you."
+    }
+  ],
+  "5": [
+    {
+      "letter": "A",
+      "text": "Find Hanamaru at Suiten Inari Shrine."
+    },
+    {
+      "letter": "B",
+      "text": "Buy the fourth medicine from the seller outside Tenguya Drugs for 1 ryō."
+    },
+    {
+      "letter": "A",
+      "text": "Give the medicine to Hanamaru’s father. The closing scene is at Azamiya."
+    }
+  ],
+  "6": [
+    {
+      "letter": "A",
+      "text": "Talk to Komeyoshi at Gion Main Gate. Wait for Shirayuki and watch the restaurant scene."
+    },
+    {
+      "letter": "B",
+      "text": "Approach Komeyoshi at the far east end of Tsurumachi Alley and beat the two men with him."
+    }
+  ],
+  "7": [
+    {
+      "letter": "A",
+      "text": "Go to Gion Inari Shrine for the arranged meeting."
+    },
+    {
+      "letter": "B",
+      "text": "After the owner stops you, approach Asagiri and Toramaro outside Yumejiya."
+    },
+    {
+      "letter": "B",
+      "text": "Talk to Asagiri with at least 50 ryō. Win the ensuing fight. You get the money back."
+    }
+  ],
+  "8": [
+    {
+      "letter": "A",
+      "text": "Talk to the guidebook author near the Gion gate. Use the top option to offer information about a yujo whose request is done."
+    },
+    {
+      "text": "For the best payment, choose Kinuyo 3/3/2/1, Suzukaze 3/1/2/1, Momochika 1/2/2/3, Hinagiku 3/1/2/1, Hanamaru 1/2/2/3, Shirayuki 2/2/3/2, Asagiri 1/2/1/3. Count from the top."
+    },
+    {
+      "letter": "B",
+      "text": "Walk away from the author until he reappears. Entering Arigataya is unnecessary."
+    },
+    {
+      "letter": "A",
+      "text": "Return to collect your payment. Repeat until you’ve covered all seven yujo."
+    }
+  ],
+  "9": [
+    {
+      "letter": "A",
+      "text": "Find the guidebook author hesitating outside a brothel on Kadomachi near Ebisuya Pawn. Talk to him and accompany him inside."
+    }
+  ],
+  "10": [
+    {
+      "letter": "A",
+      "text": "Buy a pepper from the girl in red, then walk away until two men approach her."
+    },
+    {
+      "letter": "A",
+      "text": "Talk to their leader, pick the first option to intervene and beat both men."
+    }
+  ],
+  "11": [
+    {
+      "letter": "A",
+      "text": "Talk to the old man on the south side of Ebisu Street, west of Hanami Alley. Choose the second option to keep watch and approach the man who peers at the door."
+    },
+    {
+      "letter": "B",
+      "text": "Find the man peeking around a corner south of the Blacksmith and defeat him."
+    },
+    {
+      "letter": "A",
+      "text": "Hear the explanation at the house on Ebisu Street."
+    },
+    {
+      "letter": "C",
+      "text": "Confront Ukichi in front of Gion Main Gate on the Rakugai side and beat him."
+    },
+    {
+      "letter": "A",
+      "text": "Return to the house on Ebisu Street."
+    }
+  ],
+  "12": [
+    {
+      "letter": "A",
+      "text": "Buy Tanaka’s coin purse for 200 mon. Walk away and pick the first option to try putting money into it."
+    }
+  ],
+  "13": [
+    {
+      "letter": "A",
+      "text": "Take the first option to help Mametaro with his homework. Answer with options 2, 1, 1 from the top. The first answer affects #53."
+    }
+  ],
+  "14": [
+    {
+      "letter": "A",
+      "text": "Talk to the boy in Higashiyama Shopping District and agree to buy candy."
+    },
+    {
+      "letter": "B",
+      "text": "Buy gold-colored candy, fourth on the list, for 1,500 mon. Confirm with the left option."
+    },
+    {
+      "letter": "B",
+      "text": "Speak to the boy by the stall. Choose the second option and hand him the gold-colored candy."
+    }
+  ],
+  "15": [
+    {
+      "letter": "A",
+      "text": "Walk away from the candy stall until you overhear the vendor. Turn back and defeat him."
+    }
+  ],
+  "16": [
+    {
+      "letter": "A",
+      "text": "Approach Okiku at the western end of Kawaramachi. Follow the scene and let Tasuke win the fight to get the hairpin."
+    }
+  ],
+  "17": [
+    {
+      "letter": "A",
+      "text": "Speak to the two townspeople on the south side of the Kawaramachi approach to Shijo Bridge."
+    },
+    {
+      "letter": "B",
+      "text": "Approach Gonnosuke on the north side of the avenue, a little west of Pin B. After the scene, continue east to Pin B and approach him again. Choose “Don’t Pay” when he demands 3 ryō and win the fight. Choose “Look for Gonbei” when his wife asks for help."
+    },
+    {
+      "letter": "C",
+      "text": "Approach him by the Yasaka Shrine entrance at the east end of Shijo Avenue East, Rakugai."
+    }
+  ],
+  "18": [
+    {
+      "letter": "A",
+      "text": "Walk past the woman outside the inn on Hanami Alley South. Choose the third option to forgive her. This improves the combined payout with #40."
+    }
+  ],
+  "19": [
+    {
+      "letter": "A",
+      "text": "Look at the traveling seller’s sword on Yamato Alley South. Either response to the 1,000 mon offer leads to the old man stepping in. Agree to help recover his swords."
+    }
+  ],
+  "20": [
+    {
+      "letter": "B",
+      "text": "Meet the old man at the Rakugai Blacksmith and hand in the five swords one at a time."
+    }
+  ],
+  "21": [
+    {
+      "letter": "A",
+      "text": "Talk to the man seated with two women on Yamato Alley South."
+    },
+    {
+      "letter": "B",
+      "text": "Enter Forest Path and pass the women as they run back."
+    },
+    {
+      "letter": "C",
+      "text": "Approach the man twice, choose the first option to help and defeat the bandits. Let him take credit with the first option."
+    }
+  ],
+  "22": [
+    {
+      "letter": "A",
+      "text": "Speak to the three people by the fortune teller in western Higashiyama Shopping District."
+    },
+    {
+      "letter": "B",
+      "text": "Follow Kota east to the Hanami Alley intersection."
+    },
+    {
+      "letter": "C",
+      "text": "Follow him south to the junction with Ebisu Street."
+    },
+    {
+      "letter": "D",
+      "text": "Take Ebisu Street west to the temple on the south side. Approach the donation box and defeat Kota."
+    }
+  ],
+  "23": [
+    {
+      "letter": "A",
+      "text": "Accept the invitation in Suiten Alley with the first option. Pick any wrestler inside. Refuse the 2 ryō charge with the first option and beat all three."
+    }
+  ],
+  "24": [
+    {
+      "letter": "A",
+      "text": "Buy a tip from the man by the wooden fence on Hanami Alley with the second option."
+    },
+    {
+      "letter": "B",
+      "text": "Talk to Sasemon inside Sake Ikkonya. Leave and walk away until the owner comes out with a letter."
+    },
+    {
+      "letter": "C",
+      "text": "Follow the letter to the small Rakugai Shrine in the center of town and defeat Sasemon."
+    }
+  ],
+  "25": [
+    {
+      "letter": "A",
+      "text": "Approach Hikobei and the man he threatens on Yamato Alley."
+    },
+    {
+      "letter": "B",
+      "text": "Follow Hikobei to the fight outside Sake Ikkonya and defeat him. Keep his Drunken Blade for #20."
+    }
+  ],
+  "26": [
+    {
+      "letter": "A",
+      "text": "Listen to the three women on the south side of Shijo Avenue West."
+    },
+    {
+      "letter": "B",
+      "text": "Speak to the potter at the Rakugai end of Shijo Bridge. Choose the first option twice. The scene takes you back to Rakugai to fight the man threatening his customer."
+    }
+  ],
+  "27": [
+    {
+      "letter": "A",
+      "text": "Hear the rumor from the two men on Shijo Avenue West."
+    },
+    {
+      "letter": "B",
+      "text": "Ask the Blacksmith apprentice for his blunt sword with the second option."
+    },
+    {
+      "letter": "C",
+      "text": "Visit the waterfall during the day or evening. Choose the first option to drop the sword in, walk away until the woman appears and refuse both replacement swords with the second option each time."
+    },
+    {
+      "letter": "D",
+      "text": "Leave the waterfall toward Mountain Path and defeat her partner in the next scene. This opens waterfall training."
+    }
+  ],
+  "28": [
+    {
+      "letter": "A",
+      "text": "Accept the young man’s invitation south of Shijo Bridge with the first option."
+    },
+    {
+      "letter": "B",
+      "text": "Follow Kawaramachi’s avenue west to the attendant outside the landlord’s mansion on its south side. Finish dinner and defeat the landlord and his guards."
+    }
+  ],
+  "29": [
+    {
+      "letter": "A",
+      "text": "Walk into the rooftop thief’s path. Choose the second option to say he hurt you, then defeat the guards to earn both payments."
+    }
+  ],
+  "30": [
+    {
+      "letter": "A",
+      "text": "Interrupt the man and yujo on Nakatsuji Alley East. Pick 1, 1, 1, 4 to identify him. Accept his money and talk to the yujo."
+    },
+    {
+      "letter": "B",
+      "text": "Confront him on the west side of Nagayamachi in Rakugai. Press him with the second option twice and defeat him."
+    },
+    {
+      "letter": "A",
+      "text": "Return to the pair on Nakatsuji Alley East."
+    }
+  ],
+  "31": [
+    {
+      "letter": "A",
+      "text": "Talk to the palanquin bearer on the Rakugai side of Gion Main Gate. Choose the second option to find his partner."
+    },
+    {
+      "letter": "B",
+      "text": "Ask the customer at the table closest to the door in Sake Ikkonya."
+    },
+    {
+      "letter": "C",
+      "text": "Speak to the missing bearer inside Whitesnake Udon."
+    },
+    {
+      "letter": "A",
+      "text": "Return to the stand. Choose the first option for a new stop at the east end of Shijo Avenue East or the second for one by Rakugai Shrine."
+    }
+  ],
+  "32": [
+    {
+      "letter": "A",
+      "text": "Approach the three men by Yasaka Shrine Entrance and defeat them. Follow the automatic scene into Okuni’s theater and win the onstage fight with the umbrella. Choose the second option outside to unlock Kabuki Acting."
+    }
+  ],
+  "33": [
+    {
+      "letter": "A",
+      "text": "Talk to the sick man at Suiten Inari Shrine."
+    },
+    {
+      "letter": "B",
+      "text": "Ask the man at the Nakatsuji crossroads near the main street for a doctor."
+    },
+    {
+      "letter": "C",
+      "text": "Speak to Ken at the Sushi Ginya counter. Follow the treatment scene."
+    }
+  ],
+  "34": [
+    {
+      "letter": "A",
+      "text": "Speak to the debt collector outside Tatsuya."
+    },
+    {
+      "letter": "B",
+      "text": "Confront the impostor inside Sake Nakanokura."
+    },
+    {
+      "letter": "C",
+      "text": "Catch him near the east side of the Nakatsuji crossroads within 30 seconds, then win the fight."
+    },
+    {
+      "letter": "A",
+      "text": "Report to the collector. Return here even if the impostor escapes."
+    }
+  ],
+  "35": [
+    {
+      "letter": "A",
+      "text": "Speak to the confectioner at Gion Inari Shrine. Choose the first option three times."
+    },
+    {
+      "letter": "B",
+      "text": "At night, meet him outside Tsuruya, to the right of the bridge, and watch the contest."
+    },
+    {
+      "letter": "C",
+      "text": "Visit the magistrate’s mansion at Yoshioka Dojo at night. Use the green in-game marker and defeat him and his men."
+    }
+  ],
+  "36": [
+    {
+      "letter": "A",
+      "text": "Meet the girl at her Shijo Avenue East stall. Choose the first option to accompany her."
+    },
+    {
+      "letter": "B",
+      "text": "Talk to her father in Nagayamachi to get the Togarashi Set."
+    },
+    {
+      "letter": "D",
+      "text": "Get Dried Agar from the turtle seller on Shijo Avenue."
+    },
+    {
+      "letter": "C",
+      "text": "After #47, take one Washi and the Togarashi Set to Gyotensai. Show him the set and choose Back Pain Remedy. Select Dried Agar for Something Adhesive to make Togarashi Poultice."
+    },
+    {
+      "letter": "B",
+      "text": "Bring the poultice to her father in daylight."
+    },
+    {
+      "letter": "A",
+      "text": "Wait at least three minutes, change areas and return to the girl’s stall."
+    }
+  ],
+  "37": [
+    {
+      "letter": "A",
+      "text": "Buy Tanaka’s gourd with the first option. Walk away until Kiryu examines it, then agree to the trade with the first option."
+    }
+  ],
+  "38": [
+    {
+      "letter": "A",
+      "text": "Walk past Sake Ikkonya and follow the man into the shop. Answer his wife’s questions with options 2, 3, 1, 1, 2 from the top."
+    }
+  ],
+  "39": [
+    {
+      "letter": "A",
+      "text": "Agree to help the woman near the Hanami Alley South save point."
+    },
+    {
+      "letter": "B",
+      "text": "Find Kintaro blocking the little dead-end bridge by the monk’s hut near the south end of Mountain Path. Pick the first option to cross, beat him unarmed and give him one food item."
+    }
+  ],
+  "40": [
+    {
+      "letter": "A",
+      "text": "Approach the woman and samurai outside the same inn as #18. Refuse with the second option and beat both men. Forgiving her in #18 adds 2 ryō here."
+    }
+  ],
+  "41": [
+    {
+      "letter": "A",
+      "text": "Pay Zenjiro 100 mon to try drawing the sword. Beat him after the demonstration, then defeat his three debt collectors."
+    }
+  ],
+  "42": [
+    {
+      "letter": "A",
+      "text": "Speak to Keisuke at the west end of Kawaramachi."
+    },
+    {
+      "letter": "B",
+      "text": "Talk to the neighboring vendor Hanaoka."
+    },
+    {
+      "letter": "C",
+      "text": "Walk east to the sword seller. Refuse to pay with the second option and take the sword for free."
+    },
+    {
+      "text": "Give it to either merchant and defeat both groups of thugs. Save the Beckoning Sword for #20."
+    }
+  ],
+  "43": [
+    {
+      "letter": "A",
+      "text": "Watch Kichiemon use the sword in the crowd by the turnoff to Kōetsu’s mansion."
+    },
+    {
+      "letter": "B",
+      "text": "Follow him toward Shijo Bridge and defeat the four thugs. Keep the Greedy Katana for #20."
+    }
+  ],
+  "44": [
+    {
+      "letter": "A",
+      "text": "Speak to the collapsed man twice. Give him a Special Vitality Pill with the first option, then take the second option to help. The scene takes you to his house."
+    },
+    {
+      "letter": "B",
+      "text": "Back outside his house east of Yamato Alley South, look through the door and choose the second option to fetch dango."
+    },
+    {
+      "letter": "C",
+      "text": "Buy Mugwort Dango from the Riverside Tea House."
+    },
+    {
+      "letter": "B",
+      "text": "Return to the house and give him the dango."
+    }
+  ],
+  "45": [
+    {
+      "letter": "A",
+      "text": "Agree to help Mametaro. Answer his five questions with 2, 2, 1, 3, 2 from the top. The second answer affects #53."
+    }
+  ],
+  "46": [
+    {
+      "letter": "A",
+      "text": "Listen to the fortune teller on eastern Ebisu Street and defeat the three men she summons."
+    }
+  ],
+  "47": [
+    {
+      "letter": "A",
+      "text": "Help Kamotaro on Forest Path and beat the swordsman. Choose first to escort him home, second to paint in his place and first to question Kinzo. Defeat the bodyguard and keep one Washi for #36 and one for #97."
+    }
+  ],
+  "48": [
+    {
+      "letter": "A",
+      "text": "Accept the toy seller’s errand on the south side of Shijo Street by the checkpoint."
+    },
+    {
+      "letter": "B",
+      "text": "Cross Shijo Bridge and deliver the parcel to Heisuke by the lantern near the turnoff to Kōetsu’s mansion."
+    },
+    {
+      "letter": "A",
+      "text": "Take the payment back to the seller."
+    },
+    {
+      "letter": "C",
+      "text": "Head back across the bridge after the scream and speak to the injured samurai beyond it."
+    },
+    {
+      "letter": "D",
+      "text": "Return to the bridge and talk to the fleeing ronin after he stops. Approach Benkei and beat Benkei, Ushiwakamaru and then both together."
+    }
+  ],
+  "49": [
+    {
+      "letter": "A",
+      "text": "Listen to the men surrounding the old woman at Rakugai Shrine."
+    },
+    {
+      "letter": "B",
+      "text": "Check this spot south of the smithy for the white snake. If it’s elsewhere, try C or D."
+    },
+    {
+      "letter": "C",
+      "text": "Check here if you haven’t found the snake."
+    },
+    {
+      "letter": "D",
+      "text": "Check the third hiding spot if needed."
+    },
+    {
+      "text": "At whichever spot you find it, use the first option to catch the snake and again to give it to the boy. Defeat the merchant’s group."
+    },
+    {
+      "letter": "E",
+      "text": "For a bonus, speak to the employee at the tea stall by the north stairs of Riverside Path."
+    }
+  ],
+  "50": [
+    {
+      "letter": "A",
+      "text": "Buy Tanaka’s box for 500 mon. When the foreigner approaches, choose the first option to try the box and get the Portuguese mirror."
+    }
+  ],
+  "51": [
+    {
+      "letter": "A",
+      "text": "Accept Mametaro’s homework request. Answer 6, 140, 11111 with the bottom, middle and top choices. The first answer affects #53."
+    }
+  ],
+  "52": [
+    {
+      "letter": "A",
+      "text": "Buy Bunzo’s news sheet for 15 mon at the Hanami Alley and Nagayamachi junction."
+    },
+    {
+      "letter": "B",
+      "text": "Speak to Shinkichi on eastern Shijo Street."
+    },
+    {
+      "letter": "C",
+      "text": "Find him crouching opposite the Arms Dealer between Higashiyama Shopping District and Ebisu Street and win the fight."
+    },
+    {
+      "letter": "A",
+      "text": "Go back to Bunzo."
+    }
+  ],
+  "53": [
+    {
+      "letter": "A",
+      "text": "Speak to Mametaro and hear the letter. The Glass Kiseru requires question one in #13 and #51 and question two in #45 answered correctly."
+    }
+  ],
+  "54": [
+    {
+      "letter": "A",
+      "text": "Speak to the boy on Riverside Path. The first answer can be anything. Then choose the top answer for Kiyomizudera or the bottom answer for the waterfall."
+    },
+    {
+      "letter": "B",
+      "text": "If you chose Kiyomizudera, face the main temple and inspect the area by the guardian statue on your right."
+    },
+    {
+      "letter": "C",
+      "text": "If you chose the waterfall, meet the boy off Mountain Path instead."
+    }
+  ],
+  "55": [
+    {
+      "letter": "A",
+      "text": "Speak to the girl at the east end of Higashiyama Shopping District."
+    },
+    {
+      "letter": "B",
+      "text": "Buy Golden Candy from the vendor farther along the district."
+    },
+    {
+      "letter": "A",
+      "text": "Give her the candy with the bottom choice. Leave the area and return to tell the old man you gave her candy and where to buy it. Use the first choice twice for 5 ryō."
+    }
+  ],
+  "56": [
+    {
+      "letter": "A",
+      "text": "Listen to the conversation at the rear of the blacksmith."
+    },
+    {
+      "letter": "A",
+      "text": "Leave and re-enter to start the fights. Win both. Use Essence of Bellows by the furnace before the second fight ends if you’re completing the Heat Action checklist."
+    }
+  ],
+  "57": [
+    {
+      "letter": "A",
+      "text": "Accept Ranzan’s offer by the canal north of Kawaramachi’s road. At his studio, agree to pose and beat him unarmed. The first two paintings are each worth 1 ryō. The third is worth 1 mon."
+    }
+  ],
+  "58": [
+    {
+      "letter": "A",
+      "text": "Accept Tsuchiura’s search with the first option twice. You have two minutes."
+    },
+    {
+      "letter": "B",
+      "text": "Catch the first cat on Kōetsu’s mansion grounds. The game brings you back to Tsuchiura."
+    },
+    {
+      "letter": "C",
+      "text": "Optional cat by the maple before Shijo Bridge."
+    },
+    {
+      "letter": "D",
+      "text": "Optional cat near the Rakugai exit across Shijo Bridge."
+    },
+    {
+      "letter": "E",
+      "text": "Optional cat close to Tsuchiura."
+    },
+    {
+      "letter": "F",
+      "text": "Optional cat by the exit to Yoshioka Dojo."
+    },
+    {
+      "text": "The game brings you back after each catch. Use the first option to continue or the second to stop. Catch at least one to play #59."
+    }
+  ],
+  "59": [
+    {
+      "letter": "A",
+      "text": "Talk to the girl on Shijo Bridge. Use choices 1, 1, 1, 1, 2, 1 to identify the cat and offer to recover it."
+    },
+    {
+      "letter": "B",
+      "text": "Confront Tsuchiura at the tea stall by the north end of Riverside Path. Choose “Her collar” as proof, then choose “Don’t Pay.” Defeat him and his men. The cat is returned automatically."
+    }
+  ],
+  "60": [
+    {
+      "letter": "A",
+      "text": "Listen to the three men at the back of Sake Ikkonya. Ask them about the scrap of paper."
+    },
+    {
+      "letter": "B",
+      "text": "Meet one of the thieves outside Shishido’s cave and choose the first option to enter."
+    },
+    {
+      "letter": "C",
+      "text": "Check the place where the gate chain was cut on your first visit. Beat the thieves and take Shishido’s Eyepatch to open Bounty #140."
+    }
+  ],
+  "61": [
+    {
+      "letter": "A",
+      "text": "Talk to the father at the pepper stall on Shijo Avenue East."
+    },
+    {
+      "letter": "B",
+      "text": "Buy Shiso, Sansho, Ginger and Sesame at Etchuya Drugs."
+    },
+    {
+      "letter": "C",
+      "text": "Buy Nori from the turtle seller on Shijo Avenue."
+    },
+    {
+      "letter": "D",
+      "text": "Buy an Orange at the Rakugai branch of Arigataya Market."
+    },
+    {
+      "letter": "A",
+      "text": "Use the first option to give the father one of each ingredient. Save all three blends for #62."
+    }
+  ],
+  "62": [
+    {
+      "letter": "A",
+      "text": "Speak to the employee inside Whitesnake Udon and choose “Add New Spices.” Hand over 3-Blend, then 5-Blend, then 7-Blend for the full payment. The last blend advances the quest."
+    },
+    {
+      "letter": "B",
+      "text": "Tell the father at the Shijo Avenue East pepper stall about the order."
+    },
+    {
+      "letter": "C",
+      "text": "Return to Whitesnake Udon and talk to the employee outside."
+    }
+  ],
+  "63": [
+    {
+      "letter": "A",
+      "text": "Agree to help the monk near Etchuya Drugs when his bag is stolen."
+    },
+    {
+      "letter": "B",
+      "text": "Speak to the thief around the corner on Hanami Alley."
+    },
+    {
+      "letter": "C",
+      "text": "Follow him to the table outside Shogi Narikin."
+    },
+    {
+      "letter": "D",
+      "text": "Find him between the buildings near the mahjong parlor, opposite the stalls. Win the fight."
+    },
+    {
+      "letter": "A",
+      "text": "Give the package back to the monk."
+    }
+  ],
+  "64": [
+    {
+      "letter": "A",
+      "text": "Choose the first option to try to pass Kumagoro on the small dead-end bridge in southern Mountain Path. Beat him and walk away or continue across the bridge."
+    }
+  ],
+  "65": [
+    {
+      "letter": "A",
+      "text": "Intervene when two men threaten the dog at the south end of Riverside Path. Choose the first option, give any name and beat them."
+    },
+    {
+      "letter": "B",
+      "text": "Buy three Raw Chicken from the merchant at the north end of Riverside Path."
+    },
+    {
+      "letter": "A",
+      "text": "Feed the dog all three, one at a time."
+    },
+    {
+      "letter": "C",
+      "text": "Follow the dog and interact when it stops. Pick the first option to dig up Jomon Pottery."
+    }
+  ],
+  "66": [
+    {
+      "letter": "A",
+      "text": "Pass the pipe smoker outside the inn from #18 and #40. Choose “Call the fire brigade!”"
+    },
+    {
+      "letter": "B",
+      "text": "If you just finished #56 at 7-6, check outside the smithy as well. You can also return to the inn at 7-8."
+    }
+  ],
+  "67": [
+    {
+      "letter": "A",
+      "text": "Approach the crowd north of Hatsukaze and choose the first option to help. The indoor choices are 2, 1, 2, 1, 1, 2, 1, 1 from the top."
+    }
+  ],
+  "68": [
+    {
+      "letter": "A",
+      "text": "Listen to Yosaburo and Manta outside Zanki Dojo and choose the first option."
+    },
+    {
+      "letter": "B",
+      "text": "Ask Yosaburo across from the blacksmith what his vow means with the second option."
+    },
+    {
+      "letter": "A",
+      "text": "Ask Manta at the dojo about his vow with the second option."
+    },
+    {
+      "letter": "B",
+      "text": "Tell Yosaburo about the other vow with the first option."
+    },
+    {
+      "letter": "A",
+      "text": "Return to the dojo corner and listen to both men."
+    },
+    {
+      "letter": "C",
+      "text": "Follow them to Gion and speak to the attendant on Nakatsuji Alley East. Defeat them inside."
+    }
+  ],
+  "69": [
+    {
+      "letter": "A",
+      "text": "Order each experimental dish at Whitesnake Udon. Leave and re-enter after each sample. Order Ultimate Fried Udon at the bottom of the menu once it appears."
+    }
+  ],
+  "70": [
+    {
+      "letter": "A",
+      "text": "Speak to Kintaro near the southern Hanami Alley palanquin, choose the first option to scold the children and speak to him again."
+    },
+    {
+      "letter": "B",
+      "text": "Find the child pinned under a log in the shed opposite the Forest Path stables."
+    }
+  ],
+  "71": [
+    {
+      "letter": "A",
+      "text": "Find the Portuguese man in green by the Shishido cave turnoff on Forest Path. Give directions to Kiyomizudera using yes, no, yes."
+    }
+  ],
+  "72": [
+    {
+      "letter": "A",
+      "text": "Listen to the couple on Shijo Avenue East."
+    },
+    {
+      "letter": "B",
+      "text": "Watch the next scene by the Ebisu Street weapon shop and talk to the woman."
+    },
+    {
+      "letter": "C",
+      "text": "See the swordsman at the vegetable stall on western Higashiyama and speak to its owner."
+    },
+    {
+      "letter": "D",
+      "text": "Examine the house on the east side of northern Yamato Alley and pick the first option to enter. Refuse the bribe with the second option and win. The room lets you use the Tatami Flip Heat Action with a kodachi."
+    }
+  ],
+  "73": [
+    {
+      "letter": "A",
+      "text": "Meet Sotaro on northern Riverside Path for his lesson."
+    },
+    {
+      "letter": "B",
+      "text": "Find him arguing with a samurai at the south end of Yamato Alley near the Riverside Path exit. Step in and beat the samurai."
+    }
+  ],
+  "74": [
+    {
+      "letter": "A",
+      "text": "Approach the two women by the tea stall near the northern stairs of Riverside Path."
+    },
+    {
+      "letter": "B",
+      "text": "Follow Osaki south. Choose the second option to help and win. Choose the second option twice afterward to pay 2 ryō."
+    },
+    {
+      "letter": "C",
+      "text": "Find Kisuke near the turnoff to Kōetsu’s mansion in Kawaramachi and arrange the meeting."
+    },
+    {
+      "letter": "D",
+      "text": "Meet them at Rakugai Shrine."
+    }
+  ],
+  "75": [
+    {
+      "letter": "A",
+      "text": "Agree to watch over Enkiridera on Ebisu Street and defeat the first husband. Choose the first option to keep watching and defeat the second husband for the Meditating Monk Picture."
+    }
+  ],
+  "76": [
+    {
+      "letter": "A",
+      "text": "Agree to help the woman near Shijo Bridge find a good view of Kiyomizudera."
+    },
+    {
+      "letter": "B",
+      "text": "Facing the temple, go below the stairs on your right. Talk to the elderly local and choose “Tell Her” to recommend his viewpoint and receive Mother of Pearl. Choose to keep looking if you want to visit the other viewpoints."
+    },
+    {
+      "letter": "C",
+      "text": "Alternate viewpoint. Recommend this local’s spot to receive the Thief’s Netsuke and a Finished result."
+    },
+    {
+      "letter": "D",
+      "text": "Alternate viewpoint. Recommend this local’s spot to receive Hariti’s Amulet and a Finished result."
+    }
+  ],
+  "77": [
+    {
+      "letter": "A",
+      "text": "Find Sotaro near the water on northern Riverside Path."
+    },
+    {
+      "letter": "B",
+      "text": "Follow the road south past the rise that divides the paths. Approach the two boys near the boat and defeat the five samurai."
+    }
+  ],
+  "78": [
+    {
+      "letter": "A",
+      "text": "Hear out the man at the north tea stall on Riverside Path and agree to invest. Choose 5,000 mon for Excellent Steel, or 1 ryō (10,000 mon) for Celestial Steel."
+    },
+    {
+      "letter": "A",
+      "text": "Leave Riverside Path and return. Choose “Trust Him” to give him another chance at no extra cost. Taking the half refund ends the quest without steel."
+    },
+    {
+      "letter": "A",
+      "text": "Leave and reenter again. Either final reply works: the 5,000-mon investment returns 1 ryō and Excellent Steel; the 1-ryō investment returns 2 ryō and Celestial Steel. Both successful routes give 1,000 XP."
+    }
+  ],
+  "79": [
+    {
+      "letter": "A",
+      "text": "Defeat the ninja surrounding Momiji at the west end of Kawaramachi. Watch the scene at her house."
+    },
+    {
+      "letter": "B",
+      "text": "Speak to the attendant at Kamenoya on Kamemachi Alley in Gion."
+    },
+    {
+      "letter": "C",
+      "text": "Inspect Momiji’s house on the north side of Kawaramachi’s avenue near its western end. Defeat the ninja and their leader inside."
+    }
+  ],
+  "80": [
+    {
+      "letter": "A",
+      "text": "Talk to the innkeeper and his old dog on the south side of Kawaramachi’s main avenue."
+    },
+    {
+      "letter": "A",
+      "text": "Leave for Rakugai and come back to the inn. Choose the second option with the boy sweeping outside to follow the dog, then beat the thieves."
+    }
+  ],
+  "81": [
+    {
+      "letter": "A",
+      "text": "Speak to the farmer by the pattern in the western field. Use the first option to ask about the deity."
+    },
+    {
+      "letter": "A",
+      "text": "Pick up the paper in the pattern and show it to him."
+    },
+    {
+      "letter": "A",
+      "text": "Return after dark when the farmers bring the cow. The next story opportunity is 10-11."
+    },
+    {
+      "letter": "B",
+      "text": "Take the mountain steps and approach the man by the cow. Beat the attackers."
+    },
+    {
+      "letter": "A",
+      "text": "Report to the farmer in the field."
+    }
+  ],
+  "82": [
+    {
+      "letter": "A",
+      "text": "Accept Suisen’s request at the west end of Suiten Alley."
+    },
+    {
+      "letter": "B",
+      "text": "Enter Countryside Path from Yoshioka Dojo and ask the elderly woman beside the first rice paddy on your right."
+    },
+    {
+      "letter": "C",
+      "text": "Look toward the parents’ house from the northeast side of the paddy and interact."
+    },
+    {
+      "letter": "A",
+      "text": "Report to Suisen. Saying they make an honest living earns 1 ryō. The truth pays 5,000 mon and also completes the request."
+    }
+  ],
+  "83": [
+    {
+      "letter": "A",
+      "text": "Pick up the red diary in front of Suiten Inari Shrine and agree to find its owner."
+    },
+    {
+      "letter": "B",
+      "text": "Speak to the woman behind the lattice at Yumejiya."
+    },
+    {
+      "letter": "C",
+      "text": "Ask the woman at Yoshidaya on Kamemachi Alley."
+    },
+    {
+      "letter": "D",
+      "text": "Speak to Omayu at Waseya on western Kamemachi Alley. Choose the first option to read the diary and again to buy the gift."
+    },
+    {
+      "letter": "E",
+      "text": "At Arigataya Market in Rakugai, choose “I’m here to buy a rare item” and buy the Red Hairpiece. Beat the man outside."
+    },
+    {
+      "letter": "D",
+      "text": "Give Omayu the Red Hairpiece back at Waseya."
+    }
+  ],
+  "84": [
+    {
+      "letter": "A",
+      "text": "Inspect the crowd at Suisen’s brothel on western Suiten Alley, where #82 started. Agree to follow her and beat her father and the swordsman unarmed."
+    }
+  ],
+  "85": [
+    {
+      "letter": "A",
+      "text": "Speak to the worried man by the crowd on the east side of Nakanomachi. Agree to look for Ken to get the Fly Picture."
+    },
+    {
+      "letter": "B",
+      "text": "Ask the worker at Sushi Ginya about Ken."
+    },
+    {
+      "letter": "C",
+      "text": "Find Ken by Gion Main Gate near Tatsuya and beat Wakamatsu’s group."
+    }
+  ],
+  "86": [
+    {
+      "letter": "A",
+      "text": "Speak to the woman across from Arigataya Market on Nagayamachi. Choose the first option to say you know a foreigner."
+    },
+    {
+      "letter": "B",
+      "text": "Find the Portuguese man between the Forest Path stables and the cave turnoff. He returns to Rakugai with you. Agree to gather ingredients."
+    },
+    {
+      "letter": "C",
+      "text": "Get sugar from the confectioner at the west end of Ebisu Street."
+    },
+    {
+      "letter": "D",
+      "text": "Get mizuame from the candy vendor in central Higashiyama Shopping District."
+    },
+    {
+      "letter": "E",
+      "text": "Buy an egg from the woman with a chicken at the northwest end of Countryside Path for 700 mon."
+    },
+    {
+      "letter": "F",
+      "text": "Get flour from the woman outside Whitesnake Udon."
+    },
+    {
+      "letter": "A",
+      "text": "Hand over the ingredients across from Arigataya Market."
+    },
+    {
+      "letter": "G",
+      "text": "After cooking, approach the father and daughter across from Rakugai Shrine."
+    }
+  ],
+  "87": [
+    {
+      "letter": "A",
+      "text": "Speak to the old man just past the roadside Jizo statues on Countryside Path."
+    },
+    {
+      "letter": "B",
+      "text": "Inspect the statues, offer an ohagi and close your eyes. Inspect again, offer the second ohagi, close your eyes and open them. Use the first option each time."
+    },
+    {
+      "letter": "A",
+      "text": "Speak to the old man again."
+    }
+  ],
+  "88": [
+    {
+      "letter": "A",
+      "text": "Speak to the crouching vegetable seller by the small stream bridge and compost on Countryside Path."
+    }
+  ],
+  "89": [
+    {
+      "letter": "A",
+      "text": "Agree to look for Okiku when her father asks outside the stables on the Yoshioka Dojo side of Countryside Path."
+    },
+    {
+      "letter": "B",
+      "text": "Talk to her outside the show theater in Rakugai and defeat the men who confront you."
+    }
+  ],
+  "90": [
+    {
+      "letter": "A",
+      "text": "Speak to the elderly woman west of Yoshioka Dojo."
+    },
+    {
+      "letter": "B",
+      "text": "Talk to the man with chickens just inside Countryside Path from the dojo side for a boiled egg."
+    },
+    {
+      "letter": "A",
+      "text": "Give the boiled egg to the woman."
+    }
+  ],
+  "91": [
+    {
+      "letter": "A",
+      "text": "Talk to the old man on the north side of the street west of Yoshioka Dojo. Accept the invitation with the second option. Keep choosing to stay inside until the fight, then beat him."
+    }
+  ],
+  "92": [
+    {
+      "letter": "A",
+      "text": "Listen to the couple at the east end of Shijo Avenue."
+    },
+    {
+      "letter": "B",
+      "text": "Talk to the seated man by the Zanki Dojo tenement on Ebisu Street. Walk west to start the scene and speak to him again."
+    },
+    {
+      "letter": "C",
+      "text": "Cross Shijo Bridge into Kawaramachi and enter the first house on the left. Help Gozo beat the men inside."
+    }
+  ],
+  "93": [
+    {
+      "letter": "A",
+      "text": "Agree to investigate when the couple at Riverside Tea House asks."
+    },
+    {
+      "letter": "B",
+      "text": "At the far end of the bridge on Cliffside Path, choose “Listen” when the basket-hatted monk offers to play. Then choose “It’s the worst thing I ever heard.” Beat him."
+    },
+    {
+      "letter": "A",
+      "text": "Report back to the couple at the tea house."
+    }
+  ],
+  "94": [
+    {
+      "letter": "A",
+      "text": "Approach the two men near the Riverside Tea House end of Cliffside Path. Use the first option to help the woman."
+    },
+    {
+      "letter": "B",
+      "text": "Continue north toward Sanjusangendo until you hear a call for help. Approach and defeat the masked attacker."
+    }
+  ],
+  "95": [
+    {
+      "letter": "A",
+      "text": "Talk to the villagers outside the small hut in western Countryside Path. Agree to accompany the girl. The scene takes you to the nearby shrine steps, where you fight the armored man."
+    }
+  ],
+  "96": [
+    {
+      "letter": "A",
+      "text": "Talk to the elderly woman west of Yoshioka Dojo."
+    },
+    {
+      "letter": "B",
+      "text": "Buy an egg from the same Countryside Path chicken farmer as #90. Choose “Buy” to pay 500 mon. To pay 100, choose “Haggle,” offer 200, choose “Haggle Further,” then offer 100."
+    },
+    {
+      "letter": "A",
+      "text": "Back at the dojo, choose “Are you really feeling sick, lady?” Speak to her again and choose “Hand Over Egg” before leaving."
+    }
+  ],
+  "97": [
+    {
+      "letter": "A",
+      "text": "Enter Gyotensai’s house at the east end of Tsurumachi Alley and encourage his flying machine idea. If the scene doesn’t start, speak to him and reenter."
+    },
+    {
+      "letter": "B",
+      "text": "Pick up the rake beside the stable in the middle of Countryside Path."
+    },
+    {
+      "letter": "A",
+      "text": "Give Gyotensai the rake."
+    },
+    {
+      "letter": "C",
+      "text": "Pick up the bamboo sticks south of the Rakugai Blacksmith."
+    },
+    {
+      "letter": "A",
+      "text": "Give him the bamboo and the Washi from #47. Use the second option to agree to a test."
+    },
+    {
+      "letter": "D",
+      "text": "In Chapter 11 daylight, talk to the people at the south end of Cliffside Path."
+    },
+    {
+      "letter": "E",
+      "text": "Inspect the spot just west of the bridge to launch the machine."
+    },
+    {
+      "letter": "A",
+      "text": "Return to Gyotensai’s house after the rescue."
+    }
+  ],
+  "98": [
+    {
+      "letter": "A",
+      "text": "Approach the baby by the Jizo save statue at Riverside Tea House and agree to find its mother."
+    },
+    {
+      "letter": "B",
+      "text": "At the south end of Riverside Path, speak to the older man nearest the water. Take the second option to rescue her."
+    },
+    {
+      "letter": "C",
+      "text": "Go to the tenement beside the Rakugai Blacksmith. Refuse the 1,000 ryō demand with the first option and beat the men."
+    },
+    {
+      "letter": "A",
+      "text": "Give the torn debt record to the mother at Riverside Tea House. Any name for the baby works."
+    }
+  ],
+  "99": [
+    {
+      "letter": "A",
+      "text": "Approach the thieves at the south end of Forest Path and beat them. Watch Seizo’s conversation."
+    },
+    {
+      "letter": "B",
+      "text": "Go outside Yumejiya on Gion’s main street and approach the thieves to hear the rest of their conversation."
+    },
+    {
+      "letter": "C",
+      "text": "Find Seizo outside the small hall near the south end of Mountain Path where you stayed with the monk."
+    }
+  ],
+  "100": [
+    {
+      "letter": "A",
+      "text": "Speak to the Okappiki at the northwest Rakugai police box."
+    },
+    {
+      "letter": "A",
+      "text": "Return at night and inspect the empty police box for a letter. If you first spoke at night, leave Rakugai and come back."
+    },
+    {
+      "letter": "B",
+      "text": "After dark, bring healing items to Shijo Bridge and confront Amon. He restores his health and switches style three times."
+    }
+  ]
+}

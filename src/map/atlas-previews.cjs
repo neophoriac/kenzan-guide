@@ -1,6 +1,6 @@
 // Kenzan-only tooltip action curation. Keep the complete source instructions
 // in the selected details; only the hover action is shortened here.
-// Review/generation: research/kenzan60/focused-tooltips-20261120/data/.
+// Expected source text guards these curated actions against stale instructions.
 // Apply after enrichAtlasFacts so omitted repeated numbers remain qualified.
 const assert = require('node:assert/strict');
 const patches = [

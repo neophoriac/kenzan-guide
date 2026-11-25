@@ -1,4 +1,4 @@
-// Kenzan presentation aliases from docs/research/maps/artwork-name-audit.md.
+// Kenzan presentation aliases for older artwork names used in guide content.
 // Current labels have one authority: the map's authored artwork catalogue.
 // These aliases identify whole sheets, not arbitrary native prose or venues.
 const areas = require('../../maps/data/areas.json');

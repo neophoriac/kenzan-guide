@@ -28,7 +28,7 @@ The guide never uploads or edits your save files. Progress and story objective p
 
 ## Read the source
 
-The [guide source](src/), [turtle race simulator](simulation/turtle-racing/) and build entry points are available for reading. [SOURCE.md](SOURCE.md) explains the layout and which build inputs are separate from this snapshot.
+The [guide source](src/), [turtle race simulator](simulation/turtle-racing/) and their reference tables are available for reading. [SOURCE.md](SOURCE.md) explains the layout, the reference checker and the separate authoring dependencies.
 
 The [PS3 import notes](docs/research/save-import-ps3.md) walk through validation, key unwrapping and decryption, including the separate PFD-header checks used by a full PFD verifier.
 

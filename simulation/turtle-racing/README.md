@@ -1,17 +1,26 @@
 # Turtle racing simulation
 
-These modules implement the guide's seeded race model. `race-planner-scenes.cjs`
-is the browser worker entry point bundled by the guide build. Its dependencies
-include the native tables in `data/turtles/` and the save turtle parser in
-`src/tracker/`. `race-capture-start.cjs` remains part of this runtime because the
-planner uses its scene-state decoding helpers.
+These modules implement the guide's seeded race model.
+[`race-planner-scenes.cjs`](race-planner-scenes.cjs) is the planner entry module
+bundled into the guide's browser worker. Its dependencies include the
+[native turtle tables](../../data/turtles/turtle-native-data.json) and the
+[save turtle parser](../../src/tracker/save-turtle-bucket.js).
+[`race-capture-start.cjs`](race-capture-start.cjs) remains part of the runtime
+because the planner uses its scene-state decoding helpers.
 
-The opening snapshots and motion curves are model inputs. Preserve their source
-qualifications when changing sampling or presenting estimates. The research
-history is in `docs/research/turtles/simulator-history.md`; capture and replay
-tools are in `tools/turtles/`.
+The [opening snapshots](race-planner-openings.json) and
+[motion curves](race-planner-root-curves.json) are included model inputs.
+Openings represent sampled shared-arena scenes; applying them to other courses
+or lineups is a modelling assumption. Each trial generates rivals and samples
+its active race seed independently of the opening's original random state.
+Preserve these qualifications when changing sampling or presenting estimates.
 
-From the project root, run `node tools/turtles/verify-relocation.cjs --verify`
-to compare the exported APIs and 18 fixed core/planner cases with their results
-before the directory move. This verifies the relocation, not new native-race
-accuracy.
+The simulator's modules and input tables are included here. The guide's worker
+bundle is already shipped with the website; building the full guide requires
+the separate authoring inputs described in [SOURCE.md](../../SOURCE.md).
+Private capture/replay tools, save fixtures and research notebooks are not
+part of this repository.
+
+Planner results are experimental estimates from simulated fields and
+representative starting scenes. A matching replay of a recorded race does not
+establish that the sampled win rates match every possible in-game race.

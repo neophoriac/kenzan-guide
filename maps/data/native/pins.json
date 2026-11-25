@@ -1,0 +1,490 @@
+{
+  "1": {
+    "area": "st_gion",
+    "x": 0.853393,
+    "y": 0.423791,
+    "precision": "exact",
+    "note": "Kinuyo’s opening conversation at Gion Inari Shrine.",
+    "gameRecord": "00830275"
+  },
+  "2": {
+    "area": "st_gion",
+    "x": 0.508141,
+    "y": 0.604441,
+    "precision": "exact",
+    "note": "The Yumejiya proprietor who opens the request.",
+    "gameRecord": "00b0006c"
+  },
+  "3": {
+    "area": "st_gion",
+    "x": 0.836932,
+    "y": 0.516256,
+    "precision": "exact",
+    "note": "Momochika’s first shrine encounter.",
+    "gameRecord": "008301a9"
+  },
+  "4": {
+    "area": "st_gion",
+    "x": 0.822631,
+    "y": 0.540316,
+    "precision": "exact",
+    "note": "Hinagiku before she asks you to leave the shrine.",
+    "gameRecord": "0083036a"
+  },
+  "5": {
+    "area": "st_gion",
+    "x": 0.143184,
+    "y": 0.864498,
+    "precision": "exact",
+    "note": "Hanamaru and her father at Suiten Inari Shrine.",
+    "gameRecord": "0083037f"
+  },
+  "6": {
+    "area": "st_gion",
+    "x": 0.524857,
+    "y": 0.909229,
+    "precision": "exact",
+    "note": "The opening conversation by the Gion gate.",
+    "gameRecord": "0083038c"
+  },
+  "7": {
+    "area": "st_gion",
+    "x": 0.826381,
+    "y": 0.520868,
+    "precision": "exact",
+    "note": "The opening approach trigger at Gion Inari Shrine.",
+    "gameRecord": "018303a1"
+  },
+  "8": {
+    "area": "st_gion",
+    "x": 0.501721,
+    "y": 0.903061,
+    "precision": "exact",
+    "note": "The guidebook author near the main gate.",
+    "gameRecord": "00b00117"
+  },
+  "9": {
+    "area": "st_gion",
+    "x": 0.692907,
+    "y": 0.264646,
+    "precision": "exact",
+    "note": "The guidebook author before the follow-up starts.",
+    "gameRecord": "008302cd"
+  },
+  "10": {
+    "area": "st_rakugaicho",
+    "x": 0.761104,
+    "y": 0.159426,
+    "precision": "exact",
+    "note": "The Togarashi girl at her stall.",
+    "gameRecord": "0002004a"
+  },
+  "11": {
+    "area": "st_rakugaicho",
+    "x": 0.454076,
+    "y": 0.850409,
+    "precision": "exact",
+    "note": "The old man at the house before you accept the job.",
+    "gameRecord": "000202d9"
+  },
+  "12": {
+    "area": "st_rakugaicho",
+    "x": 0.169459,
+    "y": 0.169092,
+    "precision": "exact",
+    "note": "Tanaka before the first purchase.",
+    "gameRecord": "00b00008"
+  },
+  "13": {
+    "area": "st_rakugaicho",
+    "x": 0.273843,
+    "y": 0.783086,
+    "precision": "exact",
+    "note": "Mametaro’s veranda.",
+    "gameRecord": "007c0197"
+  },
+  "14": {
+    "area": "st_rakugaicho",
+    "x": 0.508598,
+    "y": 0.61334,
+    "precision": "exact",
+    "note": "The child who first tells you about the candy.",
+    "gameRecord": "00490046"
+  },
+  "15": {
+    "area": "st_rakugaicho",
+    "x": 0.33482,
+    "y": 0.593253,
+    "precision": "exact",
+    "note": "The child at the candy stall before the conversation.",
+    "gameRecord": "0049005a"
+  },
+  "16": {
+    "area": "st_kaido_rakunai",
+    "x": 0.047463,
+    "y": 0.762273,
+    "precision": "exact",
+    "note": "The first approach trigger on the west side of Kawaramachi.",
+    "gameRecord": "018305a3"
+  },
+  "18": {
+    "area": "st_rakugaicho",
+    "x": 0.530669,
+    "y": 0.585574,
+    "precision": "exact",
+    "note": "The woman outside the inn before the request starts.",
+    "gameRecord": "00020239"
+  },
+  "19": {
+    "area": "st_rakugaicho",
+    "x": 0.174915,
+    "y": 0.764165,
+    "precision": "exact",
+    "note": "The opening approach trigger at the sword seller.",
+    "gameRecord": "0102054b"
+  },
+  "21": {
+    "area": "st_rakugaicho",
+    "x": 0.115027,
+    "y": 0.813457,
+    "precision": "exact",
+    "note": "The opening table conversation, before the group leaves the tea shop.",
+    "gameRecord": "0083021e"
+  },
+  "22": {
+    "area": "st_rakugaicho",
+    "x": 0.401034,
+    "y": 0.600863,
+    "precision": "exact",
+    "note": "The merchant in the opening donation conversation.",
+    "gameRecord": "004900b5"
+  },
+  "33": {
+    "area": "st_gion",
+    "x": 0.102125,
+    "y": 0.871332,
+    "precision": "exact",
+    "note": "The sick man by Suiten Inari Shrine before you bring the doctor.",
+    "gameRecord": "00020057"
+  },
+  "34": {
+    "area": "st_gion",
+    "x": 0.378544,
+    "y": 0.881223,
+    "precision": "exact",
+    "note": "The client who opens the request near Tatsuya.",
+    "gameRecord": "004900c0"
+  },
+  "37": {
+    "area": "st_rakugaicho",
+    "x": 0.169459,
+    "y": 0.169092,
+    "precision": "exact",
+    "note": "Tanaka before the second purchase.",
+    "gameRecord": "00b00181"
+  },
+  "38": {
+    "area": "st_rakugaicho",
+    "x": 0.535203,
+    "y": 0.2286,
+    "precision": "exact",
+    "note": "The man outside Ikkonya before he goes indoors.",
+    "gameRecord": "004900bc"
+  },
+  "40": {
+    "area": "st_rakugaicho",
+    "x": 0.531541,
+    "y": 0.586054,
+    "precision": "exact",
+    "note": "The woman outside the inn before she spills the water.",
+    "gameRecord": "00020229"
+  },
+  "42": {
+    "area": "st_kaido_rakunai",
+    "x": 0.059072,
+    "y": 0.658266,
+    "precision": "exact",
+    "note": "Keisuke at his stall before the first conversation.",
+    "gameRecord": "00020408"
+  },
+  "45": {
+    "area": "st_rakugaicho",
+    "x": 0.273843,
+    "y": 0.783086,
+    "precision": "exact",
+    "note": "Mametaro at his veranda for the writing lesson.",
+    "gameRecord": "007c033b"
+  },
+  "50": {
+    "area": "st_rakugaicho",
+    "x": 0.169459,
+    "y": 0.169092,
+    "precision": "exact",
+    "note": "Tanaka before the third purchase.",
+    "gameRecord": "00b00182"
+  },
+  "51": {
+    "area": "st_rakugaicho",
+    "x": 0.273843,
+    "y": 0.783086,
+    "precision": "exact",
+    "note": "Mametaro at his veranda for the arithmetic lesson.",
+    "gameRecord": "007c033c"
+  },
+  "53": {
+    "area": "st_rakugaicho",
+    "x": 0.273843,
+    "y": 0.783086,
+    "precision": "exact",
+    "note": "Mametaro at his veranda for the letter lesson.",
+    "gameRecord": "007c033d"
+  },
+  "56": {
+    "area": "st_kajiya",
+    "x": 0.624688,
+    "y": 0.203939,
+    "precision": "exact",
+    "note": "The approach trigger for the blacksmith’s opening conversation inside the smithy.",
+    "gameRecord": "01b000e8"
+  },
+  "57": {
+    "area": "st_kaido_rakunai",
+    "x": 0.507391,
+    "y": 0.714403,
+    "precision": "exact",
+    "note": "Ranzan before he asks you to model for his painting.",
+    "gameRecord": "00020037"
+  },
+  "60": {
+    "area": "st_sakaya_01",
+    "x": 0.394306,
+    "y": 0.806345,
+    "precision": "exact",
+    "note": "The opening approach trigger in Ikkonya before the men leave.",
+    "gameRecord": "018300b8"
+  },
+  "61": {
+    "area": "st_rakugaicho",
+    "x": 0.763721,
+    "y": 0.157849,
+    "precision": "exact",
+    "note": "The Togarashi girl’s father at his stall.",
+    "gameRecord": "000203b4"
+  },
+  "62": {
+    "area": "st_udon",
+    "x": 0.507174,
+    "y": 0.561476,
+    "precision": "exact",
+    "note": "The employee on the restaurant floor, away from the counter.",
+    "gameRecord": "0002015b"
+  },
+  "69": {
+    "area": "st_udon",
+    "x": 0.352503,
+    "y": 0.431966,
+    "precision": "exact",
+    "note": "The owner inside Whitesnake Udon before the first tasting.",
+    "gameRecord": "00b00110"
+  },
+  "84": {
+    "area": "st_gion",
+    "x": 0.160663,
+    "y": 0.762976,
+    "precision": "exact",
+    "note": "The storefront interaction before you look inside.",
+    "gameRecord": "01b00104"
+  },
+  "85": {
+    "area": "st_gion",
+    "x": 0.380641,
+    "y": 0.657564,
+    "precision": "exact",
+    "note": "The man at the brothel crowd before you agree to look for Ken.",
+    "gameRecord": "0002005f"
+  },
+  "96": {
+    "area": "st_yoshioka_jnt",
+    "x": 0.139282,
+    "y": 0.370734,
+    "precision": "exact",
+    "note": "The elderly woman outside the dojo grounds.",
+    "gameRecord": "00490074"
+  },
+  "97": {
+    "area": "st_hatsumeika",
+    "x": 0.01419,
+    "y": 0.504648,
+    "precision": "exact",
+    "note": "The opening trigger just inside Gyotensai’s house.",
+    "gameRecord": "01b0003e"
+  },
+  "100": {
+    "area": "st_rakugaicho",
+    "x": 0.117117,
+    "y": 0.16731,
+    "precision": "exact",
+    "note": "The investigator at the northwest police box before the bridge encounter.",
+    "gameRecord": "007c0229"
+  },
+  "101": {
+    "area": "st_gion",
+    "x": 0.170006,
+    "y": 0.331216,
+    "precision": "exact",
+    "note": "The injured collectors in Kamemachi Alley before the fight.",
+    "gameRecord": "00c0009e"
+  },
+  "102": {
+    "area": "st_gion",
+    "x": 0.412548,
+    "y": 0.895504,
+    "precision": "exact",
+    "note": "The pigeon letter trigger outside Tatsuya.",
+    "gameRecord": "01b0011b"
+  },
+  "103": {
+    "area": "st_gion",
+    "x": 0.453543,
+    "y": 0.893948,
+    "precision": "exact",
+    "note": "The pigeon letter trigger before you speak to Yosuke.",
+    "gameRecord": "01b00122"
+  },
+  "104": {
+    "area": "st_gion",
+    "x": 0.64206,
+    "y": 0.839603,
+    "precision": "exact",
+    "note": "The man who explains the lockers.",
+    "gameRecord": "00b000e0"
+  },
+  "105": {
+    "area": "st_gion",
+    "x": 0.613458,
+    "y": 0.833269,
+    "precision": "exact",
+    "note": "The retail pigeon letter trigger on Monzen Alley; the demo-only counterpart uses the same coordinates.",
+    "gameRecord": "010203ea"
+  },
+  "106": {
+    "area": "st_gion",
+    "x": 0.252252,
+    "y": 0.402675,
+    "precision": "exact",
+    "note": "The opening argument with the older customer.",
+    "gameRecord": "00020042"
+  },
+  "107": {
+    "area": "st_gion",
+    "x": 0.48456,
+    "y": 0.886113,
+    "precision": "exact",
+    "note": "The pigeon letter trigger near Tatsuya.",
+    "gameRecord": "01020513"
+  },
+  "108": {
+    "area": "st_gion",
+    "x": 0.61206,
+    "y": 0.196853,
+    "precision": "exact",
+    "note": "The Horaiya clerk’s opening group on Tsurumachi Alley.",
+    "gameRecord": "00020217"
+  },
+  "109": {
+    "area": "st_gion",
+    "x": 0.398247,
+    "y": 0.908785,
+    "precision": "exact",
+    "note": "The Azamiya head clerk outside Tatsuya before you accept the job.",
+    "gameRecord": "00c00058"
+  },
+  "110": {
+    "area": "st_gion",
+    "x": 0.550217,
+    "y": 0.44424,
+    "precision": "exact",
+    "note": "The push interaction in the narrow alley north of Nakanokura.",
+    "gameRecord": "017c0589"
+  },
+  "111": {
+    "area": "st_tatsuya",
+    "x": 0.037089,
+    "y": 0.688208,
+    "precision": "exact",
+    "note": "The opening letter interaction inside Tatsuya. Ebisuya Pawn is the next stop.",
+    "gameRecord": "01b00118"
+  },
+  "112": {
+    "area": "st_tatsuya",
+    "x": 0.026127,
+    "y": 0.708426,
+    "precision": "exact",
+    "note": "The opening letter interaction inside Tatsuya.",
+    "gameRecord": "01b0012e"
+  },
+  "113": {
+    "area": "st_tatsuya",
+    "x": 0.437648,
+    "y": 0.362027,
+    "precision": "exact",
+    "note": "The first letter interaction inside Tatsuya. Nakanokura is the next stop.",
+    "gameRecord": "017c0597"
+  },
+  "114": {
+    "area": "st_gion",
+    "x": 0.426149,
+    "y": 0.875,
+    "precision": "exact",
+    "note": "The first client interaction outside Tatsuya.",
+    "gameRecord": "0002052a"
+  },
+  "115": {
+    "area": "st_tatsuya",
+    "x": 0.184664,
+    "y": 0.438855,
+    "precision": "exact",
+    "note": "The opening Kikuya letter interaction inside Tatsuya.",
+    "gameRecord": "017c0457"
+  },
+  "116": {
+    "area": "st_rakugaicho",
+    "x": 0.278201,
+    "y": 0.169915,
+    "precision": "exact",
+    "note": "The first gossiping man near the Gion gate.",
+    "gameRecord": "00830030"
+  },
+  "117": {
+    "area": "st_gion",
+    "x": 0.38687,
+    "y": 0.915953,
+    "precision": "exact",
+    "note": "The wakashu outside Tatsuya before the commission begins.",
+    "gameRecord": "0049009a"
+  },
+  "118": {
+    "area": "st_gion",
+    "x": 0.419984,
+    "y": 0.877056,
+    "precision": "exact",
+    "note": "The Yukizasaya clerk outside Tatsuya.",
+    "gameRecord": "000204fb"
+  },
+  "119": {
+    "area": "st_gion",
+    "x": 0.392717,
+    "y": 0.894726,
+    "precision": "exact",
+    "note": "The pigeon letter trigger near Tatsuya.",
+    "gameRecord": "01b00111"
+  },
+  "120": {
+    "area": "st_gion",
+    "x": 0.391955,
+    "y": 0.894893,
+    "precision": "exact",
+    "note": "The pigeon letter trigger near Tatsuya.",
+    "gameRecord": "01b00113"
+  }
+}

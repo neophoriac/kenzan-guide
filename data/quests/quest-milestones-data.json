@@ -1,0 +1,2539 @@
+{
+  "version": 1,
+  "date": "2026-11-19",
+  "source": "English patch v12 native scenario, item and invention tables; verified quest-milestone audit",
+  "semantics": {
+    "snapshot": "Facts describe one gameplay save, never combined across slots or prior snapshots.",
+    "unknown": "null means unavailable or unverified; false means a readable supported record is absent.",
+    "manual": "manualKey names a separate guide check; it never writes game data or supplies native history.",
+    "ownership": "Current ordinary stock and key-item possession are distinct from acquisition and delivery.",
+    "lifecycle": "No claim of preservation across New Game+ or a new-game reset."
+  },
+  "storage": {
+    "scenarioOffset": 400,
+    "scenarioGroupBytes": 32,
+    "keyItemsOffset": 28888,
+    "itemHistoryOffset": 26840,
+    "itemCount": 667,
+    "ordinaryPools": [
+      {
+        "name": "carried",
+        "offset": 18452,
+        "count": 15
+      },
+      {
+        "name": "inventory",
+        "offset": 18512,
+        "count": 1000
+      },
+      {
+        "name": "storage",
+        "offset": 22768,
+        "count": 500
+      }
+    ]
+  },
+  "quests": [
+    {
+      "id": 20,
+      "name": "Enchanted Sword Retrieval",
+      "mode": "collection",
+      "completeState": {
+        "flag": [
+          87,
+          21
+        ]
+      },
+      "completionKey": "kenzan-guide:done:20",
+      "caveats": [
+        "The quest accepts five qualifying swords, including duplicates when available; one of each type is the normal route, not the exact completion condition.",
+        "Native SUB063/group 87 progress flags 1–4 and completion 21 support returned count; sword-named selection flags 5–10 are explicitly cleared and do not identify permanently returned blades.",
+        "Existing enchanted-sword collectible keys already cover acquisitions; possession/acquisition cannot alone prove a particular sword was returned.",
+        "Beckoning Sword's initial loan acquisition must not count as its permanent quest reward."
+      ],
+      "milestones": [
+        {
+          "id": "bassarimaru",
+          "label": "Bassarimaru",
+          "kind": "acquisition",
+          "state": {
+            "history": 479
+          },
+          "manualKey": "kenzan-atlas:collected:enchanted-sword-bassarimaru",
+          "item": {
+            "kind": "ordinary",
+            "id": 479
+          },
+          "acquiredState": {
+            "history": 479
+          },
+          "reuseKey": "kenzan-atlas:collected:enchanted-sword-bassarimaru",
+          "link": {
+            "href": "#collectible-enchanted-sword-bassarimaru:enchanted-sword-bassarimaru",
+            "label": "Enchanted sword sources"
+          }
+        },
+        {
+          "id": "drunken-blade",
+          "label": "Drunken Blade",
+          "kind": "acquisition",
+          "state": {
+            "flag": [
+              83,
+              25
+            ]
+          },
+          "manualKey": "kenzan-atlas:collected:enchanted-sword-drunken-blade",
+          "item": {
+            "kind": "ordinary",
+            "id": 477
+          },
+          "acquiredState": {
+            "flag": [
+              83,
+              25
+            ]
+          },
+          "reuseKey": "kenzan-atlas:collected:enchanted-sword-drunken-blade",
+          "link": {
+            "href": "#collectible-enchanted-sword-drunken-blade:enchanted-sword-drunken-blade",
+            "label": "Enchanted sword sources"
+          }
+        },
+        {
+          "id": "beckoning-sword",
+          "label": "Beckoning Sword",
+          "kind": "acquisition",
+          "state": {
+            "flag": [
+              84,
+              38
+            ]
+          },
+          "manualKey": "kenzan-atlas:collected:enchanted-sword-beckoning-sword",
+          "item": {
+            "kind": "ordinary",
+            "id": 476
+          },
+          "acquiredState": {
+            "flag": [
+              84,
+              38
+            ]
+          },
+          "reuseKey": "kenzan-atlas:collected:enchanted-sword-beckoning-sword",
+          "link": {
+            "href": "#collectible-enchanted-sword-beckoning-sword:enchanted-sword-beckoning-sword",
+            "label": "Enchanted sword sources"
+          }
+        },
+        {
+          "id": "greedy-katana",
+          "label": "Greedy Katana",
+          "kind": "acquisition",
+          "state": {
+            "flag": [
+              85,
+              22
+            ]
+          },
+          "manualKey": "kenzan-atlas:collected:enchanted-sword-greedy-katana",
+          "item": {
+            "kind": "ordinary",
+            "id": 478
+          },
+          "acquiredState": {
+            "flag": [
+              85,
+              22
+            ]
+          },
+          "reuseKey": "kenzan-atlas:collected:enchanted-sword-greedy-katana",
+          "link": {
+            "href": "#collectible-enchanted-sword-greedy-katana:enchanted-sword-greedy-katana",
+            "label": "Enchanted sword sources"
+          }
+        },
+        {
+          "id": "mortal-blade",
+          "label": "Mortal Blade",
+          "kind": "acquisition",
+          "state": {
+            "flag": [
+              157,
+              6
+            ]
+          },
+          "manualKey": "kenzan-atlas:collected:enchanted-sword-mortal-blade",
+          "item": {
+            "kind": "ordinary",
+            "id": 480
+          },
+          "acquiredState": {
+            "flag": [
+              157,
+              6
+            ]
+          },
+          "reuseKey": "kenzan-atlas:collected:enchanted-sword-mortal-blade",
+          "link": {
+            "href": "#collectible-enchanted-sword-mortal-blade:enchanted-sword-mortal-blade",
+            "label": "Enchanted sword sources"
+          }
+        }
+      ],
+      "counters": {
+        "accepted-swords": {
+          "label": "Swords accepted",
+          "type": "highestFlag",
+          "flags": [
+            [
+              87,
+              1,
+              1
+            ],
+            [
+              87,
+              2,
+              2
+            ],
+            [
+              87,
+              3,
+              3
+            ],
+            [
+              87,
+              4,
+              4
+            ],
+            [
+              87,
+              21,
+              5
+            ]
+          ],
+          "target": 5,
+          "unit": "swords",
+          "note": "Counts accepted copies, including duplicates; does not identify returned blade types."
+        }
+      },
+      "evidence": [
+        "uid0002043b.msg: shared accepted-copy counter; states1–4 and21; selectors5–10 cleared",
+        "Existing Collection rewards / Enchanted swords acquired save-sync-data groups"
+      ]
+    },
+    {
+      "id": 31,
+      "name": "Where's the Palanquin Bearer?",
+      "mode": "prerequisite",
+      "completeState": {
+        "flag": [
+          95,
+          22
+        ]
+      },
+      "completionKey": "kenzan-guide:done:31",
+      "caveats": [
+        "Thirty palanquin rides unlocks the request. The signed native saved counter is range-checked. This is prerequisite readiness, not a collection."
+      ],
+      "milestones": [
+        {
+          "id": "readiness",
+          "label": "30 palanquin rides",
+          "kind": "counter",
+          "state": {
+            "any": [
+              {
+                "flag": [
+                  95,
+                  22
+                ]
+              },
+              {
+                "counter": "readiness",
+                "atLeast": 30
+              }
+            ]
+          },
+          "manualKey": "kenzan-guide:milestone-manual:31:readiness",
+          "counterId": "readiness"
+        }
+      ],
+      "counters": {
+        "readiness": {
+          "label": "Palanquin rides",
+          "type": "scalar",
+          "index": 6,
+          "target": 30,
+          "unit": "rides",
+          "completeState": {
+            "flag": [
+              95,
+              22
+            ]
+          },
+          "note": "Current saved counter. Request completion confirms the requirement even if the counter was reset.",
+          "serializationVerified": true,
+          "offset": 17052,
+          "min": 0,
+          "max": 99,
+          "nativeType": "signed16be"
+        }
+      },
+      "evidence": [
+        "Native scenario scalar6; serialization pending verification",
+        "Native ELF25fdac flag getter and260524 scalar getter share scenario pointer0x1034e330; USERDATA base0x1034e1a0; signed16 scalar base+0x4100 -> USERDATA0x4290; init108504 serial block+0x190/size0x4500"
+      ]
+    },
+    {
+      "id": 36,
+      "name": "The Togarashi Girl's Father",
+      "mode": "crafting",
+      "completeState": {
+        "flag": [
+          104,
+          29
+        ]
+      },
+      "completionKey": "kenzan-guide:done:36",
+      "caveats": [
+        "The ingredient bundle is not three independently recorded hand-ins.",
+        "Reuse the existing invention record for making the poultice.",
+        "Ingredients consumed by the recorded invention must not reappear as missing. A special agar-purchase scene flag is not generic acquisition from every vendor.",
+        "Talent awards two same-named Washi bundles. This recipe consumes key 152; the flying machine uses key 16. Do not join by display name."
+      ],
+      "milestones": [
+        {
+          "id": "togarashi-set",
+          "label": "Togarashi Set",
+          "kind": "ingredient",
+          "state": {
+            "any": [
+              {
+                "owned": {
+                  "kind": "key",
+                  "id": 72
+                }
+              },
+              {
+                "flag": [
+                  174,
+                  3
+                ]
+              },
+              {
+                "any": [
+                  {
+                    "flag": [
+                      104,
+                      11
+                    ]
+                  },
+                  {
+                    "flag": [
+                      104,
+                      12
+                    ]
+                  },
+                  {
+                    "flag": [
+                      104,
+                      29
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "manualKey": "kenzan-guide:milestone-manual:36:togarashi-set",
+          "item": {
+            "kind": "key",
+            "id": 72
+          },
+          "usedState": {
+            "any": [
+              {
+                "flag": [
+                  174,
+                  3
+                ]
+              },
+              {
+                "any": [
+                  {
+                    "flag": [
+                      104,
+                      11
+                    ]
+                  },
+                  {
+                    "flag": [
+                      104,
+                      12
+                    ]
+                  },
+                  {
+                    "flag": [
+                      104,
+                      29
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "note": "Ready now, or already used for the recorded remedy."
+        },
+        {
+          "id": "washi",
+          "label": "Washi",
+          "kind": "ingredient",
+          "state": {
+            "any": [
+              {
+                "owned": {
+                  "kind": "key",
+                  "id": 152
+                }
+              },
+              {
+                "flag": [
+                  174,
+                  3
+                ]
+              },
+              {
+                "any": [
+                  {
+                    "flag": [
+                      104,
+                      11
+                    ]
+                  },
+                  {
+                    "flag": [
+                      104,
+                      12
+                    ]
+                  },
+                  {
+                    "flag": [
+                      104,
+                      29
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "manualKey": "kenzan-guide:milestone-manual:36:washi",
+          "item": {
+            "kind": "key",
+            "id": 152
+          },
+          "usedState": {
+            "any": [
+              {
+                "flag": [
+                  174,
+                  3
+                ]
+              },
+              {
+                "any": [
+                  {
+                    "flag": [
+                      104,
+                      11
+                    ]
+                  },
+                  {
+                    "flag": [
+                      104,
+                      12
+                    ]
+                  },
+                  {
+                    "flag": [
+                      104,
+                      29
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "note": "Ready now, or already used for the recorded remedy."
+        },
+        {
+          "id": "dried-agar",
+          "label": "Dried Agar",
+          "kind": "ingredient",
+          "state": {
+            "any": [
+              {
+                "owned": {
+                  "kind": "ordinary",
+                  "id": 208
+                }
+              },
+              {
+                "flag": [
+                  174,
+                  3
+                ]
+              },
+              {
+                "any": [
+                  {
+                    "flag": [
+                      104,
+                      11
+                    ]
+                  },
+                  {
+                    "flag": [
+                      104,
+                      12
+                    ]
+                  },
+                  {
+                    "flag": [
+                      104,
+                      29
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "manualKey": "kenzan-guide:milestone-manual:36:dried-agar",
+          "item": {
+            "kind": "ordinary",
+            "id": 208
+          },
+          "usedState": {
+            "any": [
+              {
+                "flag": [
+                  174,
+                  3
+                ]
+              },
+              {
+                "any": [
+                  {
+                    "flag": [
+                      104,
+                      11
+                    ]
+                  },
+                  {
+                    "flag": [
+                      104,
+                      12
+                    ]
+                  },
+                  {
+                    "flag": [
+                      104,
+                      29
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "note": "Ready now, or already used for the recorded remedy."
+        },
+        {
+          "id": "poultice",
+          "label": "Make Togarashi Poultice",
+          "kind": "invention",
+          "state": {
+            "any": [
+              {
+                "flag": [
+                  174,
+                  3
+                ]
+              },
+              {
+                "any": [
+                  {
+                    "flag": [
+                      104,
+                      11
+                    ]
+                  },
+                  {
+                    "flag": [
+                      104,
+                      12
+                    ]
+                  },
+                  {
+                    "flag": [
+                      104,
+                      29
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "manualKey": "kenzan-guide:training-done:inventions-back-pain-remedy",
+          "reuseKey": "kenzan-guide:training-done:inventions-back-pain-remedy",
+          "link": {
+            "href": "#training-inventions-back-pain-remedy",
+            "label": "Back Pain Remedy invention"
+          }
+        },
+        {
+          "id": "deliver",
+          "label": "Deliver the poultice",
+          "kind": "delivery",
+          "state": {
+            "any": [
+              {
+                "flag": [
+                  104,
+                  11
+                ]
+              },
+              {
+                "flag": [
+                  104,
+                  12
+                ]
+              },
+              {
+                "flag": [
+                  104,
+                  29
+                ]
+              }
+            ]
+          },
+          "manualKey": "kenzan-guide:milestone-manual:36:deliver",
+          "item": {
+            "kind": "ordinary",
+            "id": 210
+          },
+          "deliveredState": {
+            "any": [
+              {
+                "flag": [
+                  104,
+                  11
+                ]
+              },
+              {
+                "flag": [
+                  104,
+                  12
+                ]
+              },
+              {
+                "flag": [
+                  104,
+                  29
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "counters": {},
+      "evidence": [
+        "gennai.bin row3: output210, ingredients0x8048/0x8098/208; HATSUMEI:3",
+        "uid000203b1.msg: poultice removal, SUB080:11/12",
+        "uid0083026a.msg grants BOTH Washi16 and152"
+      ]
+    },
+    {
+      "id": 44,
+      "name": "Slaying the Oni",
+      "mode": "ordered",
+      "completeState": {
+        "flag": [
+          33,
+          23
+        ]
+      },
+      "completionKey": "kenzan-guide:done:44",
+      "caveats": [
+        "Two sequential deliveries, not a parallel collection. The initial pill delivery lacks a dedicated per-item receipt flag before acceptance; do not infer it solely from possession."
+      ],
+      "milestones": [
+        {
+          "id": "pill",
+          "label": "Give Special Vitality Pill",
+          "kind": "delivery",
+          "state": {
+            "any": [
+              {
+                "flag": [
+                  33,
+                  1
+                ]
+              },
+              {
+                "flag": [
+                  33,
+                  23
+                ]
+              },
+              {
+                "unknown": "No dedicated receipt before accepting the request."
+              }
+            ]
+          },
+          "manualKey": "kenzan-guide:milestone-manual:44:pill",
+          "item": {
+            "kind": "ordinary",
+            "id": 23
+          },
+          "deliveredState": {
+            "any": [
+              {
+                "flag": [
+                  33,
+                  1
+                ]
+              },
+              {
+                "flag": [
+                  33,
+                  23
+                ]
+              },
+              {
+                "unknown": "No dedicated receipt before accepting the request."
+              }
+            ]
+          }
+        },
+        {
+          "id": "dango",
+          "label": "Give Kusa Dango",
+          "kind": "delivery",
+          "state": {
+            "flag": [
+              33,
+              23
+            ]
+          },
+          "manualKey": "kenzan-guide:milestone-manual:44:dango",
+          "item": {
+            "kind": "ordinary",
+            "id": 83
+          },
+          "deliveredState": {
+            "flag": [
+              33,
+              23
+            ]
+          }
+        }
+      ],
+      "counters": {},
+      "evidence": [
+        "uid00020242.msg removes ordinary23 before acceptance; SUB009:1 is later acceptance",
+        "uid00020107.msg removes ordinary83; SUB009:23 completion"
+      ]
+    },
+    {
+      "id": 58,
+      "name": "Like a Cat to Catnip",
+      "mode": "optional",
+      "completeState": {
+        "flag": [
+          108,
+          32
+        ]
+      },
+      "completionKey": "kenzan-guide:done:58",
+      "caveats": [
+        "Only one returned cat is needed for the next request; the rest are optional rewards. Track returned flags 6–10, not temporary capture flags 1–5."
+      ],
+      "milestones": [
+        {
+          "id": "mansion",
+          "label": "Mansion cat",
+          "kind": "delivery",
+          "state": {
+            "flag": [
+              108,
+              6
+            ]
+          },
+          "manualKey": "kenzan-guide:milestone-manual:58:mansion",
+          "deliveredState": {
+            "flag": [
+              108,
+              6
+            ]
+          },
+          "optional": true
+        },
+        {
+          "id": "maple",
+          "label": "Maple-tree cat",
+          "kind": "delivery",
+          "state": {
+            "flag": [
+              108,
+              10
+            ]
+          },
+          "manualKey": "kenzan-guide:milestone-manual:58:maple",
+          "deliveredState": {
+            "flag": [
+              108,
+              10
+            ]
+          },
+          "optional": true
+        },
+        {
+          "id": "rakugai-exit",
+          "label": "Rakugai-exit cat",
+          "kind": "delivery",
+          "state": {
+            "flag": [
+              108,
+              8
+            ]
+          },
+          "manualKey": "kenzan-guide:milestone-manual:58:rakugai-exit",
+          "deliveredState": {
+            "flag": [
+              108,
+              8
+            ]
+          },
+          "optional": true
+        },
+        {
+          "id": "tsuchiura",
+          "label": "Cat near Tsuchiura",
+          "kind": "delivery",
+          "state": {
+            "flag": [
+              108,
+              7
+            ]
+          },
+          "manualKey": "kenzan-guide:milestone-manual:58:tsuchiura",
+          "deliveredState": {
+            "flag": [
+              108,
+              7
+            ]
+          },
+          "optional": true
+        },
+        {
+          "id": "yoshioka-exit",
+          "label": "Yoshioka-exit cat",
+          "kind": "delivery",
+          "state": {
+            "flag": [
+              108,
+              9
+            ]
+          },
+          "manualKey": "kenzan-guide:milestone-manual:58:yoshioka-exit",
+          "deliveredState": {
+            "flag": [
+              108,
+              9
+            ]
+          },
+          "optional": true
+        }
+      ],
+      "counters": {
+        "returned-cats": {
+          "label": "Cats returned",
+          "type": "flagCount",
+          "flags": [
+            [
+              108,
+              6
+            ],
+            [
+              108,
+              7
+            ],
+            [
+              108,
+              8
+            ],
+            [
+              108,
+              9
+            ],
+            [
+              108,
+              10
+            ]
+          ],
+          "target": 5,
+          "required": 1,
+          "unit": "cats",
+          "note": "Only one opens the next request; the other returns are optional."
+        }
+      },
+      "evidence": [
+        "uid008302d5.msg sets SUB084 returned6–10; uid008302d8 clears temporary captures1–5"
+      ]
+    },
+    {
+      "id": 61,
+      "name": "Ingredients for the Togarashi Seller",
+      "mode": "collection",
+      "completeState": {
+        "flag": [
+          105,
+          34
+        ]
+      },
+      "completionKey": "kenzan-guide:done:61",
+      "caveats": [
+        "Native delivered flags, rather than current inventory, should determine handed-over status."
+      ],
+      "milestones": [
+        {
+          "id": "shiso",
+          "label": "Deliver Shiso",
+          "kind": "delivery",
+          "state": {
+            "flag": [
+              105,
+              12
+            ]
+          },
+          "manualKey": "kenzan-guide:milestone-manual:61:shiso",
+          "item": {
+            "kind": "ordinary",
+            "id": 194
+          },
+          "deliveredState": {
+            "flag": [
+              105,
+              12
+            ]
+          }
+        },
+        {
+          "id": "sansho",
+          "label": "Deliver Sansho",
+          "kind": "delivery",
+          "state": {
+            "flag": [
+              105,
+              11
+            ]
+          },
+          "manualKey": "kenzan-guide:milestone-manual:61:sansho",
+          "item": {
+            "kind": "ordinary",
+            "id": 195
+          },
+          "deliveredState": {
+            "flag": [
+              105,
+              11
+            ]
+          }
+        },
+        {
+          "id": "ginger",
+          "label": "Deliver Ginger",
+          "kind": "delivery",
+          "state": {
+            "flag": [
+              105,
+              13
+            ]
+          },
+          "manualKey": "kenzan-guide:milestone-manual:61:ginger",
+          "item": {
+            "kind": "ordinary",
+            "id": 196
+          },
+          "deliveredState": {
+            "flag": [
+              105,
+              13
+            ]
+          }
+        },
+        {
+          "id": "sesame",
+          "label": "Deliver Sesame",
+          "kind": "delivery",
+          "state": {
+            "flag": [
+              105,
+              10
+            ]
+          },
+          "manualKey": "kenzan-guide:milestone-manual:61:sesame",
+          "item": {
+            "kind": "ordinary",
+            "id": 198
+          },
+          "deliveredState": {
+            "flag": [
+              105,
+              10
+            ]
+          }
+        },
+        {
+          "id": "nori",
+          "label": "Deliver Nori",
+          "kind": "delivery",
+          "state": {
+            "flag": [
+              105,
+              9
+            ]
+          },
+          "manualKey": "kenzan-guide:milestone-manual:61:nori",
+          "item": {
+            "kind": "ordinary",
+            "id": 197
+          },
+          "deliveredState": {
+            "flag": [
+              105,
+              9
+            ]
+          }
+        },
+        {
+          "id": "orange",
+          "label": "Deliver Orange",
+          "kind": "delivery",
+          "state": {
+            "flag": [
+              105,
+              8
+            ]
+          },
+          "manualKey": "kenzan-guide:milestone-manual:61:orange",
+          "item": {
+            "kind": "ordinary",
+            "id": 199
+          },
+          "deliveredState": {
+            "flag": [
+              105,
+              8
+            ]
+          }
+        }
+      ],
+      "counters": {},
+      "evidence": [
+        "uid000203b4.msg: item removal plus SUB081 delivered bits8–13"
+      ]
+    },
+    {
+      "id": 62,
+      "name": "Spices for the Udon Restaurant",
+      "mode": "collection",
+      "completeState": {
+        "flag": [
+          106,
+          22
+        ]
+      },
+      "completionKey": "kenzan-guide:done:62",
+      "caveats": [
+        "The 7-Blend delivery alone advances the request; all three must not be presented as mandatory."
+      ],
+      "milestones": [
+        {
+          "id": "blend-3",
+          "label": "Deliver 3-Blend Togarashi",
+          "kind": "delivery",
+          "state": {
+            "flag": [
+              106,
+              2
+            ]
+          },
+          "manualKey": "kenzan-guide:milestone-manual:62:blend-3",
+          "item": {
+            "kind": "ordinary",
+            "id": 200
+          },
+          "deliveredState": {
+            "flag": [
+              106,
+              2
+            ]
+          },
+          "optional": true
+        },
+        {
+          "id": "blend-5",
+          "label": "Deliver 5-Blend Togarashi",
+          "kind": "delivery",
+          "state": {
+            "flag": [
+              106,
+              3
+            ]
+          },
+          "manualKey": "kenzan-guide:milestone-manual:62:blend-5",
+          "item": {
+            "kind": "ordinary",
+            "id": 201
+          },
+          "deliveredState": {
+            "flag": [
+              106,
+              3
+            ]
+          },
+          "optional": true
+        },
+        {
+          "id": "blend-7",
+          "label": "Deliver 7-Blend Togarashi",
+          "kind": "delivery",
+          "state": {
+            "flag": [
+              106,
+              4
+            ]
+          },
+          "manualKey": "kenzan-guide:milestone-manual:62:blend-7",
+          "item": {
+            "kind": "ordinary",
+            "id": 202
+          },
+          "deliveredState": {
+            "flag": [
+              106,
+              4
+            ]
+          },
+          "optional": false
+        }
+      ],
+      "counters": {},
+      "evidence": [
+        "uid0002015b.msg: SUB082:2/3/4 separate paid handovers; only7-blend advances"
+      ]
+    },
+    {
+      "id": 65,
+      "name": "Dig Here, Doggy",
+      "mode": "ordered",
+      "completeState": {
+        "flag": [
+          25,
+          31
+        ]
+      },
+      "completionKey": "kenzan-guide:done:65",
+      "caveats": [
+        "Meal-count flags do not prove which food was used or the reward quality. Three Raw Chicken is the recommended Jomon Pottery route; quality is a separate native grade."
+      ],
+      "milestones": [
+        {
+          "id": "meal-1",
+          "label": "First meal",
+          "kind": "event",
+          "state": {
+            "flag": [
+              25,
+              7
+            ]
+          },
+          "manualKey": "kenzan-guide:milestone-manual:65:meal-1"
+        },
+        {
+          "id": "meal-2",
+          "label": "Second meal",
+          "kind": "event",
+          "state": {
+            "flag": [
+              25,
+              8
+            ]
+          },
+          "manualKey": "kenzan-guide:milestone-manual:65:meal-2"
+        },
+        {
+          "id": "meal-3",
+          "label": "Third meal",
+          "kind": "event",
+          "state": {
+            "flag": [
+              25,
+              9
+            ]
+          },
+          "manualKey": "kenzan-guide:milestone-manual:65:meal-3"
+        },
+        {
+          "id": "reward",
+          "label": "Dig up the reward",
+          "kind": "event",
+          "state": {
+            "flag": [
+              25,
+              31
+            ]
+          },
+          "manualKey": "kenzan-guide:milestone-manual:65:reward"
+        }
+      ],
+      "counters": {},
+      "evidence": [
+        "uid007c018d/uid007c02c6/uid007c02c7.msg: SUB001 meal bits7/8/9; food grade is a separate variable"
+      ]
+    },
+    {
+      "id": 69,
+      "name": "Soul of the Udon Restaurant",
+      "mode": "counter",
+      "completeState": {
+        "flag": [
+          107,
+          26
+        ]
+      },
+      "completionKey": "kenzan-guide:done:69",
+      "caveats": [
+        "A temporary tasting counter, not permanent individual-dish checks. Dish flags are menu availability, and the counter resets at completion.",
+        "Native saved scalar310 is signed16be at0x44fc and range0–10; a zero after completion is a reset counter, not lost tasting progress."
+      ],
+      "milestones": [
+        {
+          "id": "tastings",
+          "label": "Experimental tastings: at least five",
+          "kind": "counter",
+          "state": {
+            "any": [
+              {
+                "flag": [
+                  107,
+                  26
+                ]
+              },
+              {
+                "counter": "tastings",
+                "atLeast": 5
+              }
+            ]
+          },
+          "manualKey": "kenzan-guide:milestone-manual:69:tastings",
+          "counterId": "tastings"
+        },
+        {
+          "id": "ultimate-udon",
+          "label": "Order Ultimate Fried Udon",
+          "kind": "event",
+          "state": {
+            "flag": [
+              107,
+              26
+            ]
+          },
+          "manualKey": "kenzan-guide:milestone-manual:69:ultimate-udon"
+        }
+      ],
+      "counters": {
+        "tastings": {
+          "label": "Experimental tastings",
+          "type": "scalar",
+          "index": 310,
+          "target": 5,
+          "unit": "tastings",
+          "completeState": {
+            "flag": [
+              107,
+              26
+            ]
+          },
+          "note": "At least five experimental tastings; this temporary counter resets after request completion. Completion confirms the tasting requirement without claiming the reset value is historical progress.",
+          "serializationVerified": true,
+          "offset": 17660,
+          "min": 0,
+          "max": 10,
+          "nativeType": "signed16be"
+        }
+      },
+      "evidence": [
+        "uid00b00110.msg increments scalar310, checks>=5, resets on completion; bits2–8 are availability not tasting history",
+        "Native ELF25fdac flag getter and260524 scalar getter share scenario pointer0x1034e330; USERDATA base0x1034e1a0; signed16 scalar base+0x4100 -> USERDATA0x4290; init108504 serial block+0x190/size0x4500"
+      ]
+    },
+    {
+      "id": 86,
+      "name": "Kstayer",
+      "mode": "collection",
+      "completeState": {
+        "flag": [
+          97,
+          31
+        ]
+      },
+      "completionKey": "kenzan-guide:done:86",
+      "caveats": [
+        "These are quest key items 69, 67, 68 and 66 respectively, not same-named ordinary food items.",
+        "Native acquisition flags distinguish the four pickups, but the ingredients are removed together; do not invent four independent hand-in events."
+      ],
+      "milestones": [
+        {
+          "id": "sugar",
+          "label": "Obtain Sugar",
+          "kind": "acquisition",
+          "state": {
+            "flag": [
+              97,
+              5
+            ]
+          },
+          "manualKey": "kenzan-guide:milestone-manual:86:sugar",
+          "item": {
+            "kind": "key",
+            "id": 69
+          },
+          "acquiredState": {
+            "flag": [
+              97,
+              5
+            ]
+          }
+        },
+        {
+          "id": "syrup",
+          "label": "Obtain Syrup (mizuame)",
+          "kind": "acquisition",
+          "state": {
+            "flag": [
+              97,
+              7
+            ]
+          },
+          "manualKey": "kenzan-guide:milestone-manual:86:syrup",
+          "item": {
+            "kind": "key",
+            "id": 67
+          },
+          "acquiredState": {
+            "flag": [
+              97,
+              7
+            ]
+          }
+        },
+        {
+          "id": "egg",
+          "label": "Obtain Egg",
+          "kind": "acquisition",
+          "state": {
+            "flag": [
+              97,
+              9
+            ]
+          },
+          "manualKey": "kenzan-guide:milestone-manual:86:egg",
+          "item": {
+            "kind": "key",
+            "id": 68
+          },
+          "acquiredState": {
+            "flag": [
+              97,
+              9
+            ]
+          }
+        },
+        {
+          "id": "flour",
+          "label": "Obtain Udon Flour",
+          "kind": "acquisition",
+          "state": {
+            "flag": [
+              97,
+              11
+            ]
+          },
+          "manualKey": "kenzan-guide:milestone-manual:86:flour",
+          "item": {
+            "kind": "key",
+            "id": 66
+          },
+          "acquiredState": {
+            "flag": [
+              97,
+              11
+            ]
+          }
+        },
+        {
+          "id": "return-all",
+          "label": "Return all four ingredients",
+          "kind": "delivery",
+          "state": {
+            "any": [
+              {
+                "flag": [
+                  97,
+                  12
+                ]
+              },
+              {
+                "flag": [
+                  97,
+                  31
+                ]
+              }
+            ]
+          },
+          "manualKey": "kenzan-guide:milestone-manual:86:return-all",
+          "deliveredState": {
+            "any": [
+              {
+                "flag": [
+                  97,
+                  12
+                ]
+              },
+              {
+                "flag": [
+                  97,
+                  31
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "counters": {},
+      "evidence": [
+        "SUB073 acquisition bits5/7/9/11; item_s key rows69/67/68/66",
+        "uid00c000da.msg line8 clears allfour ingredients together then sets SUB073:12"
+      ]
+    },
+    {
+      "id": 87,
+      "name": "The Oracle",
+      "mode": "ordered",
+      "completeState": {
+        "flag": [
+          42,
+          25
+        ]
+      },
+      "completionKey": "kenzan-guide:done:87",
+      "caveats": [
+        "A small repeated offering sequence rather than two different items collected."
+      ],
+      "milestones": [
+        {
+          "id": "offering-1",
+          "label": "First Ohagi offering",
+          "kind": "delivery",
+          "state": {
+            "flag": [
+              42,
+              2
+            ]
+          },
+          "manualKey": "kenzan-guide:milestone-manual:87:offering-1",
+          "deliveredState": {
+            "flag": [
+              42,
+              2
+            ]
+          }
+        },
+        {
+          "id": "offering-2",
+          "label": "Second Ohagi offering",
+          "kind": "delivery",
+          "state": {
+            "flag": [
+              42,
+              3
+            ]
+          },
+          "manualKey": "kenzan-guide:milestone-manual:87:offering-2",
+          "deliveredState": {
+            "flag": [
+              42,
+              3
+            ]
+          }
+        }
+      ],
+      "counters": {},
+      "evidence": [
+        "uid01c0005a.msg: SUB018:2/3 first/second Ohagi offering setters"
+      ]
+    },
+    {
+      "id": 97,
+      "name": "Flying Towards the Future",
+      "mode": "ordered",
+      "completeState": {
+        "flag": [
+          115,
+          37
+        ]
+      },
+      "completionKey": "kenzan-guide:done:97",
+      "caveats": [
+        "Materials are requested in sequence, not an unordered shopping list.",
+        "The three prerequisite inventions should reuse the existing invention tracker.",
+        "Washi is key 16, distinct from the remedy's key 152; normal Gyotensai script uid007c01b5 supplies the verified handover IDs."
+      ],
+      "milestones": [
+        {
+          "id": "rake",
+          "label": "Hand over Rake",
+          "kind": "delivery",
+          "state": {
+            "any": [
+              {
+                "flag": [
+                  115,
+                  6
+                ]
+              },
+              {
+                "flag": [
+                  115,
+                  9
+                ]
+              },
+              {
+                "any": [
+                  {
+                    "flag": [
+                      115,
+                      11
+                    ]
+                  },
+                  {
+                    "flag": [
+                      115,
+                      12
+                    ]
+                  },
+                  {
+                    "flag": [
+                      115,
+                      16
+                    ]
+                  },
+                  {
+                    "flag": [
+                      115,
+                      37
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "manualKey": "kenzan-guide:milestone-manual:97:rake",
+          "item": {
+            "kind": "key",
+            "id": 17
+          },
+          "acquiredState": {
+            "any": [
+              {
+                "flag": [
+                  115,
+                  5
+                ]
+              },
+              {
+                "owned": {
+                  "kind": "key",
+                  "id": 17
+                }
+              },
+              {
+                "any": [
+                  {
+                    "flag": [
+                      115,
+                      6
+                    ]
+                  },
+                  {
+                    "flag": [
+                      115,
+                      9
+                    ]
+                  },
+                  {
+                    "any": [
+                      {
+                        "flag": [
+                          115,
+                          11
+                        ]
+                      },
+                      {
+                        "flag": [
+                          115,
+                          12
+                        ]
+                      },
+                      {
+                        "flag": [
+                          115,
+                          16
+                        ]
+                      },
+                      {
+                        "flag": [
+                          115,
+                          37
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "deliveredState": {
+            "any": [
+              {
+                "flag": [
+                  115,
+                  6
+                ]
+              },
+              {
+                "flag": [
+                  115,
+                  9
+                ]
+              },
+              {
+                "any": [
+                  {
+                    "flag": [
+                      115,
+                      11
+                    ]
+                  },
+                  {
+                    "flag": [
+                      115,
+                      12
+                    ]
+                  },
+                  {
+                    "flag": [
+                      115,
+                      16
+                    ]
+                  },
+                  {
+                    "flag": [
+                      115,
+                      37
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "link": {
+            "href": "#collectibles-quest-find",
+            "label": "Material sources"
+          }
+        },
+        {
+          "id": "bamboo",
+          "label": "Hand over Bamboo Sticks",
+          "kind": "delivery",
+          "state": {
+            "any": [
+              {
+                "flag": [
+                  115,
+                  9
+                ]
+              },
+              {
+                "any": [
+                  {
+                    "flag": [
+                      115,
+                      11
+                    ]
+                  },
+                  {
+                    "flag": [
+                      115,
+                      12
+                    ]
+                  },
+                  {
+                    "flag": [
+                      115,
+                      16
+                    ]
+                  },
+                  {
+                    "flag": [
+                      115,
+                      37
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "manualKey": "kenzan-guide:milestone-manual:97:bamboo",
+          "item": {
+            "kind": "key",
+            "id": 18
+          },
+          "acquiredState": {
+            "any": [
+              {
+                "flag": [
+                  115,
+                  8
+                ]
+              },
+              {
+                "owned": {
+                  "kind": "key",
+                  "id": 18
+                }
+              },
+              {
+                "any": [
+                  {
+                    "flag": [
+                      115,
+                      9
+                    ]
+                  },
+                  {
+                    "any": [
+                      {
+                        "flag": [
+                          115,
+                          11
+                        ]
+                      },
+                      {
+                        "flag": [
+                          115,
+                          12
+                        ]
+                      },
+                      {
+                        "flag": [
+                          115,
+                          16
+                        ]
+                      },
+                      {
+                        "flag": [
+                          115,
+                          37
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "deliveredState": {
+            "any": [
+              {
+                "flag": [
+                  115,
+                  9
+                ]
+              },
+              {
+                "any": [
+                  {
+                    "flag": [
+                      115,
+                      11
+                    ]
+                  },
+                  {
+                    "flag": [
+                      115,
+                      12
+                    ]
+                  },
+                  {
+                    "flag": [
+                      115,
+                      16
+                    ]
+                  },
+                  {
+                    "flag": [
+                      115,
+                      37
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "link": {
+            "href": "#collectibles-quest-find",
+            "label": "Material sources"
+          }
+        },
+        {
+          "id": "washi",
+          "label": "Hand over Washi",
+          "kind": "delivery",
+          "state": {
+            "any": [
+              {
+                "flag": [
+                  115,
+                  11
+                ]
+              },
+              {
+                "flag": [
+                  115,
+                  12
+                ]
+              },
+              {
+                "flag": [
+                  115,
+                  16
+                ]
+              },
+              {
+                "flag": [
+                  115,
+                  37
+                ]
+              }
+            ]
+          },
+          "manualKey": "kenzan-guide:milestone-manual:97:washi",
+          "item": {
+            "kind": "key",
+            "id": 16
+          },
+          "acquiredState": {
+            "any": [
+              {
+                "flag": [
+                  115,
+                  10
+                ]
+              },
+              {
+                "owned": {
+                  "kind": "key",
+                  "id": 16
+                }
+              },
+              {
+                "any": [
+                  {
+                    "flag": [
+                      115,
+                      11
+                    ]
+                  },
+                  {
+                    "flag": [
+                      115,
+                      12
+                    ]
+                  },
+                  {
+                    "flag": [
+                      115,
+                      16
+                    ]
+                  },
+                  {
+                    "flag": [
+                      115,
+                      37
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "deliveredState": {
+            "any": [
+              {
+                "flag": [
+                  115,
+                  11
+                ]
+              },
+              {
+                "flag": [
+                  115,
+                  12
+                ]
+              },
+              {
+                "flag": [
+                  115,
+                  16
+                ]
+              },
+              {
+                "flag": [
+                  115,
+                  37
+                ]
+              }
+            ]
+          },
+          "link": {
+            "href": "#collectibles-quest-find",
+            "label": "Material sources"
+          }
+        },
+        {
+          "id": "flight",
+          "label": "Test the flying machine",
+          "kind": "event",
+          "state": {
+            "any": [
+              {
+                "flag": [
+                  115,
+                  16
+                ]
+              },
+              {
+                "flag": [
+                  115,
+                  37
+                ]
+              }
+            ]
+          },
+          "manualKey": "kenzan-guide:milestone-manual:97:flight"
+        }
+      ],
+      "counters": {},
+      "evidence": [
+        "Normal Gyotensai uid007c01b5.msg clears key17/18/16; SUB098:6/9/11or12/16",
+        "Existing invention and inventor-rake/inventor-bamboo keys reused"
+      ],
+      "prerequisites": [
+        {
+          "label": "Sober Pill",
+          "reuseKey": "kenzan-guide:training-done:inventions-sober-pill",
+          "state": {
+            "flag": [
+              174,
+              10
+            ]
+          },
+          "link": {
+            "href": "#training-inventions-sober-pill",
+            "label": "Sober Pill"
+          }
+        },
+        {
+          "label": "Hunger Pill",
+          "reuseKey": "kenzan-guide:training-done:inventions-hunger-pill",
+          "state": {
+            "flag": [
+              174,
+              11
+            ]
+          },
+          "link": {
+            "href": "#training-inventions-hunger-pill",
+            "label": "Hunger Pill"
+          }
+        },
+        {
+          "label": "Ultra All-Purpose Medicine",
+          "reuseKey": "kenzan-guide:training-done:inventions-ultra-all-purpose-medicine",
+          "state": {
+            "flag": [
+              174,
+              2
+            ]
+          },
+          "link": {
+            "href": "#training-inventions-ultra-all-purpose-medicine",
+            "label": "Ultra All-Purpose Medicine"
+          }
+        }
+      ]
+    },
+    {
+      "id": 100,
+      "name": "Justice For All",
+      "mode": "prerequisite",
+      "completeState": {
+        "flag": [
+          117,
+          21
+        ]
+      },
+      "completionKey": "kenzan-guide:done:100",
+      "caveats": [
+        "A linked prerequisite summary should reuse existing quest and arena completion, not duplicate all checkboxes."
+      ],
+      "milestones": [
+        {
+          "id": "requests",
+          "label": "Other requests",
+          "kind": "prerequisite",
+          "state": {
+            "counter": "requests",
+            "atLeast": 99
+          },
+          "manualKey": null,
+          "counterId": "requests",
+          "link": {
+            "href": "#substories",
+            "label": "Existing completion tracker"
+          }
+        },
+        {
+          "id": "commissions",
+          "label": "Commissions",
+          "kind": "prerequisite",
+          "state": {
+            "counter": "commissions",
+            "atLeast": 20
+          },
+          "manualKey": null,
+          "counterId": "commissions",
+          "link": {
+            "href": "#substories",
+            "label": "Existing completion tracker"
+          }
+        },
+        {
+          "id": "bounties",
+          "label": "Bounties",
+          "kind": "prerequisite",
+          "state": {
+            "counter": "bounties",
+            "atLeast": 20
+          },
+          "manualKey": null,
+          "counterId": "bounties",
+          "link": {
+            "href": "#substories",
+            "label": "Existing completion tracker"
+          }
+        },
+        {
+          "id": "fighters",
+          "label": "Hozoin Coliseum fighters",
+          "kind": "prerequisite",
+          "state": {
+            "counter": "fighters",
+            "atLeast": 50
+          },
+          "manualKey": null,
+          "counterId": "fighters",
+          "link": {
+            "href": "#coliseum-fighters",
+            "label": "Existing completion tracker"
+          }
+        }
+      ],
+      "counters": {
+        "requests": {
+          "label": "Other requests",
+          "type": "existingProgress",
+          "group": "Substories",
+          "keys": [
+            "kenzan-guide:done:1",
+            "kenzan-guide:done:2",
+            "kenzan-guide:done:3",
+            "kenzan-guide:done:4",
+            "kenzan-guide:done:5",
+            "kenzan-guide:done:6",
+            "kenzan-guide:done:7",
+            "kenzan-guide:done:8",
+            "kenzan-guide:done:9",
+            "kenzan-guide:done:10",
+            "kenzan-guide:done:11",
+            "kenzan-guide:done:12",
+            "kenzan-guide:done:13",
+            "kenzan-guide:done:14",
+            "kenzan-guide:done:15",
+            "kenzan-guide:done:16",
+            "kenzan-guide:done:17",
+            "kenzan-guide:done:18",
+            "kenzan-guide:done:19",
+            "kenzan-guide:done:20",
+            "kenzan-guide:done:21",
+            "kenzan-guide:done:22",
+            "kenzan-guide:done:23",
+            "kenzan-guide:done:24",
+            "kenzan-guide:done:25",
+            "kenzan-guide:done:26",
+            "kenzan-guide:done:27",
+            "kenzan-guide:done:28",
+            "kenzan-guide:done:29",
+            "kenzan-guide:done:30",
+            "kenzan-guide:done:31",
+            "kenzan-guide:done:32",
+            "kenzan-guide:done:33",
+            "kenzan-guide:done:34",
+            "kenzan-guide:done:35",
+            "kenzan-guide:done:36",
+            "kenzan-guide:done:37",
+            "kenzan-guide:done:38",
+            "kenzan-guide:done:39",
+            "kenzan-guide:done:40",
+            "kenzan-guide:done:41",
+            "kenzan-guide:done:42",
+            "kenzan-guide:done:43",
+            "kenzan-guide:done:44",
+            "kenzan-guide:done:45",
+            "kenzan-guide:done:46",
+            "kenzan-guide:done:47",
+            "kenzan-guide:done:48",
+            "kenzan-guide:done:49",
+            "kenzan-guide:done:50",
+            "kenzan-guide:done:51",
+            "kenzan-guide:done:52",
+            "kenzan-guide:done:53",
+            "kenzan-guide:done:54",
+            "kenzan-guide:done:55",
+            "kenzan-guide:done:56",
+            "kenzan-guide:done:57",
+            "kenzan-guide:done:58",
+            "kenzan-guide:done:59",
+            "kenzan-guide:done:60",
+            "kenzan-guide:done:61",
+            "kenzan-guide:done:62",
+            "kenzan-guide:done:63",
+            "kenzan-guide:done:64",
+            "kenzan-guide:done:65",
+            "kenzan-guide:done:66",
+            "kenzan-guide:done:67",
+            "kenzan-guide:done:68",
+            "kenzan-guide:done:69",
+            "kenzan-guide:done:70",
+            "kenzan-guide:done:71",
+            "kenzan-guide:done:72",
+            "kenzan-guide:done:73",
+            "kenzan-guide:done:74",
+            "kenzan-guide:done:75",
+            "kenzan-guide:done:76",
+            "kenzan-guide:done:77",
+            "kenzan-guide:done:78",
+            "kenzan-guide:done:79",
+            "kenzan-guide:done:80",
+            "kenzan-guide:done:81",
+            "kenzan-guide:done:82",
+            "kenzan-guide:done:83",
+            "kenzan-guide:done:84",
+            "kenzan-guide:done:85",
+            "kenzan-guide:done:86",
+            "kenzan-guide:done:87",
+            "kenzan-guide:done:88",
+            "kenzan-guide:done:89",
+            "kenzan-guide:done:90",
+            "kenzan-guide:done:91",
+            "kenzan-guide:done:92",
+            "kenzan-guide:done:93",
+            "kenzan-guide:done:94",
+            "kenzan-guide:done:95",
+            "kenzan-guide:done:96",
+            "kenzan-guide:done:97",
+            "kenzan-guide:done:98",
+            "kenzan-guide:done:99"
+          ],
+          "target": 99,
+          "unit": "complete"
+        },
+        "commissions": {
+          "label": "Commissions",
+          "type": "existingProgress",
+          "group": "Substories",
+          "keys": [
+            "kenzan-guide:done:101",
+            "kenzan-guide:done:102",
+            "kenzan-guide:done:103",
+            "kenzan-guide:done:104",
+            "kenzan-guide:done:105",
+            "kenzan-guide:done:106",
+            "kenzan-guide:done:107",
+            "kenzan-guide:done:108",
+            "kenzan-guide:done:109",
+            "kenzan-guide:done:110",
+            "kenzan-guide:done:111",
+            "kenzan-guide:done:112",
+            "kenzan-guide:done:113",
+            "kenzan-guide:done:114",
+            "kenzan-guide:done:115",
+            "kenzan-guide:done:116",
+            "kenzan-guide:done:117",
+            "kenzan-guide:done:118",
+            "kenzan-guide:done:119",
+            "kenzan-guide:done:120"
+          ],
+          "target": 20,
+          "unit": "complete"
+        },
+        "bounties": {
+          "label": "Bounties",
+          "type": "existingProgress",
+          "group": "Substories",
+          "keys": [
+            "kenzan-guide:done:121",
+            "kenzan-guide:done:122",
+            "kenzan-guide:done:123",
+            "kenzan-guide:done:124",
+            "kenzan-guide:done:125",
+            "kenzan-guide:done:126",
+            "kenzan-guide:done:127",
+            "kenzan-guide:done:128",
+            "kenzan-guide:done:129",
+            "kenzan-guide:done:130",
+            "kenzan-guide:done:131",
+            "kenzan-guide:done:132",
+            "kenzan-guide:done:133",
+            "kenzan-guide:done:134",
+            "kenzan-guide:done:135",
+            "kenzan-guide:done:136",
+            "kenzan-guide:done:137",
+            "kenzan-guide:done:138",
+            "kenzan-guide:done:139",
+            "kenzan-guide:done:140"
+          ],
+          "target": 20,
+          "unit": "complete"
+        },
+        "fighters": {
+          "label": "Hozoin Coliseum fighters",
+          "type": "existingProgress",
+          "group": "Coliseum fighters defeated",
+          "keys": [
+            "kenzan-guide:coliseum-done:fighter-1",
+            "kenzan-guide:coliseum-done:fighter-2",
+            "kenzan-guide:coliseum-done:fighter-3",
+            "kenzan-guide:coliseum-done:fighter-4",
+            "kenzan-guide:coliseum-done:fighter-5",
+            "kenzan-guide:coliseum-done:fighter-6",
+            "kenzan-guide:coliseum-done:fighter-7",
+            "kenzan-guide:coliseum-done:fighter-8",
+            "kenzan-guide:coliseum-done:fighter-9",
+            "kenzan-guide:coliseum-done:fighter-10",
+            "kenzan-guide:coliseum-done:fighter-11",
+            "kenzan-guide:coliseum-done:fighter-12",
+            "kenzan-guide:coliseum-done:fighter-13",
+            "kenzan-guide:coliseum-done:fighter-14",
+            "kenzan-guide:coliseum-done:fighter-15",
+            "kenzan-guide:coliseum-done:fighter-16",
+            "kenzan-guide:coliseum-done:fighter-17",
+            "kenzan-guide:coliseum-done:fighter-18",
+            "kenzan-guide:coliseum-done:fighter-19",
+            "kenzan-guide:coliseum-done:fighter-20",
+            "kenzan-guide:coliseum-done:fighter-21",
+            "kenzan-guide:coliseum-done:fighter-22",
+            "kenzan-guide:coliseum-done:fighter-23",
+            "kenzan-guide:coliseum-done:fighter-24",
+            "kenzan-guide:coliseum-done:fighter-25",
+            "kenzan-guide:coliseum-done:fighter-26",
+            "kenzan-guide:coliseum-done:fighter-27",
+            "kenzan-guide:coliseum-done:fighter-28",
+            "kenzan-guide:coliseum-done:fighter-29",
+            "kenzan-guide:coliseum-done:fighter-30",
+            "kenzan-guide:coliseum-done:fighter-31",
+            "kenzan-guide:coliseum-done:fighter-32",
+            "kenzan-guide:coliseum-done:fighter-33",
+            "kenzan-guide:coliseum-done:fighter-34",
+            "kenzan-guide:coliseum-done:fighter-35",
+            "kenzan-guide:coliseum-done:fighter-36",
+            "kenzan-guide:coliseum-done:fighter-37",
+            "kenzan-guide:coliseum-done:fighter-38",
+            "kenzan-guide:coliseum-done:fighter-39",
+            "kenzan-guide:coliseum-done:fighter-40",
+            "kenzan-guide:coliseum-done:fighter-41",
+            "kenzan-guide:coliseum-done:fighter-42",
+            "kenzan-guide:coliseum-done:fighter-43",
+            "kenzan-guide:coliseum-done:fighter-44",
+            "kenzan-guide:coliseum-done:fighter-45",
+            "kenzan-guide:coliseum-done:fighter-46",
+            "kenzan-guide:coliseum-done:fighter-47",
+            "kenzan-guide:coliseum-done:fighter-48",
+            "kenzan-guide:coliseum-done:fighter-49",
+            "kenzan-guide:coliseum-done:fighter-50"
+          ],
+          "target": 50,
+          "unit": "complete"
+        }
+      },
+      "evidence": [
+        "Existing Substories and Coliseum fighters defeated saved completion groups; no independent duplicate checkboxes"
+      ]
+    },
+    {
+      "id": 103,
+      "name": "Moving the Dog",
+      "mode": "ordered",
+      "completeState": {
+        "flag": [
+          142,
+          20
+        ]
+      },
+      "completionKey": "kenzan-guide:done:103",
+      "caveats": [
+        "Any suitable food twice; not two distinct required foods. Native successful-food callbacks record each offering in the current save; preservation across a new-game reset is not claimed."
+      ],
+      "milestones": [
+        {
+          "id": "offer-1",
+          "label": "First food offer",
+          "kind": "delivery",
+          "state": {
+            "any": [
+              {
+                "flag": [
+                  142,
+                  2
+                ]
+              },
+              {
+                "flag": [
+                  142,
+                  20
+                ]
+              }
+            ]
+          },
+          "manualKey": "kenzan-guide:milestone-manual:103:offer-1",
+          "deliveredState": {
+            "any": [
+              {
+                "flag": [
+                  142,
+                  2
+                ]
+              },
+              {
+                "flag": [
+                  142,
+                  20
+                ]
+              }
+            ]
+          },
+          "note": "Any suitable food; a recorded successful food offer, not a specific food type."
+        },
+        {
+          "id": "offer-2",
+          "label": "Second food offer",
+          "kind": "delivery",
+          "state": {
+            "any": [
+              {
+                "flag": [
+                  142,
+                  3
+                ]
+              },
+              {
+                "flag": [
+                  142,
+                  20
+                ]
+              }
+            ]
+          },
+          "manualKey": "kenzan-guide:milestone-manual:103:offer-2",
+          "deliveredState": {
+            "any": [
+              {
+                "flag": [
+                  142,
+                  3
+                ]
+              },
+              {
+                "flag": [
+                  142,
+                  20
+                ]
+              }
+            ]
+          },
+          "note": "Any suitable food; a recorded successful food offer, not a specific food type."
+        }
+      ],
+      "counters": {},
+      "evidence": [
+        "uid01b00126.msg: successful food-choice callbacks SET KAKEMAWARI14:2 at0x498 and3 at0x7b8",
+        "Bounded2045asset scan found only these SETs and no specific CLEARs; bulk/new-game reset not claimed"
+      ]
+    },
+    {
+      "id": 113,
+      "name": "The Ghostwriter",
+      "mode": "ordered",
+      "completeState": {
+        "flag": [
+          133,
+          34
+        ]
+      },
+      "completionKey": "kenzan-guide:done:113",
+      "caveats": [
+        "Show round completion, not an extra milestone for every dialogue or recommended answer."
+      ],
+      "milestones": [
+        {
+          "id": "round-1",
+          "label": "First letter/customer round",
+          "kind": "event",
+          "state": {
+            "flag": [
+              133,
+              6
+            ]
+          },
+          "manualKey": "kenzan-guide:milestone-manual:113:round-1"
+        },
+        {
+          "id": "round-2",
+          "label": "Second round",
+          "kind": "event",
+          "state": {
+            "flag": [
+              133,
+              12
+            ]
+          },
+          "manualKey": "kenzan-guide:milestone-manual:113:round-2"
+        },
+        {
+          "id": "round-3",
+          "label": "Third round",
+          "kind": "event",
+          "state": {
+            "flag": [
+              133,
+              16
+            ]
+          },
+          "manualKey": "kenzan-guide:milestone-manual:113:round-3"
+        },
+        {
+          "id": "reward-letter",
+          "label": "Read the final reward letter",
+          "kind": "event",
+          "state": {
+            "flag": [
+              133,
+              34
+            ]
+          },
+          "manualKey": "kenzan-guide:milestone-manual:113:reward-letter"
+        }
+      ],
+      "counters": {},
+      "evidence": [
+        "uid007c0598.msg/uid007c059a.msg: KAKEMAWARI05:6/12/16 customer feedback setters",
+        "uid017c04c0.msg group3 line4 SET133:34 at0x680 follows final perfume-sachet/reward/1500EXP reading text; distinct from letter-sent17"
+      ]
+    },
+    {
+      "id": 138,
+      "name": "Toyokichi of the Kuromon Family",
+      "mode": "prerequisite",
+      "completeState": {
+        "flag": [
+          155,
+          24
+        ]
+      },
+      "completionKey": "kenzan-guide:done:138",
+      "caveats": [
+        "Eighty ordinary random street encounters unlocks the request; story, quest and arena fights do not qualify. The signed native saved counter is range-checked. This is prerequisite readiness, not a collection."
+      ],
+      "milestones": [
+        {
+          "id": "readiness",
+          "label": "80 ordinary street encounters",
+          "kind": "counter",
+          "state": {
+            "any": [
+              {
+                "flag": [
+                  155,
+                  24
+                ]
+              },
+              {
+                "counter": "readiness",
+                "atLeast": 80
+              }
+            ]
+          },
+          "manualKey": "kenzan-guide:milestone-manual:138:readiness",
+          "counterId": "readiness"
+        }
+      ],
+      "counters": {
+        "readiness": {
+          "label": "Ordinary street encounters",
+          "type": "scalar",
+          "index": 13,
+          "target": 80,
+          "unit": "encounters",
+          "completeState": {
+            "flag": [
+              155,
+              24
+            ]
+          },
+          "note": "Current saved counter. Request completion confirms the requirement even if the counter was reset.",
+          "serializationVerified": true,
+          "offset": 17066,
+          "min": 0,
+          "max": 9999,
+          "nativeType": "signed16be"
+        }
+      },
+      "evidence": [
+        "Native scenario scalar13; serialization pending verification",
+        "Native ELF25fdac flag getter and260524 scalar getter share scenario pointer0x1034e330; USERDATA base0x1034e1a0; signed16 scalar base+0x4100 -> USERDATA0x4290; init108504 serial block+0x190/size0x4500"
+      ]
+    }
+  ]
+}

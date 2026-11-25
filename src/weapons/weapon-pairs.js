@@ -1,4 +1,4 @@
-/* Native ordered pair calculation. Source proof: maps/game_data/weapon-pairs-audit.md. */
+/* Native ordered pair calculation; first and second weapon roles are significant. */
 (function (root) {
   'use strict';
 

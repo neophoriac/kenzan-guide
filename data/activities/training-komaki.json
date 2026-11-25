@@ -1,0 +1,124 @@
+[
+  {
+    "id": "komaki",
+    "title": "Gion Martial Arts Dojo",
+    "intro": "Visit Komaki Sōzaemon at the dojo in southeast Gion. Join first, then pick one lesson per visit. Leave the building and go back inside to take another. The encounter requirements count random street fights, excluding story fights and substories. Finish any remaining lessons before Gion closes in 12-3.",
+    "source": {
+      "label": "KHHSubs’ Training guide",
+      "url": "https://www.khhsubs.com/kenzan/training/"
+    },
+    "map": {
+      "area": "st_gion",
+      "name": "Gion Martial Arts Dojo"
+    },
+    "entries": [
+      {
+        "id": "komaki-join",
+        "name": "I'd like to try out this dojo.",
+        "window": "5-1",
+        "requires": "First visit to the Gion Martial Arts Dojo.",
+        "steps": "Tell Komaki you’d like to try the dojo and he accepts you. To spar with him first, choose “I'll consider joining after seeing your skills.” Then agree to join after the match.",
+        "reward": "Access to Komaki’s lessons."
+      },
+      {
+        "id": "komaki-cat-flip",
+        "name": "I want to avoid being knocked down.",
+        "window": "5-1",
+        "requires": "Join the dojo and take part in at least 10 random encounters.",
+        "steps": "Let Komaki’s kick send you flying. Press Cross as the white energy appears around Kiryu to land on your feet. Repeat as prompted.",
+        "reward": "Gion Martial Arts - Cat Flip. Recover in midair to avoid falling down."
+      },
+      {
+        "id": "komaki-herculean-throw",
+        "name": "Increase Throwing Strength 1",
+        "window": "5-1",
+        "requires": "Join the dojo and reach level 10.",
+        "steps": "Defeat Komaki’s large student using throws only.",
+        "reward": "Gion Martial Arts - Herculean Throw. Increases the damage dealt by throws."
+      },
+      {
+        "id": "komaki-breaking-throw",
+        "name": "I want to fight back when placed in a hold.",
+        "window": "6-1",
+        "requires": "Join the dojo and take part in at least 20 random encounters.",
+        "steps": "Let Komaki grab you, then repeatedly press Circle to break the hold and throw him. Repeat as prompted.",
+        "reward": "Gion Martial Arts - Breaking Throw. Reverse an enemy’s hold by throwing them."
+      },
+      {
+        "id": "komaki-swordless-catch",
+        "name": "Gion Martial Arts Dojo Secret Technique Initiation Exam 1",
+        "window": "6-1",
+        "requires": "Join the dojo and reach level 20.",
+        "steps": "Defeat all the students with unarmed techniques. You cannot build Heat or use secret techniques during the exam. Watch Komaki’s demonstration afterward.",
+        "reward": "Gion Martial Arts - Swordless Catch and its certificate. Take an enemy’s sword as they attack.",
+        "revelation": "swordless-catch"
+      },
+      {
+        "id": "komaki-bowl-crusher",
+        "name": "Gion Martial Arts Dojo Secret Technique Initiation Exam 2",
+        "window": "7-4",
+        "requires": "Join the dojo and reach level 25.",
+        "steps": "Defeat all the students with unarmed techniques, without Heat or secret techniques. Watch Komaki’s demonstration afterward.",
+        "reward": "Gion Martial Arts - Bowl Crusher and its certificate. Hurl an attacking enemy onto an elevated surface behind you.",
+        "revelation": "bowl-crusher"
+      },
+      {
+        "id": "komaki-herculean-throw-2",
+        "name": "Increase Throwing Strength 2",
+        "window": "7-4",
+        "requires": "Reach level 30 and finish Increase Throwing Strength 1.",
+        "steps": "Defeat Komaki’s group of large students using throws only.",
+        "reward": "Gion Martial Arts - Herculean Throw 2. Increases the damage to bystanders struck by a thrown enemy."
+      },
+      {
+        "id": "komaki-surviving-fist",
+        "name": "I want to counterattack when I'm about to fall over.",
+        "window": "8-1",
+        "requires": "Learn Cat Flip and take part in at least 30 random encounters.",
+        "steps": "Let Komaki kick you into the air. While unarmed, press Triangle at the Cat Flip timing when the white energy appears to recover and counterattack. Repeat as prompted.",
+        "reward": "Gion Martial Arts - Surviving Fist. Turn a knockback into an unarmed counterattack."
+      },
+      {
+        "id": "komaki-fist-reversal",
+        "name": "Gion Martial Arts Dojo Secret Technique Initiation Exam 3",
+        "window": "9-2",
+        "requires": "Join the dojo and reach level 32.",
+        "steps": "Defeat all the students with unarmed techniques, without Heat or secret techniques. Watch Komaki’s demonstration afterward.",
+        "reward": "Gion Martial Arts - Fist Reversal and its certificate. Counter unarmed attacks from several directions.",
+        "revelation": "fist-reversal"
+      },
+      {
+        "id": "komaki-purgatory-palm",
+        "name": "Are there no powerful techniques?",
+        "window": "10-11",
+        "requires": "Join the dojo and take part in at least 50 random encounters.",
+        "steps": "While unarmed, hold Triangle to take the stance, then release it to land the palm strike. Repeat as prompted.",
+        "reward": "Gion Martial Arts - Purgatory Palm. A charged palm strike that builds a large amount of Heat when it connects."
+      },
+      {
+        "id": "komaki-shot-stopper",
+        "name": "Gion Martial Arts Dojo Secret Technique Initiation Exam 4",
+        "window": "11-1",
+        "requires": "Join the dojo and reach level 35.",
+        "steps": "Defeat all the students with unarmed techniques, without Heat or secret techniques. Watch Komaki’s demonstration afterward.",
+        "reward": "Gion Martial Arts - Shot Stopper and its certificate. Disarm and strike an enemy attempting to fire a matchlock.",
+        "revelation": "shot-stopper"
+      },
+      {
+        "id": "komaki-swordless-justice",
+        "name": "Gion Martial Arts - Swordless Justice",
+        "window": "12-2",
+        "requires": "Complete all ten Komaki lessons and all Zanki Dojo training. Speak to Komaki before Gion closes in 12-3.",
+        "steps": "Speak to Komaki and choose the top reply twice. Talk to the students outside Zanki Dojo, then watch the duel at Sanjusangendo. Return to the students outside Zanki Dojo for Komaki’s farewell.",
+        "reward": "Gion Martial Arts - Swordless Justice. Seize an attacker’s sword and use it against them while your health is critically low.",
+        "revelation": "swordless-justice",
+        "links": [
+          {
+            "label": "Zanki Dojo training",
+            "href": "#training-zanki"
+          }
+        ]
+      }
+    ]
+  }
+]

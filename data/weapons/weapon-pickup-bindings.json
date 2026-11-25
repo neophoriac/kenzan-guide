@@ -1,0 +1,97 @@
+{
+  "version": 1,
+  "source": "Native WDR pickup actor model -> item.bin column 25 -> first matching item ID -> pickup grant",
+  "proof": "Private native weapon-binding audit retained outside the public repository.",
+  "itemBinSha256": "83aec44a4815b3917a8ac10354180bda889d8eb2b868234a6ce7cbe656eaac27",
+  "elfSha256": "aa11d061b53b081f04f728a3da6e3b8cf9ec8ab13430e754d3b450366757d781",
+  "bindings": [
+    {
+      "pinId": "pickup-0d3c0005",
+      "pickupModel": "REORI9000",
+      "itemId": 400,
+      "name": "Nameless Katana",
+      "wdrEntry": "pac_ST_YUUKI_SHINSHITSU.bin",
+      "actorRecordIndex": 201,
+      "matchingNativeItemIds": [
+        400
+      ]
+    },
+    {
+      "pinId": "pickup-0d3c0012",
+      "pickupModel": "REORI9005",
+      "itemId": 442,
+      "name": "Tessaimaru",
+      "wdrEntry": "pac_ST_DOKUTSU_02.bin",
+      "actorRecordIndex": 86,
+      "matchingNativeItemIds": [
+        442
+      ]
+    },
+    {
+      "pinId": "pickup-0d3c0013",
+      "pickupModel": "REORI9007",
+      "itemId": 609,
+      "name": "Cast-Iron Kanabo",
+      "wdrEntry": "pac_ST_DOKUTSU_02.bin",
+      "actorRecordIndex": 87,
+      "matchingNativeItemIds": [
+        609
+      ]
+    },
+    {
+      "pinId": "pickup-0d3c003d",
+      "pickupModel": "REORI9004",
+      "itemId": 587,
+      "name": "Ancient Shichishito",
+      "wdrEntry": "pac_ST_TSURUYA_3F.bin",
+      "actorRecordIndex": 302,
+      "matchingNativeItemIds": [
+        587
+      ]
+    },
+    {
+      "pinId": "pickup-0d3c003e",
+      "pickupModel": "REORI9003",
+      "itemId": 433,
+      "name": "Ornate Blade",
+      "wdrEntry": "pac_ST_TSURUYA_3F.bin",
+      "actorRecordIndex": 303,
+      "matchingNativeItemIds": [
+        433
+      ]
+    },
+    {
+      "pinId": "pickup-0d3c0010",
+      "pickupModel": "REORI9006",
+      "itemId": 597,
+      "name": "Crude Taiken",
+      "wdrEntry": "pac_ST_RENDAINO_04.bin",
+      "actorRecordIndex": 12,
+      "matchingNativeItemIds": [
+        597
+      ]
+    },
+    {
+      "pinId": "pickup-0d3c0042",
+      "pickupModel": "REORI9008",
+      "itemId": 619,
+      "name": "Tengu Staff",
+      "wdrEntry": "pac_ST_GANRYU_YOSAI_01.bin",
+      "actorRecordIndex": 219,
+      "matchingNativeItemIds": [
+        619
+      ]
+    },
+    {
+      "pinId": "pickup-0d3c000f",
+      "pickupModel": "REORI9002",
+      "itemId": 461,
+      "name": "Holy Spirit Tachi",
+      "wdrEntry": "pac_ST_GANRYU_YOSAI_02.bin",
+      "actorRecordIndex": 166,
+      "matchingNativeItemIds": [
+        461
+      ]
+    }
+  ]
+}

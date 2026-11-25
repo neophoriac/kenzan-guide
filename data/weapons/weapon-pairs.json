@@ -1,0 +1,6565 @@
+{
+  "version": 1,
+  "source": "Local decrypted English ELF plus item.bin, complete_arms.bin and arms_param_ps3.bin.",
+  "sourceTables": {
+    "kenzan_english.elf": "aa11d061b53b081f04f728a3da6e3b8cf9ec8ab13430e754d3b450366757d781",
+    "item.bin": "83aec44a4815b3917a8ac10354180bda889d8eb2b868234a6ce7cbe656eaac27",
+    "complete_arms.bin": "5f2cca1fa6948f4253f8702168bb59a2aa5a4410c6dc60da840a0b1dfdb27522",
+    "arms_param_ps3.bin": "ecaad5d619b00f57ac2f0c6bd946d07d852eb542c9b438b98d6e0bb0910b056b",
+    "specialPairTable": "bde7dd88b8915858cb7d946ce42058f94c9c112fc108ac87f36c30d42a9ddc66"
+  },
+  "native": {
+    "getter": "0x00269b64",
+    "secondaryTocPointer": "0x00bd883c",
+    "secondaryToc": "0x00b49cf4",
+    "tableStart": "0x10014924",
+    "tableEndExclusive": "0x1001502c",
+    "recordCount": 15,
+    "layout": {
+      "endianness": "big",
+      "recordBytes": 120,
+      "attackBase": {
+        "offset": 0,
+        "type": "uint16"
+      },
+      "forceBase": {
+        "offset": 2,
+        "type": "uint16"
+      },
+      "speedCode": {
+        "offset": 4,
+        "type": "int8"
+      },
+      "nativeName": {
+        "offset": 6,
+        "bytes": 13,
+        "encoding": "cp932"
+      },
+      "firstSlots": {
+        "offset": 19,
+        "count": 5,
+        "bytes": 10
+      },
+      "secondSlots": {
+        "offset": 69,
+        "count": 5,
+        "bytes": 10
+      }
+    },
+    "specialMatch": {
+      "prefixOffset": 2,
+      "prefixBytes": 3,
+      "prefix": "ORI",
+      "suffixOffset": 5,
+      "comparison": "literal case-sensitive NUL-terminated strcmp",
+      "emptySlots": "Skip, without renumbering subsequent slots.",
+      "precedence": "First matching row, then first slot, then second slot."
+    },
+    "fallback": {
+      "attack": "floor(7 * first.attack / 10)",
+      "force": "floor(first.force / 2) + second.force",
+      "speedCode": "min(first.speed.nativeValue, 3) - 3"
+    },
+    "speedDisplay": "Sign-extend pair speed byte, add 3, then use the native Speed label table.",
+    "verifiedOpcodes": {
+      "0x00269c1c": "3864000283fe810038a00003",
+      "0x00269c40": "387200027fe4fb787863002038a00003",
+      "0x00269d40": "897a0093",
+      "0x00269d4c": "55601838612966677c0b0050",
+      "0x00269d6c": "893a0094880a00945529f87e7d290214",
+      "0x00269d80": "897a0097380bfffd",
+      "0x00269db4": "3ab400053af20005",
+      "0x00269df0": "381a0078",
+      "0x00269e1c": "38630018",
+      "0x00269e9c": "3863004a",
+      "0x00269eb4": "a01a0000395a0006a13a00027c00c214897a00047d29ea14",
+      "0x0008fbb4": "a00100707c030734",
+      "0x0008fcd0": "892100747d290774392900037d2307b4"
+    }
+  },
+  "roles": {
+    "first": {
+      "id": "first",
+      "label": "Katana",
+      "kind": 1,
+      "slotIndex": 0,
+      "weaponIds": [
+        "weori1004",
+        "weori7042",
+        "weori7043",
+        "weori7044",
+        "weori1003",
+        "weori7032",
+        "weori7033",
+        "weori1016",
+        "weori7162",
+        "weori1005",
+        "weori1006",
+        "weori1011",
+        "weori1008",
+        "weori1009",
+        "weori1010",
+        "weori1007",
+        "weori1014",
+        "weori1015",
+        "weori1012",
+        "weori1013",
+        "weori1037",
+        "weori1040",
+        "weori1041",
+        "weori1042",
+        "weori1043",
+        "weori1044",
+        "weori1039",
+        "weori1038",
+        "weori1017",
+        "weori7172",
+        "weori7173",
+        "weori1018",
+        "weori7182",
+        "weori7183",
+        "weori7184",
+        "weori1019",
+        "weori7192",
+        "weori7193",
+        "weori7194",
+        "weori7195",
+        "weori1020",
+        "weori1021",
+        "weori7212",
+        "weori7213",
+        "weori1022",
+        "weori7222",
+        "weori7223",
+        "weori1023",
+        "weori7232",
+        "weori7233",
+        "weori1045",
+        "weori1046",
+        "weori1047",
+        "weori1024",
+        "weori1025",
+        "weori1026",
+        "weori1027",
+        "weori1028",
+        "weori7282",
+        "weori7283",
+        "weori7284",
+        "weori7285",
+        "weori1029",
+        "weori7292",
+        "weori1030",
+        "weori7302",
+        "weori7303",
+        "weori1031",
+        "weori1032",
+        "weori1033",
+        "weori7332",
+        "weori7333",
+        "weori1034",
+        "weori7342",
+        "weori7343",
+        "weori7344",
+        "weori7345",
+        "weori1035",
+        "weori7352",
+        "weori7353",
+        "weori7354",
+        "weori7355",
+        "weori1036",
+        "weori7362",
+        "weori6500",
+        "weyam0303",
+        "weori9850"
+      ],
+      "completionWeaponIds": [
+        "weori1004",
+        "weori7042",
+        "weori7043",
+        "weori7044",
+        "weori1003",
+        "weori7032",
+        "weori7033",
+        "weori1016",
+        "weori7162",
+        "weori1005",
+        "weori1006",
+        "weori1011",
+        "weori1008",
+        "weori1009",
+        "weori1010",
+        "weori1007",
+        "weori1014",
+        "weori1015",
+        "weori1012",
+        "weori1013",
+        "weori1037",
+        "weori1040",
+        "weori1041",
+        "weori1042",
+        "weori1043",
+        "weori1044",
+        "weori1039",
+        "weori1038",
+        "weori1017",
+        "weori7172",
+        "weori7173",
+        "weori1018",
+        "weori7182",
+        "weori7183",
+        "weori7184",
+        "weori1019",
+        "weori7192",
+        "weori7193",
+        "weori7194",
+        "weori7195",
+        "weori1020",
+        "weori1021",
+        "weori7212",
+        "weori7213",
+        "weori1022",
+        "weori7222",
+        "weori7223",
+        "weori1023",
+        "weori7232",
+        "weori7233",
+        "weori1045",
+        "weori1046",
+        "weori1047",
+        "weori1024",
+        "weori1025",
+        "weori1026",
+        "weori1027",
+        "weori1028",
+        "weori7282",
+        "weori7283",
+        "weori7284",
+        "weori7285",
+        "weori1029",
+        "weori7292",
+        "weori1030",
+        "weori7302",
+        "weori7303",
+        "weori1031",
+        "weori1032",
+        "weori1033",
+        "weori7332",
+        "weori7333",
+        "weori1034",
+        "weori7342",
+        "weori7343",
+        "weori7344",
+        "weori7345",
+        "weori1035",
+        "weori7352",
+        "weori7353",
+        "weori7354",
+        "weori7355",
+        "weori1036",
+        "weori7362"
+      ]
+    },
+    "second": {
+      "id": "second",
+      "label": "Kodachi",
+      "kind": 2,
+      "slotIndex": 1,
+      "weaponIds": [
+        "weori2001",
+        "weori8012",
+        "weori8013",
+        "weori2000",
+        "weori8002",
+        "weori8003",
+        "weori8004",
+        "weori2006",
+        "weori8062",
+        "weori2002",
+        "weori2003",
+        "weori2004",
+        "weori2005",
+        "weori2018",
+        "weori2007",
+        "weori8072",
+        "weori8073",
+        "weori2008",
+        "weori8082",
+        "weori8083",
+        "weori2009",
+        "weori8092",
+        "weori8093",
+        "weori8094",
+        "weori2010",
+        "weori2011",
+        "weori8112",
+        "weori8113",
+        "weori8114",
+        "weori8115",
+        "weori2012",
+        "weori8122",
+        "weori2013",
+        "weori8132",
+        "weori8133",
+        "weori2014",
+        "weori8142",
+        "weori8143",
+        "weori8144",
+        "weori8145",
+        "weori2015",
+        "weori8152",
+        "weori8153",
+        "weori2016",
+        "weori8162",
+        "weori8163",
+        "weori8164",
+        "weori8165",
+        "weori2017",
+        "weori8172",
+        "weori8173",
+        "weori8174",
+        "weori8175",
+        "weori2019",
+        "weori6501",
+        "weori9851"
+      ],
+      "completionWeaponIds": [
+        "weori2001",
+        "weori8012",
+        "weori8013",
+        "weori2000",
+        "weori8002",
+        "weori8003",
+        "weori8004",
+        "weori2006",
+        "weori8062",
+        "weori2002",
+        "weori2003",
+        "weori2004",
+        "weori2005",
+        "weori2018",
+        "weori2007",
+        "weori8072",
+        "weori8073",
+        "weori2008",
+        "weori8082",
+        "weori8083",
+        "weori2009",
+        "weori8092",
+        "weori8093",
+        "weori8094",
+        "weori2010",
+        "weori2011",
+        "weori8112",
+        "weori8113",
+        "weori8114",
+        "weori8115",
+        "weori2012",
+        "weori8122",
+        "weori2013",
+        "weori8132",
+        "weori8133",
+        "weori2014",
+        "weori8142",
+        "weori8143",
+        "weori8144",
+        "weori8145",
+        "weori2015",
+        "weori8152",
+        "weori8153",
+        "weori2016",
+        "weori8162",
+        "weori8163",
+        "weori8164",
+        "weori8165",
+        "weori2017",
+        "weori8172",
+        "weori8173",
+        "weori8174",
+        "weori8175",
+        "weori2019"
+      ]
+    }
+  },
+  "speedLabels": [
+    "Slow",
+    "Normal",
+    "Fast",
+    "Very Fast"
+  ],
+  "scope": "Ordered katana and kodachi combined Attack, Force and Speed from the native getter. These values do not establish final combat damage or the full meaning of Force.",
+  "outsideCompletionNote": "Ten other item-mapped weapons are retained for source coverage. Inclusion does not establish ordinary acquisition.",
+  "counts": {
+    "weapons": 237,
+    "completionWeapons": 227,
+    "first": 87,
+    "second": 56,
+    "completionFirst": 84,
+    "completionSecond": 54,
+    "orderedPairs": 4872,
+    "completionOrderedPairs": 4536,
+    "specialPairs": 133,
+    "specialFamilies": 15
+  },
+  "families": [
+    {
+      "id": "native-pair-01",
+      "recordIndex": 0,
+      "address": "0x10014924",
+      "nativeName": "作州二刀",
+      "baseAttack": 25,
+      "baseForce": 10,
+      "speed": {
+        "nativeCode": 0,
+        "value": 3,
+        "label": "Very Fast"
+      },
+      "firstSlots": [
+        "weori1004",
+        "weori7042",
+        "weori7043",
+        null,
+        "weori7044"
+      ],
+      "secondSlots": [
+        "weori2001",
+        "weori8012",
+        "weori8013",
+        null,
+        null
+      ],
+      "rawHex": "0019000a00008dec8f4293f19381000000000057454f5249313030340057454f5249373034320057454f524937303433000000000000000000000057454f5249373034340057454f5249323030310057454f5249383031320057454f52493830313300000000000000000000000000000000000000000000"
+    },
+    {
+      "id": "native-pair-02",
+      "recordIndex": 1,
+      "address": "0x1001499c",
+      "nativeName": "脆鋼二刀",
+      "baseAttack": 35,
+      "baseForce": 20,
+      "speed": {
+        "nativeCode": -1,
+        "value": 2,
+        "label": "Fast"
+      },
+      "firstSlots": [
+        "weori1016",
+        "weori7162",
+        null,
+        null,
+        null
+      ],
+      "secondSlots": [
+        "weori2006",
+        "weori8062",
+        null,
+        null,
+        null
+      ],
+      "rawHex": "00230014ff0090c68d7c93f19381000000000057454f5249313031360057454f5249373136320000000000000000000000000000000000000000000000000000000000000057454f5249323030360057454f5249383036320000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "id": "native-pair-03",
+      "recordIndex": 2,
+      "address": "0x10014a14",
+      "nativeName": "玉鋼二刀",
+      "baseAttack": 50,
+      "baseForce": 30,
+      "speed": {
+        "nativeCode": -1,
+        "value": 2,
+        "label": "Fast"
+      },
+      "firstSlots": [
+        "weori1017",
+        "weori7172",
+        null,
+        null,
+        "weori7173"
+      ],
+      "secondSlots": [
+        "weori2007",
+        "weori8072",
+        "weori8073",
+        null,
+        null
+      ],
+      "rawHex": "0032001eff008bca8d7c93f19381000000000057454f5249313031370057454f52493731373200000000000000000000000000000000000000000057454f5249373137330057454f5249323030370057454f5249383037320057454f52493830373300000000000000000000000000000000000000000000"
+    },
+    {
+      "id": "native-pair-04",
+      "recordIndex": 3,
+      "address": "0x10014a8c",
+      "nativeName": "硝子二刀",
+      "baseAttack": 65,
+      "baseForce": 45,
+      "speed": {
+        "nativeCode": 0,
+        "value": 3,
+        "label": "Very Fast"
+      },
+      "firstSlots": [
+        "weori1029",
+        "weori7292",
+        null,
+        null,
+        null
+      ],
+      "secondSlots": [
+        "weori2012",
+        "weori8122",
+        null,
+        null,
+        null
+      ],
+      "rawHex": "0041002d00008fc98e7193f19381000000000057454f5249313032390057454f5249373239320000000000000000000000000000000000000000000000000000000000000057454f5249323031320057454f5249383132320000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "id": "native-pair-05",
+      "recordIndex": 4,
+      "address": "0x10014b04",
+      "nativeName": "特上二刀",
+      "baseAttack": 60,
+      "baseForce": 55,
+      "speed": {
+        "nativeCode": 0,
+        "value": 3,
+        "label": "Very Fast"
+      },
+      "firstSlots": [
+        "weori1018",
+        "weori7182",
+        "weori7183",
+        null,
+        "weori7184"
+      ],
+      "secondSlots": [
+        "weori2008",
+        "weori8082",
+        "weori8083",
+        null,
+        null
+      ],
+      "rawHex": "003c0037000093c18fe393f19381000000000057454f5249313031380057454f5249373138320057454f524937313833000000000000000000000057454f5249373138340057454f5249323030380057454f5249383038320057454f52493830383300000000000000000000000000000000000000000000"
+    },
+    {
+      "id": "native-pair-06",
+      "recordIndex": 5,
+      "address": "0x10014b7c",
+      "nativeName": "梅桜二刀",
+      "baseAttack": 65,
+      "baseForce": 60,
+      "speed": {
+        "nativeCode": 0,
+        "value": 3,
+        "label": "Very Fast"
+      },
+      "firstSlots": [
+        "weori1023",
+        "weori7232",
+        null,
+        null,
+        "weori7233"
+      ],
+      "secondSlots": [
+        "weori2011",
+        "weori8112",
+        "weori8113",
+        "weori8114",
+        "weori8115"
+      ],
+      "rawHex": "0041003c0000947e8df793f19381000000000057454f5249313032330057454f52493732333200000000000000000000000000000000000000000057454f5249373233330057454f5249323031310057454f5249383131320057454f5249383131330057454f5249383131340057454f5249383131350000"
+    },
+    {
+      "id": "native-pair-07",
+      "recordIndex": 6,
+      "address": "0x10014bf4",
+      "nativeName": "金銀二刀",
+      "baseAttack": 60,
+      "baseForce": 65,
+      "speed": {
+        "nativeCode": 0,
+        "value": 3,
+        "label": "Very Fast"
+      },
+      "firstSlots": [
+        "weori1033",
+        "weori7332",
+        null,
+        null,
+        "weori7333"
+      ],
+      "secondSlots": [
+        "weori2015",
+        "weori8152",
+        "weori8153",
+        null,
+        null
+      ],
+      "rawHex": "003c004100008be08be293f19381000000000057454f5249313033330057454f52493733333200000000000000000000000000000000000000000057454f5249373333330057454f5249323031350057454f5249383135320057454f52493831353300000000000000000000000000000000000000000000"
+    },
+    {
+      "id": "native-pair-08",
+      "recordIndex": 7,
+      "address": "0x10014c6c",
+      "nativeName": "紅白二刀",
+      "baseAttack": 65,
+      "baseForce": 70,
+      "speed": {
+        "nativeCode": 0,
+        "value": 3,
+        "label": "Very Fast"
+      },
+      "firstSlots": [
+        "weori1030",
+        "weori7302",
+        null,
+        null,
+        "weori7303"
+      ],
+      "secondSlots": [
+        "weori2013",
+        "weori8132",
+        "weori8133",
+        null,
+        null
+      ],
+      "rawHex": "0041004600008d67949293f19381000000000057454f5249313033300057454f52493733303200000000000000000000000000000000000000000057454f5249373330330057454f5249323031330057454f5249383133320057454f52493831333300000000000000000000000000000000000000000000"
+    },
+    {
+      "id": "native-pair-09",
+      "recordIndex": 8,
+      "address": "0x10014ce4",
+      "nativeName": "呪物二刀",
+      "baseAttack": 80,
+      "baseForce": 90,
+      "speed": {
+        "nativeCode": 0,
+        "value": 3,
+        "label": "Very Fast"
+      },
+      "firstSlots": [
+        "weori1038",
+        null,
+        null,
+        null,
+        null
+      ],
+      "secondSlots": [
+        "weori2019",
+        null,
+        null,
+        null,
+        null
+      ],
+      "rawHex": "0050005a00008ef495a893f19381000000000057454f524931303338000000000000000000000000000000000000000000000000000000000000000000000000000000000057454f524932303139000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "id": "native-pair-10",
+      "recordIndex": 9,
+      "address": "0x10014d5c",
+      "nativeName": "極上二刀",
+      "baseAttack": 70,
+      "baseForce": 75,
+      "speed": {
+        "nativeCode": -1,
+        "value": 2,
+        "label": "Fast"
+      },
+      "firstSlots": [
+        "weori1019",
+        "weori7192",
+        "weori7193",
+        "weori7194",
+        "weori7195"
+      ],
+      "secondSlots": [
+        "weori2009",
+        "weori8092",
+        "weori8093",
+        "weori8094",
+        null
+      ],
+      "rawHex": "0046004bff008bc98fe393f19381000000000057454f5249313031390057454f5249373139320057454f5249373139330057454f5249373139340057454f5249373139350057454f5249323030390057454f5249383039320057454f5249383039330057454f524938303934000000000000000000000000"
+    },
+    {
+      "id": "native-pair-11",
+      "recordIndex": 10,
+      "address": "0x10014dd4",
+      "nativeName": "鬼二刀",
+      "baseAttack": 100,
+      "baseForce": 110,
+      "speed": {
+        "nativeCode": -1,
+        "value": 2,
+        "label": "Fast"
+      },
+      "firstSlots": [
+        "weori1035",
+        "weori7352",
+        "weori7353",
+        "weori7354",
+        "weori7355"
+      ],
+      "secondSlots": [
+        "weori2016",
+        "weori8162",
+        "weori8163",
+        "weori8164",
+        "weori8165"
+      ],
+      "rawHex": "0064006eff008b5393f193810000000000000057454f5249313033350057454f5249373335320057454f5249373335330057454f5249373335340057454f5249373335350057454f5249323031360057454f5249383136320057454f5249383136330057454f5249383136340057454f5249383136350000"
+    },
+    {
+      "id": "native-pair-12",
+      "recordIndex": 11,
+      "address": "0x10014e4c",
+      "nativeName": "正宗二刀",
+      "baseAttack": 90,
+      "baseForce": 90,
+      "speed": {
+        "nativeCode": -1,
+        "value": 2,
+        "label": "Fast"
+      },
+      "firstSlots": [
+        "weori1014",
+        null,
+        null,
+        null,
+        null
+      ],
+      "secondSlots": [
+        "weori2005",
+        null,
+        null,
+        null,
+        null
+      ],
+      "rawHex": "005a005aff0090b38f4093f19381000000000057454f524931303134000000000000000000000000000000000000000000000000000000000000000000000000000000000057454f524932303035000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "id": "native-pair-13",
+      "recordIndex": 12,
+      "address": "0x10014ec4",
+      "nativeName": "風流二刀",
+      "baseAttack": 105,
+      "baseForce": 80,
+      "speed": {
+        "nativeCode": 0,
+        "value": 3,
+        "label": "Very Fast"
+      },
+      "firstSlots": [
+        "weori1020",
+        null,
+        null,
+        null,
+        null
+      ],
+      "secondSlots": [
+        "weori2010",
+        null,
+        null,
+        null,
+        null
+      ],
+      "rawHex": "006900500000959797ac93f19381000000000057454f524931303230000000000000000000000000000000000000000000000000000000000000000000000000000000000057454f524932303130000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "id": "native-pair-14",
+      "recordIndex": 13,
+      "address": "0x10014f3c",
+      "nativeName": "双龍二刀",
+      "baseAttack": 120,
+      "baseForce": 90,
+      "speed": {
+        "nativeCode": 0,
+        "value": 3,
+        "label": "Very Fast"
+      },
+      "firstSlots": [
+        "weori1036",
+        null,
+        null,
+        null,
+        "weori7362"
+      ],
+      "secondSlots": [
+        "weori2017",
+        "weori8172",
+        "weori8173",
+        "weori8174",
+        "weori8175"
+      ],
+      "rawHex": "0078005a0000916f97b493f19381000000000057454f5249313033360000000000000000000000000000000000000000000000000000000000000057454f5249373336320057454f5249323031370057454f5249383137320057454f5249383137330057454f5249383137340057454f5249383137350000"
+    },
+    {
+      "id": "native-pair-15",
+      "recordIndex": 14,
+      "address": "0x10014fb4",
+      "nativeName": "浮世鈴の二刀",
+      "baseAttack": 130,
+      "baseForce": 100,
+      "speed": {
+        "nativeCode": 0,
+        "value": 3,
+        "label": "Very Fast"
+      },
+      "firstSlots": [
+        "weori1037",
+        null,
+        null,
+        null,
+        null
+      ],
+      "secondSlots": [
+        "weori2018",
+        null,
+        null,
+        null,
+        null
+      ],
+      "rawHex": "008200640000958290a297e982cc93f193810057454f524931303337000000000000000000000000000000000000000000000000000000000000000000000000000000000057454f524932303138000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+    }
+  ],
+  "weapons": [
+    {
+      "id": "weori1004",
+      "itemId": 403,
+      "name": "Sakushu Katana",
+      "completion": true,
+      "category": "Swords (Normal)",
+      "attack": 10,
+      "force": 10,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI1004",
+        "row": 724,
+        "recordOffset": 179564,
+        "kind": 1,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori7042",
+      "itemId": 404,
+      "name": "Sakushu Katana +1",
+      "completion": true,
+      "category": "Swords (Normal)",
+      "attack": 11,
+      "force": 11,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI7042",
+        "row": 835,
+        "recordOffset": 207092,
+        "kind": 1,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori7043",
+      "itemId": 405,
+      "name": "Sakushu Katana +2",
+      "completion": true,
+      "category": "Swords (Normal)",
+      "attack": 12,
+      "force": 12,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI7043",
+        "row": 836,
+        "recordOffset": 207340,
+        "kind": 1,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori7044",
+      "itemId": 406,
+      "name": "Sakushu Katana EX",
+      "completion": true,
+      "category": "Swords (Normal)",
+      "attack": 13,
+      "force": 13,
+      "speed": {
+        "nativeValue": 3,
+        "value": 3,
+        "label": "Very Fast"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI7044",
+        "row": 837,
+        "recordOffset": 207588,
+        "kind": 1,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori1003",
+      "itemId": 400,
+      "name": "Nameless Katana",
+      "completion": true,
+      "category": "Swords (Normal)",
+      "attack": 15,
+      "force": 20,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI1003",
+        "row": 723,
+        "recordOffset": 179316,
+        "kind": 1,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori7032",
+      "itemId": 401,
+      "name": "Nameless Katana +1",
+      "completion": true,
+      "category": "Swords (Normal)",
+      "attack": 16,
+      "force": 21,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI7032",
+        "row": 833,
+        "recordOffset": 206596,
+        "kind": 1,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori7033",
+      "itemId": 402,
+      "name": "Nameless Katana EX",
+      "completion": true,
+      "category": "Swords (Normal)",
+      "attack": 17,
+      "force": 22,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI7033",
+        "row": 834,
+        "recordOffset": 206844,
+        "kind": 1,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori1016",
+      "itemId": 418,
+      "name": "Brittle Katana",
+      "completion": true,
+      "category": "Swords (Normal)",
+      "attack": 20,
+      "force": 30,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI1016",
+        "row": 736,
+        "recordOffset": 182540,
+        "kind": 1,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori7162",
+      "itemId": 419,
+      "name": "Brittle Katana EX",
+      "completion": true,
+      "category": "Swords (Normal)",
+      "attack": 21,
+      "force": 35,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI7162",
+        "row": 838,
+        "recordOffset": 207836,
+        "kind": 1,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori1005",
+      "itemId": 407,
+      "name": "Red Oak Bokuto",
+      "completion": true,
+      "category": "Swords (Normal)",
+      "attack": 10,
+      "force": 10,
+      "speed": {
+        "nativeValue": 3,
+        "value": 3,
+        "label": "Very Fast"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI1005",
+        "row": 725,
+        "recordOffset": 179812,
+        "kind": 1,
+        "flags": 19
+      }
+    },
+    {
+      "id": "weori1006",
+      "itemId": 408,
+      "name": "Dark Purple Bokuto",
+      "completion": true,
+      "category": "Swords (Normal)",
+      "attack": 11,
+      "force": 10,
+      "speed": {
+        "nativeValue": 3,
+        "value": 3,
+        "label": "Very Fast"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI1006",
+        "row": 726,
+        "recordOffset": 180060,
+        "kind": 1,
+        "flags": 19
+      }
+    },
+    {
+      "id": "weori1011",
+      "itemId": 413,
+      "name": "Juzumaru",
+      "completion": true,
+      "category": "Swords (Famous)",
+      "attack": 25,
+      "force": 45,
+      "speed": {
+        "nativeValue": 3,
+        "value": 3,
+        "label": "Very Fast"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI1011",
+        "row": 731,
+        "recordOffset": 181300,
+        "kind": 1,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori1008",
+      "itemId": 410,
+      "name": "Mikazuki Munechika",
+      "completion": true,
+      "category": "Swords (Famous)",
+      "attack": 30,
+      "force": 55,
+      "speed": {
+        "nativeValue": 3,
+        "value": 3,
+        "label": "Very Fast"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI1008",
+        "row": 728,
+        "recordOffset": 180556,
+        "kind": 1,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori1009",
+      "itemId": 411,
+      "name": "Onimaru Kunitsuna",
+      "completion": true,
+      "category": "Swords (Famous)",
+      "attack": 35,
+      "force": 60,
+      "speed": {
+        "nativeValue": 3,
+        "value": 3,
+        "label": "Very Fast"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI1009",
+        "row": 729,
+        "recordOffset": 180804,
+        "kind": 1,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori1010",
+      "itemId": 412,
+      "name": "Dojigiri Yasutsuna",
+      "completion": true,
+      "category": "Swords (Famous)",
+      "attack": 50,
+      "force": 115,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI1010",
+        "row": 730,
+        "recordOffset": 181052,
+        "kind": 1,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori1007",
+      "itemId": 409,
+      "name": "Odenta",
+      "completion": true,
+      "category": "Swords (Famous)",
+      "attack": 70,
+      "force": 120,
+      "speed": {
+        "nativeValue": 3,
+        "value": 3,
+        "label": "Very Fast"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI1007",
+        "row": 727,
+        "recordOffset": 180308,
+        "kind": 1,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori1014",
+      "itemId": 416,
+      "name": "Masamune",
+      "completion": true,
+      "category": "Swords (Famous)",
+      "attack": 90,
+      "force": 130,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI1014",
+        "row": 734,
+        "recordOffset": 182044,
+        "kind": 1,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori1015",
+      "itemId": 417,
+      "name": "Muramasa",
+      "completion": true,
+      "category": "Swords (Famous)",
+      "attack": 100,
+      "force": 1,
+      "speed": {
+        "nativeValue": 3,
+        "value": 3,
+        "label": "Very Fast"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI1015",
+        "row": 735,
+        "recordOffset": 182292,
+        "kind": 1,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori1012",
+      "itemId": 414,
+      "name": "Kuji Kanesada",
+      "completion": true,
+      "category": "Swords (Famous)",
+      "attack": 90,
+      "force": 95,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI1012",
+        "row": 732,
+        "recordOffset": 181548,
+        "kind": 1,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori1013",
+      "itemId": 415,
+      "name": "Bullet-Cutter Kanemitsu",
+      "completion": true,
+      "category": "Swords (Famous)",
+      "attack": 110,
+      "force": 200,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI1013",
+        "row": 733,
+        "recordOffset": 181796,
+        "kind": 1,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori1037",
+      "itemId": 473,
+      "name": "Peerless Tachi",
+      "completion": true,
+      "category": "Swords (Famous)",
+      "attack": 150,
+      "force": 160,
+      "speed": {
+        "nativeValue": 3,
+        "value": 3,
+        "label": "Very Fast"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI1037",
+        "row": 757,
+        "recordOffset": 187748,
+        "kind": 1,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori1040",
+      "itemId": 476,
+      "name": "Beckoning Sword",
+      "completion": true,
+      "category": "Swords (Enchanted)",
+      "attack": 60,
+      "force": 100,
+      "speed": {
+        "nativeValue": 3,
+        "value": 3,
+        "label": "Very Fast"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI1040",
+        "row": 760,
+        "recordOffset": 188492,
+        "kind": 1,
+        "flags": 211
+      }
+    },
+    {
+      "id": "weori1041",
+      "itemId": 477,
+      "name": "Drunken Blade",
+      "completion": true,
+      "category": "Swords (Enchanted)",
+      "attack": 60,
+      "force": 20,
+      "speed": {
+        "nativeValue": 0,
+        "value": 0,
+        "label": "Slow"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI1041",
+        "row": 761,
+        "recordOffset": 188740,
+        "kind": 1,
+        "flags": 211
+      }
+    },
+    {
+      "id": "weori1042",
+      "itemId": 478,
+      "name": "Greedy Katana",
+      "completion": true,
+      "category": "Swords (Enchanted)",
+      "attack": 70,
+      "force": 100,
+      "speed": {
+        "nativeValue": 1,
+        "value": 1,
+        "label": "Normal"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI1042",
+        "row": 762,
+        "recordOffset": 188988,
+        "kind": 1,
+        "flags": 211
+      }
+    },
+    {
+      "id": "weori1043",
+      "itemId": 479,
+      "name": "Bassarimaru",
+      "completion": true,
+      "category": "Swords (Enchanted)",
+      "attack": 80,
+      "force": 1,
+      "speed": {
+        "nativeValue": 3,
+        "value": 3,
+        "label": "Very Fast"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI1043",
+        "row": 763,
+        "recordOffset": 189236,
+        "kind": 1,
+        "flags": 211
+      }
+    },
+    {
+      "id": "weori1044",
+      "itemId": 480,
+      "name": "Mortal Blade",
+      "completion": true,
+      "category": "Swords (Enchanted)",
+      "attack": 80,
+      "force": 60,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI1044",
+        "row": 764,
+        "recordOffset": 189484,
+        "kind": 1,
+        "flags": 211
+      }
+    },
+    {
+      "id": "weori1039",
+      "itemId": 475,
+      "name": "Blood Storm",
+      "completion": true,
+      "category": "Swords (Enchanted)",
+      "attack": 30,
+      "force": 80,
+      "speed": {
+        "nativeValue": 3,
+        "value": 3,
+        "label": "Very Fast"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI1039",
+        "row": 759,
+        "recordOffset": 188244,
+        "kind": 1,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori1038",
+      "itemId": 474,
+      "name": "Nue Slayer",
+      "completion": true,
+      "category": "Swords (Enchanted)",
+      "attack": 105,
+      "force": 130,
+      "speed": {
+        "nativeValue": 1,
+        "value": 1,
+        "label": "Normal"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI1038",
+        "row": 758,
+        "recordOffset": 187996,
+        "kind": 1,
+        "flags": 211
+      }
+    },
+    {
+      "id": "weori1017",
+      "itemId": 420,
+      "name": "Treasured Katana",
+      "completion": true,
+      "category": "Swords (Treasured)",
+      "attack": 30,
+      "force": 30,
+      "speed": {
+        "nativeValue": 0,
+        "value": 0,
+        "label": "Slow"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI1017",
+        "row": 737,
+        "recordOffset": 182788,
+        "kind": 1,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori7172",
+      "itemId": 421,
+      "name": "Treasured Katana +1",
+      "completion": true,
+      "category": "Swords (Treasured)",
+      "attack": 31,
+      "force": 31,
+      "speed": {
+        "nativeValue": 0,
+        "value": 0,
+        "label": "Slow"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI7172",
+        "row": 839,
+        "recordOffset": 208084,
+        "kind": 1,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori7173",
+      "itemId": 422,
+      "name": "Treasured Katana EX",
+      "completion": true,
+      "category": "Swords (Treasured)",
+      "attack": 32,
+      "force": 32,
+      "speed": {
+        "nativeValue": 0,
+        "value": 0,
+        "label": "Slow"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI7173",
+        "row": 840,
+        "recordOffset": 208332,
+        "kind": 1,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori1018",
+      "itemId": 423,
+      "name": "Fine Treasured Katana",
+      "completion": true,
+      "category": "Swords (Treasured)",
+      "attack": 40,
+      "force": 41,
+      "speed": {
+        "nativeValue": 1,
+        "value": 1,
+        "label": "Normal"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI1018",
+        "row": 738,
+        "recordOffset": 183036,
+        "kind": 1,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori7182",
+      "itemId": 424,
+      "name": "Fine Treasured Katana +1",
+      "completion": true,
+      "category": "Swords (Treasured)",
+      "attack": 41,
+      "force": 41,
+      "speed": {
+        "nativeValue": 1,
+        "value": 1,
+        "label": "Normal"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI7182",
+        "row": 841,
+        "recordOffset": 208580,
+        "kind": 1,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori7183",
+      "itemId": 425,
+      "name": "Fine Treasured Katana +2",
+      "completion": true,
+      "category": "Swords (Treasured)",
+      "attack": 42,
+      "force": 42,
+      "speed": {
+        "nativeValue": 1,
+        "value": 1,
+        "label": "Normal"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI7183",
+        "row": 842,
+        "recordOffset": 208828,
+        "kind": 1,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori7184",
+      "itemId": 426,
+      "name": "Fine Treasured Katana EX",
+      "completion": true,
+      "category": "Swords (Treasured)",
+      "attack": 43,
+      "force": 43,
+      "speed": {
+        "nativeValue": 1,
+        "value": 1,
+        "label": "Normal"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI7184",
+        "row": 843,
+        "recordOffset": 209076,
+        "kind": 1,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori1019",
+      "itemId": 427,
+      "name": "Excellent Treasured Katana",
+      "completion": true,
+      "category": "Swords (Treasured)",
+      "attack": 70,
+      "force": 70,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI1019",
+        "row": 739,
+        "recordOffset": 183284,
+        "kind": 1,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori7192",
+      "itemId": 428,
+      "name": "Excellent Treasured Katana +1",
+      "completion": true,
+      "category": "Swords (Treasured)",
+      "attack": 72,
+      "force": 72,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI7192",
+        "row": 844,
+        "recordOffset": 209324,
+        "kind": 1,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori7193",
+      "itemId": 429,
+      "name": "Excellent Treasured Katana +2",
+      "completion": true,
+      "category": "Swords (Treasured)",
+      "attack": 74,
+      "force": 74,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI7193",
+        "row": 845,
+        "recordOffset": 209572,
+        "kind": 1,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori7194",
+      "itemId": 430,
+      "name": "Excellent Treasured Katana +3",
+      "completion": true,
+      "category": "Swords (Treasured)",
+      "attack": 76,
+      "force": 76,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI7194",
+        "row": 846,
+        "recordOffset": 209820,
+        "kind": 1,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori7195",
+      "itemId": 431,
+      "name": "Excellent Treasured Katana EX",
+      "completion": true,
+      "category": "Swords (Treasured)",
+      "attack": 80,
+      "force": 80,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI7195",
+        "row": 847,
+        "recordOffset": 210068,
+        "kind": 1,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori1020",
+      "itemId": 432,
+      "name": "Nature Blade",
+      "completion": true,
+      "category": "Swords (Treasured)",
+      "attack": 100,
+      "force": 100,
+      "speed": {
+        "nativeValue": 3,
+        "value": 3,
+        "label": "Very Fast"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI1020",
+        "row": 740,
+        "recordOffset": 183532,
+        "kind": 1,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori1021",
+      "itemId": 433,
+      "name": "Ornate Blade",
+      "completion": true,
+      "category": "Swords (Beautiful)",
+      "attack": 30,
+      "force": 15,
+      "speed": {
+        "nativeValue": 1,
+        "value": 1,
+        "label": "Normal"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI1021",
+        "row": 741,
+        "recordOffset": 183780,
+        "kind": 1,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori7212",
+      "itemId": 434,
+      "name": "Ornate Blade +1",
+      "completion": true,
+      "category": "Swords (Beautiful)",
+      "attack": 31,
+      "force": 15,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI7212",
+        "row": 848,
+        "recordOffset": 210316,
+        "kind": 1,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori7213",
+      "itemId": 435,
+      "name": "Ornate Blade EX",
+      "completion": true,
+      "category": "Swords (Beautiful)",
+      "attack": 32,
+      "force": 15,
+      "speed": {
+        "nativeValue": 3,
+        "value": 3,
+        "label": "Very Fast"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI7213",
+        "row": 849,
+        "recordOffset": 210564,
+        "kind": 1,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori1022",
+      "itemId": 436,
+      "name": "Shadow Blade",
+      "completion": true,
+      "category": "Swords (Beautiful)",
+      "attack": 50,
+      "force": 25,
+      "speed": {
+        "nativeValue": 1,
+        "value": 1,
+        "label": "Normal"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI1022",
+        "row": 742,
+        "recordOffset": 184028,
+        "kind": 1,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori7222",
+      "itemId": 437,
+      "name": "Shadow Blade +1",
+      "completion": true,
+      "category": "Swords (Beautiful)",
+      "attack": 51,
+      "force": 25,
+      "speed": {
+        "nativeValue": 1,
+        "value": 1,
+        "label": "Normal"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI7222",
+        "row": 850,
+        "recordOffset": 210812,
+        "kind": 1,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori7223",
+      "itemId": 438,
+      "name": "Shadow Blade EX",
+      "completion": true,
+      "category": "Swords (Beautiful)",
+      "attack": 52,
+      "force": 25,
+      "speed": {
+        "nativeValue": 1,
+        "value": 1,
+        "label": "Normal"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI7223",
+        "row": 851,
+        "recordOffset": 211060,
+        "kind": 1,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori1023",
+      "itemId": 439,
+      "name": "Sakura Storm",
+      "completion": true,
+      "category": "Swords (Beautiful)",
+      "attack": 60,
+      "force": 30,
+      "speed": {
+        "nativeValue": 1,
+        "value": 1,
+        "label": "Normal"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI1023",
+        "row": 743,
+        "recordOffset": 184276,
+        "kind": 1,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori7232",
+      "itemId": 440,
+      "name": "Sakura Storm +1",
+      "completion": true,
+      "category": "Swords (Beautiful)",
+      "attack": 65,
+      "force": 30,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI7232",
+        "row": 852,
+        "recordOffset": 211308,
+        "kind": 1,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori7233",
+      "itemId": 441,
+      "name": "Sakura Storm EX",
+      "completion": true,
+      "category": "Swords (Beautiful)",
+      "attack": 70,
+      "force": 30,
+      "speed": {
+        "nativeValue": 3,
+        "value": 3,
+        "label": "Very Fast"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI7233",
+        "row": 853,
+        "recordOffset": 211556,
+        "kind": 1,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori1045",
+      "itemId": 481,
+      "name": "Bat",
+      "completion": true,
+      "category": "Swords (Unique)",
+      "attack": 10,
+      "force": 100,
+      "speed": {
+        "nativeValue": 3,
+        "value": 3,
+        "label": "Very Fast"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI1045",
+        "row": 765,
+        "recordOffset": 189732,
+        "kind": 1,
+        "flags": 19
+      }
+    },
+    {
+      "id": "weori1046",
+      "itemId": 482,
+      "name": "Red Bat",
+      "completion": true,
+      "category": "Swords (Unique)",
+      "attack": 30,
+      "force": 120,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI1046",
+        "row": 766,
+        "recordOffset": 189980,
+        "kind": 1,
+        "flags": 19
+      }
+    },
+    {
+      "id": "weori1047",
+      "itemId": 483,
+      "name": "Sturdy Bat",
+      "completion": true,
+      "category": "Swords (Unique)",
+      "attack": 50,
+      "force": 150,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI1047",
+        "row": 767,
+        "recordOffset": 190228,
+        "kind": 1,
+        "flags": 19
+      }
+    },
+    {
+      "id": "weori1024",
+      "itemId": 442,
+      "name": "Tessaimaru",
+      "completion": true,
+      "category": "Swords (Unique)",
+      "attack": 30,
+      "force": 60,
+      "speed": {
+        "nativeValue": 1,
+        "value": 1,
+        "label": "Normal"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI1024",
+        "row": 744,
+        "recordOffset": 184524,
+        "kind": 1,
+        "flags": 19
+      }
+    },
+    {
+      "id": "weori1025",
+      "itemId": 443,
+      "name": "Kosaimaru",
+      "completion": true,
+      "category": "Swords (Unique)",
+      "attack": 40,
+      "force": 70,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI1025",
+        "row": 745,
+        "recordOffset": 184772,
+        "kind": 1,
+        "flags": 19
+      }
+    },
+    {
+      "id": "weori1026",
+      "itemId": 444,
+      "name": "Hakuginmaru",
+      "completion": true,
+      "category": "Swords (Unique)",
+      "attack": 50,
+      "force": 90,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI1026",
+        "row": 746,
+        "recordOffset": 185020,
+        "kind": 1,
+        "flags": 19
+      }
+    },
+    {
+      "id": "weori1027",
+      "itemId": 445,
+      "name": "Kongomaru",
+      "completion": true,
+      "category": "Swords (Unique)",
+      "attack": 60,
+      "force": 120,
+      "speed": {
+        "nativeValue": 1,
+        "value": 1,
+        "label": "Normal"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI1027",
+        "row": 747,
+        "recordOffset": 185268,
+        "kind": 1,
+        "flags": 19
+      }
+    },
+    {
+      "id": "weori1028",
+      "itemId": 446,
+      "name": "Vitreous Tachi",
+      "completion": true,
+      "category": "Swords (Spirit)",
+      "attack": 20,
+      "force": 30,
+      "speed": {
+        "nativeValue": 3,
+        "value": 3,
+        "label": "Very Fast"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI1028",
+        "row": 748,
+        "recordOffset": 185516,
+        "kind": 1,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori7282",
+      "itemId": 447,
+      "name": "Vitreous Tachi +1",
+      "completion": true,
+      "category": "Swords (Spirit)",
+      "attack": 21,
+      "force": 32,
+      "speed": {
+        "nativeValue": 3,
+        "value": 3,
+        "label": "Very Fast"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI7282",
+        "row": 854,
+        "recordOffset": 211804,
+        "kind": 1,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori7283",
+      "itemId": 448,
+      "name": "Vitreous Tachi +2",
+      "completion": true,
+      "category": "Swords (Spirit)",
+      "attack": 22,
+      "force": 34,
+      "speed": {
+        "nativeValue": 3,
+        "value": 3,
+        "label": "Very Fast"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI7283",
+        "row": 855,
+        "recordOffset": 212052,
+        "kind": 1,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori7284",
+      "itemId": 449,
+      "name": "Vitreous Tachi +3",
+      "completion": true,
+      "category": "Swords (Spirit)",
+      "attack": 23,
+      "force": 36,
+      "speed": {
+        "nativeValue": 3,
+        "value": 3,
+        "label": "Very Fast"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI7284",
+        "row": 856,
+        "recordOffset": 212300,
+        "kind": 1,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori7285",
+      "itemId": 450,
+      "name": "Vitreous Tachi EX",
+      "completion": true,
+      "category": "Swords (Spirit)",
+      "attack": 24,
+      "force": 40,
+      "speed": {
+        "nativeValue": 3,
+        "value": 3,
+        "label": "Very Fast"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI7285",
+        "row": 857,
+        "recordOffset": 212548,
+        "kind": 1,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori1029",
+      "itemId": 451,
+      "name": "Suijin Tachi",
+      "completion": true,
+      "category": "Swords (Spirit)",
+      "attack": 30,
+      "force": 50,
+      "speed": {
+        "nativeValue": 3,
+        "value": 3,
+        "label": "Very Fast"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI1029",
+        "row": 749,
+        "recordOffset": 185764,
+        "kind": 1,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori7292",
+      "itemId": 452,
+      "name": "Suijin Tachi EX",
+      "completion": true,
+      "category": "Swords (Spirit)",
+      "attack": 35,
+      "force": 60,
+      "speed": {
+        "nativeValue": 3,
+        "value": 3,
+        "label": "Very Fast"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI7292",
+        "row": 858,
+        "recordOffset": 212796,
+        "kind": 1,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori1030",
+      "itemId": 453,
+      "name": "White Lion Tachi",
+      "completion": true,
+      "category": "Swords (Spirit)",
+      "attack": 80,
+      "force": 110,
+      "speed": {
+        "nativeValue": 1,
+        "value": 1,
+        "label": "Normal"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI1030",
+        "row": 750,
+        "recordOffset": 186012,
+        "kind": 1,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori7302",
+      "itemId": 454,
+      "name": "White Lion Tachi +1",
+      "completion": true,
+      "category": "Swords (Spirit)",
+      "attack": 82,
+      "force": 110,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI7302",
+        "row": 859,
+        "recordOffset": 213044,
+        "kind": 1,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori7303",
+      "itemId": 455,
+      "name": "White Lion Tachi EX",
+      "completion": true,
+      "category": "Swords (Spirit)",
+      "attack": 85,
+      "force": 110,
+      "speed": {
+        "nativeValue": 3,
+        "value": 3,
+        "label": "Very Fast"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI7303",
+        "row": 860,
+        "recordOffset": 213292,
+        "kind": 1,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori1031",
+      "itemId": 456,
+      "name": "Silver Tachi",
+      "completion": true,
+      "category": "Swords (Spirit)",
+      "attack": 20,
+      "force": 80,
+      "speed": {
+        "nativeValue": 1,
+        "value": 1,
+        "label": "Normal"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI1031",
+        "row": 751,
+        "recordOffset": 186260,
+        "kind": 1,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori1032",
+      "itemId": 457,
+      "name": "Golden Tachi",
+      "completion": true,
+      "category": "Swords (Spirit)",
+      "attack": 10,
+      "force": 100,
+      "speed": {
+        "nativeValue": 0,
+        "value": 0,
+        "label": "Slow"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI1032",
+        "row": 752,
+        "recordOffset": 186508,
+        "kind": 1,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori1033",
+      "itemId": 458,
+      "name": "Brilliant Tachi",
+      "completion": true,
+      "category": "Swords (Spirit)",
+      "attack": 45,
+      "force": 80,
+      "speed": {
+        "nativeValue": 1,
+        "value": 1,
+        "label": "Normal"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI1033",
+        "row": 753,
+        "recordOffset": 186756,
+        "kind": 1,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori7332",
+      "itemId": 459,
+      "name": "Brilliant Tachi +1",
+      "completion": true,
+      "category": "Swords (Spirit)",
+      "attack": 50,
+      "force": 85,
+      "speed": {
+        "nativeValue": 1,
+        "value": 1,
+        "label": "Normal"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI7332",
+        "row": 861,
+        "recordOffset": 213540,
+        "kind": 1,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori7333",
+      "itemId": 460,
+      "name": "Brilliant Tachi EX",
+      "completion": true,
+      "category": "Swords (Spirit)",
+      "attack": 60,
+      "force": 90,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI7333",
+        "row": 862,
+        "recordOffset": 213788,
+        "kind": 1,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori1034",
+      "itemId": 461,
+      "name": "Holy Spirit Tachi",
+      "completion": true,
+      "category": "Swords (Spirit)",
+      "attack": 55,
+      "force": 45,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI1034",
+        "row": 754,
+        "recordOffset": 187004,
+        "kind": 1,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori7342",
+      "itemId": 462,
+      "name": "Holy Spirit Tachi +1",
+      "completion": true,
+      "category": "Swords (Spirit)",
+      "attack": 56,
+      "force": 46,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI7342",
+        "row": 863,
+        "recordOffset": 214036,
+        "kind": 1,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori7343",
+      "itemId": 463,
+      "name": "Holy Spirit Tachi +2",
+      "completion": true,
+      "category": "Swords (Spirit)",
+      "attack": 57,
+      "force": 47,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI7343",
+        "row": 864,
+        "recordOffset": 214284,
+        "kind": 1,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori7344",
+      "itemId": 464,
+      "name": "Holy Spirit Tachi +3",
+      "completion": true,
+      "category": "Swords (Spirit)",
+      "attack": 58,
+      "force": 48,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI7344",
+        "row": 865,
+        "recordOffset": 214532,
+        "kind": 1,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori7345",
+      "itemId": 465,
+      "name": "Holy Spirit Tachi EX",
+      "completion": true,
+      "category": "Swords (Spirit)",
+      "attack": 60,
+      "force": 50,
+      "speed": {
+        "nativeValue": 3,
+        "value": 3,
+        "label": "Very Fast"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI7345",
+        "row": 866,
+        "recordOffset": 214780,
+        "kind": 1,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori1035",
+      "itemId": 466,
+      "name": "Oni Fang",
+      "completion": true,
+      "category": "Swords (Spirit)",
+      "attack": 90,
+      "force": 200,
+      "speed": {
+        "nativeValue": 0,
+        "value": 0,
+        "label": "Slow"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI1035",
+        "row": 755,
+        "recordOffset": 187252,
+        "kind": 1,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori7352",
+      "itemId": 467,
+      "name": "Oni Fang +1",
+      "completion": true,
+      "category": "Swords (Spirit)",
+      "attack": 95,
+      "force": 210,
+      "speed": {
+        "nativeValue": 0,
+        "value": 0,
+        "label": "Slow"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI7352",
+        "row": 867,
+        "recordOffset": 215028,
+        "kind": 1,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori7353",
+      "itemId": 468,
+      "name": "Oni Fang +2",
+      "completion": true,
+      "category": "Swords (Spirit)",
+      "attack": 100,
+      "force": 220,
+      "speed": {
+        "nativeValue": 0,
+        "value": 0,
+        "label": "Slow"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI7353",
+        "row": 868,
+        "recordOffset": 215276,
+        "kind": 1,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori7354",
+      "itemId": 469,
+      "name": "Oni Fang +3",
+      "completion": true,
+      "category": "Swords (Spirit)",
+      "attack": 105,
+      "force": 240,
+      "speed": {
+        "nativeValue": 0,
+        "value": 0,
+        "label": "Slow"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI7354",
+        "row": 869,
+        "recordOffset": 215524,
+        "kind": 1,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori7355",
+      "itemId": 470,
+      "name": "Oni Fang EX",
+      "completion": true,
+      "category": "Swords (Spirit)",
+      "attack": 110,
+      "force": 250,
+      "speed": {
+        "nativeValue": 0,
+        "value": 0,
+        "label": "Slow"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI7355",
+        "row": 870,
+        "recordOffset": 215772,
+        "kind": 1,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori1036",
+      "itemId": 471,
+      "name": "Twin Dragon Tachi",
+      "completion": true,
+      "category": "Swords (Spirit)",
+      "attack": 100,
+      "force": 140,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI1036",
+        "row": 756,
+        "recordOffset": 187500,
+        "kind": 1,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori7362",
+      "itemId": 472,
+      "name": "Twin Dragon Tachi EX",
+      "completion": true,
+      "category": "Swords (Spirit)",
+      "attack": 130,
+      "force": 150,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI7362",
+        "row": 871,
+        "recordOffset": 216020,
+        "kind": 1,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori2001",
+      "itemId": 488,
+      "name": "Sakushu Kodachi",
+      "completion": true,
+      "category": "Kodachi (Normal)",
+      "attack": 5,
+      "force": 1,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": "kodachi",
+      "allowedRoles": [
+        "second"
+      ],
+      "native": {
+        "model": "WEORI2001",
+        "row": 769,
+        "recordOffset": 190724,
+        "kind": 2,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori8012",
+      "itemId": 489,
+      "name": "Sakushu Kodachi +1",
+      "completion": true,
+      "category": "Kodachi (Normal)",
+      "attack": 5,
+      "force": 2,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": "kodachi",
+      "allowedRoles": [
+        "second"
+      ],
+      "native": {
+        "model": "WEORI8012",
+        "row": 875,
+        "recordOffset": 217012,
+        "kind": 2,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori8013",
+      "itemId": 490,
+      "name": "Sakushu Kodachi EX",
+      "completion": true,
+      "category": "Kodachi (Normal)",
+      "attack": 6,
+      "force": 3,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": "kodachi",
+      "allowedRoles": [
+        "second"
+      ],
+      "native": {
+        "model": "WEORI8013",
+        "row": 876,
+        "recordOffset": 217260,
+        "kind": 2,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori2000",
+      "itemId": 484,
+      "name": "Nameless Kodachi",
+      "completion": true,
+      "category": "Kodachi (Normal)",
+      "attack": 5,
+      "force": 1,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": "kodachi",
+      "allowedRoles": [
+        "second"
+      ],
+      "native": {
+        "model": "WEORI2000",
+        "row": 768,
+        "recordOffset": 190476,
+        "kind": 2,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori8002",
+      "itemId": 485,
+      "name": "Nameless Kodachi +1",
+      "completion": true,
+      "category": "Kodachi (Normal)",
+      "attack": 5,
+      "force": 2,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": "kodachi",
+      "allowedRoles": [
+        "second"
+      ],
+      "native": {
+        "model": "WEORI8002",
+        "row": 872,
+        "recordOffset": 216268,
+        "kind": 2,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori8003",
+      "itemId": 486,
+      "name": "Nameless Kodachi +2",
+      "completion": true,
+      "category": "Kodachi (Normal)",
+      "attack": 5,
+      "force": 3,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": "kodachi",
+      "allowedRoles": [
+        "second"
+      ],
+      "native": {
+        "model": "WEORI8003",
+        "row": 873,
+        "recordOffset": 216516,
+        "kind": 2,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori8004",
+      "itemId": 487,
+      "name": "Nameless Kodachi EX",
+      "completion": true,
+      "category": "Kodachi (Normal)",
+      "attack": 5,
+      "force": 4,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": "kodachi",
+      "allowedRoles": [
+        "second"
+      ],
+      "native": {
+        "model": "WEORI8004",
+        "row": 874,
+        "recordOffset": 216764,
+        "kind": 2,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori2006",
+      "itemId": 495,
+      "name": "Brittle Wakizashi",
+      "completion": true,
+      "category": "Kodachi (Normal)",
+      "attack": 10,
+      "force": 3,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": "kodachi",
+      "allowedRoles": [
+        "second"
+      ],
+      "native": {
+        "model": "WEORI2006",
+        "row": 774,
+        "recordOffset": 191964,
+        "kind": 2,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori8062",
+      "itemId": 496,
+      "name": "Brittle Wakizashi EX",
+      "completion": true,
+      "category": "Kodachi (Normal)",
+      "attack": 11,
+      "force": 4,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": "kodachi",
+      "allowedRoles": [
+        "second"
+      ],
+      "native": {
+        "model": "WEORI8062",
+        "row": 877,
+        "recordOffset": 217508,
+        "kind": 2,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori2002",
+      "itemId": 491,
+      "name": "Red Oak Kodachi",
+      "completion": true,
+      "category": "Kodachi (Normal)",
+      "attack": 5,
+      "force": 1,
+      "speed": {
+        "nativeValue": 3,
+        "value": 3,
+        "label": "Very Fast"
+      },
+      "role": "kodachi",
+      "allowedRoles": [
+        "second"
+      ],
+      "native": {
+        "model": "WEORI2002",
+        "row": 770,
+        "recordOffset": 190972,
+        "kind": 2,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori2003",
+      "itemId": 492,
+      "name": "Legendary Shintogo",
+      "completion": true,
+      "category": "Kodachi (Famous)",
+      "attack": 29,
+      "force": 7,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": "kodachi",
+      "allowedRoles": [
+        "second"
+      ],
+      "native": {
+        "model": "WEORI2003",
+        "row": 771,
+        "recordOffset": 191220,
+        "kind": 2,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori2004",
+      "itemId": 493,
+      "name": "Kogarasumaru",
+      "completion": true,
+      "category": "Kodachi (Famous)",
+      "attack": 39,
+      "force": 17,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": "kodachi",
+      "allowedRoles": [
+        "second"
+      ],
+      "native": {
+        "model": "WEORI2004",
+        "row": 772,
+        "recordOffset": 191468,
+        "kind": 2,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori2005",
+      "itemId": 494,
+      "name": "Masamune Tanto",
+      "completion": true,
+      "category": "Kodachi (Famous)",
+      "attack": 37,
+      "force": 15,
+      "speed": {
+        "nativeValue": 3,
+        "value": 3,
+        "label": "Very Fast"
+      },
+      "role": "kodachi",
+      "allowedRoles": [
+        "second"
+      ],
+      "native": {
+        "model": "WEORI2005",
+        "row": 773,
+        "recordOffset": 191716,
+        "kind": 2,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori2018",
+      "itemId": 536,
+      "name": "Peerless Wakizashi",
+      "completion": true,
+      "category": "Kodachi (Famous)",
+      "attack": 40,
+      "force": 20,
+      "speed": {
+        "nativeValue": 3,
+        "value": 3,
+        "label": "Very Fast"
+      },
+      "role": "kodachi",
+      "allowedRoles": [
+        "second"
+      ],
+      "native": {
+        "model": "WEORI2018",
+        "row": 786,
+        "recordOffset": 194940,
+        "kind": 2,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori2007",
+      "itemId": 497,
+      "name": "Wakizashi",
+      "completion": true,
+      "category": "Kodachi (Unique)",
+      "attack": 20,
+      "force": 5,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": "kodachi",
+      "allowedRoles": [
+        "second"
+      ],
+      "native": {
+        "model": "WEORI2007",
+        "row": 775,
+        "recordOffset": 192212,
+        "kind": 2,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori8072",
+      "itemId": 498,
+      "name": "Wakizashi +1",
+      "completion": true,
+      "category": "Kodachi (Unique)",
+      "attack": 21,
+      "force": 6,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": "kodachi",
+      "allowedRoles": [
+        "second"
+      ],
+      "native": {
+        "model": "WEORI8072",
+        "row": 878,
+        "recordOffset": 217756,
+        "kind": 2,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori8073",
+      "itemId": 499,
+      "name": "Wakizashi EX",
+      "completion": true,
+      "category": "Kodachi (Unique)",
+      "attack": 22,
+      "force": 7,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": "kodachi",
+      "allowedRoles": [
+        "second"
+      ],
+      "native": {
+        "model": "WEORI8073",
+        "row": 879,
+        "recordOffset": 218004,
+        "kind": 2,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori2008",
+      "itemId": 500,
+      "name": "Fine Wakizashi",
+      "completion": true,
+      "category": "Kodachi (Unique)",
+      "attack": 23,
+      "force": 8,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": "kodachi",
+      "allowedRoles": [
+        "second"
+      ],
+      "native": {
+        "model": "WEORI2008",
+        "row": 776,
+        "recordOffset": 192460,
+        "kind": 2,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori8082",
+      "itemId": 501,
+      "name": "Fine Wakizashi +1",
+      "completion": true,
+      "category": "Kodachi (Unique)",
+      "attack": 24,
+      "force": 9,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": "kodachi",
+      "allowedRoles": [
+        "second"
+      ],
+      "native": {
+        "model": "WEORI8082",
+        "row": 880,
+        "recordOffset": 218252,
+        "kind": 2,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori8083",
+      "itemId": 502,
+      "name": "Fine Wakizashi EX",
+      "completion": true,
+      "category": "Kodachi (Unique)",
+      "attack": 25,
+      "force": 10,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": "kodachi",
+      "allowedRoles": [
+        "second"
+      ],
+      "native": {
+        "model": "WEORI8083",
+        "row": 881,
+        "recordOffset": 218500,
+        "kind": 2,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori2009",
+      "itemId": 503,
+      "name": "Excellent Wakizashi",
+      "completion": true,
+      "category": "Kodachi (Unique)",
+      "attack": 26,
+      "force": 11,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": "kodachi",
+      "allowedRoles": [
+        "second"
+      ],
+      "native": {
+        "model": "WEORI2009",
+        "row": 777,
+        "recordOffset": 192708,
+        "kind": 2,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori8092",
+      "itemId": 504,
+      "name": "Excellent Wakizashi +1",
+      "completion": true,
+      "category": "Kodachi (Unique)",
+      "attack": 27,
+      "force": 12,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": "kodachi",
+      "allowedRoles": [
+        "second"
+      ],
+      "native": {
+        "model": "WEORI8092",
+        "row": 882,
+        "recordOffset": 218748,
+        "kind": 2,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori8093",
+      "itemId": 505,
+      "name": "Excellent Wakizashi +2",
+      "completion": true,
+      "category": "Kodachi (Unique)",
+      "attack": 28,
+      "force": 13,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": "kodachi",
+      "allowedRoles": [
+        "second"
+      ],
+      "native": {
+        "model": "WEORI8093",
+        "row": 883,
+        "recordOffset": 218996,
+        "kind": 2,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori8094",
+      "itemId": 506,
+      "name": "Excellent Wakizashi EX",
+      "completion": true,
+      "category": "Kodachi (Unique)",
+      "attack": 35,
+      "force": 15,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": "kodachi",
+      "allowedRoles": [
+        "second"
+      ],
+      "native": {
+        "model": "WEORI8094",
+        "row": 884,
+        "recordOffset": 219244,
+        "kind": 2,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori2010",
+      "itemId": 507,
+      "name": "Botanic Kodachi",
+      "completion": true,
+      "category": "Kodachi (Unique)",
+      "attack": 40,
+      "force": 16,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": "kodachi",
+      "allowedRoles": [
+        "second"
+      ],
+      "native": {
+        "model": "WEORI2010",
+        "row": 778,
+        "recordOffset": 192956,
+        "kind": 2,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori2011",
+      "itemId": 508,
+      "name": "Ume Storm",
+      "completion": true,
+      "category": "Kodachi (Unique)",
+      "attack": 15,
+      "force": 4,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": "kodachi",
+      "allowedRoles": [
+        "second"
+      ],
+      "native": {
+        "model": "WEORI2011",
+        "row": 779,
+        "recordOffset": 193204,
+        "kind": 2,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori8112",
+      "itemId": 509,
+      "name": "Ume Storm +1",
+      "completion": true,
+      "category": "Kodachi (Unique)",
+      "attack": 16,
+      "force": 5,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": "kodachi",
+      "allowedRoles": [
+        "second"
+      ],
+      "native": {
+        "model": "WEORI8112",
+        "row": 885,
+        "recordOffset": 219492,
+        "kind": 2,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori8113",
+      "itemId": 510,
+      "name": "Ume Storm +2",
+      "completion": true,
+      "category": "Kodachi (Unique)",
+      "attack": 17,
+      "force": 6,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": "kodachi",
+      "allowedRoles": [
+        "second"
+      ],
+      "native": {
+        "model": "WEORI8113",
+        "row": 886,
+        "recordOffset": 219740,
+        "kind": 2,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori8114",
+      "itemId": 511,
+      "name": "Ume Storm +3",
+      "completion": true,
+      "category": "Kodachi (Unique)",
+      "attack": 18,
+      "force": 7,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": "kodachi",
+      "allowedRoles": [
+        "second"
+      ],
+      "native": {
+        "model": "WEORI8114",
+        "row": 887,
+        "recordOffset": 219988,
+        "kind": 2,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori8115",
+      "itemId": 512,
+      "name": "Ume Storm EX",
+      "completion": true,
+      "category": "Kodachi (Unique)",
+      "attack": 20,
+      "force": 10,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": "kodachi",
+      "allowedRoles": [
+        "second"
+      ],
+      "native": {
+        "model": "WEORI8115",
+        "row": 888,
+        "recordOffset": 220236,
+        "kind": 2,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori2012",
+      "itemId": 513,
+      "name": "Suijin Kodachi",
+      "completion": true,
+      "category": "Kodachi (Unique)",
+      "attack": 25,
+      "force": 6,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": "kodachi",
+      "allowedRoles": [
+        "second"
+      ],
+      "native": {
+        "model": "WEORI2012",
+        "row": 780,
+        "recordOffset": 193452,
+        "kind": 2,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori8122",
+      "itemId": 514,
+      "name": "Suijin Kodachi EX",
+      "completion": true,
+      "category": "Kodachi (Unique)",
+      "attack": 26,
+      "force": 10,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": "kodachi",
+      "allowedRoles": [
+        "second"
+      ],
+      "native": {
+        "model": "WEORI8122",
+        "row": 889,
+        "recordOffset": 220484,
+        "kind": 2,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori2013",
+      "itemId": 515,
+      "name": "Red Lion Kodachi",
+      "completion": true,
+      "category": "Kodachi (Unique)",
+      "attack": 33,
+      "force": 11,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": "kodachi",
+      "allowedRoles": [
+        "second"
+      ],
+      "native": {
+        "model": "WEORI2013",
+        "row": 781,
+        "recordOffset": 193700,
+        "kind": 2,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori8132",
+      "itemId": 516,
+      "name": "Red Lion Kodachi +1",
+      "completion": true,
+      "category": "Kodachi (Unique)",
+      "attack": 35,
+      "force": 12,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": "kodachi",
+      "allowedRoles": [
+        "second"
+      ],
+      "native": {
+        "model": "WEORI8132",
+        "row": 890,
+        "recordOffset": 220732,
+        "kind": 2,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori8133",
+      "itemId": 517,
+      "name": "Red Lion Kodachi EX",
+      "completion": true,
+      "category": "Kodachi (Unique)",
+      "attack": 40,
+      "force": 15,
+      "speed": {
+        "nativeValue": 3,
+        "value": 3,
+        "label": "Very Fast"
+      },
+      "role": "kodachi",
+      "allowedRoles": [
+        "second"
+      ],
+      "native": {
+        "model": "WEORI8133",
+        "row": 891,
+        "recordOffset": 220980,
+        "kind": 2,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori2014",
+      "itemId": 518,
+      "name": "Thick Owakizashi",
+      "completion": true,
+      "category": "Kodachi (Unique)",
+      "attack": 40,
+      "force": 40,
+      "speed": {
+        "nativeValue": 0,
+        "value": 0,
+        "label": "Slow"
+      },
+      "role": "kodachi",
+      "allowedRoles": [
+        "second"
+      ],
+      "native": {
+        "model": "WEORI2014",
+        "row": 782,
+        "recordOffset": 193948,
+        "kind": 2,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori8142",
+      "itemId": 519,
+      "name": "Thick Owakizashi +1",
+      "completion": true,
+      "category": "Kodachi (Unique)",
+      "attack": 45,
+      "force": 40,
+      "speed": {
+        "nativeValue": 0,
+        "value": 0,
+        "label": "Slow"
+      },
+      "role": "kodachi",
+      "allowedRoles": [
+        "second"
+      ],
+      "native": {
+        "model": "WEORI8142",
+        "row": 892,
+        "recordOffset": 221228,
+        "kind": 2,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori8143",
+      "itemId": 520,
+      "name": "Thick Owakizashi +2",
+      "completion": true,
+      "category": "Kodachi (Unique)",
+      "attack": 50,
+      "force": 40,
+      "speed": {
+        "nativeValue": 0,
+        "value": 0,
+        "label": "Slow"
+      },
+      "role": "kodachi",
+      "allowedRoles": [
+        "second"
+      ],
+      "native": {
+        "model": "WEORI8143",
+        "row": 893,
+        "recordOffset": 221476,
+        "kind": 2,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori8144",
+      "itemId": 521,
+      "name": "Thick Owakizashi +3",
+      "completion": true,
+      "category": "Kodachi (Unique)",
+      "attack": 55,
+      "force": 40,
+      "speed": {
+        "nativeValue": 0,
+        "value": 0,
+        "label": "Slow"
+      },
+      "role": "kodachi",
+      "allowedRoles": [
+        "second"
+      ],
+      "native": {
+        "model": "WEORI8144",
+        "row": 894,
+        "recordOffset": 221724,
+        "kind": 2,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori8145",
+      "itemId": 522,
+      "name": "Thick Owakizashi EX",
+      "completion": true,
+      "category": "Kodachi (Unique)",
+      "attack": 60,
+      "force": 40,
+      "speed": {
+        "nativeValue": 1,
+        "value": 1,
+        "label": "Normal"
+      },
+      "role": "kodachi",
+      "allowedRoles": [
+        "second"
+      ],
+      "native": {
+        "model": "WEORI8145",
+        "row": 895,
+        "recordOffset": 221972,
+        "kind": 2,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori2015",
+      "itemId": 523,
+      "name": "Dark Void Kodachi",
+      "completion": true,
+      "category": "Kodachi (Unique)",
+      "attack": 31,
+      "force": 9,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": "kodachi",
+      "allowedRoles": [
+        "second"
+      ],
+      "native": {
+        "model": "WEORI2015",
+        "row": 783,
+        "recordOffset": 194196,
+        "kind": 2,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori8152",
+      "itemId": 524,
+      "name": "Dark Void Kodachi +1",
+      "completion": true,
+      "category": "Kodachi (Unique)",
+      "attack": 32,
+      "force": 10,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": "kodachi",
+      "allowedRoles": [
+        "second"
+      ],
+      "native": {
+        "model": "WEORI8152",
+        "row": 896,
+        "recordOffset": 222220,
+        "kind": 2,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori8153",
+      "itemId": 525,
+      "name": "Dark Void Kodachi EX",
+      "completion": true,
+      "category": "Kodachi (Unique)",
+      "attack": 35,
+      "force": 10,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": "kodachi",
+      "allowedRoles": [
+        "second"
+      ],
+      "native": {
+        "model": "WEORI8153",
+        "row": 897,
+        "recordOffset": 222468,
+        "kind": 2,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori2016",
+      "itemId": 526,
+      "name": "Oni Claw",
+      "completion": true,
+      "category": "Kodachi (Unique)",
+      "attack": 35,
+      "force": 10,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": "kodachi",
+      "allowedRoles": [
+        "second"
+      ],
+      "native": {
+        "model": "WEORI2016",
+        "row": 784,
+        "recordOffset": 194444,
+        "kind": 2,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori8162",
+      "itemId": 527,
+      "name": "Oni Claw +1",
+      "completion": true,
+      "category": "Kodachi (Unique)",
+      "attack": 35,
+      "force": 15,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": "kodachi",
+      "allowedRoles": [
+        "second"
+      ],
+      "native": {
+        "model": "WEORI8162",
+        "row": 898,
+        "recordOffset": 222716,
+        "kind": 2,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori8163",
+      "itemId": 528,
+      "name": "Oni Claw +2",
+      "completion": true,
+      "category": "Kodachi (Unique)",
+      "attack": 35,
+      "force": 20,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": "kodachi",
+      "allowedRoles": [
+        "second"
+      ],
+      "native": {
+        "model": "WEORI8163",
+        "row": 899,
+        "recordOffset": 222964,
+        "kind": 2,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori8164",
+      "itemId": 529,
+      "name": "Oni Claw +3",
+      "completion": true,
+      "category": "Kodachi (Unique)",
+      "attack": 35,
+      "force": 25,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": "kodachi",
+      "allowedRoles": [
+        "second"
+      ],
+      "native": {
+        "model": "WEORI8164",
+        "row": 900,
+        "recordOffset": 223212,
+        "kind": 2,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori8165",
+      "itemId": 530,
+      "name": "Oni Claw EX",
+      "completion": true,
+      "category": "Kodachi (Unique)",
+      "attack": 35,
+      "force": 30,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": "kodachi",
+      "allowedRoles": [
+        "second"
+      ],
+      "native": {
+        "model": "WEORI8165",
+        "row": 901,
+        "recordOffset": 223460,
+        "kind": 2,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori2017",
+      "itemId": 531,
+      "name": "Twin Dragon Kodachi",
+      "completion": true,
+      "category": "Kodachi (Unique)",
+      "attack": 36,
+      "force": 14,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": "kodachi",
+      "allowedRoles": [
+        "second"
+      ],
+      "native": {
+        "model": "WEORI2017",
+        "row": 785,
+        "recordOffset": 194692,
+        "kind": 2,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori8172",
+      "itemId": 532,
+      "name": "Twin Dragon Kodachi +1",
+      "completion": true,
+      "category": "Kodachi (Unique)",
+      "attack": 37,
+      "force": 15,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": "kodachi",
+      "allowedRoles": [
+        "second"
+      ],
+      "native": {
+        "model": "WEORI8172",
+        "row": 902,
+        "recordOffset": 223708,
+        "kind": 2,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori8173",
+      "itemId": 533,
+      "name": "Twin Dragon Kodachi +2",
+      "completion": true,
+      "category": "Kodachi (Unique)",
+      "attack": 38,
+      "force": 16,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": "kodachi",
+      "allowedRoles": [
+        "second"
+      ],
+      "native": {
+        "model": "WEORI8173",
+        "row": 903,
+        "recordOffset": 223956,
+        "kind": 2,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori8174",
+      "itemId": 534,
+      "name": "Twin Dragon Kodachi +3",
+      "completion": true,
+      "category": "Kodachi (Unique)",
+      "attack": 39,
+      "force": 17,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": "kodachi",
+      "allowedRoles": [
+        "second"
+      ],
+      "native": {
+        "model": "WEORI8174",
+        "row": 904,
+        "recordOffset": 224204,
+        "kind": 2,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori8175",
+      "itemId": 535,
+      "name": "Twin Dragon Kodachi EX",
+      "completion": true,
+      "category": "Kodachi (Unique)",
+      "attack": 40,
+      "force": 20,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": "kodachi",
+      "allowedRoles": [
+        "second"
+      ],
+      "native": {
+        "model": "WEORI8175",
+        "row": 905,
+        "recordOffset": 224452,
+        "kind": 2,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori2019",
+      "itemId": 537,
+      "name": "Mizuchi Slayer",
+      "completion": true,
+      "category": "Kodachi (Unique)",
+      "attack": 34,
+      "force": 12,
+      "speed": {
+        "nativeValue": 3,
+        "value": 3,
+        "label": "Very Fast"
+      },
+      "role": "kodachi",
+      "allowedRoles": [
+        "second"
+      ],
+      "native": {
+        "model": "WEORI2019",
+        "row": 787,
+        "recordOffset": 195188,
+        "kind": 2,
+        "flags": 211
+      }
+    },
+    {
+      "id": "weori3000",
+      "itemId": 538,
+      "name": "Iron Odachi",
+      "completion": true,
+      "category": "Odachi",
+      "attack": 30,
+      "force": 50,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI3000",
+        "row": 788,
+        "recordOffset": 195436,
+        "kind": 8,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori9002",
+      "itemId": 539,
+      "name": "Iron Odachi +1",
+      "completion": true,
+      "category": "Odachi",
+      "attack": 31,
+      "force": 51,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI9002",
+        "row": 906,
+        "recordOffset": 224700,
+        "kind": 8,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori9003",
+      "itemId": 540,
+      "name": "Iron Odachi +2",
+      "completion": true,
+      "category": "Odachi",
+      "attack": 32,
+      "force": 52,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI9003",
+        "row": 907,
+        "recordOffset": 224948,
+        "kind": 8,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori9004",
+      "itemId": 541,
+      "name": "Iron Odachi +3",
+      "completion": true,
+      "category": "Odachi",
+      "attack": 33,
+      "force": 53,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI9004",
+        "row": 908,
+        "recordOffset": 225196,
+        "kind": 8,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori9005",
+      "itemId": 542,
+      "name": "Iron Odachi EX",
+      "completion": true,
+      "category": "Odachi",
+      "attack": 34,
+      "force": 55,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI9005",
+        "row": 909,
+        "recordOffset": 225444,
+        "kind": 8,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori3003",
+      "itemId": 544,
+      "name": "Old Taiken",
+      "completion": true,
+      "category": "Odachi",
+      "attack": 20,
+      "force": 70,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI3003",
+        "row": 790,
+        "recordOffset": 195932,
+        "kind": 8,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori3004",
+      "itemId": 545,
+      "name": "Futsumitama no Tsurugi",
+      "completion": true,
+      "category": "Three Ancient Swords",
+      "attack": 40,
+      "force": 80,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI3004",
+        "row": 791,
+        "recordOffset": 196180,
+        "kind": 8,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori9042",
+      "itemId": 546,
+      "name": "Futsumitama no Tsurugi +1",
+      "completion": true,
+      "category": "Three Ancient Swords",
+      "attack": 50,
+      "force": 80,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI9042",
+        "row": 910,
+        "recordOffset": 225692,
+        "kind": 8,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori9043",
+      "itemId": 547,
+      "name": "Futsumitama no Tsurugi EX",
+      "completion": true,
+      "category": "Three Ancient Swords",
+      "attack": 60,
+      "force": 90,
+      "speed": {
+        "nativeValue": 3,
+        "value": 3,
+        "label": "Very Fast"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI9043",
+        "row": 911,
+        "recordOffset": 225940,
+        "kind": 8,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori3005",
+      "itemId": 548,
+      "name": "Antique Taiken",
+      "completion": true,
+      "category": "Odachi",
+      "attack": 30,
+      "force": 100,
+      "speed": {
+        "nativeValue": 1,
+        "value": 1,
+        "label": "Normal"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI3005",
+        "row": 792,
+        "recordOffset": 196428,
+        "kind": 8,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori3006",
+      "itemId": 549,
+      "name": "Ame no Habakiri",
+      "completion": true,
+      "category": "Three Ancient Swords",
+      "attack": 70,
+      "force": 100,
+      "speed": {
+        "nativeValue": 1,
+        "value": 1,
+        "label": "Normal"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI3006",
+        "row": 793,
+        "recordOffset": 196676,
+        "kind": 8,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori9062",
+      "itemId": 550,
+      "name": "Ame no Habakiri +1",
+      "completion": true,
+      "category": "Three Ancient Swords",
+      "attack": 75,
+      "force": 100,
+      "speed": {
+        "nativeValue": 1,
+        "value": 1,
+        "label": "Normal"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI9062",
+        "row": 912,
+        "recordOffset": 226188,
+        "kind": 8,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori9063",
+      "itemId": 551,
+      "name": "Ame no Habakiri +2",
+      "completion": true,
+      "category": "Three Ancient Swords",
+      "attack": 80,
+      "force": 100,
+      "speed": {
+        "nativeValue": 1,
+        "value": 1,
+        "label": "Normal"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI9063",
+        "row": 913,
+        "recordOffset": 226436,
+        "kind": 8,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori9064",
+      "itemId": 552,
+      "name": "Ame no Habakiri EX",
+      "completion": true,
+      "category": "Three Ancient Swords",
+      "attack": 85,
+      "force": 110,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI9064",
+        "row": 914,
+        "recordOffset": 226684,
+        "kind": 8,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori3007",
+      "itemId": 553,
+      "name": "Rusted Old Taiken",
+      "completion": true,
+      "category": "Odachi",
+      "attack": 10,
+      "force": 120,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI3007",
+        "row": 794,
+        "recordOffset": 196924,
+        "kind": 8,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori3008",
+      "itemId": 554,
+      "name": "Kusanagi no Tsurugi",
+      "completion": true,
+      "category": "Three Ancient Swords",
+      "attack": 60,
+      "force": 120,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI3008",
+        "row": 795,
+        "recordOffset": 197172,
+        "kind": 8,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori9082",
+      "itemId": 555,
+      "name": "Kusanagi no Tsurugi +1",
+      "completion": true,
+      "category": "Three Ancient Swords",
+      "attack": 80,
+      "force": 125,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI9082",
+        "row": 915,
+        "recordOffset": 226932,
+        "kind": 8,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori9083",
+      "itemId": 556,
+      "name": "Kusanagi no Tsurugi +2",
+      "completion": true,
+      "category": "Three Ancient Swords",
+      "attack": 100,
+      "force": 130,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI9083",
+        "row": 916,
+        "recordOffset": 227180,
+        "kind": 8,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori9084",
+      "itemId": 557,
+      "name": "Kusanagi no Tsurugi +3",
+      "completion": true,
+      "category": "Three Ancient Swords",
+      "attack": 120,
+      "force": 135,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI9084",
+        "row": 917,
+        "recordOffset": 227428,
+        "kind": 8,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori9085",
+      "itemId": 558,
+      "name": "Kusanagi no Tsurugi EX",
+      "completion": true,
+      "category": "Three Ancient Swords",
+      "attack": 140,
+      "force": 140,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI9085",
+        "row": 918,
+        "recordOffset": 227676,
+        "kind": 8,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori3010",
+      "itemId": 560,
+      "name": "Brittle Odachi",
+      "completion": true,
+      "category": "Odachi",
+      "attack": 35,
+      "force": 80,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI3010",
+        "row": 797,
+        "recordOffset": 197668,
+        "kind": 8,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori9102",
+      "itemId": 561,
+      "name": "Brittle Odachi +1",
+      "completion": true,
+      "category": "Odachi",
+      "attack": 36,
+      "force": 81,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI9102",
+        "row": 919,
+        "recordOffset": 227924,
+        "kind": 8,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori9103",
+      "itemId": 562,
+      "name": "Brittle Odachi +2",
+      "completion": true,
+      "category": "Odachi",
+      "attack": 37,
+      "force": 82,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI9103",
+        "row": 920,
+        "recordOffset": 228172,
+        "kind": 8,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori9104",
+      "itemId": 563,
+      "name": "Brittle Odachi EX",
+      "completion": true,
+      "category": "Odachi",
+      "attack": 38,
+      "force": 83,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI9104",
+        "row": 921,
+        "recordOffset": 228420,
+        "kind": 8,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori3011",
+      "itemId": 564,
+      "name": "Odachi",
+      "completion": true,
+      "category": "Odachi",
+      "attack": 40,
+      "force": 130,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI3011",
+        "row": 798,
+        "recordOffset": 197916,
+        "kind": 8,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori9112",
+      "itemId": 565,
+      "name": "Odachi +1",
+      "completion": true,
+      "category": "Odachi",
+      "attack": 41,
+      "force": 131,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI9112",
+        "row": 922,
+        "recordOffset": 228668,
+        "kind": 8,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori9113",
+      "itemId": 566,
+      "name": "Odachi +2",
+      "completion": true,
+      "category": "Odachi",
+      "attack": 42,
+      "force": 132,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI9113",
+        "row": 923,
+        "recordOffset": 228916,
+        "kind": 8,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori9114",
+      "itemId": 567,
+      "name": "Odachi EX",
+      "completion": true,
+      "category": "Odachi",
+      "attack": 43,
+      "force": 133,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI9114",
+        "row": 924,
+        "recordOffset": 229164,
+        "kind": 8,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori3012",
+      "itemId": 568,
+      "name": "Fine Odachi",
+      "completion": true,
+      "category": "Odachi",
+      "attack": 60,
+      "force": 100,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI3012",
+        "row": 799,
+        "recordOffset": 198164,
+        "kind": 8,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori9122",
+      "itemId": 569,
+      "name": "Fine Odachi +1",
+      "completion": true,
+      "category": "Odachi",
+      "attack": 61,
+      "force": 101,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI9122",
+        "row": 925,
+        "recordOffset": 229412,
+        "kind": 8,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori9123",
+      "itemId": 570,
+      "name": "Fine Odachi +2",
+      "completion": true,
+      "category": "Odachi",
+      "attack": 62,
+      "force": 102,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI9123",
+        "row": 926,
+        "recordOffset": 229660,
+        "kind": 8,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori9124",
+      "itemId": 571,
+      "name": "Fine Odachi +3",
+      "completion": true,
+      "category": "Odachi",
+      "attack": 63,
+      "force": 103,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI9124",
+        "row": 927,
+        "recordOffset": 229908,
+        "kind": 8,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori9125",
+      "itemId": 572,
+      "name": "Fine Odachi EX",
+      "completion": true,
+      "category": "Odachi",
+      "attack": 64,
+      "force": 104,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI9125",
+        "row": 928,
+        "recordOffset": 230156,
+        "kind": 8,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori3013",
+      "itemId": 573,
+      "name": "Excellent Odachi",
+      "completion": true,
+      "category": "Odachi",
+      "attack": 80,
+      "force": 150,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI3013",
+        "row": 800,
+        "recordOffset": 198412,
+        "kind": 8,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori9132",
+      "itemId": 574,
+      "name": "Excellent Odachi +1",
+      "completion": true,
+      "category": "Odachi",
+      "attack": 81,
+      "force": 151,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI9132",
+        "row": 929,
+        "recordOffset": 230404,
+        "kind": 8,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori9133",
+      "itemId": 575,
+      "name": "Excellent Odachi +2",
+      "completion": true,
+      "category": "Odachi",
+      "attack": 82,
+      "force": 152,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI9133",
+        "row": 930,
+        "recordOffset": 230652,
+        "kind": 8,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori9134",
+      "itemId": 576,
+      "name": "Excellent Odachi +3",
+      "completion": true,
+      "category": "Odachi",
+      "attack": 83,
+      "force": 153,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI9134",
+        "row": 931,
+        "recordOffset": 230900,
+        "kind": 8,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori9135",
+      "itemId": 577,
+      "name": "Excellent Odachi EX",
+      "completion": true,
+      "category": "Odachi",
+      "attack": 84,
+      "force": 155,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI9135",
+        "row": 932,
+        "recordOffset": 231148,
+        "kind": 8,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori3014",
+      "itemId": 578,
+      "name": "Akki Rasetsu",
+      "completion": true,
+      "category": "Odachi",
+      "attack": 120,
+      "force": 160,
+      "speed": {
+        "nativeValue": 1,
+        "value": 1,
+        "label": "Normal"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI3014",
+        "row": 801,
+        "recordOffset": 198660,
+        "kind": 8,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori9142",
+      "itemId": 579,
+      "name": "Akki Rasetsu EX",
+      "completion": true,
+      "category": "Odachi",
+      "attack": 140,
+      "force": 180,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI9142",
+        "row": 933,
+        "recordOffset": 231396,
+        "kind": 8,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori3015",
+      "itemId": 580,
+      "name": "Adamantine Odachi",
+      "completion": true,
+      "category": "Odachi (Unique)",
+      "attack": 70,
+      "force": 170,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI3015",
+        "row": 802,
+        "recordOffset": 198908,
+        "kind": 8,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori9152",
+      "itemId": 581,
+      "name": "Adamantine Odachi +1",
+      "completion": true,
+      "category": "Odachi (Unique)",
+      "attack": 75,
+      "force": 170,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI9152",
+        "row": 934,
+        "recordOffset": 231644,
+        "kind": 8,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori9153",
+      "itemId": 582,
+      "name": "Adamantine Odachi EX",
+      "completion": true,
+      "category": "Odachi (Unique)",
+      "attack": 80,
+      "force": 170,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI9153",
+        "row": 935,
+        "recordOffset": 231892,
+        "kind": 8,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori3016",
+      "itemId": 583,
+      "name": "Celestial Odachi",
+      "completion": true,
+      "category": "Odachi (Unique)",
+      "attack": 85,
+      "force": 175,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI3016",
+        "row": 803,
+        "recordOffset": 199156,
+        "kind": 8,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori9162",
+      "itemId": 584,
+      "name": "Celestial Odachi +1",
+      "completion": true,
+      "category": "Odachi (Unique)",
+      "attack": 90,
+      "force": 180,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI9162",
+        "row": 936,
+        "recordOffset": 232140,
+        "kind": 8,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori9163",
+      "itemId": 585,
+      "name": "Celestial Odachi +2",
+      "completion": true,
+      "category": "Odachi (Unique)",
+      "attack": 95,
+      "force": 185,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI9163",
+        "row": 937,
+        "recordOffset": 232388,
+        "kind": 8,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori9164",
+      "itemId": 586,
+      "name": "Celestial Odachi EX",
+      "completion": true,
+      "category": "Odachi (Unique)",
+      "attack": 100,
+      "force": 190,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI9164",
+        "row": 938,
+        "recordOffset": 232636,
+        "kind": 8,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori3017",
+      "itemId": 587,
+      "name": "Ancient Shichishito",
+      "completion": true,
+      "category": "Shichishito",
+      "attack": 10,
+      "force": 150,
+      "speed": {
+        "nativeValue": 1,
+        "value": 1,
+        "label": "Normal"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI3017",
+        "row": 804,
+        "recordOffset": 199404,
+        "kind": 8,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori3018",
+      "itemId": 588,
+      "name": "Divine Shichishito",
+      "completion": true,
+      "category": "Shichishito",
+      "attack": 70,
+      "force": 120,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI3018",
+        "row": 805,
+        "recordOffset": 199652,
+        "kind": 8,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori9182",
+      "itemId": 589,
+      "name": "Divine Shichishito +1",
+      "completion": true,
+      "category": "Shichishito",
+      "attack": 75,
+      "force": 120,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI9182",
+        "row": 939,
+        "recordOffset": 232884,
+        "kind": 8,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori9183",
+      "itemId": 590,
+      "name": "Divine Shichishito +2",
+      "completion": true,
+      "category": "Shichishito",
+      "attack": 80,
+      "force": 120,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI9183",
+        "row": 940,
+        "recordOffset": 233132,
+        "kind": 8,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori9184",
+      "itemId": 591,
+      "name": "Divine Shichishito EX",
+      "completion": true,
+      "category": "Shichishito",
+      "attack": 85,
+      "force": 120,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI9184",
+        "row": 941,
+        "recordOffset": 233380,
+        "kind": 8,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori3019",
+      "itemId": 592,
+      "name": "Yatsuka no Tsurugi",
+      "completion": true,
+      "category": "Shichishito",
+      "attack": 90,
+      "force": 80,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI3019",
+        "row": 806,
+        "recordOffset": 199900,
+        "kind": 8,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori9192",
+      "itemId": 593,
+      "name": "Yatsuka no Tsurugi +1",
+      "completion": true,
+      "category": "Shichishito",
+      "attack": 95,
+      "force": 80,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI9192",
+        "row": 942,
+        "recordOffset": 233628,
+        "kind": 8,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori9193",
+      "itemId": 594,
+      "name": "Yatsuka no Tsurugi +2",
+      "completion": true,
+      "category": "Shichishito",
+      "attack": 100,
+      "force": 80,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI9193",
+        "row": 943,
+        "recordOffset": 233876,
+        "kind": 8,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori9194",
+      "itemId": 595,
+      "name": "Yatsuka no Tsurugi +3",
+      "completion": true,
+      "category": "Shichishito",
+      "attack": 105,
+      "force": 80,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI9194",
+        "row": 944,
+        "recordOffset": 234124,
+        "kind": 8,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori9195",
+      "itemId": 596,
+      "name": "Yatsuka no Tsurugi EX",
+      "completion": true,
+      "category": "Shichishito",
+      "attack": 110,
+      "force": 80,
+      "speed": {
+        "nativeValue": 3,
+        "value": 3,
+        "label": "Very Fast"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI9195",
+        "row": 945,
+        "recordOffset": 234372,
+        "kind": 8,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori3020",
+      "itemId": 597,
+      "name": "Crude Taiken",
+      "completion": true,
+      "category": "Odachi (Unique)",
+      "attack": 40,
+      "force": 40,
+      "speed": {
+        "nativeValue": 0,
+        "value": 0,
+        "label": "Slow"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI3020",
+        "row": 807,
+        "recordOffset": 200148,
+        "kind": 8,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori9202",
+      "itemId": 598,
+      "name": "Crude Taiken +1",
+      "completion": true,
+      "category": "Odachi (Unique)",
+      "attack": 41,
+      "force": 35,
+      "speed": {
+        "nativeValue": 1,
+        "value": 1,
+        "label": "Normal"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI9202",
+        "row": 946,
+        "recordOffset": 234620,
+        "kind": 8,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori9203",
+      "itemId": 599,
+      "name": "Crude Taiken +2",
+      "completion": true,
+      "category": "Odachi (Unique)",
+      "attack": 42,
+      "force": 30,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI9203",
+        "row": 947,
+        "recordOffset": 234868,
+        "kind": 8,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori9204",
+      "itemId": 600,
+      "name": "Crude Taiken +3",
+      "completion": true,
+      "category": "Odachi (Unique)",
+      "attack": 43,
+      "force": 25,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI9204",
+        "row": 948,
+        "recordOffset": 235116,
+        "kind": 8,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori9205",
+      "itemId": 601,
+      "name": "Crude Taiken EX",
+      "completion": true,
+      "category": "Odachi (Unique)",
+      "attack": 45,
+      "force": 20,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI9205",
+        "row": 949,
+        "recordOffset": 235364,
+        "kind": 8,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori3021",
+      "itemId": 602,
+      "name": "Dragonslayer Taiken",
+      "completion": true,
+      "category": "Odachi (Unique)",
+      "attack": 50,
+      "force": 20,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI3021",
+        "row": 808,
+        "recordOffset": 200396,
+        "kind": 8,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori9212",
+      "itemId": 603,
+      "name": "Dragonslayer Taiken +1",
+      "completion": true,
+      "category": "Odachi (Unique)",
+      "attack": 60,
+      "force": 20,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI9212",
+        "row": 950,
+        "recordOffset": 235612,
+        "kind": 8,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori9213",
+      "itemId": 604,
+      "name": "Dragonslayer Taiken EX",
+      "completion": true,
+      "category": "Odachi (Unique)",
+      "attack": 70,
+      "force": 20,
+      "speed": {
+        "nativeValue": 3,
+        "value": 3,
+        "label": "Very Fast"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI9213",
+        "row": 951,
+        "recordOffset": 235860,
+        "kind": 8,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori3022",
+      "itemId": 605,
+      "name": "Non-Lethal Taiken",
+      "completion": true,
+      "category": "Odachi (Unique)",
+      "attack": 1,
+      "force": 200,
+      "speed": {
+        "nativeValue": 3,
+        "value": 3,
+        "label": "Very Fast"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI3022",
+        "row": 809,
+        "recordOffset": 200644,
+        "kind": 8,
+        "flags": 19
+      }
+    },
+    {
+      "id": "weori3023",
+      "itemId": 606,
+      "name": "Hame Yumimaru",
+      "completion": true,
+      "category": "Odachi (Unique)",
+      "attack": 5,
+      "force": 30,
+      "speed": {
+        "nativeValue": 3,
+        "value": 3,
+        "label": "Very Fast"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI3023",
+        "row": 810,
+        "recordOffset": 200892,
+        "kind": 8,
+        "flags": 19
+      }
+    },
+    {
+      "id": "weori3024",
+      "itemId": 607,
+      "name": "Raijin Hame Yumimaru",
+      "completion": true,
+      "category": "Odachi (Unique)",
+      "attack": 1,
+      "force": 1,
+      "speed": {
+        "nativeValue": 3,
+        "value": 3,
+        "label": "Very Fast"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI3024",
+        "row": 811,
+        "recordOffset": 201140,
+        "kind": 8,
+        "flags": 19
+      }
+    },
+    {
+      "id": "weori3025",
+      "itemId": 608,
+      "name": "Firedrinker Tenjiro",
+      "completion": true,
+      "category": "Cursed Weapons",
+      "attack": 90,
+      "force": 110,
+      "speed": {
+        "nativeValue": 1,
+        "value": 1,
+        "label": "Normal"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI3025",
+        "row": 812,
+        "recordOffset": 201388,
+        "kind": 8,
+        "flags": 211
+      }
+    },
+    {
+      "id": "weori4000",
+      "itemId": 609,
+      "name": "Cast-Iron Kanabo",
+      "completion": true,
+      "category": "Clubs",
+      "attack": 35,
+      "force": 100,
+      "speed": {
+        "nativeValue": 0,
+        "value": 0,
+        "label": "Slow"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI4000",
+        "row": 813,
+        "recordOffset": 201636,
+        "kind": 8,
+        "flags": 19
+      }
+    },
+    {
+      "id": "weori5002",
+      "itemId": 610,
+      "name": "Cast-Iron Kanabo +1",
+      "completion": true,
+      "category": "Clubs",
+      "attack": 40,
+      "force": 110,
+      "speed": {
+        "nativeValue": 0,
+        "value": 0,
+        "label": "Slow"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI5002",
+        "row": 818,
+        "recordOffset": 202876,
+        "kind": 8,
+        "flags": 19
+      }
+    },
+    {
+      "id": "weori5003",
+      "itemId": 611,
+      "name": "Cast-Iron Kanabo +2",
+      "completion": true,
+      "category": "Clubs",
+      "attack": 45,
+      "force": 120,
+      "speed": {
+        "nativeValue": 0,
+        "value": 0,
+        "label": "Slow"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI5003",
+        "row": 819,
+        "recordOffset": 203124,
+        "kind": 8,
+        "flags": 19
+      }
+    },
+    {
+      "id": "weori5004",
+      "itemId": 612,
+      "name": "Cast-Iron Kanabo +3",
+      "completion": true,
+      "category": "Clubs",
+      "attack": 50,
+      "force": 130,
+      "speed": {
+        "nativeValue": 0,
+        "value": 0,
+        "label": "Slow"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI5004",
+        "row": 820,
+        "recordOffset": 203372,
+        "kind": 8,
+        "flags": 19
+      }
+    },
+    {
+      "id": "weori5005",
+      "itemId": 613,
+      "name": "Cast-Iron Kanabo EX",
+      "completion": true,
+      "category": "Clubs",
+      "attack": 55,
+      "force": 140,
+      "speed": {
+        "nativeValue": 0,
+        "value": 0,
+        "label": "Slow"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI5005",
+        "row": 821,
+        "recordOffset": 203620,
+        "kind": 8,
+        "flags": 19
+      }
+    },
+    {
+      "id": "weori4001",
+      "itemId": 614,
+      "name": "Spiked Kanabo",
+      "completion": true,
+      "category": "Clubs",
+      "attack": 80,
+      "force": 150,
+      "speed": {
+        "nativeValue": 1,
+        "value": 1,
+        "label": "Normal"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI4001",
+        "row": 814,
+        "recordOffset": 201884,
+        "kind": 8,
+        "flags": 19
+      }
+    },
+    {
+      "id": "weori5012",
+      "itemId": 615,
+      "name": "Spiked Kanabo +1",
+      "completion": true,
+      "category": "Clubs",
+      "attack": 85,
+      "force": 155,
+      "speed": {
+        "nativeValue": 1,
+        "value": 1,
+        "label": "Normal"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI5012",
+        "row": 822,
+        "recordOffset": 203868,
+        "kind": 8,
+        "flags": 19
+      }
+    },
+    {
+      "id": "weori5013",
+      "itemId": 616,
+      "name": "Spiked Kanabo +2",
+      "completion": true,
+      "category": "Clubs",
+      "attack": 90,
+      "force": 160,
+      "speed": {
+        "nativeValue": 1,
+        "value": 1,
+        "label": "Normal"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI5013",
+        "row": 823,
+        "recordOffset": 204116,
+        "kind": 8,
+        "flags": 19
+      }
+    },
+    {
+      "id": "weori5014",
+      "itemId": 617,
+      "name": "Spiked Kanabo +3",
+      "completion": true,
+      "category": "Clubs",
+      "attack": 95,
+      "force": 165,
+      "speed": {
+        "nativeValue": 1,
+        "value": 1,
+        "label": "Normal"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI5014",
+        "row": 824,
+        "recordOffset": 204364,
+        "kind": 8,
+        "flags": 19
+      }
+    },
+    {
+      "id": "weori5015",
+      "itemId": 618,
+      "name": "Spiked Kanabo EX",
+      "completion": true,
+      "category": "Clubs",
+      "attack": 100,
+      "force": 170,
+      "speed": {
+        "nativeValue": 1,
+        "value": 1,
+        "label": "Normal"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI5015",
+        "row": 825,
+        "recordOffset": 204612,
+        "kind": 8,
+        "flags": 19
+      }
+    },
+    {
+      "id": "weori4003",
+      "itemId": 620,
+      "name": "Yomigaeshi",
+      "completion": true,
+      "category": "Cursed Weapons",
+      "attack": 120,
+      "force": 180,
+      "speed": {
+        "nativeValue": 0,
+        "value": 0,
+        "label": "Slow"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI4003",
+        "row": 816,
+        "recordOffset": 202380,
+        "kind": 8,
+        "flags": 147
+      }
+    },
+    {
+      "id": "weori4004",
+      "itemId": 621,
+      "name": "Onigami Kanabo",
+      "completion": true,
+      "category": "Clubs",
+      "attack": 160,
+      "force": 200,
+      "speed": {
+        "nativeValue": 0,
+        "value": 0,
+        "label": "Slow"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI4004",
+        "row": 817,
+        "recordOffset": 202628,
+        "kind": 8,
+        "flags": 19
+      }
+    },
+    {
+      "id": "weori3002",
+      "itemId": 543,
+      "name": "Ganryu Bokuto",
+      "completion": true,
+      "category": "Odachi",
+      "attack": 120,
+      "force": 130,
+      "speed": {
+        "nativeValue": 3,
+        "value": 3,
+        "label": "Very Fast"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI3002",
+        "row": 789,
+        "recordOffset": 195684,
+        "kind": 8,
+        "flags": 19
+      }
+    },
+    {
+      "id": "weori4002",
+      "itemId": 619,
+      "name": "Tengu Staff",
+      "completion": true,
+      "category": "Special Weapons",
+      "attack": 30,
+      "force": 180,
+      "speed": {
+        "nativeValue": 3,
+        "value": 3,
+        "label": "Very Fast"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI4002",
+        "row": 815,
+        "recordOffset": 202132,
+        "kind": 12,
+        "flags": 268435475
+      }
+    },
+    {
+      "id": "weori6000",
+      "itemId": 622,
+      "name": "Jutte",
+      "completion": true,
+      "category": "Special Weapons",
+      "attack": 20,
+      "force": 15,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI6000",
+        "row": 826,
+        "recordOffset": 204860,
+        "kind": 3,
+        "flags": 19
+      }
+    },
+    {
+      "id": "weori6001",
+      "itemId": 623,
+      "name": "Golden Kiseru",
+      "completion": true,
+      "category": "Special Weapons",
+      "attack": 15,
+      "force": 25,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI6001",
+        "row": 827,
+        "recordOffset": 205108,
+        "kind": 3,
+        "flags": 19
+      }
+    },
+    {
+      "id": "weori6002",
+      "itemId": 624,
+      "name": "Iron Kiseru",
+      "completion": true,
+      "category": "Special Weapons",
+      "attack": 10,
+      "force": 5,
+      "speed": {
+        "nativeValue": 3,
+        "value": 3,
+        "label": "Very Fast"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI6002",
+        "row": 828,
+        "recordOffset": 205356,
+        "kind": 3,
+        "flags": 19
+      }
+    },
+    {
+      "id": "weori6003",
+      "itemId": 625,
+      "name": "Stylish Kiseru",
+      "completion": true,
+      "category": "Special Weapons",
+      "attack": 25,
+      "force": 30,
+      "speed": {
+        "nativeValue": 2,
+        "value": 2,
+        "label": "Fast"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI6003",
+        "row": 829,
+        "recordOffset": 205604,
+        "kind": 3,
+        "flags": 19
+      }
+    },
+    {
+      "id": "wetak0004",
+      "itemId": 626,
+      "name": "Stylish Parasol",
+      "completion": true,
+      "category": "Special Weapons",
+      "attack": 10,
+      "force": 10,
+      "speed": {
+        "nativeValue": 3,
+        "value": 3,
+        "label": "Very Fast"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WETAK0004",
+        "row": 1007,
+        "recordOffset": 249748,
+        "kind": 3,
+        "flags": 268435475
+      }
+    },
+    {
+      "id": "weyam0122",
+      "itemId": 627,
+      "name": "Star Parasol",
+      "completion": true,
+      "category": "Special Weapons",
+      "attack": 30,
+      "force": 50,
+      "speed": {
+        "nativeValue": 3,
+        "value": 3,
+        "label": "Very Fast"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEYAM0122",
+        "row": 1075,
+        "recordOffset": 266612,
+        "kind": 3,
+        "flags": 268435475
+      }
+    },
+    {
+      "id": "weori9800",
+      "itemId": 559,
+      "name": "Shennong's Hoe",
+      "completion": false,
+      "category": null,
+      "attack": 10,
+      "force": 150,
+      "speed": {
+        "nativeValue": 0,
+        "value": 0,
+        "label": "Slow"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI9800",
+        "row": 964,
+        "recordOffset": 239084,
+        "kind": 8,
+        "flags": 268435539
+      }
+    },
+    {
+      "id": "weori6500",
+      "itemId": 628,
+      "name": "Koetsu's Tachi",
+      "completion": false,
+      "category": null,
+      "attack": 20,
+      "force": 100,
+      "speed": {
+        "nativeValue": 3,
+        "value": 3,
+        "label": "Very Fast"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI6500",
+        "row": 830,
+        "recordOffset": 205852,
+        "kind": 1,
+        "flags": 131155
+      }
+    },
+    {
+      "id": "weori6501",
+      "itemId": 629,
+      "name": "Koetsu's Kodachi",
+      "completion": false,
+      "category": null,
+      "attack": 10,
+      "force": 100,
+      "speed": {
+        "nativeValue": 3,
+        "value": 3,
+        "label": "Very Fast"
+      },
+      "role": "kodachi",
+      "allowedRoles": [
+        "second"
+      ],
+      "native": {
+        "model": "WEORI6501",
+        "row": 831,
+        "recordOffset": 206100,
+        "kind": 2,
+        "flags": 131155
+      }
+    },
+    {
+      "id": "weori6502",
+      "itemId": 630,
+      "name": "Koetsu's Odachi",
+      "completion": false,
+      "category": null,
+      "attack": 60,
+      "force": 200,
+      "speed": {
+        "nativeValue": 3,
+        "value": 3,
+        "label": "Very Fast"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI6502",
+        "row": 832,
+        "recordOffset": 206348,
+        "kind": 8,
+        "flags": 131155
+      }
+    },
+    {
+      "id": "weyam0103",
+      "itemId": 631,
+      "name": "Bomb",
+      "completion": false,
+      "category": null,
+      "attack": 10,
+      "force": 0,
+      "speed": {
+        "nativeValue": 0,
+        "value": 0,
+        "label": "Slow"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEYAM0103",
+        "row": 1059,
+        "recordOffset": 262644,
+        "kind": 14,
+        "flags": 1027
+      }
+    },
+    {
+      "id": "weyam0303",
+      "itemId": 633,
+      "name": "Goshu Katana",
+      "completion": false,
+      "category": null,
+      "attack": 20,
+      "force": 20,
+      "speed": {
+        "nativeValue": 3,
+        "value": 3,
+        "label": "Very Fast"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEYAM0303",
+        "row": 1083,
+        "recordOffset": 268596,
+        "kind": 1,
+        "flags": 268435539
+      }
+    },
+    {
+      "id": "weori9509",
+      "itemId": 635,
+      "name": "Raging Dragon Tanegashima",
+      "completion": false,
+      "category": null,
+      "attack": 10,
+      "force": 0,
+      "speed": {
+        "nativeValue": 0,
+        "value": 0,
+        "label": "Slow"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI9509",
+        "row": 961,
+        "recordOffset": 238340,
+        "kind": 11,
+        "flags": 268501011
+      }
+    },
+    {
+      "id": "weori9850",
+      "itemId": 637,
+      "name": "Hozoin Tachi",
+      "completion": false,
+      "category": null,
+      "attack": 10,
+      "force": 10,
+      "speed": {
+        "nativeValue": 3,
+        "value": 3,
+        "label": "Very Fast"
+      },
+      "role": "katana",
+      "allowedRoles": [
+        "first"
+      ],
+      "native": {
+        "model": "WEORI9850",
+        "row": 965,
+        "recordOffset": 239332,
+        "kind": 1,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori9851",
+      "itemId": 638,
+      "name": "Hozoin Wakizashi",
+      "completion": false,
+      "category": null,
+      "attack": 10,
+      "force": 0,
+      "speed": {
+        "nativeValue": 3,
+        "value": 3,
+        "label": "Very Fast"
+      },
+      "role": "kodachi",
+      "allowedRoles": [
+        "second"
+      ],
+      "native": {
+        "model": "WEORI9851",
+        "row": 966,
+        "recordOffset": 239580,
+        "kind": 2,
+        "flags": 83
+      }
+    },
+    {
+      "id": "weori9852",
+      "itemId": 639,
+      "name": "Hozoin Odachi",
+      "completion": false,
+      "category": null,
+      "attack": 10,
+      "force": 150,
+      "speed": {
+        "nativeValue": 0,
+        "value": 0,
+        "label": "Slow"
+      },
+      "role": null,
+      "allowedRoles": [],
+      "native": {
+        "model": "WEORI9852",
+        "row": 967,
+        "recordOffset": 239828,
+        "kind": 8,
+        "flags": 83
+      }
+    }
+  ],
+  "audit": "Private weapon-pair audit retained outside the public repository."
+}

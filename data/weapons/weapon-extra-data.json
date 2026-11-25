@@ -1,0 +1,2992 @@
+{
+  "version": 1,
+  "sources": {
+    "itemTable": {
+      "path": "bin/pausepar/pause.par/item.bin",
+      "sha256": "83aec44a4815b3917a8ac10354180bda889d8eb2b868234a6ce7cbe656eaac27"
+    },
+    "priceReader": "0x002514fc: col3 override, otherwise integer half of col2",
+    "protectionReader": "0x002514fc sale filtering; 0x000e635c normal disposal",
+    "stockTables": "bin/item/shop/shopNNNN.bin",
+    "note": "No player save data is included. Item-table base price is not a shop availability claim."
+  },
+  "counts": {
+    "mappedWeapons": 237,
+    "completionWeapons": 227,
+    "protectedCompletionWeapons": 8,
+    "mappedWeaponStockOffers": 27
+  },
+  "weapons": [
+    {
+      "itemId": 400,
+      "model": "WEORI1003",
+      "name": "Nameless Katana",
+      "inCompletionList": true,
+      "basePriceMon": 2000,
+      "sellPriceMon": 1000,
+      "sellPriceHasOverride": false,
+      "cannotSell": false,
+      "shopOffers": [
+        {
+          "table": "shop0032.bin",
+          "priceMon": 2000,
+          "merchants": [
+            {
+              "id": "arms-dealer",
+              "name": "Arms Dealer"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "itemId": 401,
+      "model": "WEORI7032",
+      "name": "Nameless Katana +1",
+      "inCompletionList": true,
+      "basePriceMon": 3000,
+      "sellPriceMon": 2750,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 402,
+      "model": "WEORI7033",
+      "name": "Nameless Katana EX",
+      "inCompletionList": true,
+      "basePriceMon": 4000,
+      "sellPriceMon": 3300,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": [
+        {
+          "table": "shop0032.bin",
+          "priceMon": 4000,
+          "merchants": [
+            {
+              "id": "arms-dealer",
+              "name": "Arms Dealer"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "itemId": 403,
+      "model": "WEORI1004",
+      "name": "Sakushu Katana",
+      "inCompletionList": true,
+      "basePriceMon": 2500,
+      "sellPriceMon": 1250,
+      "sellPriceHasOverride": false,
+      "cannotSell": true,
+      "shopOffers": []
+    },
+    {
+      "itemId": 404,
+      "model": "WEORI7042",
+      "name": "Sakushu Katana +1",
+      "inCompletionList": true,
+      "basePriceMon": 3000,
+      "sellPriceMon": 1500,
+      "sellPriceHasOverride": false,
+      "cannotSell": true,
+      "shopOffers": []
+    },
+    {
+      "itemId": 405,
+      "model": "WEORI7043",
+      "name": "Sakushu Katana +2",
+      "inCompletionList": true,
+      "basePriceMon": 3300,
+      "sellPriceMon": 1650,
+      "sellPriceHasOverride": false,
+      "cannotSell": true,
+      "shopOffers": []
+    },
+    {
+      "itemId": 406,
+      "model": "WEORI7044",
+      "name": "Sakushu Katana EX",
+      "inCompletionList": true,
+      "basePriceMon": 7500,
+      "sellPriceMon": 3750,
+      "sellPriceHasOverride": false,
+      "cannotSell": true,
+      "shopOffers": []
+    },
+    {
+      "itemId": 407,
+      "model": "WEORI1005",
+      "name": "Red Oak Bokuto",
+      "inCompletionList": true,
+      "basePriceMon": 500,
+      "sellPriceMon": 250,
+      "sellPriceHasOverride": false,
+      "cannotSell": false,
+      "shopOffers": [
+        {
+          "table": "shop0032.bin",
+          "priceMon": 500,
+          "merchants": [
+            {
+              "id": "arms-dealer",
+              "name": "Arms Dealer"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "itemId": 408,
+      "model": "WEORI1006",
+      "name": "Dark Purple Bokuto",
+      "inCompletionList": true,
+      "basePriceMon": 800,
+      "sellPriceMon": 400,
+      "sellPriceHasOverride": false,
+      "cannotSell": false,
+      "shopOffers": [
+        {
+          "table": "shop0032.bin",
+          "priceMon": 800,
+          "merchants": [
+            {
+              "id": "arms-dealer",
+              "name": "Arms Dealer"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "itemId": 409,
+      "model": "WEORI1007",
+      "name": "Odenta",
+      "inCompletionList": true,
+      "basePriceMon": 45000,
+      "sellPriceMon": 22500,
+      "sellPriceHasOverride": false,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 410,
+      "model": "WEORI1008",
+      "name": "Mikazuki Munechika",
+      "inCompletionList": true,
+      "basePriceMon": 18500,
+      "sellPriceMon": 9250,
+      "sellPriceHasOverride": false,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 411,
+      "model": "WEORI1009",
+      "name": "Onimaru Kunitsuna",
+      "inCompletionList": true,
+      "basePriceMon": 24000,
+      "sellPriceMon": 12000,
+      "sellPriceHasOverride": false,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 412,
+      "model": "WEORI1010",
+      "name": "Dojigiri Yasutsuna",
+      "inCompletionList": true,
+      "basePriceMon": 36000,
+      "sellPriceMon": 18000,
+      "sellPriceHasOverride": false,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 413,
+      "model": "WEORI1011",
+      "name": "Juzumaru",
+      "inCompletionList": true,
+      "basePriceMon": 15000,
+      "sellPriceMon": 7500,
+      "sellPriceHasOverride": false,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 414,
+      "model": "WEORI1012",
+      "name": "Kuji Kanesada",
+      "inCompletionList": true,
+      "basePriceMon": 30000,
+      "sellPriceMon": 150000,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 415,
+      "model": "WEORI1013",
+      "name": "Bullet-Cutter Kanemitsu",
+      "inCompletionList": true,
+      "basePriceMon": 200000,
+      "sellPriceMon": 100000,
+      "sellPriceHasOverride": false,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 416,
+      "model": "WEORI1014",
+      "name": "Masamune",
+      "inCompletionList": true,
+      "basePriceMon": 46000,
+      "sellPriceMon": 23000,
+      "sellPriceHasOverride": false,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 417,
+      "model": "WEORI1015",
+      "name": "Muramasa",
+      "inCompletionList": true,
+      "basePriceMon": 42000,
+      "sellPriceMon": 21000,
+      "sellPriceHasOverride": false,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 418,
+      "model": "WEORI1016",
+      "name": "Brittle Katana",
+      "inCompletionList": true,
+      "basePriceMon": 6000,
+      "sellPriceMon": 3000,
+      "sellPriceHasOverride": false,
+      "cannotSell": false,
+      "shopOffers": [
+        {
+          "table": "shop0032.bin",
+          "priceMon": 6000,
+          "merchants": [
+            {
+              "id": "arms-dealer",
+              "name": "Arms Dealer"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "itemId": 419,
+      "model": "WEORI7162",
+      "name": "Brittle Katana EX",
+      "inCompletionList": true,
+      "basePriceMon": 6500,
+      "sellPriceMon": 8800,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 420,
+      "model": "WEORI1017",
+      "name": "Treasured Katana",
+      "inCompletionList": true,
+      "basePriceMon": 2500,
+      "sellPriceMon": 14300,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 421,
+      "model": "WEORI7172",
+      "name": "Treasured Katana +1",
+      "inCompletionList": true,
+      "basePriceMon": 3000,
+      "sellPriceMon": 15400,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 422,
+      "model": "WEORI7173",
+      "name": "Treasured Katana EX",
+      "inCompletionList": true,
+      "basePriceMon": 3200,
+      "sellPriceMon": 16500,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 423,
+      "model": "WEORI1018",
+      "name": "Fine Treasured Katana",
+      "inCompletionList": true,
+      "basePriceMon": 21000,
+      "sellPriceMon": 33000,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 424,
+      "model": "WEORI7182",
+      "name": "Fine Treasured Katana +1",
+      "inCompletionList": true,
+      "basePriceMon": 22500,
+      "sellPriceMon": 38500,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 425,
+      "model": "WEORI7183",
+      "name": "Fine Treasured Katana +2",
+      "inCompletionList": true,
+      "basePriceMon": 24000,
+      "sellPriceMon": 44000,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 426,
+      "model": "WEORI7184",
+      "name": "Fine Treasured Katana EX",
+      "inCompletionList": true,
+      "basePriceMon": 25300,
+      "sellPriceMon": 49500,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 427,
+      "model": "WEORI1019",
+      "name": "Excellent Treasured Katana",
+      "inCompletionList": true,
+      "basePriceMon": 38000,
+      "sellPriceMon": 71500,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 428,
+      "model": "WEORI7192",
+      "name": "Excellent Treasured Katana +1",
+      "inCompletionList": true,
+      "basePriceMon": 39000,
+      "sellPriceMon": 79200,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 429,
+      "model": "WEORI7193",
+      "name": "Excellent Treasured Katana +2",
+      "inCompletionList": true,
+      "basePriceMon": 40000,
+      "sellPriceMon": 86900,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 430,
+      "model": "WEORI7194",
+      "name": "Excellent Treasured Katana +3",
+      "inCompletionList": true,
+      "basePriceMon": 41000,
+      "sellPriceMon": 94600,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 431,
+      "model": "WEORI7195",
+      "name": "Excellent Treasured Katana EX",
+      "inCompletionList": true,
+      "basePriceMon": 42000,
+      "sellPriceMon": 102300,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 432,
+      "model": "WEORI1020",
+      "name": "Nature Blade",
+      "inCompletionList": true,
+      "basePriceMon": 48000,
+      "sellPriceMon": 157300,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 433,
+      "model": "WEORI1021",
+      "name": "Ornate Blade",
+      "inCompletionList": true,
+      "basePriceMon": 3500,
+      "sellPriceMon": 12100,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 434,
+      "model": "WEORI7212",
+      "name": "Ornate Blade +1",
+      "inCompletionList": true,
+      "basePriceMon": 7800,
+      "sellPriceMon": 13200,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 435,
+      "model": "WEORI7213",
+      "name": "Ornate Blade EX",
+      "inCompletionList": true,
+      "basePriceMon": 12000,
+      "sellPriceMon": 14300,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 436,
+      "model": "WEORI1022",
+      "name": "Shadow Blade",
+      "inCompletionList": true,
+      "basePriceMon": 12500,
+      "sellPriceMon": 23100,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 437,
+      "model": "WEORI7222",
+      "name": "Shadow Blade +1",
+      "inCompletionList": true,
+      "basePriceMon": 14000,
+      "sellPriceMon": 25300,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 438,
+      "model": "WEORI7223",
+      "name": "Shadow Blade EX",
+      "inCompletionList": true,
+      "basePriceMon": 15500,
+      "sellPriceMon": 27500,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 439,
+      "model": "WEORI1023",
+      "name": "Sakura Storm",
+      "inCompletionList": true,
+      "basePriceMon": 19000,
+      "sellPriceMon": 38500,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 440,
+      "model": "WEORI7232",
+      "name": "Sakura Storm +1",
+      "inCompletionList": true,
+      "basePriceMon": 24000,
+      "sellPriceMon": 41800,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 441,
+      "model": "WEORI7233",
+      "name": "Sakura Storm EX",
+      "inCompletionList": true,
+      "basePriceMon": 29500,
+      "sellPriceMon": 45100,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 442,
+      "model": "WEORI1024",
+      "name": "Tessaimaru",
+      "inCompletionList": true,
+      "basePriceMon": 6000,
+      "sellPriceMon": 3000,
+      "sellPriceHasOverride": false,
+      "cannotSell": false,
+      "shopOffers": [
+        {
+          "table": "shop0032.bin",
+          "priceMon": 6000,
+          "merchants": [
+            {
+              "id": "arms-dealer",
+              "name": "Arms Dealer"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "itemId": 443,
+      "model": "WEORI1025",
+      "name": "Kosaimaru",
+      "inCompletionList": true,
+      "basePriceMon": 14000,
+      "sellPriceMon": 11000,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 444,
+      "model": "WEORI1026",
+      "name": "Hakuginmaru",
+      "inCompletionList": true,
+      "basePriceMon": 18000,
+      "sellPriceMon": 14300,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 445,
+      "model": "WEORI1027",
+      "name": "Kongomaru",
+      "inCompletionList": true,
+      "basePriceMon": 22000,
+      "sellPriceMon": 18700,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 446,
+      "model": "WEORI1028",
+      "name": "Vitreous Tachi",
+      "inCompletionList": true,
+      "basePriceMon": 13000,
+      "sellPriceMon": 6600,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 447,
+      "model": "WEORI7282",
+      "name": "Vitreous Tachi +1",
+      "inCompletionList": true,
+      "basePriceMon": 14500,
+      "sellPriceMon": 7150,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 448,
+      "model": "WEORI7283",
+      "name": "Vitreous Tachi +2",
+      "inCompletionList": true,
+      "basePriceMon": 15300,
+      "sellPriceMon": 7810,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 449,
+      "model": "WEORI7284",
+      "name": "Vitreous Tachi +3",
+      "inCompletionList": true,
+      "basePriceMon": 16500,
+      "sellPriceMon": 8580,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 450,
+      "model": "WEORI7285",
+      "name": "Vitreous Tachi EX",
+      "inCompletionList": true,
+      "basePriceMon": 17500,
+      "sellPriceMon": 9460,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 451,
+      "model": "WEORI1029",
+      "name": "Suijin Tachi",
+      "inCompletionList": true,
+      "basePriceMon": 21500,
+      "sellPriceMon": 14960,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 452,
+      "model": "WEORI7292",
+      "name": "Suijin Tachi EX",
+      "inCompletionList": true,
+      "basePriceMon": 24000,
+      "sellPriceMon": 16060,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 453,
+      "model": "WEORI1030",
+      "name": "White Lion Tachi",
+      "inCompletionList": true,
+      "basePriceMon": 31000,
+      "sellPriceMon": 14300,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 454,
+      "model": "WEORI7302",
+      "name": "White Lion Tachi +1",
+      "inCompletionList": true,
+      "basePriceMon": 35000,
+      "sellPriceMon": 15400,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 455,
+      "model": "WEORI7303",
+      "name": "White Lion Tachi EX",
+      "inCompletionList": true,
+      "basePriceMon": 40000,
+      "sellPriceMon": 16500,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 456,
+      "model": "WEORI1031",
+      "name": "Silver Tachi",
+      "inCompletionList": true,
+      "basePriceMon": 5000,
+      "sellPriceMon": 2500,
+      "sellPriceHasOverride": false,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 457,
+      "model": "WEORI1032",
+      "name": "Golden Tachi",
+      "inCompletionList": true,
+      "basePriceMon": 85000,
+      "sellPriceMon": 42500,
+      "sellPriceHasOverride": false,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 458,
+      "model": "WEORI1033",
+      "name": "Brilliant Tachi",
+      "inCompletionList": true,
+      "basePriceMon": 30000,
+      "sellPriceMon": 11000,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 459,
+      "model": "WEORI7332",
+      "name": "Brilliant Tachi +1",
+      "inCompletionList": true,
+      "basePriceMon": 31000,
+      "sellPriceMon": 16500,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 460,
+      "model": "WEORI7333",
+      "name": "Brilliant Tachi EX",
+      "inCompletionList": true,
+      "basePriceMon": 32000,
+      "sellPriceMon": 22000,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 461,
+      "model": "WEORI1034",
+      "name": "Holy Spirit Tachi",
+      "inCompletionList": true,
+      "basePriceMon": 14000,
+      "sellPriceMon": 100000,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 462,
+      "model": "WEORI7342",
+      "name": "Holy Spirit Tachi +1",
+      "inCompletionList": true,
+      "basePriceMon": 14300,
+      "sellPriceMon": 101000,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 463,
+      "model": "WEORI7343",
+      "name": "Holy Spirit Tachi +2",
+      "inCompletionList": true,
+      "basePriceMon": 14600,
+      "sellPriceMon": 102000,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 464,
+      "model": "WEORI7344",
+      "name": "Holy Spirit Tachi +3",
+      "inCompletionList": true,
+      "basePriceMon": 15000,
+      "sellPriceMon": 103000,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 465,
+      "model": "WEORI7345",
+      "name": "Holy Spirit Tachi EX",
+      "inCompletionList": true,
+      "basePriceMon": 19500,
+      "sellPriceMon": 105000,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 466,
+      "model": "WEORI1035",
+      "name": "Oni Fang",
+      "inCompletionList": true,
+      "basePriceMon": 25000,
+      "sellPriceMon": 168300,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 467,
+      "model": "WEORI7352",
+      "name": "Oni Fang +1",
+      "inCompletionList": true,
+      "basePriceMon": 28000,
+      "sellPriceMon": 173800,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 468,
+      "model": "WEORI7353",
+      "name": "Oni Fang +2",
+      "inCompletionList": true,
+      "basePriceMon": 30000,
+      "sellPriceMon": 184800,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 469,
+      "model": "WEORI7354",
+      "name": "Oni Fang +3",
+      "inCompletionList": true,
+      "basePriceMon": 36000,
+      "sellPriceMon": 201300,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 470,
+      "model": "WEORI7355",
+      "name": "Oni Fang EX",
+      "inCompletionList": true,
+      "basePriceMon": 40000,
+      "sellPriceMon": 223300,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 471,
+      "model": "WEORI1036",
+      "name": "Twin Dragon Tachi",
+      "inCompletionList": true,
+      "basePriceMon": 45000,
+      "sellPriceMon": 223300,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 472,
+      "model": "WEORI7362",
+      "name": "Twin Dragon Tachi EX",
+      "inCompletionList": true,
+      "basePriceMon": 48000,
+      "sellPriceMon": 256300,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 473,
+      "model": "WEORI1037",
+      "name": "Peerless Tachi",
+      "inCompletionList": true,
+      "basePriceMon": 53000,
+      "sellPriceMon": 26500,
+      "sellPriceHasOverride": false,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 474,
+      "model": "WEORI1038",
+      "name": "Nue Slayer",
+      "inCompletionList": true,
+      "basePriceMon": 33600,
+      "sellPriceMon": 14300,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 475,
+      "model": "WEORI1039",
+      "name": "Blood Storm",
+      "inCompletionList": true,
+      "basePriceMon": 35000,
+      "sellPriceMon": 17500,
+      "sellPriceHasOverride": false,
+      "cannotSell": true,
+      "shopOffers": []
+    },
+    {
+      "itemId": 476,
+      "model": "WEORI1040",
+      "name": "Beckoning Sword",
+      "inCompletionList": true,
+      "basePriceMon": 30500,
+      "sellPriceMon": 15250,
+      "sellPriceHasOverride": false,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 477,
+      "model": "WEORI1041",
+      "name": "Drunken Blade",
+      "inCompletionList": true,
+      "basePriceMon": 13500,
+      "sellPriceMon": 6750,
+      "sellPriceHasOverride": false,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 478,
+      "model": "WEORI1042",
+      "name": "Greedy Katana",
+      "inCompletionList": true,
+      "basePriceMon": 30500,
+      "sellPriceMon": 15250,
+      "sellPriceHasOverride": false,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 479,
+      "model": "WEORI1043",
+      "name": "Bassarimaru",
+      "inCompletionList": true,
+      "basePriceMon": 34000,
+      "sellPriceMon": 17000,
+      "sellPriceHasOverride": false,
+      "cannotSell": false,
+      "shopOffers": [
+        {
+          "table": "shop0007.bin",
+          "priceMon": 34000,
+          "merchants": [
+            {
+              "id": "ebisuya-pawn",
+              "name": "Ebisuya Pawn"
+            }
+          ],
+          "unlock": {
+            "scenario": "00c80004",
+            "group": "SHOPUSE",
+            "stateIndex": 4,
+            "stateName": "ばっさり丸"
+          }
+        }
+      ]
+    },
+    {
+      "itemId": 480,
+      "model": "WEORI1044",
+      "name": "Mortal Blade",
+      "inCompletionList": true,
+      "basePriceMon": 24000,
+      "sellPriceMon": 12000,
+      "sellPriceHasOverride": false,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 481,
+      "model": "WEORI1045",
+      "name": "Bat",
+      "inCompletionList": true,
+      "basePriceMon": 13500,
+      "sellPriceMon": 6750,
+      "sellPriceHasOverride": false,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 482,
+      "model": "WEORI1046",
+      "name": "Red Bat",
+      "inCompletionList": true,
+      "basePriceMon": 25000,
+      "sellPriceMon": 12500,
+      "sellPriceHasOverride": false,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 483,
+      "model": "WEORI1047",
+      "name": "Sturdy Bat",
+      "inCompletionList": true,
+      "basePriceMon": 34000,
+      "sellPriceMon": 17000,
+      "sellPriceHasOverride": false,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 484,
+      "model": "WEORI2000",
+      "name": "Nameless Kodachi",
+      "inCompletionList": true,
+      "basePriceMon": 1000,
+      "sellPriceMon": 500,
+      "sellPriceHasOverride": false,
+      "cannotSell": false,
+      "shopOffers": [
+        {
+          "table": "shop0032.bin",
+          "priceMon": 1000,
+          "merchants": [
+            {
+              "id": "arms-dealer",
+              "name": "Arms Dealer"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "itemId": 485,
+      "model": "WEORI8002",
+      "name": "Nameless Kodachi +1",
+      "inCompletionList": true,
+      "basePriceMon": 2000,
+      "sellPriceMon": 1650,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 486,
+      "model": "WEORI8003",
+      "name": "Nameless Kodachi +2",
+      "inCompletionList": true,
+      "basePriceMon": 2500,
+      "sellPriceMon": 2200,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 487,
+      "model": "WEORI8004",
+      "name": "Nameless Kodachi EX",
+      "inCompletionList": true,
+      "basePriceMon": 3000,
+      "sellPriceMon": 2750,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": [
+        {
+          "table": "shop0032.bin",
+          "priceMon": 3000,
+          "merchants": [
+            {
+              "id": "arms-dealer",
+              "name": "Arms Dealer"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "itemId": 488,
+      "model": "WEORI2001",
+      "name": "Sakushu Kodachi",
+      "inCompletionList": true,
+      "basePriceMon": 1000,
+      "sellPriceMon": 500,
+      "sellPriceHasOverride": false,
+      "cannotSell": true,
+      "shopOffers": []
+    },
+    {
+      "itemId": 489,
+      "model": "WEORI8012",
+      "name": "Sakushu Kodachi +1",
+      "inCompletionList": true,
+      "basePriceMon": 1150,
+      "sellPriceMon": 575,
+      "sellPriceHasOverride": false,
+      "cannotSell": true,
+      "shopOffers": []
+    },
+    {
+      "itemId": 490,
+      "model": "WEORI8013",
+      "name": "Sakushu Kodachi EX",
+      "inCompletionList": true,
+      "basePriceMon": 1400,
+      "sellPriceMon": 700,
+      "sellPriceHasOverride": false,
+      "cannotSell": true,
+      "shopOffers": []
+    },
+    {
+      "itemId": 491,
+      "model": "WEORI2002",
+      "name": "Red Oak Kodachi",
+      "inCompletionList": true,
+      "basePriceMon": 200,
+      "sellPriceMon": 100,
+      "sellPriceHasOverride": false,
+      "cannotSell": false,
+      "shopOffers": [
+        {
+          "table": "shop0032.bin",
+          "priceMon": 200,
+          "merchants": [
+            {
+              "id": "arms-dealer",
+              "name": "Arms Dealer"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "itemId": 492,
+      "model": "WEORI2003",
+      "name": "Legendary Shintogo",
+      "inCompletionList": true,
+      "basePriceMon": 6250,
+      "sellPriceMon": 3125,
+      "sellPriceHasOverride": false,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 493,
+      "model": "WEORI2004",
+      "name": "Kogarasumaru",
+      "inCompletionList": true,
+      "basePriceMon": 9000,
+      "sellPriceMon": 4500,
+      "sellPriceHasOverride": false,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 494,
+      "model": "WEORI2005",
+      "name": "Masamune Tanto",
+      "inCompletionList": true,
+      "basePriceMon": 12500,
+      "sellPriceMon": 6250,
+      "sellPriceHasOverride": false,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 495,
+      "model": "WEORI2006",
+      "name": "Brittle Wakizashi",
+      "inCompletionList": true,
+      "basePriceMon": 2200,
+      "sellPriceMon": 1100,
+      "sellPriceHasOverride": false,
+      "cannotSell": false,
+      "shopOffers": [
+        {
+          "table": "shop0032.bin",
+          "priceMon": 2200,
+          "merchants": [
+            {
+              "id": "arms-dealer",
+              "name": "Arms Dealer"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "itemId": 496,
+      "model": "WEORI8062",
+      "name": "Brittle Wakizashi EX",
+      "inCompletionList": true,
+      "basePriceMon": 2450,
+      "sellPriceMon": 2970,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 497,
+      "model": "WEORI2007",
+      "name": "Wakizashi",
+      "inCompletionList": true,
+      "basePriceMon": 4300,
+      "sellPriceMon": 3850,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 498,
+      "model": "WEORI8072",
+      "name": "Wakizashi +1",
+      "inCompletionList": true,
+      "basePriceMon": 4600,
+      "sellPriceMon": 4400,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 499,
+      "model": "WEORI8073",
+      "name": "Wakizashi EX",
+      "inCompletionList": true,
+      "basePriceMon": 4900,
+      "sellPriceMon": 4950,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 500,
+      "model": "WEORI2008",
+      "name": "Fine Wakizashi",
+      "inCompletionList": true,
+      "basePriceMon": 5100,
+      "sellPriceMon": 6050,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 501,
+      "model": "WEORI8082",
+      "name": "Fine Wakizashi +1",
+      "inCompletionList": true,
+      "basePriceMon": 5400,
+      "sellPriceMon": 6820,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 502,
+      "model": "WEORI8083",
+      "name": "Fine Wakizashi EX",
+      "inCompletionList": true,
+      "basePriceMon": 5700,
+      "sellPriceMon": 7590,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 503,
+      "model": "WEORI2009",
+      "name": "Excellent Wakizashi",
+      "inCompletionList": true,
+      "basePriceMon": 6000,
+      "sellPriceMon": 9240,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 504,
+      "model": "WEORI8092",
+      "name": "Excellent Wakizashi +1",
+      "inCompletionList": true,
+      "basePriceMon": 6200,
+      "sellPriceMon": 10340,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 505,
+      "model": "WEORI8093",
+      "name": "Excellent Wakizashi +2",
+      "inCompletionList": true,
+      "basePriceMon": 6500,
+      "sellPriceMon": 11440,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 506,
+      "model": "WEORI8094",
+      "name": "Excellent Wakizashi EX",
+      "inCompletionList": true,
+      "basePriceMon": 7000,
+      "sellPriceMon": 12540,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 507,
+      "model": "WEORI2010",
+      "name": "Botanic Kodachi",
+      "inCompletionList": true,
+      "basePriceMon": 9080,
+      "sellPriceMon": 15840,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 508,
+      "model": "WEORI2011",
+      "name": "Ume Storm",
+      "inCompletionList": true,
+      "basePriceMon": 3260,
+      "sellPriceMon": 19250,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 509,
+      "model": "WEORI8112",
+      "name": "Ume Storm +1",
+      "inCompletionList": true,
+      "basePriceMon": 3300,
+      "sellPriceMon": 20350,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 510,
+      "model": "WEORI8113",
+      "name": "Ume Storm +2",
+      "inCompletionList": true,
+      "basePriceMon": 3500,
+      "sellPriceMon": 21450,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 511,
+      "model": "WEORI8114",
+      "name": "Ume Storm +3",
+      "inCompletionList": true,
+      "basePriceMon": 3800,
+      "sellPriceMon": 22550,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 512,
+      "model": "WEORI8115",
+      "name": "Ume Storm EX",
+      "inCompletionList": true,
+      "basePriceMon": 4000,
+      "sellPriceMon": 23650,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 513,
+      "model": "WEORI2012",
+      "name": "Suijin Kodachi",
+      "inCompletionList": true,
+      "basePriceMon": 5400,
+      "sellPriceMon": 6050,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 514,
+      "model": "WEORI8122",
+      "name": "Suijin Kodachi EX",
+      "inCompletionList": true,
+      "basePriceMon": 5850,
+      "sellPriceMon": 7370,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 515,
+      "model": "WEORI2013",
+      "name": "Red Lion Kodachi",
+      "inCompletionList": true,
+      "basePriceMon": 7500,
+      "sellPriceMon": 8470,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 516,
+      "model": "WEORI8132",
+      "name": "Red Lion Kodachi +1",
+      "inCompletionList": true,
+      "basePriceMon": 7900,
+      "sellPriceMon": 10670,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 517,
+      "model": "WEORI8133",
+      "name": "Red Lion Kodachi EX",
+      "inCompletionList": true,
+      "basePriceMon": 13000,
+      "sellPriceMon": 12870,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 518,
+      "model": "WEORI2014",
+      "name": "Thick Owakizashi",
+      "inCompletionList": true,
+      "basePriceMon": 2600,
+      "sellPriceMon": 13750,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 519,
+      "model": "WEORI8142",
+      "name": "Thick Owakizashi +1",
+      "inCompletionList": true,
+      "basePriceMon": 3650,
+      "sellPriceMon": 19250,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 520,
+      "model": "WEORI8143",
+      "name": "Thick Owakizashi +2",
+      "inCompletionList": true,
+      "basePriceMon": 4700,
+      "sellPriceMon": 24750,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 521,
+      "model": "WEORI8144",
+      "name": "Thick Owakizashi +3",
+      "inCompletionList": true,
+      "basePriceMon": 5800,
+      "sellPriceMon": 30250,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 522,
+      "model": "WEORI8145",
+      "name": "Thick Owakizashi EX",
+      "inCompletionList": true,
+      "basePriceMon": 11000,
+      "sellPriceMon": 35750,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 523,
+      "model": "WEORI2015",
+      "name": "Dark Void Kodachi",
+      "inCompletionList": true,
+      "basePriceMon": 6800,
+      "sellPriceMon": 11000,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 524,
+      "model": "WEORI8152",
+      "name": "Dark Void Kodachi +1",
+      "inCompletionList": true,
+      "basePriceMon": 7000,
+      "sellPriceMon": 2200,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 525,
+      "model": "WEORI8153",
+      "name": "Dark Void Kodachi EX",
+      "inCompletionList": true,
+      "basePriceMon": 7600,
+      "sellPriceMon": 2200,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 526,
+      "model": "WEORI2016",
+      "name": "Oni Claw",
+      "inCompletionList": true,
+      "basePriceMon": 7700,
+      "sellPriceMon": 68750,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 527,
+      "model": "WEORI8162",
+      "name": "Oni Claw +1",
+      "inCompletionList": true,
+      "basePriceMon": 8000,
+      "sellPriceMon": 75350,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 528,
+      "model": "WEORI8163",
+      "name": "Oni Claw +2",
+      "inCompletionList": true,
+      "basePriceMon": 8400,
+      "sellPriceMon": 81950,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 529,
+      "model": "WEORI8164",
+      "name": "Oni Claw +3",
+      "inCompletionList": true,
+      "basePriceMon": 8700,
+      "sellPriceMon": 88550,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 530,
+      "model": "WEORI8165",
+      "name": "Oni Claw EX",
+      "inCompletionList": true,
+      "basePriceMon": 9000,
+      "sellPriceMon": 95150,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 531,
+      "model": "WEORI2017",
+      "name": "Twin Dragon Kodachi",
+      "inCompletionList": true,
+      "basePriceMon": 8150,
+      "sellPriceMon": 112750,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 532,
+      "model": "WEORI8172",
+      "name": "Twin Dragon Kodachi +1",
+      "inCompletionList": true,
+      "basePriceMon": 8400,
+      "sellPriceMon": 123750,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 533,
+      "model": "WEORI8173",
+      "name": "Twin Dragon Kodachi +2",
+      "inCompletionList": true,
+      "basePriceMon": 8700,
+      "sellPriceMon": 134750,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 534,
+      "model": "WEORI8174",
+      "name": "Twin Dragon Kodachi +3",
+      "inCompletionList": true,
+      "basePriceMon": 9000,
+      "sellPriceMon": 145750,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 535,
+      "model": "WEORI8175",
+      "name": "Twin Dragon Kodachi EX",
+      "inCompletionList": true,
+      "basePriceMon": 9400,
+      "sellPriceMon": 156750,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 536,
+      "model": "WEORI2018",
+      "name": "Peerless Wakizashi",
+      "inCompletionList": true,
+      "basePriceMon": 13500,
+      "sellPriceMon": 6750,
+      "sellPriceHasOverride": false,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 537,
+      "model": "WEORI2019",
+      "name": "Mizuchi Slayer",
+      "inCompletionList": true,
+      "basePriceMon": 11600,
+      "sellPriceMon": 79750,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 538,
+      "model": "WEORI3000",
+      "name": "Iron Odachi",
+      "inCompletionList": true,
+      "basePriceMon": 13000,
+      "sellPriceMon": 6500,
+      "sellPriceHasOverride": false,
+      "cannotSell": false,
+      "shopOffers": [
+        {
+          "table": "shop0032.bin",
+          "priceMon": 13000,
+          "merchants": [
+            {
+              "id": "arms-dealer",
+              "name": "Arms Dealer"
+            }
+          ],
+          "unlock": {
+            "scenario": "000d0000",
+            "group": "CHAPTER06",
+            "stateIndex": 0,
+            "stateName": "CHA06_開始"
+          }
+        }
+      ]
+    },
+    {
+      "itemId": 539,
+      "model": "WEORI9002",
+      "name": "Iron Odachi +1",
+      "inCompletionList": true,
+      "basePriceMon": 13500,
+      "sellPriceMon": 14960,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 540,
+      "model": "WEORI9003",
+      "name": "Iron Odachi +2",
+      "inCompletionList": true,
+      "basePriceMon": 13800,
+      "sellPriceMon": 15620,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 541,
+      "model": "WEORI9004",
+      "name": "Iron Odachi +3",
+      "inCompletionList": true,
+      "basePriceMon": 14000,
+      "sellPriceMon": 16280,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 542,
+      "model": "WEORI9005",
+      "name": "Iron Odachi EX",
+      "inCompletionList": true,
+      "basePriceMon": 14500,
+      "sellPriceMon": 16940,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 543,
+      "model": "WEORI3002",
+      "name": "Ganryu Bokuto",
+      "inCompletionList": true,
+      "basePriceMon": 50500,
+      "sellPriceMon": 25250,
+      "sellPriceHasOverride": false,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 544,
+      "model": "WEORI3003",
+      "name": "Old Taiken",
+      "inCompletionList": true,
+      "basePriceMon": 15600,
+      "sellPriceMon": 7800,
+      "sellPriceHasOverride": false,
+      "cannotSell": false,
+      "shopOffers": [
+        {
+          "table": "shop0006.bin",
+          "priceMon": 15600,
+          "merchants": [
+            {
+              "id": "ebisuya-pawn",
+              "name": "Ebisuya Pawn"
+            }
+          ]
+        },
+        {
+          "table": "shop0007.bin",
+          "priceMon": 15600,
+          "merchants": [
+            {
+              "id": "ebisuya-pawn",
+              "name": "Ebisuya Pawn"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "itemId": 545,
+      "model": "WEORI3004",
+      "name": "Futsumitama no Tsurugi",
+      "inCompletionList": true,
+      "basePriceMon": 17500,
+      "sellPriceMon": 105160,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 546,
+      "model": "WEORI9042",
+      "name": "Futsumitama no Tsurugi +1",
+      "inCompletionList": true,
+      "basePriceMon": 19000,
+      "sellPriceMon": 116160,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 547,
+      "model": "WEORI9043",
+      "name": "Futsumitama no Tsurugi EX",
+      "inCompletionList": true,
+      "basePriceMon": 24000,
+      "sellPriceMon": 127160,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 548,
+      "model": "WEORI3005",
+      "name": "Antique Taiken",
+      "inCompletionList": true,
+      "basePriceMon": 12500,
+      "sellPriceMon": 6250,
+      "sellPriceHasOverride": false,
+      "cannotSell": false,
+      "shopOffers": [
+        {
+          "table": "shop0006.bin",
+          "priceMon": 12500,
+          "merchants": [
+            {
+              "id": "ebisuya-pawn",
+              "name": "Ebisuya Pawn"
+            }
+          ],
+          "unlock": {
+            "scenario": "00c80002",
+            "group": "SHOPUSE",
+            "stateIndex": 2,
+            "stateName": "骨董の大剣"
+          }
+        },
+        {
+          "table": "shop0007.bin",
+          "priceMon": 12500,
+          "merchants": [
+            {
+              "id": "ebisuya-pawn",
+              "name": "Ebisuya Pawn"
+            }
+          ],
+          "unlock": {
+            "scenario": "00c80002",
+            "group": "SHOPUSE",
+            "stateIndex": 2,
+            "stateName": "骨董の大剣"
+          }
+        }
+      ]
+    },
+    {
+      "itemId": 549,
+      "model": "WEORI3006",
+      "name": "Ame no Habakiri",
+      "inCompletionList": true,
+      "basePriceMon": 28500,
+      "sellPriceMon": 112750,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 550,
+      "model": "WEORI9062",
+      "name": "Ame no Habakiri +1",
+      "inCompletionList": true,
+      "basePriceMon": 29600,
+      "sellPriceMon": 123750,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 551,
+      "model": "WEORI9063",
+      "name": "Ame no Habakiri +2",
+      "inCompletionList": true,
+      "basePriceMon": 34500,
+      "sellPriceMon": 134750,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 552,
+      "model": "WEORI9064",
+      "name": "Ame no Habakiri EX",
+      "inCompletionList": true,
+      "basePriceMon": 39400,
+      "sellPriceMon": 145750,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 553,
+      "model": "WEORI3007",
+      "name": "Rusted Old Taiken",
+      "inCompletionList": true,
+      "basePriceMon": 18000,
+      "sellPriceMon": 9000,
+      "sellPriceHasOverride": false,
+      "cannotSell": false,
+      "shopOffers": [
+        {
+          "table": "shop0006.bin",
+          "priceMon": 18000,
+          "merchants": [
+            {
+              "id": "ebisuya-pawn",
+              "name": "Ebisuya Pawn"
+            }
+          ],
+          "unlock": {
+            "scenario": "00c80003",
+            "group": "SHOPUSE",
+            "stateIndex": 3,
+            "stateName": "錆古しの大剣"
+          }
+        },
+        {
+          "table": "shop0007.bin",
+          "priceMon": 18000,
+          "merchants": [
+            {
+              "id": "ebisuya-pawn",
+              "name": "Ebisuya Pawn"
+            }
+          ],
+          "unlock": {
+            "scenario": "00c80003",
+            "group": "SHOPUSE",
+            "stateIndex": 3,
+            "stateName": "錆古しの大剣"
+          }
+        }
+      ]
+    },
+    {
+      "itemId": 554,
+      "model": "WEORI3008",
+      "name": "Kusanagi no Tsurugi",
+      "inCompletionList": true,
+      "basePriceMon": 24000,
+      "sellPriceMon": 129800,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 555,
+      "model": "WEORI9082",
+      "name": "Kusanagi no Tsurugi +1",
+      "inCompletionList": true,
+      "basePriceMon": 30300,
+      "sellPriceMon": 140800,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 556,
+      "model": "WEORI9083",
+      "name": "Kusanagi no Tsurugi +2",
+      "inCompletionList": true,
+      "basePriceMon": 38600,
+      "sellPriceMon": 151800,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 557,
+      "model": "WEORI9084",
+      "name": "Kusanagi no Tsurugi +3",
+      "inCompletionList": true,
+      "basePriceMon": 47000,
+      "sellPriceMon": 162800,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 558,
+      "model": "WEORI9085",
+      "name": "Kusanagi no Tsurugi EX",
+      "inCompletionList": true,
+      "basePriceMon": 55300,
+      "sellPriceMon": 173800,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 559,
+      "model": "WEORI9800",
+      "name": "Shennong's Hoe",
+      "inCompletionList": false,
+      "basePriceMon": 56000,
+      "sellPriceMon": 28000,
+      "sellPriceHasOverride": false,
+      "cannotSell": true,
+      "shopOffers": []
+    },
+    {
+      "itemId": 560,
+      "model": "WEORI3010",
+      "name": "Brittle Odachi",
+      "inCompletionList": true,
+      "basePriceMon": 17300,
+      "sellPriceMon": 8650,
+      "sellPriceHasOverride": false,
+      "cannotSell": false,
+      "shopOffers": [
+        {
+          "table": "shop0032.bin",
+          "priceMon": 17300,
+          "merchants": [
+            {
+              "id": "arms-dealer",
+              "name": "Arms Dealer"
+            }
+          ],
+          "unlock": {
+            "scenario": "000d0000",
+            "group": "CHAPTER06",
+            "stateIndex": 0,
+            "stateName": "CHA06_開始"
+          }
+        }
+      ]
+    },
+    {
+      "itemId": 561,
+      "model": "WEORI9102",
+      "name": "Brittle Odachi +1",
+      "inCompletionList": true,
+      "basePriceMon": 17600,
+      "sellPriceMon": 20680,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 562,
+      "model": "WEORI9103",
+      "name": "Brittle Odachi +2",
+      "inCompletionList": true,
+      "basePriceMon": 17800,
+      "sellPriceMon": 22330,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 563,
+      "model": "WEORI9104",
+      "name": "Brittle Odachi EX",
+      "inCompletionList": true,
+      "basePriceMon": 18200,
+      "sellPriceMon": 23980,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 564,
+      "model": "WEORI3011",
+      "name": "Odachi",
+      "inCompletionList": true,
+      "basePriceMon": 30000,
+      "sellPriceMon": 34980,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 565,
+      "model": "WEORI9112",
+      "name": "Odachi +1",
+      "inCompletionList": true,
+      "basePriceMon": 32000,
+      "sellPriceMon": 38280,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 566,
+      "model": "WEORI9113",
+      "name": "Odachi +2",
+      "inCompletionList": true,
+      "basePriceMon": 34000,
+      "sellPriceMon": 41580,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 567,
+      "model": "WEORI9114",
+      "name": "Odachi EX",
+      "inCompletionList": true,
+      "basePriceMon": 36000,
+      "sellPriceMon": 44880,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 568,
+      "model": "WEORI3012",
+      "name": "Fine Odachi",
+      "inCompletionList": true,
+      "basePriceMon": 32000,
+      "sellPriceMon": 99880,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 569,
+      "model": "WEORI9122",
+      "name": "Fine Odachi +1",
+      "inCompletionList": true,
+      "basePriceMon": 34000,
+      "sellPriceMon": 102080,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 570,
+      "model": "WEORI9123",
+      "name": "Fine Odachi +2",
+      "inCompletionList": true,
+      "basePriceMon": 36000,
+      "sellPriceMon": 104280,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 571,
+      "model": "WEORI9124",
+      "name": "Fine Odachi +3",
+      "inCompletionList": true,
+      "basePriceMon": 38000,
+      "sellPriceMon": 106480,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 572,
+      "model": "WEORI9125",
+      "name": "Fine Odachi EX",
+      "inCompletionList": true,
+      "basePriceMon": 40000,
+      "sellPriceMon": 108680,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 573,
+      "model": "WEORI3013",
+      "name": "Excellent Odachi",
+      "inCompletionList": true,
+      "basePriceMon": 45000,
+      "sellPriceMon": 218680,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 574,
+      "model": "WEORI9132",
+      "name": "Excellent Odachi +1",
+      "inCompletionList": true,
+      "basePriceMon": 46000,
+      "sellPriceMon": 224180,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 575,
+      "model": "WEORI9133",
+      "name": "Excellent Odachi +2",
+      "inCompletionList": true,
+      "basePriceMon": 47000,
+      "sellPriceMon": 229680,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 576,
+      "model": "WEORI9134",
+      "name": "Excellent Odachi +3",
+      "inCompletionList": true,
+      "basePriceMon": 48000,
+      "sellPriceMon": 235180,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 577,
+      "model": "WEORI9135",
+      "name": "Excellent Odachi EX",
+      "inCompletionList": true,
+      "basePriceMon": 50000,
+      "sellPriceMon": 240680,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 578,
+      "model": "WEORI3014",
+      "name": "Akki Rasetsu",
+      "inCompletionList": true,
+      "basePriceMon": 50000,
+      "sellPriceMon": 460680,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 579,
+      "model": "WEORI9142",
+      "name": "Akki Rasetsu EX",
+      "inCompletionList": true,
+      "basePriceMon": 60000,
+      "sellPriceMon": 515680,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 580,
+      "model": "WEORI3015",
+      "name": "Adamantine Odachi",
+      "inCompletionList": true,
+      "basePriceMon": 30000,
+      "sellPriceMon": 49940,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 581,
+      "model": "WEORI9152",
+      "name": "Adamantine Odachi +1",
+      "inCompletionList": true,
+      "basePriceMon": 35000,
+      "sellPriceMon": 60940,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 582,
+      "model": "WEORI9153",
+      "name": "Adamantine Odachi EX",
+      "inCompletionList": true,
+      "basePriceMon": 38000,
+      "sellPriceMon": 71940,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 583,
+      "model": "WEORI3016",
+      "name": "Celestial Odachi",
+      "inCompletionList": true,
+      "basePriceMon": 45000,
+      "sellPriceMon": 148940,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 584,
+      "model": "WEORI9162",
+      "name": "Celestial Odachi +1",
+      "inCompletionList": true,
+      "basePriceMon": 48000,
+      "sellPriceMon": 165440,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 585,
+      "model": "WEORI9163",
+      "name": "Celestial Odachi +2",
+      "inCompletionList": true,
+      "basePriceMon": 50000,
+      "sellPriceMon": 181940,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 586,
+      "model": "WEORI9164",
+      "name": "Celestial Odachi EX",
+      "inCompletionList": true,
+      "basePriceMon": 52000,
+      "sellPriceMon": 198440,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 587,
+      "model": "WEORI3017",
+      "name": "Ancient Shichishito",
+      "inCompletionList": true,
+      "basePriceMon": 8000,
+      "sellPriceMon": 4000,
+      "sellPriceHasOverride": false,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 588,
+      "model": "WEORI3018",
+      "name": "Divine Shichishito",
+      "inCompletionList": true,
+      "basePriceMon": 31000,
+      "sellPriceMon": 55000,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 589,
+      "model": "WEORI9182",
+      "name": "Divine Shichishito +1",
+      "inCompletionList": true,
+      "basePriceMon": 33000,
+      "sellPriceMon": 56100,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 590,
+      "model": "WEORI9183",
+      "name": "Divine Shichishito +2",
+      "inCompletionList": true,
+      "basePriceMon": 35000,
+      "sellPriceMon": 57200,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 591,
+      "model": "WEORI9184",
+      "name": "Divine Shichishito EX",
+      "inCompletionList": true,
+      "basePriceMon": 37000,
+      "sellPriceMon": 58300,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 592,
+      "model": "WEORI3019",
+      "name": "Yatsuka no Tsurugi",
+      "inCompletionList": true,
+      "basePriceMon": 41000,
+      "sellPriceMon": 446600,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 593,
+      "model": "WEORI9192",
+      "name": "Yatsuka no Tsurugi +1",
+      "inCompletionList": true,
+      "basePriceMon": 43000,
+      "sellPriceMon": 501600,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 594,
+      "model": "WEORI9193",
+      "name": "Yatsuka no Tsurugi +2",
+      "inCompletionList": true,
+      "basePriceMon": 45000,
+      "sellPriceMon": 556600,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 595,
+      "model": "WEORI9194",
+      "name": "Yatsuka no Tsurugi +3",
+      "inCompletionList": true,
+      "basePriceMon": 47000,
+      "sellPriceMon": 611600,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 596,
+      "model": "WEORI9195",
+      "name": "Yatsuka no Tsurugi EX",
+      "inCompletionList": true,
+      "basePriceMon": 54000,
+      "sellPriceMon": 666600,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 597,
+      "model": "WEORI3020",
+      "name": "Crude Taiken",
+      "inCompletionList": true,
+      "basePriceMon": 2500,
+      "sellPriceMon": 1250,
+      "sellPriceHasOverride": false,
+      "cannotSell": false,
+      "shopOffers": [
+        {
+          "table": "shop0006.bin",
+          "priceMon": 2500,
+          "merchants": [
+            {
+              "id": "ebisuya-pawn",
+              "name": "Ebisuya Pawn"
+            }
+          ]
+        },
+        {
+          "table": "shop0007.bin",
+          "priceMon": 2500,
+          "merchants": [
+            {
+              "id": "ebisuya-pawn",
+              "name": "Ebisuya Pawn"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "itemId": 598,
+      "model": "WEORI9202",
+      "name": "Crude Taiken +1",
+      "inCompletionList": true,
+      "basePriceMon": 6500,
+      "sellPriceMon": 3850,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 599,
+      "model": "WEORI9203",
+      "name": "Crude Taiken +2",
+      "inCompletionList": true,
+      "basePriceMon": 10500,
+      "sellPriceMon": 4950,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 600,
+      "model": "WEORI9204",
+      "name": "Crude Taiken +3",
+      "inCompletionList": true,
+      "basePriceMon": 10800,
+      "sellPriceMon": 6050,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 601,
+      "model": "WEORI9205",
+      "name": "Crude Taiken EX",
+      "inCompletionList": true,
+      "basePriceMon": 12000,
+      "sellPriceMon": 7150,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 602,
+      "model": "WEORI3021",
+      "name": "Dragonslayer Taiken",
+      "inCompletionList": true,
+      "basePriceMon": 30000,
+      "sellPriceMon": 62150,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 603,
+      "model": "WEORI9212",
+      "name": "Dragonslayer Taiken +1",
+      "inCompletionList": true,
+      "basePriceMon": 32000,
+      "sellPriceMon": 65450,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 604,
+      "model": "WEORI9213",
+      "name": "Dragonslayer Taiken EX",
+      "inCompletionList": true,
+      "basePriceMon": 35000,
+      "sellPriceMon": 68750,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 605,
+      "model": "WEORI3022",
+      "name": "Non-Lethal Taiken",
+      "inCompletionList": true,
+      "basePriceMon": 30000,
+      "sellPriceMon": 49940,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 606,
+      "model": "WEORI3023",
+      "name": "Hame Yumimaru",
+      "inCompletionList": true,
+      "basePriceMon": 16000,
+      "sellPriceMon": 8000,
+      "sellPriceHasOverride": false,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 607,
+      "model": "WEORI3024",
+      "name": "Raijin Hame Yumimaru",
+      "inCompletionList": true,
+      "basePriceMon": 22000,
+      "sellPriceMon": 11000,
+      "sellPriceHasOverride": false,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 608,
+      "model": "WEORI3025",
+      "name": "Firedrinker Tenjiro",
+      "inCompletionList": true,
+      "basePriceMon": 35000,
+      "sellPriceMon": 104940,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 609,
+      "model": "WEORI4000",
+      "name": "Cast-Iron Kanabo",
+      "inCompletionList": true,
+      "basePriceMon": 16000,
+      "sellPriceMon": 8000,
+      "sellPriceHasOverride": false,
+      "cannotSell": false,
+      "shopOffers": [
+        {
+          "table": "shop0032.bin",
+          "priceMon": 16000,
+          "merchants": [
+            {
+              "id": "arms-dealer",
+              "name": "Arms Dealer"
+            }
+          ],
+          "unlock": {
+            "scenario": "000e0000",
+            "group": "CHAPTER07",
+            "stateIndex": 0,
+            "stateName": "CHA07_開始"
+          }
+        }
+      ]
+    },
+    {
+      "itemId": 610,
+      "model": "WEORI5002",
+      "name": "Cast-Iron Kanabo +1",
+      "inCompletionList": true,
+      "basePriceMon": 18000,
+      "sellPriceMon": 18700,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 611,
+      "model": "WEORI5003",
+      "name": "Cast-Iron Kanabo +2",
+      "inCompletionList": true,
+      "basePriceMon": 20000,
+      "sellPriceMon": 19800,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 612,
+      "model": "WEORI5004",
+      "name": "Cast-Iron Kanabo +3",
+      "inCompletionList": true,
+      "basePriceMon": 21500,
+      "sellPriceMon": 20900,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 613,
+      "model": "WEORI5005",
+      "name": "Cast-Iron Kanabo EX",
+      "inCompletionList": true,
+      "basePriceMon": 23200,
+      "sellPriceMon": 22000,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 614,
+      "model": "WEORI4001",
+      "name": "Spiked Kanabo",
+      "inCompletionList": true,
+      "basePriceMon": 32000,
+      "sellPriceMon": 81400,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 615,
+      "model": "WEORI5012",
+      "name": "Spiked Kanabo +1",
+      "inCompletionList": true,
+      "basePriceMon": 33000,
+      "sellPriceMon": 85800,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 616,
+      "model": "WEORI5013",
+      "name": "Spiked Kanabo +2",
+      "inCompletionList": true,
+      "basePriceMon": 34000,
+      "sellPriceMon": 90200,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 617,
+      "model": "WEORI5014",
+      "name": "Spiked Kanabo +3",
+      "inCompletionList": true,
+      "basePriceMon": 35000,
+      "sellPriceMon": 94600,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 618,
+      "model": "WEORI5015",
+      "name": "Spiked Kanabo EX",
+      "inCompletionList": true,
+      "basePriceMon": 36000,
+      "sellPriceMon": 99000,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 619,
+      "model": "WEORI4002",
+      "name": "Tengu Staff",
+      "inCompletionList": true,
+      "basePriceMon": 38000,
+      "sellPriceMon": 36300,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 620,
+      "model": "WEORI4003",
+      "name": "Yomigaeshi",
+      "inCompletionList": true,
+      "basePriceMon": 41000,
+      "sellPriceMon": 242000,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 621,
+      "model": "WEORI4004",
+      "name": "Onigami Kanabo",
+      "inCompletionList": true,
+      "basePriceMon": 59500,
+      "sellPriceMon": 297000,
+      "sellPriceHasOverride": true,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 622,
+      "model": "WEORI6000",
+      "name": "Jutte",
+      "inCompletionList": true,
+      "basePriceMon": 5800,
+      "sellPriceMon": 2900,
+      "sellPriceHasOverride": false,
+      "cannotSell": false,
+      "shopOffers": [
+        {
+          "table": "shop0032.bin",
+          "priceMon": 5800,
+          "merchants": [
+            {
+              "id": "arms-dealer",
+              "name": "Arms Dealer"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "itemId": 623,
+      "model": "WEORI6001",
+      "name": "Golden Kiseru",
+      "inCompletionList": true,
+      "basePriceMon": 78000,
+      "sellPriceMon": 39000,
+      "sellPriceHasOverride": false,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 624,
+      "model": "WEORI6002",
+      "name": "Iron Kiseru",
+      "inCompletionList": true,
+      "basePriceMon": 2100,
+      "sellPriceMon": 1050,
+      "sellPriceHasOverride": false,
+      "cannotSell": false,
+      "shopOffers": [
+        {
+          "table": "shop0003.bin",
+          "priceMon": 2100,
+          "merchants": [
+            {
+              "id": "arigataya-gion",
+              "name": "Arigataya Market"
+            }
+          ],
+          "unlock": {
+            "scenario": "000c0000",
+            "group": "CHAPTER05",
+            "stateIndex": 0,
+            "stateName": "CHA05_開始"
+          }
+        }
+      ]
+    },
+    {
+      "itemId": 625,
+      "model": "WEORI6003",
+      "name": "Stylish Kiseru",
+      "inCompletionList": true,
+      "basePriceMon": 7800,
+      "sellPriceMon": 3900,
+      "sellPriceHasOverride": false,
+      "cannotSell": false,
+      "shopOffers": [
+        {
+          "table": "shop0003.bin",
+          "priceMon": 7800,
+          "merchants": [
+            {
+              "id": "arigataya-gion",
+              "name": "Arigataya Market"
+            }
+          ],
+          "unlock": {
+            "scenario": "000e0000",
+            "group": "CHAPTER07",
+            "stateIndex": 0,
+            "stateName": "CHA07_開始"
+          }
+        }
+      ]
+    },
+    {
+      "itemId": 626,
+      "model": "WETAK0004",
+      "name": "Stylish Parasol",
+      "inCompletionList": true,
+      "basePriceMon": 540,
+      "sellPriceMon": 270,
+      "sellPriceHasOverride": false,
+      "cannotSell": false,
+      "shopOffers": [
+        {
+          "table": "shop0003.bin",
+          "priceMon": 540,
+          "merchants": [
+            {
+              "id": "arigataya-gion",
+              "name": "Arigataya Market"
+            }
+          ],
+          "unlock": {
+            "scenario": "000d0000",
+            "group": "CHAPTER06",
+            "stateIndex": 0,
+            "stateName": "CHA06_開始"
+          }
+        },
+        {
+          "table": "shop0021.bin",
+          "priceMon": 540,
+          "merchants": [
+            {
+              "id": "arigataya-rakugai",
+              "name": "Arigataya Market"
+            }
+          ],
+          "unlock": {
+            "scenario": "000d0000",
+            "group": "CHAPTER06",
+            "stateIndex": 0,
+            "stateName": "CHA06_開始"
+          }
+        }
+      ]
+    },
+    {
+      "itemId": 627,
+      "model": "WEYAM0122",
+      "name": "Star Parasol",
+      "inCompletionList": true,
+      "basePriceMon": 540,
+      "sellPriceMon": 270,
+      "sellPriceHasOverride": false,
+      "cannotSell": false,
+      "shopOffers": []
+    },
+    {
+      "itemId": 628,
+      "model": "WEORI6500",
+      "name": "Koetsu's Tachi",
+      "inCompletionList": false,
+      "basePriceMon": 10,
+      "sellPriceMon": 5,
+      "sellPriceHasOverride": false,
+      "cannotSell": true,
+      "shopOffers": []
+    },
+    {
+      "itemId": 629,
+      "model": "WEORI6501",
+      "name": "Koetsu's Kodachi",
+      "inCompletionList": false,
+      "basePriceMon": 10,
+      "sellPriceMon": 5,
+      "sellPriceHasOverride": false,
+      "cannotSell": true,
+      "shopOffers": []
+    },
+    {
+      "itemId": 630,
+      "model": "WEORI6502",
+      "name": "Koetsu's Odachi",
+      "inCompletionList": false,
+      "basePriceMon": 10,
+      "sellPriceMon": 5,
+      "sellPriceHasOverride": false,
+      "cannotSell": true,
+      "shopOffers": []
+    },
+    {
+      "itemId": 631,
+      "model": "WEYAM0103",
+      "name": "Bomb",
+      "inCompletionList": false,
+      "basePriceMon": 10,
+      "sellPriceMon": 5,
+      "sellPriceHasOverride": false,
+      "cannotSell": true,
+      "shopOffers": []
+    },
+    {
+      "itemId": 633,
+      "model": "WEYAM0303",
+      "name": "Goshu Katana",
+      "inCompletionList": false,
+      "basePriceMon": 10,
+      "sellPriceMon": 5,
+      "sellPriceHasOverride": false,
+      "cannotSell": true,
+      "shopOffers": []
+    },
+    {
+      "itemId": 635,
+      "model": "WEORI9509",
+      "name": "Raging Dragon Tanegashima",
+      "inCompletionList": false,
+      "basePriceMon": 0,
+      "sellPriceMon": 0,
+      "sellPriceHasOverride": false,
+      "cannotSell": true,
+      "shopOffers": []
+    },
+    {
+      "itemId": 637,
+      "model": "WEORI9850",
+      "name": "Hozoin Tachi",
+      "inCompletionList": false,
+      "basePriceMon": 1,
+      "sellPriceMon": 0,
+      "sellPriceHasOverride": false,
+      "cannotSell": true,
+      "shopOffers": []
+    },
+    {
+      "itemId": 638,
+      "model": "WEORI9851",
+      "name": "Hozoin Wakizashi",
+      "inCompletionList": false,
+      "basePriceMon": 1,
+      "sellPriceMon": 0,
+      "sellPriceHasOverride": false,
+      "cannotSell": true,
+      "shopOffers": []
+    },
+    {
+      "itemId": 639,
+      "model": "WEORI9852",
+      "name": "Hozoin Odachi",
+      "inCompletionList": false,
+      "basePriceMon": 1,
+      "sellPriceMon": 0,
+      "sellPriceHasOverride": false,
+      "cannotSell": true,
+      "shopOffers": []
+    }
+  ]
+}

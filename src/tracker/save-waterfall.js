@@ -15,7 +15,7 @@
     // Native result writer 0x23ac in the isolated Waterfall module reads five
     // three-bit best ranks, followed by five big-endian uint16 best scores.
     // Only successful finishes reach that writer; each record only increases.
-    // Evidence: research/kenzan60/waterfall-save-20261120/native/.
+    // Rank and score offsets below are relative to the gameplay USERDATA buffer.
     const packed = data.getUint16(0x9328, false);
     return Object.fromEntries(courses.map((course, index) => {
       const rank = (packed >>> (3 * index)) & 7;

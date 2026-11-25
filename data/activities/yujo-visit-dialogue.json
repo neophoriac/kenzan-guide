@@ -1,0 +1,5555 @@
+{
+  "source": {
+    "archive": "bin/wdr_par/wdr.par",
+    "reference": "https://www.khhsubs.com/kenzan/yujo/",
+    "heartUnit": "Each native unit is a quarter heart. The direct value excludes separate actions such as drinking.",
+    "drinkPoints": "The direct heart change in the native drinking follow-up. It is separate from the choice’s immediate value."
+  },
+  "yujo": [
+    {
+      "id": 1,
+      "name": "Kinuyo",
+      "venue": "Yumejiya",
+      "source": "uid004e0004.msg",
+      "greetings": [
+        {
+          "context": "first-visit",
+          "text": "Nice to meet you, I'm Kinuyo."
+        },
+        {
+          "context": "return-visit",
+          "text": "Thanks for coming to see me again."
+        },
+        {
+          "context": "return-visit",
+          "text": "Thanks, Kiryu-han."
+        },
+        {
+          "context": "return-visit",
+          "text": "It's good to see you again ⑮"
+        }
+      ],
+      "topics": [
+        {
+          "nativeGroup": 0,
+          "context": "random",
+          "prompt": "Why bother with me when there are other younger, more beautiful yujo available?",
+          "leadIn": [
+            "Um...",
+            "...What's wrong?",
+            "...Why did you request an older yujo like myself?",
+            "I'm not particularly good-looking or talented.",
+            "Why bother with me when there are other younger, more beautiful yujo available?"
+          ],
+          "choices": [
+            {
+              "text": "Why don't you try believing in yourself more?",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "I like that you're different from the other girls.",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "You look like you've seen it all.",
+              "points": -3,
+              "nativePoints": -12
+            }
+          ],
+          "best": [
+            1
+          ]
+        },
+        {
+          "nativeGroup": 1,
+          "context": "random",
+          "prompt": "Kiryu-han, would you mind telling me how to please a gentleman?",
+          "leadIn": [
+            "Hey, can I ask you something?",
+            "Sure...",
+            "This really isn't something we should be asking customers, but...",
+            "I'm new to this job, and I'm having a hard time creating the right atmosphere in the tatami room...",
+            "Is that so...",
+            "Kiryu-han, would you mind telling me how to please a gentleman?"
+          ],
+          "choices": [
+            {
+              "text": "Try to smile more often.",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "Be a good listener.",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "You could start by untying your obi.",
+              "points": -1,
+              "nativePoints": -4
+            }
+          ],
+          "best": [
+            2
+          ]
+        },
+        {
+          "nativeGroup": 2,
+          "context": "random",
+          "prompt": "I honestly don't understand why...",
+          "leadIn": [
+            "Um... I've been wondering about something for a while now...",
+            "What is it?",
+            "Why do men want to come to yukaku like this one?",
+            "All of the men back in my hometown said they'd like to come here at least once.",
+            "I honestly don't understand why..."
+          ],
+          "choices": [
+            {
+              "text": "This place is like a dreamland, you know?",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "I suppose it's just the way men are.",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "How am I supposed to know that?",
+              "points": -1,
+              "nativePoints": -4
+            }
+          ],
+          "best": [
+            1
+          ]
+        },
+        {
+          "nativeGroup": 3,
+          "context": "random",
+          "prompt": "When I see the beautiful autumn leaves outside, it reminds me of my hometown...",
+          "leadIn": [
+            "Um... Autumn's really here now, isn't it...",
+            "It can still be pretty warm at times.",
+            "When I see the beautiful autumn leaves outside, it reminds me of my hometown..."
+          ],
+          "choices": [
+            {
+              "text": "Where are you from?",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "You shouldn't dwell on the past.",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "Did something bad happen there?",
+              "points": 0,
+              "nativePoints": 0
+            }
+          ],
+          "best": [
+            2
+          ]
+        },
+        {
+          "nativeGroup": 4,
+          "context": "random",
+          "prompt": "...How old are you, Kiryu-han?",
+          "leadIn": [
+            "May I ask you something?",
+            "What is it?",
+            "...How old are you, Kiryu-han?"
+          ],
+          "choices": [
+            {
+              "text": "I'm fifteen.",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "I'm sixty.",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "Age doesn't matter.",
+              "points": -1,
+              "nativePoints": -4
+            }
+          ],
+          "best": [
+            2
+          ]
+        },
+        {
+          "nativeGroup": 5,
+          "context": "random",
+          "prompt": "And everyone teases me because I used to be married...",
+          "leadIn": [
+            "May I... tell you something?",
+            "Sure...",
+            "To tell you the truth, I sold myself to this place to pay off my husband's debts.",
+            "And everyone teases me because I used to be married...",
+            "Is that so..."
+          ],
+          "choices": [
+            {
+              "text": "Don't let it bother you.",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "You shouldn't tell your customers about that.",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "Ex-wives kinda turn me on.",
+              "points": -1,
+              "nativePoints": -4
+            }
+          ],
+          "best": [
+            1
+          ]
+        },
+        {
+          "nativeGroup": 6,
+          "context": "random",
+          "prompt": "Ever since I separated from my husband, I haven't been able to trust men much... What do you think... Kiryu-han?",
+          "leadIn": [
+            "Um...",
+            "What is it?",
+            "...Are all men cheaters, after all?",
+            "...Eh?",
+            "Ever since I separated from my husband, I haven't been able to trust men much... What do you think... Kiryu-han?"
+          ],
+          "choices": [
+            {
+              "text": "What I do is my own business.",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "It's a bit presumptuous, isn't it?",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "You'll know when the time comes.",
+              "points": -1,
+              "nativePoints": -4
+            }
+          ],
+          "best": [
+            2
+          ]
+        },
+        {
+          "nativeGroup": 7,
+          "context": "random",
+          "prompt": "Whenever I drink too much, I black out and I can't remember what happened...",
+          "leadIn": [
+            "You know... To be honest, I don't like drinking.",
+            "...How come?",
+            "Whenever I drink too much, I black out and I can't remember what happened...",
+            "Hmph..."
+          ],
+          "choices": [
+            {
+              "text": "You don't have to force yourself to drink.",
+              "points": 0,
+              "nativePoints": 0,
+              "effects": [
+                "Alcohol is served and can increase intoxication."
+              ],
+              "drinkGroup": 65,
+              "drinkPoints": 1,
+              "nativeDrinkPoints": 4
+            },
+            {
+              "text": "Are you an angry drunk, perhaps?",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "Let's have a drink, shall we?",
+              "points": 0,
+              "nativePoints": 0,
+              "effects": [
+                "Alcohol is served and can increase intoxication."
+              ],
+              "drinkGroup": 66,
+              "drinkPoints": 0,
+              "nativeDrinkPoints": 0
+            }
+          ],
+          "best": [
+            1
+          ],
+          "bestWithoutDrink": [
+            2
+          ]
+        },
+        {
+          "nativeGroup": 8,
+          "context": "random",
+          "prompt": "She told me to use it if I ever feel lonely, but I have no idea what to do with it...",
+          "leadIn": [
+            "May I... tell you something?",
+            "Sure...",
+            "My neesan gave me a tengu mask the other day...",
+            "She told me to use it if I ever feel lonely, but I have no idea what to do with it..."
+          ],
+          "choices": [
+            {
+              "text": "It's like something you'd wear at a matsuri.",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "It's a talisman for warding off evil spirits.",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "It's for training your grip strength.",
+              "points": 1,
+              "nativePoints": 4
+            }
+          ],
+          "best": [
+            3
+          ]
+        },
+        {
+          "nativeGroup": 9,
+          "context": "random",
+          "prompt": "My customers always ask me to put the bill on their tab... And I'm left wonderin' when I'll get my share of the bill...",
+          "leadIn": [
+            "Um... I have something I'd like to discuss with you...",
+            "What is it?",
+            "How should I go about collecting payment from customers?",
+            "You mean the bill?",
+            "Yes.",
+            "My customers always ask me to put the bill on their tab... And I'm left wonderin' when I'll get my share of the bill...",
+            "Hm..."
+          ],
+          "choices": [
+            {
+              "text": "You're being scammed.",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "You need to make sure they pay up.",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "You have to figure that out for yourself.",
+              "points": -1,
+              "nativePoints": -4
+            }
+          ],
+          "best": [
+            1
+          ]
+        },
+        {
+          "nativeGroup": 10,
+          "context": "random",
+          "prompt": "Yeah. But, I'm not sure what kind of act to put on...",
+          "leadIn": [
+            "The okami's always giving me a hard time... \"You should really work more on your act, Kinuyo...\"",
+            "...Your act?",
+            "Yeah. But, I'm not sure what kind of act to put on...",
+            "Hm, let me think..."
+          ],
+          "choices": [
+            {
+              "text": "A dance routine.",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "Act like you're in love.",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "Try to be courteous.",
+              "points": 1,
+              "nativePoints": 4
+            }
+          ],
+          "best": [
+            3
+          ]
+        },
+        {
+          "nativeGroup": 11,
+          "context": "random",
+          "prompt": "Once you step inside the main gate, you can never go back to the outside world... Somehow, I don't even feel like I'm alive...",
+          "leadIn": [
+            "*sigh*...",
+            "...What's wrong, why are you sighing?",
+            "Once you step inside the main gate, you can never go back to the outside world... Somehow, I don't even feel like I'm alive...",
+            "I see..."
+          ],
+          "choices": [
+            {
+              "text": "You can leave when you're bought out.",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "Why don't you try sneaking out?",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "That's the fate of a yujo.",
+              "points": 1,
+              "nativePoints": 4
+            }
+          ],
+          "best": [
+            3
+          ]
+        },
+        {
+          "nativeGroup": 12,
+          "context": "random",
+          "prompt": "When the food came he became furious, yelling, \"I'm never coming back here again!\" Then he stormed out.",
+          "leadIn": [
+            "I made one of my regulars really angry the other day...",
+            "...What did you do?",
+            "Right after he arrived, he said he was hungry, so I ordered him some ochazuke...",
+            "When the food came he became furious, yelling, \"I'm never coming back here again!\" Then he stormed out.",
+            "I see..."
+          ],
+          "choices": [
+            {
+              "text": "He thought it looked bad.",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "He thought you were telling him to leave.",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "He was disgusted by the sloppy cooking.",
+              "points": -1,
+              "nativePoints": -4
+            }
+          ],
+          "best": [
+            2
+          ]
+        },
+        {
+          "nativeGroup": 13,
+          "context": "random",
+          "prompt": "What kind of woman do you like, Kiryu-han?",
+          "leadIn": [
+            "Um... Can I ask you something?",
+            "What is it?",
+            "What kind of woman do you like, Kiryu-han?",
+            "Hm..."
+          ],
+          "choices": [
+            {
+              "text": "I like proper women.",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "I like humble women.",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "I like loose women.",
+              "points": -1,
+              "nativePoints": -4
+            }
+          ],
+          "best": [
+            2
+          ]
+        },
+        {
+          "nativeGroup": 14,
+          "context": "random",
+          "prompt": "What kind of matsuri do you like, Kiryu-han?",
+          "leadIn": [
+            "I absolutely love matsuri. Every day's like one in this town, it's so lively.",
+            "Yeah...",
+            "What kind of matsuri do you like, Kiryu-han?",
+            "Hm..."
+          ],
+          "choices": [
+            {
+              "text": "Gion Matsuri",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "Kenka Matsuri (Fighting Festival)",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "Hadaka Matsuri (Naked Festival)",
+              "points": -1,
+              "nativePoints": -4
+            }
+          ],
+          "best": [
+            1
+          ]
+        },
+        {
+          "nativeGroup": 15,
+          "context": "random",
+          "prompt": "My parents run a small shop back home. I was taught strict etiquette from a young age, so as not to bring shame on the shop's heritage.",
+          "leadIn": [
+            "My parents run a small shop back home. I was taught strict etiquette from a young age, so as not to bring shame on the shop's heritage.",
+            "Is that so..."
+          ],
+          "choices": [
+            {
+              "text": "No wonder you're so classy.",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "Having etiquette isn't everything.",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "What kind of items do they sell?",
+              "points": 0,
+              "nativePoints": 0
+            }
+          ],
+          "best": [
+            1
+          ]
+        },
+        {
+          "nativeGroup": 16,
+          "context": "random",
+          "prompt": "Don't they have any shame?",
+          "leadIn": [
+            "May I... tell you something?",
+            "Sure...",
+            "Some of the men who come here have families.",
+            "Why would they want another woman, when they already have a wife?",
+            "Don't they have any shame?",
+            "Well..."
+          ],
+          "choices": [
+            {
+              "text": "You get bored of the same woman after years.",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "That's just male instinct.",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "They just want to feel a thrill.",
+              "points": 1,
+              "nativePoints": 4
+            }
+          ],
+          "best": [
+            3
+          ]
+        },
+        {
+          "nativeGroup": 17,
+          "context": "random",
+          "prompt": "Oh, I think it was... [ <Color:220,255,255,255>My wife's<Color:Default> <Color:220,255,255,255>taste is okay<Color:Default> <Color:220,255,255,255>but not good<Color:Default> ]",
+          "leadIn": [
+            "You know... I'm a big fan of senryu...",
+            "Huh... That's pretty cool...",
+            "My parents read them to me all the time when I was little...",
+            "Really...",
+            "My absolute favorite was... Um... what was it again...?",
+            "Hm? ...Did you forget?",
+            "Oh, I think it was... [ <Color:220,255,255,255>My wife's<Color:Default> <Color:220,255,255,255>taste is okay<Color:Default> <Color:220,255,255,255>but not good<Color:Default> ]"
+          ],
+          "choices": [
+            {
+              "text": "What does it mean?",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "You'd be better off forgetting that one.",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "That's a bareku (lewd haiku)",
+              "points": -1,
+              "nativePoints": -4
+            }
+          ],
+          "best": [
+            2
+          ]
+        },
+        {
+          "nativeGroup": 18,
+          "context": "random",
+          "prompt": "Yeah. They're flat and scurry around the place. There's lots of them in my hometown.",
+          "leadIn": [
+            "You know it's autumn when cricket season starts... The chirping of crickets is so charming... The brown bell crickets in particular make a beautiful sound...",
+            "...Brown bell crickets?",
+            "Yeah. They're flat and scurry around the place. There's lots of them in my hometown."
+          ],
+          "choices": [
+            {
+              "text": "That sounds like a rare creature.",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "Your hometown sounds like it had a lot of wildlife.",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "We have those here too.",
+              "points": -1,
+              "nativePoints": -4
+            }
+          ],
+          "best": [
+            2
+          ]
+        },
+        {
+          "nativeGroup": 19,
+          "context": "random",
+          "prompt": "It's so delicious that once you start eating it, you just can't stop laughing.",
+          "leadIn": [
+            "Autumn really is the season of good appetite, huh?",
+            "It sure is...",
+            "I absolutely love mushrooms.",
+            "The taste of autumn...",
+            "It's so delicious that once you start eating it, you just can't stop laughing."
+          ],
+          "choices": [
+            {
+              "text": "You really do love mushrooms, don't you?",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "What kind of mushroom is that?",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "That's a bad sign, isn't it?",
+              "points": -1,
+              "nativePoints": -4
+            }
+          ],
+          "best": [
+            1
+          ]
+        },
+        {
+          "nativeGroup": 20,
+          "context": "random",
+          "prompt": "To be honest, I don't know what to do when I'm with a gentleman... Kiryu-han... What should I do?",
+          "leadIn": [
+            "May I... tell you something?",
+            "What is it?",
+            "It's embarrassing to admit, but the only man I've ever known is my ex-husband...",
+            "To be honest, I don't know what to do when I'm with a gentleman... Kiryu-han... What should I do?",
+            "Hmm..."
+          ],
+          "choices": [
+            {
+              "text": "Let the customer take the lead.",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "All you have to do is be quiet.",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "I'm not the right person to ask about that.",
+              "points": 1,
+              "nativePoints": 4
+            }
+          ],
+          "best": [
+            3
+          ]
+        },
+        {
+          "nativeGroup": 21,
+          "context": "milestone",
+          "threshold": 11,
+          "prompt": "But, deep down, I still have hope that someday my ex-husband will come back for me...",
+          "leadIn": [
+            "Kiryu-han... Can you hear me out for a sec...?",
+            "Sure... What's up?",
+            "I sold myself to this place to pay off my husband's debts...",
+            "Right, you told me that before.",
+            "But, deep down, I still have hope that someday my ex-husband will come back for me..."
+          ],
+          "choices": [
+            {
+              "text": "Forget about that heartless man.",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "You still have faith in your husband?",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "You guys just had some tough luck...",
+              "points": 0,
+              "nativePoints": 0
+            }
+          ],
+          "best": [
+            1
+          ]
+        },
+        {
+          "nativeGroup": 22,
+          "context": "milestone",
+          "threshold": 16,
+          "prompt": "And so I honored my father's wishes and went ahead with the marriage...",
+          "leadIn": [
+            "Um...",
+            "What's up?",
+            "Our marriage was arranged.",
+            "My ex-husband's family also ran a small shop, so my parents wanted me to marry him in the hopes of consolidating the businesses.",
+            "I see...",
+            "And so I honored my father's wishes and went ahead with the marriage..."
+          ],
+          "choices": [
+            {
+              "text": "That's great.",
+              "points": -3,
+              "nativePoints": -12
+            },
+            {
+              "text": "That's ridiculous.",
+              "points": 3,
+              "nativePoints": 12
+            },
+            {
+              "text": "And it all ended in tears.",
+              "points": 0,
+              "nativePoints": 0
+            }
+          ],
+          "best": [
+            2
+          ]
+        },
+        {
+          "nativeGroup": 23,
+          "context": "milestone",
+          "threshold": 20,
+          "prompt": "Here I am now working as a yujo, all for the sake of the husband who left me for one... To think I'd end up like this...",
+          "leadIn": [
+            "By the way... my ex-husband had a mistress...",
+            "What?",
+            "Back when business was good and we were living comfortably, my husband would slip out night and night... He was going to see some yujo somewhere...",
+            "So that's what happened... And then...?",
+            "He gradually took more and more money from the shop... Before I knew it, we were in serious debt...",
+            "Here I am now working as a yujo, all for the sake of the husband who left me for one... To think I'd end up like this..."
+          ],
+          "choices": [
+            {
+              "text": "How ironic.",
+              "points": 2,
+              "nativePoints": 8
+            },
+            {
+              "text": "What a pathetic man.",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "That's funny.",
+              "points": -1,
+              "nativePoints": -4
+            }
+          ],
+          "best": [
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Suzukaze",
+      "venue": "Yumejiya",
+      "source": "uid004e0000.msg",
+      "greetings": [
+        {
+          "context": "first-visit",
+          "text": "Nice to meet you, I'm Suzukaze."
+        },
+        {
+          "context": "return-visit",
+          "text": "Ah, you came to see me."
+        },
+        {
+          "context": "return-visit",
+          "text": "Thank you so much for comin' to visit."
+        },
+        {
+          "context": "return-visit",
+          "text": "Shall we enjoy ourselves again today?"
+        }
+      ],
+      "topics": [
+        {
+          "nativeGroup": 0,
+          "context": "random",
+          "prompt": "My, you have such a stiff look on your face. Are you uncomfortable being with me?",
+          "leadIn": [
+            "My, you have such a stiff look on your face. Are you uncomfortable being with me?"
+          ],
+          "choices": [
+            {
+              "text": "This is all new to me, I'm just nervous.",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "I'm worried about the costs.",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "This is just my face.",
+              "points": -1,
+              "nativePoints": -4
+            }
+          ],
+          "best": [
+            1
+          ]
+        },
+        {
+          "nativeGroup": 1,
+          "context": "random",
+          "prompt": "That being said... What kind of work do you do?",
+          "leadIn": [
+            "You probably already know, but this is a long-established shop.",
+            "Yeah...",
+            "Many famous and wealthy guests often visit here, you know.",
+            "Interesting...",
+            "That being said... What kind of work do you do?"
+          ],
+          "choices": [
+            {
+              "text": "Unemployed, got a problem with that?",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "What do you mean by famous guests?",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "Do you know the Tatsuya?",
+              "points": 1,
+              "nativePoints": 4
+            }
+          ],
+          "best": [
+            3
+          ]
+        },
+        {
+          "nativeGroup": 2,
+          "context": "random",
+          "prompt": "Of course, as a matter of yujo etiquette, I always take a bath before coming to work too.",
+          "leadIn": [
+            "After work, I like to take my time and soak in a bath.",
+            "...I see. Yeah, a bath after work does feel good.",
+            "Of course, as a matter of yujo etiquette, I always take a bath before coming to work too."
+          ],
+          "choices": [
+            {
+              "text": "I'll take you to a hot spring next time.",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "Baths are good for your health.",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "Want me to scrub your back next time?",
+              "points": 0,
+              "nativePoints": 0
+            }
+          ],
+          "best": [
+            2
+          ]
+        },
+        {
+          "nativeGroup": 3,
+          "context": "random",
+          "prompt": "I'm still just a kakoi, but do you know the name of the top rank for yujo here in Gion?",
+          "leadIn": [
+            "Kiryu-han, did you know that we yujo have ranks?",
+            "Yeah...",
+            "I'm still just a kakoi, but do you know the name of the top rank for yujo here in Gion?"
+          ],
+          "choices": [
+            {
+              "text": "Tenjin",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "Goddess",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "Tayu",
+              "points": 1,
+              "nativePoints": 4
+            }
+          ],
+          "best": [
+            3
+          ]
+        },
+        {
+          "nativeGroup": 4,
+          "context": "random",
+          "prompt": "I'd like to one day surpass her.",
+          "leadIn": [
+            "Did you know that my late mother was also a yujo? She was quite famous here in Gion.",
+            "Is that so...?",
+            "I'd like to one day surpass her."
+          ],
+          "choices": [
+            {
+              "text": "You should hone your arts even more.",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "You should change your attitude first.",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "You should try to understand men first.",
+              "points": -3,
+              "nativePoints": -12
+            }
+          ],
+          "best": [
+            1
+          ]
+        },
+        {
+          "nativeGroup": 5,
+          "context": "random",
+          "prompt": "I'm just a little curious.",
+          "leadIn": [
+            "Kiryu-han... Do you come to places like this often?",
+            "...Why do you want to know?",
+            "I'm just a little curious."
+          ],
+          "choices": [
+            {
+              "text": "I come here all the time.",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "Actually, I'm here by mistake.",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "I come here for social reasons.",
+              "points": 0,
+              "nativePoints": 0
+            }
+          ],
+          "best": [
+            1
+          ]
+        },
+        {
+          "nativeGroup": 6,
+          "context": "random",
+          "prompt": "There are cranes and turtles. If there are ten heads and thirty-two legs, how many of each should there be?",
+          "leadIn": [
+            "Kiryu-han, do you have any special skills?",
+            "Special skills?",
+            "...Not really.",
+            "I've been learning arithmetic since I was little, so I'm pretty good at it.",
+            "I see...",
+            "...But no matter how good you are, the only thing that matters is counting money, right?",
+            "Hey! That's prejudiced. All right then, why don't you try answering the problem I'm about to give you?",
+            "Sure...",
+            "There are cranes and turtles. If there are ten heads and thirty-two legs, how many of each should there be?"
+          ],
+          "choices": [
+            {
+              "text": "Six cranes and four turtles.",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "Seven cranes and three turtles.",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "Four cranes and six turtles.",
+              "points": 1,
+              "nativePoints": 4
+            }
+          ],
+          "best": [
+            3
+          ]
+        },
+        {
+          "nativeGroup": 7,
+          "context": "random",
+          "prompt": "Thieves specifically targeting yujo have been lurking about. I can't even go out properly.",
+          "leadIn": [
+            "There have been a lot of dangerous incidents lately...",
+            "...Did something happen?",
+            "Thieves specifically targeting yujo have been lurking about. I can't even go out properly."
+          ],
+          "choices": [
+            {
+              "text": "Yujo aren't supposed to wander around.",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "You should hold on and stay here for now.",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "Those thieves have their reasons too.",
+              "points": -1,
+              "nativePoints": -4
+            }
+          ],
+          "best": [
+            2
+          ]
+        },
+        {
+          "nativeGroup": 8,
+          "context": "random",
+          "prompt": "Hm? Kiryu-han, do you prefer older women?",
+          "leadIn": [
+            "Even though I'm a yujo, I think this work is best suited for those under twenty.",
+            "That so?",
+            "Hm? Kiryu-han, do you prefer older women?",
+            "Hm..."
+          ],
+          "choices": [
+            {
+              "text": "A woman isn't defined by her age.",
+              "points": 2,
+              "nativePoints": 8
+            },
+            {
+              "text": "Nothing beats youth.",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "As long as she's sexy, anything goes.",
+              "points": -2,
+              "nativePoints": -8
+            }
+          ],
+          "best": [
+            1
+          ]
+        },
+        {
+          "nativeGroup": 9,
+          "context": "random",
+          "prompt": "Well, no need to answer if you don't want to.",
+          "leadIn": [
+            "Um... may I ask you something?",
+            "...What is it?",
+            "Kiryu-han... are you single?",
+            "Why are you asking that?",
+            "Meeting here must be fate of some kind. I just wanted to know a little bit about you, Kiryu-han ⑮",
+            "Well, no need to answer if you don't want to."
+          ],
+          "choices": [
+            {
+              "text": "I'm single, but I do have money.",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "Are you by any chance in love with me?",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "Just do your job.",
+              "points": -2,
+              "nativePoints": -8
+            }
+          ],
+          "best": [
+            1
+          ]
+        },
+        {
+          "nativeGroup": 10,
+          "context": "random",
+          "prompt": "Yes. Well, since you requested me, does that mean you like women like me?",
+          "leadIn": [
+            "What kind of women do you like, Kiryu-han?",
+            "Like?",
+            "Yes. Well, since you requested me, does that mean you like women like me?",
+            "Let's see..."
+          ],
+          "choices": [
+            {
+              "text": "Women with beautiful features.",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "Smart women.",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "Charming and seductive women.",
+              "points": -1,
+              "nativePoints": -4
+            }
+          ],
+          "best": [
+            2
+          ]
+        },
+        {
+          "nativeGroup": 11,
+          "context": "random",
+          "prompt": "I don't like men like that, you know. All men just want one thing.",
+          "leadIn": [
+            "Kiryu-han... You've been staring at my chest for a while now...",
+            "Hm?",
+            "I don't like men like that, you know. All men just want one thing.",
+            "N-No..."
+          ],
+          "choices": [
+            {
+              "text": "I was just admiring your kimono.",
+              "points": 2,
+              "nativePoints": 8
+            },
+            {
+              "text": "I was just taking note of your delicate frame.",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "I was just thinking about how delicious it looked.",
+              "points": 0,
+              "nativePoints": 0
+            }
+          ],
+          "best": [
+            1
+          ]
+        },
+        {
+          "nativeGroup": 12,
+          "context": "random",
+          "prompt": "I'd really like to have some, please. Would it be all right if I ordered some?",
+          "leadIn": [
+            "Yumejiya has master chefs gathered from all over the country.",
+            "Is that so...",
+            "The seafood platter is very popular here. It's delicious, and lots of folks order it.",
+            "I see...",
+            "But I've eaten so much of that I'm simply sick of it. Nowadays, I prefer fruits.",
+            "I'd really like to have some, please. Would it be all right if I ordered some?"
+          ],
+          "choices": [
+            {
+              "text": "Order whatever you like.",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "You'll have to save it for next time.",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "Nyotaimori sounds better right now.",
+              "points": -3,
+              "nativePoints": -12
+            }
+          ],
+          "best": [
+            2
+          ]
+        },
+        {
+          "nativeGroup": 13,
+          "context": "random",
+          "prompt": "What about you, Kiryu-han? What would you write?",
+          "leadIn": [
+            "I dabble a bit in calligraphy, you know. Brushstrokes reflect your honest feelings in that very moment.",
+            "Is that so...",
+            "My favorite phrase is \"ichigo ichie.\" It means \"one time, one meeting.\"",
+            "This line of work, I feel exactly that... \"one time, one meeting.\" And whenever I put brush to paper, it's always those words.",
+            "What about you, Kiryu-han? What would you write?",
+            "Let me think..."
+          ],
+          "choices": [
+            {
+              "text": "Choun Bo (Morning Clouds, Evening Rain)",
+              "points": 2,
+              "nativePoints": 8
+            },
+            {
+              "text": "Shiki Soku Ze Ku (Form is Emptiness)",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "Keisei Keikoku (Ruined Castles, Toppled Nations)",
+              "points": -1,
+              "nativePoints": -4
+            }
+          ],
+          "best": [
+            1
+          ]
+        },
+        {
+          "nativeGroup": 14,
+          "context": "random",
+          "prompt": "Sadly, the clientele's changed lately. Those sorts of arts aren't much in demand anymore.",
+          "leadIn": [
+            "Do you have a moment?",
+            "Yeah...",
+            "We yujo are trained in a higher culture than the common folk, you know.",
+            "Waka, haikai, ikebana, sado, the tea ceremony, the shamisen... All that so we can hold our own even in the company of noble guests.",
+            "I see...",
+            "Sadly, the clientele's changed lately. Those sorts of arts aren't much in demand anymore."
+          ],
+          "choices": [
+            {
+              "text": "Why not focus on your sex appeal instead?",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "There's fewer people who appreciate it now.",
+              "points": 2,
+              "nativePoints": 8
+            },
+            {
+              "text": "Why not do something different instead?",
+              "points": -2,
+              "nativePoints": -8
+            }
+          ],
+          "best": [
+            2
+          ]
+        },
+        {
+          "nativeGroup": 15,
+          "context": "random",
+          "prompt": "Yujo like me aren't meant to live anywhere except within the walls of a yukaku.",
+          "leadIn": [
+            "Unless someone buys out our contracts, we can never truly be free, you know.",
+            "That's true...",
+            "And even if we are bought out, will we really find happiness?",
+            "...What do you mean?",
+            "...Even with all our training in the arts, we haven't the faintest clue about running a household.",
+            "No matter how passionate the love between client and yujo is, it is only so because it is forbidden...",
+            "In many cases being bought out is for the woman simply moving from one form of prison to another...",
+            "Yujo like me aren't meant to live anywhere except within the walls of a yukaku."
+          ],
+          "choices": [
+            {
+              "text": "Why not just focus on the present?",
+              "points": -2,
+              "nativePoints": -8
+            },
+            {
+              "text": "You make your own place in the world.",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "I wouldn't let my love worry about that.",
+              "points": 2,
+              "nativePoints": 8
+            }
+          ],
+          "best": [
+            3
+          ]
+        },
+        {
+          "nativeGroup": 16,
+          "context": "random",
+          "prompt": "I don't have any senpai looking out for me here either... I've got no one to lean on here.",
+          "leadIn": [
+            "...*sigh*.",
+            "What's the matter?",
+            "Truth is... some of the other yujo have been treating me poorly...",
+            "...Is that so?",
+            "They're making things difficult for me, saying it's 'cause I'm taking all the guests...",
+            "I don't have any senpai looking out for me here either... I've got no one to lean on here."
+          ],
+          "choices": [
+            {
+              "text": "You can lean on me.",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "You just have to endure it.",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "You might bear some responsibility too.",
+              "points": -2,
+              "nativePoints": -8
+            }
+          ],
+          "best": [
+            1
+          ]
+        },
+        {
+          "nativeGroup": 17,
+          "context": "random",
+          "prompt": "Roses. I'm quite fond of them.",
+          "leadIn": [
+            "I love flowers.",
+            "What kind of flowers do you like?",
+            "Roses. I'm quite fond of them."
+          ],
+          "choices": [
+            {
+              "text": "Their fragrance is very soothing.",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "Their fragrance is rather stirring.",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "They're just like you.",
+              "points": -1,
+              "nativePoints": -4
+            }
+          ],
+          "best": [
+            1
+          ]
+        },
+        {
+          "nativeGroup": 18,
+          "context": "random",
+          "prompt": "Yes. I often hear from other guests that it's delicious.",
+          "leadIn": [
+            "I'd really like to try some shiruko one day.",
+            "Red bean porridge?",
+            "Yes. I often hear from other guests that it's delicious."
+          ],
+          "choices": [
+            {
+              "text": "Eating stuff like that will make you fat.",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "I'll make some for you.",
+              "points": 2,
+              "nativePoints": 8
+            },
+            {
+              "text": "There's something even tastier.",
+              "points": -2,
+              "nativePoints": -8
+            }
+          ],
+          "best": [
+            2
+          ]
+        },
+        {
+          "nativeGroup": 19,
+          "context": "random",
+          "prompt": "Sorry about that... I just had so many appointments lined up, I hardly had a moment to rest.",
+          "leadIn": [
+            "Lately, I've been feeling a bit under the weather, like a cold's coming on...",
+            "Are you all right?",
+            "Sorry about that... I just had so many appointments lined up, I hardly had a moment to rest."
+          ],
+          "choices": [
+            {
+              "text": "You're pushing yourself too hard.",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "Are you sure it's just a cold?",
+              "points": -2,
+              "nativePoints": -8
+            },
+            {
+              "text": "You should just rest here for a while.",
+              "points": 2,
+              "nativePoints": 8
+            }
+          ],
+          "best": [
+            3
+          ]
+        },
+        {
+          "nativeGroup": 20,
+          "context": "random",
+          "prompt": "What would you wish for, Kiryu-han?",
+          "leadIn": [
+            "You know the Inari shrine here in Gion, right?",
+            "Yeah...",
+            "They say wishes made there tend to come true, you know.",
+            "...Is that so?",
+            "Before I started working at this place, I'd always pay a visit to pray my work would go well.",
+            "What would you wish for, Kiryu-han?"
+          ],
+          "choices": [
+            {
+              "text": "I'd wish for peace in the world.",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "I'd wish that my bond with you continues.",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "I don't rely on prayers to the gods.",
+              "points": -1,
+              "nativePoints": -4
+            }
+          ],
+          "best": [
+            2
+          ]
+        },
+        {
+          "nativeGroup": 21,
+          "context": "milestone",
+          "threshold": 11,
+          "prompt": "Whenever I see your face, Kiryu-han... Somehow, deep in my chest, it feels all warm.",
+          "leadIn": [
+            "Truth be told... I've been waiting all this time for you to come, Kiryu-han.",
+            "Heh... Smoothly deceiving a guest, making them feel special... Is that one of your terentekuda tricks?",
+            "T-That's not it at all!",
+            "Whenever I see your face, Kiryu-han... Somehow, deep in my chest, it feels all warm."
+          ],
+          "choices": [
+            {
+              "text": "I feel the same way.",
+              "points": 2,
+              "nativePoints": 8
+            },
+            {
+              "text": "You sure know how to turn a phrase.",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "Are you sick or something?",
+              "points": -3,
+              "nativePoints": -12
+            }
+          ],
+          "best": [
+            1
+          ]
+        },
+        {
+          "nativeGroup": 22,
+          "context": "milestone",
+          "threshold": 16,
+          "prompt": "Now, she works as a yujo at a place called Azamiya, under the name Hinagiku.",
+          "leadIn": [
+            "Kiryu-han... Do you have any siblings?",
+            "Nah...",
+            "I've got a little sister.",
+            "...A sister?",
+            "Not from my mother, but... She's a sister born when I was about four.",
+            "I see...",
+            "Now, she works as a yujo at a place called Azamiya, under the name Hinagiku."
+          ],
+          "choices": [
+            {
+              "text": "You're making me jealous.",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "Both sisters being yujo is something else.",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "Sounds like there's a story there.",
+              "points": 2,
+              "nativePoints": 8
+            }
+          ],
+          "best": [
+            3
+          ]
+        },
+        {
+          "nativeGroup": 23,
+          "context": "milestone",
+          "threshold": 20,
+          "prompt": "How do you see me? Please, answer me honestly.",
+          "leadIn": [
+            "Kiryu-han... Can I have just a moment?",
+            "Sure.",
+            "Kiryu-han... Do you really care for me?",
+            "...What do you mean?",
+            "How do you see me? Please, answer me honestly."
+          ],
+          "choices": [
+            {
+              "text": "As a yujo, I think you're the finest.",
+              "points": -2,
+              "nativePoints": -8
+            },
+            {
+              "text": "To be honest, I want you to be my woman.",
+              "points": 2,
+              "nativePoints": 8
+            },
+            {
+              "text": "You're a woman who costs a lot of money.",
+              "points": -3,
+              "nativePoints": -12
+            }
+          ],
+          "best": [
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Momochika",
+      "venue": "Yumejiya",
+      "source": "uid004e0003.msg",
+      "greetings": [
+        {
+          "context": "first-visit",
+          "text": "Nice to meet you, I'm Momochika."
+        },
+        {
+          "context": "return-visit",
+          "text": "Ah, you're back again ⑮"
+        },
+        {
+          "context": "return-visit",
+          "text": "Did you come just to see me?"
+        },
+        {
+          "context": "return-visit",
+          "text": "I'm lookin' forward to another great time ⑮"
+        }
+      ],
+      "topics": [
+        {
+          "nativeGroup": 0,
+          "context": "random",
+          "prompt": "You look pretty strong too... I have a thing for strong men, y'know... ⑮",
+          "leadIn": [
+            "Kiryu-han, you're so handsome and manly.",
+            "You look pretty strong too... I have a thing for strong men, y'know... ⑮"
+          ],
+          "choices": [
+            {
+              "text": "You're looking quite beautiful yourself, Momochika.",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "Is that how you lure your customers in?",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "My strength isn't the only thing that's impressive.",
+              "points": 1,
+              "nativePoints": 4
+            }
+          ],
+          "best": [
+            3
+          ]
+        },
+        {
+          "nativeGroup": 1,
+          "context": "random",
+          "prompt": "There's nothing quite like the thrill of making a big bet ⑮",
+          "leadIn": [
+            "Y'know, I absolutely love gambling.",
+            "I put all the money I earn here straight into the betting pots.",
+            "...Are you sure that's a good idea?",
+            "It's fine. I'm just after the thrill, y'know?",
+            "There's nothing quite like the thrill of making a big bet ⑮"
+          ],
+          "choices": [
+            {
+              "text": "You've got a serious problem.",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "Gambling really is thrilling.",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "I'd love to feel a thrill right now.",
+              "points": 1,
+              "nativePoints": 4
+            }
+          ],
+          "best": [
+            3
+          ]
+        },
+        {
+          "nativeGroup": 2,
+          "context": "random",
+          "prompt": "Kiryu-han... Which part of a woman's body do you like best?",
+          "leadIn": [
+            "Hey, can I ask you something?",
+            "Go ahead...",
+            "I'm pretty confident in my charms, y'know.",
+            "...Is that so?",
+            "Kiryu-han... Which part of a woman's body do you like best?",
+            "Hmm..."
+          ],
+          "choices": [
+            {
+              "text": "Full, ample breasts.",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "A toned butt.",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "I like catching a glimpse of a woman's thigh.",
+              "points": -1,
+              "nativePoints": -4
+            }
+          ],
+          "best": [
+            1
+          ]
+        },
+        {
+          "nativeGroup": 3,
+          "context": "random",
+          "prompt": "Hehe... ⑮ Don't play dumb. I mean... that way ⑮",
+          "leadIn": [
+            "Are you strong at night too, Kiryu-han?",
+            "...At night? ...What do you mean?",
+            "Hehe... ⑮ Don't play dumb. I mean... that way ⑮"
+          ],
+          "choices": [
+            {
+              "text": "Believe it or not, I'm pretty confident in that area.",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "It depends who I'm with.",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "What do you mean by \"that way\"?",
+              "points": -1,
+              "nativePoints": -4
+            }
+          ],
+          "best": [
+            2
+          ]
+        },
+        {
+          "nativeGroup": 4,
+          "context": "random",
+          "prompt": "Kiryu-han, how do you feel about cheating?",
+          "leadIn": [
+            "Hey, can I ask you something?",
+            "Sure...",
+            "Kiryu-han, how do you feel about cheating?",
+            "Cheating? Well..."
+          ],
+          "choices": [
+            {
+              "text": "It's shameful.",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "It's fine as long as nobody gets hurt.",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "If it's serious, it doesn't matter.",
+              "points": 1,
+              "nativePoints": 4
+            }
+          ],
+          "best": [
+            3
+          ]
+        },
+        {
+          "nativeGroup": 5,
+          "context": "random",
+          "prompt": "That's right ⑮ The spot where ya feel the most sensation, y'know?",
+          "leadIn": [
+            "Hehehe ⑮ Where do you feel the most sensitive, Kiryu-han?",
+            "The most sensitive?",
+            "That's right ⑮ The spot where ya feel the most sensation, y'know?"
+          ],
+          "choices": [
+            {
+              "text": "Earlobes",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "Soles",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "That goes without saying, doesn't it?",
+              "points": -2,
+              "nativePoints": -8
+            }
+          ],
+          "best": [
+            1
+          ]
+        },
+        {
+          "nativeGroup": 6,
+          "context": "random",
+          "prompt": "Can you guess why I did it?",
+          "leadIn": [
+            "Mind if I ask you something?",
+            "Sure...",
+            "I willingly became a yujo and made it this far all by myself.",
+            "It's not like I did it to pay off a debt or anything.",
+            "...That's unusual.",
+            "Can you guess why I did it?",
+            "Hm..."
+          ],
+          "choices": [
+            {
+              "text": "Because it's profitable?",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "Because you learn the arts?",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "Because you can't get enough of men?",
+              "points": 1,
+              "nativePoints": 4
+            }
+          ],
+          "best": [
+            3
+          ]
+        },
+        {
+          "nativeGroup": 7,
+          "context": "random",
+          "prompt": "Lately, more and more young yujo have been arriving here, but where's the fun in talking to girls who don't even have experience with men?",
+          "leadIn": [
+            "Hey, can I ask you something?",
+            "Be my guest...",
+            "Lately, more and more young yujo have been arriving here, but where's the fun in talking to girls who don't even have experience with men?"
+          ],
+          "choices": [
+            {
+              "text": "I don't understand the appeal.",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "They have a certain charm that only comes with youth.",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "Are you just bitter because they're younger that you?",
+              "points": -1,
+              "nativePoints": -4
+            }
+          ],
+          "best": [
+            1
+          ]
+        },
+        {
+          "nativeGroup": 8,
+          "context": "random",
+          "prompt": "Hm... I wonder if you're horse-like down there too ⑮",
+          "leadIn": [
+            "By the way, Kiryu-han... Has anyone ever told you that you have a face like a horse?",
+            "...Hey. That's below the belt, isn't it?",
+            "Hm... I wonder if you're horse-like down there too ⑮"
+          ],
+          "choices": [
+            {
+              "text": "It's no different from anyone else's.",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "They call me \"The Wild Horse of Gion.\"",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "It's like a daikon that's been sprinkled with salt.",
+              "points": -1,
+              "nativePoints": -4
+            }
+          ],
+          "best": [
+            2
+          ]
+        },
+        {
+          "nativeGroup": 9,
+          "context": "random",
+          "prompt": "Look... My pulse is already rising...",
+          "leadIn": [
+            "By the way, I have a serious heart condition...",
+            "...Are you serious?",
+            "Whenever I'm looking at a man I like, my heart starts racing uncontrollably until I feel like my heart is going to burst.",
+            "Look... My pulse is already rising..."
+          ],
+          "choices": [
+            {
+              "text": "You should call a doctor.",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "Sounds like a psychological issue.",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "I can't stand cheap tricks like that.",
+              "points": 0,
+              "nativePoints": 0
+            }
+          ],
+          "best": [
+            1
+          ]
+        },
+        {
+          "nativeGroup": 10,
+          "context": "random",
+          "prompt": "I wish there was some easy way to become smart...",
+          "leadIn": [
+            "Mind if I ask you something?",
+            "What's up?",
+            "I've been hopeless at studying ever since I was a child.",
+            "Reading, writing, arithmetic... I'm no good at any of them...",
+            "I wish there was some easy way to become smart..."
+          ],
+          "choices": [
+            {
+              "text": "It wouldn't do you much good.",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "It's just a matter of putting in the effort every day.",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "I'll give you private lessons.",
+              "points": 1,
+              "nativePoints": 4
+            }
+          ],
+          "best": [
+            3
+          ]
+        },
+        {
+          "nativeGroup": 11,
+          "context": "random",
+          "prompt": "I think I'd like to have my body illustrated in shunga, y'know.",
+          "leadIn": [
+            "Kiryu-han, do you know what shunga is?",
+            "...Yeah.",
+            "I think I'd like to have my body illustrated in shunga, y'know.",
+            "Is that so..."
+          ],
+          "choices": [
+            {
+              "text": "You must be really confident in your body.",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "That would make me a little jealous.",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "Why don't I paint it for you?",
+              "points": -1,
+              "nativePoints": -4
+            }
+          ],
+          "best": [
+            2
+          ]
+        },
+        {
+          "nativeGroup": 12,
+          "context": "random",
+          "prompt": "He grabbed me from behind... He tore my kimono off me...",
+          "leadIn": [
+            "Hey, can I ask you something?",
+            "All right...",
+            "The other day, I was attacked by some weirdo on my way home...",
+            "...What?",
+            "He grabbed me from behind... He tore my kimono off me..."
+          ],
+          "choices": [
+            {
+              "text": "I'm going to beat the crap out of him.",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "Isn't that your fault for walking around dressed like that?",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "Tell me the rest of the story!",
+              "points": -1,
+              "nativePoints": -4
+            }
+          ],
+          "best": [
+            1
+          ]
+        },
+        {
+          "nativeGroup": 13,
+          "context": "random",
+          "prompt": "What kind of things do you enjoy, Kiryu-han?",
+          "leadIn": [
+            "So... I was talking with a guest the other day, and I told them I think Matsuba Sumo is the most fun ever.",
+            "...Matsuba Sumo?",
+            "Yes. Once the \"pine needles\" interlock, the true battle begins ⑮",
+            "What kind of things do you enjoy, Kiryu-han?",
+            "Let's see..."
+          ],
+          "choices": [
+            {
+              "text": "Otedama (Juggling)",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "Matsuba Sumo (Pine Needle Sumo)",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "Zui Zui Zukkorobashi (Eeny meeny miney mo)",
+              "points": -1,
+              "nativePoints": -4
+            }
+          ],
+          "best": [
+            2
+          ]
+        },
+        {
+          "nativeGroup": 14,
+          "context": "random",
+          "prompt": "Even if we were to scream... Nobody would hear us ⑮",
+          "leadIn": [
+            "Kiryu-han... It's just the two of us here.",
+            "Yeah...",
+            "No one to disturb us... We have the whole place to ourselves...",
+            "Even if we were to scream... Nobody would hear us ⑮"
+          ],
+          "choices": [
+            {
+              "text": "It's the perfect place to meditate.",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "Want me to make you scream?",
+              "points": 2,
+              "nativePoints": 8
+            },
+            {
+              "text": "What are you planning?",
+              "points": -2,
+              "nativePoints": -8
+            }
+          ],
+          "best": [
+            2
+          ]
+        },
+        {
+          "nativeGroup": 15,
+          "context": "random",
+          "prompt": "How do you seduce women, Kiryu-han?",
+          "leadIn": [
+            "My way of seducing a man is just to touch him.",
+            "Just by touching them and looking into their eyes, most men fall for me ⑮",
+            "I can understand why...",
+            "How do you seduce women, Kiryu-han?",
+            "Hm..."
+          ],
+          "choices": [
+            {
+              "text": "I exchange letters with them.",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "I shower them with gifts.",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "I pin them down and see how they react.",
+              "points": 1,
+              "nativePoints": 4
+            }
+          ],
+          "best": [
+            3
+          ]
+        },
+        {
+          "nativeGroup": 16,
+          "context": "random",
+          "prompt": "...What do you think he did to apologize?",
+          "leadIn": [
+            "Hey, can I ask you something?",
+            "Go ahead...",
+            "If a man gets involved with a woman who isn't his regular yujo, the rule here is he has to apologize.",
+            "Well, I'm not one to get hung up over minor things like that...",
+            "The other day, a customer who got caught cheating had to apologize to a yujo.",
+            "I see...",
+            "...What do you think he did to apologize?"
+          ],
+          "choices": [
+            {
+              "text": "Knelt for forgiveness.",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "Cut off his topknot.",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "Castration.",
+              "points": 0,
+              "nativePoints": 0
+            }
+          ],
+          "best": [
+            2
+          ]
+        },
+        {
+          "nativeGroup": 17,
+          "context": "random",
+          "prompt": "Are you a strong drinker?",
+          "leadIn": [
+            "Um... Come to think of it, I haven't seen you drunk yet.",
+            "Are you a strong drinker?",
+            "Hm..."
+          ],
+          "choices": [
+            {
+              "text": "Actually, I'm about to get totally wasted.",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "I'm starting to feel a little tipsy.",
+              "points": 0,
+              "nativePoints": 0,
+              "effects": [
+                "Alcohol is served and can increase intoxication."
+              ],
+              "drinkGroup": 63,
+              "drinkPoints": 1,
+              "nativeDrinkPoints": 4
+            },
+            {
+              "text": "It's like drinking water to me.",
+              "points": 0,
+              "nativePoints": 0,
+              "effects": [
+                "Alcohol is served and can increase intoxication."
+              ],
+              "drinkGroup": 64,
+              "drinkPoints": 0,
+              "nativeDrinkPoints": 0
+            }
+          ],
+          "best": [
+            2
+          ],
+          "bestWithoutDrink": [
+            1
+          ]
+        },
+        {
+          "nativeGroup": 18,
+          "context": "random",
+          "prompt": "That's why I get to eat my favorite eel every day~",
+          "leadIn": [
+            "I mightn't look it, but I'm a big eater. No matter how much I eat, I don't gain a single pound.",
+            "Is that so...?",
+            "That's why I get to eat my favorite eel every day~"
+          ],
+          "choices": [
+            {
+              "text": "Doesn't that get boring?",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "Is there something in your stomach?",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "You must have plenty of \"energy.\"",
+              "points": 1,
+              "nativePoints": 4
+            }
+          ],
+          "best": [
+            3
+          ]
+        },
+        {
+          "nativeGroup": 19,
+          "context": "random",
+          "prompt": "I wonder when will a man finally come along and buy my contract...",
+          "leadIn": [
+            "Um...",
+            "...Is something wrong?",
+            "I've been playing around with men for long enough, it's about time I started thinking about my future.",
+            "I wonder when will a man finally come along and buy my contract..."
+          ],
+          "choices": [
+            {
+              "text": "Did you really think I was going to pay up?",
+              "points": -5,
+              "nativePoints": -20
+            },
+            {
+              "text": "You must get plenty of offers of redemption, right?",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "Forget about being bought out.",
+              "points": 2,
+              "nativePoints": 8
+            }
+          ],
+          "best": [
+            3
+          ]
+        },
+        {
+          "nativeGroup": 20,
+          "context": "random",
+          "prompt": "Kiryu-han... What's your dream for the future?",
+          "leadIn": [
+            "Um... Do you mind if I ask you something?",
+            "Go ahead...",
+            "Kiryu-han... What's your dream for the future?",
+            "Dream for the future, huh..."
+          ],
+          "choices": [
+            {
+              "text": "Master the Way of the Warrior",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "I want to master ink wash painting.",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "A quiet retirement in the countryside.",
+              "points": -1,
+              "nativePoints": -4
+            }
+          ],
+          "best": [
+            1
+          ]
+        },
+        {
+          "nativeGroup": 21,
+          "context": "milestone",
+          "threshold": 11,
+          "prompt": "I have no family... There's nobody I can depend on...",
+          "leadIn": [
+            "Kiryu-han...... Mind if I ask you something?",
+            "What's up?",
+            "I know I'm in a line of work where I sell my charms, but the truth is, I'm so lonely...",
+            "I have no family... There's nobody I can depend on..."
+          ],
+          "choices": [
+            {
+              "text": "You can depend on me.",
+              "points": 3,
+              "nativePoints": 12
+            },
+            {
+              "text": "Your charm is impressive.",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "You've got all your customers, haven't you?",
+              "points": 0,
+              "nativePoints": 0
+            }
+          ],
+          "best": [
+            1
+          ]
+        },
+        {
+          "nativeGroup": 22,
+          "context": "milestone",
+          "threshold": 16,
+          "prompt": "Well then, how about we go together sometime? I know a place with pretty good payouts.",
+          "leadIn": [
+            "Um... Kiryu-han, have you ever tried gambling?",
+            "Yeah... What about it?",
+            "Well then, how about we go together sometime? I know a place with pretty good payouts."
+          ],
+          "choices": [
+            {
+              "text": "I don't like gambling.",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "...I'd end up causing trouble for the gambling den.",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "Are you in bed with the gambling den?",
+              "points": -3,
+              "nativePoints": -12
+            }
+          ],
+          "best": [
+            2
+          ]
+        },
+        {
+          "nativeGroup": 23,
+          "context": "milestone",
+          "threshold": 20,
+          "prompt": "Even though I'm a debt-ridden woman... Will you still love me?",
+          "leadIn": [
+            "Um... Do you mind if I ask you something?",
+            "Go ahead...",
+            "This is really embarrassing to admit, but... I'm in serious debt.",
+            "...Is that so?",
+            "I was tricked by some rather nasty loan sharks, you see...",
+            "Even though I'm a debt-ridden woman... Will you still love me?"
+          ],
+          "choices": [
+            {
+              "text": "Debt doesn't mean anything to me.",
+              "points": 3,
+              "nativePoints": 12
+            },
+            {
+              "text": "It depends how much you owe.",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "Of course not.",
+              "points": -2,
+              "nativePoints": -8
+            }
+          ],
+          "best": [
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Hinagiku",
+      "venue": "Azamiya",
+      "source": "uid004e000c.msg",
+      "greetings": [
+        {
+          "context": "first-visit",
+          "text": "Nice to meet you, I'm Hinagiku!"
+        },
+        {
+          "context": "return-visit",
+          "text": "Ah! You've come to see me ⑮"
+        },
+        {
+          "context": "return-visit",
+          "text": "Mister, thank you so much."
+        },
+        {
+          "context": "return-visit",
+          "text": "Let's have a great time today~⑮"
+        }
+      ],
+      "topics": [
+        {
+          "nativeGroup": 0,
+          "context": "random",
+          "prompt": "Then answer me honestly. What do you think of me?",
+          "leadIn": [
+            "Misteeer.",
+            "What is it?",
+            "Truth is, you think of me as a kid, right? Makin' fun of me in your heart?",
+            "N-Not at all.",
+            "Then answer me honestly. What do you think of me?"
+          ],
+          "choices": [
+            {
+              "text": "You're still a kid.",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "Your body's an adult's.",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "You're beautiful for your age.",
+              "points": 0,
+              "nativePoints": 0
+            }
+          ],
+          "best": [
+            1
+          ]
+        },
+        {
+          "nativeGroup": 1,
+          "context": "random",
+          "prompt": "My dream for the future is to have lots and lots of children. I want to build a happy home surrounded by lots of kids.",
+          "leadIn": [
+            "Listen! Listen!",
+            "My dream for the future is to have lots and lots of children. I want to build a happy home surrounded by lots of kids.",
+            "I see..."
+          ],
+          "choices": [
+            {
+              "text": "Isn't it a bit too early to be thinking about that?",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "That would hard to maintain financially.",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "I'm worried for your future husband.",
+              "points": 1,
+              "nativePoints": 4
+            }
+          ],
+          "best": [
+            3
+          ]
+        },
+        {
+          "nativeGroup": 2,
+          "context": "random",
+          "prompt": "I could live on konpeito alone for a lifetime, I tell ya. Mister, what's your favorite thing?",
+          "leadIn": [
+            "Out of all foods, I love konpeito the most.",
+            "It's sweet and delicious, and they're shaped like cute little stars.",
+            "I could live on konpeito alone for a lifetime, I tell ya. Mister, what's your favorite thing?",
+            "Let's see..."
+          ],
+          "choices": [
+            {
+              "text": "I love sake.",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "I love money.",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "I love women.",
+              "points": -1,
+              "nativePoints": -4
+            }
+          ],
+          "best": [
+            2
+          ]
+        },
+        {
+          "nativeGroup": 3,
+          "context": "random",
+          "prompt": "Mister, if you could be reborn, what would you want to be?",
+          "leadIn": [
+            "Listen! Listen!",
+            "I love cats ⑮ If I could be reborn, I'd definitely want to be a cat ⑮",
+            "Mister, if you could be reborn, what would you want to be?",
+            "Let me think..."
+          ],
+          "choices": [
+            {
+              "text": "Cat",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "Bird",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "Woman",
+              "points": 1,
+              "nativePoints": 4
+            }
+          ],
+          "best": [
+            3
+          ]
+        },
+        {
+          "nativeGroup": 4,
+          "context": "random",
+          "prompt": "Mister, do you have any special skills?",
+          "leadIn": [
+            "I'm... really good at juggling!",
+            "I can juggle up to ten balls at once!",
+            "Wow, that's amazing.",
+            "Mister, do you have any special skills?",
+            "Let's see..."
+          ],
+          "choices": [
+            {
+              "text": "Chugging drinks.",
+              "points": 0,
+              "nativePoints": 0,
+              "effects": [
+                "Alcohol is served and can increase intoxication."
+              ],
+              "drinkGroup": 63,
+              "drinkPoints": 3,
+              "nativeDrinkPoints": 12
+            },
+            {
+              "text": "Spinning plates.",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "Belly dancing.",
+              "points": 0,
+              "nativePoints": 0
+            }
+          ],
+          "best": [
+            1
+          ],
+          "bestWithoutDrink": [
+            3
+          ]
+        },
+        {
+          "nativeGroup": 5,
+          "context": "random",
+          "prompt": "But I'm always getting scolded by my teacher... I wonder why she gets so angry?",
+          "leadIn": [
+            "And so... I practice dancing every morning.",
+            "But I'm always getting scolded by my teacher... I wonder why she gets so angry?",
+            "That's because..."
+          ],
+          "choices": [
+            {
+              "text": "Your dancing is terrible.",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "Your attitude is bad.",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "She's jealous of your youth.",
+              "points": 0,
+              "nativePoints": 0
+            }
+          ],
+          "best": [
+            1
+          ]
+        },
+        {
+          "nativeGroup": 6,
+          "context": "random",
+          "prompt": "Mister, why did you choose me?",
+          "leadIn": [
+            "Can I ask you somethin'?",
+            "Sure...",
+            "Mister, why did you choose me?",
+            "Let me think..."
+          ],
+          "choices": [
+            {
+              "text": "You seemed like a cheerful kid.",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "I wanted a little sister.",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "You seemed the cheapest.",
+              "points": -1,
+              "nativePoints": -4
+            }
+          ],
+          "best": [
+            2
+          ]
+        },
+        {
+          "nativeGroup": 7,
+          "context": "random",
+          "prompt": "I hear it a lot from men, but what does it mean?",
+          "leadIn": [
+            "Um... Can I ask you somethin'?",
+            "Sure...",
+            "What does getting your tip wet mean?",
+            "What?",
+            "I hear it a lot from men, but what does it mean?",
+            "T-That's..."
+          ],
+          "choices": [
+            {
+              "text": "It's when you use a brush for the first time.",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "It's one of the customs in calligraphy.",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "It's a rite of passage from boyhood to manhood.",
+              "points": 0,
+              "nativePoints": 0
+            }
+          ],
+          "best": [
+            1
+          ]
+        },
+        {
+          "nativeGroup": 8,
+          "context": "random",
+          "prompt": "I wish I could just wear my underwear.",
+          "leadIn": [
+            "Ugh! This kimono is so heavy, I hate it!",
+            "What's wrong?",
+            "It's too heavy for me. And it takes me hours to put on...",
+            "I wish I could just wear my underwear."
+          ],
+          "choices": [
+            {
+              "text": "Wearing a kimono well is part of a yujo's elegance.",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "It's amazing you can wear something so heavy all the time.",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "I think just the underwear is fine too.",
+              "points": -1,
+              "nativePoints": -4
+            }
+          ],
+          "best": [
+            2
+          ]
+        },
+        {
+          "nativeGroup": 9,
+          "context": "random",
+          "prompt": "And since it's a different place, she's technically my rival.",
+          "leadIn": [
+            "Um... I have an older sister.",
+            "That so...?",
+            "She's a yujo too. She works at a different place.",
+            "I see...",
+            "And since it's a different place, she's technically my rival."
+          ],
+          "choices": [
+            {
+              "text": "You should introduce me to her.",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "Who's better at the job?",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "I'd like to see her sometime.",
+              "points": 1,
+              "nativePoints": 4
+            }
+          ],
+          "best": [
+            3
+          ]
+        },
+        {
+          "nativeGroup": 10,
+          "context": "random",
+          "prompt": "I don't understand either... The other day, there was a needle in my kimono, and I hurt my finger...",
+          "leadIn": [
+            "Can I ask you somethin'?",
+            "Sure...",
+            "Actually... I'm being bullied by the other yujo.",
+            "Hm? Why's that?",
+            "I don't understand either... The other day, there was a needle in my kimono, and I hurt my finger..."
+          ],
+          "choices": [
+            {
+              "text": "You have to endure it.",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "Where are the yujo who bullied you right now?",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "Why not get back at them?",
+              "points": 0,
+              "nativePoints": 0
+            }
+          ],
+          "best": [
+            1
+          ]
+        },
+        {
+          "nativeGroup": 11,
+          "context": "random",
+          "prompt": "Mister, can you tell me?",
+          "leadIn": [
+            "I've lived in this town since she was little, so I'm really curious what life is like for girls my age elsewhere.",
+            "Hm...",
+            "Mister, can you tell me?"
+          ],
+          "choices": [
+            {
+              "text": "I don't know about that stuff.",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "It's a much simpler life than here.",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "I think they just help out at home.",
+              "points": -1,
+              "nativePoints": -4
+            }
+          ],
+          "best": [
+            2
+          ]
+        },
+        {
+          "nativeGroup": 12,
+          "context": "random",
+          "prompt": "Well, I figured you were the type who liked them bigger. I wonder what I should do to make them grow...",
+          "leadIn": [
+            "Um... I'd like to have bigger breasts.",
+            "...Where's this coming from?",
+            "Well, I figured you were the type who liked them bigger. I wonder what I should do to make them grow..."
+          ],
+          "choices": [
+            {
+              "text": "You should try massaging them.",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "Maybe you should eat more.",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "I prefer small cherries.",
+              "points": -1,
+              "nativePoints": -4
+            }
+          ],
+          "best": [
+            2
+          ]
+        },
+        {
+          "nativeGroup": 13,
+          "context": "random",
+          "prompt": "I've heard that there are rabbits living on the moon... Is that true?",
+          "leadIn": [
+            "Speaking of autumn, the moon is so beautiful now...",
+            "Yeah...",
+            "I've heard that there are rabbits living on the moon... Is that true?"
+          ],
+          "choices": [
+            {
+              "text": "It's true.",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "That can't be it.",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "It's not rabbits, people live there.",
+              "points": 1,
+              "nativePoints": 4
+            }
+          ],
+          "best": [
+            3
+          ]
+        },
+        {
+          "nativeGroup": 14,
+          "context": "random",
+          "prompt": "They say kitsune spirits appear there at the hour of the ox. I've never seen a spirit, so I want to see one.",
+          "leadIn": [
+            "Listen! Listen!",
+            "What's wrong?",
+            "Mister, have you ever been to the Gion Inari Shrine?",
+            "Yeah...",
+            "They say kitsune spirits appear there at the hour of the ox. I've never seen a spirit, so I want to see one."
+          ],
+          "choices": [
+            {
+              "text": "You should bring some fried tofu.",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "The spirits are right here.",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "There's no such thing as ghosts.",
+              "points": -1,
+              "nativePoints": -4
+            }
+          ],
+          "best": [
+            1
+          ]
+        },
+        {
+          "nativeGroup": 15,
+          "context": "random",
+          "prompt": "But the okami scolds me if I don't learn, so it's a problem.",
+          "leadIn": [
+            "I... really hate studying.",
+            "Every morning a teacher comes to teach me reading, writing and arithmetic. It's so boring. I hate it.",
+            "But the okami scolds me if I don't learn, so it's a problem."
+          ],
+          "choices": [
+            {
+              "text": "Studying isn't necessary.",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "It's essential in life.",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "You should try to like studying itself.",
+              "points": 1,
+              "nativePoints": 4
+            }
+          ],
+          "best": [
+            3
+          ]
+        },
+        {
+          "nativeGroup": 16,
+          "context": "random",
+          "prompt": "The food here is good, but my cookin' is even better.",
+          "leadIn": [
+            "Listen! Listen!",
+            "I mightn't look it, but I'm good at cookin'!",
+            "Oh... that's impressive.",
+            "The food here is good, but my cookin' is even better."
+          ],
+          "choices": [
+            {
+              "text": "You should let me try it sometime.",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "What kind of cooking are you good at?",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "That's taking it a bit too far.",
+              "points": -1,
+              "nativePoints": -4
+            }
+          ],
+          "best": [
+            1
+          ]
+        },
+        {
+          "nativeGroup": 17,
+          "context": "random",
+          "prompt": "Can I ask you something? Mister, are you a strong drinker?",
+          "leadIn": [
+            "Can I ask you something? Mister, are you a strong drinker?",
+            "Let me think..."
+          ],
+          "choices": [
+            {
+              "text": "Liquor is just like sugar water to me.",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "Not particularly strong or weak.",
+              "points": 0,
+              "nativePoints": 0,
+              "effects": [
+                "Alcohol is served and can increase intoxication."
+              ],
+              "drinkGroup": 64,
+              "drinkPoints": 3,
+              "nativeDrinkPoints": 12
+            },
+            {
+              "text": "I'm a lightweight.",
+              "points": -1,
+              "nativePoints": -4
+            }
+          ],
+          "best": [
+            2
+          ],
+          "bestWithoutDrink": [
+            1
+          ]
+        },
+        {
+          "nativeGroup": 18,
+          "context": "random",
+          "prompt": "Yeah. Can I order something?",
+          "leadIn": [
+            "*sigh*... You know, I'm getting a bit hungry.",
+            "Hm? You're hungry?",
+            "Yeah. Can I order something?"
+          ],
+          "choices": [
+            {
+              "text": "Order whatever you like.",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "I'm not hungry.",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "Isn't that a bit too pushy?",
+              "points": 0,
+              "nativePoints": 0
+            }
+          ],
+          "best": [
+            1
+          ]
+        },
+        {
+          "nativeGroup": 19,
+          "context": "random",
+          "prompt": "They say they're huge, strong, hairy, and very white...",
+          "leadIn": [
+            "Um... Mister, have you ever seen a foreigner?",
+            "A foreigner?",
+            "Yeah. I'd like to see one, just once.",
+            "They say they're huge, strong, hairy, and very white..."
+          ],
+          "choices": [
+            {
+              "text": "That's wrong.",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "You shouldn't get too close.",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "What would you do even if you saw one?",
+              "points": 1,
+              "nativePoints": 4
+            }
+          ],
+          "best": [
+            3
+          ]
+        },
+        {
+          "nativeGroup": 20,
+          "context": "random",
+          "prompt": "Yes. I've hardly slept at all recently.",
+          "leadIn": [
+            "Ugh, I have so many things to do at the moment. It's becomin' a real problem...",
+            "...Busy, are you?",
+            "Yes. I've hardly slept at all recently.",
+            "I see..."
+          ],
+          "choices": [
+            {
+              "text": "Why not sleep here?",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "I'll keep you company while you sleep.",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "Why not work less?",
+              "points": 0,
+              "nativePoints": 0
+            }
+          ],
+          "best": [
+            1
+          ]
+        },
+        {
+          "nativeGroup": 21,
+          "context": "milestone",
+          "threshold": 11,
+          "prompt": "I want to become a tayu and surpass my mother someday.",
+          "leadIn": [
+            "Mister... Can you hear me out?",
+            "What's wrong?",
+            "My mother, who passed away, was the top tayu in this town.",
+            "I want to become a tayu and surpass my mother someday."
+          ],
+          "choices": [
+            {
+              "text": "I'm sure you can, Hinagiku.",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "You don't need to rush things.",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "You shouldn't become a tayu.",
+              "points": -1,
+              "nativePoints": -4
+            }
+          ],
+          "best": [
+            1
+          ]
+        },
+        {
+          "nativeGroup": 22,
+          "context": "milestone",
+          "threshold": 16,
+          "prompt": "Mister... Do you see me as a woman...?",
+          "leadIn": [
+            "Um... Thank you so much for always requesting me, mister.",
+            "What's this all of a sudden?",
+            "Mister... Do you see me as a woman...?"
+          ],
+          "choices": [
+            {
+              "text": "I see you as a cute little sister.",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "I see you as a woman.",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "I see you as my mother.",
+              "points": -1,
+              "nativePoints": -4
+            }
+          ],
+          "best": [
+            2
+          ]
+        },
+        {
+          "nativeGroup": 23,
+          "context": "milestone",
+          "threshold": 20,
+          "prompt": "If I looked more mature, wouldn't it be more fitting for us to be together?",
+          "leadIn": [
+            "*sigh*... I just want to look more mature...",
+            "What's wrong?",
+            "If I looked more mature, wouldn't it be more fitting for us to be together?"
+          ],
+          "choices": [
+            {
+              "text": "You're already mature enough.",
+              "points": 3,
+              "nativePoints": 12
+            },
+            {
+              "text": "You're like a daughter.",
+              "points": -3,
+              "nativePoints": -12
+            },
+            {
+              "text": "You're fine as you are.",
+              "points": 0,
+              "nativePoints": 0
+            }
+          ],
+          "best": [
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Hanamaru",
+      "venue": "Azamiya",
+      "source": "uid004e000d.msg",
+      "greetings": [
+        {
+          "context": "first-visit",
+          "text": "Nice to meet ya, I'm Hanamaru!"
+        },
+        {
+          "context": "return-visit",
+          "text": "Ya came to see me."
+        },
+        {
+          "context": "return-visit",
+          "text": "Ya came to visit me."
+        },
+        {
+          "context": "return-visit",
+          "text": "Shall we enjoy ourselves again today?"
+        }
+      ],
+      "topics": [
+        {
+          "nativeGroup": 0,
+          "context": "random",
+          "prompt": "Kiryu-han, why did ya choose me?",
+          "leadIn": [
+            "Um...",
+            "Yeah?",
+            "Kiryu-han, why did ya choose me?",
+            "Let's see..."
+          ],
+          "choices": [
+            {
+              "text": "You're the prettiest.",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "You looked the most unique.",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "Anyone would have.",
+              "points": -1,
+              "nativePoints": -4
+            }
+          ],
+          "best": [
+            2
+          ]
+        },
+        {
+          "nativeGroup": 1,
+          "context": "random",
+          "prompt": "Don't you think it's awful, callin' a young maiden that?",
+          "leadIn": [
+            "Y'know, customers often tell me I seem like an old-timer.",
+            "Don't you think it's awful, callin' a young maiden that?"
+          ],
+          "choices": [
+            {
+              "text": "That's a bit much.",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "It's a form of affection.",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "A young maiden?",
+              "points": -1,
+              "nativePoints": -4
+            }
+          ],
+          "best": [
+            2
+          ]
+        },
+        {
+          "nativeGroup": 2,
+          "context": "random",
+          "prompt": "Your scent... You kinda smell like blood.",
+          "leadIn": [
+            "Say... Kiryu-han, are ya... involved in some dangerous work?",
+            "...Dangerous work? What do you mean?",
+            "Your scent... You kinda smell like blood."
+          ],
+          "choices": [
+            {
+              "text": "I've got a pretty bad injury.",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "I haven't bathed in a while.",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "Get close, and you might get hurt.",
+              "points": 0,
+              "nativePoints": 0
+            }
+          ],
+          "best": [
+            1
+          ]
+        },
+        {
+          "nativeGroup": 3,
+          "context": "random",
+          "prompt": "Ya totally fell for it! ⑮",
+          "leadIn": [
+            "Huh?",
+            "Kiryu-han, you've got a nose hair stickin' out.",
+            "...What?",
+            "Ahahahahaha...",
+            "Ya totally fell for it! ⑮"
+          ],
+          "choices": [
+            {
+              "text": "Fell for what?",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "You've got one sticking out too.",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "Do you have a death wish?",
+              "points": -1,
+              "nativePoints": -4
+            }
+          ],
+          "best": [
+            2
+          ]
+        },
+        {
+          "nativeGroup": 4,
+          "context": "random",
+          "prompt": "I believe a man's worth is measured by his ability to earn money. If you have enough money, you can buy anything.",
+          "leadIn": [
+            "Um...",
+            "What is it?",
+            "I believe a man's worth is measured by his ability to earn money. If you have enough money, you can buy anything."
+          ],
+          "choices": [
+            {
+              "text": "That's true.",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "How much would buying you cost?",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "There are things money can't buy.",
+              "points": 0,
+              "nativePoints": 0
+            }
+          ],
+          "best": [
+            2
+          ]
+        },
+        {
+          "nativeGroup": 5,
+          "context": "random",
+          "prompt": "Yes. It's a rather embarrassin' habit I don't usually tell people about. Care to guess what it is?",
+          "leadIn": [
+            "I have this one habit I just can't seem to break.",
+            "A habit?",
+            "Yes. It's a rather embarrassin' habit I don't usually tell people about. Care to guess what it is?"
+          ],
+          "choices": [
+            {
+              "text": "Playing with your hair?",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "Sucking your thumb?",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "Scratching your crotch?",
+              "points": 1,
+              "nativePoints": 4
+            }
+          ],
+          "best": [
+            3
+          ]
+        },
+        {
+          "nativeGroup": 6,
+          "context": "random",
+          "prompt": "Our time together always ends up with just me making small talk. I wonder what's so fun about that...",
+          "leadIn": [
+            "Can ya hear me out?",
+            "Sure...",
+            "Lately, there's been this strange guest who's been requesting me, but he's never spoken a single word to me so far.",
+            "Is that so?",
+            "Our time together always ends up with just me making small talk. I wonder what's so fun about that..."
+          ],
+          "choices": [
+            {
+              "text": "Maybe he's just overwhelmed by your energy?",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "Maybe he gets nervous in front of you?",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "Maybe you're just bad at talking?",
+              "points": 0,
+              "nativePoints": 0
+            }
+          ],
+          "best": [
+            2
+          ]
+        },
+        {
+          "nativeGroup": 7,
+          "context": "random",
+          "prompt": "I could never let a guest see me without makeup.",
+          "leadIn": [
+            "Lately, my skin has been losin' its luster, and it really makes me feel my age...",
+            "...Is that so?",
+            "Yes. So, every mornin', just puttin' on my makeup takes an awful long time, and it's become a real bother.",
+            "I could never let a guest see me without makeup."
+          ],
+          "choices": [
+            {
+              "text": "What's wrong with that?",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "I'd rather not see that.",
+              "points": -2,
+              "nativePoints": -8
+            },
+            {
+              "text": "Women are all like that.",
+              "points": 0,
+              "nativePoints": 0
+            }
+          ],
+          "best": [
+            1
+          ]
+        },
+        {
+          "nativeGroup": 8,
+          "context": "random",
+          "prompt": "Besides, it's just a given that it's better to be with someone who's fun to be around.",
+          "leadIn": [
+            "Y'know, for me, a man's gotta be funny for me to fall for him.",
+            "...Is that so?",
+            "Makin' people laugh means you're really considerate of the other person, I think.",
+            "Besides, it's just a given that it's better to be with someone who's fun to be around."
+          ],
+          "choices": [
+            {
+              "text": "Men are better off keeping quiet.",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "I'll conquer the world with my jokes.",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "I heard a cow got loose the other day...",
+              "points": 0,
+              "nativePoints": 0
+            }
+          ],
+          "best": [
+            2
+          ]
+        },
+        {
+          "nativeGroup": 9,
+          "context": "random",
+          "prompt": "Some girls are already startin' to go bald up there.",
+          "leadIn": [
+            "Mind hearin' me out?",
+            "Sure...",
+            "We yujo wear our hair up in these styles, but pullin' it back so tight makes our hair prone to fall out.",
+            "...Is that so?",
+            "Some girls are already startin' to go bald up there."
+          ],
+          "choices": [
+            {
+              "text": "That's a pretty well-made wig.",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "Just wear a wig then.",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "What's wrong with being bald?",
+              "points": 0,
+              "nativePoints": 0
+            }
+          ],
+          "best": [
+            1
+          ]
+        },
+        {
+          "nativeGroup": 10,
+          "context": "random",
+          "prompt": "It makes me want to just squeeze 'em tight.",
+          "leadIn": [
+            "Um...",
+            "Yeah...?",
+            "I absolutely adore children. Their innocence is just so precious.",
+            "It makes me want to just squeeze 'em tight."
+          ],
+          "choices": [
+            {
+              "text": "I love kids too.",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "You should tone it down a bit.",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "Squeeze me too.",
+              "points": 1,
+              "nativePoints": 4
+            }
+          ],
+          "best": [
+            3
+          ]
+        },
+        {
+          "nativeGroup": 11,
+          "context": "random",
+          "prompt": "...I want to become a doctor. I want to become a doctor and help people.",
+          "leadIn": [
+            "I have a dream, but it's kind of embarrassing...",
+            "What kind of dream?",
+            "...I want to become a doctor. I want to become a doctor and help people."
+          ],
+          "choices": [
+            {
+              "text": "That's impossible.",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "That'll require a lot of effort.",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "What do I say about this?",
+              "points": 0,
+              "nativePoints": 0
+            }
+          ],
+          "best": [
+            2
+          ]
+        },
+        {
+          "nativeGroup": 12,
+          "context": "random",
+          "prompt": "For example, wouldn't it be great to have events where men entertain female guests?",
+          "leadIn": [
+            "Um...",
+            "What's wrong?",
+            "Y'know, even though I'm a yujo now, I think those of us in this business need to start proposin' new kinds of ideas.",
+            "That so?",
+            "Yes. Generally speakin', any business will fade away if it doesn't innovate.",
+            "For example, wouldn't it be great to have events where men entertain female guests?"
+          ],
+          "choices": [
+            {
+              "text": "Imagining that makes me feel sick.",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "That's a good idea.",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "That would never work.",
+              "points": -1,
+              "nativePoints": -4
+            }
+          ],
+          "best": [
+            2
+          ]
+        },
+        {
+          "nativeGroup": 13,
+          "context": "random",
+          "prompt": "Kiryu-han, is there anything a woman could do that might make you accidentally fall for her?",
+          "leadIn": [
+            "To tell ya the truth, I'm really weak when a man pats my head.",
+            "Even if it's someone I'm not interested in, if they pat my head, I get all fluttery inside...",
+            "Heh... is that so?",
+            "Kiryu-han, is there anything a woman could do that might make you accidentally fall for her?",
+            "Hmm..."
+          ],
+          "choices": [
+            {
+              "text": "When she sweeps her hair back.",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "When she looks at me with dewy eyes.",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "When she licks her lips seductively.",
+              "points": 0,
+              "nativePoints": 0
+            }
+          ],
+          "best": [
+            2
+          ]
+        },
+        {
+          "nativeGroup": 14,
+          "context": "random",
+          "prompt": "I think it's better to decide based on whether you suit each other from the very first glance.",
+          "leadIn": [
+            "Say... Kiryu-han, have ya ever experienced love at first sight?",
+            "Love at first sight? Hmm...",
+            "I think love at first sight is the most honest kind. Sure, if you're with someone for years, a sense of attachment grows, but...",
+            "I think it's better to decide based on whether you suit each other from the very first glance."
+          ],
+          "choices": [
+            {
+              "text": "That's an extreme view.",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "You're saying appearance is what matters?",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "Attachment is a form of affection.",
+              "points": 1,
+              "nativePoints": 4
+            }
+          ],
+          "best": [
+            3
+          ]
+        },
+        {
+          "nativeGroup": 15,
+          "context": "random",
+          "prompt": "So, I'm tryin' to earn money to pay for his treatment.",
+          "leadIn": [
+            "By the way, I have a father.",
+            "But he fell ill and has been bedridden for a long time.",
+            "So, I'm tryin' to earn money to pay for his treatment.",
+            "I see..."
+          ],
+          "choices": [
+            {
+              "text": "You're so filial.",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "Can he be cured?",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "Maybe it's better to just give up?",
+              "points": -1,
+              "nativePoints": -4
+            }
+          ],
+          "best": [
+            1
+          ]
+        },
+        {
+          "nativeGroup": 16,
+          "context": "random",
+          "prompt": "My strategy is purely defensive. Care to guess what it's called?",
+          "leadIn": [
+            "I might not look like it, but I'm actually really good at shogi.",
+            "I often play with guests, and I've never lost once.",
+            "That's amazing.",
+            "My strategy is purely defensive. Care to guess what it's called?",
+            "Let me think..."
+          ],
+          "choices": [
+            {
+              "text": "Polar-bear-in-the-hole castle?",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "Bear-in-the-hole castle?",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "Hanamaru-in-the-hole castle?",
+              "points": 0,
+              "nativePoints": 0
+            }
+          ],
+          "best": [
+            2
+          ]
+        },
+        {
+          "nativeGroup": 17,
+          "context": "random",
+          "prompt": "Kiryu-han, how would ya confess your feelings to someone?",
+          "leadIn": [
+            "Um...",
+            "Yeah...?",
+            "Kiryu-han, how would ya confess your feelings to someone?",
+            "Let me think..."
+          ],
+          "choices": [
+            {
+              "text": "I'd shout \"I love you.\"",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "I'd sneak a letter to them.",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "I'd ambush them while they're sleeping.",
+              "points": -1,
+              "nativePoints": -4
+            }
+          ],
+          "best": [
+            1
+          ]
+        },
+        {
+          "nativeGroup": 18,
+          "context": "random",
+          "prompt": "But in this job, you have to drink with guests, right? That's really tough for me.",
+          "leadIn": [
+            "Umm... I have to tell ya somethin', Kiryu-han...",
+            "What is it?",
+            "Truth is... I actually hate alcohol.",
+            "But in this job, you have to drink with guests, right? That's really tough for me."
+          ],
+          "choices": [
+            {
+              "text": "It's part of the job.",
+              "points": 0,
+              "nativePoints": 0,
+              "effects": [
+                "Alcohol is served and can increase intoxication."
+              ],
+              "drinkGroup": 63,
+              "drinkPoints": 1,
+              "nativeDrinkPoints": 4
+            },
+            {
+              "text": "That's rude to a guest.",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "I'm not much of a drinker either.",
+              "points": 0,
+              "nativePoints": 0
+            }
+          ],
+          "best": [
+            1
+          ],
+          "bestWithoutDrink": [
+            3
+          ]
+        },
+        {
+          "nativeGroup": 19,
+          "context": "random",
+          "prompt": "By the way, Kiryu-han, what kind of women do ya like?",
+          "leadIn": [
+            "By the way, Kiryu-han, what kind of women do ya like?",
+            "What kind? Let's see..."
+          ],
+          "choices": [
+            {
+              "text": "An attentive women like you.",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "A charming women like you.",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "A straightforward women like you.",
+              "points": 0,
+              "nativePoints": 0
+            }
+          ],
+          "best": [
+            1
+          ]
+        },
+        {
+          "nativeGroup": 20,
+          "context": "random",
+          "prompt": "It's over now, but do ya think another war like that might start again someday?",
+          "leadIn": [
+            "Say... You know that big battle at Sekigahara from a while back, right?",
+            "Yeah...",
+            "It's over now, but do ya think another war like that might start again someday?",
+            "Hm..."
+          ],
+          "choices": [
+            {
+              "text": "War is inevitable.",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "Not for a while.",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "I'm in the middle of a war.",
+              "points": -1,
+              "nativePoints": -4
+            }
+          ],
+          "best": [
+            2
+          ]
+        },
+        {
+          "nativeGroup": 21,
+          "context": "milestone",
+          "threshold": 11,
+          "prompt": "My parents abandoned me, and while I was wanderin' around, my current father found me.",
+          "leadIn": [
+            "Um... Mind hearin' me out?",
+            "What is it?",
+            "Truth is, I was abandoned as a child.",
+            "Is that so?",
+            "My parents abandoned me, and while I was wanderin' around, my current father found me.",
+            "Oh..."
+          ],
+          "choices": [
+            {
+              "text": "Tell me more about it.",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "That's a common story here.",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "You were lucky.",
+              "points": -1,
+              "nativePoints": -4
+            }
+          ],
+          "best": [
+            1
+          ]
+        },
+        {
+          "nativeGroup": 22,
+          "context": "milestone",
+          "threshold": 16,
+          "prompt": "Kiryu-han... Don't ya have any plans to get married?",
+          "leadIn": [
+            "Um...",
+            "Yeah...?",
+            "Kiryu-han... Don't ya have any plans to get married?",
+            "Let me think..."
+          ],
+          "choices": [
+            {
+              "text": "There's still things I have to do.",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "There's a woman I'm interested in.",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "I don't plan on ever getting married.",
+              "points": 0,
+              "nativePoints": 0
+            }
+          ],
+          "best": [
+            2
+          ]
+        },
+        {
+          "nativeGroup": 23,
+          "context": "milestone",
+          "threshold": 20,
+          "prompt": "Kiryu-han... What do ya think of me?",
+          "leadIn": [
+            "I... I'm usually against fallin' for guests, but...",
+            "I just can't stop thinkin' about you, Kiryu-han...",
+            "Kiryu-han... What do ya think of me?"
+          ],
+          "choices": [
+            {
+              "text": "You're good at seducing.",
+              "points": -2,
+              "nativePoints": -8
+            },
+            {
+              "text": "I think you're a great woman.",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "I think you're a proper woman.",
+              "points": 0,
+              "nativePoints": 0
+            }
+          ],
+          "best": [
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Shirayuki",
+      "venue": "Azamiya",
+      "source": "uid004e000e.msg",
+      "greetings": [
+        {
+          "context": "first-visit",
+          "text": "Nice to meet you, I'm Shirayuki."
+        },
+        {
+          "context": "return-visit",
+          "text": "It's great to see ya again."
+        },
+        {
+          "context": "return-visit",
+          "text": "Thanks for comin'."
+        },
+        {
+          "context": "return-visit",
+          "text": "Please enjoy yourself today."
+        }
+      ],
+      "topics": [
+        {
+          "nativeGroup": 0,
+          "context": "random",
+          "prompt": "What comes to mind when ya think of a thistle flower, Kiryu-han?",
+          "leadIn": [
+            "This shop's name, Azamiya, means \"thistle shop,\" but have ya ever seen a thistle flower yourself, Kiryu-han?",
+            "A thistle flower, huh...",
+            "What comes to mind when ya think of a thistle flower, Kiryu-han?"
+          ],
+          "choices": [
+            {
+              "text": "I've never seen one.",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "They're sweet and cute.",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "They're prickly and painful.",
+              "points": -1,
+              "nativePoints": -4
+            }
+          ],
+          "best": [
+            2
+          ]
+        },
+        {
+          "nativeGroup": 1,
+          "context": "random",
+          "prompt": "Well, there's a second part to it. \"Women are......\" Could ya please tell me the word that completes it?",
+          "leadIn": [
+            "Hey, can I ask ya somethin'?",
+            "What?",
+            "I had completely forgotten about it until now, but isn't there an expression that goes \"men are brave\"?",
+            "That's right... And what about it?",
+            "Well, there's a second part to it. \"Women are......\" Could ya please tell me the word that completes it?"
+          ],
+          "choices": [
+            {
+              "text": "Affable",
+              "points": 2,
+              "nativePoints": 8
+            },
+            {
+              "text": "Cowardly",
+              "points": -2,
+              "nativePoints": -8
+            },
+            {
+              "text": "Stronger",
+              "points": 1,
+              "nativePoints": 4
+            }
+          ],
+          "best": [
+            1
+          ]
+        },
+        {
+          "nativeGroup": 2,
+          "context": "random",
+          "prompt": "I'm quite fond of animals, so when I see a dog or cat, I can't help but imagine what it would be like to keep one. If you wanted a pet, Kiryu-han, what would you choose?",
+          "leadIn": [
+            "Kiryu-han, I'm sure you've noticed dogs and cats are a common sight when you're walkin' about town.",
+            "Yeah...",
+            "I'm quite fond of animals, so when I see a dog or cat, I can't help but imagine what it would be like to keep one. If you wanted a pet, Kiryu-han, what would you choose?"
+          ],
+          "choices": [
+            {
+              "text": "A dog.",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "A cat.",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "Shirayuki.",
+              "points": -2,
+              "nativePoints": -8
+            }
+          ],
+          "best": [
+            1
+          ]
+        },
+        {
+          "nativeGroup": 3,
+          "context": "random",
+          "prompt": "I love playin' the shamisen. There's a part of the shamisen that shares its name with a certain yujo rank. Do ya know what it's called?",
+          "leadIn": [
+            "Can I tell ya somethin'?",
+            "Sure...",
+            "I love playin' the shamisen. There's a part of the shamisen that shares its name with a certain yujo rank. Do ya know what it's called?"
+          ],
+          "choices": [
+            {
+              "text": "Tayu",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "Tenjin",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "Kakoi",
+              "points": -1,
+              "nativePoints": -4
+            }
+          ],
+          "best": [
+            2
+          ]
+        },
+        {
+          "nativeGroup": 4,
+          "context": "random",
+          "prompt": "Do ya know what they call yujo who are never chosen and don't attract any customers?",
+          "leadIn": [
+            "When I was first startin' out, I found it awkward holdin' conversations with unfamiliar men, and there was a difficult phase when I couldn't bring in any customers.",
+            "Is that so?",
+            "Yep, that's right.",
+            "Do ya know what they call yujo who are never chosen and don't attract any customers?"
+          ],
+          "choices": [
+            {
+              "text": "Self-retired",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "Water Drawers",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "Tea Grinders",
+              "points": 1,
+              "nativePoints": 4
+            }
+          ],
+          "best": [
+            3
+          ]
+        },
+        {
+          "nativeGroup": 5,
+          "context": "random",
+          "prompt": "But ever since then, I've come to really dislike foreigners. Do ya know the reason I don't like them?",
+          "leadIn": [
+            "Mind if I ask ya somethin'?",
+            "What?",
+            "Have ya ever met a foreigner before, Kiryu-han?",
+            "Yes, I have.",
+            "I've only had one experience with a foreigner. He had made his way to Gion secretly and I was entertainin' him.",
+            "But ever since then, I've come to really dislike foreigners. Do ya know the reason I don't like them?"
+          ],
+          "choices": [
+            {
+              "text": "They're too big.",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "They smell bad.",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "The language barrier.",
+              "points": 0,
+              "nativePoints": 0
+            }
+          ],
+          "best": [
+            2
+          ]
+        },
+        {
+          "nativeGroup": 6,
+          "context": "random",
+          "prompt": "Do ya know what that punishment's called?",
+          "leadIn": [
+            "...One time, a yujo friend of mine tried to escape Gion by runnin' away.",
+            "Did she manage to leave Gion?",
+            "Yes. Although she made it out of Gion, in the end, there was nowhere else for her to go. She was found wanderin' aimlessly on the outside, taken back by force, and beaten.",
+            "Her hands and feet were bound, and she was hung from the ceiling and beaten with a stick.",
+            "Do ya know what that punishment's called?"
+          ],
+          "choices": [
+            {
+              "text": "Bashi-bashi (Bashing)",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "Buri-buri (Thumping)",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "Boki-boki (Breaking)",
+              "points": -1,
+              "nativePoints": -4
+            }
+          ],
+          "best": [
+            2
+          ]
+        },
+        {
+          "nativeGroup": 7,
+          "context": "random",
+          "prompt": "Thanks to that, I think I'm the best shamisen player here at Azamiya. But what do you think, Kiryu-han?",
+          "leadIn": [
+            "Whenever I have downtime, I always spend it practicin' the shamisen.",
+            "Is that so...",
+            "Thanks to that, I think I'm the best shamisen player here at Azamiya. But what do you think, Kiryu-han?"
+          ],
+          "choices": [
+            {
+              "text": "You shouldn't be so conceited.",
+              "points": -2,
+              "nativePoints": -8
+            },
+            {
+              "text": "You're the best in all of Gion.",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "I hope you continue to improve.",
+              "points": 1,
+              "nativePoints": 4
+            }
+          ],
+          "best": [
+            3
+          ]
+        },
+        {
+          "nativeGroup": 8,
+          "context": "random",
+          "prompt": "Kiryu-han, what kind of food do ya like?",
+          "leadIn": [
+            "Ya don't talk much while you're eatin', Kiryu-han.",
+            "I don't...? Well, I usually come here on an empty stomach.",
+            "Kiryu-han, what kind of food do ya like?"
+          ],
+          "choices": [
+            {
+              "text": "Sashimi",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "Udon",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "Rice",
+              "points": 1,
+              "nativePoints": 4
+            }
+          ],
+          "best": [
+            3
+          ]
+        },
+        {
+          "nativeGroup": 9,
+          "context": "random",
+          "prompt": "Kiryu-han, if ya had to call yourself either \"iki\" or \"sui,\" which would you choose?",
+          "leadIn": [
+            "I'm fond of customers who are \"sui.\" \"Sui\" means something like \"stylish,\" but apparently over in Edo, its kanji is read as \"iki.\"",
+            "Sure.",
+            "Kiryu-han, if ya had to call yourself either \"iki\" or \"sui,\" which would you choose?"
+          ],
+          "choices": [
+            {
+              "text": "Sui (Sweet)",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "Iki (Solemn)",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "I thought \"sui\" only meant \"stylish.\"",
+              "points": -1,
+              "nativePoints": -4
+            }
+          ],
+          "best": [
+            2
+          ]
+        },
+        {
+          "nativeGroup": 10,
+          "context": "random",
+          "prompt": "By the way, Kiryu-han, do ya tend to stay up late?",
+          "leadIn": [
+            "Workin' as a yujo means I'm awake most of the night, and sometimes I start feelin' tired partway through, which can be quite exhausting.",
+            "I suppose so.",
+            "Before I became a yujo, I used to wake up and go to bed early, so adjustin' to this life was difficult.",
+            "By the way, Kiryu-han, do ya tend to stay up late?"
+          ],
+          "choices": [
+            {
+              "text": "I don't stay up late.",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "I stay up late every night.",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "It varies, so I can't say.",
+              "points": 1,
+              "nativePoints": 4
+            }
+          ],
+          "best": [
+            3
+          ]
+        },
+        {
+          "nativeGroup": 11,
+          "context": "random",
+          "prompt": "Yes, well, normally I would be happy, but... he's a horribly perverted man, and he's causin' me all sorts of trouble.",
+          "leadIn": [
+            "Pardon me for a moment?",
+            "Sure.",
+            "Lately, I've been entertainin' this merchant, and it seems I might've really made him fall for me.",
+            "Isn't that something to be proud of as a yujo? Aren't you happy about that?",
+            "Yes, well, normally I would be happy, but... he's a horribly perverted man, and he's causin' me all sorts of trouble.",
+            "I see..."
+          ],
+          "choices": [
+            {
+              "text": "I'll give him what's coming.",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "You should respect every customer.",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "What has he been doing to you?",
+              "points": -1,
+              "nativePoints": -4
+            }
+          ],
+          "best": [
+            2
+          ]
+        },
+        {
+          "nativeGroup": 12,
+          "context": "random",
+          "prompt": "Please take it out for me, Kiryu-han. Ow...",
+          "leadIn": [
+            "Ouch, ouch! I think I got somethin' in my eye.",
+            "What is it?",
+            "Please take it out for me, Kiryu-han. Ow..."
+          ],
+          "choices": [
+            {
+              "text": "I'll take it out.",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "It'll come out naturally with tears.",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "(I'll quietly move my face closer.)",
+              "points": -2,
+              "nativePoints": -8
+            }
+          ],
+          "best": [
+            1
+          ]
+        },
+        {
+          "nativeGroup": 13,
+          "context": "random",
+          "prompt": "I'm not very good at drinkin' myself, so I'd like to learn how I can improve.",
+          "leadIn": [
+            "Have ya always been so good at holdin' your liquor, Kiryu-han?",
+            "No, I used to be a lightweight. I couldn't drink at all.",
+            "Wow... that's surprisin'. How did ya get so resilient?",
+            "I'm not very good at drinkin' myself, so I'd like to learn how I can improve.",
+            "Well..."
+          ],
+          "choices": [
+            {
+              "text": "Drink lots of alcohol.",
+              "points": 0,
+              "nativePoints": 0,
+              "effects": [
+                "Alcohol is served and can increase intoxication."
+              ],
+              "drinkGroup": 63,
+              "drinkPoints": -1,
+              "nativeDrinkPoints": -4
+            },
+            {
+              "text": "Learn to appreciate good liquor.",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "You shouldn't force yourself.",
+              "points": 1,
+              "nativePoints": 4
+            }
+          ],
+          "best": [
+            3
+          ],
+          "bestWithoutDrink": [
+            3
+          ]
+        },
+        {
+          "nativeGroup": 14,
+          "context": "random",
+          "prompt": "I received an uncanny gift from the perverted merchant the other day. Do ya know what it was?",
+          "leadIn": [
+            "Mind if I ask ya somethin'?",
+            "What?",
+            "I received an uncanny gift from the perverted merchant the other day. Do ya know what it was?"
+          ],
+          "choices": [
+            {
+              "text": "Undergarments",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "Dolls",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "Candy",
+              "points": -1,
+              "nativePoints": -4
+            }
+          ],
+          "best": [
+            2
+          ]
+        },
+        {
+          "nativeGroup": 15,
+          "context": "random",
+          "prompt": "Lately, once I'm done with work, I can't fall asleep when I'm supposed to. What should I be doin' to get to sleep?",
+          "leadIn": [
+            "*sigh*... Why am I like this?",
+            "What's wrong?",
+            "Lately, once I'm done with work, I can't fall asleep when I'm supposed to. What should I be doin' to get to sleep?"
+          ],
+          "choices": [
+            {
+              "text": "Drink some alcohol.",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "Think of my face.",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "I'll sing you a lullaby.",
+              "points": 1,
+              "nativePoints": 4
+            }
+          ],
+          "best": [
+            3
+          ]
+        },
+        {
+          "nativeGroup": 16,
+          "context": "random",
+          "prompt": "I just want to know whether our tastes align.",
+          "leadIn": [
+            "Um... Kiryu-han, what kind of women do ya like?",
+            "The kind of women I like? What's the use in asking something like that?",
+            "I just want to know whether our tastes align.",
+            "Right, I prefer..."
+          ],
+          "choices": [
+            {
+              "text": "Women with big breasts and small butts.",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "Women you can feel comfortable around.",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "Strong women.",
+              "points": 0,
+              "nativePoints": 0
+            }
+          ],
+          "best": [
+            2
+          ]
+        },
+        {
+          "nativeGroup": 17,
+          "context": "random",
+          "prompt": "Say, Kiryu-han, which of Azamiya's parlor games is your favorite?",
+          "leadIn": [
+            "I'm used to movin' slowly and gently, so it took me quite a while to get good at the parlor games here.",
+            "Well, it takes hard work to improve at anything.",
+            "Say, Kiryu-han, which of Azamiya's parlor games is your favorite?"
+          ],
+          "choices": [
+            {
+              "text": "Iroha Karuta",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "Tosenkyo",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "Konpira Fune Fune",
+              "points": -1,
+              "nativePoints": -4
+            }
+          ],
+          "best": [
+            2
+          ]
+        },
+        {
+          "nativeGroup": 18,
+          "context": "random",
+          "prompt": "Then I thought about which part of my body was the least appealin', and I figured it must be my breasts.",
+          "leadIn": [
+            "Mind pardonin' me for a moment?",
+            "What is it?",
+            "Do all men prefer women with large breasts?",
+            "...That's a tough question out of nowhere. Why are you curious about such a thing?",
+            "Because I want to become a woman more men will like.",
+            "Then I thought about which part of my body was the least appealin', and I figured it must be my breasts."
+          ],
+          "choices": [
+            {
+              "text": "You're right, bigger breasts are better.",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "Breast shape is more important than size.",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "Breast size doesn't matter.",
+              "points": 1,
+              "nativePoints": 4
+            }
+          ],
+          "best": [
+            3
+          ]
+        },
+        {
+          "nativeGroup": 19,
+          "context": "random",
+          "prompt": "It almost looks like stars fallin' down from the heavens. What kind of fireworks do you like, Kiryu-han?",
+          "leadIn": [
+            "In Gion at night, you can watch fireworks burstin' in the sky. They're so flashy and beautiful, and quite fun to observe.",
+            "I know.",
+            "It almost looks like stars fallin' down from the heavens. What kind of fireworks do you like, Kiryu-han?"
+          ],
+          "choices": [
+            {
+              "text": "Skyrockets",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "Sparklers",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "Pinwheels",
+              "points": -1,
+              "nativePoints": -4
+            }
+          ],
+          "best": [
+            2
+          ]
+        },
+        {
+          "nativeGroup": 20,
+          "context": "random",
+          "prompt": "So what should I do if I want to earn more money as a yujo?",
+          "leadIn": [
+            "Why is our world divided between the rich and the poor?",
+            "...That's an unusually serious topic.",
+            "If my father hadn't died and our life hadn't become so hard, I don't think I'd be here in Gion now.",
+            "That's probably true, but...",
+            "You could say the reason I became a yujo was for money.",
+            "So what should I do if I want to earn more money as a yujo?"
+          ],
+          "choices": [
+            {
+              "text": "Hone your arts even further.",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "Become sexier.",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "Become more affectionate.",
+              "points": 2,
+              "nativePoints": 8
+            }
+          ],
+          "best": [
+            3
+          ]
+        },
+        {
+          "nativeGroup": 21,
+          "context": "milestone",
+          "threshold": 11,
+          "prompt": "Do ya keep a memento from someone too, Kiryu-han?",
+          "leadIn": [
+            "...And so, my father was caught up in the war and lost his life.",
+            "That must've been terrible...",
+            "When I was young, my father took me to a matsuri and bought me a paper doll from a stall there. I still have it as a cherished memento of him.",
+            "Do ya keep a memento from someone too, Kiryu-han?"
+          ],
+          "choices": [
+            {
+              "text": "Yes, I do.",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "No, I don't.",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "It's personal.",
+              "points": 0,
+              "nativePoints": 0
+            }
+          ],
+          "best": [
+            1
+          ]
+        },
+        {
+          "nativeGroup": 22,
+          "context": "milestone",
+          "threshold": 16,
+          "prompt": "But something happened while we were on the way to Gion. Can ya guess what that was?",
+          "leadIn": [
+            "Here's somethin' for your ears only, Kiryu-han. I was brought to Gion by a zegen who took me from a remote village deep in the mountains outside Kyo.",
+            "I see...",
+            "I was brought along with several other girls, and we were all supposed to arrive as a group.",
+            "But something happened while we were on the way to Gion. Can ya guess what that was?"
+          ],
+          "choices": [
+            {
+              "text": "Some of the girls ran away.",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "The zegen assaulted you.",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "You encountered a bear in the forest.",
+              "points": 0,
+              "nativePoints": 0
+            }
+          ],
+          "best": [
+            1
+          ]
+        },
+        {
+          "nativeGroup": 23,
+          "context": "milestone",
+          "threshold": 20,
+          "prompt": "They don't really explain what's happened, and I'm quite worried. What should I do?",
+          "leadIn": [
+            "Can I tell ya something, Kiryu-han?",
+            "What's the matter?",
+            "My older brother, who's been working as the breadwinner for my family ever since my father passed away, got injured at work.",
+            "I see... So, how bad was the injury?",
+            "The letters I've received are from my younger siblings, who still aren't very good at readin' and writin'.",
+            "They don't really explain what's happened, and I'm quite worried. What should I do?"
+          ],
+          "choices": [
+            {
+              "text": "Go visit them.",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "Work harder than ever before.",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "Pray for them at the shrine.",
+              "points": 0,
+              "nativePoints": 0
+            }
+          ],
+          "best": [
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Asagiri",
+      "venue": "Yumejiya",
+      "source": "uid004e000b.msg",
+      "greetings": [
+        {
+          "context": "first-visit",
+          "text": "Nice to meet you, my name is Asagiri."
+        },
+        {
+          "context": "return-visit",
+          "text": "Ah, you came to see me."
+        },
+        {
+          "context": "return-visit",
+          "text": "Thanks for comin' to see me."
+        },
+        {
+          "context": "return-visit",
+          "text": "As always, thank you for comin' to see me."
+        }
+      ],
+      "topics": [
+        {
+          "nativeGroup": 0,
+          "context": "random",
+          "prompt": "Even so, after I get up and go about \"the usual,\" I start feelin' like myself again before long. Do ya know what \"the usual\" is for me?",
+          "leadIn": [
+            "Us yujo usually stay awake until the crack of dawn and sleep through the morning.",
+            "Well, I guess you have no other choice.",
+            "Still, it's hard for me to sleep for very long, and I get woken up before noon, so I never really feel well-rested.",
+            "Must be rather difficult.",
+            "Even so, after I get up and go about \"the usual,\" I start feelin' like myself again before long. Do ya know what \"the usual\" is for me?"
+          ],
+          "choices": [
+            {
+              "text": "Taking A Bath",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "Eating",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "Getting Dressed",
+              "points": 1,
+              "nativePoints": 4
+            }
+          ],
+          "best": [
+            3
+          ]
+        },
+        {
+          "nativeGroup": 1,
+          "context": "random",
+          "prompt": "Don't be like that. Just pick between cleaning, laundry, or cooking.",
+          "leadIn": [
+            "Got a moment?",
+            "What is it?",
+            "Kiryu-han, if ya ever got married someday, what would ya want your future wife to be best at... cleaning, doing laundry, or cooking?",
+            "...Well, is it too much to ask for someone who's good at everything?",
+            "Don't be like that. Just pick between cleaning, laundry, or cooking."
+          ],
+          "choices": [
+            {
+              "text": "Cleaning",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "Laundry",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "Cooking",
+              "points": -1,
+              "nativePoints": -4
+            }
+          ],
+          "best": [
+            1
+          ]
+        },
+        {
+          "nativeGroup": 2,
+          "context": "random",
+          "prompt": "As it happens, there's a famous Japanese phrase that comes from hand fans. Can ya guess what it is?",
+          "leadIn": [
+            "Say... when I dance, I have to keep a foldin' fan in my hand, but it took a lotta practice before I got used to dancin' with it.",
+            "Sure...",
+            "I use it to express delicate and graceful movements, you see.",
+            "As it happens, there's a famous Japanese phrase that comes from hand fans. Can ya guess what it is?"
+          ],
+          "choices": [
+            {
+              "text": "A Bone-breaking Effort",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "Overturning Heaven and Earth",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "The Most Vital Point",
+              "points": 1,
+              "nativePoints": 4
+            }
+          ],
+          "best": [
+            3
+          ]
+        },
+        {
+          "nativeGroup": 3,
+          "context": "random",
+          "prompt": "I was talkin' about how ya feel before ya pass out. What are ya normally like once you've drunk too much?",
+          "leadIn": [
+            "Kiryu-han, what happens when ya drink too much?",
+            "If I've had too much alcohol? Hmm, in that case, I suppose...",
+            "...I'd fall asleep before long, most likely.",
+            "I was talkin' about how ya feel before ya pass out. What are ya normally like once you've drunk too much?"
+          ],
+          "choices": [
+            {
+              "text": "I feel kind of funny.",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "I feel like crying.",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "I feel like getting angry.",
+              "points": -1,
+              "nativePoints": -4
+            }
+          ],
+          "best": [
+            1
+          ]
+        },
+        {
+          "nativeGroup": 4,
+          "context": "random",
+          "prompt": "Yes, indeed. Since I've already told ya the Black Tortoise, Genbu is the god of the north, can ya tell me who the god of the east is?",
+          "leadIn": [
+            "And so, Kyo has four different gods protectin' it from all four cardinal directions.",
+            "I see...",
+            "The god of the north is Genbu, said to look like a turtle with a snake wrapped around it.",
+            "What an unusual sight that must be.",
+            "Yes, indeed. Since I've already told ya the Black Tortoise, Genbu is the god of the north, can ya tell me who the god of the east is?"
+          ],
+          "choices": [
+            {
+              "text": "Suzaku (Vermilion Bird)",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "Seiryu (Azure Dragon)",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "Byakko (White Tiger)",
+              "points": 0,
+              "nativePoints": 0
+            }
+          ],
+          "best": [
+            2
+          ]
+        },
+        {
+          "nativeGroup": 5,
+          "context": "random",
+          "prompt": "Are ya interested in theater too, Kiryu-han? Have ya ever thought about becomin' an actor?",
+          "leadIn": [
+            "There's a theater troupe led by a woman named Izumo no Okuni that's been performin' here in Kyo as of late, or so I've heard...",
+            "I'd also like to go see them. I hope they'll come perform here in Gion too.",
+            "Are you interested in the plays they're performing?",
+            "Yes. The choreography from plays and such helps inspire me whenever I'm creatin' a new dance.",
+            "Is that so...",
+            "Are ya interested in theater too, Kiryu-han? Have ya ever thought about becomin' an actor?"
+          ],
+          "choices": [
+            {
+              "text": "I want to become an actor.",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "I like theater, but not enough to become an actor.",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "I'm not interested in watching or acting.",
+              "points": -1,
+              "nativePoints": -4
+            }
+          ],
+          "best": [
+            1
+          ]
+        },
+        {
+          "nativeGroup": 6,
+          "context": "random",
+          "prompt": "What should I do?",
+          "leadIn": [
+            "Mind if I ask ya something, Kiryu-han?",
+            "What is it?",
+            "I have several kamuro under me, but there's a new girl who just can't seem to remember what I teach her.",
+            "What should I do?",
+            "Right, if that's what's happening, then..."
+          ],
+          "choices": [
+            {
+              "text": "Leave this to me. I'll teach her.",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "Slow down and direct her step by step.",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "You're not a good teacher, Asagiri.",
+              "points": -1,
+              "nativePoints": -4
+            }
+          ],
+          "best": [
+            2
+          ]
+        },
+        {
+          "nativeGroup": 7,
+          "context": "random",
+          "prompt": "If you'd like, I can lend ya my copy. Would you read it?",
+          "leadIn": [
+            "Kiryu-han, have ya ever read The Tale of Genji?",
+            "No, I've never read it.",
+            "Well, it doesn't seem like the sort of thing a man would read in his free time, so I suppose that's only natural.",
+            "It's a story set in here Kyo that tells a tale of deep romance between a man and a woman, and I found it fascinating. I was so enthralled I couldn't stop reading it over and over.",
+            "I see...",
+            "If you'd like, I can lend ya my copy. Would you read it?"
+          ],
+          "choices": [
+            {
+              "text": "I'll read it.",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "I won't read it.",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "Read it to me.",
+              "points": 2,
+              "nativePoints": 8
+            }
+          ],
+          "best": [
+            3
+          ]
+        },
+        {
+          "nativeGroup": 8,
+          "context": "random",
+          "prompt": "The two parlor games on offer here are konpira fune fune and tokkuri toppling. Which one are you better at, Kiryu-han?",
+          "leadIn": [
+            "I love playin' parlor games. There's just something so adorable about a scary-looking guy gettin' all serious over simple little games.",
+            "Sure...",
+            "The two parlor games on offer here are konpira fune fune and tokkuri toppling. Which one are you better at, Kiryu-han?"
+          ],
+          "choices": [
+            {
+              "text": "Konpira Fune Fune",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "Tokkuri Toppling",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "I'm good at both.",
+              "points": -1,
+              "nativePoints": -4
+            }
+          ],
+          "best": [
+            2
+          ]
+        },
+        {
+          "nativeGroup": 9,
+          "context": "random",
+          "prompt": "By the way, do ya know why the highest rank is called \"tayu\"?",
+          "leadIn": [
+            "I was very fortunate to be able to become a tayu.",
+            "That's right, tayu is the highest rank of yujo.",
+            "Yes, and very few yujo even have the chance of becomin' a tayu... It's not determined based on skill alone, or at least I think not.",
+            "It's determined by the amount of customers a yujo brings in.",
+            "I see.",
+            "By the way, do ya know why the highest rank is called \"tayu\"?"
+          ],
+          "choices": [
+            {
+              "text": "They play an important role in noh theater called the \"tayu.\"",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "Senior priests are called \"tayu,\" which yujo act as during matsuri.",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "It's derived from \"tafu,\" meaning \"multiple husbands.\"",
+              "points": -1,
+              "nativePoints": -4
+            }
+          ],
+          "best": [
+            1
+          ]
+        },
+        {
+          "nativeGroup": 10,
+          "context": "random",
+          "prompt": "Well, what do you think?",
+          "leadIn": [
+            "And so, when I'm tired from work, makin' small talk with the kamuro helps put me at ease.",
+            "I see.",
+            "It makes me nostalgic for when I was a kamuro myself.",
+            "Were you as ladylike as a kamuro as you are now, Asagiri?",
+            "Well, what do you think?"
+          ],
+          "choices": [
+            {
+              "text": "I think you were ladylike.",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "I think you were a tomboy.",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "I think you were feared.",
+              "points": -2,
+              "nativePoints": -8
+            }
+          ],
+          "best": [
+            2
+          ]
+        },
+        {
+          "nativeGroup": 11,
+          "context": "random",
+          "prompt": "That's a poem she wrote that goes, \"The color of flowers, has faded, all in vain.\" Can ya finish the second half?",
+          "leadIn": [
+            "Did ya know there was once a beautiful woman by the name of Ono no Komachi who lived here in Kyo?",
+            "Yes, of course. If Ono no Komachi was living in this day in age as a yujo, she most certainly would've reached the rank of tayu.",
+            "That's a poem she wrote that goes, \"The color of flowers, has faded, all in vain.\" Can ya finish the second half?"
+          ],
+          "choices": [
+            {
+              "text": "Not a thing, is what I know.",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "My time is gone, as I gaze upon the falling rain.",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "Had I known it was a dream, I would not have awakened.",
+              "points": 0,
+              "nativePoints": 0
+            }
+          ],
+          "best": [
+            2
+          ]
+        },
+        {
+          "nativeGroup": 12,
+          "context": "random",
+          "prompt": "Ya think so? Doesn't seein' dirty things become clean make ya feel all satisfied and refreshed?",
+          "leadIn": [
+            "Ever since I learned how to put on makeup, I've wanted to make all my possessions and surroundings as beautiful as possible too.",
+            "That's a rather unusual reason to become a clean freak.",
+            "Ya think so? Doesn't seein' dirty things become clean make ya feel all satisfied and refreshed?"
+          ],
+          "choices": [
+            {
+              "text": "Is your face ugly without makeup?",
+              "points": -2,
+              "nativePoints": -8
+            },
+            {
+              "text": "It does make me feel refreshed.",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "Tatsuya has gotten dirty and I'd like it cleaned.",
+              "points": 1,
+              "nativePoints": 4
+            }
+          ],
+          "best": [
+            3
+          ]
+        },
+        {
+          "nativeGroup": 13,
+          "context": "random",
+          "prompt": "Then you've seen how they walk in an unusual manner. Do ya know what that manner of walkin' is called?",
+          "leadIn": [
+            "Tayu are sometimes paraded outside along with their kamuro. Have ya ever seen one of those processions before?",
+            "Yeah, many times.",
+            "Then you've seen how they walk in an unusual manner. Do ya know what that manner of walkin' is called?"
+          ],
+          "choices": [
+            {
+              "text": "Ichimonji (One-shape)",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "Hachimonji (Eight-shape)",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "Daimonji (Big-shape)",
+              "points": 0,
+              "nativePoints": 0
+            }
+          ],
+          "best": [
+            2
+          ]
+        },
+        {
+          "nativeGroup": 14,
+          "context": "random",
+          "prompt": "But ever since then, I've started to take a great interest in a certain part of the sword. Can ya guess what part it is?",
+          "leadIn": [
+            "In my position, I attend to more samurai than merchants.",
+            "I see...",
+            "At a recent banquet hostin' samurai, one of them gave me a sword to dance with instead of a fan.",
+            "Impressive.",
+            "Well, I guess I said it was a sword, but really it was a takemitsu...",
+            "And I was thinking you danced with a real blade.",
+            "Heehee... I'm not that strong, y'know.",
+            "But ever since then, I've started to take a great interest in a certain part of the sword. Can ya guess what part it is?"
+          ],
+          "choices": [
+            {
+              "text": "Saya (Scabbard)",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "Tsuka (Handle)",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "Tsuba (Handguard)",
+              "points": 1,
+              "nativePoints": 4
+            }
+          ],
+          "best": [
+            3
+          ]
+        },
+        {
+          "nativeGroup": 15,
+          "context": "random",
+          "prompt": "And then, not too long after, that same merchant suddenly came into a large sum of money due to a certain reason and was able to rebuild his business.",
+          "leadIn": [
+            "Rumor has it I'm a legendary yujo, and any man who becomes close with me is sure to be blessed with good fortune.",
+            "What an incredible rumor...",
+            "...There was once a merchant who had suffered a disastrous business failure and was forced to close his shop.",
+            "But as one final indulgence, he came to Gion to visit me.",
+            "I see...",
+            "And then, not too long after, that same merchant suddenly came into a large sum of money due to a certain reason and was able to rebuild his business."
+          ],
+          "choices": [
+            {
+              "text": "Did he get lucky in gambling games?",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "Did you lend him the money?",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "Did his leftover goods start selling?",
+              "points": 1,
+              "nativePoints": 4
+            }
+          ],
+          "best": [
+            3
+          ]
+        },
+        {
+          "nativeGroup": 16,
+          "context": "random",
+          "prompt": "That's standard. What if you could add a new kanji to burn? Which would ya choose?",
+          "leadIn": [
+            "Durin' the yearly Obon matsuri here in Kyo, we light different shapes of fires in the mountains.",
+            "Right...",
+            "I look forward to watchin' the fires burn every year.",
+            "Speakin' of, which shape of fire pleases ya the most, Kiryu-han?",
+            "You can't go wrong with the kanji for <Color:205,247,205,255>大<Color:Default> (big).",
+            "That's standard. What if you could add a new kanji to burn? Which would ya choose?"
+          ],
+          "choices": [
+            {
+              "text": "天 (Heaven), read as \"Ten\"",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "朝 (Morning), read as \"Asa\"",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "龍 (Dragon), read as \"Tatsu\"",
+              "points": 0,
+              "nativePoints": 0
+            }
+          ],
+          "best": [
+            2
+          ]
+        },
+        {
+          "nativeGroup": 17,
+          "context": "random",
+          "prompt": "It's called \"kuchikamizake,\" which means \"mouth-chewed sake.\" As ya might expect, it's sake brewed from grains of rice that I've first chewed in my mouth.",
+          "leadIn": [
+            "Do ya have a moment?",
+            "What is it?",
+            "If you can chug a large cup of sake in one go, I'll give ya a special reward, Kiryu-han. How about it?",
+            "What's the reward?",
+            "It's called \"kuchikamizake,\" which means \"mouth-chewed sake.\" As ya might expect, it's sake brewed from grains of rice that I've first chewed in my mouth."
+          ],
+          "choices": [
+            {
+              "text": "I'm not drinking that.",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "I want to try it.",
+              "points": 0,
+              "nativePoints": 0,
+              "effects": [
+                "Alcohol is served and can increase intoxication."
+              ],
+              "drinkGroup": 63,
+              "drinkPoints": 1,
+              "nativeDrinkPoints": 4
+            },
+            {
+              "text": "I've had enough alcohol for now.",
+              "points": 0,
+              "nativePoints": 0
+            }
+          ],
+          "best": [
+            2
+          ],
+          "bestWithoutDrink": [
+            3
+          ]
+        },
+        {
+          "nativeGroup": 18,
+          "context": "random",
+          "prompt": "And with all these layers on, I start sweatin' right away, even though we're in autumn.",
+          "leadIn": [
+            "Us yujo don't spare any expense when it comes to dressin' up. We make sure our kimonos are always in the latest style.",
+            "Wearing a fine kimono is a sure way to stand out.",
+            "Indeed. But our kimonos aren't just one piece. They've got multiple layers, and once ya add on accessories, they can become quite heavy.",
+            "Yes, I suppose my single-piece kimono is a lot lighter in comparison.",
+            "And with all these layers on, I start sweatin' right away, even though we're in autumn."
+          ],
+          "choices": [
+            {
+              "text": "Take your kimono off right away.",
+              "points": -1,
+              "nativePoints": -4
+            },
+            {
+              "text": "What about a lighter and more breathable kimono?",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "It's impressive how gracefully you wear all that.",
+              "points": 1,
+              "nativePoints": 4
+            }
+          ],
+          "best": [
+            3
+          ]
+        },
+        {
+          "nativeGroup": 19,
+          "context": "random",
+          "prompt": "Do ya also believe in that rumor, Kiryu-han?",
+          "leadIn": [
+            "Mind if I ask ya something, Kiryu-han?",
+            "What?",
+            "Lately, some of my older customers have just been pressin' their hands together in prayer and leavin' right away after that.",
+            "Heh... So they're treating you like a heavenly maiden or a goddess.",
+            "...I think it might be because of that rumor, the one sayin' that any man who becomes close to me is sure to be blessed with good fortune.",
+            "Do ya also believe in that rumor, Kiryu-han?",
+            "Right..."
+          ],
+          "choices": [
+            {
+              "text": "I believe it.",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "I don't believe it.",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "You bring misfortune instead.",
+              "points": -2,
+              "nativePoints": -8
+            }
+          ],
+          "best": [
+            1
+          ]
+        },
+        {
+          "nativeGroup": 20,
+          "context": "random",
+          "prompt": "Well, since we're talkin' about it, New Year's is comin' up. Would ya like to spend it with me?",
+          "leadIn": [
+            "Kiryu-han, how are ya plannin' to celebrate the comin' new year?",
+            "...Well, I still haven't thought that far ahead about things like celebrating New Year's.",
+            "Well, since we're talkin' about it, New Year's is comin' up. Would ya like to spend it with me?"
+          ],
+          "choices": [
+            {
+              "text": "Ask What You'll Do Together",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "Promise to Spend it with Her",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "Turn Her Down",
+              "points": -1,
+              "nativePoints": -4
+            }
+          ],
+          "best": [
+            2
+          ]
+        },
+        {
+          "nativeGroup": 21,
+          "context": "milestone",
+          "threshold": 11,
+          "prompt": "Which do ya think brings a woman more happiness? Loving only one man deeply... or romancing a great number of men?",
+          "leadIn": [
+            "I've been worried about something recently.",
+            "What's got you troubled?",
+            "In this line of work, it's sometimes easy to lose sight of what it means to truly love another person.",
+            "Is that so...?",
+            "Which do ya think brings a woman more happiness? Loving only one man deeply... or romancing a great number of men?"
+          ],
+          "choices": [
+            {
+              "text": "Loving only one man deeply.",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "Romancing many men.",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "As a man, I wouldn't understand.",
+              "points": -1,
+              "nativePoints": -4
+            }
+          ],
+          "best": [
+            1
+          ]
+        },
+        {
+          "nativeGroup": 22,
+          "context": "milestone",
+          "threshold": 16,
+          "prompt": "Is it fair to say ya think money can buy anything, Kiryu-han?",
+          "leadIn": [
+            "I've worked as hard as I possibly could have ever since I became a yujo, and thanks to that, I've managed to save up a fair amount of money.",
+            "That's quite admirable...",
+            "However, no matter how much ya save, there are simply some things that can never be bought.",
+            "Things that can never be bought, huh...",
+            "Is it fair to say ya think money can buy anything, Kiryu-han?"
+          ],
+          "choices": [
+            {
+              "text": "Money can buy anything.",
+              "points": -3,
+              "nativePoints": -12
+            },
+            {
+              "text": "There are some things money can't buy.",
+              "points": 0,
+              "nativePoints": 0
+            },
+            {
+              "text": "There's no need for money.",
+              "points": 2,
+              "nativePoints": 8
+            }
+          ],
+          "best": [
+            3
+          ]
+        },
+        {
+          "nativeGroup": 23,
+          "context": "milestone",
+          "threshold": 20,
+          "prompt": "What should I use as my motivation goin' forward, Kiryu-han? Can ya give me something?",
+          "leadIn": [
+            "Mind if I ask ya something, Kiryu-han?",
+            "Hm? What's with the serious look?",
+            "I've risen to the status of tayu, which I couldn't be happier about as a yujo.",
+            "But now that I've become the best yujo I can be, I'm havin' trouble figuring out what to live for from here on...",
+            "That's quite a serious concern...",
+            "What should I use as my motivation goin' forward, Kiryu-han? Can ya give me something?"
+          ],
+          "choices": [
+            {
+              "text": "Become an Okami",
+              "points": 1,
+              "nativePoints": 4
+            },
+            {
+              "text": "Get Bought Out",
+              "points": -2,
+              "nativePoints": -8
+            },
+            {
+              "text": "Mentor Your Kamuro",
+              "points": 2,
+              "nativePoints": 8
+            }
+          ],
+          "best": [
+            3
+          ]
+        }
+      ]
+    }
+  ]
+}

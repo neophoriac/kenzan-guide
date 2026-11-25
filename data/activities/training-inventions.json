@@ -1,0 +1,235 @@
+[
+  {
+    "id": "inventions",
+    "title": "Inventions",
+    "intro": "Visit Gyotensai’s house at the east end of Tsurumachi Alley in northeast Gion from 5-1. Speak to him and agree to bring ingredients, then select an invention from his list. Bring materials in your inventory and leave room for the prototype. Choosing the wrong mystery ingredient can waste the materials. Some recipes appear before you can obtain every ingredient. Sober Pill, Hunger Pill and Ultra All-Purpose Medicine are required for #97. Start that request before making the last of the 21 inventions, and finish your workshop visits before telling Itō you’re ready to leave Gion at 12-3.",
+    "source": { "label": "KHHSubs’ inventor guide", "url": "https://www.khhsubs.com/kenzan/facilities/" },
+    "map": { "area": "st_gion", "name": "Gyotensai’s House" },
+    "links": [
+      { "label": "Karakuri Spin Revelation at the workshop", "href": "#revelation-karakuri-spin" },
+      { "label": "Ancient Scroll of the Divine Age", "href": "#collectible-recipe-divine-age:recipe-divine-age" }
+    ],
+    "entries": [
+      {
+        "id": "sober-pill",
+        "name": "Sober Pill",
+        "window": "5-1",
+        "requires": "Agree to gather ingredients for Gyotensai.",
+        "materials": ["Ginger", "Special All-Purpose Medicine", "Konpeito"],
+        "steps": "Choose Konpeito for the mystery ingredient labeled A Spiky Food. Buy Ginger and Special All-Purpose Medicine from Tenguya Drugs. Rakugai’s Arigataya Market sells Konpeito.",
+        "reward": "Sobers Kiryu up immediately. Tenguya Drugs and Etchuya Drugs stock it after invention.",
+        "links": [{ "label": "#97 Flying Towards the Future", "href": "#quest-97" }]
+      },
+      {
+        "id": "hunger-pill",
+        "name": "Hunger Pill",
+        "window": "5-1",
+        "requires": "Agree to gather ingredients for Gyotensai.",
+        "materials": ["Eel Liver", "Crawfish", "Matcha Dango"],
+        "steps": "Buy Eel Liver and Crawfish from the Turtle Seller on Shijo Avenue in Rakugai. Nonaka Tea House sells Matcha Dango to take away.",
+        "reward": "Makes Kiryu hungry so he can order food again. Tenguya Drugs and Etchuya Drugs stock it after invention.",
+        "links": [{ "label": "#97 Flying Towards the Future", "href": "#quest-97" }]
+      },
+      {
+        "id": "super-worms",
+        "name": "Super Worms",
+        "window": "5-6",
+        "requires": "Start using the Turtle Bucket at Tatsuya.",
+        "materials": ["Worms (Large)", "Dried Agar", "Horikawa Burdock"],
+        "steps": "Get Worms (Large) and Dried Agar from the Turtle Seller, and Horikawa Burdock from the Riverside Tea House takeout menu.",
+        "reward": "Turtle food that boosts development. The Turtle Seller stocks it after invention."
+      },
+      {
+        "id": "back-pain-remedy",
+        "name": "Togarashi Poultice",
+        "window": "6-3",
+        "requires": "Get the Togarashi Set from the father during #36. The recipe can appear then, but #47 supplies the Washi from 7-4.",
+        "materials": ["Togarashi Set", "Washi", "Dried Agar"],
+        "steps": "Show Gyotensai the Togarashi Set to unlock the recipe. Select Back Pain Remedy at the workshop, then choose Dried Agar from the Turtle Seller when he asks for Something Adhesive.",
+        "reward": "Togarashi Poultice. Give it to the father during #36.",
+        "links": [
+          { "label": "#36 The Togarashi Girl's Father", "href": "#quest-36" },
+          { "label": "#47 Talent", "href": "#quest-47" }
+        ]
+      },
+      {
+        "id": "ultra-all-purpose-medicine",
+        "name": "Ultra All-Purpose Medicine",
+        "window": "7-4",
+        "requires": "Reach Chapter 7 and return to Gion.",
+        "materials": ["Special Vitality Pill", "Special Passion Pill", "Special All-Purpose Medicine"],
+        "steps": "Tenguya Drugs and Etchuya Drugs stock all three ingredients.",
+        "reward": "Fully restores health and Heat. Pharmacies stock it after invention.",
+        "links": [{ "label": "#97 Flying Towards the Future", "href": "#quest-97" }]
+      },
+      {
+        "id": "silent-sandals",
+        "name": "Silent Sandals",
+        "window": "7-4",
+        "requires": "Reach Chapter 7 and return to Gion.",
+        "materials": ["Macho Binding", "Onryo Hair"],
+        "steps": "Buy Macho Binding from Rakugai’s Arigataya Market. Locker F-4 contains Onryo Hair, and Ebisuya Pawn sells more from Chapter 10.",
+        "reward": "Equipment that silences your footsteps.",
+        "links": [{ "label": "Locker Key F-4", "href": "#locker-key-F-4" }]
+      },
+      {
+        "id": "ass-quills",
+        "name": "Ass Quills",
+        "window": "7-4",
+        "requires": "Reach Chapter 7 and return to Gion.",
+        "materials": ["Onryo Hair", "Crude Taiken"],
+        "steps": "Ebisuya Pawn sells Crude Taiken and stocks Onryo Hair from Chapter 10. Locker F-4 also contains one Onryo Hair.",
+        "reward": "Makes Kiryu get back up quickly when knocked down, at the cost of a little damage.",
+        "links": [{ "label": "Locker Key F-4", "href": "#locker-key-F-4" }]
+      },
+      {
+        "id": "bat",
+        "name": "Bat",
+        "window": "7-4",
+        "requires": "Reach Chapter 7 and return to Gion.",
+        "materials": ["Red Oak Bokuto", "Scrap Iron", "Chunk of Wood (Ash)"],
+        "steps": "Buy the Red Oak Bokuto from the Rakugai Arms Dealer. Locker B-4 contains Chunk of Wood (Ash). A repeat clear of Foundational Training in melon cutting also awards it.",
+        "reward": "A battering club. Making it unlocks Red Bat.",
+        "links": [{ "label": "Locker Key B-4", "href": "#locker-key-B-4" }]
+      },
+      {
+        "id": "red-bat",
+        "name": "Red Bat",
+        "window": "7-4",
+        "requires": "Invent Bat first.",
+        "materials": ["Red Oak Bokuto", "Scrap Iron", "Chunk of Wood (Oak)"],
+        "steps": "Bring another Red Oak Bokuto and Scrap Iron. Repeat Advanced Training in melon cutting for Chunk of Wood (Oak).",
+        "reward": "A red battering club. Making it unlocks Sturdy Bat."
+      },
+      {
+        "id": "sturdy-bat",
+        "name": "Sturdy Bat",
+        "window": "7-4",
+        "requires": "Invent Red Bat first.",
+        "materials": ["Red Oak Bokuto", "Scrap Iron", "Chunk of Wood (Sacred)"],
+        "steps": "Locker G-4 contains Chunk of Wood (Sacred). It is also a possible prize in the Frigid Icicle Tournament at Hozoin Coliseum.",
+        "reward": "A metal battering club with a steel core.",
+        "links": [{ "label": "Locker Key G-4", "href": "#locker-key-G-4" }]
+      },
+      {
+        "id": "hame-yumimaru",
+        "name": "Hame Yumimaru",
+        "window": "7-4",
+        "requires": "Reach Chapter 7 and return to Gion.",
+        "materials": ["Jutte", "Temari Stone", "Baleen"],
+        "steps": "The Rakugai Arms Dealer sells Jutte. Buy Temari Stone and Baleen from Rakugai’s Arigataya Market.",
+        "reward": "A blunt greatsword. Making it unlocks Raijin Hame Yumimaru."
+      },
+      {
+        "id": "raijin-hame-yumimaru",
+        "name": "Raijin Hame Yumimaru",
+        "window": "7-4",
+        "requires": "Invent Hame Yumimaru first.",
+        "materials": ["Hame Yumimaru", "Thunder Stone", "Copper Ore"],
+        "steps": "The recipe uses up Hame Yumimaru. Gion’s Arigataya Market sells Copper Ore from Chapter 8. Get Thunder Stone from locker A-1 or the Frigid Icicle Tournament at Hozoin Coliseum.",
+        "reward": "A lightning-infused greatsword.",
+        "links": [{ "label": "Locker Key A-1", "href": "#locker-key-A-1" }]
+      },
+      {
+        "id": "four-five-six-die",
+        "name": "4-5-6 Die",
+        "window": "8-1",
+        "requires": "Reach Chapter 8.",
+        "materials": ["Tengu Stone", "Steel"],
+        "steps": "Buy both materials from the Rakugai Arms Dealer.",
+        "reward": "Forces Kiryu to roll 4-5-6 in Cee-Lo."
+      },
+      {
+        "id": "one-one-one-die",
+        "name": "1-1-1 Die",
+        "window": "8-1",
+        "requires": "Reach Chapter 8.",
+        "materials": ["Tengu Stone", "Scrap Iron"],
+        "steps": "Buy Tengu Stone from the Rakugai Arms Dealer. Scrap Iron is available from the mahjong prize exchange or as a pickup during 1-7.",
+        "reward": "Forces Kiryu to roll 1-1-1 in Cee-Lo."
+      },
+      {
+        "id": "one-two-three-kiseru",
+        "name": "1-2-3 Kiseru",
+        "window": "8-1",
+        "requires": "Reach Chapter 8.",
+        "materials": ["Glass Kiseru", "Lapis Lazuli"],
+        "steps": "Get the full reward in #53 for Glass Kiseru. Ebisuya Pawn sells Lapis Lazuli, and locker H-1 contains one.",
+        "reward": "Makes your opponents roll 1-2-3 in Cee-Lo.",
+        "links": [{ "label": "Quest #53", "href": "#quest-53" }, { "label": "Locker Key H-1", "href": "#locker-key-H-1" }]
+      },
+      {
+        "id": "trips-yokan",
+        "name": "Trips Yokan",
+        "window": "8-1",
+        "requires": "Reach Chapter 8.",
+        "materials": ["Manju", "Celestial Steel"],
+        "steps": "Arigataya Market sells Manju. Look in locker B-3 or earn Celestial Steel from street fights.",
+        "reward": "Makes Kiryu roll triples in Cee-Lo.",
+        "links": [{ "label": "Locker Key B-3", "href": "#locker-key-B-3" }]
+      },
+      {
+        "id": "piss-mountain-stone",
+        "name": "Piss Mountain Stone",
+        "window": "8-1",
+        "requires": "Reach Chapter 8 and obtain a Hunger Pill.",
+        "materials": ["Dosojin Stone", "Hunger Pill"],
+        "steps": "Get Dosojin Stone from #98 or the Peerless Tournament at Hozoin Coliseum. After inventing Hunger Pill you can buy another from Tenguya Drugs or Etchuya Drugs.",
+        "reward": "Makes your opponents miss the pot in Cee-Lo.",
+        "links": [{ "label": "Quest #98", "href": "#quest-98" }]
+      },
+      {
+        "id": "odd-jiros-amulet",
+        "name": "Odd Jiro's Amulet",
+        "window": "8-1",
+        "requires": "Reach Chapter 8.",
+        "materials": ["Hariti's Amulet", "Matcha Dango"],
+        "steps": "Get Hariti's Amulet through an alternate ending of #76 or the Hozoin Training Tournament at Hozoin Coliseum. Nonaka Tea House sells Matcha Dango to take away.",
+        "reward": "Guarantees an odd result on the next round of Cho-Han.",
+        "links": [{ "label": "Quest #76", "href": "#quest-76" }]
+      },
+      {
+        "id": "even-goros-beads",
+        "name": "Even Goro's Beads",
+        "window": "8-1",
+        "requires": "Reach Chapter 8.",
+        "materials": ["Ninigi Spirit Pearl", "Futsumitama Spirit Pearl", "Susanoo Spirit Pearl"],
+        "steps": "Get Ninigi Spirit Pearl from the full result of #96 or the Powerhouse Ranking Tournament. Get Futsumitama Spirit Pearl from locker I-2 or the Scorching Flames Tournament. Get Susanoo Spirit Pearl from #77 or buy it at Ebisuya Pawn in Chapter 10.",
+        "reward": "Guarantees an even result on the next round of Cho-Han.",
+        "links": [
+          { "label": "Quest #96", "href": "#quest-96" },
+          { "label": "Locker Key I-2", "href": "#locker-key-I-2" },
+          { "label": "Quest #77", "href": "#quest-77" }
+        ]
+      },
+      {
+        "id": "snake-eyes-seal",
+        "name": "Snake Eyes Seal",
+        "window": "8-1",
+        "requires": "Reach Chapter 8.",
+        "materials": ["Chunk of Wood (Oak)", "Chunk of Wood (Sacred)"],
+        "steps": "Repeat Advanced Training in melon cutting for Chunk of Wood (Oak). For Chunk of Wood (Sacred), open locker G-4 or earn it in the Frigid Icicle Tournament. Save a second sacred chunk for Sturdy Bat.",
+        "reward": "Guarantees a roll of 1-1 in Cho-Han.",
+        "links": [{ "label": "Locker Key G-4", "href": "#locker-key-G-4" }]
+      },
+      {
+        "id": "gamblers-kiseru",
+        "name": "Gambler's Kiseru",
+        "window": "8-1",
+        "requires": "Reach Chapter 8.",
+        "materials": ["Polishing Cloth", "Sesame"],
+        "steps": "Get Polishing Cloth during #12. Buy Sesame from Tenguya Drugs or Etchuya Drugs.",
+        "reward": "Improves Kiryu’s odds for several rounds of Cho-Han.",
+        "links": [{ "label": "Quest #12", "href": "#quest-12" }]
+      },
+      {
+        "id": "mew-sandals-reward",
+        "name": "Claim the Mew Sandals",
+        "window": "8-1",
+        "requires": "Complete all 21 inventions.",
+        "steps": "Speak to Gyotensai again to accept his completion reward. The save records this claim separately from the 21 recipes, and save sync can mark it done.",
+        "reward": "Mew Sandals."
+      }
+    ]
+  }
+]

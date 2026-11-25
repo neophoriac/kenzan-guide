@@ -1,0 +1,1210 @@
+{
+  "8": {
+    "A": {
+      "area": "st_gion",
+      "x": 0.501721,
+      "y": 0.903061,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_GION.bin",
+      "record": "00b00117"
+    },
+    "B": {
+      "area": "st_gion",
+      "x": 0.450747,
+      "y": 0.690238,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_GION.bin",
+      "record": "017c0066"
+    }
+  },
+  "17": {
+    "A": {
+      "area": "st_kaido_rakunai",
+      "x": 0.515904,
+      "y": 0.7492,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_KAIDO_RAKUNAI.bin",
+      "record": "00020202"
+    },
+    "B": {
+      "area": "st_kaido_rakunai",
+      "x": 0.305096,
+      "y": 0.664611,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_KAIDO_RAKUNAI.bin",
+      "record": "0102020e"
+    },
+    "C": {
+      "area": "st_rakugaicho",
+      "x": 0.827928,
+      "y": 0.19391,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_RAKUGAICHO.bin",
+      "record": "010204e4"
+    }
+  },
+  "20": {
+    "B": {
+      "area": "st_kajiya",
+      "x": 0.259825,
+      "y": 0.082119,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_KAJIYA.bin",
+      "record": "0002043b"
+    },
+    "C": {
+      "area": "st_gion",
+      "x": 0.73047,
+      "y": 0.316712,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_GION.bin",
+      "record": "017c0068"
+    }
+  },
+  "31": {
+    "A": {
+      "area": "st_rakugaicho",
+      "x": 0.442513,
+      "y": 0.162922,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_RAKUGAICHO.bin",
+      "record": "017c0493"
+    },
+    "B": {
+      "area": "st_sakaya_01",
+      "x": 0.38378,
+      "y": 0.263683,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_SAKAYA_01.bin",
+      "record": "007c0496"
+    },
+    "C": {
+      "area": "st_udon",
+      "x": 0.45833,
+      "y": 0.671004,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_UDON.bin",
+      "record": "007c0497"
+    }
+  },
+  "36": {
+    "A": {
+      "area": "st_rakugaicho",
+      "x": 0.767036,
+      "y": 0.15874,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_RAKUGAICHO.bin",
+      "record": "000203b2"
+    },
+    "B": {
+      "area": "st_rakugaicho",
+      "x": 0.434706,
+      "y": 0.381961,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_RAKUGAICHO.bin",
+      "record": "000203ac"
+    },
+    "C": {
+      "area": "st_hatsumeika",
+      "x": 0.576813,
+      "y": 0.551824,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_HATSUMEIKA.bin",
+      "record": "007c01b5"
+    },
+    "D": {
+      "area": "st_rakugaicho",
+      "x": 0.505673,
+      "y": 0.156272,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_RAKUGAICHO.bin",
+      "record": "00b0001b"
+    }
+  },
+  "39": {
+    "A": {
+      "area": "st_rakugaicho",
+      "x": 0.586981,
+      "y": 0.78055,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_RAKUGAICHO.bin",
+      "record": "00c0008a"
+    },
+    "B": {
+      "area": "st_kaido_yama",
+      "x": 0.429098,
+      "y": 0.811829,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_KAIDO_YAMA.bin",
+      "record": "00c0008b"
+    }
+  },
+  "42": {
+    "A": {
+      "area": "st_kaido_rakunai",
+      "x": 0.059072,
+      "y": 0.658266,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_KAIDO_RAKUNAI.bin",
+      "record": "00020408"
+    },
+    "B": {
+      "area": "st_kaido_rakunai",
+      "x": 0.095497,
+      "y": 0.65644,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_KAIDO_RAKUNAI.bin",
+      "record": "00020409"
+    }
+  },
+  "44": {
+    "D": {
+      "area": "st_rakugaicho",
+      "x": 0.676528,
+      "y": 0.238609,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_RAKUGAICHO.bin",
+      "record": "01020249"
+    }
+  },
+  "49": {
+    "A": {
+      "area": "st_rakugaicho",
+      "x": 0.427946,
+      "y": 0.488841,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_RAKUGAICHO.bin",
+      "record": "0049003e"
+    },
+    "B": {
+      "area": "st_rakugaicho",
+      "x": 0.581485,
+      "y": 0.74442,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_RAKUGAICHO.bin",
+      "record": "00490043"
+    },
+    "C": {
+      "area": "st_rakugaicho",
+      "x": 0.090208,
+      "y": 0.800431,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_RAKUGAICHO.bin",
+      "record": "00490062"
+    },
+    "D": {
+      "area": "st_rakugaicho",
+      "x": 0.36976,
+      "y": 0.7473,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_RAKUGAICHO.bin",
+      "record": "0049009b"
+    },
+    "E": {
+      "area": "st_kaido_kawa",
+      "x": 0.73799,
+      "y": 0.087109,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_KAIDO_KAWA.bin",
+      "record": "0049006f"
+    }
+  },
+  "54": {
+    "A": {
+      "area": "st_kaido_kawa",
+      "x": 0.494242,
+      "y": 0.428982,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_KAIDO_KAWA.bin",
+      "record": "01830652"
+    },
+    "B": {
+      "area": "st_kiyomizu_jnt",
+      "x": 0.561103,
+      "y": 0.506668,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_KIYOMIZU_JNT.bin",
+      "record": "0183033b"
+    },
+    "C": {
+      "area": "st_taki",
+      "x": 0.502672,
+      "y": 0.239846,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_TAKI.bin",
+      "record": "0102039d"
+    }
+  },
+  "58": {
+    "A": {
+      "area": "st_kaido_rakunai",
+      "x": 0.26514,
+      "y": 0.659612,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_KAIDO_RAKUNAI.bin",
+      "record": "008302d5"
+    },
+    "B": {
+      "area": "st_kaido_rakunai",
+      "x": 0.397246,
+      "y": 0.414975,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_KAIDO_RAKUNAI.bin",
+      "record": "008302d7"
+    },
+    "C": {
+      "area": "st_kaido_rakunai",
+      "x": 0.57163,
+      "y": 0.782748,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_KAIDO_RAKUNAI.bin",
+      "record": "008302dd"
+    },
+    "D": {
+      "area": "st_kaido_rakunai",
+      "x": 0.964223,
+      "y": 0.754295,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_KAIDO_RAKUNAI.bin",
+      "record": "008302db"
+    },
+    "E": {
+      "area": "st_kaido_rakunai",
+      "x": 0.238874,
+      "y": 0.712961,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_KAIDO_RAKUNAI.bin",
+      "record": "008302da"
+    },
+    "F": {
+      "area": "st_kaido_rakunai",
+      "x": 0.022115,
+      "y": 0.766022,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_KAIDO_RAKUNAI.bin",
+      "record": "008302dc"
+    }
+  },
+  "59": {
+    "A": {
+      "area": "st_kaido_rakunai",
+      "x": 0.679646,
+      "y": 0.752276,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_KAIDO_RAKUNAI.bin",
+      "record": "008302de"
+    },
+    "B": {
+      "area": "st_kaido_kawa",
+      "x": 0.636929,
+      "y": 0.075679,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_KAIDO_KAWA.bin",
+      "record": "008302df"
+    }
+  },
+  "60": {
+    "A": {
+      "area": "st_sakaya_01",
+      "x": 0.394306,
+      "y": 0.806345,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_SAKAYA_01.bin",
+      "record": "018300b8"
+    },
+    "B": {
+      "area": "st_kaido_rindo",
+      "x": 0.641871,
+      "y": 0.322255,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_KAIDO_RINDO.bin",
+      "record": "0083036d"
+    },
+    "C": {
+      "area": "st_dokutsu_01",
+      "x": 0.465741,
+      "y": 0.669677,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_DOKUTSU_01.bin",
+      "record": "0183036e"
+    }
+  },
+  "61": {
+    "A": {
+      "area": "st_rakugaicho",
+      "x": 0.763721,
+      "y": 0.157849,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_RAKUGAICHO.bin",
+      "record": "000203b4"
+    },
+    "B": {
+      "area": "st_rakugaicho",
+      "x": 0.676528,
+      "y": 0.238609,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_RAKUGAICHO.bin",
+      "record": "01020249"
+    },
+    "C": {
+      "area": "st_rakugaicho",
+      "x": 0.505673,
+      "y": 0.156272,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_RAKUGAICHO.bin",
+      "record": "00b0001b"
+    },
+    "D": {
+      "area": "st_rakugaicho",
+      "x": 0.353837,
+      "y": 0.437423,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_RAKUGAICHO.bin",
+      "record": "010200df"
+    }
+  },
+  "62": {
+    "A": {
+      "area": "st_udon",
+      "x": 0.507174,
+      "y": 0.561476,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_UDON.bin",
+      "record": "0002015b"
+    },
+    "B": {
+      "area": "st_rakugaicho",
+      "x": 0.7625,
+      "y": 0.15874,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_RAKUGAICHO.bin",
+      "record": "000203bb"
+    },
+    "C": {
+      "area": "st_rakugaicho",
+      "x": 0.232707,
+      "y": 0.219619,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_RAKUGAICHO.bin",
+      "record": "000203be"
+    }
+  },
+  "66": {
+    "A": {
+      "area": "st_rakugaicho",
+      "x": 0.547287,
+      "y": 0.510231,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_RAKUGAICHO.bin",
+      "record": "0102023e"
+    },
+    "B": {
+      "area": "st_rakugaicho",
+      "x": 0.561071,
+      "y": 0.596818,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_RAKUGAICHO.bin",
+      "record": "01b00013"
+    }
+  },
+  "76": {
+    "A": {
+      "area": "st_kaido_rakunai",
+      "x": 0.785292,
+      "y": 0.750738,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_KAIDO_RAKUNAI.bin",
+      "record": "004900a8"
+    },
+    "B": {
+      "area": "st_kiyomizu_jnt",
+      "x": 0.383411,
+      "y": 0.694155,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_KIYOMIZU_JNT.bin",
+      "record": "004900ac"
+    },
+    "C": {
+      "area": "st_kiyomizu_jnt",
+      "x": 0.589918,
+      "y": 0.426553,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_KIYOMIZU_JNT.bin",
+      "record": "008305d3"
+    },
+    "D": {
+      "area": "st_kiyomizu_jnt",
+      "x": 0.751343,
+      "y": 0.291223,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_KIYOMIZU_JNT.bin",
+      "record": "004900ab"
+    }
+  },
+  "82": {
+    "A": {
+      "area": "st_gion",
+      "x": 0.139816,
+      "y": 0.755752,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_GION.bin",
+      "record": "00b000fe"
+    },
+    "B": {
+      "area": "st_kaido_tanbo",
+      "x": 0.7366,
+      "y": 0.679936,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_KAIDO_TANBO.bin",
+      "record": "00b000ff"
+    },
+    "C": {
+      "area": "st_kaido_tanbo",
+      "x": 0.750421,
+      "y": 0.593447,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_KAIDO_TANBO.bin",
+      "record": "01b00100"
+    }
+  },
+  "87": {
+    "C": {
+      "area": "st_yoshioka_jnt",
+      "x": 0.674302,
+      "y": 0.64007,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_YOSHIOKA_JNT.bin",
+      "record": "00b00028"
+    }
+  },
+  "90": {
+    "A": {
+      "area": "st_yoshioka_jnt",
+      "x": 0.139282,
+      "y": 0.370734,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_YOSHIOKA_JNT.bin",
+      "record": "00490070"
+    },
+    "B": {
+      "area": "st_kaido_tanbo",
+      "x": 0.959685,
+      "y": 0.721692,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_KAIDO_TANBO.bin",
+      "record": "00490072"
+    }
+  },
+  "96": {
+    "A": {
+      "area": "st_yoshioka_jnt",
+      "x": 0.139282,
+      "y": 0.370734,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_YOSHIOKA_JNT.bin",
+      "record": "00490074"
+    },
+    "B": {
+      "area": "st_kaido_tanbo",
+      "x": 0.959585,
+      "y": 0.721692,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_KAIDO_TANBO.bin",
+      "record": "00490076"
+    }
+  },
+  "97": {
+    "A": {
+      "area": "st_hatsumeika",
+      "x": 0.01419,
+      "y": 0.504648,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_HATSUMEIKA.bin",
+      "record": "01b0003e"
+    },
+    "B": {
+      "area": "st_kaido_tanbo",
+      "x": 0.676176,
+      "y": 0.795678,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_KAIDO_TANBO.bin",
+      "record": "06830287"
+    },
+    "C": {
+      "area": "st_rakugaicho",
+      "x": 0.56081,
+      "y": 0.656668,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_RAKUGAICHO.bin",
+      "record": "06830288"
+    },
+    "D": {
+      "area": "st_kaido_tani",
+      "x": 0.52933,
+      "y": 0.697546,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_KAIDO_TANI.bin",
+      "record": "0183027f"
+    },
+    "E": {
+      "area": "st_kaido_tani",
+      "x": 0.375845,
+      "y": 0.428887,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_KAIDO_TANI.bin",
+      "record": "01830280"
+    }
+  },
+  "98": {
+    "A": {
+      "area": "st_kawa_jnt",
+      "x": 0.466676,
+      "y": 0.581809,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_KAWA_JNT.bin",
+      "record": "017c044b"
+    },
+    "B": {
+      "area": "st_kaido_kawa",
+      "x": 0.744655,
+      "y": 0.895104,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_KAIDO_KAWA.bin",
+      "record": "007c044f"
+    },
+    "C": {
+      "area": "st_rakugaicho",
+      "x": 0.570101,
+      "y": 0.721385,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_RAKUGAICHO.bin",
+      "record": "017c0453"
+    }
+  },
+  "99": {
+    "A": {
+      "area": "st_kaido_rindo",
+      "x": 0.803797,
+      "y": 0.532248,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_KAIDO_RINDO.bin",
+      "record": "01b0008a"
+    },
+    "B": {
+      "area": "st_gion",
+      "x": 0.504136,
+      "y": 0.594217,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_GION.bin",
+      "record": "01b0008f"
+    },
+    "C": {
+      "area": "st_kaido_yama",
+      "x": 0.218811,
+      "y": 0.724874,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_KAIDO_YAMA.bin",
+      "record": "00b00096"
+    }
+  },
+  "100": {
+    "A": {
+      "area": "st_rakugaicho",
+      "x": 0.117117,
+      "y": 0.16731,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_RAKUGAICHO.bin",
+      "record": "007c0229"
+    },
+    "B": {
+      "area": "st_kaido_rakunai",
+      "x": 0.784276,
+      "y": 0.712096,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_KAIDO_RAKUNAI.bin",
+      "record": "010204f3"
+    }
+  },
+  "102": {
+    "A": {
+      "area": "st_gion",
+      "x": 0.412548,
+      "y": 0.895504,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_GION.bin",
+      "record": "01b0011b"
+    },
+    "B": {
+      "area": "st_gion",
+      "x": 0.907164,
+      "y": 0.819432,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_GION.bin",
+      "record": "00b0011c"
+    }
+  },
+  "103": {
+    "A": {
+      "area": "st_gion",
+      "x": 0.453543,
+      "y": 0.893948,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_GION.bin",
+      "record": "01b00122"
+    },
+    "B": {
+      "area": "st_gion",
+      "x": 0.82619,
+      "y": 0.679624,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_GION.bin",
+      "record": "01b00126"
+    }
+  },
+  "104": {
+    "A": {
+      "area": "st_gion",
+      "x": 0.64206,
+      "y": 0.839603,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_GION.bin",
+      "record": "00b000e0"
+    },
+    "B": {
+      "area": "st_gion",
+      "x": 0.16365,
+      "y": 0.818765,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_GION.bin",
+      "record": "06b0006b"
+    }
+  },
+  "105": {
+    "A": {
+      "area": "st_gion",
+      "x": 0.613458,
+      "y": 0.833269,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_GION.bin",
+      "record": "017c05ec"
+    },
+    "B": {
+      "area": "st_gion",
+      "x": 0.871635,
+      "y": 0.270702,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_GION.bin",
+      "record": "007c05ed"
+    }
+  },
+  "106": {
+    "A": {
+      "area": "st_gion",
+      "x": 0.252252,
+      "y": 0.402675,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_GION.bin",
+      "record": "00020042"
+    },
+    "B": {
+      "area": "st_shichiya",
+      "x": 0.306212,
+      "y": 0.482982,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_SHICHIYA.bin",
+      "record": "007c006c"
+    }
+  },
+  "107": {
+    "A": {
+      "area": "st_gion",
+      "x": 0.48456,
+      "y": 0.886113,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_GION.bin",
+      "record": "01020513"
+    },
+    "B": {
+      "area": "st_gion",
+      "x": 0.368692,
+      "y": 0.6719,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_GION.bin",
+      "record": "0002050f"
+    }
+  },
+  "109": {
+    "A": {
+      "area": "st_gion",
+      "x": 0.398247,
+      "y": 0.908785,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_GION.bin",
+      "record": "00c00058"
+    },
+    "B": {
+      "area": "st_rakugaicho",
+      "x": 0.534027,
+      "y": 0.51503,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_RAKUGAICHO.bin",
+      "record": "01c00061"
+    },
+    "C": {
+      "area": "st_rakugaicho",
+      "x": 0.525477,
+      "y": 0.403625,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_RAKUGAICHO.bin",
+      "record": "00c00059"
+    }
+  },
+  "111": {
+    "A": {
+      "area": "st_tatsuya",
+      "x": 0.037089,
+      "y": 0.688208,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_TATSUYA.bin",
+      "record": "01b00118"
+    },
+    "B": {
+      "area": "st_shichiya",
+      "x": 0.306212,
+      "y": 0.482982,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_SHICHIYA.bin",
+      "record": "007c006c"
+    }
+  },
+  "112": {
+    "A": {
+      "area": "st_tatsuya",
+      "x": 0.026127,
+      "y": 0.708426,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_TATSUYA.bin",
+      "record": "01b0012e"
+    },
+    "B": {
+      "area": "st_sakaya_02",
+      "x": 0.142132,
+      "y": 0.485851,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_SAKAYA_02.bin",
+      "record": "007c01bd"
+    },
+    "C": {
+      "area": "st_rakugaicho",
+      "x": 0.602728,
+      "y": 0.801665,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_RAKUGAICHO.bin",
+      "record": "01b00128"
+    }
+  },
+  "113": {
+    "A": {
+      "area": "st_tatsuya",
+      "x": 0.437648,
+      "y": 0.362027,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_TATSUYA.bin",
+      "record": "017c0597"
+    },
+    "B": {
+      "area": "st_sakaya_02",
+      "x": 0.201305,
+      "y": 0.64528,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_SAKAYA_02.bin",
+      "record": "007c0598"
+    },
+    "C": {
+      "area": "st_gion",
+      "x": 0.85441,
+      "y": 0.592328,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_GION.bin",
+      "record": "007c059a"
+    }
+  },
+  "115": {
+    "A": {
+      "area": "st_tatsuya",
+      "x": 0.184664,
+      "y": 0.438855,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_TATSUYA.bin",
+      "record": "017c0457"
+    },
+    "B": {
+      "area": "st_gion",
+      "x": 0.654962,
+      "y": 0.502642,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_GION.bin",
+      "record": "007c0459"
+    },
+    "C": {
+      "area": "st_gion",
+      "x": 0.742546,
+      "y": 0.428903,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_GION.bin",
+      "record": "007c045b"
+    },
+    "D": {
+      "area": "st_gion",
+      "x": 0.864898,
+      "y": 0.303432,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_GION.bin",
+      "record": "007c045c"
+    },
+    "F": {
+      "area": "st_gion",
+      "x": 0.75958,
+      "y": 0.206077,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_GION.bin",
+      "record": "007c045e"
+    }
+  },
+  "116": {
+    "A": {
+      "area": "st_rakugaicho",
+      "x": 0.278201,
+      "y": 0.169915,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_RAKUGAICHO.bin",
+      "record": "00830030"
+    },
+    "B": {
+      "area": "st_gion",
+      "x": 0.471467,
+      "y": 0.884613,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_GION.bin",
+      "record": "00830032"
+    },
+    "C": {
+      "area": "st_rakugaicho",
+      "x": 0.175915,
+      "y": 0.234907,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_RAKUGAICHO.bin",
+      "record": "0083003a"
+    },
+    "D": {
+      "area": "st_gion",
+      "x": 0.367612,
+      "y": 0.50881,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_GION.bin",
+      "record": "0083003b"
+    }
+  },
+  "118": {
+    "A": {
+      "area": "st_gion",
+      "x": 0.419984,
+      "y": 0.877056,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_GION.bin",
+      "record": "000204fb"
+    },
+    "B": {
+      "area": "st_rakugaicho",
+      "x": 0.25203,
+      "y": 0.220921,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_RAKUGAICHO.bin",
+      "record": "000204fc"
+    }
+  },
+  "119": {
+    "A": {
+      "area": "st_gion",
+      "x": 0.392717,
+      "y": 0.894726,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_GION.bin",
+      "record": "01b00111"
+    },
+    "B": {
+      "area": "st_gion",
+      "x": 0.763076,
+      "y": 0.809819,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_GION.bin",
+      "record": "01b00112"
+    }
+  },
+  "120": {
+    "A": {
+      "area": "st_gion",
+      "x": 0.391955,
+      "y": 0.894893,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_GION.bin",
+      "record": "01b00113"
+    },
+    "B": {
+      "area": "st_gion",
+      "x": 0.762822,
+      "y": 0.810041,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_GION.bin",
+      "record": "01b00114"
+    },
+    "C": {
+      "area": "st_gion",
+      "x": 0.821995,
+      "y": 0.817376,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_GION.bin",
+      "record": "00b00115"
+    },
+    "D": {
+      "area": "st_gion",
+      "x": 0.941868,
+      "y": 0.531537,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_GION.bin",
+      "record": "00b00116"
+    }
+  },
+  "121": {
+    "A": {
+      "area": "st_rakugaicho",
+      "x": 0.450541,
+      "y": 0.62856,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_RAKUGAICHO.bin",
+      "record": "00020484"
+    }
+  },
+  "122": {
+    "A": {
+      "area": "st_kaido_rindo",
+      "x": 0.454911,
+      "y": 0.595881,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_KAIDO_RINDO.bin",
+      "record": "0002022c"
+    }
+  },
+  "123": {
+    "A": {
+      "area": "st_kaido_kawa",
+      "x": 0.439724,
+      "y": 0.277715,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_KAIDO_KAWA.bin",
+      "record": "0002047b"
+    }
+  },
+  "124": {
+    "A": {
+      "area": "st_kaido_kawa",
+      "x": 0.555971,
+      "y": 0.69,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_KAIDO_KAWA.bin",
+      "record": "00020462"
+    }
+  },
+  "125": {
+    "A": {
+      "area": "st_kaido_rindo",
+      "x": 0.435972,
+      "y": 0.693593,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_KAIDO_RINDO.bin",
+      "record": "0002045d"
+    }
+  },
+  "126": {
+    "A": {
+      "area": "st_rakugaicho",
+      "x": 0.46271,
+      "y": 0.470605,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_RAKUGAICHO.bin",
+      "record": "00020467"
+    }
+  },
+  "127": {
+    "A": {
+      "area": "st_gion",
+      "x": 0.374285,
+      "y": 0.300042,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_GION.bin",
+      "record": "00020448"
+    }
+  },
+  "128": {
+    "A": {
+      "area": "st_gion",
+      "x": 0.785067,
+      "y": 0.273481,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_GION.bin",
+      "record": "00020458"
+    }
+  },
+  "129": {
+    "A": {
+      "area": "st_kaido_rakunai",
+      "x": 0.427914,
+      "y": 0.701426,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_KAIDO_RAKUNAI.bin",
+      "record": "008302bf"
+    }
+  },
+  "130": {
+    "A": {
+      "area": "st_kaido_yama",
+      "x": 0.923762,
+      "y": 0.441802,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_KAIDO_YAMA.bin",
+      "record": "008302bb"
+    }
+  },
+  "131": {
+    "A": {
+      "area": "st_rakugaicho",
+      "x": 0.276021,
+      "y": 0.441948,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_RAKUGAICHO.bin",
+      "record": "008302b2"
+    }
+  },
+  "132": {
+    "A": {
+      "area": "st_kaido_kawa",
+      "x": 0.648947,
+      "y": 0.893322,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_KAIDO_KAWA.bin",
+      "record": "0002025f"
+    }
+  },
+  "133": {
+    "A": {
+      "area": "st_kaido_yama",
+      "x": 0.640111,
+      "y": 0.506021,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_KAIDO_YAMA.bin",
+      "record": "0002046c"
+    },
+    "B": {
+      "area": "st_rakugaicho",
+      "x": 0.117117,
+      "y": 0.16731,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_RAKUGAICHO.bin",
+      "record": "007c0229"
+    },
+    "C": {
+      "area": "st_kaido_tanbo",
+      "x": 0.627228,
+      "y": 0.798315,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_KAIDO_TANBO.bin",
+      "record": "00020479"
+    }
+  },
+  "134": {
+    "A": {
+      "area": "st_kaido_tanbo",
+      "x": 0.400301,
+      "y": 0.79806,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_KAIDO_TANBO.bin",
+      "record": "00830385"
+    }
+  },
+  "135": {
+    "A": {
+      "area": "st_gion",
+      "x": 0.091702,
+      "y": 0.835158,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_GION.bin",
+      "record": "008302a6"
+    }
+  },
+  "136": {
+    "A": {
+      "area": "st_kaido_tani",
+      "x": 0.474323,
+      "y": 0.913157,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_KAIDO_TANI.bin",
+      "record": "008302c8"
+    }
+  },
+  "137": {
+    "A": {
+      "area": "st_rendaino_jnt",
+      "x": 0.523307,
+      "y": 0.17727,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_RENDAINO_JNT.bin",
+      "record": "018302e9"
+    }
+  },
+  "138": {
+    "A": {
+      "area": "st_sanjusangen_jnt",
+      "x": 0.420081,
+      "y": 0.143301,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_SANJUSANGEN_JNT.bin",
+      "record": "01830309"
+    },
+    "B": {
+      "area": "st_sanjusangendo",
+      "x": 0.474149,
+      "y": 0.645818,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_SANJUSANGENDO.bin",
+      "record": "008302a2"
+    }
+  },
+  "139": {
+    "A": {
+      "area": "st_kaido_tani",
+      "x": 0.6637,
+      "y": 0.144722,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_KAIDO_TANI.bin",
+      "record": "008302c3"
+    }
+  },
+  "140": {
+    "A": {
+      "area": "st_kaido_rindo",
+      "x": 0.642188,
+      "y": 0.323046,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_KAIDO_RINDO.bin",
+      "record": "008300b3"
+    },
+    "B": {
+      "area": "st_dokutsu_01",
+      "x": 0.434485,
+      "y": 0.615446,
+      "precision": "game",
+      "reference": "wdr_par/wdr.par · pac_ST_DOKUTSU_01.bin",
+      "record": "00830297"
+    }
+  }
+}

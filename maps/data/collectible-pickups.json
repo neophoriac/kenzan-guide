@@ -1,0 +1,770 @@
+[
+  {
+    "id": "pickup-067c058c",
+    "group": "field-pickup",
+    "name": "Vitality Pill",
+    "area": "st_toaru_tera",
+    "x": 0.604764,
+    "y": 0.571634,
+    "detail": "Look for the ground pickup beside the stone lantern in the old temple courtyard.",
+    "window": "2-1"
+  },
+  {
+    "id": "pickup-067c058d",
+    "group": "field-pickup",
+    "name": "Passion Pill",
+    "area": "st_toaru_tera",
+    "x": 0.712698,
+    "y": 0.235038,
+    "detail": "Search the corner of the old temple grounds before returning to Majima.",
+    "window": "2-1"
+  },
+  {
+    "id": "pickup-067c058f",
+    "group": "field-pickup",
+    "name": "Buddha Statue Fragment",
+    "area": "st_toaru_tera",
+    "x": 0.540838,
+    "y": 0.301574,
+    "detail": "Check the steps in the old temple grounds before returning to Majima.",
+    "window": "2-1"
+  },
+  {
+    "id": "pickup-067c0590",
+    "group": "field-pickup",
+    "name": "Lapis Lazuli",
+    "area": "st_toaru_tera",
+    "x": 0.500073,
+    "y": 0.143061,
+    "detail": "Look behind the Buddha statue in the old temple grounds.",
+    "window": "2-1"
+  },
+  {
+    "id": "pickup-067c0278",
+    "group": "field-pickup",
+    "name": "Steel",
+    "area": "st_ukiyo_ienonaka",
+    "x": 0.607381,
+    "y": 0.500679,
+    "detail": "Pick this up on the approach to Ukiyo’s house before speaking to her.",
+    "window": "3-2"
+  },
+  {
+    "id": "pickup-067c0634",
+    "group": "field-pickup",
+    "name": "Gold Tortoiseshell",
+    "area": "st_ukiyo_ienonaka",
+    "x": 0.944699,
+    "y": 0.807353,
+    "detail": "Check the field on Ukiyo’s property before speaking to her.",
+    "window": "3-2"
+  },
+  {
+    "id": "pickup-067c0635",
+    "group": "field-pickup",
+    "name": "Quartz",
+    "area": "st_ukiyo_ienonaka",
+    "x": 0.960951,
+    "y": 0.524614,
+    "detail": "Check by the well on Ukiyo’s property before speaking to her.",
+    "window": "3-2"
+  },
+  {
+    "id": "pickup-0d3c0005",
+    "group": "stage-weapon",
+    "name": "Nameless Katana",
+    "area": "st_yuuki_shinshitsu",
+    "x": 0.158809,
+    "y": 0.37009,
+    "detail": "Pick up the sword in the Yūki estate storeroom before proceeding to the next fight.",
+    "window": "1-7"
+  },
+  {
+    "id": "pickup-0d3c0012",
+    "group": "stage-weapon",
+    "name": "Tessaimaru",
+    "area": "st_dokutsu_02",
+    "x": 0.63987,
+    "y": 0.427185,
+    "detail": "Check beneath the carriage in the cave tunnels. Move the carriage to reach the sword.",
+    "window": "5-17"
+  },
+  {
+    "id": "pickup-0d3c0013",
+    "group": "stage-weapon",
+    "name": "Cast-Iron Kanabo",
+    "area": "st_dokutsu_02",
+    "x": 0.687592,
+    "y": 0.378969,
+    "detail": "Pick up the club near the carriage past the barriers in the cave tunnels.",
+    "window": "5-17"
+  },
+  {
+    "id": "pickup-0d3c003d",
+    "group": "stage-weapon",
+    "name": "Ancient Shichishito",
+    "area": "st_tsuruya_3f",
+    "x": 0.942178,
+    "y": 0.720788,
+    "detail": "Pick up the sword in the third-floor storeroom after Tsuruya starts collapsing. This is its only main-story pickup. Kyoto Adventure also offers it in locker J-1.",
+    "window": "7-14"
+  },
+  {
+    "id": "pickup-0d3c003e",
+    "group": "stage-weapon",
+    "name": "Ornate Blade",
+    "area": "st_tsuruya_3f",
+    "x": 0.883787,
+    "y": 0.647231,
+    "detail": "Check the third-floor storeroom after Tsuruya starts collapsing.",
+    "window": "7-14"
+  },
+  {
+    "id": "pickup-0d3c0010",
+    "group": "stage-weapon",
+    "name": "Crude Taiken",
+    "area": "st_rendaino_04",
+    "x": 0.666685,
+    "y": 0.360252,
+    "detail": "Pick up the sword in battlefield 4 while escaping Rendai Field.",
+    "window": "9-7"
+  },
+  {
+    "id": "pickup-0d3c0042",
+    "group": "stage-weapon",
+    "name": "Tengu Staff",
+    "area": "st_ganryu_yosai_01",
+    "x": 0.478425,
+    "y": 0.573406,
+    "detail": "Look on the outside passage of the fortress before dropping down to the next area.",
+    "window": "12-12"
+  },
+  {
+    "id": "pickup-0d3c000f",
+    "group": "stage-weapon",
+    "name": "Holy Spirit Tachi",
+    "area": "st_ganryu_yosai_02b",
+    "x": 0.521267,
+    "y": 0.275805,
+    "detail": "Look in the passage beyond the gate you open with the Blue Oni’s Key.",
+    "window": "12-16"
+  },
+  {
+    "id": "pickup-0d3c0027",
+    "group": "stage-supply",
+    "name": "Special Passion Pill",
+    "area": "st_ganryu_yosai_01",
+    "x": 0.113779,
+    "y": 0.766,
+    "detail": "Available during the Chapter 12 assault on Ganryū Fortress."
+  },
+  {
+    "id": "pickup-0d3c0028",
+    "group": "stage-supply",
+    "name": "Special Vitality Pill",
+    "area": "st_ganryu_yosai_01",
+    "x": 0.114053,
+    "y": 0.757315,
+    "detail": "Available during the Chapter 12 assault on Ganryū Fortress."
+  },
+  {
+    "id": "pickup-0d3c0029",
+    "group": "stage-supply",
+    "name": "Special Vitality Pill",
+    "area": "st_ganryu_yosai_01",
+    "x": 0.909471,
+    "y": 0.60645,
+    "detail": "Available during the Chapter 12 assault on Ganryū Fortress."
+  },
+  {
+    "id": "pickup-0d3c002a",
+    "group": "stage-supply",
+    "name": "Special Passion Pill",
+    "area": "st_ganryu_yosai_01",
+    "x": 0.718093,
+    "y": 0.599389,
+    "detail": "Available during the Chapter 12 assault on Ganryū Fortress."
+  },
+  {
+    "id": "pickup-0d3c002b",
+    "group": "stage-supply",
+    "name": "Passion Pill",
+    "area": "st_ganryu_yosai_01b",
+    "x": 0.898995,
+    "y": 0.196119,
+    "detail": "Available during the Chapter 12 assault on Ganryū Fortress."
+  },
+  {
+    "id": "pickup-0d3c002e",
+    "group": "stage-supply",
+    "name": "Special All-Purpose Medicine",
+    "area": "st_ganryu_yosai_02",
+    "x": 0.860583,
+    "y": 0.086613,
+    "detail": "Available during the Chapter 12 assault on the Ganryū Fortress wharf and passages."
+  },
+  {
+    "id": "pickup-0d3c002f",
+    "group": "stage-supply",
+    "name": "Special Passion Pill",
+    "area": "st_ganryu_yosai_02",
+    "x": 0.793518,
+    "y": 0.412806,
+    "detail": "Available during the Chapter 12 assault on the Ganryū Fortress wharf and passages."
+  },
+  {
+    "id": "pickup-0d3c0030",
+    "group": "stage-supply",
+    "name": "Special Vitality Pill",
+    "area": "st_ganryu_yosai_02",
+    "x": 0.5234,
+    "y": 0.840136,
+    "detail": "Available during the Chapter 12 assault on the Ganryū Fortress wharf and passages."
+  },
+  {
+    "id": "pickup-0d3c0031",
+    "group": "stage-supply",
+    "name": "Special All-Purpose Medicine",
+    "area": "st_ganryu_yosai_02",
+    "x": 0.851016,
+    "y": 0.750295,
+    "detail": "Available during the Chapter 12 assault on the Ganryū Fortress wharf and passages."
+  },
+  {
+    "id": "pickup-0d3c0032",
+    "group": "stage-supply",
+    "name": "Special Vitality Pill",
+    "area": "st_ganryu_yosai_02",
+    "x": 0.08476,
+    "y": 0.317903,
+    "detail": "Available during the Chapter 12 assault on the Ganryū Fortress wharf and passages."
+  },
+  {
+    "id": "pickup-0d3c0033",
+    "group": "stage-supply",
+    "name": "Special Passion Pill",
+    "area": "st_ganryu_yosai_03",
+    "x": 0.377702,
+    "y": 0.926357,
+    "detail": "Look along the south side of the open western courtyard in Ganryū Fortress, after the Blue Oni fight."
+  },
+  {
+    "id": "pickup-0d3c0034",
+    "group": "stage-supply",
+    "name": "Special Vitality Pill",
+    "area": "st_ganryu_yosai_03",
+    "x": 0.953717,
+    "y": 0.318562,
+    "detail": "Look along the far eastern passage in Ganryū Fortress, north of the exit, after the Blue Oni fight."
+  },
+  {
+    "id": "pickup-0d3c0035",
+    "group": "stage-supply",
+    "name": "Adamantine Crystal",
+    "area": "st_ganryu_yosai_04",
+    "x": 0.868796,
+    "y": 0.753538,
+    "detail": "Available during the final stretch of the Ganryū Fortress assault in Chapter 12."
+  },
+  {
+    "id": "pickup-0d3c0036",
+    "group": "stage-supply",
+    "name": "Special Vitality Pill",
+    "area": "st_ganryu_yosai_04",
+    "x": 0.537994,
+    "y": 0.911196,
+    "detail": "Available during the final stretch of the Ganryū Fortress assault in Chapter 12."
+  },
+  {
+    "id": "pickup-0d3c0022",
+    "group": "stage-supply",
+    "name": "Onigiri",
+    "area": "st_kiyomizu",
+    "x": 0.281483,
+    "y": 0.617567,
+    "detail": "Look just past the bridge from the entrance during the Chapter 10 rescue."
+  },
+  {
+    "id": "pickup-0d3c0023",
+    "group": "stage-supply",
+    "name": "Onigiri",
+    "area": "st_kiyomizu",
+    "x": 0.37817,
+    "y": 0.765971,
+    "detail": "Look at the bend in the descending temple approach during the Chapter 10 rescue."
+  },
+  {
+    "id": "pickup-0d3c0024",
+    "group": "stage-supply",
+    "name": "Onigiri",
+    "area": "st_kiyomizu",
+    "x": 0.503096,
+    "y": 0.782653,
+    "detail": "Look along the southern edge of the open stretch just before the short stairs."
+  },
+  {
+    "id": "pickup-0d3c0025",
+    "group": "stage-supply",
+    "name": "Onigiri",
+    "area": "st_kiyomizu",
+    "x": 0.552523,
+    "y": 0.813147,
+    "detail": "Look along the path just beyond the short stairs."
+  },
+  {
+    "id": "pickup-0d3c003f",
+    "group": "stage-supply",
+    "name": "Special Vitality Pill",
+    "area": "st_tsuruya_2f",
+    "x": 0.752875,
+    "y": 0.517781,
+    "detail": "Available during the Chapter 7 escape through Tsuruya’s second floor."
+  },
+  {
+    "id": "pickup-0d3c0040",
+    "group": "stage-supply",
+    "name": "Special Vitality Pill",
+    "area": "st_tsuruya_2f",
+    "x": 0.357688,
+    "y": 0.65023,
+    "detail": "Available during the Chapter 7 escape through Tsuruya’s second floor."
+  },
+  {
+    "id": "pickup-0d3c0041",
+    "group": "stage-supply",
+    "name": "Special Vitality Pill",
+    "area": "st_tsuruya_2f",
+    "x": 0.351742,
+    "y": 0.261145,
+    "detail": "Available during the Chapter 7 escape through Tsuruya’s second floor."
+  },
+  {
+    "id": "pickup-0d3c000a",
+    "group": "stage-supply",
+    "name": "Onigiri",
+    "area": "st_ukiyo_ienonaka",
+    "x": 0.931573,
+    "y": 0.434482,
+    "detail": "Available during the Chapter 3 fights at Ukiyo’s property."
+  },
+  {
+    "id": "pickup-0d3c000c",
+    "group": "stage-supply",
+    "name": "Onigiri",
+    "area": "st_ukiyo_ienonaka",
+    "x": 0.601964,
+    "y": 0.808849,
+    "detail": "Available during the Chapter 3 fights at Ukiyo’s property."
+  },
+  {
+    "id": "pickup-0d3c000d",
+    "group": "stage-supply",
+    "name": "Special Vitality Pill",
+    "area": "st_ukiyo_ienonaka",
+    "x": 0.524249,
+    "y": 0.239258,
+    "detail": "Available during the Chapter 3 fights at Ukiyo’s property."
+  },
+  {
+    "id": "pickup-0d3c0001",
+    "group": "stage-supply",
+    "name": "Special All-Purpose Medicine",
+    "area": "st_yuuki_shinshitsu",
+    "x": 0.287979,
+    "y": 0.467368,
+    "detail": "Available during the Chapter 1 fights at the Yūki estate."
+  },
+  {
+    "id": "pickup-0d3c0002",
+    "group": "stage-supply",
+    "name": "Passion Pill",
+    "area": "st_yuuki_shinshitsu",
+    "x": 0.887514,
+    "y": 0.162946,
+    "detail": "Look along the west side of the northeastern room during the fight at the Yūki estate."
+  },
+  {
+    "id": "pickup-0d3c0003",
+    "group": "stage-supply",
+    "name": "Vitality Pill",
+    "area": "st_yuuki_shinshitsu",
+    "x": 0.726901,
+    "y": 0.285529,
+    "detail": "Available during the Chapter 1 fights at the Yūki estate."
+  },
+  {
+    "id": "pickup-0d3c0004",
+    "group": "stage-supply",
+    "name": "Vitality Pill",
+    "area": "st_yuuki_shinshitsu",
+    "x": 0.889072,
+    "y": 0.136242,
+    "detail": "Available during the Chapter 1 fights at the Yūki estate."
+  },
+  {
+    "id": "pickup-0d3c0006",
+    "group": "stage-supply",
+    "name": "Steel",
+    "area": "st_yuuki_shinshitsu",
+    "x": 0.120426,
+    "y": 0.306383,
+    "detail": "Available during the Chapter 1 fights at the Yūki estate."
+  },
+  {
+    "id": "pickup-0d3c0007",
+    "group": "stage-supply",
+    "name": "All-Purpose Medicine",
+    "area": "st_yuuki_shinshitsu",
+    "x": 0.642204,
+    "y": 0.376448,
+    "detail": "Available during the Chapter 1 fights at the Yūki estate."
+  },
+  {
+    "id": "pickup-0d3c000b",
+    "group": "stage-supply",
+    "name": "Special Vitality Pill",
+    "area": "st_yuuki_shinshitsu",
+    "x": 0.675347,
+    "y": 0.712407,
+    "detail": "Available during the Chapter 1 fights at the Yūki estate."
+  },
+  {
+    "id": "pickup-0d3c002d",
+    "group": "stage-supply",
+    "name": "Scrap Iron",
+    "area": "st_yuuki_shinshitsu",
+    "x": 0.971786,
+    "y": 0.07902,
+    "detail": "Available during the Chapter 1 fights at the Yūki estate."
+  },
+  {
+    "id": "pickup-0d3c0008",
+    "group": "stage-supply",
+    "name": "Onigiri",
+    "area": "st_toaru_tera",
+    "x": 0.620514,
+    "y": 0.294562,
+    "detail": "Available during the Chapter 2 swordsmen fight.",
+    "window": "2-3"
+  },
+  {
+    "id": "pickup-0d3c0009",
+    "group": "stage-supply",
+    "name": "Onigiri",
+    "area": "st_toaru_tera",
+    "x": 0.639044,
+    "y": 0.757708,
+    "detail": "Available during the Chapter 2 swordsmen fight.",
+    "window": "2-3"
+  },
+  {
+    "id": "pickup-0d3c002c",
+    "group": "stage-supply",
+    "name": "Vitality Pill",
+    "area": "st_toaru_tani",
+    "x": 0.057275,
+    "y": 0.477445,
+    "detail": "Pick up the medicine while fighting the pursuers near the bridge.",
+    "window": "3-1"
+  },
+  {
+    "id": "pickup-0d3c000e",
+    "group": "stage-supply",
+    "name": "Onigiri",
+    "area": "st_sanmon",
+    "x": 0.361487,
+    "y": 0.468014,
+    "detail": "Available during the Chapter 4 bounty hunter fight.",
+    "window": "4-1"
+  },
+  {
+    "id": "pickup-0d3c0014",
+    "group": "stage-supply",
+    "name": "Vitality Pill",
+    "area": "st_dokutsu_02",
+    "x": 0.28816,
+    "y": 0.363816,
+    "detail": "Look along the inside edge of the western loop in the second section of Shishido’s cave.",
+    "window": "5-17"
+  },
+  {
+    "id": "pickup-0d3c0015",
+    "group": "stage-supply",
+    "name": "Vitality Pill",
+    "area": "st_dokutsu_02",
+    "x": 0.48262,
+    "y": 0.636855,
+    "detail": "Look just east of the crossing on the lower middle passage in the second section of Shishido’s cave.",
+    "window": "5-17"
+  },
+  {
+    "id": "pickup-0d3c0016",
+    "group": "stage-supply",
+    "name": "Special Passion Pill",
+    "area": "st_dokutsu_02",
+    "x": 0.397373,
+    "y": 0.833301,
+    "detail": "Available while fighting through the second section of Shishido’s cave.",
+    "window": "5-17"
+  },
+  {
+    "id": "pickup-0d3c0017",
+    "group": "stage-supply",
+    "name": "Vitality Pill",
+    "area": "st_dokutsu_02",
+    "x": 0.035046,
+    "y": 0.608201,
+    "detail": "Look near the western end of the lower passage in the second section of Shishido’s cave.",
+    "window": "5-17"
+  },
+  {
+    "id": "pickup-0d3c003c",
+    "group": "stage-supply",
+    "name": "Special All-Purpose Medicine",
+    "area": "st_dokutsu_03_rasen",
+    "x": 0.348867,
+    "y": 0.657793,
+    "detail": "Look near the bottom of the spiral path during the Chapter 5 cave battle.",
+    "window": "5-18"
+  },
+  {
+    "id": "pickup-0d3c0038",
+    "group": "stage-supply",
+    "name": "Special All-Purpose Medicine",
+    "area": "st_dokutsu_04_boss",
+    "x": 0.676028,
+    "y": 0.444159,
+    "detail": "Available during the fight with Shishido in the cave.",
+    "window": "5-19"
+  },
+  {
+    "id": "pickup-0d3c0039",
+    "group": "stage-supply",
+    "name": "Special Vitality Pill",
+    "area": "st_dokutsu_04_boss",
+    "x": 0.555213,
+    "y": 0.686741,
+    "detail": "Look near the southeastern pillar during the fight with Shishido in the cave.",
+    "window": "5-19"
+  },
+  {
+    "id": "pickup-0d3c003a",
+    "group": "stage-supply",
+    "name": "All-Purpose Medicine",
+    "area": "st_dokutsu_04_boss",
+    "x": 0.386385,
+    "y": 0.70245,
+    "detail": "Look near the southwestern pillar during the fight with Shishido in the cave.",
+    "window": "5-19"
+  },
+  {
+    "id": "pickup-0d3c003b",
+    "group": "stage-supply",
+    "name": "Vitality Pill",
+    "area": "st_dokutsu_04_boss",
+    "x": 0.508248,
+    "y": 0.239573,
+    "detail": "Available during the fight with Shishido in the cave.",
+    "window": "5-19"
+  },
+  {
+    "id": "pickup-tsuruya-tuna-sashimi",
+    "group": "stage-supply",
+    "name": "Tuna Sashimi",
+    "area": "st_tsuruya_1f",
+    "x": 0.605143,
+    "y": 0.643153,
+    "window": "7-17",
+    "detail": "Pick up the Bluefin Tuna with your bare hands in the first-floor kitchen and use it until it breaks. Collect the Tuna Sashimi left behind."
+  },
+  {
+    "id": "pickup-00fa01d2",
+    "group": "stage-supply",
+    "name": "Millennium Ice Stone",
+    "area": "st_tsuruya_2f",
+    "x": 0.859688,
+    "y": 0.152585,
+    "detail": "Break the debris blocking the trapped yūjo and speak to her during the Chapter 7 escape to receive this reward.",
+    "window": "7-15"
+  },
+  {
+    "id": "pickup-00fa01d3",
+    "group": "stage-supply",
+    "name": "Agate",
+    "area": "st_tsuruya_2f",
+    "x": 0.955459,
+    "y": 0.563033,
+    "detail": "Break the debris blocking the trapped yūjo and speak to her during the Chapter 7 escape to receive this reward.",
+    "window": "7-15"
+  },
+  {
+    "id": "pickup-00fa01ca",
+    "group": "stage-supply",
+    "name": "Excellent Steel",
+    "area": "st_tsuruya_3f",
+    "x": 0.925351,
+    "y": 0.131232,
+    "detail": "Break the debris blocking the trapped yūjo and speak to her during the Chapter 7 escape to receive this reward.",
+    "window": "7-14"
+  },
+  {
+    "id": "pickup-00fa01ce",
+    "group": "stage-supply",
+    "name": "White Silver",
+    "area": "st_tsuruya_3f",
+    "x": 0.839363,
+    "y": 0.905115,
+    "detail": "Break the debris blocking the trapped yūjo and speak to her during the Chapter 7 escape to receive this reward.",
+    "window": "7-14"
+  },
+  {
+    "id": "pickup-00fa01cf",
+    "group": "stage-supply",
+    "name": "Deluxe All-Purpose Medicine",
+    "area": "st_tsuruya_3f",
+    "x": 0.727292,
+    "y": 0.132334,
+    "detail": "Break the debris blocking the trapped yūjo and speak to her during the Chapter 7 escape to receive this reward.",
+    "window": "7-14"
+  },
+  {
+    "id": "pickup-0d3c0018",
+    "group": "stage-supply",
+    "name": "Special Passion Pill",
+    "area": "st_tsuruya_4f",
+    "x": 0.941423,
+    "y": 0.669926,
+    "detail": "Available during the Chapter 7 fights on Tsuruya’s fourth floor.",
+    "window": "7-10"
+  },
+  {
+    "id": "pickup-0d3c001a",
+    "group": "stage-supply",
+    "name": "Special Vitality Pill",
+    "area": "st_tsuruya_4f",
+    "x": 0.148581,
+    "y": 0.809819,
+    "detail": "Available during the Chapter 7 fights on Tsuruya’s fourth floor.",
+    "window": "7-10"
+  },
+  {
+    "id": "pickup-0d3c001b",
+    "group": "stage-supply",
+    "name": "Onigiri",
+    "area": "st_tsuruya_4f",
+    "x": 0.154922,
+    "y": 0.82139,
+    "detail": "Available during the Chapter 7 fights on Tsuruya’s fourth floor.",
+    "window": "7-10"
+  },
+  {
+    "id": "pickup-0d3c001c",
+    "group": "stage-supply",
+    "name": "Onigiri",
+    "area": "st_rendaino_02",
+    "x": 0.912179,
+    "y": 0.759758,
+    "detail": "Available while escaping the Yoshioka students at Rendai Field.",
+    "window": "9-7"
+  },
+  {
+    "id": "pickup-0d3c001d",
+    "group": "stage-supply",
+    "name": "Onigiri",
+    "area": "st_rendaino_03",
+    "x": 0.05475,
+    "y": 0.441217,
+    "detail": "Available while escaping the Yoshioka students at Rendai Field.",
+    "window": "9-7"
+  },
+  {
+    "id": "pickup-0d3c0020",
+    "group": "stage-supply",
+    "name": "Onigiri",
+    "area": "st_rendaino_04",
+    "x": 0.25436,
+    "y": 0.263981,
+    "detail": "Available while escaping the Yoshioka students at Rendai Field.",
+    "window": "9-7"
+  },
+  {
+    "id": "pickup-0d3c001e",
+    "group": "stage-supply",
+    "name": "Onigiri",
+    "area": "st_rendaino_05",
+    "x": 0.888518,
+    "y": 0.975286,
+    "detail": "Available while escaping the Yoshioka students at Rendai Field.",
+    "window": "9-7"
+  },
+  {
+    "id": "pickup-0d3c001f",
+    "group": "stage-supply",
+    "name": "Onigiri",
+    "area": "st_rendaino_05",
+    "x": 0.49948,
+    "y": 0.269627,
+    "detail": "Available while escaping the Yoshioka students at Rendai Field.",
+    "window": "9-7"
+  },
+  {
+    "id": "pickup-0d3c0021",
+    "group": "stage-supply",
+    "name": "Onigiri",
+    "area": "st_rendaino_06",
+    "x": 0.960849,
+    "y": 0.594334,
+    "detail": "Available while escaping the Yoshioka students at Rendai Field.",
+    "window": "9-7"
+  },
+  {
+    "id": "pickup-0d3c0026",
+    "group": "stage-supply",
+    "name": "Onigiri",
+    "area": "st_kiyomizu",
+    "x": 0.739947,
+    "y": 0.73763,
+    "detail": "Look near the main temple hall during the fight with Shishido.",
+    "window": "10-17"
+  },
+  {
+    "id": "pickup-0d3c0043",
+    "group": "stage-supply",
+    "name": "Special Vitality Pill",
+    "area": "st_ganryu_hama",
+    "x": 0.681754,
+    "y": 0.355101,
+    "detail": "Collect it after defeating Tenkai’s army on the beach, before entering the fortress.",
+    "window": "12-7"
+  },
+  {
+    "id": "pickup-0d3c0044",
+    "group": "stage-supply",
+    "name": "Special Vitality Pill",
+    "area": "st_ganryu_hama",
+    "x": 0.241439,
+    "y": 0.338516,
+    "detail": "Collect it after defeating Tenkai’s army on the beach, before entering the fortress.",
+    "window": "12-7"
+  },
+  {
+    "id": "pickup-0d3c0045",
+    "group": "stage-supply",
+    "name": "Special Passion Pill",
+    "area": "st_ganryu_hama",
+    "x": 0.638181,
+    "y": 0.653346,
+    "detail": "Collect it after defeating Tenkai’s army on the beach, before entering the fortress.",
+    "window": "12-7"
+  },
+  {
+    "id": "pickup-0d3c0046",
+    "group": "stage-supply",
+    "name": "Special All-Purpose Medicine",
+    "area": "st_ganryu_hama",
+    "x": 0.338861,
+    "y": 0.49495,
+    "detail": "Collect it after defeating Tenkai’s army on the beach, before entering the fortress.",
+    "window": "12-7"
+  }
+]

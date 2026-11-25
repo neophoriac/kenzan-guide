@@ -1,0 +1,332 @@
+{
+  "A-1": {
+    "surface": "Ground",
+    "steps": [
+      "During the prologue's Ebisuya collection, check beside the stone figure at Gion Inari Shrine."
+    ],
+    "note": "This is the story pickup. In Kyoto Adventure, find the key at Gyotensai’s house."
+  },
+  "A-1-kyoto": {
+    "surface": "Interior",
+    "interior": true,
+    "steps": [
+      "In Kyoto Adventure, enter Gyotensai’s house in northeast Gion and look inside for the key."
+    ]
+  },
+  "A-2": {
+    "surface": "Roof",
+    "lookUp": true,
+    "steps": [
+      "In #104 Storage Locker Instructions, go to Suiten Inari Shrine in southwest Gion. Stand in the northeast corner of the shrine grounds and look up toward the roof.",
+      "Interact with the glint, choose the top option to retrieve the key, then take it to the man at the lockers. He gives it back to you."
+    ],
+    "note": "This commission unlocks ordinary key pickups."
+  },
+  "A-3": {
+    "surface": "Ground",
+    "steps": [
+      "Check the ground just outside Tatsuya, Kiryu’s home in Gion."
+    ]
+  },
+  "A-4": {
+    "surface": "Ground",
+    "steps": [
+      "At the south end of Gion’s main street, look in the narrow gap just south of Yumejiya."
+    ]
+  },
+  "A-5": {
+    "surface": "Bench",
+    "steps": [
+      "Check the bench by the shrine at the northeast end of Rakugai."
+    ]
+  },
+  "B-1": {
+    "surface": "Floor",
+    "interior": true,
+    "steps": [
+      "Enter the blacksmith in Rakugai and look on the floor in the back room."
+    ]
+  },
+  "B-2": {
+    "surface": "Ground",
+    "steps": [
+      "Follow Forest Path to the turnoff for Shishido’s cave and check the ground near the cave entrance."
+    ]
+  },
+  "B-3": {
+    "surface": "Container",
+    "interior": true,
+    "container": true,
+    "steps": [
+      "Go into the Rakugai branch of Arigataya and inspect the container inside the shop."
+    ]
+  },
+  "B-4": {
+    "surface": "Veranda",
+    "steps": [
+      "Take the small footbridge from Okubomachi into the back lanes of Nakanomachi. Check the veranda north of Koyoro."
+    ]
+  },
+  "B-5": {
+    "surface": "Floor",
+    "interior": true,
+    "steps": [
+      "Enter the Gion Information Desk and look on the floor in the corner."
+    ]
+  },
+  "C-1": {
+    "surface": "Bridge",
+    "steps": [
+      "Check the bridge in Kawaramachi just before the entrance to Rakugai."
+    ]
+  },
+  "C-2": {
+    "surface": "Bridge",
+    "steps": [
+      "Follow Countryside Path to the little creek bridge near the middle of the fields. Check the bridge itself."
+    ]
+  },
+  "C-3": {
+    "surface": "Ground",
+    "steps": [
+      "In Rakugai’s Higashiyama Shopping District, check the ground beside the cooking pot."
+    ]
+  },
+  "C-4": {
+    "surface": "Ledge",
+    "steps": [
+      "At the Cliffside Path bridge, check the edge of the cliff beside the crossing."
+    ]
+  },
+  "C-5": {
+    "surface": "Under stairs",
+    "steps": [
+      "Find the small shrine on the southwest part of Mountain Path, then check below the nearby stairs."
+    ]
+  },
+  "D-1": {
+    "surface": "Ground",
+    "steps": [
+      "At the Gion branch of Arigataya, follow the narrow alley behind the shop and check between the houses."
+    ]
+  },
+  "D-2": {
+    "surface": "Roof",
+    "lookUp": true,
+    "steps": [
+      "Enter the narrow alley north of Sake Nakanokura in Gion. Look up at the roof over the passage."
+    ]
+  },
+  "D-3": {
+    "surface": "Serving tray",
+    "interior": true,
+    "steps": [
+      "Find the small teahouse at the Rakugai end of Riverside Path and check the tray on the raised seating area."
+    ]
+  },
+  "D-4": {
+    "surface": "Bridge railing",
+    "steps": [
+      "On the Rakugai side of Gion Main Gate, check the bridge railing."
+    ]
+  },
+  "D-5": {
+    "surface": "On stone lantern",
+    "lookUp": true,
+    "steps": [
+      "At the Kawaramachi turnoff to Kōetsu’s mansion, look on top of the stone lantern."
+    ]
+  },
+  "E-1": {
+    "surface": "Ground",
+    "steps": [
+      "Cross the little bridge on Mountain Path and follow the short dead end to the pickup."
+    ]
+  },
+  "E-2": {
+    "surface": "Ground",
+    "steps": [
+      "Check the narrow passage between Sake Nakanokura and the sushi shop in Gion."
+    ],
+    "note": "Collect this during the day or at night. The pickup is unavailable in the evening."
+  },
+  "E-3": {
+    "surface": "Eaves",
+    "lookUp": true,
+    "steps": [
+      "Head southwest of the Jizō on Yamato Alley South in Rakugai and look above the doorway under the eaves."
+    ]
+  },
+  "E-4": {
+    "surface": "Ground",
+    "steps": [
+      "Check the ground just outside Kōetsu’s mansion in Kawaramachi."
+    ]
+  },
+  "E-5": {
+    "surface": "Wall",
+    "steps": [
+      "Across from the Yoshioka Dojo, inspect the building wall near the Jizō."
+    ]
+  },
+  "F-1": {
+    "surface": "On box",
+    "interior": true,
+    "steps": [
+      "On Forest Path, check the small hut near the Rakugai end, across from the stables. The key sits on a box inside."
+    ]
+  },
+  "F-2": {
+    "surface": "Floor",
+    "interior": true,
+    "steps": [
+      "Enter Sake Nakanokura in Gion and inspect the floor."
+    ]
+  },
+  "F-3": {
+    "surface": "Crate",
+    "steps": [
+      "Find the well in southwest Gion and inspect the wooden box just to its west."
+    ]
+  },
+  "F-4": {
+    "surface": "Ground",
+    "steps": [
+      "Check the ground on the fields side of the path leading from Countryside Path to Yoshioka Dojo."
+    ]
+  },
+  "F-5": {
+    "surface": "Behind guardian statue",
+    "steps": [
+      "Check behind the komainu guardian statue at Kiyomizudera’s entrance."
+    ]
+  },
+  "G-1": {
+    "surface": "Bench",
+    "steps": [
+      "Check the bench near the western Kawaramachi exit toward Yoshioka Dojo."
+    ]
+  },
+  "G-2": {
+    "surface": "Roof",
+    "lookUp": true,
+    "steps": [
+      "At the Gion branch of Arigataya, look up at the outer corner of the shop roof."
+    ]
+  },
+  "G-3": {
+    "surface": "Raised bank",
+    "steps": [
+      "On the east side of Forest Path, check the raised ground on the Kiyomizudera side."
+    ]
+  },
+  "G-4": {
+    "surface": "Roof",
+    "lookUp": true,
+    "steps": [
+      "Follow the passage beside the entrance to Gion’s gambling den and look up at the roof at the end."
+    ]
+  },
+  "G-5": {
+    "surface": "Ground",
+    "steps": [
+      "Follow the southwest arm of Cliffside Path and check where the path meets the rock wall."
+    ]
+  },
+  "H-1": {
+    "surface": "Offering box",
+    "steps": [
+      "At the small shrine in central Rakugai, inspect the offering box."
+    ]
+  },
+  "H-2": {
+    "surface": "Ground",
+    "steps": [
+      "Check the middle of the road outside the soba shop on the west side of Kawaramachi."
+    ]
+  },
+  "H-3": {
+    "surface": "Pot",
+    "container": true,
+    "steps": [
+      "At the Riverside Tea House, check the pot beside the building on the storage side."
+    ]
+  },
+  "H-4": {
+    "surface": "Ground",
+    "steps": [
+      "From the Yoshioka Dojo side of Countryside Path, check the walkway in the first set of fields."
+    ]
+  },
+  "H-5": {
+    "surface": "Under stairs",
+    "steps": [
+      "Look underneath the steps near the middle of Riverside Path."
+    ]
+  },
+  "I-1": {
+    "surface": "Along fence",
+    "steps": [
+      "In the field closest to the Rendai Field exit, check along the south fence."
+    ]
+  },
+  "I-2": {
+    "surface": "Roof",
+    "lookUp": true,
+    "steps": [
+      "Stand outside the Gion Martial Arts Dojo and look up at the roof of the building immediately to its east."
+    ]
+  },
+  "I-3": {
+    "surface": "Ground",
+    "steps": [
+      "Check the ground where Mountain Path leads into Kiyomizudera."
+    ]
+  },
+  "I-4": {
+    "surface": "Bench",
+    "steps": [
+      "In Rakugai, check the bench on Nagayamachi just north of Arigataya."
+    ]
+  },
+  "I-5": {
+    "surface": "Floor",
+    "interior": true,
+    "steps": [
+      "Enter Sushi Ginya in Gion and check the floor inside."
+    ]
+  },
+  "J-1": {
+    "surface": "Ground",
+    "steps": [
+      "Check the narrow lane west of Koyoro in Gion."
+    ]
+  },
+  "J-2": {
+    "surface": "Counter",
+    "interior": true,
+    "steps": [
+      "Go into Sake Ikkonya in Rakugai and look on the counter."
+    ]
+  },
+  "J-3": {
+    "surface": "Shrine beam",
+    "lookUp": true,
+    "steps": [
+      "Walk around to the back of Gion Inari Shrine and look up at the beam."
+    ]
+  },
+  "J-4": {
+    "surface": "On chest",
+    "interior": true,
+    "steps": [
+      "Enter Tenguya Drugs in Gion and check the top of the chest near the entrance."
+    ]
+  },
+  "J-5": {
+    "surface": "Bridge",
+    "steps": [
+      "Check the middle of the bridge at Hozoin."
+    ]
+  }
+}

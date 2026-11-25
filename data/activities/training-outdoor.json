@@ -1,0 +1,54 @@
+[
+  {
+    "id": "yabusame",
+    "title": "Yabusame (horseback archery)",
+    "intro": "Talk to the Elderly Bugeisha at the Forest Path stable during the day or evening. Draw before targets come into range. Aim charged shots through lined-up red targets and at the center of green targets. Keep your shot charged while you press the prompt to dodge a fallen tree.",
+    "source": {"label": "KHHSubs’ training unlocks", "url": "https://www.khhsubs.com/kenzan/training/"},
+    "links": [
+      {"label": "Course maps and score breakdowns", "href": "https://www.khhsubs.com/kenzan/playspots/"},
+      {"label": "Japanese course score reference", "href": "https://game.daihouko.com/ryu-ga-gotoku/kenzan/38.html"}
+    ],
+    "map": {"area": "st_kaido_rindo", "name": "Horse Archery Grounds"},
+    "entries": [
+      {"id": "beginner", "name": "Beginner", "window": "5-5", "requires": "Visit the stable once you can reach Forest Path from Rakugai.", "steps": "Score at least 530 points.", "reward": "Greatest Fighting Spirit Tome - Chapter 4. Increases maximum Heat."},
+      {"id": "intermediate", "name": "Intermediate", "window": "5-5", "requires": "Visit the stable once you can reach Forest Path from Rakugai.", "steps": "Score at least 530 points.", "reward": "Greatest Fighting Spirit Tome - Chapter 5. Increases maximum Heat."},
+      {"id": "advanced", "name": "Advanced", "window": "5-5", "requires": "Clear Beginner and Intermediate.", "steps": "Score at least 580 points.", "reward": "Greatest Fighting Spirit Tome - Chapter 6. Increases maximum Heat."},
+      {"id": "expert", "name": "Expert", "window": "5-5", "requires": "Clear Advanced.", "steps": "Score at least 690 points.", "reward": "Greatest Fighting Spirit Tome - Chapter 7. Increases maximum Heat."}
+    ]
+  },
+  {
+    "id": "waterfall",
+    "title": "Waterfall Meditation",
+    "photo": "waterfall-meditation",
+    "photoCaption": "Waterfall Meditation in progress.",
+    "intro": "Take the Mountain Path branch to the waterfall and talk to Sazanami. Press each button when the pink circle overlaps its icon. Correct inputs fill the Enlightenment Gauge, and misses drain it. Finish above the pass line. Shake the controller if you get the motion prompt.",
+    "source": {"label": "KHHSubs’ training unlocks", "url": "https://www.khhsubs.com/kenzan/training/"},
+    "links": [
+      {"label": "The Golden Sword (#27)", "href": "#quest-27"},
+      {"label": "Waterfall timing and scores", "href": "https://www.khhsubs.com/kenzan/playspots/"},
+      {"label": "Sacred Waterfall Water sources", "href": "#forging-item-358"}
+    ],
+    "map": {"area": "st_taki", "name": "Waterfall Training"},
+    "entries": [
+      {"id": "red-spirit", "name": "Pleasurable Blows", "window": "6-3", "requires": "Speak to Sazanami. If The Golden Sword is active at the waterfall, finish that encounter and return.", "steps": "Finish with the Enlightenment Gauge at or above 650.", "reward": "Red Spirit. Heat slowly fills while health is low and flashing red."},
+      {"id": "white-spirit", "name": "Spiked Shiny Bondage", "window": "6-3", "requires": "Clear Pleasurable Blows.", "steps": "Finish with the Enlightenment Gauge at or above 900.", "reward": "White Spirit. Zanshin generates more Heat."},
+      {"id": "black-spirit", "name": "Pure Romantic Kiss", "window": "7-4", "requires": "Clear Spiked Shiny Bondage.", "steps": "Finish with the Enlightenment Gauge at or above 1,100.", "reward": "Black Spirit. Blocking an attack generates Heat."},
+      {"id": "blue-spirit", "name": "Dreamland Between the Legs", "window": "8-1", "requires": "Clear Pure Romantic Kiss.", "steps": "Finish with the Enlightenment Gauge at or above 1,300.", "reward": "Blue Spirit. Kiryu cannot die while in Heat Mode. After learning it, clear this course again with at least 1,300 on the Enlightenment Gauge and complete Sazanami’s success dialogue for one Sacred Waterfall Water. This material reward is available only once; Nirvana rank is not required."},
+      {"id": "yellow-spirit", "name": "Debauchery", "window": "9-1", "requires": "Clear Dreamland Between the Legs.", "steps": "Finish with the Enlightenment Gauge at or above 1,300.", "reward": "Yellow Spirit. Hold the taunt button while unarmed to build Heat."}
+    ]
+  },
+  {
+    "id": "melon",
+    "title": "Iaigiri Spirit Tempering (melon cutting)",
+    "intro": "Train with En no Ozuma at Hozoin Temple during the Chapter 8 tournament, then on Riverside Path. Each first clear grants a boss Heat Action. These checkmarks sync with the same courses in Revelations.",
+    "source": {"label": "KHHSubs’ training guide", "url": "https://www.khhsubs.com/kenzan/training/"},
+    "entries": [
+      {"id": "boar-scroll", "name": "Special Lecture - Boar Scroll", "window": "8-8", "requires": "Talk to En no Ozuma at Hozoin. If you miss it there, retry on Riverside Path from 9-1.", "steps": "Finish with at least 3,500 on the training gauge.", "reward": "Ultimate Sword Secret - Dry Leaf Smash.", "revelation": "dry-leaf-smash"},
+      {"id": "foundational", "name": "Foundational Training", "window": "9-1", "requires": "Meet En no Ozuma on Riverside Path after the tournament.", "steps": "Finish with at least 4,200 on the training gauge.", "reward": "Ultimate Sword Secret - Flowing Stream.", "revelation": "flowing-stream"},
+      {"id": "applied", "name": "Applied Training", "window": "9-1", "requires": "Clear Special Lecture - Boar Scroll and Foundational Training.", "steps": "Finish with at least 5,000 on the training gauge.", "reward": "Ultimate Sword Secret - Strong Judgment.", "revelation": "strong-judgment"},
+      {"id": "advanced", "name": "Advanced Training", "window": "10-9", "requires": "Clear Applied Training and return after the Chapter 10 tour.", "steps": "Finish with at least 5,000 on the training gauge.", "reward": "Ultimate Sword Secret - Heavens Converge.", "revelation": "heavens-converge"},
+      {"id": "snake-scroll", "name": "Special Lecture - Snake Scroll", "window": "10-11", "requires": "Receive En no Ozuma’s letter near Gion’s south gate on the way from Tsuruya to Tatsuya.", "steps": "Return to Riverside Path and finish with at least 4,000 on the training gauge.", "reward": "Ultimate Sword Secret - Unshackling Slash.", "revelation": "unshackling-slash"},
+      {"id": "asura-scroll", "name": "Special Lecture - Asura Scroll", "window": "12-4", "requires": "Clear the other five courses. After Kōetsu gives you the route to Ganryū Island, collect En no Ozuma’s letter in Kawaramachi. Do this before boarding the boat.", "steps": "Return to Riverside Path and finish with at least 5,000 on the training gauge.", "reward": "Ultimate Sword Secret - Swallow Drop.", "revelation": "swallow-drop"}
+    ]
+  }
+]

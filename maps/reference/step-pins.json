@@ -1,0 +1,495 @@
+{
+  "1": {
+    "A": {"area":"st_gion","x":0.849506,"y":0.434217,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/001.png"},
+    "B": {"area":"st_gion","x":0.486846,"y":0.894961,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/001.png"},
+    "C": {"area":"st_gion","x":0.382792,"y":0.587351,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/001.png"}
+  },
+  "2": {
+    "A": {"area":"st_gion","x":0.518981,"y":0.576604,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/002.png"},
+    "B": {"area":"st_gion","x":0.58631,"y":0.52959,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/002.png"},
+    "C": {"area":"st_gion","x":0.401154,"y":0.512127,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/002.png"}
+  },
+  "3": {
+    "A": {"area":"st_gion","x":0.864808,"y":0.514814,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/003.png"}
+  },
+  "4": {
+    "A": {"area":"st_gion","x":0.831144,"y":0.530933,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/004.png"}
+  },
+  "5": {
+    "A": {"area":"st_gion","x":0.139488,"y":0.84929,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/005.png"},
+    "B": {"area":"st_gion","x":0.277207,"y":0.506754,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/005.png"}
+  },
+  "6": {
+    "A": {"area":"st_gion","x":0.523571,"y":0.901678,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/006.png"},
+    "B": {"area":"st_gion","x":0.924487,"y":0.20183,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/006.png"}
+  },
+  "7": {
+    "A": {"area":"st_gion","x":0.812781,"y":0.5175,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/007.png"},
+    "B": {"area":"st_gion","x":0.51745,"y":0.583321,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/007.png"}
+  },
+  "8": {
+    "A": {"area":"st_gion","x":0.522041,"y":0.909737,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/008.png"}
+  },
+  "9": {
+    "A": {"area":"st_gion","x":0.696485,"y":0.289143,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/009.png"}
+  },
+  "10": {
+    "A": {"area":"st_rakugaicho","x":0.756715,"y":0.160737,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/010.png"}
+  },
+  "11": {
+    "A": {"area":"st_rakugaicho","x":0.469465,"y":0.833042,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/011.png"},
+    "B": {"area":"st_rakugaicho","x":0.564797,"y":0.685606,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/011.png"},
+    "C": {"area":"st_rakugaicho","x":0.415528,"y":0.148942,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/011.png"}
+  },
+  "12": {
+    "A": {"area":"st_rakugaicho","x":0.164655,"y":0.158771,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/012.png"}
+  },
+  "13": {
+    "A": {"area":"st_rakugaicho","x":0.282565,"y":0.783897,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/013.png"}
+  },
+  "14": {
+    "A": {"area":"st_rakugaicho","x":0.513368,"y":0.616803,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/014.png"},
+    "B": {"area":"st_rakugaicho","x":0.349046,"y":0.587316,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/014.png"}
+  },
+  "15": {
+    "A": {"area":"st_rakugaicho","x":0.349046,"y":0.583384,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/015.png"}
+  },
+  "16": {
+    "A": {"area":"st_kaido_rakunai","x":0.049534,"y":0.761819,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/016.png"}
+  },
+  "17": {
+    "A": {"area":"st_kaido_rakunai","x":0.538875,"y":0.752,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/017a.png"},
+    "B": {"area":"st_kaido_rakunai","x":0.296178,"y":0.653802,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/017a.png"},
+    "C": {"area":"st_rakugaicho","x":0.848283,"y":0.198087,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/017b.png"}
+  },
+  "18": {
+    "A": {"area":"st_rakugaicho","x":0.53971,"y":0.573555,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/018.png"}
+  },
+  "19": {
+    "A": {"area":"st_rakugaicho","x":0.175944,"y":0.762273,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/019.png"}
+  },
+  "20": {
+    "A": {"area":"st_rakugaicho","x":0.175944,"y":0.762273,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/020.png"},
+    "B": {"area":"st_rakugaicho","x":0.589884,"y":0.622701,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/020.png"}
+  },
+  "21": {
+    "A": {"area":"st_rakugaicho","x":0.133296,"y":0.813384,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/021a.png"},
+    "B": {"area":"st_kaido_rindo","x":0.112963,"y":0.693335,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/021b.png"},
+    "C": {"area":"st_kaido_rindo","x":0.319934,"y":0.808212,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/021b.png"}
+  },
+  "22": {
+    "A": {"area":"st_rakugaicho","x":0.397967,"y":0.577487,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/022.png"},
+    "B": {"area":"st_rakugaicho","x":0.53971,"y":0.656119,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/022.png"},
+    "C": {"area":"st_rakugaicho","x":0.523403,"y":0.835007,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/022.png"},
+    "D": {"area":"st_rakugaicho","x":0.335248,"y":0.884153,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/022.png"}
+  },
+  "23": {
+    "A": {"area":"st_gion","x":0.398094,"y":0.721678,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/023.png"}
+  },
+  "24": {
+    "A": {"area":"st_rakugaicho","x":0.554762,"y":0.439881,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/024.png"},
+    "B": {"area":"st_rakugaicho","x":0.545982,"y":0.276719,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/024.png"},
+    "C": {"area":"st_rakugaicho","x":0.415528,"y":0.490992,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/024.png"}
+  },
+  "25": {
+    "A": {"area":"st_rakugaicho","x":0.197268,"y":0.441847,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/025.png"},
+    "B": {"area":"st_rakugaicho","x":0.550999,"y":0.233471,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/025.png"}
+  },
+  "26": {
+    "A": {"area":"st_rakugaicho","x":0.282565,"y":0.235437,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/026.png"},
+    "B": {"area":"st_kaido_rakunai","x":0.916733,"y":0.740216,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/026b.png"}
+  },
+  "27": {
+    "A": {"area":"st_rakugaicho","x":0.190997,"y":0.1686,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/027a.png"},
+    "B": {"area":"st_rakugaicho","x":0.589884,"y":0.616803,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/027a.png"},
+    "C": {"area":"st_taki","x":0.49707,"y":0.26123,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/027b.png"},
+    "D": {"area":"st_kaido_yama","x":0.799805,"y":0.436768,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/027b.png"}
+  },
+  "28": {
+    "A": {"area":"st_kaido_rakunai","x":0.588204,"y":0.763783,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/028.png"},
+    "B": {"area":"st_kaido_rakunai","x":0.260661,"y":0.769675,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/028.png"}
+  },
+  "29": {
+    "A": {"area":"st_kaido_rakunai","x":0.120568,"y":0.765747,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/029.png"}
+  },
+  "30": {
+    "A": {"area":"st_gion","x":0.630686,"y":0.52556,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/030a.png"},
+    "B": {"area":"st_rakugaicho","x":0.492044,"y":0.398599,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/030b.png"}
+  },
+  "31": {
+    "A": {"area":"st_rakugaicho","x":0.471974,"y":0.139113,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/031.png"},
+    "B": {"area":"st_rakugaicho","x":0.545982,"y":0.257061,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/031.png"},
+    "C": {"area":"st_rakugaicho","x":0.24368,"y":0.247232,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/031.png"}
+  },
+  "32": {
+    "A": {"area":"st_rakugaicho","x":0.862081,"y":0.196121,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/032.png"}
+  },
+  "33": {
+    "A": {"area":"st_gion","x":0.102763,"y":0.861379,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/033.png"},
+    "B": {"area":"st_gion","x":0.456242,"y":0.534963,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/033.png"},
+    "C": {"area":"st_gion","x":0.557236,"y":0.247502,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/033.png"}
+  },
+  "34": {
+    "A": {"area":"st_gion","x":0.395033,"y":0.874812,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/034.png"},
+    "B": {"area":"st_gion","x":0.551115,"y":0.473172,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/034.png"},
+    "C": {"area":"st_gion","x":0.505209,"y":0.536306,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/034.png"}
+  },
+  "35": {
+    "A": {"area":"st_gion","x":0.849506,"y":0.506754,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/035a.png"},
+    "B": {"area":"st_gion","x":0.499088,"y":0.188397,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/035a.png"},
+    "C": {"area":"st_yoshioka_jnt","x":0.381836,"y":0.638672,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/035b.png"}
+  },
+  "36": {
+    "A": {"area":"st_rakugaicho","x":0.761732,"y":0.164668,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/036a.png"},
+    "B": {"area":"st_rakugaicho","x":0.436852,"y":0.373043,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/036a.png"},
+    "C": {"area":"st_gion","x":0.910715,"y":0.141383,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/036b.png"}
+  },
+  "37": {
+    "A": {"area":"st_rakugaicho","x":0.164655,"y":0.158771,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/012.png"}
+  },
+  "38": {
+    "A": {"area":"st_rakugaicho","x":0.53971,"y":0.221676,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/038.png"}
+  },
+  "39": {
+    "A": {"area":"st_rakugaicho","x":0.589884,"y":0.793726,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/039a.png"},
+    "B": {"area":"st_kaido_yama","x":0.428711,"y":0.810303,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/039b.png"}
+  },
+  "40": {
+    "A": {"area":"st_rakugaicho","x":0.53971,"y":0.573555,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/018.png"}
+  },
+  "41": {
+    "A": {"area":"st_rakugaicho","x":0.572323,"y":0.424154,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/041.png"}
+  },
+  "42": {
+    "C": {"area":"st_kaido_rakunai","x":0.141286,"y":0.72254,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/042.png"}
+  },
+  "43": {
+    "A": {"area":"st_kaido_rakunai","x":0.34748,"y":0.653802,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/043.png"},
+    "B": {"area":"st_kaido_rakunai","x":0.48264,"y":0.67737,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/043.png"}
+  },
+  "44": {
+    "A": {"area":"st_rakugaicho","x":0.6087,"y":0.842871,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/044a.png"},
+    "B": {"area":"st_rakugaicho","x":0.236154,"y":0.720991,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/044a.png"},
+    "C": {"area":"st_kawa_jnt","x":0.56543,"y":0.491357,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/044b.png"}
+  },
+  "45": {
+    "A": {"area":"st_rakugaicho","x":0.282565,"y":0.783897,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/013.png"}
+  },
+  "46": {
+    "A": {"area":"st_rakugaicho","x":0.537201,"y":0.840905,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/046.png"}
+  },
+  "47": {
+    "A": {"area":"st_kaido_rindo","x":0.343531,"y":0.808212,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/047.png"}
+  },
+  "48": {
+    "A": {"area":"st_rakugaicho","x":0.083121,"y":0.217745,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/048a.png"},
+    "B": {"area":"st_kaido_rakunai","x":0.302097,"y":0.712721,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/048b.png"},
+    "C": {"area":"st_kaido_rakunai","x":0.542821,"y":0.712721,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/048b.png"},
+    "D": {"area":"st_kaido_rakunai","x":0.759867,"y":0.712721,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/048b.png"}
+  },
+  "49": {
+    "A": {"area":"st_rakugaicho","x":0.426817,"y":0.471334,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/049a.png"},
+    "B": {"area":"st_rakugaicho","x":0.577341,"y":0.734751,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/049a.png"},
+    "C": {"area":"st_rakugaicho","x":0.089393,"y":0.785862,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/049a.png"},
+    "D": {"area":"st_rakugaicho","x":0.369116,"y":0.750478,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/049a.png"},
+    "E": {"area":"st_kaido_kawa","x":0.747375,"y":0.080564,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/049b.png"}
+  },
+  "50": {
+    "A": {"area":"st_rakugaicho","x":0.164655,"y":0.158771,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/012.png"}
+  },
+  "51": {
+    "A": {"area":"st_rakugaicho","x":0.282565,"y":0.783897,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/013.png"}
+  },
+  "52": {
+    "A": {"area":"st_rakugaicho","x":0.547236,"y":0.424154,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/052.png"},
+    "B": {"area":"st_rakugaicho","x":0.627515,"y":0.160737,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/052.png"},
+    "C": {"area":"st_rakugaicho","x":0.369116,"y":0.726888,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/052.png"}
+  },
+  "53": {
+    "A": {"area":"st_rakugaicho","x":0.282565,"y":0.783897,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/013.png"}
+  },
+  "54": {
+    "A": {"area":"st_kaido_kawa","x":0.484795,"y":0.425886,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/054a.png"},
+    "B": {"area":"st_kiyomizu_jnt","x":0.586914,"y":0.509047,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/054b.png"},
+    "C": {"area":"st_taki","x":0.49707,"y":0.26123,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/054c.png"}
+  },
+  "55": {
+    "A": {"area":"st_rakugaicho","x":0.513368,"y":0.622701,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/055.png"},
+    "B": {"area":"st_rakugaicho","x":0.345283,"y":0.583384,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/055.png"}
+  },
+  "56": {
+    "A": {"area":"st_rakugaicho","x":0.58863,"y":0.620735,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/056.png"}
+  },
+  "57": {
+    "A": {"area":"st_kaido_rakunai","x":0.511251,"y":0.726468,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/057.png"}
+  },
+  "58": {
+    "A": {"area":"st_kaido_rakunai","x":0.279406,"y":0.643982,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/058.png"},
+    "B": {"area":"st_kaido_rakunai","x":0.391875,"y":0.412237,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/058.png"},
+    "C": {"area":"st_kaido_rakunai","x":0.228104,"y":0.704865,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/058.png"}
+  },
+  "59": {
+    "A": {"area":"st_kaido_rakunai","x":0.665156,"y":0.738252,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/059a.png"},
+    "B": {"area":"st_kaido_kawa","x":0.655472,"y":0.078597,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/059b.png"}
+  },
+  "60": {
+    "A": {"area":"st_rakugaicho","x":0.550999,"y":0.268856,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/060a.png"},
+    "B": {"area":"st_kaido_rindo","x":0.642926,"y":0.392277,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/060b.png"}
+  },
+  "61": {
+    "A": {"area":"st_rakugaicho","x":0.756715,"y":0.160737,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/010.png"}
+  },
+  "62": {
+    "B": {"area":"st_rakugaicho","x":0.747934,"y":0.158771,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/062.png"}
+  },
+  "63": {
+    "A": {"area":"st_rakugaicho","x":0.692742,"y":0.223642,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/063.png"},
+    "B": {"area":"st_rakugaicho","x":0.594902,"y":0.321932,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/063.png"},
+    "C": {"area":"st_rakugaicho","x":0.502079,"y":0.396633,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/063.png"},
+    "D": {"area":"st_rakugaicho","x":0.418036,"y":0.542103,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/063.png"}
+  },
+  "64": {
+    "A": {"area":"st_kaido_yama","x":0.422852,"y":0.810303,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/064.png"}
+  },
+  "65": {
+    "A": {"area":"st_kaido_kawa","x":0.52637,"y":0.716115,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/065.png"},
+    "B": {"area":"st_kaido_kawa","x":0.736434,"y":0.149432,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/065.png"},
+    "C": {"area":"st_kaido_kawa","x":0.548252,"y":0.62757,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/065.png"}
+  },
+  "66": {
+    "A": {"area":"st_rakugaicho","x":0.544727,"y":0.502786,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/066.png"}
+  },
+  "67": {
+    "A": {"area":"st_gion","x":0.090521,"y":0.43556,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/067.png"}
+  },
+  "68": {
+    "A": {"area":"st_rakugaicho","x":0.557271,"y":0.815349,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/068a.png"},
+    "B": {"area":"st_rakugaicho","x":0.527166,"y":0.656119,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/068a.png"},
+    "C": {"area":"st_gion","x":0.645988,"y":0.526903,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/068b.png"}
+  },
+  "69": {
+    "A": {"area":"st_rakugaicho","x":0.242425,"y":0.260993,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/069.png"}
+  },
+  "70": {
+    "A": {"area":"st_rakugaicho","x":0.545982,"y":0.734751,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/070a.png"},
+    "B": {"area":"st_kaido_rindo","x":0.114438,"y":0.625993,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/070b.png"}
+  },
+  "71": {
+    "A": {"area":"st_kaido_rindo","x":0.498391,"y":0.610148,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/071.png"}
+  },
+  "72": {
+    "A": {"area":"st_rakugaicho","x":0.646331,"y":0.162702,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/072.png"},
+    "B": {"area":"st_rakugaicho","x":0.351555,"y":0.734751,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/072.png"},
+    "C": {"area":"st_rakugaicho","x":0.248697,"y":0.587316,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/072.png"},
+    "D": {"area":"st_rakugaicho","x":0.18347,"y":0.35142,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/072.png"}
+  },
+  "73": {
+    "A": {"area":"st_kaido_kawa","x":0.484795,"y":0.255685,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/073a.png"},
+    "B": {"area":"st_rakugaicho","x":0.148348,"y":0.785862,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/073b.png"}
+  },
+  "74": {
+    "A": {"area":"st_kaido_kawa","x":0.655472,"y":0.167141,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/074a.png"},
+    "B": {"area":"st_kaido_kawa","x":0.491359,"y":0.434741,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/074a.png"},
+    "C": {"area":"st_kaido_rakunai","x":0.438244,"y":0.720576,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/074b.png"},
+    "D": {"area":"st_rakugaicho","x":0.428071,"y":0.489026,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/074c.png"}
+  },
+  "75": {
+    "A": {"area":"st_rakugaicho","x":0.360336,"y":0.754409,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/075.png"}
+  },
+  "76": {
+    "A": {"area":"st_kaido_rakunai","x":0.789465,"y":0.730396,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/076a.png"},
+    "B": {"area":"st_kiyomizu_jnt","x":0.356445,"y":0.673825,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/076b.png"},
+    "C": {"area":"st_kiyomizu_jnt","x":0.600586,"y":0.399195,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/076b.png"},
+    "D": {"area":"st_kiyomizu_jnt","x":0.749023,"y":0.279534,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/076b.png"}
+  },
+  "77": {
+    "A": {"area":"st_kaido_kawa","x":0.52637,"y":0.250766,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/077.png"},
+    "B": {"area":"st_kaido_kawa","x":0.489171,"y":0.648231,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/077.png"}
+  },
+  "78": {
+    "A": {"area":"st_kaido_kawa","x":0.651096,"y":0.144513,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/078.png"}
+  },
+  "79": {
+    "A": {"area":"st_kaido_rakunai","x":0.072225,"y":0.755927,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/079a.png"},
+    "B": {"area":"st_gion","x":0.252724,"y":0.298546,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/079b.png"},
+    "C": {"area":"st_kaido_rakunai","x":0.122541,"y":0.659694,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/079a.png"}
+  },
+  "80": {
+    "A": {"area":"st_kaido_rakunai","x":0.449097,"y":0.767711,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/080.png"}
+  },
+  "81": {
+    "A": {"area":"st_kaido_tanbo","x":0.163086,"y":0.332031,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/081.png"},
+    "B": {"area":"st_kaido_tanbo","x":0.383789,"y":0.800781,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/081.png"}
+  },
+  "82": {
+    "A": {"area":"st_gion","x":0.127246,"y":0.749887,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/082a.png"}
+  },
+  "83": {
+    "A": {"area":"st_gion","x":0.104293,"y":0.856006,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/083a.png"},
+    "B": {"area":"st_gion","x":0.534283,"y":0.544366,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/083a.png"},
+    "C": {"area":"st_gion","x":0.434819,"y":0.294516,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/083a.png"},
+    "D": {"area":"st_gion","x":0.101233,"y":0.307949,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/083a.png"},
+    "E": {"area":"st_rakugaicho","x":0.350301,"y":0.489026,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/083b.png"}
+  },
+  "84": {
+    "A": {"area":"st_gion","x":0.127246,"y":0.749887,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/082a.png"}
+  },
+  "85": {
+    "A": {"area":"st_gion","x":0.384322,"y":0.658544,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/085.png"},
+    "B": {"area":"st_gion","x":0.548055,"y":0.244815,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/085.png"},
+    "C": {"area":"st_gion","x":0.447061,"y":0.91108,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/085.png"}
+  },
+  "86": {
+    "A": {"area":"st_rakugaicho","x":0.355318,"y":0.404496,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/086a.png"},
+    "B": {"area":"st_kaido_rindo","x":0.33419,"y":0.808212,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/086b.png"},
+    "C": {"area":"st_rakugaicho","x":0.246189,"y":0.756375,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/086a.png"},
+    "D": {"area":"st_rakugaicho","x":0.342775,"y":0.597145,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/086a.png"},
+    "E": {"area":"st_kaido_tanbo","x":0.104492,"y":0.457031,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/086c.png"},
+    "F": {"area":"st_rakugaicho","x":0.213575,"y":0.221676,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/086a.png"},
+    "G": {"area":"st_rakugaicho","x":0.468211,"y":0.490992,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/086a.png"}
+  },
+  "87": {
+    "A": {"area":"st_kaido_tanbo","x":0.243164,"y":0.654297,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/087.png"},
+    "B": {"area":"st_kaido_tanbo","x":0.423828,"y":0.78125,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/087.png"}
+  },
+  "88": {
+    "A": {"area":"st_kaido_tanbo","x":0.53418,"y":0.654297,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/088.png"}
+  },
+  "89": {
+    "A": {"area":"st_kaido_tanbo","x":0.663086,"y":0.775391,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/089a.png"},
+    "B": {"area":"st_rakugaicho","x":0.184725,"y":0.544068,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/089b.png"}
+  },
+  "90": {
+    "A": {"area":"st_yoshioka_jnt","x":0.129883,"y":0.380859,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/090a.png"},
+    "B": {"area":"st_kaido_tanbo","x":0.954102,"y":0.726563,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/090b.png"}
+  },
+  "91": {
+    "A": {"area":"st_yoshioka_jnt","x":0.276367,"y":0.384766,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/091.png"}
+  },
+  "92": {
+    "A": {"area":"st_rakugaicho","x":0.652603,"y":0.158771,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/092a.png"},
+    "B": {"area":"st_rakugaicho","x":0.424308,"y":0.793726,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/092a.png"},
+    "C": {"area":"st_kaido_rakunai","x":0.525063,"y":0.765747,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/092b.png"}
+  },
+  "93": {
+    "A": {"area":"st_kawa_jnt","x":0.655273,"y":0.437303,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/093a.png"},
+    "B": {"area":"st_kaido_tani","x":0.633789,"y":0.473737,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/093b.png"}
+  },
+  "94": {
+    "A": {"area":"st_kaido_tani","x":0.536133,"y":0.830756,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/094.png"},
+    "B": {"area":"st_kaido_tani","x":0.444336,"y":0.675786,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/094.png"}
+  },
+  "95": {
+    "A": {"area":"st_kaido_tanbo","x":0.121094,"y":0.494141,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/095.png"}
+  },
+  "96": {
+    "A": {"area":"st_yoshioka_jnt","x":0.129883,"y":0.380859,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/090a.png"},
+    "B": {"area":"st_kaido_tanbo","x":0.954102,"y":0.726563,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/090b.png"}
+  },
+  "97": {
+    "A": {"area":"st_gion","x":0.909185,"y":0.137353,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/097a.png"},
+    "B": {"area":"st_kaido_tanbo","x":0.666992,"y":0.775391,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/097b.png"},
+    "C": {"area":"st_rakugaicho","x":0.557271,"y":0.665948,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/097c.png"},
+    "D": {"area":"st_kaido_tani","x":0.543945,"y":0.701288,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/097d.png"},
+    "E": {"area":"st_kaido_tani","x":0.385742,"y":0.444312,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/097d.png"}
+  },
+  "98": {
+    "A": {"area":"st_kawa_jnt","x":0.46582,"y":0.579195,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/098a.png"},
+    "B": {"area":"st_kaido_kawa","x":0.778009,"y":0.895171,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/098b.png"},
+    "C": {"area":"st_rakugaicho","x":0.561034,"y":0.715093,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/098c.png"}
+  },
+  "99": {
+    "A": {"area":"st_kaido_rindo","x":0.825316,"y":0.49527,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/099a.png"},
+    "B": {"area":"st_gion","x":0.534283,"y":0.612873,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/099b.png"},
+    "C": {"area":"st_kaido_yama","x":0.213867,"y":0.707275,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/099c.png"}
+  },
+  "100": {
+    "A": {"area":"st_rakugaicho","x":0.118243,"y":0.162702,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/100a.png"},
+    "B": {"area":"st_kaido_rakunai","x":0.794397,"y":0.712721,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/100b.png"}
+  },
+  "101": {
+    "A": {"area":"st_gion","x":0.182334,"y":0.314665,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/101.png"},
+    "B": {"area":"st_gion","x":0.552645,"y":0.247502,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/101.png"}
+  },
+  "102": {
+    "A": {"area":"st_gion","x":0.416456,"y":0.893618,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/102.png"},
+    "B": {"area":"st_gion","x":0.907654,"y":0.819738,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/102.png"}
+  },
+  "103": {
+    "A": {"area":"st_gion","x":0.476135,"y":0.872125,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/103.png"},
+    "B": {"area":"st_gion","x":0.844916,"y":0.701529,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/103.png"}
+  },
+  "104": {
+    "A": {"area":"st_gion","x":0.642928,"y":0.846603,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/104.png"},
+    "B": {"area":"st_gion","x":0.150199,"y":0.831827,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/104.png"}
+  },
+  "105": {
+    "A": {"area":"st_gion","x":0.607733,"y":0.826454,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/105.png"},
+    "B": {"area":"st_gion","x":0.870929,"y":0.264964,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/105.png"}
+  },
+  "106": {
+    "A": {"area":"st_gion","x":0.249663,"y":0.401978,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/106.png"},
+    "B": {"area":"st_gion","x":0.754633,"y":0.334815,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/106.png"}
+  },
+  "107": {
+    "A": {"area":"st_gion","x":0.499088,"y":0.862722,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/107.png"},
+    "B": {"area":"st_gion","x":0.382792,"y":0.676007,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/107.png"}
+  },
+  "108": {
+    "A": {"area":"st_gion","x":0.607733,"y":0.204517,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/108.png"}
+  },
+  "109": {
+    "A": {"area":"st_gion","x":0.396564,"y":0.907051,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/109a.png"}
+  },
+  "110": {
+    "A": {"area":"st_gion","x":0.552645,"y":0.43959,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/110.png"}
+  },
+  "111": {
+    "A": {"area":"st_gion","x":0.338416,"y":0.896304,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/111.png"},
+    "B": {"area":"st_gion","x":0.757694,"y":0.333471,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/111.png"}
+  },
+  "112": {
+    "A": {"area":"st_gion","x":0.329234,"y":0.896304,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/112a.png"},
+    "B": {"area":"st_gion","x":0.551115,"y":0.473172,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/112a.png"},
+    "C": {"area":"st_rakugaicho","x":0.6087,"y":0.783897,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/112b.png"},
+    "D": {"area":"st_kaido_rakunai","x":0.471788,"y":0.152996,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/112c.png"}
+  },
+  "113": {
+    "A": {"area":"st_gion","x":0.332295,"y":0.893618,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/113.png"},
+    "B": {"area":"st_gion","x":0.554175,"y":0.473172,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/113.png"},
+    "C": {"area":"st_gion","x":0.846446,"y":0.59944,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/113.png"}
+  },
+  "114": {
+    "A": {"area":"st_gion","x":0.427168,"y":0.881528,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/114.png"}
+  },
+  "115": {
+    "A": {"area":"st_gion","x":0.346067,"y":0.890931,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/115a.png"},
+    "B": {"area":"st_gion","x":0.66282,"y":0.5175,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/115a.png"},
+    "C": {"area":"st_gion","x":0.739331,"y":0.410038,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/115a.png"},
+    "D": {"area":"st_gion","x":0.867869,"y":0.301233,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/115a.png"},
+    "F": {"area":"st_gion","x":0.760754,"y":0.204517,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/115a.png"}
+  },
+  "116": {
+    "A": {"area":"st_rakugaicho","x":0.300126,"y":0.158771,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/116a.png"},
+    "B": {"area":"st_gion","x":0.476135,"y":0.885558,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/116b.png"},
+    "C": {"area":"st_rakugaicho","x":0.189742,"y":0.221676,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/116a.png"},
+    "D": {"area":"st_gion","x":0.355248,"y":0.509441,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/116b.png"}
+  },
+  "117": {
+    "A": {"area":"st_gion","x":0.398094,"y":0.907051,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/117a.png"},
+    "B": {"area":"st_kaido_tanbo","x":0.286133,"y":0.710938,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/117b.png"},
+    "C": {"area":"st_kaido_yama","x":0.209961,"y":0.702881,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/117c.png"}
+  },
+  "118": {
+    "A": {"area":"st_gion","x":0.411866,"y":0.880185,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/118a.png"},
+    "B": {"area":"st_rakugaicho","x":0.241171,"y":0.207916,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/118b.png"}
+  },
+  "119": {
+    "A": {"area":"st_gion","x":0.414926,"y":0.894961,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/119.png"},
+    "B": {"area":"st_gion","x":0.759224,"y":0.807648,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/119.png"}
+  },
+  "120": {
+    "A": {"area":"st_gion","x":0.414926,"y":0.894961,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/120.png"},
+    "D": {"area":"st_gion","x":0.942849,"y":0.534963,"precision":"reference","reference":"https://www.khhsubs.com/kenzan/graphics/substory/steps_map/120.png"}
+  }
+}

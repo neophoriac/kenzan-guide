@@ -3,29 +3,269 @@
   "scope": "readable-guide-source",
   "files": [
     {
-      "file": "build_atlas.cjs",
-      "bytes": 31268,
-      "sha256": "68b9b4b0ab28c638e56fd476e53d0c26e1fedbe18661ef99258d512c412bd512"
+      "file": "assets/atlas-lib/package.json",
+      "bytes": 6683,
+      "sha256": "2e4c0bd392fc68bc4103143e2ac10e45101b71f4dc5729b5f00998f20aa9749c"
     },
     {
-      "file": "build_guide.cjs",
-      "bytes": 78100,
-      "sha256": "af4ab51ba8ab0c34baeae6401c6e8fb7af8915fbf783d59eb6ceafc469fcd23d"
+      "file": "assets/atlas-lib/patches/raster-order/LICENSE.txt",
+      "bytes": 5984,
+      "sha256": "ee5fc05a0677eaf69601d2c7db0d9ecd6cc27c3abc1d0733bc9ed34707cf8ef2"
     },
     {
-      "file": "build_pages.cjs",
-      "bytes": 28514,
-      "sha256": "3265a52c7eb0371d043c6ed7d830bcbd2ef427454b0c1fc13b602962f5ce5552"
+      "file": "assets/atlas-lib/patches/raster-order/overlays/pauseable_placement.ts",
+      "bytes": 4747,
+      "sha256": "20c1b15444eb33388603adef056d5bcf2a9444c85b475a8378ec59ca57074027"
     },
     {
-      "file": "content/README.public.md",
-      "bytes": 3135,
-      "sha256": "5892e85b223f4605cb3ef16fcedb7e6ac2fcfcb2076e106fb5c26d06c04bae13"
+      "file": "assets/atlas-lib/patches/raster-order/overlays/style.ts",
+      "bytes": 89508,
+      "sha256": "3d2c3d99de13c0cd3f4beb937e28d0c7c8fc29ed4e6e7e846447adc2cfc51ad2"
+    },
+    {
+      "file": "assets/atlas-lib/patches/raster-order/provenance.json",
+      "bytes": 3513,
+      "sha256": "eecd6d59215c00589b1266c289e6eba46258ed1449d57b39f57c70e21ed3b56b"
+    },
+    {
+      "file": "assets/atlas-lib/patches/raster-order/raster-order-placement.patch",
+      "bytes": 6461,
+      "sha256": "c4eb9c1167c8d17e151e34a7ab09668cc837306b28da0dad79123ff1f4f09c22"
+    },
+    {
+      "file": "assets/atlas-lib/patches/raster-order/README.md",
+      "bytes": 5612,
+      "sha256": "934a8ec6c0996ad114537234d59abb0bf65c0e58640995ba261307898db0a35a"
+    },
+    {
+      "file": "assets/atlas-lib/patches/raster-order/rebuild.mjs",
+      "bytes": 8162,
+      "sha256": "65b05df7f3bc6f945c514b1169d8248b535c887d45bc640a783d7c1c85137d5a"
+    },
+    {
+      "file": "assets/atlas-lib/provenance.json",
+      "bytes": 2805,
+      "sha256": "0c2181bc8e1407aeb01d38e938ffc0654ebf66c3ecfb3f6abdb8c50b7e2cf553"
+    },
+    {
+      "file": "data/activities/locker-key-directions.json",
+      "bytes": 8648,
+      "sha256": "683758e4fdd2009004dcb5caf0d8900e2f2551d4de2f15eb7a743c375e06f732"
+    },
+    {
+      "file": "data/activities/locker-key-rewards.json",
+      "bytes": 1614,
+      "sha256": "463ff494de124a1db60dfd155c365d997e540838ac936359c03cfebec95b04b7"
+    },
+    {
+      "file": "data/activities/revelation-training.json",
+      "bytes": 9030,
+      "sha256": "e832dbbe1a8f72f569bf435bbd165326607f3487d0afb8d5c44b352a98d26421"
+    },
+    {
+      "file": "data/activities/revelations.json",
+      "bytes": 14940,
+      "sha256": "695ec1e0e58987bb3ea92a08d32ae81f9895235a5a3ae504b91ffa8e43703723"
+    },
+    {
+      "file": "data/activities/training-inventions.json",
+      "bytes": 12578,
+      "sha256": "b02f84d51a876a916f3fbd02a75f1e034a72bc4b1fc575c91b788987512d54ab"
+    },
+    {
+      "file": "data/activities/training-komaki.json",
+      "bytes": 6692,
+      "sha256": "f673efdb81b6f81961e7b4ade536cf7edc9c76c30c3b2ec5007de4ac31bbc406"
+    },
+    {
+      "file": "data/activities/training-mastery.json",
+      "bytes": 2804,
+      "sha256": "fd3bdaeed2adc73bd16f261db7a7907bc6497188c5c262bdb226a7330e631700"
+    },
+    {
+      "file": "data/activities/training-other.json",
+      "bytes": 13945,
+      "sha256": "aea3051e8293609e92c8a9167fbbf09309af12e68544869c8375be3513fcd698"
+    },
+    {
+      "file": "data/activities/training-outdoor.json",
+      "bytes": 6757,
+      "sha256": "b2ac7cd9ba602242f928a8f82e9ac1ffb76759e33076871cd1df2d8b429f18aa"
+    },
+    {
+      "file": "data/activities/yujo-date-dialogue.json",
+      "bytes": 62634,
+      "sha256": "f03a0c81a505cbcfe43bd18fb3953ec7646f36769ae0a32760b20585543a0e33"
+    },
+    {
+      "file": "data/activities/yujo-preferences.json",
+      "bytes": 94124,
+      "sha256": "42fc8f6d6f1524019c7a116726ba7bc44c6b000e5ec4a7fd8fcb9b8759a0ff6a"
+    },
+    {
+      "file": "data/activities/yujo-visit-dialogue.json",
+      "bytes": 182053,
+      "sha256": "1d66d0198b480d308a622652551ad8f5791001aed463f3ca00c4620d41cd17ec"
+    },
+    {
+      "file": "data/inventory/inventory-context.json",
+      "bytes": 9104,
+      "sha256": "4ebbef455b49c4bd955da349fc71aaa1c582735756d90ed3485351a6ed72d8ff"
+    },
+    {
+      "file": "data/inventory/inventory-reference.json",
+      "bytes": 1241496,
+      "sha256": "476240c178c821ab240098e69fc26c9358c2cc8568b7d2461ae0ec56be21b5aa"
+    },
+    {
+      "file": "data/inventory/restaurant-items.json",
+      "bytes": 436725,
+      "sha256": "a3c9af5a935865891c9ebea7dfd190338d69bafd917b7385b0f0cd604ce86751"
+    },
+    {
+      "file": "data/quests/quest-milestones-data.json",
+      "bytes": 69556,
+      "sha256": "3118438a3b375acec1eec642b7b1ff4a383df84dc1ddc89aadadea23783ed456"
+    },
+    {
+      "file": "data/turtles/turtle-food-sources.json",
+      "bytes": 952806,
+      "sha256": "6d287bb0ba4b343df6e382dc94c1329df0bed9653c0bd0c3b0d36d8b0d63a0b8"
+    },
+    {
+      "file": "data/turtles/turtle-foods.json",
+      "bytes": 63698,
+      "sha256": "2eaeee46e225b365bb5594fcc7eef2598a81a7c9a0df93ff378965aa5c8e3c1b"
+    },
+    {
+      "file": "data/turtles/turtle-native-data.json",
+      "bytes": 152410,
+      "sha256": "29bc6c13894f3317529796a358fb3e639f7a428419205a9bf8ea6becdd37b8a7"
+    },
+    {
+      "file": "data/weapons/weapon-artwork.json",
+      "bytes": 149171,
+      "sha256": "82d4d96de19051c771d4e239cd08fee104ed28528d98b28dc8a57f10c18b16c7"
+    },
+    {
+      "file": "data/weapons/weapon-extra-data.json",
+      "bytes": 76255,
+      "sha256": "32b00bee2a4a842d66e069df98ce3f56c82c3792f758cec6bf4fb16d9728d17c"
+    },
+    {
+      "file": "data/weapons/weapon-materials.json",
+      "bytes": 297010,
+      "sha256": "582fa7d59dbc5521c19edbc1ab70d75c91eee71ed43afccc6415460042bf0440"
+    },
+    {
+      "file": "data/weapons/weapon-pairs.json",
+      "bytes": 146738,
+      "sha256": "3e08c7c987f5d14f58e6a54f624e48be05d2a51d1b92d586ece91bc8a43eea76"
+    },
+    {
+      "file": "data/weapons/weapon-pickup-bindings.json",
+      "bytes": 2510,
+      "sha256": "e0d143121d9522691de14922c2d953af9f172c586bc622bbc86a67e3ed941700"
+    },
+    {
+      "file": "data/weapons/weapon-stats.json",
+      "bytes": 100637,
+      "sha256": "c0aad38fe927718078cdf6f558ca335eea9262ca4428297adda5df9c8c5a8fa8"
+    },
+    {
+      "file": "data/weapons/weapon-upgrades.json",
+      "bytes": 273056,
+      "sha256": "72891393f8acc0f233fb2c6953dc42848bd6882fc198335317861408c19a1453"
     },
     {
       "file": "docs/research/save-import-ps3.md",
-      "bytes": 7931,
-      "sha256": "f980776cfec521241e4840f28f0763069852674fb9ec46b8bbfae39f9c1f172e"
+      "bytes": 7948,
+      "sha256": "43e3b1512e27b63141ac70dc6df5e5e85efc54c89c1be764f5279f9bd379c6f7"
+    },
+    {
+      "file": "maps/data/areas.json",
+      "bytes": 94417,
+      "sha256": "211474068819c35bfbc76b0d5d869958bdfa31b14da96d33702154223b0f526a"
+    },
+    {
+      "file": "maps/data/atlas-districts.json",
+      "bytes": 424,
+      "sha256": "9747270b3a7e267669152c0cf12ed53e4cc6129f61ef24981e979c58ce280c75"
+    },
+    {
+      "file": "maps/data/atlas-encounters.json",
+      "bytes": 16318,
+      "sha256": "f9d6d0bc180da864c7536e1a214ab108ad2f62a42e52445df0a67e5f9ab9ca51"
+    },
+    {
+      "file": "maps/data/atlas-gambling-rewards.json",
+      "bytes": 3047,
+      "sha256": "9738b04069778f81bef219e79f5096132ca5dc6771d178b1b2c4786ffced0e09"
+    },
+    {
+      "file": "maps/data/atlas-locker-keys.json",
+      "bytes": 16541,
+      "sha256": "52a2b7f55bcb97fae7aa8d56f55fb3b48880e75b1a80fda4f003f26b878f087f"
+    },
+    {
+      "file": "maps/data/atlas-revelations.json",
+      "bytes": 3650,
+      "sha256": "22b923dfca8bb97d26cdc6bad2fa1bca21b4e95f296800d08467415f842e0143"
+    },
+    {
+      "file": "maps/data/atlas-shop-inventory.json",
+      "bytes": 52548,
+      "sha256": "2ca6c3f09e32ccac419002334ad29efa6eb5d7209947edc4e59eddcb5648cf9e"
+    },
+    {
+      "file": "maps/data/atlas-steps-commissions-bounties.json",
+      "bytes": 12586,
+      "sha256": "931ee5915bea09e1d5e75af3c5136952260186f3ad0b8b525996bf4e98c7efbc"
+    },
+    {
+      "file": "maps/data/atlas-steps-requests.json",
+      "bytes": 41917,
+      "sha256": "c4e33d58386510e880f10d064a7e676b1b28bc922794fce43f8752be8957c0d3"
+    },
+    {
+      "file": "maps/data/atlas-streets.json",
+      "bytes": 5457,
+      "sha256": "4fbc7533ad2b38334d34bb57d3a181c246de591787d834788bc40b9b57c337d3"
+    },
+    {
+      "file": "maps/data/collectible-pickups.json",
+      "bytes": 22545,
+      "sha256": "53366cdec569c36bfc862e3b688ca91d8e83debb120375d9afd0439a0517707c"
+    },
+    {
+      "file": "maps/data/collectible-rewards.json",
+      "bytes": 26199,
+      "sha256": "12d74eb66ce0896d4ad6e921cde5df78b6df0b0870b1099eacf4ed225082886d"
+    },
+    {
+      "file": "maps/data/native/pins.json",
+      "bytes": 12739,
+      "sha256": "047853f60f381dcdf9bb715f4084599f6828e547870661ad32b86268ecfd8ddd"
+    },
+    {
+      "file": "maps/data/native/step-pins.json",
+      "bytes": 29987,
+      "sha256": "4613885de8a159d1e1f31e97353c48fc8eca034e5a40c193ba1519232baaef07"
+    },
+    {
+      "file": "maps/reference/pins.json",
+      "bytes": 34838,
+      "sha256": "28b07957fa2c0fc8b2786b8a6cf71dad946fc8aa095e5b5b7c6f4c9ee8be06ce"
+    },
+    {
+      "file": "maps/reference/step-pins.json",
+      "bytes": 43381,
+      "sha256": "94118784cd87f7cffe24397862ab84b77c9f86866f3af79d879fe24f460ac356"
+    },
+    {
+      "file": "README.public.md",
+      "bytes": 3147,
+      "sha256": "71e8c276c9b68d0fe9a92d9e8fbc03a8f548cefa89a2ffff52dddd1d83f8da56"
     },
     {
       "file": "simulation/turtle-racing/race-actor-geometry.cjs",
@@ -139,13 +379,13 @@
     },
     {
       "file": "simulation/turtle-racing/README.md",
-      "bytes": 906,
-      "sha256": "6449cf3cdc05b34c3a82bccaafdd8f9506ab68ee448695c51ea0385679021d85"
+      "bytes": 1501,
+      "sha256": "ecda723a271c8e04cb1e08a42a2aa05aeb7c97f2ccf26610422d1b587cfc2215"
     },
     {
       "file": "SOURCE.md",
-      "bytes": 3217,
-      "sha256": "75ddb83cc7568581c3e299a15209cd9d6ae0844bd65f219ab4e1c358893397c7"
+      "bytes": 4810,
+      "sha256": "a37d09aa219f40e8679435b3ed52454f327ce14af7b28ae3ce5fbda82c03162e"
     },
     {
       "file": "src/activities/collectible-guide.cjs",
@@ -274,8 +514,8 @@
     },
     {
       "file": "src/guide/public-source.cjs",
-      "bytes": 3079,
-      "sha256": "6545a3b469f612732d14e3c7059a796455733be18da5f0ccd4090cb1160aa42b"
+      "bytes": 5393,
+      "sha256": "21d570f65e558aabce642f5a7530ebeb15bde3be094f085064a376a32031fee8"
     },
     {
       "file": "src/guide/script-assets.cjs",
@@ -344,18 +584,18 @@
     },
     {
       "file": "src/map/atlas-facts.cjs",
-      "bytes": 310784,
-      "sha256": "af29dfe0b53eee063f55bbf53cc76de99188fe17d81992bf0faf40d66abcd31b"
+      "bytes": 310778,
+      "sha256": "e0bbb43a4697a938af03ba12552b3e6cb98e8ac597332dcc2d8c5919aadc65a3"
     },
     {
       "file": "src/map/atlas-previews.cjs",
-      "bytes": 58995,
-      "sha256": "db71c992acb807366db5e81d28c95a74310abba1da683042b69d56b375255b2e"
+      "bytes": 59003,
+      "sha256": "82f339e9788ea7f0483816e76e5cd1ed11abaf6752eafe2ddb5e4ab1a7853be8"
     },
     {
       "file": "src/map/guide-artwork-names.cjs",
       "bytes": 5940,
-      "sha256": "b55cdf3f604fb171876d3d8e539f113660d5b0a83ceb2f7814429cae5ce29a0d"
+      "sha256": "8d767c38abd572379709eb1b1cc7775d0567eb4f215c658e46e9bfee9f6cbb5b"
     },
     {
       "file": "src/map/guide-map-links.cjs",
@@ -519,8 +759,8 @@
     },
     {
       "file": "src/tracker/save-waterfall.js",
-      "bytes": 1840,
-      "sha256": "9ef8e23311ed3f46d8442242bbec89b022d4f6f83bf68088e52131f99b70b789"
+      "bytes": 1854,
+      "sha256": "dd0c8e3a3da772b9beb98cce2517cd3ed0b6b2f139b959c9fc846f68093af39f"
     },
     {
       "file": "src/tracker/side-checklists.js",
@@ -594,8 +834,8 @@
     },
     {
       "file": "src/weapons/weapon-pairs.js",
-      "bytes": 2787,
-      "sha256": "dea3666387cfc66a560868ce931c4e8bf96862ba7e55daf9dedec991cb081c35"
+      "bytes": 2782,
+      "sha256": "20be85d1e0717f28a1be0ed3292ae953a4a9825b63502461a76ce5a76fa9c43d"
     },
     {
       "file": "src/weapons/weapon-tools.js",
@@ -604,8 +844,8 @@
     },
     {
       "file": "src/weapons/weapon-tree.cjs",
-      "bytes": 12916,
-      "sha256": "d4cf9e7af6a0623e0d1173f8c27aa336fe59e929717b33ac0b86f65cccb4453e"
+      "bytes": 12919,
+      "sha256": "10a4794988bbaeeb9a8f8f16671302a50478275b0118bf26860dbb646761e864"
     },
     {
       "file": "src/weapons/weapon-tree.css",
@@ -616,6 +856,11 @@
       "file": "src/weapons/weapon-tree.js",
       "bytes": 57863,
       "sha256": "88fd36032f51418d1c3f9a8d72391f6ea6d4dbd3c767730882cfcd7e41010449"
+    },
+    {
+      "file": "tools/check-references.cjs",
+      "bytes": 16489,
+      "sha256": "8d6d331d990afb476c933d846f729f3223ebc1b579a8bcc3291221c89fbf9a2b"
     },
     {
       "file": "VERSION",

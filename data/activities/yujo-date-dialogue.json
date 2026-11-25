@@ -1,0 +1,2296 @@
+{
+  "Kinuyo": {
+    "meeting": {
+      "place": "Gion Main Gate",
+      "area": "st_gion",
+      "x": 0.528035,
+      "y": 0.893504,
+      "source": "bin/scenario/mail.bin and bin/wdr_par/wdr.par uid00b00184.msg"
+    },
+    "outings": [
+      {
+        "venue": "Koyoro Ryotei",
+        "hearts": 0.5,
+        "options": [
+          {
+            "name": "Large Mountain Delicacies Banquet",
+            "price": 2400,
+            "hearts": 1
+          },
+          {
+            "name": "Large Seafood Banquet",
+            "price": 2400,
+            "hearts": -1
+          },
+          {
+            "name": "Large Plum-Theme Banquet",
+            "price": 5000,
+            "hearts": 1
+          },
+          {
+            "name": "Large Bamboo-Theme Banquet",
+            "price": 9000,
+            "hearts": -1
+          },
+          {
+            "name": "Large Pine-Theme Banquet",
+            "price": 13600,
+            "hearts": 0
+          },
+          {
+            "name": "Large Supreme Banquet",
+            "price": 20000,
+            "hearts": -1
+          }
+        ],
+        "source": "bin/item/shop/shop0037.bin and bin/wdr_par/wdr.par uid00b00186.msg; venue preference table uid00b0002d.msg (scene 2)",
+        "minimumFunds": 2400,
+        "insufficientFundsHearts": -2
+      },
+      {
+        "venue": "Hatsukaze Kitchen",
+        "hearts": 1,
+        "options": [
+          {
+            "name": "Large Rikyu-Style Egg",
+            "price": 240,
+            "hearts": 1
+          },
+          {
+            "name": "Large Chicken Zosui",
+            "price": 280,
+            "hearts": -1
+          },
+          {
+            "name": "Large Fried Egg",
+            "price": 200,
+            "hearts": 1
+          },
+          {
+            "name": "Large Clam Rice",
+            "price": 300,
+            "hearts": 1
+          },
+          {
+            "name": "Large Oyster Rice",
+            "price": 360,
+            "hearts": -1
+          },
+          {
+            "name": "Large Red Bean Rice",
+            "price": 180,
+            "hearts": 1
+          },
+          {
+            "name": "Large Boiled Tofu",
+            "price": 260,
+            "hearts": 1
+          },
+          {
+            "name": "Large Eel Kabayaki",
+            "price": 500,
+            "hearts": -1
+          },
+          {
+            "name": "Large Turtle Hotpot",
+            "price": 600,
+            "hearts": 0
+          }
+        ],
+        "source": "bin/item/shop/shop0035.bin and bin/wdr_par/wdr.par uid00b0018a.msg; venue preference table uid00b00032.msg (scene 2)",
+        "minimumFunds": 180,
+        "insufficientFundsHearts": -2
+      },
+      {
+        "venue": "Sushi Ginya",
+        "hearts": 0,
+        "options": [
+          {
+            "name": "Large Futomaki",
+            "price": 100,
+            "hearts": 1
+          },
+          {
+            "name": "Large Saba Oshizushi",
+            "price": 160,
+            "hearts": 1
+          },
+          {
+            "name": "Large Barazushi",
+            "price": 200,
+            "hearts": -1
+          },
+          {
+            "name": "Large Hamo Kabayaki Bowl",
+            "price": 260,
+            "hearts": 0
+          },
+          {
+            "name": "Large Aji Oshizushi",
+            "price": 160,
+            "hearts": -1
+          },
+          {
+            "name": "Large Kohada Oshizushi",
+            "price": 100,
+            "hearts": 0
+          },
+          {
+            "name": "Large Mushizushi",
+            "price": 140,
+            "hearts": -1
+          },
+          {
+            "name": "Large Whole Sweetfish",
+            "price": 200,
+            "hearts": 0
+          },
+          {
+            "name": "Large Wakame Rolls",
+            "price": 160,
+            "hearts": -1
+          }
+        ],
+        "source": "bin/item/shop/shop0011.bin and bin/wdr_par/wdr.par uid00b0018e.msg; venue preference table uid01b00192.msg (scene 0)",
+        "minimumFunds": 100,
+        "insufficientFundsHearts": -2
+      },
+      {
+        "venue": "Arigataya Market",
+        "hearts": -1,
+        "options": [
+          {
+            "name": "Gold Hairpin",
+            "price": 40000,
+            "note": "From Chapter 5",
+            "hearts": 0
+          },
+          {
+            "name": "Princess Kaguya's Comb",
+            "price": 1000,
+            "note": "From Chapter 5",
+            "hearts": 1
+          },
+          {
+            "name": "Kyoto Perfume Sachet",
+            "price": 2000,
+            "note": "From Chapter 5",
+            "hearts": 1
+          },
+          {
+            "name": "Edo Perfume Sachet",
+            "price": 3000,
+            "note": "From Chapter 5",
+            "hearts": 0
+          },
+          {
+            "name": "Fireworks Kimono",
+            "price": 30000,
+            "note": "From Chapter 5",
+            "hearts": 0
+          },
+          {
+            "name": "Cherry Blossom Kimono",
+            "price": 20000,
+            "note": "From Chapter 5",
+            "hearts": 0
+          },
+          {
+            "name": "Chrysanthemum Obi",
+            "price": 7500,
+            "note": "From Chapter 5",
+            "hearts": 0
+          },
+          {
+            "name": "Wave-Design Obi",
+            "price": 5000,
+            "note": "From Chapter 5",
+            "hearts": -1
+          },
+          {
+            "name": "Checkered Obi",
+            "price": 2500,
+            "note": "From Chapter 5",
+            "hearts": 1
+          },
+          {
+            "name": "Portuguese Hand Mirror",
+            "price": 5000,
+            "note": "From Chapter 5",
+            "hearts": 0
+          },
+          {
+            "name": "Dutch Jewelry Box",
+            "price": 3000,
+            "note": "From Chapter 5",
+            "hearts": -1
+          },
+          {
+            "name": "Foreign Cloth",
+            "price": 2000,
+            "note": "From Chapter 5",
+            "hearts": 1
+          }
+        ],
+        "source": "bin/item/shop/shop0044.bin and bin/wdr_par/wdr.par uid00b00193.msg; venue preference table uid01b00196.msg (scene 0)",
+        "minimumFunds": 1000,
+        "insufficientFundsHearts": -2
+      }
+    ],
+    "encounters": [
+      {
+        "venue": "Koyoro Ryotei",
+        "met": "Shirayuki",
+        "options": [
+          {
+            "text": "Can you please leave us alone?",
+            "hearts": -3,
+            "target": "Shirayuki",
+            "endsDate": false
+          },
+          {
+            "text": "How about we take a little walk?",
+            "hearts": -3,
+            "target": "Kinuyo",
+            "endsDate": true
+          },
+          {
+            "text": "The food here is so delicious.",
+            "hearts": 0,
+            "endsDate": false
+          }
+        ],
+        "best": 3,
+        "source": "bin/wdr_par/wdr.par uid00b00186.msg"
+      },
+      {
+        "venue": "Hatsukaze Kitchen",
+        "met": "Hanamaru",
+        "options": [
+          {
+            "text": "Don't come between me and Kinuyo.",
+            "hearts": -3,
+            "target": "Hanamaru",
+            "endsDate": false
+          },
+          {
+            "text": "Why don't you join us, Hanamaru?",
+            "hearts": 0,
+            "endsDate": false
+          },
+          {
+            "text": "Did I say I was going back with you?",
+            "hearts": -3,
+            "target": "Kinuyo",
+            "endsDate": true
+          }
+        ],
+        "best": 2,
+        "source": "bin/wdr_par/wdr.par uid00b0018a.msg"
+      },
+      {
+        "venue": "Sushi Ginya",
+        "met": "Suzukaze",
+        "options": [
+          {
+            "text": "That's right.",
+            "hearts": -3,
+            "target": "Suzukaze",
+            "endsDate": false
+          },
+          {
+            "text": "That's not the case at all.",
+            "hearts": -3,
+            "target": "Kinuyo",
+            "endsDate": true
+          },
+          {
+            "text": "It's got nothing to do with you.",
+            "hearts": 0,
+            "endsDate": false
+          }
+        ],
+        "best": 3,
+        "source": "bin/wdr_par/wdr.par uid00b0018e.msg"
+      },
+      {
+        "venue": "Arigataya Market",
+        "met": "Momochika",
+        "options": [
+          {
+            "text": "I'll explain everything later.",
+            "hearts": 0,
+            "endsDate": false
+          },
+          {
+            "text": "She must've misheard me.",
+            "hearts": -3,
+            "target": "Kinuyo",
+            "endsDate": true
+          },
+          {
+            "text": "It's just as Kinuyo said.",
+            "hearts": -3,
+            "target": "Momochika",
+            "endsDate": false
+          }
+        ],
+        "best": 1,
+        "source": "bin/wdr_par/wdr.par uid00b00193.msg"
+      }
+    ],
+    "reference": "https://www.khhsubs.com/kenzan/yujo/"
+  },
+  "Suzukaze": {
+    "meeting": {
+      "place": "Gion Inari Shrine entrance",
+      "area": "st_gion",
+      "x": 0.806106,
+      "y": 0.521701,
+      "source": "bin/scenario/mail.bin and bin/wdr_par/wdr.par uid00b00156.msg"
+    },
+    "outings": [
+      {
+        "venue": "Koyoro Ryotei",
+        "hearts": 1,
+        "options": [
+          {
+            "name": "Large Mountain Delicacies Banquet",
+            "price": 2400,
+            "hearts": 1
+          },
+          {
+            "name": "Large Seafood Banquet",
+            "price": 2400,
+            "hearts": 0
+          },
+          {
+            "name": "Large Plum-Theme Banquet",
+            "price": 5000,
+            "hearts": 1
+          },
+          {
+            "name": "Large Bamboo-Theme Banquet",
+            "price": 9000,
+            "hearts": 1
+          },
+          {
+            "name": "Large Pine-Theme Banquet",
+            "price": 13600,
+            "hearts": -1
+          },
+          {
+            "name": "Large Supreme Banquet",
+            "price": 20000,
+            "hearts": 1
+          }
+        ],
+        "source": "bin/item/shop/shop0037.bin and bin/wdr_par/wdr.par uid00b00158.msg; venue preference table uid00b0002d.msg (scene 0)",
+        "minimumFunds": 2400,
+        "insufficientFundsHearts": -2
+      },
+      {
+        "venue": "Hatsukaze Kitchen",
+        "hearts": 0,
+        "options": [
+          {
+            "name": "Large Rikyu-Style Egg",
+            "price": 240,
+            "hearts": -1
+          },
+          {
+            "name": "Large Chicken Zosui",
+            "price": 280,
+            "hearts": -1
+          },
+          {
+            "name": "Large Fried Egg",
+            "price": 200,
+            "hearts": -1
+          },
+          {
+            "name": "Large Clam Rice",
+            "price": 300,
+            "hearts": 0
+          },
+          {
+            "name": "Large Oyster Rice",
+            "price": 360,
+            "hearts": 0
+          },
+          {
+            "name": "Large Red Bean Rice",
+            "price": 180,
+            "hearts": -1
+          },
+          {
+            "name": "Large Boiled Tofu",
+            "price": 260,
+            "hearts": 1
+          },
+          {
+            "name": "Large Eel Kabayaki",
+            "price": 500,
+            "hearts": -1
+          },
+          {
+            "name": "Large Turtle Hotpot",
+            "price": 600,
+            "hearts": 0
+          }
+        ],
+        "source": "bin/item/shop/shop0035.bin and bin/wdr_par/wdr.par uid00b00159.msg; venue preference table uid00b00032.msg (scene 0)",
+        "minimumFunds": 180,
+        "insufficientFundsHearts": -2
+      },
+      {
+        "venue": "Sushi Ginya",
+        "hearts": -1,
+        "options": [
+          {
+            "name": "Large Futomaki",
+            "price": 100,
+            "hearts": -1
+          },
+          {
+            "name": "Large Saba Oshizushi",
+            "price": 160,
+            "hearts": 0
+          },
+          {
+            "name": "Large Barazushi",
+            "price": 200,
+            "hearts": 0
+          },
+          {
+            "name": "Large Hamo Kabayaki Bowl",
+            "price": 260,
+            "hearts": 1
+          },
+          {
+            "name": "Large Aji Oshizushi",
+            "price": 160,
+            "hearts": 0
+          },
+          {
+            "name": "Large Kohada Oshizushi",
+            "price": 100,
+            "hearts": 0
+          },
+          {
+            "name": "Large Mushizushi",
+            "price": 140,
+            "hearts": 1
+          },
+          {
+            "name": "Large Whole Sweetfish",
+            "price": 200,
+            "hearts": 0
+          },
+          {
+            "name": "Large Wakame Rolls",
+            "price": 160,
+            "hearts": -1
+          }
+        ],
+        "source": "bin/item/shop/shop0011.bin and bin/wdr_par/wdr.par uid00b0015a.msg; venue preference table uid01b00168.msg (scene 0)",
+        "minimumFunds": 100,
+        "insufficientFundsHearts": -2
+      },
+      {
+        "venue": "Arigataya Market",
+        "hearts": -1,
+        "options": [
+          {
+            "name": "Gold Hairpin",
+            "price": 40000,
+            "note": "From Chapter 5",
+            "hearts": 1
+          },
+          {
+            "name": "Princess Kaguya's Comb",
+            "price": 1000,
+            "note": "From Chapter 5",
+            "hearts": 0
+          },
+          {
+            "name": "Kyoto Perfume Sachet",
+            "price": 2000,
+            "note": "From Chapter 5",
+            "hearts": 1
+          },
+          {
+            "name": "Edo Perfume Sachet",
+            "price": 3000,
+            "note": "From Chapter 5",
+            "hearts": 0
+          },
+          {
+            "name": "Fireworks Kimono",
+            "price": 30000,
+            "note": "From Chapter 5",
+            "hearts": 0
+          },
+          {
+            "name": "Cherry Blossom Kimono",
+            "price": 20000,
+            "note": "From Chapter 5",
+            "hearts": 1
+          },
+          {
+            "name": "Chrysanthemum Obi",
+            "price": 7500,
+            "note": "From Chapter 5",
+            "hearts": -1
+          },
+          {
+            "name": "Wave-Design Obi",
+            "price": 5000,
+            "note": "From Chapter 5",
+            "hearts": -1
+          },
+          {
+            "name": "Checkered Obi",
+            "price": 2500,
+            "note": "From Chapter 5",
+            "hearts": 0
+          },
+          {
+            "name": "Portuguese Hand Mirror",
+            "price": 5000,
+            "note": "From Chapter 5",
+            "hearts": 1
+          },
+          {
+            "name": "Dutch Jewelry Box",
+            "price": 3000,
+            "note": "From Chapter 5",
+            "hearts": 0
+          },
+          {
+            "name": "Foreign Cloth",
+            "price": 2000,
+            "note": "From Chapter 5",
+            "hearts": 0
+          }
+        ],
+        "source": "bin/item/shop/shop0044.bin and bin/wdr_par/wdr.par uid00b0015b.msg; venue preference table uid01b0016a.msg (scene 0)",
+        "minimumFunds": 1000,
+        "insufficientFundsHearts": -2
+      }
+    ],
+    "encounters": [
+      {
+        "venue": "Koyoro Ryotei",
+        "met": "Momochika",
+        "options": [
+          {
+            "text": "I just happened to run into her.",
+            "hearts": -3,
+            "target": "Suzukaze",
+            "endsDate": true
+          },
+          {
+            "text": "Don't you have the wrong person?",
+            "hearts": -3,
+            "target": "Momochika",
+            "endsDate": false
+          },
+          {
+            "text": "It doesn't matter whose regular I am.",
+            "hearts": 0,
+            "endsDate": false
+          }
+        ],
+        "best": 3,
+        "source": "bin/wdr_par/wdr.par uid00b00158.msg"
+      },
+      {
+        "venue": "Hatsukaze Kitchen",
+        "met": "Kinuyo",
+        "options": [
+          {
+            "text": "We're just having fun together.",
+            "hearts": -3,
+            "target": "Kinuyo",
+            "endsDate": false
+          },
+          {
+            "text": "Kinuyo is just as important to me.",
+            "hearts": -3,
+            "target": "Suzukaze",
+            "endsDate": true
+          },
+          {
+            "text": "What lovely weather we're having today.",
+            "hearts": 0,
+            "endsDate": false
+          }
+        ],
+        "best": 3,
+        "source": "bin/wdr_par/wdr.par uid00b00159.msg"
+      },
+      {
+        "venue": "Sushi Ginya",
+        "met": "Hanamaru",
+        "options": [
+          {
+            "text": "Cut it out, this isn't funny.",
+            "hearts": 0,
+            "endsDate": false
+          },
+          {
+            "text": "You two are very similar.",
+            "hearts": -3,
+            "target": "Hanamaru",
+            "endsDate": false
+          },
+          {
+            "text": "How about the three of us have some fun?",
+            "hearts": -3,
+            "target": "Suzukaze",
+            "endsDate": true
+          }
+        ],
+        "best": 1,
+        "source": "bin/wdr_par/wdr.par uid00b0015a.msg"
+      },
+      {
+        "venue": "Arigataya Market",
+        "met": "Hinagiku",
+        "options": [
+          {
+            "text": "I don't know what you're talking about.",
+            "hearts": 0,
+            "endsDate": false
+          },
+          {
+            "text": "Hinagiku is like a sister to me.",
+            "hearts": -3,
+            "target": "Hinagiku",
+            "endsDate": false
+          },
+          {
+            "text": "You're both beauties.",
+            "hearts": -3,
+            "target": "Suzukaze",
+            "endsDate": true
+          }
+        ],
+        "best": 1,
+        "source": "bin/wdr_par/wdr.par uid00b0015b.msg"
+      }
+    ],
+    "reference": "https://www.khhsubs.com/kenzan/yujo/"
+  },
+  "Momochika": {
+    "meeting": {
+      "place": "Gion Main Gate",
+      "area": "st_gion",
+      "x": 0.528035,
+      "y": 0.893504,
+      "source": "bin/scenario/mail.bin and bin/wdr_par/wdr.par uid00b0016d.msg"
+    },
+    "outings": [
+      {
+        "venue": "Koyoro Ryotei",
+        "hearts": -1,
+        "options": [
+          {
+            "name": "Large Mountain Delicacies Banquet",
+            "price": 2400,
+            "hearts": 0
+          },
+          {
+            "name": "Large Seafood Banquet",
+            "price": 2400,
+            "hearts": 1
+          },
+          {
+            "name": "Large Plum-Theme Banquet",
+            "price": 5000,
+            "hearts": 0
+          },
+          {
+            "name": "Large Bamboo-Theme Banquet",
+            "price": 9000,
+            "hearts": 0
+          },
+          {
+            "name": "Large Pine-Theme Banquet",
+            "price": 13600,
+            "hearts": 0
+          },
+          {
+            "name": "Large Supreme Banquet",
+            "price": 20000,
+            "hearts": 0
+          }
+        ],
+        "source": "bin/item/shop/shop0037.bin and bin/wdr_par/wdr.par uid00b0016f.msg; venue preference table uid00b0002d.msg (scene 1)",
+        "minimumFunds": 2400,
+        "insufficientFundsHearts": -2
+      },
+      {
+        "venue": "Hatsukaze Kitchen",
+        "hearts": 0,
+        "options": [
+          {
+            "name": "Large Rikyu-Style Egg",
+            "price": 240,
+            "hearts": 0
+          },
+          {
+            "name": "Large Chicken Zosui",
+            "price": 280,
+            "hearts": -1
+          },
+          {
+            "name": "Large Fried Egg",
+            "price": 200,
+            "hearts": -1
+          },
+          {
+            "name": "Large Clam Rice",
+            "price": 300,
+            "hearts": -1
+          },
+          {
+            "name": "Large Oyster Rice",
+            "price": 360,
+            "hearts": 1
+          },
+          {
+            "name": "Large Red Bean Rice",
+            "price": 180,
+            "hearts": 0
+          },
+          {
+            "name": "Large Boiled Tofu",
+            "price": 260,
+            "hearts": 0
+          },
+          {
+            "name": "Large Eel Kabayaki",
+            "price": 500,
+            "hearts": 1
+          },
+          {
+            "name": "Large Turtle Hotpot",
+            "price": 600,
+            "hearts": 1
+          }
+        ],
+        "source": "bin/item/shop/shop0035.bin and bin/wdr_par/wdr.par uid00b00173.msg; venue preference table uid00b00032.msg (scene 1)",
+        "minimumFunds": 180,
+        "insufficientFundsHearts": -2
+      },
+      {
+        "venue": "Sushi Ginya",
+        "hearts": 1,
+        "options": [
+          {
+            "name": "Large Futomaki",
+            "price": 100,
+            "hearts": 0
+          },
+          {
+            "name": "Large Saba Oshizushi",
+            "price": 160,
+            "hearts": 1
+          },
+          {
+            "name": "Large Barazushi",
+            "price": 200,
+            "hearts": -1
+          },
+          {
+            "name": "Large Hamo Kabayaki Bowl",
+            "price": 260,
+            "hearts": 1
+          },
+          {
+            "name": "Large Aji Oshizushi",
+            "price": 160,
+            "hearts": 1
+          },
+          {
+            "name": "Large Kohada Oshizushi",
+            "price": 100,
+            "hearts": 1
+          },
+          {
+            "name": "Large Mushizushi",
+            "price": 140,
+            "hearts": 1
+          },
+          {
+            "name": "Large Whole Sweetfish",
+            "price": 200,
+            "hearts": 1
+          },
+          {
+            "name": "Large Wakame Rolls",
+            "price": 160,
+            "hearts": -1
+          }
+        ],
+        "source": "bin/item/shop/shop0011.bin and bin/wdr_par/wdr.par uid00b00177.msg; venue preference table uid01b0017b.msg (scene 0)",
+        "minimumFunds": 100,
+        "insufficientFundsHearts": -2
+      },
+      {
+        "venue": "Arigataya Market",
+        "hearts": 0,
+        "options": [
+          {
+            "name": "Gold Hairpin",
+            "price": 40000,
+            "note": "From Chapter 5",
+            "hearts": 1
+          },
+          {
+            "name": "Princess Kaguya's Comb",
+            "price": 1000,
+            "note": "From Chapter 5",
+            "hearts": 0
+          },
+          {
+            "name": "Kyoto Perfume Sachet",
+            "price": 2000,
+            "note": "From Chapter 5",
+            "hearts": -1
+          },
+          {
+            "name": "Edo Perfume Sachet",
+            "price": 3000,
+            "note": "From Chapter 5",
+            "hearts": 1
+          },
+          {
+            "name": "Fireworks Kimono",
+            "price": 30000,
+            "note": "From Chapter 5",
+            "hearts": 1
+          },
+          {
+            "name": "Cherry Blossom Kimono",
+            "price": 20000,
+            "note": "From Chapter 5",
+            "hearts": 1
+          },
+          {
+            "name": "Chrysanthemum Obi",
+            "price": 7500,
+            "note": "From Chapter 5",
+            "hearts": -1
+          },
+          {
+            "name": "Wave-Design Obi",
+            "price": 5000,
+            "note": "From Chapter 5",
+            "hearts": 0
+          },
+          {
+            "name": "Checkered Obi",
+            "price": 2500,
+            "note": "From Chapter 5",
+            "hearts": 0
+          },
+          {
+            "name": "Portuguese Hand Mirror",
+            "price": 5000,
+            "note": "From Chapter 5",
+            "hearts": -1
+          },
+          {
+            "name": "Dutch Jewelry Box",
+            "price": 3000,
+            "note": "From Chapter 5",
+            "hearts": 1
+          },
+          {
+            "name": "Foreign Cloth",
+            "price": 2000,
+            "note": "From Chapter 5",
+            "hearts": 0
+          }
+        ],
+        "source": "bin/item/shop/shop0044.bin and bin/wdr_par/wdr.par uid00b0017c.msg; venue preference table uid01b0017f.msg (scene 0)",
+        "minimumFunds": 1000,
+        "insufficientFundsHearts": -2
+      }
+    ],
+    "encounters": [
+      {
+        "venue": "Koyoro Ryotei",
+        "met": "Suzukaze",
+        "options": [
+          {
+            "text": "Don't get in the way of a good time.",
+            "hearts": -3,
+            "target": "Suzukaze",
+            "endsDate": false
+          },
+          {
+            "text": "I don't recall ever saying that.",
+            "hearts": 0,
+            "endsDate": false
+          },
+          {
+            "text": "We're just having some fun together.",
+            "hearts": -3,
+            "target": "Momochika",
+            "endsDate": true
+          }
+        ],
+        "best": 2,
+        "source": "bin/wdr_par/wdr.par uid00b0016f.msg"
+      },
+      {
+        "venue": "Hatsukaze Kitchen",
+        "met": "Hinagiku",
+        "options": [
+          {
+            "text": "Kids should go back home.",
+            "hearts": -3,
+            "target": "Hinagiku",
+            "endsDate": false
+          },
+          {
+            "text": "I'm in the middle of something.",
+            "hearts": 0,
+            "endsDate": false
+          },
+          {
+            "text": "She's just a passerby.",
+            "hearts": -3,
+            "target": "Momochika",
+            "endsDate": true
+          }
+        ],
+        "best": 2,
+        "source": "bin/wdr_par/wdr.par uid00b00173.msg"
+      },
+      {
+        "venue": "Sushi Ginya",
+        "met": "Kinuyo",
+        "options": [
+          {
+            "text": "It's just as Momochika said.",
+            "hearts": -3,
+            "target": "Kinuyo",
+            "endsDate": false
+          },
+          {
+            "text": "We're only walking around.",
+            "hearts": -3,
+            "target": "Momochika",
+            "endsDate": true
+          },
+          {
+            "text": "I'll explain everything later.",
+            "hearts": 0,
+            "endsDate": false
+          }
+        ],
+        "best": 3,
+        "source": "bin/wdr_par/wdr.par uid00b00177.msg"
+      },
+      {
+        "venue": "Arigataya Market",
+        "met": "Shirayuki",
+        "options": [
+          {
+            "text": "It's so difficult being a ladies' man.",
+            "hearts": 0,
+            "endsDate": false
+          },
+          {
+            "text": "I'm going to visit Shirayuki soon.",
+            "hearts": -3,
+            "target": "Momochika",
+            "endsDate": true
+          },
+          {
+            "text": "Stay out of our way.",
+            "hearts": -3,
+            "target": "Shirayuki",
+            "endsDate": false
+          }
+        ],
+        "best": 1,
+        "source": "bin/wdr_par/wdr.par uid00b0017c.msg"
+      }
+    ],
+    "reference": "https://www.khhsubs.com/kenzan/yujo/"
+  },
+  "Hinagiku": {
+    "meeting": {
+      "place": "Gion Inari Shrine entrance",
+      "area": "st_gion",
+      "x": 0.805978,
+      "y": 0.521812,
+      "source": "bin/scenario/mail.bin and bin/wdr_par/wdr.par uid00b00198.msg",
+      "note": "If Hinagiku gives her ordinary arrival greeting, the English venue menu swaps Sushi Ginya and Hatsukaze Kitchen. Pick the displayed Hatsukaze Kitchen option to go to Sushi Ginya, or Sushi Ginya to go to Hatsukaze Kitchen. The labels match the destinations when you get her early-arrival greeting."
+    },
+    "outings": [
+      {
+        "venue": "Koyoro Ryotei",
+        "hearts": 0,
+        "options": [
+          {
+            "name": "Large Mountain Delicacies Banquet",
+            "price": 2400,
+            "hearts": -1
+          },
+          {
+            "name": "Large Seafood Banquet",
+            "price": 2400,
+            "hearts": 1
+          },
+          {
+            "name": "Large Plum-Theme Banquet",
+            "price": 5000,
+            "hearts": -1
+          },
+          {
+            "name": "Large Bamboo-Theme Banquet",
+            "price": 9000,
+            "hearts": 0
+          },
+          {
+            "name": "Large Pine-Theme Banquet",
+            "price": 13600,
+            "hearts": -1
+          },
+          {
+            "name": "Large Supreme Banquet",
+            "price": 20000,
+            "hearts": -1
+          }
+        ],
+        "source": "bin/item/shop/shop0037.bin and bin/wdr_par/wdr.par uid00b0019a.msg; venue preference table uid00b0002d.msg (scene 3)",
+        "minimumFunds": 2400,
+        "insufficientFundsHearts": -2
+      },
+      {
+        "venue": "Hatsukaze Kitchen",
+        "hearts": -0.5,
+        "options": [
+          {
+            "name": "Large Rikyu-Style Egg",
+            "price": 240,
+            "hearts": -1
+          },
+          {
+            "name": "Large Chicken Zosui",
+            "price": 280,
+            "hearts": 1
+          },
+          {
+            "name": "Large Fried Egg",
+            "price": 200,
+            "hearts": -1
+          },
+          {
+            "name": "Large Clam Rice",
+            "price": 300,
+            "hearts": 0
+          },
+          {
+            "name": "Large Oyster Rice",
+            "price": 360,
+            "hearts": 0
+          },
+          {
+            "name": "Large Red Bean Rice",
+            "price": 180,
+            "hearts": -1
+          },
+          {
+            "name": "Large Boiled Tofu",
+            "price": 260,
+            "hearts": 0
+          },
+          {
+            "name": "Large Eel Kabayaki",
+            "price": 500,
+            "hearts": 0
+          },
+          {
+            "name": "Large Turtle Hotpot",
+            "price": 600,
+            "hearts": 0
+          }
+        ],
+        "source": "bin/item/shop/shop0035.bin and bin/wdr_par/wdr.par uid00b0019e.msg; venue preference table uid00b00032.msg (scene 3)",
+        "minimumFunds": 180,
+        "insufficientFundsHearts": -2
+      },
+      {
+        "venue": "Sushi Ginya",
+        "hearts": 0.5,
+        "options": [
+          {
+            "name": "Large Futomaki",
+            "price": 100,
+            "hearts": 1
+          },
+          {
+            "name": "Large Saba Oshizushi",
+            "price": 160,
+            "hearts": -1
+          },
+          {
+            "name": "Large Barazushi",
+            "price": 200,
+            "hearts": 1
+          },
+          {
+            "name": "Large Hamo Kabayaki Bowl",
+            "price": 260,
+            "hearts": -1
+          },
+          {
+            "name": "Large Aji Oshizushi",
+            "price": 160,
+            "hearts": 0
+          },
+          {
+            "name": "Large Kohada Oshizushi",
+            "price": 100,
+            "hearts": 0
+          },
+          {
+            "name": "Large Mushizushi",
+            "price": 140,
+            "hearts": -1
+          },
+          {
+            "name": "Large Whole Sweetfish",
+            "price": 200,
+            "hearts": -1
+          },
+          {
+            "name": "Large Wakame Rolls",
+            "price": 160,
+            "hearts": 1
+          }
+        ],
+        "source": "bin/item/shop/shop0011.bin and bin/wdr_par/wdr.par uid00b001a2.msg; venue preference table uid01b001a6.msg (scene 0)",
+        "minimumFunds": 100,
+        "insufficientFundsHearts": -2
+      },
+      {
+        "venue": "Arigataya Market",
+        "hearts": 1,
+        "options": [
+          {
+            "name": "Gold Hairpin",
+            "price": 40000,
+            "note": "From Chapter 5",
+            "hearts": 0
+          },
+          {
+            "name": "Princess Kaguya's Comb",
+            "price": 1000,
+            "note": "From Chapter 5",
+            "hearts": 1
+          },
+          {
+            "name": "Kyoto Perfume Sachet",
+            "price": 2000,
+            "note": "From Chapter 5",
+            "hearts": -1
+          },
+          {
+            "name": "Edo Perfume Sachet",
+            "price": 3000,
+            "note": "From Chapter 5",
+            "hearts": 0
+          },
+          {
+            "name": "Fireworks Kimono",
+            "price": 30000,
+            "note": "From Chapter 5",
+            "hearts": -1
+          },
+          {
+            "name": "Cherry Blossom Kimono",
+            "price": 20000,
+            "note": "From Chapter 5",
+            "hearts": -1
+          },
+          {
+            "name": "Chrysanthemum Obi",
+            "price": 7500,
+            "note": "From Chapter 5",
+            "hearts": 1
+          },
+          {
+            "name": "Wave-Design Obi",
+            "price": 5000,
+            "note": "From Chapter 5",
+            "hearts": 1
+          },
+          {
+            "name": "Checkered Obi",
+            "price": 2500,
+            "note": "From Chapter 5",
+            "hearts": -1
+          },
+          {
+            "name": "Portuguese Hand Mirror",
+            "price": 5000,
+            "note": "From Chapter 5",
+            "hearts": 1
+          },
+          {
+            "name": "Dutch Jewelry Box",
+            "price": 3000,
+            "note": "From Chapter 5",
+            "hearts": 1
+          },
+          {
+            "name": "Foreign Cloth",
+            "price": 2000,
+            "note": "From Chapter 5",
+            "hearts": -1
+          }
+        ],
+        "source": "bin/item/shop/shop0044.bin and bin/wdr_par/wdr.par uid00b001a7.msg; venue preference table uid01b001aa.msg (scene 0)",
+        "minimumFunds": 1000,
+        "insufficientFundsHearts": -2
+      }
+    ],
+    "encounters": [
+      {
+        "venue": "Koyoro Ryotei",
+        "met": "Hanamaru",
+        "options": [
+          {
+            "text": "Hanamaru, what were you doing in a place like this?",
+            "hearts": 0,
+            "endsDate": false
+          },
+          {
+            "text": "What Hinagiku said is true.",
+            "hearts": -3,
+            "target": "Hanamaru",
+            "endsDate": false
+          },
+          {
+            "text": "I felt bad for her.",
+            "hearts": -3,
+            "target": "Hinagiku",
+            "endsDate": true
+          }
+        ],
+        "best": 1,
+        "source": "bin/wdr_par/wdr.par uid00b0019a.msg"
+      },
+      {
+        "venue": "Hatsukaze Kitchen",
+        "met": "Suzukaze",
+        "options": [
+          {
+            "text": "It's just as Hinagiku said.",
+            "hearts": -3,
+            "target": "Suzukaze",
+            "endsDate": false
+          },
+          {
+            "text": "For sisters, you two don't look alike.",
+            "hearts": 0,
+            "endsDate": false
+          },
+          {
+            "text": "I was just pretending to be a regular.",
+            "hearts": -3,
+            "target": "Hinagiku",
+            "endsDate": true
+          }
+        ],
+        "best": 2,
+        "source": "bin/wdr_par/wdr.par uid00b0019e.msg"
+      },
+      {
+        "venue": "Sushi Ginya",
+        "met": "Momochika",
+        "options": [
+          {
+            "text": "I'm Hinagiku's regular.",
+            "hearts": -3,
+            "target": "Momochika",
+            "endsDate": false
+          },
+          {
+            "text": "She hasn't fully developed yet, go easy on her.",
+            "hearts": -3,
+            "target": "Hinagiku",
+            "endsDate": true
+          },
+          {
+            "text": "Are you jealous?",
+            "hearts": 0,
+            "endsDate": false
+          }
+        ],
+        "best": 3,
+        "source": "bin/wdr_par/wdr.par uid00b001a2.msg"
+      },
+      {
+        "venue": "Arigataya Market",
+        "met": "Shirayuki",
+        "options": [
+          {
+            "text": "This is all Hinagiku's fault.",
+            "hearts": -3,
+            "target": "Hinagiku",
+            "endsDate": true
+          },
+          {
+            "text": "What Hinagiku is saying is true.",
+            "hearts": -3,
+            "target": "Shirayuki",
+            "endsDate": false
+          },
+          {
+            "text": "You're as beautiful as ever.",
+            "hearts": 0,
+            "endsDate": false
+          }
+        ],
+        "best": 3,
+        "source": "bin/wdr_par/wdr.par uid00b001a7.msg"
+      }
+    ],
+    "reference": "https://www.khhsubs.com/kenzan/yujo/"
+  },
+  "Hanamaru": {
+    "meeting": {
+      "place": "Gion Main Gate",
+      "area": "st_gion",
+      "x": 0.528035,
+      "y": 0.893504,
+      "source": "bin/scenario/mail.bin and bin/wdr_par/wdr.par uid00b001ac.msg"
+    },
+    "outings": [
+      {
+        "venue": "Koyoro Ryotei",
+        "hearts": -1,
+        "options": [
+          {
+            "name": "Large Mountain Delicacies Banquet",
+            "price": 2400,
+            "hearts": 0
+          },
+          {
+            "name": "Large Seafood Banquet",
+            "price": 2400,
+            "hearts": 0
+          },
+          {
+            "name": "Large Plum-Theme Banquet",
+            "price": 5000,
+            "hearts": 1
+          },
+          {
+            "name": "Large Bamboo-Theme Banquet",
+            "price": 9000,
+            "hearts": 0
+          },
+          {
+            "name": "Large Pine-Theme Banquet",
+            "price": 13600,
+            "hearts": 0
+          },
+          {
+            "name": "Large Supreme Banquet",
+            "price": 20000,
+            "hearts": 0
+          }
+        ],
+        "source": "bin/item/shop/shop0037.bin and bin/wdr_par/wdr.par uid00b001ae.msg; venue preference table uid00b0002d.msg (scene 4)",
+        "minimumFunds": 2400,
+        "insufficientFundsHearts": -2
+      },
+      {
+        "venue": "Hatsukaze Kitchen",
+        "hearts": 1,
+        "options": [
+          {
+            "name": "Large Rikyu-Style Egg",
+            "price": 240,
+            "hearts": 1
+          },
+          {
+            "name": "Large Chicken Zosui",
+            "price": 280,
+            "hearts": 1
+          },
+          {
+            "name": "Large Fried Egg",
+            "price": 200,
+            "hearts": -1
+          },
+          {
+            "name": "Large Clam Rice",
+            "price": 300,
+            "hearts": 0
+          },
+          {
+            "name": "Large Oyster Rice",
+            "price": 360,
+            "hearts": 1
+          },
+          {
+            "name": "Large Red Bean Rice",
+            "price": 180,
+            "hearts": -1
+          },
+          {
+            "name": "Large Boiled Tofu",
+            "price": 260,
+            "hearts": -1
+          },
+          {
+            "name": "Large Eel Kabayaki",
+            "price": 500,
+            "hearts": 1
+          },
+          {
+            "name": "Large Turtle Hotpot",
+            "price": 600,
+            "hearts": 1
+          }
+        ],
+        "source": "bin/item/shop/shop0035.bin and bin/wdr_par/wdr.par uid00b001b2.msg; venue preference table uid00b00032.msg (scene 4)",
+        "minimumFunds": 180,
+        "insufficientFundsHearts": -2
+      },
+      {
+        "venue": "Sushi Ginya",
+        "hearts": 0,
+        "options": [
+          {
+            "name": "Large Futomaki",
+            "price": 100,
+            "hearts": 0
+          },
+          {
+            "name": "Large Saba Oshizushi",
+            "price": 160,
+            "hearts": -1
+          },
+          {
+            "name": "Large Barazushi",
+            "price": 200,
+            "hearts": 1
+          },
+          {
+            "name": "Large Hamo Kabayaki Bowl",
+            "price": 260,
+            "hearts": -1
+          },
+          {
+            "name": "Large Aji Oshizushi",
+            "price": 160,
+            "hearts": -1
+          },
+          {
+            "name": "Large Kohada Oshizushi",
+            "price": 100,
+            "hearts": -1
+          },
+          {
+            "name": "Large Mushizushi",
+            "price": 140,
+            "hearts": 1
+          },
+          {
+            "name": "Large Whole Sweetfish",
+            "price": 200,
+            "hearts": 0
+          },
+          {
+            "name": "Large Wakame Rolls",
+            "price": 160,
+            "hearts": 0
+          }
+        ],
+        "source": "bin/item/shop/shop0011.bin and bin/wdr_par/wdr.par uid00b001b6.msg; venue preference table uid01b001ba.msg (scene 0)",
+        "minimumFunds": 100,
+        "insufficientFundsHearts": -2
+      },
+      {
+        "venue": "Arigataya Market",
+        "hearts": 0.5,
+        "options": [
+          {
+            "name": "Gold Hairpin",
+            "price": 40000,
+            "note": "From Chapter 5",
+            "hearts": 1
+          },
+          {
+            "name": "Princess Kaguya's Comb",
+            "price": 1000,
+            "note": "From Chapter 5",
+            "hearts": -1
+          },
+          {
+            "name": "Kyoto Perfume Sachet",
+            "price": 2000,
+            "note": "From Chapter 5",
+            "hearts": 0
+          },
+          {
+            "name": "Edo Perfume Sachet",
+            "price": 3000,
+            "note": "From Chapter 5",
+            "hearts": 1
+          },
+          {
+            "name": "Fireworks Kimono",
+            "price": 30000,
+            "note": "From Chapter 5",
+            "hearts": 1
+          },
+          {
+            "name": "Cherry Blossom Kimono",
+            "price": 20000,
+            "note": "From Chapter 5",
+            "hearts": 1
+          },
+          {
+            "name": "Chrysanthemum Obi",
+            "price": 7500,
+            "note": "From Chapter 5",
+            "hearts": 0
+          },
+          {
+            "name": "Wave-Design Obi",
+            "price": 5000,
+            "note": "From Chapter 5",
+            "hearts": 1
+          },
+          {
+            "name": "Checkered Obi",
+            "price": 2500,
+            "note": "From Chapter 5",
+            "hearts": -1
+          },
+          {
+            "name": "Portuguese Hand Mirror",
+            "price": 5000,
+            "note": "From Chapter 5",
+            "hearts": 0
+          },
+          {
+            "name": "Dutch Jewelry Box",
+            "price": 3000,
+            "note": "From Chapter 5",
+            "hearts": 1
+          },
+          {
+            "name": "Foreign Cloth",
+            "price": 2000,
+            "note": "From Chapter 5",
+            "hearts": -1
+          }
+        ],
+        "source": "bin/item/shop/shop0044.bin and bin/wdr_par/wdr.par uid00b001bb.msg; venue preference table uid01b001be.msg (scene 0)",
+        "minimumFunds": 1000,
+        "insufficientFundsHearts": -2
+      }
+    ],
+    "encounters": [
+      {
+        "venue": "Koyoro Ryotei",
+        "met": "Kinuyo",
+        "options": [
+          {
+            "text": "Aren't you mistaking me for someone else?",
+            "hearts": -3,
+            "target": "Kinuyo",
+            "endsDate": false
+          },
+          {
+            "text": "Guess I've gotten pretty famous, huh.",
+            "hearts": 0,
+            "endsDate": false
+          },
+          {
+            "text": "Actually, Kinuyo's the one for me.",
+            "hearts": -3,
+            "target": "Hanamaru",
+            "endsDate": true
+          }
+        ],
+        "best": 2,
+        "source": "bin/wdr_par/wdr.par uid00b001ae.msg"
+      },
+      {
+        "venue": "Hatsukaze Kitchen",
+        "met": "Shirayuki",
+        "options": [
+          {
+            "text": "Good one, Hanamaru.",
+            "hearts": -3,
+            "target": "Hanamaru",
+            "endsDate": true
+          },
+          {
+            "text": "We just ate together, that's all.",
+            "hearts": 0,
+            "endsDate": false
+          },
+          {
+            "text": "Hanamaru is a fine woman.",
+            "hearts": -3,
+            "target": "Shirayuki",
+            "endsDate": false
+          }
+        ],
+        "best": 2,
+        "source": "bin/wdr_par/wdr.par uid00b001b2.msg"
+      },
+      {
+        "venue": "Sushi Ginya",
+        "met": "Hinagiku",
+        "options": [
+          {
+            "text": "This isn't the place for a child.",
+            "hearts": -3,
+            "target": "Hinagiku",
+            "endsDate": false
+          },
+          {
+            "text": "I don't get it either.",
+            "hearts": 0,
+            "endsDate": false
+          },
+          {
+            "text": "I think I prefer Hinagiku after all.",
+            "hearts": -3,
+            "target": "Hanamaru",
+            "endsDate": true
+          }
+        ],
+        "best": 2,
+        "source": "bin/wdr_par/wdr.par uid00b001b6.msg"
+      },
+      {
+        "venue": "Arigataya Market",
+        "met": "Suzukaze",
+        "options": [
+          {
+            "text": "Can't we all just be friends?",
+            "hearts": -3,
+            "target": "Suzukaze",
+            "endsDate": false
+          },
+          {
+            "text": "I wanted to make her jealous.",
+            "hearts": -3,
+            "target": "Hanamaru",
+            "endsDate": true
+          },
+          {
+            "text": "We're just old friends.",
+            "hearts": 0,
+            "endsDate": false
+          }
+        ],
+        "best": 3,
+        "source": "bin/wdr_par/wdr.par uid00b001bb.msg"
+      }
+    ],
+    "reference": "https://www.khhsubs.com/kenzan/yujo/"
+  },
+  "Shirayuki": {
+    "meeting": {
+      "place": "Gion Inari Shrine entrance",
+      "area": "st_gion",
+      "x": 0.805978,
+      "y": 0.521812,
+      "source": "bin/scenario/mail.bin and bin/wdr_par/wdr.par uid00b001c0.msg"
+    },
+    "outings": [
+      {
+        "venue": "Koyoro Ryotei",
+        "hearts": 0.5,
+        "options": [
+          {
+            "name": "Large Mountain Delicacies Banquet",
+            "price": 2400,
+            "hearts": -1
+          },
+          {
+            "name": "Large Seafood Banquet",
+            "price": 2400,
+            "hearts": 0
+          },
+          {
+            "name": "Large Plum-Theme Banquet",
+            "price": 5000,
+            "hearts": -1
+          },
+          {
+            "name": "Large Bamboo-Theme Banquet",
+            "price": 9000,
+            "hearts": 1
+          },
+          {
+            "name": "Large Pine-Theme Banquet",
+            "price": 13600,
+            "hearts": -1
+          },
+          {
+            "name": "Large Supreme Banquet",
+            "price": 20000,
+            "hearts": 1
+          }
+        ],
+        "source": "bin/item/shop/shop0037.bin and bin/wdr_par/wdr.par uid00b001c3.msg; venue preference table uid00b0002d.msg (scene 5)",
+        "minimumFunds": 2400,
+        "insufficientFundsHearts": -2
+      },
+      {
+        "venue": "Hatsukaze Kitchen",
+        "hearts": 0.5,
+        "options": [
+          {
+            "name": "Large Rikyu-Style Egg",
+            "price": 240,
+            "hearts": 1
+          },
+          {
+            "name": "Large Chicken Zosui",
+            "price": 280,
+            "hearts": -1
+          },
+          {
+            "name": "Large Fried Egg",
+            "price": 200,
+            "hearts": 1
+          },
+          {
+            "name": "Large Clam Rice",
+            "price": 300,
+            "hearts": -1
+          },
+          {
+            "name": "Large Oyster Rice",
+            "price": 360,
+            "hearts": 0
+          },
+          {
+            "name": "Large Red Bean Rice",
+            "price": 180,
+            "hearts": -1
+          },
+          {
+            "name": "Large Boiled Tofu",
+            "price": 260,
+            "hearts": 1
+          },
+          {
+            "name": "Large Eel Kabayaki",
+            "price": 500,
+            "hearts": -1
+          },
+          {
+            "name": "Large Turtle Hotpot",
+            "price": 600,
+            "hearts": 0
+          }
+        ],
+        "source": "bin/item/shop/shop0035.bin and bin/wdr_par/wdr.par uid00b001c7.msg; venue preference table uid00b00032.msg (scene 5)",
+        "minimumFunds": 180,
+        "insufficientFundsHearts": -2
+      },
+      {
+        "venue": "Sushi Ginya",
+        "hearts": -1,
+        "options": [
+          {
+            "name": "Large Futomaki",
+            "price": 100,
+            "hearts": 1
+          },
+          {
+            "name": "Large Saba Oshizushi",
+            "price": 160,
+            "hearts": 0
+          },
+          {
+            "name": "Large Barazushi",
+            "price": 200,
+            "hearts": 0
+          },
+          {
+            "name": "Large Hamo Kabayaki Bowl",
+            "price": 260,
+            "hearts": -1
+          },
+          {
+            "name": "Large Aji Oshizushi",
+            "price": 160,
+            "hearts": 0
+          },
+          {
+            "name": "Large Kohada Oshizushi",
+            "price": 100,
+            "hearts": 0
+          },
+          {
+            "name": "Large Mushizushi",
+            "price": 140,
+            "hearts": -1
+          },
+          {
+            "name": "Large Whole Sweetfish",
+            "price": 200,
+            "hearts": 0
+          },
+          {
+            "name": "Large Wakame Rolls",
+            "price": 160,
+            "hearts": 1
+          }
+        ],
+        "source": "bin/item/shop/shop0011.bin and bin/wdr_par/wdr.par uid00b001cb.msg; venue preference table uid01b001cf.msg (scene 0)",
+        "minimumFunds": 100,
+        "insufficientFundsHearts": -2
+      },
+      {
+        "venue": "Arigataya Market",
+        "hearts": 0,
+        "options": [
+          {
+            "name": "Gold Hairpin",
+            "price": 40000,
+            "note": "From Chapter 5",
+            "hearts": 1
+          },
+          {
+            "name": "Princess Kaguya's Comb",
+            "price": 1000,
+            "note": "From Chapter 5",
+            "hearts": -1
+          },
+          {
+            "name": "Kyoto Perfume Sachet",
+            "price": 2000,
+            "note": "From Chapter 5",
+            "hearts": 1
+          },
+          {
+            "name": "Edo Perfume Sachet",
+            "price": 3000,
+            "note": "From Chapter 5",
+            "hearts": -1
+          },
+          {
+            "name": "Fireworks Kimono",
+            "price": 30000,
+            "note": "From Chapter 5",
+            "hearts": 1
+          },
+          {
+            "name": "Cherry Blossom Kimono",
+            "price": 20000,
+            "note": "From Chapter 5",
+            "hearts": 1
+          },
+          {
+            "name": "Chrysanthemum Obi",
+            "price": 7500,
+            "note": "From Chapter 5",
+            "hearts": 1
+          },
+          {
+            "name": "Wave-Design Obi",
+            "price": 5000,
+            "note": "From Chapter 5",
+            "hearts": -1
+          },
+          {
+            "name": "Checkered Obi",
+            "price": 2500,
+            "note": "From Chapter 5",
+            "hearts": 0
+          },
+          {
+            "name": "Portuguese Hand Mirror",
+            "price": 5000,
+            "note": "From Chapter 5",
+            "hearts": 0
+          },
+          {
+            "name": "Dutch Jewelry Box",
+            "price": 3000,
+            "note": "From Chapter 5",
+            "hearts": 0
+          },
+          {
+            "name": "Foreign Cloth",
+            "price": 2000,
+            "note": "From Chapter 5",
+            "hearts": 0
+          }
+        ],
+        "source": "bin/item/shop/shop0044.bin and bin/wdr_par/wdr.par uid00b001d0.msg; venue preference table uid01b001d3.msg (scene 0)",
+        "minimumFunds": 1000,
+        "insufficientFundsHearts": -2
+      }
+    ],
+    "encounters": [
+      {
+        "venue": "Koyoro Ryotei",
+        "met": "Hanamaru",
+        "options": [
+          {
+            "text": "It's just as Shirayuki said.",
+            "hearts": -3,
+            "target": "Hanamaru",
+            "endsDate": false
+          },
+          {
+            "text": "I wanted to see what a tenjin is like.",
+            "hearts": -3,
+            "target": "Shirayuki",
+            "endsDate": true
+          },
+          {
+            "text": "I can do what I want as a customer.",
+            "hearts": 0,
+            "endsDate": false
+          }
+        ],
+        "best": 3,
+        "source": "bin/wdr_par/wdr.par uid00b001c3.msg"
+      },
+      {
+        "venue": "Hatsukaze Kitchen",
+        "met": "Hinagiku",
+        "options": [
+          {
+            "text": "Yes, that's right.",
+            "hearts": -3,
+            "target": "Hinagiku",
+            "endsDate": false
+          },
+          {
+            "text": "Next time, I'll invite you, too.",
+            "hearts": 0,
+            "endsDate": false
+          },
+          {
+            "text": "That's not true at all.",
+            "hearts": -3,
+            "target": "Shirayuki",
+            "endsDate": true
+          }
+        ],
+        "best": 2,
+        "source": "bin/wdr_par/wdr.par uid00b001c7.msg"
+      },
+      {
+        "venue": "Sushi Ginya",
+        "met": "Kinuyo",
+        "options": [
+          {
+            "text": "Sorry, but I don't know this woman.",
+            "hearts": -3,
+            "target": "Kinuyo",
+            "endsDate": false
+          },
+          {
+            "text": "This is Kinuyo, who sees me at Yumejiya.",
+            "hearts": 0,
+            "endsDate": false
+          },
+          {
+            "text": "I'm such a lucky guy.",
+            "hearts": -3,
+            "target": "Shirayuki",
+            "endsDate": true
+          }
+        ],
+        "best": 2,
+        "source": "bin/wdr_par/wdr.par uid00b001cb.msg"
+      },
+      {
+        "venue": "Arigataya Market",
+        "met": "Momochika",
+        "options": [
+          {
+            "text": "I'm sorry, but please stay out of our way.",
+            "hearts": -3,
+            "target": "Momochika",
+            "endsDate": false
+          },
+          {
+            "text": "Momochika, your sex appeal is unmatched.",
+            "hearts": -3,
+            "target": "Shirayuki",
+            "endsDate": true
+          },
+          {
+            "text": "Yes, I'm seeing Shirayuki.",
+            "hearts": 0,
+            "endsDate": false
+          }
+        ],
+        "best": 3,
+        "source": "bin/wdr_par/wdr.par uid00b001d0.msg"
+      }
+    ],
+    "reference": "https://www.khhsubs.com/kenzan/yujo/"
+  },
+  "Asagiri": {
+    "meeting": {
+      "place": "Gion Inari Shrine entrance",
+      "area": "st_gion",
+      "x": 0.805978,
+      "y": 0.521812,
+      "source": "bin/scenario/mail.bin and bin/wdr_par/wdr.par uid00b001c2.msg"
+    },
+    "outings": [
+      {
+        "venue": "Koyoro Ryotei",
+        "hearts": 0.5,
+        "options": [
+          {
+            "name": "Large Mountain Delicacies Banquet",
+            "price": 2400,
+            "hearts": -1
+          },
+          {
+            "name": "Large Seafood Banquet",
+            "price": 2400,
+            "hearts": -1
+          },
+          {
+            "name": "Large Plum-Theme Banquet",
+            "price": 5000,
+            "hearts": 0
+          },
+          {
+            "name": "Large Bamboo-Theme Banquet",
+            "price": 9000,
+            "hearts": -1
+          },
+          {
+            "name": "Large Pine-Theme Banquet",
+            "price": 13600,
+            "hearts": 1
+          },
+          {
+            "name": "Large Supreme Banquet",
+            "price": 20000,
+            "hearts": 1
+          }
+        ],
+        "source": "bin/item/shop/shop0037.bin and bin/wdr_par/wdr.par uid00b001d7.msg; venue preference table uid00b0002d.msg (scene 6)",
+        "minimumFunds": 2400,
+        "insufficientFundsHearts": -2
+      },
+      {
+        "venue": "Hatsukaze Kitchen",
+        "hearts": -0.5,
+        "options": [
+          {
+            "name": "Large Rikyu-Style Egg",
+            "price": 240,
+            "hearts": 0
+          },
+          {
+            "name": "Large Chicken Zosui",
+            "price": 280,
+            "hearts": 0
+          },
+          {
+            "name": "Large Fried Egg",
+            "price": 200,
+            "hearts": 0
+          },
+          {
+            "name": "Large Clam Rice",
+            "price": 300,
+            "hearts": 0
+          },
+          {
+            "name": "Large Oyster Rice",
+            "price": 360,
+            "hearts": -1
+          },
+          {
+            "name": "Large Red Bean Rice",
+            "price": 180,
+            "hearts": 0
+          },
+          {
+            "name": "Large Boiled Tofu",
+            "price": 260,
+            "hearts": 1
+          },
+          {
+            "name": "Large Eel Kabayaki",
+            "price": 500,
+            "hearts": -1
+          },
+          {
+            "name": "Large Turtle Hotpot",
+            "price": 600,
+            "hearts": 1
+          }
+        ],
+        "source": "bin/item/shop/shop0035.bin and bin/wdr_par/wdr.par uid00b001db.msg; venue preference table uid00b00032.msg (scene 6)",
+        "minimumFunds": 180,
+        "insufficientFundsHearts": -2
+      },
+      {
+        "venue": "Sushi Ginya",
+        "hearts": -0.5,
+        "options": [
+          {
+            "name": "Large Futomaki",
+            "price": 100,
+            "hearts": 0
+          },
+          {
+            "name": "Large Saba Oshizushi",
+            "price": 160,
+            "hearts": -1
+          },
+          {
+            "name": "Large Barazushi",
+            "price": 200,
+            "hearts": 1
+          },
+          {
+            "name": "Large Hamo Kabayaki Bowl",
+            "price": 260,
+            "hearts": -1
+          },
+          {
+            "name": "Large Aji Oshizushi",
+            "price": 160,
+            "hearts": 0
+          },
+          {
+            "name": "Large Kohada Oshizushi",
+            "price": 100,
+            "hearts": 0
+          },
+          {
+            "name": "Large Mushizushi",
+            "price": 140,
+            "hearts": 1
+          },
+          {
+            "name": "Large Whole Sweetfish",
+            "price": 200,
+            "hearts": 0
+          },
+          {
+            "name": "Large Wakame Rolls",
+            "price": 160,
+            "hearts": -1
+          }
+        ],
+        "source": "bin/item/shop/shop0011.bin and bin/wdr_par/wdr.par uid00b001df.msg; venue preference table uid01b001e3.msg (scene 0)",
+        "minimumFunds": 100,
+        "insufficientFundsHearts": -2
+      },
+      {
+        "venue": "Arigataya Market",
+        "hearts": 1,
+        "options": [
+          {
+            "name": "Gold Hairpin",
+            "price": 40000,
+            "note": "From Chapter 5",
+            "hearts": 1
+          },
+          {
+            "name": "Princess Kaguya's Comb",
+            "price": 1000,
+            "note": "From Chapter 5",
+            "hearts": -1
+          },
+          {
+            "name": "Kyoto Perfume Sachet",
+            "price": 2000,
+            "note": "From Chapter 5",
+            "hearts": -1
+          },
+          {
+            "name": "Edo Perfume Sachet",
+            "price": 3000,
+            "note": "From Chapter 5",
+            "hearts": -1
+          },
+          {
+            "name": "Fireworks Kimono",
+            "price": 30000,
+            "note": "From Chapter 5",
+            "hearts": 1
+          },
+          {
+            "name": "Cherry Blossom Kimono",
+            "price": 20000,
+            "note": "From Chapter 5",
+            "hearts": -1
+          },
+          {
+            "name": "Chrysanthemum Obi",
+            "price": 7500,
+            "note": "From Chapter 5",
+            "hearts": 1
+          },
+          {
+            "name": "Wave-Design Obi",
+            "price": 5000,
+            "note": "From Chapter 5",
+            "hearts": -1
+          },
+          {
+            "name": "Checkered Obi",
+            "price": 2500,
+            "note": "From Chapter 5",
+            "hearts": 0
+          },
+          {
+            "name": "Portuguese Hand Mirror",
+            "price": 5000,
+            "note": "From Chapter 5",
+            "hearts": 1
+          },
+          {
+            "name": "Dutch Jewelry Box",
+            "price": 3000,
+            "note": "From Chapter 5",
+            "hearts": -1
+          },
+          {
+            "name": "Foreign Cloth",
+            "price": 2000,
+            "note": "From Chapter 5",
+            "hearts": 0
+          }
+        ],
+        "source": "bin/item/shop/shop0044.bin and bin/wdr_par/wdr.par uid00b001e4.msg; venue preference table uid01b001e7.msg (scene 0)",
+        "minimumFunds": 1000,
+        "insufficientFundsHearts": -2
+      }
+    ],
+    "encounters": [],
+    "reference": "https://www.khhsubs.com/kenzan/yujo/"
+  }
+}

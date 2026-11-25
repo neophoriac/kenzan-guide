@@ -1,0 +1,2381 @@
+{
+  "schemaVersion": 1,
+  "title": "Turtle food",
+  "description": "Food, medicines and feed accepted by the turtle-feeding menu, with their effects and sources.",
+  "displayPolicy": {
+    "nativeItemCount": 87,
+    "displayedItemCount": 81,
+    "excludedItemIds": [
+      47,
+      84,
+      97,
+      98,
+      345,
+      632
+    ],
+    "reason": "Exclude exact meal, debug and alternate entries without a verified normal carried-item source; retain their native records for research.",
+    "evidence": "Private six-food source audit retained outside the public repository."
+  },
+  "rules": {
+    "basePoints": "The numbers are base points, not guaranteed gains or percentages.",
+    "fullness": "The initial Fullness change happens first and stops at zero or the turtle’s current Fullness limit. It is not multiplied by age or trust.",
+    "scaling": "Other current-stat changes and all growth changes are multiplied by age growth and trust, then rounded towards zero. Your turtle can gain less, more, or nothing.",
+    "growth": "Growth raises the stat’s trained limit, up to that turtle’s own ceiling. Current stats stop at their trained limit. Sand, Water and Mud are terrain aptitude points.",
+    "fullnessGrowth": "A Fullness growth value changes its trained limit only; the item’s separate Fullness value supplies the meal.",
+    "form": "Every feeding advances Form by one step in its nine-step cycle; it can improve or worsen.",
+    "lifespan": "Every feeding uses one remaining-lifespan unit. Eternal Turtles are exempt.",
+    "trust": "If the total applied current-stat and growth changes are negative, feeding costs up to 8 trust. Otherwise, feeding with the post-race feeding bonus grants up to 16 trust and clears that bonus. Trust stays between 0 and 255. The initial Fullness change does not count towards this total.",
+    "fullTurtle": "The feeding action is unavailable when the selected turtle is already full.",
+    "inventory": "You can feed items carried by the player or kept in item storage; the feeding menu reads both directly.",
+    "eligibility": "The reference includes items accepted by the feeding menu, excluding variants without a verified carried-item source. Sources can be shops, finds or rewards.",
+    "duplicates": "Some separate native inventory items have the same English name. They remain separate here rather than combining their effects."
+  },
+  "effectCalculation": {
+    "multiplier": "ageGrowth × (0.8 + 0.4 × trust / 255)",
+    "rounding": "truncate towards zero",
+    "initialFullnessScaled": false,
+    "packedFieldRemainder": 1000,
+    "packedFieldStride": 10000,
+    "fullnessCategoryCurrentIgnored": true
+  },
+  "sources": {
+    "itemTable": {
+      "file": "pausepar/pause.par::item.bin",
+      "rows": 667,
+      "sha256": "83aec44a4815b3917a8ac10354180bda889d8eb2b868234a6ce7cbe656eaac27",
+      "membershipColumn": 6,
+      "membershipFlag": "K",
+      "nameColumn": 7,
+      "descriptionColumn": 9,
+      "fullnessColumn": 13,
+      "categoryColumn": 14,
+      "currentColumn": 15,
+      "growthColumn": 16
+    },
+    "executable": {
+      "file": "kenzan_english.elf",
+      "sha256": "aa11d061b53b081f04f728a3da6e3b8cf9ec8ab13430e754d3b450366757d781"
+    },
+    "functions": {
+      "selector": "0x002B74B4 → 0x00251B50 → 0x000E5EFC",
+      "feeding": "0x002B1B28, translation outline 0x00BF0B08, continuation 0x002B1C20",
+      "growth": "0x002AB51C",
+      "form": "0x002A9488",
+      "lifespan": "0x002AB4F0",
+      "trust": "0x002AB614",
+      "fullTurtleGate": "0x002AED18",
+      "inventoryPools": "0x001070A8: pools 0, 1, 5"
+    }
+  },
+  "items": [
+    {
+      "itemId": 200,
+      "name": "3-Blend Togarashi",
+      "description": "A blend of three spices.",
+      "category": "MUD",
+      "fullnessBase": 10,
+      "effects": [
+        {
+          "stat": "mud",
+          "current": -15,
+          "cap": -10
+        }
+      ],
+      "image": {
+        "src": "assets/turtle-foods/3tougarashi.webp",
+        "width": 128,
+        "height": 128
+      },
+      "notes": [
+        "Can lower stats; actual losses depend on the turtle and its current limits."
+      ],
+      "native": {
+        "key": "3tougarashi",
+        "feedFlags": "K---F--Y",
+        "currentEffectPacked": -15,
+        "capEffectPacked": -10,
+        "tableRow": 200
+      }
+    },
+    {
+      "itemId": 201,
+      "name": "5-Blend Togarashi",
+      "description": "A blend of five spices.",
+      "category": "LEG",
+      "fullnessBase": 10,
+      "effects": [
+        {
+          "stat": "legPower",
+          "current": -15,
+          "cap": -10
+        }
+      ],
+      "image": {
+        "src": "assets/turtle-foods/5tougarashi.webp",
+        "width": 128,
+        "height": 128
+      },
+      "notes": [
+        "Can lower stats; actual losses depend on the turtle and its current limits."
+      ],
+      "native": {
+        "key": "5tougarashi",
+        "feedFlags": "K---F--Y",
+        "currentEffectPacked": -15,
+        "capEffectPacked": -10,
+        "tableRow": 201
+      }
+    },
+    {
+      "itemId": 202,
+      "name": "7-Blend Togarashi",
+      "description": "A blend of seven spices.",
+      "category": "ENERGY",
+      "fullnessBase": 10,
+      "effects": [
+        {
+          "stat": "stamina",
+          "current": -15,
+          "cap": -10
+        }
+      ],
+      "image": {
+        "src": "assets/turtle-foods/7tougarashi.webp",
+        "width": 128,
+        "height": 128
+      },
+      "notes": [
+        "Can lower stats; actual losses depend on the turtle and its current limits."
+      ],
+      "native": {
+        "key": "7tougarashi",
+        "feedFlags": "K---F--Y",
+        "currentEffectPacked": -15,
+        "capEffectPacked": -10,
+        "tableRow": 202
+      }
+    },
+    {
+      "itemId": 139,
+      "name": "Ageha's Onigiri",
+      "description": "Ageha wrapped these rice balls for me.\nThey're a bit misshapen, but she put her heart into them.",
+      "category": "MUD",
+      "fullnessBase": 150,
+      "effects": [
+        {
+          "stat": "mud",
+          "current": 250,
+          "cap": 50
+        }
+      ],
+      "image": {
+        "src": "assets/turtle-foods/onigiri_yoshino.webp",
+        "width": 128,
+        "height": 128
+      },
+      "native": {
+        "key": "onigiri_yoshino",
+        "feedFlags": "KB--F--Y",
+        "currentEffectPacked": 250,
+        "capEffectPacked": 50,
+        "tableRow": 139
+      }
+    },
+    {
+      "itemId": 27,
+      "name": "All-Purpose Medicine",
+      "description": "A remedy that slightly replenishes health and Heat.",
+      "category": "LEG",
+      "fullnessBase": 60,
+      "effects": [
+        {
+          "stat": "legPower",
+          "current": 5,
+          "cap": 3
+        }
+      ],
+      "image": {
+        "src": "assets/turtle-foods/drag_both_s.webp",
+        "width": 128,
+        "height": 128
+      },
+      "native": {
+        "key": "drag_both_s",
+        "feedFlags": "BK-----Y",
+        "currentEffectPacked": 5,
+        "capEffectPacked": 3,
+        "tableRow": 27
+      }
+    },
+    {
+      "itemId": 36,
+      "name": "Apple Candy",
+      "description": "A slightly sour apple-flavored candy.",
+      "category": "ENERGY",
+      "fullnessBase": 50,
+      "effects": [
+        {
+          "stat": "stamina",
+          "current": 10,
+          "cap": 4
+        }
+      ],
+      "image": {
+        "src": "assets/turtle-foods/candy_apple.webp",
+        "width": 128,
+        "height": 128
+      },
+      "native": {
+        "key": "candy_apple",
+        "feedFlags": "K---F--Y",
+        "currentEffectPacked": 10,
+        "capEffectPacked": 4,
+        "tableRow": 36
+      }
+    },
+    {
+      "itemId": 37,
+      "name": "Apricot Candy",
+      "description": "A delicious candy made with plenty of apricots.",
+      "category": "ENERGY",
+      "fullnessBase": 40,
+      "effects": [
+        {
+          "stat": "stamina",
+          "current": 10,
+          "cap": 2
+        }
+      ],
+      "image": {
+        "src": "assets/turtle-foods/candy_apri.webp",
+        "width": 128,
+        "height": 128
+      },
+      "native": {
+        "key": "candy_apri",
+        "feedFlags": "K---F--Y",
+        "currentEffectPacked": 10,
+        "capEffectPacked": 2,
+        "tableRow": 37
+      }
+    },
+    {
+      "itemId": 632,
+      "name": "Battle Pills",
+      "description": "老舗の薬屋秘伝の治療薬「初心丹」だ。\n体力と闘気を少し上げてくれる。",
+      "category": "NONE",
+      "fullnessBase": 0,
+      "effects": [],
+      "image": {
+        "src": "assets/turtle-foods/drag_btl_m.webp",
+        "width": 128,
+        "height": 128
+      },
+      "native": {
+        "key": "drag_BTL_m",
+        "feedFlags": "BK-----Y",
+        "currentEffectPacked": 0,
+        "capEffectPacked": 0,
+        "tableRow": 632
+      }
+    },
+    {
+      "itemId": 140,
+      "name": "Blazing Fire Pill",
+      "description": "A red-colored pill.\nIt's supposed to stop certain kinds of fits, but apparently it rarely works.",
+      "category": "ENERGY",
+      "fullnessBase": 30,
+      "effects": [
+        {
+          "stat": "stamina",
+          "current": 1,
+          "cap": 20
+        }
+      ],
+      "image": {
+        "src": "assets/turtle-foods/ganyaku_red.webp",
+        "width": 128,
+        "height": 128
+      },
+      "native": {
+        "key": "ganyaku_red",
+        "feedFlags": "BK-----Y",
+        "currentEffectPacked": 1,
+        "capEffectPacked": 20,
+        "tableRow": 140
+      }
+    },
+    {
+      "itemId": 344,
+      "name": "Boar Meat",
+      "description": "This is raw boar meat.\nSome people love its distinct taste.",
+      "category": "ENERGY_LEG",
+      "fullnessBase": 255,
+      "effects": [
+        {
+          "stat": "stamina",
+          "current": 17,
+          "cap": 4
+        },
+        {
+          "stat": "legPower",
+          "current": 18,
+          "cap": 5
+        }
+      ],
+      "image": {
+        "src": "assets/turtle-foods/esa_kujira.webp",
+        "width": 128,
+        "height": 128
+      },
+      "native": {
+        "key": "esa_yamakujira",
+        "feedFlags": "K------Y",
+        "currentEffectPacked": 180017,
+        "capEffectPacked": 50004,
+        "tableRow": 344
+      }
+    },
+    {
+      "itemId": 211,
+      "name": "Castella",
+      "description": "A foreign cake I received after helping a woman care for her beloved father.",
+      "category": "WATER_SAND",
+      "fullnessBase": 150,
+      "effects": [
+        {
+          "stat": "water",
+          "current": 15,
+          "cap": 20
+        },
+        {
+          "stat": "sand",
+          "current": 15,
+          "cap": 20
+        }
+      ],
+      "image": {
+        "src": "assets/turtle-foods/kasutera.webp",
+        "width": 128,
+        "height": 128
+      },
+      "native": {
+        "key": "kasutera",
+        "feedFlags": "K---F--Y",
+        "currentEffectPacked": 150015,
+        "capEffectPacked": 200020,
+        "tableRow": 211
+      }
+    },
+    {
+      "itemId": 85,
+      "name": "Cloudy Sake",
+      "description": "Also known as doburoku, this cloudy sake has a unique sweetness and\na different flavor than clear sake.",
+      "category": "WATER",
+      "fullnessBase": 120,
+      "effects": [
+        {
+          "stat": "water",
+          "current": 10,
+          "cap": 1
+        }
+      ],
+      "image": {
+        "src": "assets/turtle-foods/nigori_sake.webp",
+        "width": 128,
+        "height": 128
+      },
+      "native": {
+        "key": "item_nigori_sake",
+        "feedFlags": "RB----KY",
+        "currentEffectPacked": 10,
+        "capEffectPacked": 1,
+        "tableRow": 85
+      }
+    },
+    {
+      "itemId": 328,
+      "name": "Corbicula Clam",
+      "description": "Food for turtles. A shellfish found in the sand.\nIt's not a lot of food, so don't expect much turtle development.",
+      "category": "SAND",
+      "fullnessBase": 80,
+      "effects": [
+        {
+          "stat": "sand",
+          "current": 5,
+          "cap": 1
+        }
+      ],
+      "image": {
+        "src": "assets/turtle-foods/esa_sijimi.webp",
+        "width": 128,
+        "height": 128
+      },
+      "native": {
+        "key": "esa_kai_shijimi",
+        "feedFlags": "K------Y",
+        "currentEffectPacked": 5,
+        "capEffectPacked": 1,
+        "tableRow": 328
+      }
+    },
+    {
+      "itemId": 342,
+      "name": "Crawfish",
+      "description": "Food for turtles. A crustacean with extreme claw strength on command.\nIt's a substantial amount of food.",
+      "category": "LEG",
+      "fullnessBase": 150,
+      "effects": [
+        {
+          "stat": "legPower",
+          "current": 15,
+          "cap": 7
+        }
+      ],
+      "image": {
+        "src": "assets/turtle-foods/esa_zarigani.webp",
+        "width": 128,
+        "height": 128
+      },
+      "native": {
+        "key": "esa_zarigani",
+        "feedFlags": "K------Y",
+        "currentEffectPacked": 15,
+        "capEffectPacked": 7,
+        "tableRow": 342
+      }
+    },
+    {
+      "itemId": 28,
+      "name": "Deluxe All-Purpose Medicine",
+      "description": "A remedy that moderately replenishes health and Heat.",
+      "category": "LEG",
+      "fullnessBase": 80,
+      "effects": [
+        {
+          "stat": "legPower",
+          "current": 8,
+          "cap": 4
+        }
+      ],
+      "image": {
+        "src": "assets/turtle-foods/drag_both_m.webp",
+        "width": 128,
+        "height": 128
+      },
+      "native": {
+        "key": "drag_both_m",
+        "feedFlags": "BK-----Y",
+        "currentEffectPacked": 8,
+        "capEffectPacked": 4,
+        "tableRow": 28
+      }
+    },
+    {
+      "itemId": 25,
+      "name": "Deluxe Passion Pill",
+      "description": "A stimulant that moderately charges up Heat.",
+      "category": "ENERGY",
+      "fullnessBase": 80,
+      "effects": [
+        {
+          "stat": "stamina",
+          "current": 8,
+          "cap": 4
+        }
+      ],
+      "image": {
+        "src": "assets/turtle-foods/drag_heat_m.webp",
+        "width": 128,
+        "height": 128
+      },
+      "native": {
+        "key": "drag_heat_m",
+        "feedFlags": "BK-----Y",
+        "currentEffectPacked": 8,
+        "capEffectPacked": 4,
+        "tableRow": 25
+      }
+    },
+    {
+      "itemId": 22,
+      "name": "Deluxe Vitality Pill",
+      "description": "A medicine that moderately restores health.",
+      "category": "FULLNESS",
+      "fullnessBase": 80,
+      "effects": [
+        {
+          "stat": "fullness",
+          "current": 0,
+          "cap": 4
+        }
+      ],
+      "image": {
+        "src": "assets/turtle-foods/drag_life_m.webp",
+        "width": 128,
+        "height": 128
+      },
+      "native": {
+        "key": "drag_life_m",
+        "feedFlags": "BK-----Y",
+        "currentEffectPacked": 8,
+        "capEffectPacked": 4,
+        "tableRow": 22
+      }
+    },
+    {
+      "itemId": 208,
+      "name": "Dried Agar",
+      "description": "Dried seaweed that can be boiled to make jelly.\nIt can also be eaten as-is by turtles and humans alike.",
+      "category": "FULLNESS",
+      "fullnessBase": 40,
+      "effects": [
+        {
+          "stat": "fullness",
+          "current": 0,
+          "cap": 30
+        }
+      ],
+      "image": {
+        "src": "assets/turtle-foods/tengusa.webp",
+        "width": 128,
+        "height": 128
+      },
+      "native": {
+        "key": "tengusa",
+        "feedFlags": "K---F--Y",
+        "currentEffectPacked": 25,
+        "capEffectPacked": 30,
+        "tableRow": 208
+      }
+    },
+    {
+      "itemId": 214,
+      "name": "Dried Saury",
+      "description": "This is saury, a common autumn fish, that has been pickled in a secret marinade\nand then air-dried. Cats seem to love it.",
+      "category": "LEG",
+      "fullnessBase": 100,
+      "effects": [
+        {
+          "stat": "legPower",
+          "current": 30,
+          "cap": 10
+        }
+      ],
+      "image": {
+        "src": "assets/turtle-foods/sanma_hiraki.webp",
+        "width": 128,
+        "height": 128
+      },
+      "native": {
+        "key": "sanma_hiraki",
+        "feedFlags": "K---F--Y",
+        "currentEffectPacked": 30,
+        "capEffectPacked": 10,
+        "tableRow": 214
+      }
+    },
+    {
+      "itemId": 337,
+      "name": "Eel Liver",
+      "description": "Food for turtles. It seems to recover turtles' stamina.\nIt's not a lot of food, so don't expect much recovery.",
+      "category": "ENERGY",
+      "fullnessBase": 80,
+      "effects": [
+        {
+          "stat": "stamina",
+          "current": 5,
+          "cap": 3
+        }
+      ],
+      "image": {
+        "src": "assets/turtle-foods/esa_unagikimo.webp",
+        "width": 128,
+        "height": 128
+      },
+      "native": {
+        "key": "esa_eel_kimo",
+        "feedFlags": "K------Y",
+        "currentEffectPacked": 5,
+        "capEffectPacked": 3,
+        "tableRow": 337
+      }
+    },
+    {
+      "itemId": 38,
+      "name": "Eternal Turtle Candy",
+      "description": "A very popular candy shaped like a lucky turtle.",
+      "category": "ENERGY",
+      "fullnessBase": 80,
+      "effects": [
+        {
+          "stat": "stamina",
+          "current": 20,
+          "cap": 5
+        }
+      ],
+      "image": {
+        "src": "assets/turtle-foods/2d_ykcandy_eto.webp",
+        "width": 128,
+        "height": 128
+      },
+      "native": {
+        "key": "candy_eto",
+        "feedFlags": "K---F--Y",
+        "currentEffectPacked": 20,
+        "capEffectPacked": 5,
+        "tableRow": 38
+      }
+    },
+    {
+      "itemId": 141,
+      "name": "Exotic Pill",
+      "description": "A pill made with a foreign formula.\nApparently no one has had the sense to try it yet.",
+      "category": "SAND",
+      "fullnessBase": 30,
+      "effects": [
+        {
+          "stat": "sand",
+          "current": 1,
+          "cap": 20
+        }
+      ],
+      "image": {
+        "src": "assets/turtle-foods/ganyaku_secret.webp",
+        "width": 128,
+        "height": 128
+      },
+      "native": {
+        "key": "ganyaku_secret",
+        "feedFlags": "BK-----Y",
+        "currentEffectPacked": 1,
+        "capEffectPacked": 20,
+        "tableRow": 141
+      }
+    },
+    {
+      "itemId": 196,
+      "name": "Ginger",
+      "description": "Ginger is a popular spice.\nIt can also be used as a medicinal herb.",
+      "category": "WATER_MUD",
+      "fullnessBase": 30,
+      "effects": [
+        {
+          "stat": "water",
+          "current": 7,
+          "cap": 6
+        },
+        {
+          "stat": "mud",
+          "current": 3,
+          "cap": 4
+        }
+      ],
+      "image": {
+        "src": "assets/turtle-foods/shouga.webp",
+        "width": 128,
+        "height": 128
+      },
+      "native": {
+        "key": "shouga",
+        "feedFlags": "K---F--Y",
+        "currentEffectPacked": 30007,
+        "capEffectPacked": 40006,
+        "tableRow": 196
+      }
+    },
+    {
+      "itemId": 142,
+      "name": "Gold Pill",
+      "description": "A shiny golden pill.\nFor its low price, its effectiveness seems to be outstanding.",
+      "category": "WATER",
+      "fullnessBase": 30,
+      "effects": [
+        {
+          "stat": "water",
+          "current": 1,
+          "cap": 20
+        }
+      ],
+      "image": {
+        "src": "assets/turtle-foods/ganyaku_gold.webp",
+        "width": 128,
+        "height": 128
+      },
+      "native": {
+        "key": "ganyaku_gold",
+        "feedFlags": "BK-----Y",
+        "currentEffectPacked": 1,
+        "capEffectPacked": 20,
+        "tableRow": 142
+      }
+    },
+    {
+      "itemId": 39,
+      "name": "Golden Candy",
+      "description": "A candy with gold dust mixed in.\nThis might outdo the Golden Pavilion.",
+      "category": "LEG",
+      "fullnessBase": 110,
+      "effects": [
+        {
+          "stat": "legPower",
+          "current": 15,
+          "cap": 11
+        }
+      ],
+      "image": {
+        "src": "assets/turtle-foods/candy_gold.webp",
+        "width": 128,
+        "height": 128
+      },
+      "native": {
+        "key": "candy_gold",
+        "feedFlags": "K---F--Y",
+        "currentEffectPacked": 15,
+        "capEffectPacked": 11,
+        "tableRow": 39
+      }
+    },
+    {
+      "itemId": 335,
+      "name": "Goldfish",
+      "description": "Food for turtles. A fish that only survives in water.\nIt's a decent amount of food, so expect some moderate turtle development.",
+      "category": "WATER",
+      "fullnessBase": 120,
+      "effects": [
+        {
+          "stat": "water",
+          "current": 10,
+          "cap": 5
+        }
+      ],
+      "image": {
+        "src": "assets/turtle-foods/esa_kingyo.webp",
+        "width": 128,
+        "height": 128
+      },
+      "native": {
+        "key": "esa_fish_kingyo",
+        "feedFlags": "K------Y",
+        "currentEffectPacked": 10,
+        "capEffectPacked": 5,
+        "tableRow": 335
+      }
+    },
+    {
+      "itemId": 46,
+      "name": "Grilled Dango",
+      "description": "These rice dumplings are coated with a soy sauce glaze and grilled.\nThey have a comforting taste and a savory smell you'll never tire of.",
+      "category": "MUD_WATER",
+      "fullnessBase": 200,
+      "effects": [
+        {
+          "stat": "mud",
+          "current": 5,
+          "cap": 2
+        },
+        {
+          "stat": "water",
+          "current": 5,
+          "cap": 2
+        }
+      ],
+      "image": {
+        "src": "assets/turtle-foods/y_dango.webp",
+        "width": 128,
+        "height": 128
+      },
+      "native": {
+        "key": "y_dango",
+        "feedFlags": "K---F--Y",
+        "currentEffectPacked": 50005,
+        "capEffectPacked": 20002,
+        "tableRow": 46
+      }
+    },
+    {
+      "itemId": 80,
+      "name": "Grilled Dango",
+      "description": "These rice dumplings are coated with a soy sauce glaze and grilled.\nThey have a comforting taste and a savory smell you'll never tire of.",
+      "category": "MUD_WATER",
+      "fullnessBase": 200,
+      "effects": [
+        {
+          "stat": "mud",
+          "current": 5,
+          "cap": 2
+        },
+        {
+          "stat": "water",
+          "current": 5,
+          "cap": 2
+        }
+      ],
+      "image": {
+        "src": "assets/turtle-foods/y_dango.webp",
+        "width": 128,
+        "height": 128
+      },
+      "native": {
+        "key": "item_y_dango",
+        "feedFlags": "K---F--Y",
+        "currentEffectPacked": 50005,
+        "capEffectPacked": 20002,
+        "tableRow": 80
+      }
+    },
+    {
+      "itemId": 206,
+      "name": "Horikawa Burdock",
+      "description": "This variant of burdock is a local specialty of Kyo.",
+      "category": "ENERGY",
+      "fullnessBase": 60,
+      "effects": [
+        {
+          "stat": "stamina",
+          "current": 17,
+          "cap": 15
+        }
+      ],
+      "image": {
+        "src": "assets/turtle-foods/gobou.webp",
+        "width": 128,
+        "height": 128
+      },
+      "native": {
+        "key": "gobou",
+        "feedFlags": "K---F--Y",
+        "currentEffectPacked": 17,
+        "capEffectPacked": 15,
+        "tableRow": 206
+      }
+    },
+    {
+      "itemId": 343,
+      "name": "Horse Meat",
+      "description": "This is raw horse meat.\nIt's mostly lean, and it tastes great.",
+      "category": "LEG",
+      "fullnessBase": 50,
+      "effects": [
+        {
+          "stat": "legPower",
+          "current": 20,
+          "cap": 8
+        }
+      ],
+      "image": {
+        "src": "assets/turtle-foods/esa_sakura.webp",
+        "width": 128,
+        "height": 128
+      },
+      "native": {
+        "key": "esa_sakura",
+        "feedFlags": "K------Y",
+        "currentEffectPacked": 20,
+        "capEffectPacked": 8,
+        "tableRow": 343
+      }
+    },
+    {
+      "itemId": 32,
+      "name": "Hunger Pill",
+      "description": "A pill invented by Gyotensai.\nApparently it stimulates appetite.",
+      "category": "FULLNESS",
+      "fullnessBase": -100,
+      "effects": [
+        {
+          "stat": "fullness",
+          "current": 0,
+          "cap": -20
+        }
+      ],
+      "image": {
+        "src": "assets/turtle-foods/drag_hunger.webp",
+        "width": 128,
+        "height": 128
+      },
+      "notes": [
+        "Can lower stats; actual losses depend on the turtle and its current limits."
+      ],
+      "native": {
+        "key": "drag_hunger",
+        "feedFlags": "BK-----Y",
+        "currentEffectPacked": -50,
+        "capEffectPacked": -20,
+        "tableRow": 32
+      }
+    },
+    {
+      "itemId": 89,
+      "name": "Itami Morohaku",
+      "description": "This is the finest morohaku sake from Itami, a region famous for\nsake production.",
+      "category": "WATER",
+      "fullnessBase": 80,
+      "effects": [
+        {
+          "stat": "water",
+          "current": 10,
+          "cap": 5
+        }
+      ],
+      "image": {
+        "src": "assets/turtle-foods/itami_sake.webp",
+        "width": 128,
+        "height": 128
+      },
+      "native": {
+        "key": "item_itami_sake",
+        "feedFlags": "RB----KY",
+        "currentEffectPacked": 10,
+        "capEffectPacked": 5,
+        "tableRow": 89
+      }
+    },
+    {
+      "itemId": 90,
+      "name": "Itami Sake",
+      "description": "A rich, flavorful sake from Itami, a region famous for sake production.",
+      "category": "FULLNESS",
+      "fullnessBase": 90,
+      "effects": [
+        {
+          "stat": "fullness",
+          "current": 0,
+          "cap": 11
+        }
+      ],
+      "image": {
+        "src": "assets/turtle-foods/itami_d_sake.webp",
+        "width": 128,
+        "height": 128
+      },
+      "native": {
+        "key": "item_itami_d_sake",
+        "feedFlags": "RB----KY",
+        "currentEffectPacked": 12,
+        "capEffectPacked": 11,
+        "tableRow": 90
+      }
+    },
+    {
+      "itemId": 143,
+      "name": "Jet-Black Pill",
+      "description": "A black pill.\nIt's supposed to stop certain kinds of fits, but it seems to be ineffective.",
+      "category": "MUD",
+      "fullnessBase": 30,
+      "effects": [
+        {
+          "stat": "mud",
+          "current": 1,
+          "cap": 20
+        }
+      ],
+      "image": {
+        "src": "assets/turtle-foods/ganyaku_black.webp",
+        "width": 128,
+        "height": 128
+      },
+      "native": {
+        "key": "ganyaku_black",
+        "feedFlags": "BK-----Y",
+        "currentEffectPacked": 1,
+        "capEffectPacked": 20,
+        "tableRow": 143
+      }
+    },
+    {
+      "itemId": 258,
+      "name": "Konpeito",
+      "description": "Star-shaped candies that came from a foreign land.\nTheir gentle sweetness is irresistible.",
+      "category": "MUD",
+      "fullnessBase": 60,
+      "effects": [
+        {
+          "stat": "mud",
+          "current": 12,
+          "cap": 15
+        }
+      ],
+      "image": {
+        "src": "assets/turtle-foods/y_konpeitou.webp",
+        "width": 128,
+        "height": 128
+      },
+      "native": {
+        "key": "y_konpeitou",
+        "feedFlags": "K---F--Y",
+        "currentEffectPacked": 12,
+        "capEffectPacked": 15,
+        "tableRow": 258
+      }
+    },
+    {
+      "itemId": 205,
+      "name": "Kujo Negi",
+      "description": "This variant of green onion is a local specialty of Kyo.",
+      "category": "MUD",
+      "fullnessBase": 70,
+      "effects": [
+        {
+          "stat": "mud",
+          "current": 18,
+          "cap": 15
+        }
+      ],
+      "image": {
+        "src": "assets/turtle-foods/negi.webp",
+        "width": 128,
+        "height": 128
+      },
+      "native": {
+        "key": "negi",
+        "feedFlags": "K---F--Y",
+        "currentEffectPacked": 18,
+        "capEffectPacked": 15,
+        "tableRow": 205
+      }
+    },
+    {
+      "itemId": 47,
+      "name": "Kusa Dango",
+      "description": "Rice dumplings with plenty of mugwort leaves kneaded in.\nThey're a specialty of the Riverside Teahouse.",
+      "category": "NONE",
+      "fullnessBase": 0,
+      "effects": [],
+      "image": {
+        "src": "assets/turtle-foods/kusadango.webp",
+        "width": 128,
+        "height": 128
+      },
+      "native": {
+        "key": "kusadango",
+        "feedFlags": "K---F--Y",
+        "currentEffectPacked": 0,
+        "capEffectPacked": 0,
+        "tableRow": 47
+      }
+    },
+    {
+      "itemId": 83,
+      "name": "Kusa Dango",
+      "description": "Rice dumplings with plenty of mugwort leaves kneaded in.\nThey're a specialty of the Riverside Teahouse.",
+      "category": "MUD",
+      "fullnessBase": 200,
+      "effects": [
+        {
+          "stat": "mud",
+          "current": 8,
+          "cap": 7
+        }
+      ],
+      "image": {
+        "src": "assets/turtle-foods/kusadango.webp",
+        "width": 128,
+        "height": 128
+      },
+      "native": {
+        "key": "item_kusadango",
+        "feedFlags": "KB--F--Y",
+        "currentEffectPacked": 8,
+        "capEffectPacked": 7,
+        "tableRow": 83
+      }
+    },
+    {
+      "itemId": 204,
+      "name": "Kyo Parsley",
+      "description": "This variant of parsley is a local specialty of Kyo.",
+      "category": "ENERGY",
+      "fullnessBase": 50,
+      "effects": [
+        {
+          "stat": "stamina",
+          "current": 12,
+          "cap": 15
+        }
+      ],
+      "image": {
+        "src": "assets/turtle-foods/seri.webp",
+        "width": 128,
+        "height": 128
+      },
+      "native": {
+        "key": "seri",
+        "feedFlags": "K---F--Y",
+        "currentEffectPacked": 12,
+        "capEffectPacked": 15,
+        "tableRow": 204
+      }
+    },
+    {
+      "itemId": 97,
+      "name": "Large Grilled Dango",
+      "description": "These rice dumplings are coated with a soy sauce glaze and grilled.\nThey have a comforting taste and a savory smell you'll never tire of.",
+      "category": "NONE",
+      "fullnessBase": 0,
+      "effects": [],
+      "image": {
+        "src": "assets/turtle-foods/y_dango.webp",
+        "width": 128,
+        "height": 128
+      },
+      "native": {
+        "key": "2_y_dango",
+        "feedFlags": "K---F--Y",
+        "currentEffectPacked": 0,
+        "capEffectPacked": 0,
+        "tableRow": 97
+      }
+    },
+    {
+      "itemId": 98,
+      "name": "Large Kusa Dango",
+      "description": "Rice dumplings with plenty of mugwort leaves kneaded in.\nThey're a specialty of the Riverside Teahouse.",
+      "category": "NONE",
+      "fullnessBase": 0,
+      "effects": [],
+      "image": {
+        "src": "assets/turtle-foods/kusadango.webp",
+        "width": 128,
+        "height": 128
+      },
+      "native": {
+        "key": "2_kusadango",
+        "feedFlags": "K---F--Y",
+        "currentEffectPacked": 0,
+        "capEffectPacked": 0,
+        "tableRow": 98
+      }
+    },
+    {
+      "itemId": 188,
+      "name": "Leftovers",
+      "description": "This is only good as pet food.",
+      "category": "ENERGY",
+      "fullnessBase": 90,
+      "effects": [
+        {
+          "stat": "stamina",
+          "current": 11,
+          "cap": 7
+        }
+      ],
+      "image": {
+        "src": "assets/turtle-foods/zanpan.webp",
+        "width": 128,
+        "height": 128
+      },
+      "native": {
+        "key": "Zanpan",
+        "feedFlags": "K---F--Y",
+        "currentEffectPacked": 11,
+        "capEffectPacked": 7,
+        "tableRow": 188
+      }
+    },
+    {
+      "itemId": 341,
+      "name": "Loach",
+      "description": "Food for turtles. A fish known for its explosive muscle strength.\nIt's a decent amount of food.",
+      "category": "LEG",
+      "fullnessBase": 120,
+      "effects": [
+        {
+          "stat": "legPower",
+          "current": 10,
+          "cap": 5
+        }
+      ],
+      "image": {
+        "src": "assets/turtle-foods/esa_dojyou.webp",
+        "width": 128,
+        "height": 128
+      },
+      "native": {
+        "key": "esa_dojyou",
+        "feedFlags": "K------Y",
+        "currentEffectPacked": 10,
+        "capEffectPacked": 5,
+        "tableRow": 341
+      }
+    },
+    {
+      "itemId": 333,
+      "name": "Lobster",
+      "description": "Food for turtles. A crustacean that lives on the muddy ocean floor.\nIt's a substantial amount of food, so expect some sizeable turtle development.",
+      "category": "MUD",
+      "fullnessBase": 150,
+      "effects": [
+        {
+          "stat": "mud",
+          "current": 15,
+          "cap": 5
+        }
+      ],
+      "image": {
+        "src": "assets/turtle-foods/esa_ebiise.webp",
+        "width": 128,
+        "height": 128
+      },
+      "native": {
+        "key": "esa_ebi_ise",
+        "feedFlags": "K------Y",
+        "currentEffectPacked": 15,
+        "capEffectPacked": 5,
+        "tableRow": 333
+      }
+    },
+    {
+      "itemId": 329,
+      "name": "Manila Clam",
+      "description": "Food for turtles. A shellfish found in the sand.\nIt's a decent amount of food, so expect some moderate turtle development.",
+      "category": "SAND",
+      "fullnessBase": 120,
+      "effects": [
+        {
+          "stat": "sand",
+          "current": 10,
+          "cap": 3
+        }
+      ],
+      "image": {
+        "src": "assets/turtle-foods/esa_asari.webp",
+        "width": 128,
+        "height": 128
+      },
+      "native": {
+        "key": "esa_kai_asari",
+        "feedFlags": "K------Y",
+        "currentEffectPacked": 10,
+        "capEffectPacked": 3,
+        "tableRow": 329
+      }
+    },
+    {
+      "itemId": 33,
+      "name": "Manju",
+      "description": "A steamed bun from \"Kamoan,\" a long-standing shop in Kyoto.\nThe refined sweetness is irresistible.",
+      "category": "SAND",
+      "fullnessBase": 60,
+      "effects": [
+        {
+          "stat": "sand",
+          "current": 0,
+          "cap": 0
+        }
+      ],
+      "image": {
+        "src": "assets/turtle-foods/manjyu.webp",
+        "width": 128,
+        "height": 128
+      },
+      "native": {
+        "key": "Manjyu",
+        "feedFlags": "K---F--Y",
+        "currentEffectPacked": 0,
+        "capEffectPacked": 0,
+        "tableRow": 33
+      }
+    },
+    {
+      "itemId": 81,
+      "name": "Matcha Dango",
+      "description": "Rice dumplings with green tea powder, or matcha, kneaded in.\nA dish with an elegant aroma and bitterness.",
+      "category": "LEG_ENERGY",
+      "fullnessBase": 200,
+      "effects": [
+        {
+          "stat": "legPower",
+          "current": 4,
+          "cap": 1
+        },
+        {
+          "stat": "stamina",
+          "current": 7,
+          "cap": 3
+        }
+      ],
+      "image": {
+        "src": "assets/turtle-foods/chadango.webp",
+        "width": 128,
+        "height": 128
+      },
+      "native": {
+        "key": "item_chadango",
+        "feedFlags": "KB--F--Y",
+        "currentEffectPacked": 70004,
+        "capEffectPacked": 30001,
+        "tableRow": 81
+      }
+    },
+    {
+      "itemId": 338,
+      "name": "Mullet Roe",
+      "description": "Food for turtles. It seems to recover turtles' stamina.\nIt's a decent amount of food, so expect a moderate recovery.",
+      "category": "ENERGY",
+      "fullnessBase": 120,
+      "effects": [
+        {
+          "stat": "stamina",
+          "current": 10,
+          "cap": 5
+        }
+      ],
+      "image": {
+        "src": "assets/turtle-foods/esa_karasuki.webp",
+        "width": 128,
+        "height": 128
+      },
+      "native": {
+        "key": "esa_karasumi",
+        "feedFlags": "K------Y",
+        "currentEffectPacked": 10,
+        "capEffectPacked": 5,
+        "tableRow": 338
+      }
+    },
+    {
+      "itemId": 86,
+      "name": "Nada Sake",
+      "description": "A premium sake hailing from Settsu Province.\nIt was produced with the region's special water and traditional techniques.",
+      "category": "ENERGY",
+      "fullnessBase": 140,
+      "effects": [
+        {
+          "stat": "stamina",
+          "current": 8,
+          "cap": 11
+        }
+      ],
+      "image": {
+        "src": "assets/turtle-foods/nada_sake.webp",
+        "width": 128,
+        "height": 128
+      },
+      "native": {
+        "key": "item_nada_sake",
+        "feedFlags": "RB----KY",
+        "currentEffectPacked": 8,
+        "capEffectPacked": 11,
+        "tableRow": 86
+      }
+    },
+    {
+      "itemId": 92,
+      "name": "Nara Morohaku",
+      "description": "A premium morohaku sake, said to have originated from a certain temple.",
+      "category": "LEG",
+      "fullnessBase": 110,
+      "effects": [
+        {
+          "stat": "legPower",
+          "current": 18,
+          "cap": 15
+        }
+      ],
+      "image": {
+        "src": "assets/turtle-foods/nanto_sake.webp",
+        "width": 128,
+        "height": 128
+      },
+      "native": {
+        "key": "item_nanto_sake",
+        "feedFlags": "RB----KY",
+        "currentEffectPacked": 18,
+        "capEffectPacked": 15,
+        "tableRow": 92
+      }
+    },
+    {
+      "itemId": 197,
+      "name": "Nori",
+      "description": "Seaweed from Edo.\nA great turtle food that can also be used to add flavor to dishes.",
+      "category": "ENERGY_MUD",
+      "fullnessBase": 40,
+      "effects": [
+        {
+          "stat": "stamina",
+          "current": 6,
+          "cap": 5
+        },
+        {
+          "stat": "mud",
+          "current": 7,
+          "cap": 3
+        }
+      ],
+      "image": {
+        "src": "assets/turtle-foods/nori.webp",
+        "width": 128,
+        "height": 128
+      },
+      "native": {
+        "key": "nori",
+        "feedFlags": "K---F--Y",
+        "currentEffectPacked": 70006,
+        "capEffectPacked": 30005,
+        "tableRow": 197
+      }
+    },
+    {
+      "itemId": 35,
+      "name": "Ohagi",
+      "description": "This confection is a work of art, made by carefully packing sweet red bean paste\naround steamed glutinous rice.",
+      "category": "LEG",
+      "fullnessBase": 230,
+      "effects": [
+        {
+          "stat": "legPower",
+          "current": 6,
+          "cap": 3
+        }
+      ],
+      "image": {
+        "src": "assets/turtle-foods/ohagi.webp",
+        "width": 128,
+        "height": 128
+      },
+      "native": {
+        "key": "Ohagi",
+        "feedFlags": "K---F--Y",
+        "currentEffectPacked": 6,
+        "capEffectPacked": 3,
+        "tableRow": 35
+      }
+    },
+    {
+      "itemId": 84,
+      "name": "Ohagi",
+      "description": "This confection is a work of art, made by carefully packing sweet red bean paste\naround steamed glutinous rice.",
+      "category": "LEG",
+      "fullnessBase": 230,
+      "effects": [
+        {
+          "stat": "legPower",
+          "current": 6,
+          "cap": 3
+        }
+      ],
+      "image": {
+        "src": "assets/turtle-foods/ohagi.webp",
+        "width": 128,
+        "height": 128
+      },
+      "native": {
+        "key": "item_ohagi",
+        "feedFlags": "KB--F--Y",
+        "currentEffectPacked": 6,
+        "capEffectPacked": 3,
+        "tableRow": 84
+      }
+    },
+    {
+      "itemId": 40,
+      "name": "Onigiri",
+      "description": "Plain rice balls.",
+      "category": "NONE",
+      "fullnessBase": 0,
+      "effects": [],
+      "image": {
+        "src": "assets/turtle-foods/onigiri.webp",
+        "width": 128,
+        "height": 128
+      },
+      "native": {
+        "key": "Onigiri",
+        "feedFlags": "K---F--Y",
+        "currentEffectPacked": 0,
+        "capEffectPacked": 3,
+        "tableRow": 40
+      }
+    },
+    {
+      "itemId": 93,
+      "name": "Onigiri",
+      "description": "Rice balls made with the perfect amount of salt.\nSimple and convenient.",
+      "category": "ENERGY_LEG",
+      "fullnessBase": 250,
+      "effects": [
+        {
+          "stat": "stamina",
+          "current": 10,
+          "cap": 8
+        },
+        {
+          "stat": "legPower",
+          "current": 15,
+          "cap": 10
+        }
+      ],
+      "image": {
+        "src": "assets/turtle-foods/onigiri.webp",
+        "width": 128,
+        "height": 128
+      },
+      "native": {
+        "key": "item_onigiri",
+        "feedFlags": "KB--F--Y",
+        "currentEffectPacked": 150010,
+        "capEffectPacked": 100008,
+        "tableRow": 93
+      }
+    },
+    {
+      "itemId": 199,
+      "name": "Orange",
+      "description": "A mandarin orange.\nIt's a juicy, refreshingly sweet fruit that's easy to eat.",
+      "category": "SAND_FULLNESS",
+      "fullnessBase": 50,
+      "effects": [
+        {
+          "stat": "sand",
+          "current": 2,
+          "cap": 2
+        },
+        {
+          "stat": "fullness",
+          "current": 0,
+          "cap": 4
+        }
+      ],
+      "image": {
+        "src": "assets/turtle-foods/mikan.webp",
+        "width": 128,
+        "height": 128
+      },
+      "native": {
+        "key": "mikan",
+        "feedFlags": "K---F--Y",
+        "currentEffectPacked": 80002,
+        "capEffectPacked": 40002,
+        "tableRow": 199
+      }
+    },
+    {
+      "itemId": 24,
+      "name": "Passion Pill",
+      "description": "A stimulant that slightly charges up Heat.",
+      "category": "ENERGY",
+      "fullnessBase": 60,
+      "effects": [
+        {
+          "stat": "stamina",
+          "current": 5,
+          "cap": 3
+        }
+      ],
+      "image": {
+        "src": "assets/turtle-foods/drag_heat_s.webp",
+        "width": 128,
+        "height": 128
+      },
+      "native": {
+        "key": "drag_heat_s",
+        "feedFlags": "BK-----Y",
+        "currentEffectPacked": 5,
+        "capEffectPacked": 3,
+        "tableRow": 24
+      }
+    },
+    {
+      "itemId": 332,
+      "name": "Prawn",
+      "description": "Food for turtles. A crustacean that lives on the muddy ocean floor.\nIt's a decent amount of food, so expect some moderate turtle development.",
+      "category": "MUD",
+      "fullnessBase": 120,
+      "effects": [
+        {
+          "stat": "mud",
+          "current": 10,
+          "cap": 3
+        }
+      ],
+      "image": {
+        "src": "assets/turtle-foods/esa_ebikuruma.webp",
+        "width": 128,
+        "height": 128
+      },
+      "native": {
+        "key": "esa_ebi_kuruma",
+        "feedFlags": "K------Y",
+        "currentEffectPacked": 10,
+        "capEffectPacked": 3,
+        "tableRow": 332
+      }
+    },
+    {
+      "itemId": 187,
+      "name": "Raw Chicken",
+      "description": "This raw chicken meat isn't commonly available.\nEating it gives you a boost of energy.",
+      "category": "LEG",
+      "fullnessBase": 80,
+      "effects": [
+        {
+          "stat": "legPower",
+          "current": 10,
+          "cap": 8
+        }
+      ],
+      "image": {
+        "src": "assets/turtle-foods/chicken_meet.webp",
+        "width": 128,
+        "height": 128
+      },
+      "native": {
+        "key": "chicken_meet",
+        "feedFlags": "K---F--Y",
+        "currentEffectPacked": 10,
+        "capEffectPacked": 8,
+        "tableRow": 187
+      }
+    },
+    {
+      "itemId": 334,
+      "name": "Ricefish",
+      "description": "Food for turtles. A fish that only survives in water.\nIt's not a lot of food, so don't expect much turtle development.",
+      "category": "WATER",
+      "fullnessBase": 80,
+      "effects": [
+        {
+          "stat": "water",
+          "current": 5,
+          "cap": 3
+        }
+      ],
+      "image": {
+        "src": "assets/turtle-foods/esa_medaka.webp",
+        "width": 128,
+        "height": 128
+      },
+      "native": {
+        "key": "esa_fish_medaka",
+        "feedFlags": "K------Y",
+        "currentEffectPacked": 5,
+        "capEffectPacked": 3,
+        "tableRow": 334
+      }
+    },
+    {
+      "itemId": 345,
+      "name": "Rubbish",
+      "description": "Some garbage.",
+      "category": "NONE",
+      "fullnessBase": 0,
+      "effects": [],
+      "image": {
+        "src": "assets/turtle-foods/kari.webp",
+        "width": 128,
+        "height": 128
+      },
+      "native": {
+        "key": "esa_all_max",
+        "feedFlags": "K------Y",
+        "currentEffectPacked": 0,
+        "capEffectPacked": 0,
+        "tableRow": 345
+      }
+    },
+    {
+      "itemId": 331,
+      "name": "Sakura Shrimp",
+      "description": "Food for turtles. A crustacean that lives on the muddy ocean floor.\nIt's not a lot of food, so don't expect much turtle development.",
+      "category": "MUD",
+      "fullnessBase": 80,
+      "effects": [
+        {
+          "stat": "mud",
+          "current": 5,
+          "cap": 1
+        }
+      ],
+      "image": {
+        "src": "assets/turtle-foods/esa_ebisakura.webp",
+        "width": 128,
+        "height": 128
+      },
+      "native": {
+        "key": "esa_ebi_sakura",
+        "feedFlags": "K------Y",
+        "currentEffectPacked": 5,
+        "capEffectPacked": 1,
+        "tableRow": 331
+      }
+    },
+    {
+      "itemId": 339,
+      "name": "Salmon Roe",
+      "description": "Food for turtles. It seems to recover turtles' stamina.\nIt's a substantial amount of food, so expect a sizeable recovery.",
+      "category": "ENERGY",
+      "fullnessBase": 150,
+      "effects": [
+        {
+          "stat": "stamina",
+          "current": 15,
+          "cap": 7
+        }
+      ],
+      "image": {
+        "src": "assets/turtle-foods/esa_ikura.webp",
+        "width": 128,
+        "height": 128
+      },
+      "native": {
+        "key": "esa_ikura",
+        "feedFlags": "K------Y",
+        "currentEffectPacked": 15,
+        "capEffectPacked": 7,
+        "tableRow": 339
+      }
+    },
+    {
+      "itemId": 195,
+      "name": "Sansho",
+      "description": "Japanese pepper.\nGives dishes a mild spice, but has medicinal properties as well.",
+      "category": "SAND_WATER",
+      "fullnessBase": 25,
+      "effects": [
+        {
+          "stat": "sand",
+          "current": 6,
+          "cap": 5
+        },
+        {
+          "stat": "water",
+          "current": 3,
+          "cap": 4
+        }
+      ],
+      "image": {
+        "src": "assets/turtle-foods/sansho.webp",
+        "width": 128,
+        "height": 128
+      },
+      "native": {
+        "key": "sansho",
+        "feedFlags": "K---F--Y",
+        "currentEffectPacked": 30006,
+        "capEffectPacked": 40005,
+        "tableRow": 195
+      }
+    },
+    {
+      "itemId": 87,
+      "name": "Satsuma Sweet Potato Shochu",
+      "description": "A strong liquor distilled from sweet potatoes, made in Satsuma Province.",
+      "category": "LEG",
+      "fullnessBase": 80,
+      "effects": [
+        {
+          "stat": "legPower",
+          "current": 7,
+          "cap": 10
+        }
+      ],
+      "image": {
+        "src": "assets/turtle-foods/satsuma_shouchu.webp",
+        "width": 128,
+        "height": 128
+      },
+      "native": {
+        "key": "item_satsuma_shouchu",
+        "feedFlags": "RB----KY",
+        "currentEffectPacked": 7,
+        "capEffectPacked": 10,
+        "tableRow": 87
+      }
+    },
+    {
+      "itemId": 330,
+      "name": "Scallop",
+      "description": "Food for turtles. A shellfish found in the sand.\nIt's a substantial amount of food, so expect some sizeable turtle development.",
+      "category": "SAND",
+      "fullnessBase": 150,
+      "effects": [
+        {
+          "stat": "sand",
+          "current": 15,
+          "cap": 5
+        }
+      ],
+      "image": {
+        "src": "assets/turtle-foods/esa_hotate.webp",
+        "width": 128,
+        "height": 128
+      },
+      "native": {
+        "key": "esa_kai_hotate",
+        "feedFlags": "K------Y",
+        "currentEffectPacked": 15,
+        "capEffectPacked": 5,
+        "tableRow": 330
+      }
+    },
+    {
+      "itemId": 198,
+      "name": "Sesame",
+      "description": "Sesame seeds have a unique aroma.\nThey have medicinal uses as well.",
+      "category": "ENERGY_WATER",
+      "fullnessBase": 40,
+      "effects": [
+        {
+          "stat": "stamina",
+          "current": 1,
+          "cap": 2
+        },
+        {
+          "stat": "water",
+          "current": 8,
+          "cap": 6
+        }
+      ],
+      "image": {
+        "src": "assets/turtle-foods/goma.webp",
+        "width": 128,
+        "height": 128
+      },
+      "native": {
+        "key": "goma",
+        "feedFlags": "K---F--Y",
+        "currentEffectPacked": 80001,
+        "capEffectPacked": 60002,
+        "tableRow": 198
+      }
+    },
+    {
+      "itemId": 194,
+      "name": "Shiso",
+      "description": "A perilla leaf.\nUsed mainly as seasoning, but has medicinal properties as well.",
+      "category": "MUD_SAND",
+      "fullnessBase": 30,
+      "effects": [
+        {
+          "stat": "mud",
+          "current": 5,
+          "cap": 5
+        },
+        {
+          "stat": "sand",
+          "current": 5,
+          "cap": 5
+        }
+      ],
+      "image": {
+        "src": "assets/turtle-foods/shiso.webp",
+        "width": 128,
+        "height": 128
+      },
+      "native": {
+        "key": "shiso",
+        "feedFlags": "K---F--Y",
+        "currentEffectPacked": 50005,
+        "capEffectPacked": 50005,
+        "tableRow": 194
+      }
+    },
+    {
+      "itemId": 340,
+      "name": "Snail",
+      "description": "Food for turtles. A mollusk known for its ability to firmly stick to walls.\nIt's not a lot of food.\n",
+      "category": "LEG",
+      "fullnessBase": 80,
+      "effects": [
+        {
+          "stat": "legPower",
+          "current": 5,
+          "cap": 3
+        }
+      ],
+      "image": {
+        "src": "assets/turtle-foods/esa_tanisi.webp",
+        "width": 128,
+        "height": 128
+      },
+      "native": {
+        "key": "esa_tanishi",
+        "feedFlags": "K------Y",
+        "currentEffectPacked": 5,
+        "capEffectPacked": 3,
+        "tableRow": 340
+      }
+    },
+    {
+      "itemId": 31,
+      "name": "Sober Pill",
+      "description": "A pill invented by Gyotensai.\nApparently it sobers you up.",
+      "category": "ENERGY",
+      "fullnessBase": 5,
+      "effects": [
+        {
+          "stat": "stamina",
+          "current": -10,
+          "cap": -2
+        }
+      ],
+      "image": {
+        "src": "assets/turtle-foods/drag_dedrunk.webp",
+        "width": 128,
+        "height": 128
+      },
+      "notes": [
+        "Can lower stats; actual losses depend on the turtle and its current limits."
+      ],
+      "native": {
+        "key": "drag_dedrunk",
+        "feedFlags": "BK-----Y",
+        "currentEffectPacked": -10,
+        "capEffectPacked": -2,
+        "tableRow": 31
+      }
+    },
+    {
+      "itemId": 29,
+      "name": "Special All-Purpose Medicine",
+      "description": "A remedy that dramatically replenishes health and Heat.",
+      "category": "LEG",
+      "fullnessBase": 100,
+      "effects": [
+        {
+          "stat": "legPower",
+          "current": 10,
+          "cap": 5
+        }
+      ],
+      "image": {
+        "src": "assets/turtle-foods/drag_both_l.webp",
+        "width": 128,
+        "height": 128
+      },
+      "native": {
+        "key": "drag_both_l",
+        "feedFlags": "BK-----Y",
+        "currentEffectPacked": 10,
+        "capEffectPacked": 5,
+        "tableRow": 29
+      }
+    },
+    {
+      "itemId": 26,
+      "name": "Special Passion Pill",
+      "description": "A stimulant that dramatically charges up Heat.",
+      "category": "ENERGY",
+      "fullnessBase": 100,
+      "effects": [
+        {
+          "stat": "stamina",
+          "current": 10,
+          "cap": 5
+        }
+      ],
+      "image": {
+        "src": "assets/turtle-foods/drag_heat_l.webp",
+        "width": 128,
+        "height": 128
+      },
+      "native": {
+        "key": "drag_heat_l",
+        "feedFlags": "BK-----Y",
+        "currentEffectPacked": 10,
+        "capEffectPacked": 5,
+        "tableRow": 26
+      }
+    },
+    {
+      "itemId": 23,
+      "name": "Special Vitality Pill",
+      "description": "A medicine that dramatically restores health.",
+      "category": "FULLNESS",
+      "fullnessBase": 100,
+      "effects": [
+        {
+          "stat": "fullness",
+          "current": 0,
+          "cap": 5
+        }
+      ],
+      "image": {
+        "src": "assets/turtle-foods/drag_life_l.webp",
+        "width": 128,
+        "height": 128
+      },
+      "native": {
+        "key": "drag_life_l",
+        "feedFlags": "BK-----Y",
+        "currentEffectPacked": 10,
+        "capEffectPacked": 5,
+        "tableRow": 23
+      }
+    },
+    {
+      "itemId": 327,
+      "name": "Super Worms",
+      "description": "A staple food for turtles. Worms with a special formulation from Gyotensai that\nsignificantly boosts turtle development.",
+      "category": "ENERGY",
+      "fullnessBase": 120,
+      "effects": [
+        {
+          "stat": "stamina",
+          "current": 200,
+          "cap": 15
+        }
+      ],
+      "image": {
+        "src": "assets/turtle-foods/esa_mimizu_max.webp",
+        "width": 128,
+        "height": 128
+      },
+      "native": {
+        "key": "esa_mimizu_max",
+        "feedFlags": "K------Y",
+        "currentEffectPacked": 200,
+        "capEffectPacked": 15,
+        "tableRow": 327
+      }
+    },
+    {
+      "itemId": 88,
+      "name": "Sweet Sake",
+      "description": "This strong, sweet liquor is made by combining mirin and barley shochu.",
+      "category": "SAND",
+      "fullnessBase": 100,
+      "effects": [
+        {
+          "stat": "sand",
+          "current": 8,
+          "cap": 10
+        }
+      ],
+      "image": {
+        "src": "assets/turtle-foods/mitsurin_chu.webp",
+        "width": 128,
+        "height": 128
+      },
+      "native": {
+        "key": "item_mitsurin_chu",
+        "feedFlags": "RB----KY",
+        "currentEffectPacked": 8,
+        "capEffectPacked": 10,
+        "tableRow": 88
+      }
+    },
+    {
+      "itemId": 336,
+      "name": "Sweetfish",
+      "description": "Food for turtles. A fish that only survives in water.\nIt's a substantial amount of food, so expect some sizeable turtle development.",
+      "category": "WATER",
+      "fullnessBase": 150,
+      "effects": [
+        {
+          "stat": "water",
+          "current": 15,
+          "cap": 7
+        }
+      ],
+      "image": {
+        "src": "assets/turtle-foods/esa_ayu.webp",
+        "width": 128,
+        "height": 128
+      },
+      "native": {
+        "key": "esa_fish_ayu",
+        "feedFlags": "K------Y",
+        "currentEffectPacked": 15,
+        "capEffectPacked": 7,
+        "tableRow": 336
+      }
+    },
+    {
+      "itemId": 91,
+      "name": "Taro Sake",
+      "description": "This is a mixture of mashed boiled taro and refined clear sake.",
+      "category": "ENERGY",
+      "fullnessBase": 100,
+      "effects": [
+        {
+          "stat": "stamina",
+          "current": 12,
+          "cap": 12
+        }
+      ],
+      "image": {
+        "src": "assets/turtle-foods/imo_sake.webp",
+        "width": 128,
+        "height": 128
+      },
+      "native": {
+        "key": "item_imo_sake",
+        "feedFlags": "RB----KY",
+        "currentEffectPacked": 12,
+        "capEffectPacked": 12,
+        "tableRow": 91
+      }
+    },
+    {
+      "itemId": 82,
+      "name": "Three Color Dango",
+      "description": "With plum, plain, and matcha dumplings, this lavish confection can be\nenjoyed three times over.",
+      "category": "SAND",
+      "fullnessBase": 200,
+      "effects": [
+        {
+          "stat": "sand",
+          "current": 10,
+          "cap": 3
+        }
+      ],
+      "image": {
+        "src": "assets/turtle-foods/sanshokudango.webp",
+        "width": 128,
+        "height": 128
+      },
+      "native": {
+        "key": "item_sanshokudango",
+        "feedFlags": "KB--F--Y",
+        "currentEffectPacked": 10,
+        "capEffectPacked": 3,
+        "tableRow": 82
+      }
+    },
+    {
+      "itemId": 50,
+      "name": "Togarashi",
+      "description": "A chili pepper I bought from a little girl in Rakugai.\nIt's as spicy as it looks.",
+      "category": "ENERGY",
+      "fullnessBase": 30,
+      "effects": [
+        {
+          "stat": "stamina",
+          "current": -50,
+          "cap": -10
+        }
+      ],
+      "image": {
+        "src": "assets/turtle-foods/tougarashi.webp",
+        "width": 128,
+        "height": 128
+      },
+      "notes": [
+        "Can lower stats; actual losses depend on the turtle and its current limits."
+      ],
+      "native": {
+        "key": "tougarashi",
+        "feedFlags": "K---F--Y",
+        "currentEffectPacked": -50,
+        "capEffectPacked": -10,
+        "tableRow": 50
+      }
+    },
+    {
+      "itemId": 219,
+      "name": "Trips Yokan",
+      "description": "This sweet bean jelly causes you to roll triples in cee-lo.",
+      "category": "SAND_WATER",
+      "fullnessBase": 200,
+      "effects": [
+        {
+          "stat": "sand",
+          "current": 75,
+          "cap": 30
+        },
+        {
+          "stat": "water",
+          "current": 90,
+          "cap": 25
+        }
+      ],
+      "image": {
+        "src": "assets/turtle-foods/ika_777sai.webp",
+        "width": 128,
+        "height": 128
+      },
+      "native": {
+        "key": "ika_777sai",
+        "feedFlags": "JK-----Y",
+        "currentEffectPacked": 900075,
+        "capEffectPacked": 250030,
+        "tableRow": 219
+      }
+    },
+    {
+      "itemId": 245,
+      "name": "Tuna Sashimi",
+      "description": "Sashimi made from bluefin tuna.\nEating it will restore a small amount of energy.",
+      "category": "LEG",
+      "fullnessBase": 75,
+      "effects": [
+        {
+          "stat": "legPower",
+          "current": 10,
+          "cap": 15
+        }
+      ],
+      "image": {
+        "src": "assets/turtle-foods/maguro_sashimi.webp",
+        "width": 128,
+        "height": 128
+      },
+      "native": {
+        "key": "maguro_sashimi",
+        "feedFlags": "K---F---",
+        "currentEffectPacked": 10,
+        "capEffectPacked": 15,
+        "tableRow": 245
+      }
+    },
+    {
+      "itemId": 30,
+      "name": "Ultra All-Purpose Medicine",
+      "description": "A remedy invented by Gyotensai.\nFully replenishes health and Heat.",
+      "category": "LEG",
+      "fullnessBase": 75,
+      "effects": [
+        {
+          "stat": "legPower",
+          "current": 20,
+          "cap": 10
+        }
+      ],
+      "image": {
+        "src": "assets/turtle-foods/drag_max.webp",
+        "width": 128,
+        "height": 128
+      },
+      "native": {
+        "key": "drag_max",
+        "feedFlags": "BK-----Y",
+        "currentEffectPacked": 20,
+        "capEffectPacked": 10,
+        "tableRow": 30
+      }
+    },
+    {
+      "itemId": 203,
+      "name": "Village's Offering",
+      "description": "An offering prepared by villagers who feared the wrath of a ghost.",
+      "category": "LEG",
+      "fullnessBase": 100,
+      "effects": [
+        {
+          "stat": "legPower",
+          "current": 40,
+          "cap": 40
+        }
+      ],
+      "image": {
+        "src": "assets/turtle-foods/mitsugimono.webp",
+        "width": 128,
+        "height": 128
+      },
+      "native": {
+        "key": "mitsugimono",
+        "feedFlags": "K------Y",
+        "currentEffectPacked": 40,
+        "capEffectPacked": 40,
+        "tableRow": 203
+      }
+    },
+    {
+      "itemId": 21,
+      "name": "Vitality Pill",
+      "description": "A medicine that slightly restores health.",
+      "category": "FULLNESS",
+      "fullnessBase": 60,
+      "effects": [
+        {
+          "stat": "fullness",
+          "current": 0,
+          "cap": 3
+        }
+      ],
+      "image": {
+        "src": "assets/turtle-foods/drag_life_s.webp",
+        "width": 128,
+        "height": 128
+      },
+      "native": {
+        "key": "drag_life_s",
+        "feedFlags": "BK-----Y",
+        "currentEffectPacked": 5,
+        "capEffectPacked": 3,
+        "tableRow": 21
+      }
+    },
+    {
+      "itemId": 326,
+      "name": "Worms (Large)",
+      "description": "A staple food for turtles. There's a generous amount of worms, so expect some\nsizeable turtle development.",
+      "category": "ENERGY",
+      "fullnessBase": 80,
+      "effects": [
+        {
+          "stat": "stamina",
+          "current": 150,
+          "cap": 5
+        }
+      ],
+      "image": {
+        "src": "assets/turtle-foods/esa_mimizu_l.webp",
+        "width": 128,
+        "height": 128
+      },
+      "native": {
+        "key": "esa_mimizu_l",
+        "feedFlags": "K------Y",
+        "currentEffectPacked": 150,
+        "capEffectPacked": 5,
+        "tableRow": 326
+      }
+    },
+    {
+      "itemId": 325,
+      "name": "Worms (Medium)",
+      "description": "A staple food for turtles.\nThere's a good amount of worms, so expect some moderate turtle development.",
+      "category": "ENERGY",
+      "fullnessBase": 50,
+      "effects": [
+        {
+          "stat": "stamina",
+          "current": 100,
+          "cap": 3
+        }
+      ],
+      "image": {
+        "src": "assets/turtle-foods/esa_mimizu_m.webp",
+        "width": 128,
+        "height": 128
+      },
+      "native": {
+        "key": "esa_mimizu_m",
+        "feedFlags": "K------Y",
+        "currentEffectPacked": 100,
+        "capEffectPacked": 3,
+        "tableRow": 325
+      }
+    },
+    {
+      "itemId": 324,
+      "name": "Worms (Small)",
+      "description": "A popular staple food for turtles.\nThere aren't many worms, so don't expect much turtle development.",
+      "category": "ENERGY",
+      "fullnessBase": 20,
+      "effects": [
+        {
+          "stat": "stamina",
+          "current": 50,
+          "cap": 1
+        }
+      ],
+      "image": {
+        "src": "assets/turtle-foods/esa_mimizu_s.webp",
+        "width": 128,
+        "height": 128
+      },
+      "native": {
+        "key": "esa_mimizu_s",
+        "feedFlags": "K------Y",
+        "currentEffectPacked": 50,
+        "capEffectPacked": 1,
+        "tableRow": 324
+      }
+    }
+  ]
+}

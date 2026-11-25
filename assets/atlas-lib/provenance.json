@@ -35,11 +35,11 @@
       "sha256": "2e4c0bd392fc68bc4103143e2ac10e45101b71f4dc5729b5f00998f20aa9749c"
     }
   ],
-  "scope": "MapLibre GL JS 6.19.0 with the reviewed Atlas raster-order placement patch in the main module. Worker, CSS, license and package metadata remain official unchanged files. Local work only.",
+  "scope": "MapLibre GL JS 6.19.0 with the reviewed Atlas raster-order placement patch in the published main module. Worker, CSS, license and package metadata remain official unchanged files.",
   "atlasPatch": {
     "id": "atlas-raster-order-placement",
     "recipe": "patches/raster-order/provenance.json",
-    "recipeSha256": "9dc731c8c003aee6f71300ffab21bc1d71fdaaae3dbed12c897777896e98a38f",
+    "recipeSha256": "eecd6d59215c00589b1266c289e6eba46258ed1449d57b39f57c70e21ed3b56b",
     "upstreamMainSha256": "01590c9875ea5bb0e8cdc534479f607f7d1695ca5debbccaf730edf5fa5f39e5",
     "sources": [
       {
@@ -53,7 +53,9 @@
         "patchedSha256": "20c1b15444eb33388603adef056d5bcf2a9444c85b475a8378ec59ca57074027"
       }
     ],
-    "evidence": "research/kenzan60/atlas-wheel-onset-20261124",
-    "acceptance": "Native correctness and a bounded outward-response gain; inward/total CPU mixed. See the reviewed results and limits."
+    "evidence": "patches/raster-order/README.md",
+    "acceptance": "Native correctness and a bounded outward-response gain; inward/total CPU mixed. See the reviewed results and limits.",
+    "referencePaths": "recipe and evidence are relative to the directory containing this provenance.json. Each sources[].source is an upstream MapLibre module ID, not a path in the guide repository.",
+    "sourceBaseURL": "https://github.com/maplibre/maplibre-gl-js/blob/v6.19.0/"
   }
 }

@@ -1,0 +1,2187 @@
+{
+  "sushi-ginya": {
+    "name": "Sushi Ginya",
+    "area": "st_gion",
+    "places": [
+      {
+        "area": "st_gion",
+        "name": "Sushi Ginya"
+      }
+    ],
+    "sections": [
+      {
+        "label": "Dine in",
+        "currency": "mon",
+        "items": [
+          {
+            "name": "Futomaki",
+            "price": 50
+          },
+          {
+            "name": "Saba Oshizushi",
+            "price": 80
+          },
+          {
+            "name": "Barazushi",
+            "price": 100
+          },
+          {
+            "name": "Hamo Kabayaki Bowl",
+            "price": 130
+          },
+          {
+            "name": "Aji Oshizushi",
+            "price": 80
+          },
+          {
+            "name": "Kohada Oshizushi",
+            "price": 50
+          },
+          {
+            "name": "Mushizushi",
+            "price": 70
+          },
+          {
+            "name": "Whole Sweetfish",
+            "price": 100
+          },
+          {
+            "name": "Wakame Rolls",
+            "price": 80
+          }
+        ]
+      },
+      {
+        "label": "Large portions",
+        "currency": "mon",
+        "items": [
+          {
+            "name": "Large Futomaki",
+            "price": 100
+          },
+          {
+            "name": "Large Saba Oshizushi",
+            "price": 160
+          },
+          {
+            "name": "Large Barazushi",
+            "price": 200
+          },
+          {
+            "name": "Large Hamo Kabayaki Bowl",
+            "price": 260
+          },
+          {
+            "name": "Large Aji Oshizushi",
+            "price": 160
+          },
+          {
+            "name": "Large Kohada Oshizushi",
+            "price": 100
+          },
+          {
+            "name": "Large Mushizushi",
+            "price": 140
+          },
+          {
+            "name": "Large Whole Sweetfish",
+            "price": 200
+          },
+          {
+            "name": "Large Wakame Rolls",
+            "price": 160
+          }
+        ]
+      }
+    ],
+    "source": "bin/item/shop/ (shop0010.bin, shop0011.bin); bin/wdr_par/wdr.par uid00b0000c.msg; bin/pausepar/pause.par item.bin"
+  },
+  "ebisuya-pawn": {
+    "name": "Ebisuya Pawn",
+    "area": "st_gion",
+    "places": [
+      {
+        "area": "st_gion",
+        "name": "Ebisuya Pawn"
+      }
+    ],
+    "sections": [
+      {
+        "label": "Buy items",
+        "currency": "mon",
+        "items": [
+          {
+            "name": "Red Lacquer Hairpin",
+            "price": 800
+          },
+          {
+            "name": "Tortoiseshell Hairpin",
+            "price": 12000
+          },
+          {
+            "name": "Gold Lacquer Comb",
+            "price": 25000
+          },
+          {
+            "name": "Buddha Statue Fragment",
+            "price": 600,
+            "note": "From Chapter 5"
+          },
+          {
+            "name": "Lapis Lazuli",
+            "price": 5000,
+            "note": "From Chapter 5"
+          },
+          {
+            "name": "Quartz",
+            "price": 5000,
+            "note": "From Chapter 6"
+          },
+          {
+            "name": "Celestial Hairpin",
+            "price": 1800,
+            "note": "From Chapter 8"
+          },
+          {
+            "name": "Celestial Hagoromo",
+            "price": 120,
+            "note": "From Chapter 9"
+          },
+          {
+            "name": "Susanoo Spirit Pearl",
+            "price": 2500,
+            "note": "From Chapter 10"
+          },
+          {
+            "name": "Onryo Hair",
+            "price": 100,
+            "note": "From Chapter 10"
+          },
+          {
+            "name": "Dragon Fang",
+            "price": 500,
+            "note": "From Chapter 11"
+          },
+          {
+            "name": "Dragon Scale",
+            "price": 2000,
+            "note": "From Chapter 11"
+          },
+          {
+            "name": "Yomi Stone",
+            "price": 800,
+            "note": "From Chapter 11"
+          }
+        ]
+      },
+      {
+        "label": "Buy equipment",
+        "currency": "mon",
+        "items": [
+          {
+            "name": "Binding",
+            "price": 200,
+            "note": "From Chapter 5"
+          },
+          {
+            "name": "Ancient Armor",
+            "price": 20000,
+            "note": "From Chapter 10"
+          },
+          {
+            "name": "Old Taiken",
+            "price": 15600
+          },
+          {
+            "name": "Antique Taiken",
+            "price": 12500,
+            "note": "Stock unlock required"
+          },
+          {
+            "name": "Rusted Old Taiken",
+            "price": 18000,
+            "note": "Stock unlock required"
+          },
+          {
+            "name": "Crude Taiken",
+            "price": 2500
+          },
+          {
+            "name": "Bassarimaru",
+            "price": 34000,
+            "note": "Stock unlock required"
+          }
+        ]
+      }
+    ],
+    "source": "bin/item/shop/ (shop0009.bin, shop0008.bin, shop0006.bin, shop0007.bin); bin/wdr_par/wdr.par uid007c006c.msg; bin/pausepar/pause.par item.bin",
+    "note": "The pawnshop buys items. Its equipment stock changes with story and item unlocks."
+  },
+  "tenguya-drugs": {
+    "name": "Tenguya Drugs",
+    "area": "st_gion",
+    "places": [
+      {
+        "area": "st_gion",
+        "name": "Tenguya Drugs"
+      }
+    ],
+    "sections": [
+      {
+        "label": "Buy items",
+        "currency": "mon",
+        "items": [
+          {
+            "name": "Vitality Pill",
+            "price": 100
+          },
+          {
+            "name": "Deluxe Vitality Pill",
+            "price": 150
+          },
+          {
+            "name": "Special Vitality Pill",
+            "price": 200
+          },
+          {
+            "name": "Passion Pill",
+            "price": 50
+          },
+          {
+            "name": "Deluxe Passion Pill",
+            "price": 100
+          },
+          {
+            "name": "Special Passion Pill",
+            "price": 150
+          },
+          {
+            "name": "All-Purpose Medicine",
+            "price": 200
+          },
+          {
+            "name": "Deluxe All-Purpose Medicine",
+            "price": 350
+          },
+          {
+            "name": "Special All-Purpose Medicine",
+            "price": 500
+          },
+          {
+            "name": "Ultra All-Purpose Medicine",
+            "price": 1000,
+            "note": "After inventing it"
+          },
+          {
+            "name": "Sober Pill",
+            "price": 200,
+            "note": "After inventing it"
+          },
+          {
+            "name": "Hunger Pill",
+            "price": 230,
+            "note": "After inventing it"
+          },
+          {
+            "name": "Shiso",
+            "price": 10
+          },
+          {
+            "name": "Sansho",
+            "price": 20
+          },
+          {
+            "name": "Ginger",
+            "price": 25
+          },
+          {
+            "name": "Sesame",
+            "price": 30
+          },
+          {
+            "name": "Agate",
+            "price": 5000,
+            "note": "From Chapter 8"
+          },
+          {
+            "name": "Giant Clamshell",
+            "price": 5000,
+            "note": "From Chapter 10"
+          }
+        ]
+      }
+    ],
+    "source": "bin/item/shop/ (shop0022.bin); bin/wdr_par/wdr.par uid007c006b.msg; bin/pausepar/pause.par item.bin"
+  },
+  "sake-nakanokura": {
+    "name": "Sake Nakanokura",
+    "area": "st_gion",
+    "places": [
+      {
+        "area": "st_gion",
+        "name": "Sake Nakanokura"
+      }
+    ],
+    "sections": [
+      {
+        "label": "Dine in",
+        "currency": "mon",
+        "items": [
+          {
+            "name": "Nada Sake",
+            "price": 45
+          },
+          {
+            "name": "Satsuma Sweet Potato Shochu",
+            "price": 75
+          },
+          {
+            "name": "Sweet Sake",
+            "price": 50
+          },
+          {
+            "name": "Itami Morohaku",
+            "price": 56
+          },
+          {
+            "name": "Itami Sake",
+            "price": 40
+          },
+          {
+            "name": "Taro Sake",
+            "price": 60
+          },
+          {
+            "name": "Nara Morohaku",
+            "price": 130
+          },
+          {
+            "name": "Chazuke",
+            "price": 50
+          },
+          {
+            "name": "Grilled Hamo",
+            "price": 60
+          },
+          {
+            "name": "Miso-Flavored Tofu",
+            "price": 50
+          },
+          {
+            "name": "Octopus Tofu Salad",
+            "price": 60
+          },
+          {
+            "name": "Deep-Fried Tofu",
+            "price": 50
+          },
+          {
+            "name": "Kamo Eggplant Dengaku",
+            "price": 55
+          }
+        ]
+      },
+      {
+        "label": "Takeout",
+        "currency": "mon",
+        "items": [
+          {
+            "name": "Nada Sake",
+            "price": 60
+          },
+          {
+            "name": "Satsuma Sweet Potato Shochu",
+            "price": 85
+          },
+          {
+            "name": "Sweet Sake",
+            "price": 65
+          },
+          {
+            "name": "Itami Morohaku",
+            "price": 70
+          },
+          {
+            "name": "Itami Sake",
+            "price": 50
+          },
+          {
+            "name": "Taro Sake",
+            "price": 65
+          },
+          {
+            "name": "Nara Morohaku",
+            "price": 140
+          }
+        ]
+      }
+    ],
+    "source": "bin/item/shop/ (shop0018.bin, shop0019.bin); bin/wdr_par/wdr.par uid007c01bd.msg; bin/pausepar/pause.par item.bin"
+  },
+  "hatsukaze-kitchen": {
+    "name": "Hatsukaze Kitchen",
+    "area": "st_gion",
+    "places": [
+      {
+        "area": "st_gion",
+        "name": "Hatsukaze Kitchen"
+      }
+    ],
+    "sections": [
+      {
+        "label": "Dine in",
+        "currency": "mon",
+        "items": [
+          {
+            "name": "Rikyu-Style Egg",
+            "price": 120
+          },
+          {
+            "name": "Chicken Zosui",
+            "price": 140
+          },
+          {
+            "name": "Fried Egg",
+            "price": 100
+          },
+          {
+            "name": "Clam Rice",
+            "price": 150
+          },
+          {
+            "name": "Oyster Rice",
+            "price": 180
+          },
+          {
+            "name": "Red Bean Rice",
+            "price": 90
+          },
+          {
+            "name": "Boiled Tofu",
+            "price": 130
+          },
+          {
+            "name": "Eel Kabayaki",
+            "price": 250
+          },
+          {
+            "name": "Turtle Hotpot",
+            "price": 300
+          }
+        ]
+      },
+      {
+        "label": "Large portions",
+        "currency": "mon",
+        "items": [
+          {
+            "name": "Large Rikyu-Style Egg",
+            "price": 240
+          },
+          {
+            "name": "Large Chicken Zosui",
+            "price": 280
+          },
+          {
+            "name": "Large Fried Egg",
+            "price": 200
+          },
+          {
+            "name": "Large Clam Rice",
+            "price": 300
+          },
+          {
+            "name": "Large Oyster Rice",
+            "price": 360
+          },
+          {
+            "name": "Large Red Bean Rice",
+            "price": 180
+          },
+          {
+            "name": "Large Boiled Tofu",
+            "price": 260
+          },
+          {
+            "name": "Large Eel Kabayaki",
+            "price": 500
+          },
+          {
+            "name": "Large Turtle Hotpot",
+            "price": 600
+          }
+        ]
+      }
+    ],
+    "source": "bin/item/shop/ (shop0034.bin, shop0035.bin); bin/wdr_par/wdr.par uid00b00032.msg; bin/pausepar/pause.par item.bin"
+  },
+  "koyoro-ryotei": {
+    "name": "Koyoro Ryotei",
+    "area": "st_gion",
+    "places": [
+      {
+        "area": "st_gion",
+        "name": "Koyoro Ryotei"
+      }
+    ],
+    "sections": [
+      {
+        "label": "Dine in",
+        "currency": "mon",
+        "items": [
+          {
+            "name": "Mountain Delicacies Banquet",
+            "price": 1200
+          },
+          {
+            "name": "Seafood Banquet",
+            "price": 1200
+          },
+          {
+            "name": "Plum-Theme Banquet",
+            "price": 2500
+          },
+          {
+            "name": "Bamboo-Theme Banquet",
+            "price": 4500
+          },
+          {
+            "name": "Pine-Theme Banquet",
+            "price": 6800
+          },
+          {
+            "name": "Supreme Banquet",
+            "price": 10000
+          }
+        ]
+      },
+      {
+        "label": "Large portions",
+        "currency": "mon",
+        "items": [
+          {
+            "name": "Large Mountain Delicacies Banquet",
+            "price": 2400
+          },
+          {
+            "name": "Large Seafood Banquet",
+            "price": 2400
+          },
+          {
+            "name": "Large Plum-Theme Banquet",
+            "price": 5000
+          },
+          {
+            "name": "Large Bamboo-Theme Banquet",
+            "price": 9000
+          },
+          {
+            "name": "Large Pine-Theme Banquet",
+            "price": 13600
+          },
+          {
+            "name": "Large Supreme Banquet",
+            "price": 20000
+          }
+        ]
+      }
+    ],
+    "source": "bin/item/shop/ (shop0036.bin, shop0037.bin); bin/wdr_par/wdr.par uid00b0002d.msg; bin/pausepar/pause.par item.bin"
+  },
+  "arigataya-gion": {
+    "name": "Arigataya Market",
+    "area": "st_gion",
+    "places": [
+      {
+        "area": "st_gion",
+        "name": "Arigataya Market"
+      },
+      {
+        "area": "st_gion",
+        "name": "Arigataya Market · Gion"
+      }
+    ],
+    "sections": [
+      {
+        "label": "Buy items",
+        "currency": "mon",
+        "items": [
+          {
+            "name": "Deluxe All-Purpose Medicine",
+            "price": 350
+          },
+          {
+            "name": "Special All-Purpose Medicine",
+            "price": 500
+          },
+          {
+            "name": "Manju",
+            "price": 10
+          },
+          {
+            "name": "Grilled Dango",
+            "price": 18
+          },
+          {
+            "name": "Orange",
+            "price": 10
+          },
+          {
+            "name": "Copper Ore",
+            "price": 240,
+            "note": "From Chapter 8"
+          },
+          {
+            "name": "Adamantine Crystal",
+            "price": 320,
+            "note": "From Chapter 8"
+          },
+          {
+            "name": "Gold Hairpin",
+            "price": 40000,
+            "note": "From Chapter 5"
+          },
+          {
+            "name": "Princess Kaguya's Comb",
+            "price": 1000,
+            "note": "From Chapter 5"
+          },
+          {
+            "name": "Fireworks Kimono",
+            "price": 30000,
+            "note": "From Chapter 5"
+          },
+          {
+            "name": "Cherry Blossom Kimono",
+            "price": 20000,
+            "note": "From Chapter 5"
+          },
+          {
+            "name": "Chrysanthemum Obi",
+            "price": 7500,
+            "note": "From Chapter 5"
+          },
+          {
+            "name": "Wave-Design Obi",
+            "price": 5000,
+            "note": "From Chapter 5"
+          },
+          {
+            "name": "Checkered Obi",
+            "price": 2500,
+            "note": "From Chapter 5"
+          },
+          {
+            "name": "Portuguese Hand Mirror",
+            "price": 5000,
+            "note": "From Chapter 5"
+          },
+          {
+            "name": "Dutch Jewelry Box",
+            "price": 3000,
+            "note": "From Chapter 5"
+          },
+          {
+            "name": "Foreign Cloth",
+            "price": 2000,
+            "note": "From Chapter 5"
+          }
+        ]
+      },
+      {
+        "label": "Buy equipment",
+        "currency": "mon",
+        "items": [
+          {
+            "name": "Kyoto Perfume Sachet",
+            "price": 2000,
+            "note": "From Chapter 5"
+          },
+          {
+            "name": "Edo Perfume Sachet",
+            "price": 3000,
+            "note": "From Chapter 5"
+          },
+          {
+            "name": "Binding",
+            "price": 200
+          },
+          {
+            "name": "Oni Binding",
+            "price": 4000,
+            "note": "From Chapter 8"
+          },
+          {
+            "name": "Iron Kiseru",
+            "price": 2100,
+            "note": "From Chapter 5"
+          },
+          {
+            "name": "Stylish Kiseru",
+            "price": 7800,
+            "note": "From Chapter 7"
+          },
+          {
+            "name": "Stylish Parasol",
+            "price": 540,
+            "note": "From Chapter 6"
+          }
+        ]
+      }
+    ],
+    "source": "bin/item/shop/ (shop0002.bin, shop0003.bin); bin/wdr_par/wdr.par uid007c006d.msg; bin/pausepar/pause.par item.bin",
+    "note": "The gift-shopping menu on yujo outings uses the same gift prices."
+  },
+  "azamiya": {
+    "name": "Azamiya",
+    "area": "st_gion",
+    "places": [
+      {
+        "area": "st_gion",
+        "name": "Azamiya"
+      }
+    ],
+    "sections": [
+      {
+        "label": "Drinks during yujo visits",
+        "currency": "mon",
+        "items": [
+          {
+            "name": "Green Tea",
+            "price": 0
+          },
+          {
+            "name": "Citrus Tea",
+            "price": 50
+          },
+          {
+            "name": "Blackcurrant Liquor",
+            "price": 100
+          },
+          {
+            "name": "Malted Barley Liquor",
+            "price": 200
+          },
+          {
+            "name": "Fiery Sweet Potato Shochu",
+            "price": 800
+          },
+          {
+            "name": "Amber Foreign Sake",
+            "price": 2000
+          },
+          {
+            "name": "Maiden's Sweet Sake",
+            "price": 3000
+          },
+          {
+            "name": "Yukikaze Sake",
+            "price": 5000
+          },
+          {
+            "name": "Sugoroku Cloudy Sake",
+            "price": 8000
+          },
+          {
+            "name": "Celebration Sake",
+            "price": 10000
+          }
+        ]
+      },
+      {
+        "label": "Food during yujo visits",
+        "currency": "mon",
+        "items": [
+          {
+            "name": "Pickles",
+            "price": 30
+          },
+          {
+            "name": "Red and White Manju",
+            "price": 50
+          },
+          {
+            "name": "Dried Squid",
+            "price": 80
+          },
+          {
+            "name": "Fresh Vegetables",
+            "price": 100
+          },
+          {
+            "name": "Sea Bream Chakuze",
+            "price": 200
+          },
+          {
+            "name": "Kyoto Simmered Vegetables",
+            "price": 300
+          },
+          {
+            "name": "Grilled Sparrow",
+            "price": 400
+          },
+          {
+            "name": "Fruit Bowl",
+            "price": 500
+          },
+          {
+            "name": "Seafood Platter",
+            "price": 800
+          },
+          {
+            "name": "Grilled Tuna Head",
+            "price": 1000
+          }
+        ]
+      }
+    ],
+    "source": "bin/item/shop/ (shop0039.bin, shop0040.bin); bin/wdr_par/wdr.par uid004e000c.msg; bin/pausepar/pause.par item.bin"
+  },
+  "yumejiya": {
+    "name": "Yumejiya",
+    "area": "st_gion",
+    "places": [
+      {
+        "area": "st_gion",
+        "name": "Yumejiya"
+      }
+    ],
+    "sections": [
+      {
+        "label": "Drinks during yujo visits",
+        "currency": "mon",
+        "items": [
+          {
+            "name": "Green Tea",
+            "price": 0
+          },
+          {
+            "name": "Citrus Tea",
+            "price": 50
+          },
+          {
+            "name": "Blackcurrant Liquor",
+            "price": 100
+          },
+          {
+            "name": "Malted Barley Liquor",
+            "price": 200
+          },
+          {
+            "name": "Fiery Sweet Potato Shochu",
+            "price": 800
+          },
+          {
+            "name": "Amber Foreign Sake",
+            "price": 2000
+          },
+          {
+            "name": "Maiden's Sweet Sake",
+            "price": 3000
+          },
+          {
+            "name": "Yukikaze Sake",
+            "price": 5000
+          },
+          {
+            "name": "Sugoroku Cloudy Sake",
+            "price": 8000
+          },
+          {
+            "name": "Celebration Sake",
+            "price": 10000
+          }
+        ]
+      },
+      {
+        "label": "Food during yujo visits",
+        "currency": "mon",
+        "items": [
+          {
+            "name": "Pickles",
+            "price": 30
+          },
+          {
+            "name": "Red and White Manju",
+            "price": 50
+          },
+          {
+            "name": "Dried Squid",
+            "price": 80
+          },
+          {
+            "name": "Fresh Vegetables",
+            "price": 100
+          },
+          {
+            "name": "Sea Bream Chakuze",
+            "price": 200
+          },
+          {
+            "name": "Kyoto Simmered Vegetables",
+            "price": 300
+          },
+          {
+            "name": "Grilled Sparrow",
+            "price": 400
+          },
+          {
+            "name": "Fruit Bowl",
+            "price": 500
+          },
+          {
+            "name": "Seafood Platter",
+            "price": 800
+          },
+          {
+            "name": "Grilled Tuna Head",
+            "price": 1000
+          }
+        ]
+      }
+    ],
+    "source": "bin/item/shop/ (shop0039.bin, shop0040.bin); bin/wdr_par/wdr.par uid004e0000.msg; bin/pausepar/pause.par item.bin"
+  },
+  "shirohebi-udon": {
+    "name": "Shirohebi Udon",
+    "area": "st_rakugaicho",
+    "places": [
+      {
+        "area": "st_rakugaicho",
+        "name": "Shirohebi Udon"
+      },
+      {
+        "area": "st_rakugaicho",
+        "name": "Whitesnake Udon"
+      }
+    ],
+    "sections": [
+      {
+        "label": "Dine in",
+        "currency": "mon",
+        "items": [
+          {
+            "name": "Kake Udon",
+            "price": 30
+          },
+          {
+            "name": "Kamaage Udon",
+            "price": 40
+          },
+          {
+            "name": "Shippoku Udon",
+            "price": 80
+          },
+          {
+            "name": "Anpei Udon",
+            "price": 90
+          },
+          {
+            "name": "Keiran Udon",
+            "price": 120
+          },
+          {
+            "name": "Odamaki Udon",
+            "price": 110
+          },
+          {
+            "name": "Nabeyaki Udon",
+            "price": 80
+          },
+          {
+            "name": "Kishimen",
+            "price": 60
+          },
+          {
+            "name": "Somen",
+            "price": 60
+          },
+          {
+            "name": "Ippon Udon",
+            "price": 80
+          },
+          {
+            "name": "Tempura Udon",
+            "price": 150
+          },
+          {
+            "name": "Ultimate Fried Udon",
+            "price": 120,
+            "note": "Stock unlock required"
+          }
+        ]
+      },
+      {
+        "label": "Large portions",
+        "currency": "mon",
+        "items": [
+          {
+            "name": "Large Kake Udon",
+            "price": 60
+          },
+          {
+            "name": "Large Kamaage Udon",
+            "price": 80
+          },
+          {
+            "name": "Large Shippoku Udon",
+            "price": 160
+          },
+          {
+            "name": "Large Anpei Udon",
+            "price": 180
+          },
+          {
+            "name": "Large Keiran Udon",
+            "price": 240
+          },
+          {
+            "name": "Large Odamaki Udon",
+            "price": 220
+          },
+          {
+            "name": "Large Nabeyaki Udon",
+            "price": 160
+          },
+          {
+            "name": "Large Kishimen",
+            "price": 120
+          },
+          {
+            "name": "Large Somen",
+            "price": 120
+          },
+          {
+            "name": "Large Ippon Udon",
+            "price": 160
+          },
+          {
+            "name": "Large Tempura Udon",
+            "price": 300
+          },
+          {
+            "name": "Large Ultimate Fried Udon",
+            "price": 240,
+            "note": "Stock unlock required"
+          }
+        ]
+      },
+      {
+        "label": "Recipe tastings",
+        "currency": "mon",
+        "items": [
+          {
+            "name": "Red Bean Udon",
+            "price": 0,
+            "note": "During the udon recipe request"
+          },
+          {
+            "name": "Tamari Udon",
+            "price": 0,
+            "note": "During the udon recipe request"
+          },
+          {
+            "name": "Deep-Fried Udon",
+            "price": 0,
+            "note": "During the udon recipe request"
+          },
+          {
+            "name": "Sake Udon",
+            "price": 0,
+            "note": "During the udon recipe request"
+          },
+          {
+            "name": "Mugwort Udon",
+            "price": 0,
+            "note": "During the udon recipe request"
+          },
+          {
+            "name": "Konnyaku Udon",
+            "price": 0,
+            "note": "During the udon recipe request"
+          },
+          {
+            "name": "Ultimate Fried Udon",
+            "price": 0,
+            "note": "During the udon recipe request"
+          }
+        ]
+      }
+    ],
+    "source": "bin/item/shop/ (shop0023.bin, shop0024.bin, shop0025.bin); bin/wdr_par/wdr.par uid00b00004, uid00b00110.msg; bin/pausepar/pause.par item.bin"
+  },
+  "sake-ikkonya": {
+    "name": "Sake Ikkonya",
+    "area": "st_rakugaicho",
+    "places": [
+      {
+        "area": "st_rakugaicho",
+        "name": "Sake Ikkonya"
+      }
+    ],
+    "sections": [
+      {
+        "label": "Dine in",
+        "currency": "mon",
+        "items": [
+          {
+            "name": "Nada Sake",
+            "price": 45
+          },
+          {
+            "name": "Satsuma Sweet Potato Shochu",
+            "price": 75
+          },
+          {
+            "name": "Cloudy Sake",
+            "price": 30
+          },
+          {
+            "name": "Taro Sake",
+            "price": 60
+          },
+          {
+            "name": "Sobagaki",
+            "price": 40
+          },
+          {
+            "name": "Pickles",
+            "price": 30
+          },
+          {
+            "name": "Chazuke",
+            "price": 50
+          },
+          {
+            "name": "Grilled Hamo",
+            "price": 60
+          },
+          {
+            "name": "Thunder Tofu",
+            "price": 60
+          },
+          {
+            "name": "Octopus Tofu Salad",
+            "price": 60
+          }
+        ]
+      },
+      {
+        "label": "Takeout",
+        "currency": "mon",
+        "items": [
+          {
+            "name": "Nada Sake",
+            "price": 60
+          },
+          {
+            "name": "Satsuma Sweet Potato Shochu",
+            "price": 85
+          },
+          {
+            "name": "Cloudy Sake",
+            "price": 40
+          },
+          {
+            "name": "Taro Sake",
+            "price": 65
+          }
+        ]
+      }
+    ],
+    "source": "bin/item/shop/ (shop0012.bin, shop0013.bin); bin/wdr_par/wdr.par uid00b00018.msg; bin/pausepar/pause.par item.bin"
+  },
+  "etchuya-drugs": {
+    "name": "Etchuya Drugs",
+    "area": "st_rakugaicho",
+    "places": [
+      {
+        "area": "st_rakugaicho",
+        "name": "Etchuya Drugs"
+      }
+    ],
+    "sections": [
+      {
+        "label": "Buy items",
+        "currency": "mon",
+        "items": [
+          {
+            "name": "Vitality Pill",
+            "price": 100
+          },
+          {
+            "name": "Deluxe Vitality Pill",
+            "price": 150
+          },
+          {
+            "name": "Special Vitality Pill",
+            "price": 200
+          },
+          {
+            "name": "Passion Pill",
+            "price": 50
+          },
+          {
+            "name": "Deluxe Passion Pill",
+            "price": 100
+          },
+          {
+            "name": "Special Passion Pill",
+            "price": 150
+          },
+          {
+            "name": "All-Purpose Medicine",
+            "price": 200
+          },
+          {
+            "name": "Deluxe All-Purpose Medicine",
+            "price": 350
+          },
+          {
+            "name": "Special All-Purpose Medicine",
+            "price": 500
+          },
+          {
+            "name": "Ultra All-Purpose Medicine",
+            "price": 1000,
+            "note": "After inventing it"
+          },
+          {
+            "name": "Sober Pill",
+            "price": 200,
+            "note": "After inventing it"
+          },
+          {
+            "name": "Hunger Pill",
+            "price": 230,
+            "note": "After inventing it"
+          },
+          {
+            "name": "Shiso",
+            "price": 10
+          },
+          {
+            "name": "Sansho",
+            "price": 20
+          },
+          {
+            "name": "Ginger",
+            "price": 25
+          },
+          {
+            "name": "Sesame",
+            "price": 30
+          },
+          {
+            "name": "Gold Tortoiseshell",
+            "price": 500,
+            "note": "From Chapter 5"
+          },
+          {
+            "name": "Dragon Whisker",
+            "price": 1500,
+            "note": "From Chapter 7"
+          },
+          {
+            "name": "Horse Meat",
+            "price": 180,
+            "note": "After you start using the Turtle Bucket"
+          },
+          {
+            "name": "Boar Meat",
+            "price": 200,
+            "note": "After you start using the Turtle Bucket"
+          }
+        ]
+      }
+    ],
+    "source": "bin/item/shop/ (shop0004.bin); bin/wdr_par/wdr.par uid00b00005.msg; bin/pausepar/pause.par item.bin"
+  },
+  "arigataya-rakugai": {
+    "name": "Arigataya Market",
+    "area": "st_rakugaicho",
+    "places": [
+      {
+        "area": "st_rakugaicho",
+        "name": "Arigataya Market"
+      },
+      {
+        "area": "st_rakugaicho",
+        "name": "Arigataya Market · South door"
+      },
+      {
+        "area": "st_rakugaicho",
+        "name": "Arigataya Market · North door"
+      }
+    ],
+    "sections": [
+      {
+        "label": "Buy items",
+        "currency": "mon",
+        "items": [
+          {
+            "name": "Deluxe All-Purpose Medicine",
+            "price": 350
+          },
+          {
+            "name": "Special All-Purpose Medicine",
+            "price": 500
+          },
+          {
+            "name": "Manju",
+            "price": 10
+          },
+          {
+            "name": "Grilled Dango",
+            "price": 18
+          },
+          {
+            "name": "Crane Kimono",
+            "price": 10000
+          },
+          {
+            "name": "Konpeito",
+            "price": 500
+          },
+          {
+            "name": "Orange",
+            "price": 10
+          },
+          {
+            "name": "Emperor Hina Doll",
+            "price": 7500
+          },
+          {
+            "name": "Empress Hina Doll",
+            "price": 15000
+          },
+          {
+            "name": "Mechanical Doll",
+            "price": 30000
+          },
+          {
+            "name": "Gold Tortoiseshell",
+            "price": 500,
+            "note": "From Chapter 5"
+          },
+          {
+            "name": "White Silver",
+            "price": 200,
+            "note": "From Chapter 7"
+          },
+          {
+            "name": "Temari Stone",
+            "price": 500,
+            "note": "From Chapter 7"
+          },
+          {
+            "name": "Baleen",
+            "price": 25,
+            "note": "From Chapter 7"
+          }
+        ]
+      },
+      {
+        "label": "Buy equipment",
+        "currency": "mon",
+        "items": [
+          {
+            "name": "Rising Dragon Inro",
+            "price": 18000
+          },
+          {
+            "name": "Foreign Cologne Sachet",
+            "price": 1000
+          },
+          {
+            "name": "Binding",
+            "price": 200
+          },
+          {
+            "name": "Fighter's Binding",
+            "price": 1000
+          },
+          {
+            "name": "Macho Binding",
+            "price": 2500
+          },
+          {
+            "name": "Stylish Parasol",
+            "price": 540,
+            "note": "From Chapter 6"
+          }
+        ]
+      },
+      {
+        "label": "Special offer",
+        "currency": "mon",
+        "items": [
+          {
+            "name": "Red Hairpiece",
+            "price": 3000
+          }
+        ]
+      }
+    ],
+    "source": "bin/item/shop/ (shop0020.bin, shop0021.bin, shop0005.bin); bin/wdr_par/wdr.par uid000200f6.msg; bin/pausepar/pause.par item.bin",
+    "note": "The Red Hairpiece is a separate story offer."
+  },
+  "arms-dealer": {
+    "name": "Arms Dealer",
+    "area": "st_rakugaicho",
+    "places": [
+      {
+        "area": "st_rakugaicho",
+        "name": "Arms Dealer"
+      }
+    ],
+    "sections": [
+      {
+        "label": "Buy equipment",
+        "currency": "mon",
+        "items": [
+          {
+            "name": "Fighter's Kimono",
+            "price": 3000
+          },
+          {
+            "name": "Chain Mail",
+            "price": 5000,
+            "note": "From Chapter 7"
+          },
+          {
+            "name": "Steel Mail",
+            "price": 8000,
+            "note": "From Chapter 8"
+          },
+          {
+            "name": "Wooden Armor",
+            "price": 6000,
+            "note": "From Chapter 6"
+          },
+          {
+            "name": "Iron Armor",
+            "price": 8000,
+            "note": "From Chapter 7"
+          },
+          {
+            "name": "Steel Armor",
+            "price": 10000,
+            "note": "From Chapter 8"
+          },
+          {
+            "name": "Sacred Tree Armor",
+            "price": 15000
+          },
+          {
+            "name": "Seamless Hagoromo",
+            "price": 5000000
+          },
+          {
+            "name": "Nameless Katana",
+            "price": 2000
+          },
+          {
+            "name": "Nameless Katana EX",
+            "price": 4000
+          },
+          {
+            "name": "Red Oak Bokuto",
+            "price": 500
+          },
+          {
+            "name": "Dark Purple Bokuto",
+            "price": 800
+          },
+          {
+            "name": "Brittle Katana",
+            "price": 6000
+          },
+          {
+            "name": "Tessaimaru",
+            "price": 6000
+          },
+          {
+            "name": "Nameless Kodachi",
+            "price": 1000
+          },
+          {
+            "name": "Nameless Kodachi EX",
+            "price": 3000
+          },
+          {
+            "name": "Red Oak Kodachi",
+            "price": 200
+          },
+          {
+            "name": "Brittle Wakizashi",
+            "price": 2200
+          },
+          {
+            "name": "Iron Odachi",
+            "price": 13000,
+            "note": "From Chapter 6"
+          },
+          {
+            "name": "Brittle Odachi",
+            "price": 17300,
+            "note": "From Chapter 6"
+          },
+          {
+            "name": "Cast-Iron Kanabo",
+            "price": 16000,
+            "note": "From Chapter 7"
+          },
+          {
+            "name": "Jutte",
+            "price": 5800
+          }
+        ]
+      },
+      {
+        "label": "Buy materials",
+        "currency": "mon",
+        "items": [
+          {
+            "name": "Steel",
+            "price": 1000
+          },
+          {
+            "name": "Fine Steel",
+            "price": 2000,
+            "note": "From Chapter 6"
+          },
+          {
+            "name": "Excellent Steel",
+            "price": 3000,
+            "note": "From Chapter 8"
+          },
+          {
+            "name": "Mother of Pearl",
+            "price": 200,
+            "note": "From Chapter 9"
+          },
+          {
+            "name": "Tengu Stone",
+            "price": 400
+          },
+          {
+            "name": "Suijin Stone",
+            "price": 500
+          },
+          {
+            "name": "Tiger Fang",
+            "price": 200,
+            "note": "From Chapter 7"
+          }
+        ]
+      }
+    ],
+    "source": "bin/item/shop/ (shop0032.bin, shop0033.bin); bin/wdr_par/wdr.par uid00b00029.msg; bin/pausepar/pause.par item.bin"
+  },
+  "turtle-seller": {
+    "name": "Turtle Seller",
+    "area": "st_rakugaicho",
+    "places": [
+      {
+        "area": "st_rakugaicho",
+        "name": "Turtle Seller"
+      }
+    ],
+    "sections": [
+      {
+        "label": "Turtle keeping",
+        "currency": "mon",
+        "items": [
+          {
+            "name": "Turtle Bucket",
+            "price": 0
+          }
+        ]
+      },
+      {
+        "label": "Buy turtle food",
+        "currency": "mon",
+        "items": [
+          {
+            "name": "Nori",
+            "price": 40
+          },
+          {
+            "name": "Dried Agar",
+            "price": 200
+          },
+          {
+            "name": "Worms (Small)",
+            "price": 10
+          },
+          {
+            "name": "Worms (Medium)",
+            "price": 50
+          },
+          {
+            "name": "Worms (Large)",
+            "price": 100
+          },
+          {
+            "name": "Corbicula Clam",
+            "price": 10
+          },
+          {
+            "name": "Manila Clam",
+            "price": 50
+          },
+          {
+            "name": "Scallop",
+            "price": 100
+          },
+          {
+            "name": "Sakura Shrimp",
+            "price": 10
+          },
+          {
+            "name": "Prawn",
+            "price": 50
+          },
+          {
+            "name": "Lobster",
+            "price": 100
+          },
+          {
+            "name": "Ricefish",
+            "price": 10
+          },
+          {
+            "name": "Goldfish",
+            "price": 50
+          },
+          {
+            "name": "Sweetfish",
+            "price": 100
+          },
+          {
+            "name": "Eel Liver",
+            "price": 30
+          },
+          {
+            "name": "Mullet Roe",
+            "price": 70
+          },
+          {
+            "name": "Salmon Roe",
+            "price": 100
+          },
+          {
+            "name": "Snail",
+            "price": 30
+          },
+          {
+            "name": "Loach",
+            "price": 70
+          },
+          {
+            "name": "Crawfish",
+            "price": 100
+          },
+          {
+            "name": "Super Worms",
+            "price": 300,
+            "note": "After inventing it"
+          }
+        ]
+      }
+    ],
+    "source": "bin/item/shop/ (shop0043.bin); bin/wdr_par/wdr.par uid00b0001b.msg; bin/pausepar/pause.par item.bin",
+    "note": "The vendor gives you a Turtle Bucket for free. Buy and sell individual turtles through separate menus."
+  },
+  "candy-seller": {
+    "name": "Candy Seller",
+    "area": "st_rakugaicho",
+    "places": [
+      {
+        "area": "st_rakugaicho",
+        "name": "Candy Seller"
+      }
+    ],
+    "sections": [
+      {
+        "label": "Standard stock",
+        "currency": "mon",
+        "items": [
+          {
+            "name": "Apple Candy",
+            "price": 12
+          },
+          {
+            "name": "Apricot Candy",
+            "price": 25
+          },
+          {
+            "name": "Eternal Turtle Candy",
+            "price": 350
+          },
+          {
+            "name": "Golden Candy",
+            "price": 1500
+          },
+          {
+            "name": "Konpeito",
+            "price": 500
+          }
+        ]
+      },
+      {
+        "label": "Discounted stock",
+        "currency": "mon",
+        "items": [
+          {
+            "name": "Apple Candy",
+            "price": 6
+          },
+          {
+            "name": "Apricot Candy",
+            "price": 13
+          },
+          {
+            "name": "Eternal Turtle Candy",
+            "price": 225
+          },
+          {
+            "name": "Golden Candy",
+            "price": 750
+          },
+          {
+            "name": "Konpeito",
+            "price": 250
+          }
+        ]
+      }
+    ],
+    "source": "bin/item/shop/ (shop0016.bin, shop0045.bin); bin/wdr_par/wdr.par uid00490047, uid0049005c.msg; bin/pausepar/pause.par item.bin",
+    "note": "The vendor offers the discounted list after his dialogue about another customer buying up his stock."
+  },
+  "nonaka-tea-house": {
+    "name": "Nonaka Tea House",
+    "area": "st_yoshioka_jnt",
+    "places": [
+      {
+        "area": "st_yoshioka_jnt",
+        "name": "Nonaka Tea House"
+      }
+    ],
+    "sections": [
+      {
+        "label": "Dine in",
+        "currency": "mon",
+        "items": [
+          {
+            "name": "Amazake",
+            "price": 25
+          },
+          {
+            "name": "Cloudy Sake",
+            "price": 30
+          },
+          {
+            "name": "Nada Sake",
+            "price": 45
+          },
+          {
+            "name": "Grilled Dango",
+            "price": 15
+          },
+          {
+            "name": "Matcha Dango",
+            "price": 16
+          },
+          {
+            "name": "Three Color Dango",
+            "price": 15
+          }
+        ]
+      },
+      {
+        "label": "Large portions",
+        "currency": "mon",
+        "items": [
+          {
+            "name": "Large Sweet Sake",
+            "price": 50
+          },
+          {
+            "name": "Large Cloudy Sake",
+            "price": 60
+          },
+          {
+            "name": "Large Nada Sake",
+            "price": 90
+          },
+          {
+            "name": "Large Grilled Dango",
+            "price": 30
+          },
+          {
+            "name": "Large Matcha Dango",
+            "price": 32
+          },
+          {
+            "name": "Large Three Color Dango",
+            "price": 30
+          }
+        ]
+      },
+      {
+        "label": "Takeout",
+        "currency": "mon",
+        "items": [
+          {
+            "name": "Deluxe All-Purpose Medicine",
+            "price": 350
+          },
+          {
+            "name": "Special All-Purpose Medicine",
+            "price": 500
+          },
+          {
+            "name": "Manju",
+            "price": 10
+          },
+          {
+            "name": "Ohagi",
+            "price": 18
+          },
+          {
+            "name": "Cloudy Sake",
+            "price": 40
+          },
+          {
+            "name": "Nada Sake",
+            "price": 60
+          },
+          {
+            "name": "Grilled Dango",
+            "price": 15
+          },
+          {
+            "name": "Matcha Dango",
+            "price": 15
+          },
+          {
+            "name": "Three Color Dango",
+            "price": 15
+          }
+        ]
+      }
+    ],
+    "source": "bin/item/shop/ (shop0026.bin, shop0027.bin, shop0028.bin); bin/wdr_par/wdr.par uid00b00028.msg; bin/pausepar/pause.par item.bin"
+  },
+  "riverside-tea-house": {
+    "name": "Riverside Tea House",
+    "area": "st_kawa_jnt",
+    "places": [
+      {
+        "area": "st_kawa_jnt",
+        "name": "Riverside Tea House"
+      }
+    ],
+    "sections": [
+      {
+        "label": "Dine in",
+        "currency": "mon",
+        "items": [
+          {
+            "name": "Chagayu",
+            "price": 20
+          },
+          {
+            "name": "Shiruko",
+            "price": 18
+          },
+          {
+            "name": "Amazake",
+            "price": 25
+          },
+          {
+            "name": "Cloudy Sake",
+            "price": 30
+          },
+          {
+            "name": "Nada Sake",
+            "price": 45
+          },
+          {
+            "name": "Kusa Dango",
+            "price": 15
+          }
+        ]
+      },
+      {
+        "label": "Large portions",
+        "currency": "mon",
+        "items": [
+          {
+            "name": "Large Chagayu",
+            "price": 40
+          },
+          {
+            "name": "Large Shiruko",
+            "price": 36
+          },
+          {
+            "name": "Large Sweet Sake",
+            "price": 50
+          },
+          {
+            "name": "Large Cloudy Sake",
+            "price": 60
+          },
+          {
+            "name": "Large Nada Sake",
+            "price": 90
+          },
+          {
+            "name": "Large Kusa Dango",
+            "price": 30
+          }
+        ]
+      },
+      {
+        "label": "Takeout",
+        "currency": "mon",
+        "items": [
+          {
+            "name": "Deluxe All-Purpose Medicine",
+            "price": 350
+          },
+          {
+            "name": "Special All-Purpose Medicine",
+            "price": 500
+          },
+          {
+            "name": "Manju",
+            "price": 10
+          },
+          {
+            "name": "Ohagi",
+            "price": 18
+          },
+          {
+            "name": "Cloudy Sake",
+            "price": 40
+          },
+          {
+            "name": "Nada Sake",
+            "price": 60
+          },
+          {
+            "name": "Kusa Dango",
+            "price": 15
+          },
+          {
+            "name": "Kyo Parsley",
+            "price": 10
+          },
+          {
+            "name": "Kujo Negi",
+            "price": 10
+          },
+          {
+            "name": "Horikawa Burdock",
+            "price": 10
+          }
+        ]
+      }
+    ],
+    "source": "bin/item/shop/ (shop0029.bin, shop0030.bin, shop0031.bin); bin/wdr_par/wdr.par uid00b0005d, uid00b0005e.msg; bin/pausepar/pause.par item.bin"
+  },
+  "chicken-vendor": {
+    "name": "Chicken Vendor",
+    "area": "st_kaido_kawa",
+    "places": [
+      {
+        "area": "st_kaido_kawa",
+        "name": "Chicken Vendor"
+      }
+    ],
+    "sections": [
+      {
+        "label": "Buy items",
+        "currency": "mon",
+        "items": [
+          {
+            "name": "Raw Chicken",
+            "price": 50
+          }
+        ]
+      }
+    ],
+    "source": "bin/item/shop/ (shop0038.bin); bin/wdr_par/wdr.par uid007c0194.msg; bin/pausepar/pause.par item.bin"
+  },
+  "medicine-seller": {
+    "name": "Medicine Seller",
+    "area": "st_dokutsu_soto",
+    "places": [
+      {
+        "area": "st_dokutsu_soto",
+        "name": "Medicine Seller"
+      }
+    ],
+    "sections": [
+      {
+        "label": "Buy medicines",
+        "currency": "mon",
+        "items": [
+          {
+            "name": "Vitality Pill",
+            "price": 100
+          },
+          {
+            "name": "Deluxe Vitality Pill",
+            "price": 150
+          },
+          {
+            "name": "Special Vitality Pill",
+            "price": 200
+          },
+          {
+            "name": "Passion Pill",
+            "price": 50
+          },
+          {
+            "name": "Deluxe Passion Pill",
+            "price": 100
+          },
+          {
+            "name": "Special Passion Pill",
+            "price": 150
+          },
+          {
+            "name": "All-Purpose Medicine",
+            "price": 200
+          },
+          {
+            "name": "Deluxe All-Purpose Medicine",
+            "price": 350
+          },
+          {
+            "name": "Special All-Purpose Medicine",
+            "price": 500
+          },
+          {
+            "name": "Ultra All-Purpose Medicine",
+            "price": 1000,
+            "note": "After inventing it"
+          }
+        ]
+      }
+    ],
+    "source": "bin/item/shop/ (shop0001.bin); bin/wdr_par/wdr.par uid007c015d.msg; bin/pausepar/pause.par item.bin"
+  },
+  "sanjusangendo-peddler": {
+    "name": "Sanjusangendo Peddler",
+    "area": "st_sanjusangen_jnt",
+    "places": [
+      {
+        "area": "st_sanjusangen_jnt",
+        "name": "Sanjusangendo Peddler"
+      }
+    ],
+    "sections": [
+      {
+        "label": "One-time offers",
+        "currency": "mon",
+        "items": [
+          {
+            "name": "Mysterious Small Tengu Mask",
+            "price": 20000
+          },
+          {
+            "name": "Gold Tortoiseshell",
+            "price": 20000
+          },
+          {
+            "name": "Oni Blade Forging Guide",
+            "price": 20000
+          },
+          {
+            "name": "Onryo Hair",
+            "price": 20000
+          },
+          {
+            "name": "Fine Steel",
+            "price": 20000
+          },
+          {
+            "name": "Celestial Hagoromo",
+            "price": 20000
+          },
+          {
+            "name": "Red Lion Hair",
+            "price": 20000
+          },
+          {
+            "name": "Mysterious Raven Tengu Mask",
+            "price": 20000
+          },
+          {
+            "name": "Oni Hair",
+            "price": 20000
+          },
+          {
+            "name": "Mysterious Tengu Mask",
+            "price": 20000
+          },
+          {
+            "name": "Dragon Entrails",
+            "price": 20000
+          },
+          {
+            "name": "Mysterious Great Tengu Mask",
+            "price": 20000
+          }
+        ]
+      }
+    ],
+    "source": "bin/wdr_par/wdr.par uid007c0167.msg",
+    "note": "The peddler offers one item at a time. Buy it and return after leaving the area for the next offer."
+  },
+  "used-goods-buyer": {
+    "name": "Used Goods Buyer",
+    "area": "st_rakugaicho",
+    "places": [
+      {
+        "area": "st_rakugaicho",
+        "name": "Used Goods Buyer"
+      }
+    ],
+    "sections": [],
+    "source": "bin/wdr_par/wdr.par uid0083015e.msg; bin/item/shop/sale0000.bin",
+    "note": "Buys items from you. The amount depends on what you sell."
+  },
+  "blacksmith": {
+    "name": "Blacksmith",
+    "area": "st_rakugaicho",
+    "places": [
+      {
+        "area": "st_rakugaicho",
+        "name": "Blacksmith"
+      }
+    ],
+    "sections": [],
+    "source": "bin/item/shop/blacksmith.bin",
+    "note": "Tempers weapons and forges new ones. Each recipe sets its own fee and materials."
+  },
+  "gyotensai": {
+    "name": "Gyotensai’s House",
+    "area": "st_gion",
+    "places": [
+      {
+        "area": "st_gion",
+        "name": "Gyotensai’s House"
+      }
+    ],
+    "sections": [],
+    "source": "bin/item/shop/gennai.bin",
+    "note": "Bring materials to invent items. Completed inventions can unlock stock at other shops."
+  }
+}

@@ -1,0 +1,187 @@
+{
+  "101": [
+    {"letter":"A","text":"Speak to the injured debt collector in Kamemachi Alley and agree to collect from Kumanosuke."},
+    {"letter":"B","text":"Find Kumanosuke inside Sushi Ginya. Accept his challenge and win the fight outside for 1 ryō."}
+  ],
+  "102": [
+    {"letter":"A","text":"Read the pigeon letter near Tatsuya."},
+    {"letter":"B","text":"Talk to the man sitting outside Chidoriya on Monzen Alley, east of Gion Main Gate. Win both fights."}
+  ],
+  "103": [
+    {"letter":"A","text":"Read the commission letter on Gion’s main street near Tatsuya."},
+    {"letter":"B","text":"Bring two food items to the dog outside the den off Inari Shrine Path. Interact and take the first option twice to feed it."}
+  ],
+  "104": [
+    {"letter":"A","text":"Talk to the man beside the storage lockers on Monzen Alley and accept the commission."},
+    {"letter":"B","text":"Go to the northeast corner of the Suiten Inari well area. Look up and interact with the roof, then choose the first option to take the key. The man near the well can point it out."},
+    {"letter":"A","text":"Return the key to the man at the lockers. Use Locker Key J-2 to get the Book of Offerings to Suijin. Other locker keys can now appear."}
+  ],
+  "105": [
+    {"letter":"A","text":"Read the pigeon letter by the Monzen Alley storage lockers."},
+    {"letter":"B","text":"Approach Yayoi and her companion on Kadomachi near Ebisuya Pawn, north of Gion Inari Shrine. Defeat the samurai who charges you."}
+  ],
+  "106": [
+    {"letter":"A","text":"Approach the wakashu and older customer in Kamemachi Alley. Choose the first option to help and again to pay 5 ryō. Follow the scene to his house for the scroll."},
+    {"letter":"B","text":"Sell the Incomprehensible Scroll at Ebisuya Pawn for 10 ryō."}
+  ],
+  "107": [
+    {"letter":"A","text":"Read the pigeon letter for this commission."},
+    {"letter":"B","text":"Meet the clerk outside Mochizukiya on the north–south lane in Nakanomachi. Agree to watch over Sakuya, then defeat her attacker."}
+  ],
+  "108": [
+    {"letter":"A","text":"Speak to the sick Horaiya clerk by outdoor mahjong on Tsurumachi Alley. Take over with the second option. Admit customers 1, 4 and 5 with the second option. Refuse 2 and 3 with the first option and defeat them. Refuse customer 6 twice with the first option."}
+  ],
+  "109": [
+    {"letter":"A","text":"Speak to the Azamiya clerk outside Tatsuya."},
+    {"letter":"B","text":"Go to the crowd outside Shokichi’s house on Hanami Alley near Nagayamachi. Choose any contest and then refuse to fight the other collectors twice."},
+    {"letter":"C","text":"Go north alongside the house, stop Shokichi and refuse to let him go twice. Beat him unarmed."},
+    {"letter":"A","text":"Return the payment to the clerk outside Tatsuya."}
+  ],
+  "110": [
+    {"letter":"A","text":"Talk to the men stuck north of Sake Nakanokura. Approach from their east, on the Kadomachi side. Press the displayed button repeatedly to push them west toward Gion’s main street."}
+  ],
+  "111": [
+    {"letter":"A","text":"Read Ebisuya’s letter in the post box at Tatsuya."},
+    {"letter":"B","text":"Talk to the owner at Ebisuya Pawn. Leave the shop, defeat the samurai and offer to buy his sword for the 2 ryō result."}
+  ],
+  "112": [
+    {"letter":"A","text":"Read the letter at Tatsuya."},
+    {"letter":"B","text":"Speak to the proprietor at Sake Nakanokura."},
+    {"letter":"C","text":"Visit the house immediately south of Rakugai’s blacksmith. Refuse to leave. Examine the plate, insist on taking it twice and accept the pot and scroll instead."},
+    {"letter":"D","text":"Take both items to Kōetsu’s mansion in Kawaramachi. If entering advances the story, leave and return after the scene for the appraisal. He pays 12 ryō for the pot and scroll."},
+    {"letter":"B","text":"Give 1 ryō to the proprietor at Sake Nakanokura. You keep 11 ryō."}
+  ],
+  "113": [
+    {"letter":"A","text":"Read the first letter at Tatsuya."},
+    {"letter":"B","text":"Speak to Tsubaki inside Sake Nakanokura. Suggested reply: ‘Say she lied to hide her embarrassment.’ Either option advances the commission."},
+    {"letter":"C","text":"Speak to the customer beside the south steps of Gion Inari Shrine. Suggested reply: ‘I think she's being truthful.’ Either option advances the commission."},
+    {"letter":"A","text":"Read the second letter at Tatsuya."},
+    {"letter":"B","text":"Talk to Tsubaki again. Suggested reply: ‘Are you sure?’ Either option advances the commission."},
+    {"letter":"C","text":"Go back to the customer. Suggested reply: ‘I think she's being truthful.’ Either option advances the commission."},
+    {"letter":"A","text":"Read the third letter at Tatsuya."},
+    {"letter":"B","text":"Speak to Tsubaki again."},
+    {"letter":"C","text":"Speak to the customer for the third time."},
+    {"letter":"A","text":"Read the last letter at Tatsuya for the perfume sachet scene and 1,500 EXP. Your earlier answers do not change completion or the EXP reward."}
+  ],
+  "114": [
+    {"letter":"A","text":"Agree to help the Hamajiya worker outside Tatsuya. The scene takes you to Hamajiya, where you beat the ronin, the lone challenger and the final group."}
+  ],
+  "115": [
+    {"letter":"A","text":"Read the Kikuya letter at Tatsuya."},
+    {"letter":"B","text":"Agree to the job with Kikuya’s clerk."},
+    {"letter":"C","text":"Speak to Oyo in her pink kimono, then follow when she runs."},
+    {"letter":"D","text":"Speak to her near the Jizo at the entrance to Gion Inari Shrine."},
+    {"text":"Intercept her on the diagonal lane and north side of the shrine steps. Run around the block the opposite way to meet her head-on."},
+    {"letter":"F","text":"Find Oyo and the man bothering her near Tsuruya on Tsurumachi Alley. Take the second option and defeat him."},
+    {"text":"Catch Oyo again by cutting across her route."}
+  ],
+  "116": [
+    {"letter":"A","text":"Start with the rumor near Tatsuya’s passage in Rakugai."},
+    {"letter":"B","text":"Ask the gate attendant beside Tatsuya on the Gion side."},
+    {"letter":"C","text":"Find the retiree and his companions west of Whitesnake Udon on Shijo Avenue West. Win the fight."},
+    {"letter":"D","text":"Bring the payment to Hanbei on the west side of Nakatsuji Alley in Gion."}
+  ],
+  "117": [
+    {"letter":"A","text":"Agree to the job with the wakashu outside Tatsuya."},
+    {"letter":"B","text":"Cross from Yoshioka Dojo into Countryside Path and pass the Jizo statues. Follow the call for help, beat the abductor and speak to the girl."},
+    {"letter":"C","text":"Find the small hall near the south end of Mountain Path where Kiryu stayed with the monk. Defeat both groups. The return to Gion is automatic."}
+  ],
+  "118": [
+    {"letter":"A","text":"Speak to the Yukizasaya clerk outside Tatsuya."},
+    {"letter":"B","text":"Meet the customer outside Whitesnake Udon in Rakugai. Agree to go with him and defeat the ambush on Cliffside Path. The game returns you to the clerk."}
+  ],
+  "119": [
+    {"letter":"A","text":"Read the pigeon letter near Tatsuya. Bring any food item."},
+    {"letter":"B","text":"Examine the paper door on Monzen Alley northwest of Komaki’s dojo and give Imakita the food."}
+  ],
+  "120": [
+    {"letter":"A","text":"Read the pigeon letter near Tatsuya. Bring a regular hairpin from Arigataya or Ebisuya. The Maiden’s Hairpin is excluded."},
+    {"letter":"B","text":"Examine the same Monzen Alley paper door as #119 for Imakita’s note."},
+    {"letter":"C","text":"Pass his message to the yujo at the brothel across from Komaki’s dojo."},
+    {"letter":"D","text":"Follow the east side of Gion Inari Shrine and talk to Imakita behind it."}
+  ],
+  "121": [
+    {"letter":"board","text":"Accept the Okappiki’s bounty work at the northwest Rakugai police box. Read the board until you see Gonzaemon’s poster."},
+    {"letter":"A","text":"Find Gonzaemon at the shopping street intersection by the mahjong parlor. Speak to him and defeat him."}
+  ],
+  "122": [
+    {"letter":"board","text":"Read Yata’s poster."},
+    {"letter":"A","text":"Look left as you approach the cave fork on Forest Path from Rakugai. Talk to Yata and beat him."}
+  ],
+  "123": [
+    {"letter":"board","text":"Read Baian’s poster."},
+    {"letter":"A","text":"Speak to Baian on the riverbank. Choose the first option to accept and win the duel unarmed."}
+  ],
+  "124": [
+    {"letter":"board","text":"Read Ukimaru’s poster."},
+    {"letter":"A","text":"Speak to him near the southern stairs on Riverside Path and win. Use an unarmed finishing hit for 2 ryō."}
+  ],
+  "125": [
+    {"letter":"board","text":"Read Hikozaemon’s poster."},
+    {"letter":"A","text":"Approach the cave junction on Forest Path in daylight. Talk to him and win. Use throws to get past his guard."}
+  ],
+  "126": [
+    {"letter":"board","text":"Read Kinta’s poster."},
+    {"letter":"A","text":"Speak to Kinta by Rakugai Shrine. Use an unarmed finishing hit for 2 ryō."}
+  ],
+  "127": [
+    {"letter":"board","text":"Read Monnosuke’s poster."},
+    {"letter":"A","text":"Approach him in Kamemachi Alley behind Tsuruya in Gion and defeat him."}
+  ],
+  "128": [
+    {"letter":"board","text":"Read Seitakichi’s poster."},
+    {"letter":"A","text":"Find him on quiet Kadomachi in Gion. Speak to him and beat him."}
+  ],
+  "129": [
+    {"letter":"board","text":"Read Matsu’s poster."},
+    {"letter":"A","text":"At night, bump into the man who runs at you near the turnoff in Kawaramachi. Choose the second option to identify him. Finish him unarmed for 2 ryō."}
+  ],
+  "130": [
+    {"letter":"board","text":"Read Nonbei’s poster."},
+    {"letter":"A","text":"In daylight, find him by the branch to the waterfall on Mountain Path. Finish him unarmed for 2 ryō."}
+  ],
+  "131": [
+    {"letter":"board","text":"Read Tatsu’s poster."},
+    {"letter":"A","text":"Walk through the street at night with critical health. Refuse the massage with the second option. Defeat all four men and collect their money drops before finishing Tatsu to double the payout."}
+  ],
+  "132": [
+    {"letter":"board","text":"Read Tetsuto’s poster."},
+    {"letter":"A","text":"Speak to the person in women’s clothes by the Riverside Path stairs. Defeat Tetsuto and his men."}
+  ],
+  "133": [
+    {"letter":"board","text":"Read Kensuke’s poster."},
+    {"letter":"A","text":"Talk to Gonza on Mountain Path."},
+    {"letter":"B","text":"When he denies being Kensuke, go to the Okappiki at the northwest Rakugai police box."},
+    {"letter":"C","text":"Find his mother by the stables on the Yoshioka Dojo side of Countryside Path. Pick the first option to promise to spare him. The game returns you to Gonza. Defeat him and the reinforcements unarmed."}
+  ],
+  "134": [
+    {"letter":"board","text":"Read Kaien’s poster."},
+    {"letter":"A","text":"Speak to the monk by the Countryside Path statues at night and beat him."}
+  ],
+  "135": [
+    {"letter":"board","text":"Read Arashiyama’s poster. Bring sake."},
+    {"letter":"A","text":"Speak to him at Suiten Inari at night. Pick the first option and select the sake from your inventory. Win the fight."}
+  ],
+  "136": [
+    {"letter":"board","text":"Read Heinosuke’s poster."},
+    {"letter":"A","text":"Speak to the lone traveler in southern Cliffside Path, then walk away and respond to the ambush prompt. Beat him to obtain the Mortal Blade for #20."}
+  ],
+  "137": [
+    {"letter":"board","text":"Read Golden Gun Rikken’s poster."},
+    {"letter":"A","text":"Go to the back of Rendai Field. Follow the ambush prompt to dodge the shot, then beat him."}
+  ],
+  "138": [
+    {"letter":"board","text":"Read Toyokichi’s poster."},
+    {"letter":"A","text":"Examine the front gate at Sanjusangendo and choose the first option to go inside."},
+    {"letter":"B","text":"Speak to the man inside. Choose the middle option, then the first. Defeat the waves and Toyokichi."}
+  ],
+  "139": [
+    {"letter":"board","text":"Read Kamaitachi Nobutaka’s poster."},
+    {"letter":"A","text":"Talk to the traveler on northern Cliffside Path. Take the first option and walk away. Follow the ambush prompt and defeat him."}
+  ],
+  "140": [
+    {"letter":"board","text":"Read Kuroshima’s poster."},
+    {"letter":"A","text":"In the evening, speak to Baiken’s man at the Shishido cave branch on Forest Path and choose the first option to enter."},
+    {"letter":"B","text":"After the automatic transition, defeat Kuroshima Raiden in the cave. Bring healing items for the fight."}
+  ]
+}

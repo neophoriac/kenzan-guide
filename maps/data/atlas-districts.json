@@ -1,0 +1,6 @@
+[
+  {"name":"Kadomachi","layer":"st_gion_kadomachi","labelY":0.365,"source":"bin/map/st_gion.par/uid02250039.imb"},
+  {"name":"Kamemachi","layer":"st_gion_kame","source":"bin/map/st_gion.par/uid0225003d.imb"},
+  {"name":"Okubomachi","layer":"st_gion_ookubo","source":"bin/map/st_gion.par/uid0225003f.imb"},
+  {"name":"Nakanomachi","layer":"st_gion_nakano","widthScale":0.78,"source":"bin/map/st_gion.par/uid02250040.imb"}
+]

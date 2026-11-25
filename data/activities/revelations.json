@@ -1,0 +1,360 @@
+[
+  {
+    "nativeIndex": 4,
+    "id": "oblivious-cat",
+    "name": "Hidden Blade - Oblivious Cat",
+    "window": "5-4",
+    "time": "Day, evening or night",
+    "picture": "Painting of a Playful Cat",
+    "steps": [
+      "Meet Shichigoro at Gion Inari Shrine after Itō tells you about Kōetsu. He gives you the painting, Paintbrush and Inkwell.",
+      "Examine the cat beside Shichigoro at Gion Inari Shrine.",
+      "Follow the timed prompts in this order: Cross. Then choose option 1, about the cat keeping its prey behind it."
+    ],
+    "qte": [
+      "Cross"
+    ],
+    "answer": 1,
+    "source": "pac_ST_GION.bin actor 007c01b0 and Shichigoro dialogue uid007c03fa.msg; yact_all.par 910500.par, 910501.par, 910502.par; item_s.bin and ougi.bin"
+  },
+  {
+    "nativeIndex": 3,
+    "id": "spectacular-squirrel",
+    "name": "Hidden Blade - Spectacular Squirrel",
+    "window": "5-6",
+    "time": "Day or evening",
+    "picture": "Painting of a Flying Squirrel",
+    "steps": [
+      "After learning Oblivious Cat, report back to Shichigoro at Gion Inari Shrine to collect the painting.",
+      "On Forest Path, interact with the squirrel observation spot at the map pin.",
+      "Follow the timed prompts in this order: Cross → Triangle. Then choose option 3, about being distracted by something overhead."
+    ],
+    "qte": [
+      "Cross",
+      "Triangle"
+    ],
+    "answer": 3,
+    "source": "pac_ST_KAIDO_RINDO.bin actor 007c01af and Shichigoro dialogue uid007c03fa.msg; yact_all.par 910400.par, 910401.par; item_s.bin and ougi.bin"
+  },
+  {
+    "nativeIndex": 17,
+    "id": "two-bones",
+    "name": "Fang and Blade - Two Bones",
+    "window": "5-6",
+    "time": "Day or evening",
+    "picture": "Painting of a Dog",
+    "steps": [
+      "After learning Oblivious Cat, reach level 15 and speak to Shichigoro at Gion Inari Shrine for the painting.",
+      "Examine the dog on Yamato Alley South in Rakugai.",
+      "Follow the timed prompts in this order: Triangle. Then choose option 3, about using two bones instead of one."
+    ],
+    "qte": [
+      "Triangle"
+    ],
+    "answer": 3,
+    "source": "pac_ST_RAKUGAICHO.bin actor 007c01b9 and Shichigoro dialogue uid007c03fa.msg; yact_all.par 911800.par, 911801.par; item_s.bin and ougi.bin"
+  },
+  {
+    "nativeIndex": 10,
+    "id": "true-dual-sword-dance",
+    "name": "Certain Death - True Dual Sword Dance",
+    "window": "5-13",
+    "time": "Day or evening",
+    "picture": "Portrait of a Beauty",
+    "steps": [
+      "After Kōetsu tells you about the bandits in his basement, complete substory #18, Water from the Ladle 1, to receive the portrait. Any answer in that substory gives you the portrait.",
+      "Watch the woman with two fans outside Tsuruya’s rear entrance in Gion.",
+      "Follow the timed prompts in this order: Triangle → Square → Circle. Then choose option 3, about the dancer leaving no opening."
+    ],
+    "qte": [
+      "Triangle",
+      "Square",
+      "Circle"
+    ],
+    "answer": 3,
+    "source": "pac_ST_GION.bin actor 007c01b6; pac_ST_RAKUGAICHO.bin actor 00020239 checks CHAPTER05 state 52 for substory #18; uid0102054f.msg awards the portrait on all three branches; yact_all.par 911100.par, 911101.par; item_s.bin and ougi.bin"
+  },
+  {
+    "nativeIndex": 9,
+    "id": "monkey-drop",
+    "name": "Heavy Sword - Monkey Drop",
+    "window": "5-13",
+    "time": "Day, evening or night",
+    "picture": "Painting of a Monkey",
+    "steps": [
+      "After learning Oblivious Cat and finishing the greatsword tutorial, reach level 17 and get the painting from Shichigoro. Eat four times at Shirohebi Udon in Rakugai for Ticket (Leaping Monkey).",
+      "Use the ticket at Rakugai’s Sideshow Tent and choose “An Extraordinary Trick! The Amazing Jumping Monkey!” The first showing is free with the ticket. Later showings cost 50 mon.",
+      "Follow the timed prompts in this order: Cross → Triangle. Then choose option 2, about how high the little monkey jumps with a pole."
+    ],
+    "qte": [
+      "Cross",
+      "Triangle"
+    ],
+    "answer": 2,
+    "source": "uid00b00004.msg (ticket), uid00b00040.msg (show) and pac_ST_MISEMONO.bin; yact_all.par 911000.par; item_s.bin and ougi.bin"
+  },
+  {
+    "nativeIndex": 12,
+    "id": "dancing-cat",
+    "name": "Certain Death - Dancing Cat",
+    "window": "5-13",
+    "time": "Day, evening or night",
+    "picture": "Painting of a Sleeping Cat",
+    "steps": [
+      "After learning Oblivious Cat and finishing the greatsword tutorial, reach level 18 and collect the painting from Shichigoro at Gion Inari Shrine.",
+      "At Kiyomizudera Entrance, examine the cat beside the temple approach.",
+      "Follow the timed prompts in this order: 2 × Triangle. Then choose option 2, about the cat scaling the rock with its leaps."
+    ],
+    "qte": [
+      "Triangle",
+      "Triangle"
+    ],
+    "answer": 2,
+    "source": "pac_ST_KIYOMIZU_JNT.bin event 017c06e4 and Shichigoro dialogue uid007c03fa.msg; yact_all.par 911300.par, 911301.par, 911302.par; item_s.bin and ougi.bin"
+  },
+  {
+    "nativeIndex": 8,
+    "id": "karakuri-spin",
+    "name": "Heavy Sword - Karakuri Spin",
+    "window": "6-1",
+    "time": "Day, evening or night",
+    "picture": "Schematic of a Clock",
+    "steps": [
+      "Buy the schematic for 2,000 mon from the man inside Ebisuya Pawn in Gion.",
+      "Take the schematic to Gyotensai at Gyotensai's House in Gion and speak to him about the clock.",
+      "Follow the timed prompts in this order: Circle → Triangle → Cross → Square → Circle. Then choose option 3, about how the parts work together to create movement."
+    ],
+    "qte": [
+      "Circle",
+      "Triangle",
+      "Cross",
+      "Square",
+      "Circle"
+    ],
+    "answer": 3,
+    "source": "pac_ST_HATSUMEIKA.bin event 017c02d6; pac_ST_SHICHIYA.bin actor 00b001fb and dialogue uid00b001fb.msg; yact_all.par 910900.par; item_s.bin and ougi.bin"
+  },
+  {
+    "nativeIndex": 2,
+    "id": "diving-swallow",
+    "name": "Hidden Blade - Diving Swallow",
+    "window": "6-3",
+    "time": "Day or evening",
+    "picture": "Painting of a Swallow",
+    "steps": [
+      "After learning Oblivious Cat, check Shichigoro’s Chapter 6 letter and collect the painting at Gion Inari Shrine.",
+      "Go to the middle of the bridge in Kawaramachi, near the girl, and interact with the swallow observation spot.",
+      "Follow the timed prompts in this order: Square → Triangle → Cross. Then choose option 3, about the swallow’s fast dive."
+    ],
+    "qte": [
+      "Square",
+      "Triangle",
+      "Cross"
+    ],
+    "answer": 3,
+    "source": "pac_ST_KAIDO_RAKUNAI.bin actor 007c0333 and Shichigoro dialogue uid007c03fa.msg; yact_all.par 910300.par, 910301.par; item_s.bin and ougi.bin"
+  },
+  {
+    "nativeIndex": 0,
+    "id": "ascending-fish",
+    "name": "Hidden Blade - Ascending Fish",
+    "window": "6-5",
+    "time": "Day or evening",
+    "picture": "Painting of Swimming Fish",
+    "steps": [
+      "After learning Oblivious Cat, check Shichigoro’s Chapter 6 letter and collect the painting at Gion Inari Shrine.",
+      "Speak to the fisherman at the marked spot beside the Kamo River on Riverside Path.",
+      "Follow the timed prompts in this order: Triangle. Then choose option 2, about the fish’s scales catching the light as it rises."
+    ],
+    "qte": [
+      "Triangle"
+    ],
+    "answer": 2,
+    "source": "pac_ST_KAIDO_KAWA.bin actor 007c02e3 and Shichigoro dialogue uid007c03fa.msg; yact_all.par 910100.par, 910101.par; item_s.bin and ougi.bin"
+  },
+  {
+    "nativeIndex": 1,
+    "id": "soundless-serpent",
+    "name": "Hidden Blade - Soundless Serpent",
+    "window": "7-4",
+    "time": "Evening or night",
+    "picture": "Painting of a Snake",
+    "steps": [
+      "Collect the painting from Shichigoro after his Chapter 7 letter. Collect Painting of a Kite first if he has both to hand out.",
+      "At the fork on Forest Path, examine the snake observation spot.",
+      "Follow the timed prompts in this order: Triangle → Circle. Then choose option 1, about the snake striking instantly without warning."
+    ],
+    "qte": [
+      "Triangle",
+      "Circle"
+    ],
+    "answer": 1,
+    "source": "pac_ST_KAIDO_RINDO.bin actor 007c02e4 and Shichigoro dialogue uid007c03fa.msg; yact_all.par 910201.par, 910202.par; item_s.bin and ougi.bin"
+  },
+  {
+    "nativeIndex": 14,
+    "id": "orochi-bladestorm",
+    "name": "Certain Death - Orochi Bladestorm",
+    "window": "7-5",
+    "time": "Day or evening",
+    "picture": "Crude Painting of Yamata no Orochi",
+    "steps": [
+      "Complete substory #53, Terakoya Homework - The Letter, to obtain the painting.",
+      "Listen to the picture storyteller with the children on Shijo Avenue in Rakugai, in front of the shrine.",
+      "Follow the timed prompts in this order: Cross → Triangle → Circle → Triangle → Cross → Square. Then choose option 2, about the fierce attacks of Yamata no Orochi."
+    ],
+    "qte": [
+      "Cross",
+      "Triangle",
+      "Circle",
+      "Triangle",
+      "Cross",
+      "Square"
+    ],
+    "answer": 2,
+    "source": "pac_ST_RAKUGAICHO.bin actor 007c0431; reward dialogue uid007c033d.msg; yact_all.par 911500.par, 911501.par; item_s.bin and ougi.bin"
+  },
+  {
+    "nativeIndex": 5,
+    "id": "snatching-kite",
+    "name": "Hidden Blade - Snatching Kite",
+    "window": "7-6",
+    "time": "Day or evening",
+    "picture": "Painting of a Kite",
+    "steps": [
+      "After learning Oblivious Cat, check Shichigoro’s Chapter 7 letter and collect the painting at Gion Inari Shrine.",
+      "Speak to the man looking skyward on Mountain Path.",
+      "Follow the timed prompts in this order: Circle → Triangle. Then choose option 2, about the kite snatching a sparrow from its flock."
+    ],
+    "qte": [
+      "Circle",
+      "Triangle"
+    ],
+    "answer": 2,
+    "source": "pac_ST_KAIDO_YAMA.bin actor 007c01b1 and Shichigoro dialogue uid007c03fa.msg; yact_all.par 910600.par, 910601.par; item_s.bin and ougi.bin"
+  },
+  {
+    "nativeIndex": 15,
+    "id": "dragon-catch",
+    "name": "Fang and Blade - Dragon Catch",
+    "window": "8-1",
+    "time": "Day or evening",
+    "picture": "Painting of a Coiled Dragon",
+    "steps": [
+      "Speak to the retired man sitting at the Riverside Tea House to get the painting.",
+      "At the same tea house, interact with the children at the marked spot and watch their scuffle.",
+      "Follow the timed prompts in this order: Triangle. Then choose option 3, about the accidental flip against the opponent."
+    ],
+    "qte": [
+      "Triangle"
+    ],
+    "answer": 3,
+    "source": "pac_ST_KAWA_JNT.bin actors 007c01b7/007c01b8 and dialogue uid00b0005b.msg; yact_all.par 911600.par, 911601.par; item_s.bin and ougi.bin"
+  },
+  {
+    "nativeIndex": 13,
+    "id": "enmei",
+    "name": "Certain Death - Enmei",
+    "window": "9-1",
+    "time": "Day or evening",
+    "picture": "Painting of a Meditating Monk",
+    "steps": [
+      "Learn Two Bones first. In substory #75, Enkiridera, agree to stay after the first fight and finish the rest of the request to get the painting. Leaving early forfeits it.",
+      "Return to the dog on Yamato Alley South in Rakugai.",
+      "Follow the timed prompts in this order: Circle → Triangle → Square → Cross → Circle. Then choose option 3, about the circle helping maintain an unwavering state of mind."
+    ],
+    "qte": [
+      "Circle",
+      "Triangle",
+      "Square",
+      "Cross",
+      "Circle"
+    ],
+    "answer": 3,
+    "source": "pac_ST_RAKUGAICHO.bin actor 007c02e7 and reward dialogue uid0102024b.msg; yact_all.par 911400.par, 911401.par; item_s.bin and ougi.bin"
+  },
+  {
+    "nativeIndex": 7,
+    "id": "fly-swatter",
+    "name": "Heavy Sword - Fly Swatter",
+    "window": "9-5",
+    "time": "Day or evening",
+    "picture": "Diagram of a Fly's Anatomy",
+    "steps": [
+      "In substory #85, Gion’s Famous Doctor 2, agree to search for Ken-san and complete the request to get the diagram.",
+      "Examine the seated man behind Nonaka Tea House on the Yoshioka Dojo approach.",
+      "Follow the timed prompts in this order: 3 × Triangle. Then choose option 3, about the fly being crushed against a wall."
+    ],
+    "qte": [
+      "Triangle",
+      "Triangle",
+      "Triangle"
+    ],
+    "answer": 3,
+    "source": "pac_ST_YOSHIOKA_JNT.bin actor 007c02e6; reward dialogue uid0102006c.msg; yact_all.par 910800.par, 910801.par; item_s.bin and ougi.bin"
+  },
+  {
+    "nativeIndex": 11,
+    "id": "devastating-duo",
+    "name": "Certain Death - Devastating Duo",
+    "window": "9-5",
+    "time": "Day or evening",
+    "picture": "Painting of a Running Bull",
+    "steps": [
+      "Reach level 25 and speak to Shichigoro at Gion Inari Shrine. He can give you the painting after the Sleeping Cat painting, before the countryside event opens.",
+      "Speak to the farmer at the marked spot on Countryside Path.",
+      "Follow the timed prompts in this order: Cross → Triangle. Then choose option 2, about the bull’s horns pinning the man in place."
+    ],
+    "qte": [
+      "Cross",
+      "Triangle"
+    ],
+    "answer": 2,
+    "source": "pac_ST_KAIDO_TANBO.bin actor 007c00cb and Shichigoro dialogue uid007c03fa.msg; yact_all.par 911200.par, 911201.par; item_s.bin and ougi.bin"
+  },
+  {
+    "nativeIndex": 6,
+    "id": "raging-bull",
+    "name": "Hidden Blade - Raging Bull",
+    "window": "9-5",
+    "time": "Day or evening",
+    "picture": "Painting of a Rampaging Bull",
+    "steps": [
+      "Learn Devastating Duo, then collect this second bull painting from Shichigoro at Gion Inari Shrine in Chapter 9.",
+      "Go to the farmer at the Raging Bull pin on Countryside Path and watch the bull charge.",
+      "Follow the timed prompts in this order: 3 × Triangle. Then choose option 3, about the bull building up power before charging."
+    ],
+    "qte": [
+      "Triangle",
+      "Triangle",
+      "Triangle"
+    ],
+    "answer": 3,
+    "source": "pac_ST_KAIDO_TANBO.bin actor 007c01b3 and Shichigoro dialogue uid007c03fa.msg; yact_all.par 910700.par, 910701.par; item_s.bin and ougi.bin"
+  },
+  {
+    "nativeIndex": 16,
+    "id": "illusory-wolf",
+    "name": "Fang and Blade - Illusory Wolf",
+    "window": "9-8",
+    "time": "Night",
+    "picture": "Painting of a Wolf",
+    "steps": [
+      "Reach level 30 and get the painting from Shichigoro at Gion Inari Shrine after the Running Bull painting.",
+      "At night, use the observation spot on Cliffside Path to look up at the wolf.",
+      "Follow the timed prompts in this order: 8 × Cross. Then choose option 2, about the wolf’s movement and power as it scales the cliff."
+    ],
+    "qte": [
+      "Cross",
+      "Cross",
+      "Cross",
+      "Cross",
+      "Cross",
+      "Cross",
+      "Cross",
+      "Cross"
+    ],
+    "answer": 2,
+    "source": "pac_ST_KAIDO_TANI.bin actor 007c0438 and Shichigoro dialogue uid007c03fa.msg; yact_all.par 911702.par; item_s.bin and ougi.bin"
+  }
+]

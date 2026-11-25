@@ -1,0 +1,871 @@
+[
+  {
+    "id": "A-1-story",
+    "code": "A-1",
+    "area": "st_gion",
+    "x": 0.827398,
+    "y": 0.502642,
+    "roof": false,
+    "lookUp": false,
+    "indoor": false,
+    "nativeIndex": 1,
+    "world": [
+      54.0,
+      2.0,
+      -3.26
+    ],
+    "source": "wdr.par/pac_ST_GION.bin 067c0074",
+    "variant": "story"
+  },
+  {
+    "id": "A-1-tour",
+    "code": "A-1",
+    "area": "st_hatsumeika",
+    "x": 0.224966,
+    "y": 0.855577,
+    "roof": false,
+    "lookUp": false,
+    "indoor": true,
+    "nativeIndex": 1,
+    "world": [
+      -3.76,
+      0.76,
+      4.28
+    ],
+    "source": "wdr.par/pac_ST_HATSUMEIKA.bin 06b001f8",
+    "variant": "kyoto-tour"
+  },
+  {
+    "id": "A-2",
+    "code": "A-2",
+    "area": "st_gion",
+    "x": 0.16365,
+    "y": 0.818765,
+    "roof": true,
+    "lookUp": true,
+    "indoor": false,
+    "nativeIndex": 2,
+    "world": [
+      -50.43,
+      0.12,
+      53.63
+    ],
+    "source": "wdr.par/pac_ST_GION.bin 06b0006b"
+  },
+  {
+    "id": "A-3",
+    "code": "A-3",
+    "area": "st_gion",
+    "x": 0.405429,
+    "y": 0.89267,
+    "roof": false,
+    "lookUp": false,
+    "indoor": false,
+    "nativeIndex": 3,
+    "world": [
+      -12.39,
+      0.05,
+      66.93
+    ],
+    "source": "wdr.par/pac_ST_GION.bin 06b000aa"
+  },
+  {
+    "id": "A-4",
+    "code": "A-4",
+    "area": "st_gion",
+    "x": 0.547293,
+    "y": 0.649118,
+    "roof": false,
+    "lookUp": false,
+    "indoor": false,
+    "nativeIndex": 4,
+    "world": [
+      9.93,
+      0.0,
+      23.1
+    ],
+    "source": "wdr.par/pac_ST_GION.bin 06b000b1"
+  },
+  {
+    "id": "A-5",
+    "code": "A-5",
+    "area": "st_rakugaicho",
+    "x": 0.823915,
+    "y": 0.227434,
+    "roof": false,
+    "lookUp": false,
+    "indoor": false,
+    "nativeIndex": 5,
+    "world": [
+      101.41,
+      0.52,
+      6.25
+    ],
+    "source": "wdr.par/pac_ST_RAKUGAICHO.bin 06b000cd"
+  },
+  {
+    "id": "B-1",
+    "code": "B-1",
+    "area": "st_kajiya",
+    "x": 0.562584,
+    "y": 0.393238,
+    "roof": false,
+    "lookUp": false,
+    "indoor": true,
+    "nativeIndex": 6,
+    "world": [
+      5.59,
+      0.15,
+      2.69
+    ],
+    "source": "wdr.par/pac_ST_KAJIYA.bin 06b000de"
+  },
+  {
+    "id": "B-2",
+    "code": "B-2",
+    "area": "st_kaido_rindo",
+    "x": 0.639756,
+    "y": 0.449471,
+    "roof": false,
+    "lookUp": false,
+    "indoor": false,
+    "nativeIndex": 7,
+    "world": [
+      106.23,
+      -0.03,
+      59.45
+    ],
+    "source": "wdr.par/pac_ST_KAIDO_RINDO.bin 06b000c3"
+  },
+  {
+    "id": "B-3",
+    "code": "B-3",
+    "area": "st_yorozuya_02",
+    "x": 0.756446,
+    "y": 0.858726,
+    "roof": false,
+    "lookUp": false,
+    "indoor": true,
+    "nativeIndex": 8,
+    "world": [
+      1.98,
+      1.04,
+      5.16
+    ],
+    "source": "wdr.par/pac_ST_YOROZUYA_02.bin 06b000d5"
+  },
+  {
+    "id": "B-4",
+    "code": "B-4",
+    "area": "st_gion",
+    "x": 0.264964,
+    "y": 0.590327,
+    "roof": false,
+    "lookUp": false,
+    "indoor": false,
+    "nativeIndex": 9,
+    "world": [
+      -34.49,
+      0.4,
+      12.52
+    ],
+    "source": "wdr.par/pac_ST_GION.bin 06b000b2"
+  },
+  {
+    "id": "B-5",
+    "code": "B-5",
+    "area": "st_annai",
+    "x": 0.048925,
+    "y": 0.959008,
+    "roof": false,
+    "lookUp": false,
+    "indoor": true,
+    "nativeIndex": 10,
+    "world": [
+      -4.25,
+      0.01,
+      3.52
+    ],
+    "source": "wdr.par/pac_ST_ANNAI.bin 06b000df"
+  },
+  {
+    "id": "C-1",
+    "code": "C-1",
+    "area": "st_kaido_rakunai",
+    "x": 0.925863,
+    "y": 0.743913,
+    "roof": false,
+    "lookUp": false,
+    "indoor": false,
+    "nativeIndex": 11,
+    "world": [
+      65.83,
+      0.56,
+      3.22
+    ],
+    "source": "wdr.par/pac_ST_KAIDO_RAKUNAI.bin 06b000bc"
+  },
+  {
+    "id": "C-2",
+    "code": "C-2",
+    "area": "st_kaido_tanbo",
+    "x": 0.507278,
+    "y": 0.704768,
+    "roof": false,
+    "lookUp": false,
+    "indoor": false,
+    "nativeIndex": 12,
+    "world": [
+      0.08,
+      0.0,
+      -0.79
+    ],
+    "source": "wdr.par/pac_ST_KAIDO_TANBO.bin 06b000c6"
+  },
+  {
+    "id": "C-3",
+    "code": "C-3",
+    "area": "st_rakugaicho",
+    "x": 0.264507,
+    "y": 0.585437,
+    "roof": false,
+    "lookUp": false,
+    "indoor": false,
+    "nativeIndex": 13,
+    "world": [
+      -26.84,
+      0.38,
+      58.47
+    ],
+    "source": "wdr.par/pac_ST_RAKUGAICHO.bin 06b000cf"
+  },
+  {
+    "id": "C-4",
+    "code": "C-4",
+    "area": "st_kaido_tani",
+    "x": 0.618054,
+    "y": 0.389781,
+    "roof": false,
+    "lookUp": false,
+    "indoor": false,
+    "nativeIndex": 14,
+    "world": [
+      14.97,
+      -0.14,
+      -9.56
+    ],
+    "source": "wdr.par/pac_ST_KAIDO_TANI.bin 06b000cc"
+  },
+  {
+    "id": "C-5",
+    "code": "C-5",
+    "area": "st_kaido_yama",
+    "x": 0.287817,
+    "y": 0.671375,
+    "roof": false,
+    "lookUp": false,
+    "indoor": false,
+    "nativeIndex": 15,
+    "world": [
+      9.47,
+      1.99,
+      -64.65
+    ],
+    "source": "wdr.par/pac_ST_KAIDO_YAMA.bin 06b000c9"
+  },
+  {
+    "id": "D-1",
+    "code": "D-1",
+    "area": "st_gion",
+    "x": 0.312506,
+    "y": 0.686737,
+    "roof": false,
+    "lookUp": false,
+    "indoor": false,
+    "nativeIndex": 16,
+    "world": [
+      -27.01,
+      0.0,
+      29.87
+    ],
+    "source": "wdr.par/pac_ST_GION.bin 06b000b3"
+  },
+  {
+    "id": "D-2",
+    "code": "D-2",
+    "area": "st_gion",
+    "x": 0.647017,
+    "y": 0.435905,
+    "roof": true,
+    "lookUp": true,
+    "indoor": false,
+    "nativeIndex": 17,
+    "world": [
+      25.62,
+      2.77,
+      -15.27
+    ],
+    "source": "wdr.par/pac_ST_GION.bin 06b000b4"
+  },
+  {
+    "id": "D-3",
+    "code": "D-3",
+    "area": "st_kaido_kawa",
+    "x": 0.626113,
+    "y": 0.09379,
+    "roof": false,
+    "lookUp": false,
+    "indoor": false,
+    "nativeIndex": 18,
+    "world": [
+      -8.72,
+      0.41,
+      7.42
+    ],
+    "source": "wdr.par/pac_ST_KAIDO_KAWA.bin 06b000d8"
+  },
+  {
+    "id": "D-4",
+    "code": "D-4",
+    "area": "st_rakugaicho",
+    "x": 0.427595,
+    "y": 0.128027,
+    "roof": false,
+    "lookUp": false,
+    "indoor": false,
+    "nativeIndex": 19,
+    "world": [
+      10.55,
+      0.85,
+      -8.25
+    ],
+    "source": "wdr.par/pac_ST_RAKUGAICHO.bin 06b000d0"
+  },
+  {
+    "id": "D-5",
+    "code": "D-5",
+    "area": "st_kaido_rakunai",
+    "x": 0.422545,
+    "y": 0.707674,
+    "roof": false,
+    "lookUp": true,
+    "indoor": false,
+    "nativeIndex": 20,
+    "world": [
+      -38.22,
+      2.13,
+      -0.55
+    ],
+    "source": "wdr.par/pac_ST_KAIDO_RAKUNAI.bin 06b000bf"
+  },
+  {
+    "id": "E-1",
+    "code": "E-1",
+    "area": "st_kaido_yama",
+    "x": 0.606879,
+    "y": 0.748572,
+    "roof": false,
+    "lookUp": false,
+    "indoor": false,
+    "nativeIndex": 21,
+    "world": [
+      27.04,
+      0.0,
+      -48.59
+    ],
+    "source": "wdr.par/pac_ST_KAIDO_YAMA.bin 06b000ca"
+  },
+  {
+    "id": "E-2",
+    "code": "E-2",
+    "area": "st_gion",
+    "x": 0.581996,
+    "y": 0.383116,
+    "roof": false,
+    "lookUp": false,
+    "indoor": false,
+    "nativeIndex": 22,
+    "world": [
+      15.39,
+      0.07,
+      -24.77
+    ],
+    "source": "wdr.par/pac_ST_GION.bin 06b000b5"
+  },
+  {
+    "id": "E-3",
+    "code": "E-3",
+    "area": "st_rakugaicho",
+    "x": 0.085235,
+    "y": 0.796318,
+    "roof": false,
+    "lookUp": true,
+    "indoor": false,
+    "nativeIndex": 23,
+    "world": [
+      -67.94,
+      1.92,
+      89.23
+    ],
+    "source": "wdr.par/pac_ST_RAKUGAICHO.bin 06b000d2"
+  },
+  {
+    "id": "E-4",
+    "code": "E-4",
+    "area": "st_kaido_rakunai",
+    "x": 0.42922,
+    "y": 0.330289,
+    "roof": false,
+    "lookUp": false,
+    "indoor": false,
+    "nativeIndex": 24,
+    "world": [
+      -36.84,
+      0.01,
+      -39.81
+    ],
+    "source": "wdr.par/pac_ST_KAIDO_RAKUNAI.bin 06b000bd"
+  },
+  {
+    "id": "E-5",
+    "code": "E-5",
+    "area": "st_yoshioka_jnt",
+    "x": 0.432971,
+    "y": 0.6145,
+    "roof": false,
+    "lookUp": true,
+    "indoor": false,
+    "nativeIndex": 25,
+    "world": [
+      -9.22,
+      1.0,
+      12.97
+    ],
+    "source": "wdr.par/pac_ST_YOSHIOKA_JNT.bin 06b000db"
+  },
+  {
+    "id": "F-1",
+    "code": "F-1",
+    "area": "st_kaido_rindo",
+    "x": 0.129888,
+    "y": 0.457043,
+    "roof": false,
+    "lookUp": false,
+    "indoor": false,
+    "nativeIndex": 26,
+    "world": [
+      16.62,
+      0.75,
+      2.5
+    ],
+    "source": "wdr.par/pac_ST_KAIDO_RINDO.bin 06b000c2"
+  },
+  {
+    "id": "F-2",
+    "code": "F-2",
+    "area": "st_sakaya_02",
+    "x": 0.45613,
+    "y": 0.433127,
+    "roof": false,
+    "lookUp": false,
+    "indoor": true,
+    "nativeIndex": 27,
+    "world": [
+      1.77,
+      0.0,
+      -3.19
+    ],
+    "source": "wdr.par/pac_ST_SAKAYA_02.bin 06b000d4"
+  },
+  {
+    "id": "F-3",
+    "code": "F-3",
+    "area": "st_gion",
+    "x": 0.083947,
+    "y": 0.174015,
+    "roof": false,
+    "lookUp": false,
+    "indoor": false,
+    "nativeIndex": 28,
+    "world": [
+      -62.97,
+      0.35,
+      -62.4
+    ],
+    "source": "wdr.par/pac_ST_GION.bin 06b000bb"
+  },
+  {
+    "id": "F-4",
+    "code": "F-4",
+    "area": "st_kaido_tanbo",
+    "x": 0.94247,
+    "y": 0.71948,
+    "roof": false,
+    "lookUp": false,
+    "indoor": false,
+    "nativeIndex": 29,
+    "world": [
+      87.3,
+      0.0,
+      0.94
+    ],
+    "source": "wdr.par/pac_ST_KAIDO_TANBO.bin 06b000c4"
+  },
+  {
+    "id": "F-5",
+    "code": "F-5",
+    "area": "st_kiyomizu_jnt",
+    "x": 0.707036,
+    "y": 0.405519,
+    "roof": false,
+    "lookUp": false,
+    "indoor": false,
+    "nativeIndex": 30,
+    "world": [
+      -175.88,
+      -12.31,
+      -82.23
+    ],
+    "source": "wdr.par/pac_ST_KIYOMIZU_JNT.bin 06b000da"
+  },
+  {
+    "id": "G-1",
+    "code": "G-1",
+    "area": "st_kaido_rakunai",
+    "x": 0.084081,
+    "y": 0.783901,
+    "roof": false,
+    "lookUp": false,
+    "indoor": false,
+    "nativeIndex": 31,
+    "world": [
+      -108.19,
+      0.6,
+      7.38
+    ],
+    "source": "wdr.par/pac_ST_KAIDO_RAKUNAI.bin 06b000c0"
+  },
+  {
+    "id": "G-2",
+    "code": "G-2",
+    "area": "st_gion",
+    "x": 0.39348,
+    "y": 0.721133,
+    "roof": true,
+    "lookUp": true,
+    "indoor": false,
+    "nativeIndex": 32,
+    "world": [
+      -14.27,
+      3.05,
+      36.06
+    ],
+    "source": "wdr.par/pac_ST_GION.bin 06b000b8"
+  },
+  {
+    "id": "G-3",
+    "code": "G-3",
+    "area": "st_kaido_rindo",
+    "x": 0.839221,
+    "y": 0.42908,
+    "roof": false,
+    "lookUp": false,
+    "indoor": false,
+    "nativeIndex": 33,
+    "world": [
+      141.63,
+      1.74,
+      81.19
+    ],
+    "source": "wdr.par/pac_ST_KAIDO_RINDO.bin 06b000c1"
+  },
+  {
+    "id": "G-4",
+    "code": "G-4",
+    "area": "st_gion",
+    "x": 0.730661,
+    "y": 0.655786,
+    "roof": true,
+    "lookUp": true,
+    "indoor": false,
+    "nativeIndex": 34,
+    "world": [
+      38.78,
+      3.04,
+      24.3
+    ],
+    "source": "wdr.par/pac_ST_GION.bin 06b000ba"
+  },
+  {
+    "id": "G-5",
+    "code": "G-5",
+    "area": "st_kaido_tani",
+    "x": 0.492744,
+    "y": 0.822241,
+    "roof": false,
+    "lookUp": false,
+    "indoor": false,
+    "nativeIndex": 35,
+    "world": [
+      -2.26,
+      0.07,
+      48.9
+    ],
+    "source": "wdr.par/pac_ST_KAIDO_TANI.bin 06b000cb"
+  },
+  {
+    "id": "H-1",
+    "code": "H-1",
+    "area": "st_rakugaicho",
+    "x": 0.393531,
+    "y": 0.49412,
+    "roof": false,
+    "lookUp": false,
+    "indoor": false,
+    "nativeIndex": 36,
+    "world": [
+      2.74,
+      1.25,
+      45.15
+    ],
+    "source": "wdr.par/pac_ST_RAKUGAICHO.bin 06b000ce"
+  },
+  {
+    "id": "H-2",
+    "code": "H-2",
+    "area": "st_kaido_rakunai",
+    "x": 0.200369,
+    "y": 0.732186,
+    "roof": false,
+    "lookUp": false,
+    "indoor": false,
+    "nativeIndex": 37,
+    "world": [
+      -84.15,
+      0.0,
+      2.0
+    ],
+    "source": "wdr.par/pac_ST_KAIDO_RAKUNAI.bin 06b000be"
+  },
+  {
+    "id": "H-3",
+    "code": "H-3",
+    "area": "st_kawa_jnt",
+    "x": 0.709987,
+    "y": 0.555319,
+    "roof": false,
+    "lookUp": false,
+    "indoor": false,
+    "nativeIndex": 38,
+    "world": [
+      25.29,
+      1.25,
+      22.2
+    ],
+    "source": "wdr.par/pac_ST_KAWA_JNT.bin 06b000dc"
+  },
+  {
+    "id": "H-4",
+    "code": "H-4",
+    "area": "st_kaido_tanbo",
+    "x": 0.75102,
+    "y": 0.614623,
+    "roof": false,
+    "lookUp": false,
+    "indoor": false,
+    "nativeIndex": 39,
+    "world": [
+      48.93,
+      -0.2,
+      -11.39
+    ],
+    "source": "wdr.par/pac_ST_KAIDO_TANBO.bin 06b000c5"
+  },
+  {
+    "id": "H-5",
+    "code": "H-5",
+    "area": "st_kaido_kawa",
+    "x": 0.531607,
+    "y": 0.546106,
+    "roof": false,
+    "lookUp": false,
+    "indoor": false,
+    "nativeIndex": 40,
+    "world": [
+      -17.37,
+      0.05,
+      98.83
+    ],
+    "source": "wdr.par/pac_ST_KAIDO_KAWA.bin 06b000d7"
+  },
+  {
+    "id": "I-1",
+    "code": "I-1",
+    "area": "st_kaido_tanbo",
+    "x": 0.1848,
+    "y": 0.586644,
+    "roof": false,
+    "lookUp": false,
+    "indoor": false,
+    "nativeIndex": 41,
+    "world": [
+      -64.55,
+      0.4,
+      -14.68
+    ],
+    "source": "wdr.par/pac_ST_KAIDO_TANBO.bin 06b000c7"
+  },
+  {
+    "id": "I-2",
+    "code": "I-2",
+    "area": "st_gion",
+    "x": 0.937736,
+    "y": 0.854607,
+    "roof": true,
+    "lookUp": true,
+    "indoor": false,
+    "nativeIndex": 42,
+    "world": [
+      71.36,
+      3.1,
+      60.08
+    ],
+    "source": "wdr.par/pac_ST_GION.bin 06b000b7"
+  },
+  {
+    "id": "I-3",
+    "code": "I-3",
+    "area": "st_kaido_yama",
+    "x": 0.600523,
+    "y": 0.210018,
+    "roof": false,
+    "lookUp": false,
+    "indoor": false,
+    "nativeIndex": 43,
+    "world": [
+      26.69,
+      2.07,
+      -160.63
+    ],
+    "source": "wdr.par/pac_ST_KAIDO_YAMA.bin 06b000c8"
+  },
+  {
+    "id": "I-4",
+    "code": "I-4",
+    "area": "st_rakugaicho",
+    "x": 0.357763,
+    "y": 0.389914,
+    "roof": false,
+    "lookUp": false,
+    "indoor": false,
+    "nativeIndex": 44,
+    "world": [
+      -5.46,
+      0.38,
+      29.95
+    ],
+    "source": "wdr.par/pac_ST_RAKUGAICHO.bin 06b000d1"
+  },
+  {
+    "id": "I-5",
+    "code": "I-5",
+    "area": "st_sushiya",
+    "x": 0.272055,
+    "y": 0.237553,
+    "roof": false,
+    "lookUp": false,
+    "indoor": true,
+    "nativeIndex": 45,
+    "world": [
+      -2.69,
+      0.0,
+      -5.92
+    ],
+    "source": "wdr.par/pac_ST_SUSHIYA.bin 06b000dd"
+  },
+  {
+    "id": "J-1",
+    "code": "J-1",
+    "area": "st_gion",
+    "x": 0.152146,
+    "y": 0.684403,
+    "roof": false,
+    "lookUp": false,
+    "indoor": false,
+    "nativeIndex": 46,
+    "world": [
+      -52.24,
+      -2.99,
+      29.45
+    ],
+    "source": "wdr.par/pac_ST_GION.bin 06b000b6"
+  },
+  {
+    "id": "J-2",
+    "code": "J-2",
+    "area": "st_sakaya_01",
+    "x": 0.698384,
+    "y": 0.312803,
+    "roof": false,
+    "lookUp": false,
+    "indoor": true,
+    "nativeIndex": 47,
+    "world": [
+      -1.5,
+      0.82,
+      -0.99
+    ],
+    "source": "wdr.par/pac_ST_SAKAYA_01.bin 06b000d3"
+  },
+  {
+    "id": "J-3",
+    "code": "J-3",
+    "area": "st_gion",
+    "x": 0.932334,
+    "y": 0.526091,
+    "roof": false,
+    "lookUp": true,
+    "indoor": false,
+    "nativeIndex": 48,
+    "world": [
+      70.51,
+      3.19,
+      0.96
+    ],
+    "source": "wdr.par/pac_ST_GION.bin 06b000b9"
+  },
+  {
+    "id": "J-4",
+    "code": "J-4",
+    "area": "st_kusuriya_02",
+    "x": 0.208169,
+    "y": 0.468493,
+    "roof": false,
+    "lookUp": false,
+    "indoor": true,
+    "nativeIndex": 49,
+    "world": [
+      -4.36,
+      1.09,
+      -0.24
+    ],
+    "source": "wdr.par/pac_ST_KUSURIYA_02.bin 06b000d6"
+  },
+  {
+    "id": "J-5",
+    "code": "J-5",
+    "area": "st_hozoin",
+    "x": 0.511694,
+    "y": 0.655304,
+    "roof": false,
+    "lookUp": false,
+    "indoor": false,
+    "nativeIndex": 50,
+    "world": [
+      0.24,
+      0.0,
+      30.52
+    ],
+    "source": "wdr.par/pac_ST_HOZOIN.bin 06b000d9"
+  }
+]
