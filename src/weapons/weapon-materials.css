@@ -1,0 +1,73 @@
+.weapon-materials { container: forging / inline-size; margin-block: 2.5rem; padding-block-start: 1.5rem; border-block-start: 1px solid var(--line); }
+.forging-heading { display: grid; grid-template-columns: auto minmax(0, 1fr) minmax(0, auto); align-items: baseline; gap: .35rem .65rem; padding-block: 1rem; cursor: pointer; }
+.forging-heading::before { content: ''; inline-size: .45rem; block-size: .45rem; margin-inline: .15rem .35rem; border-inline-end: 1.5px solid currentColor; border-block-end: 1.5px solid currentColor; transform: rotate(-45deg); align-self: center; flex: 0 0 auto; }
+.forging-catalog[open] > .forging-heading::before { transform: rotate(45deg); }
+.forging-heading:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.forging-heading h3 { margin: 0; font: 500 1.85rem/1.2 'Instrument Serif', Georgia, serif; letter-spacing: 0; }
+.forging-heading > small { min-inline-size: 0; color: var(--muted); font-size: .8125rem; text-align: end; overflow-wrap: anywhere; }
+.forging-catalog-body { padding-block-end: 1rem; }
+.weapon-materials .forging-intro { max-inline-size: 70ch; margin-block: .65rem 1.25rem; }
+.forging-filters { display: grid; grid-template-columns: minmax(0, 1.8fr) minmax(0, 1fr) minmax(0, 1fr); gap: .75rem; }
+.forging-filters > label { display: grid; align-content: end; gap: .25rem; min-inline-size: 0; font-size: .8125rem; font-weight: 650; }
+.forging-filters :is(input, select) { inline-size: 100%; min-inline-size: 0; min-block-size: 2.75rem; padding: .55rem .65rem; border: 1px solid #aaa391; border-radius: .25rem; background: var(--paper); color: var(--ink); font-size: .9375rem; font-weight: 400; caret-color: var(--accent); }
+.forging-filters :is(input, select):focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.forging-list-status { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .5rem; min-block-size: 2.75rem; margin-block: .5rem; color: var(--muted); font-size: .8125rem; }
+.forging-list-status p { margin: 0; }
+.forging-list-actions { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem 1rem; }
+.forging-owned-toggle { display: inline-flex; align-items: center; gap: .4rem; min-block-size: 2.75rem; color: var(--ink); cursor: pointer; }
+.forging-owned-toggle input { margin: 0; accent-color: var(--accent); }
+.forging-owned-toggle input:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.forging-reset { padding: .45rem .2rem; border: 0; background: transparent; color: var(--accent); text-decoration: underline; text-underline-offset: .18em; cursor: pointer; }
+.forging-material-list { list-style: none; margin: 0; padding: 0; }
+.forging-material-list > .forging-material-row { display: grid; grid-template-columns: minmax(0, .95fr) minmax(0, 1.2fr); gap: 2rem; margin: 0; padding-block: 1.5rem; border-block-start: 1px solid var(--line); scroll-margin-block: 1.5rem; font-size: .9375rem; line-height: 1.5; }
+.forging-material-row:target { background: var(--tint); outline: .65rem solid var(--tint); }
+.forging-material-row:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
+.forging-material-title { display: flex; align-items: center; gap: .75rem; min-block-size: 3.5rem; }
+.forging-material-title img { inline-size: 3.5rem; block-size: 3.5rem; object-fit: contain; flex: 0 0 auto; }
+.forging-material-title h4 { margin: 0; font: 650 1.0625rem/1.35 'Source Sans 3', 'Segoe UI', sans-serif; overflow-wrap: anywhere; }
+.forging-ownership { display: flex; align-items: center; flex-wrap: wrap; gap: .2rem .35rem; margin-block: .4rem .65rem; font-size: .8125rem; font-variant-numeric: tabular-nums; color: var(--muted); }
+.forging-ownership[data-owned='true'] { color: #28523d; }
+.forging-ownership > span { flex-basis: 100%; color: var(--muted); }
+.forging-ownership svg { inline-size: 1rem; block-size: 1rem; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.forging-save-note { max-inline-size: 75ch; color: var(--muted); font-size: .8125rem; font-variant-numeric: tabular-nums; }
+.weapon-materials .forging-native-description { margin-block: .65rem; color: var(--muted); white-space: pre-line; overflow-wrap: anywhere; }
+.forging-uses { margin-block-start: .75rem; }
+.forging-uses summary { inline-size: fit-content; padding-block: .45rem; color: var(--accent); cursor: pointer; font-size: .875rem; }
+.forging-uses ul { margin: .4rem 0 0; padding-inline-start: 1.2rem; }
+.forging-uses li { padding-block: .25rem; }
+.forging-uses li > span { margin-inline-start: .5rem; color: var(--muted); font-size: .875rem; white-space: nowrap; }
+.forging-material-sources { margin: .25rem 0 0; min-inline-size: 0; }
+.forging-source-group + .forging-source-group { margin-block-start: 1rem; }
+.forging-source-group dt { display: flex; align-items: center; gap: .45rem; font-weight: 650; font-size: .8125rem; }
+.forging-source-group dt svg { flex: 0 0 auto; }
+.forging-source-group dd { margin: .4rem 0 0; }
+.forging-source-group ul { list-style: none; margin: 0; padding: 0; }
+.forging-source-group li + li { margin-block-start: .75rem; }
+.forging-source-group li > :is(a, strong) { font-weight: 600; }
+.forging-source-group li > :is(span, small) { display: block; }
+.forging-source-group small { color: var(--muted); font-size: .8125rem; }
+.forging-source-links { margin-block-start: .3rem; font-size: .875rem; }
+.forging-area-link-note { color: var(--muted); font-size: .8125rem; font-weight: 400; }
+.layout .weapon-materials .forging-material-sources a[href^="#quest-map"] { display: inline; min-inline-size: 0; min-block-size: 0; padding: 0; border: 0; border-radius: 0; background: transparent; box-shadow: none; color: var(--accent); font-size: inherit; line-height: inherit; text-align: start; font-weight: 600; }
+.layout .weapon-materials .forging-material-sources a[href^="#quest-map"]:is(:hover, [aria-current]) { background: transparent; color: var(--accent); text-decoration: underline; }
+.weapon-materials .forging-reference-note { margin-block-start: 1.25rem; max-inline-size: 75ch; color: var(--muted); font-size: .8125rem; }
+.weapon-materials .forging-empty { margin-block: 1rem; padding-block: 1.5rem; border-block: 1px solid var(--line); }
+@media (max-width: 700px) {
+  .forging-heading > small { grid-column: 2 / -1; text-align: start; }
+  .forging-filters { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .forging-search { grid-column: 1 / -1; }
+  .forging-material-list > .forging-material-row { grid-template-columns: minmax(0, 1fr); gap: 1rem; padding-block: 1.25rem; }
+  .forging-material-sources { margin: 0; }
+}
+@container forging (max-width: 44rem) {
+  .forging-filters { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .forging-search { grid-column: 1 / -1; }
+}
+@container forging (max-width: 32rem) {
+  .forging-filters { grid-template-columns: minmax(0, 1fr); }
+  .forging-search { grid-column: auto; }
+}
+@media (max-width: 480px) {
+  .forging-filters { grid-template-columns: minmax(0, 1fr); }
+  .forging-search { grid-column: auto; }
+}

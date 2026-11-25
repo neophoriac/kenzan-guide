@@ -1,0 +1,6 @@
+.guide-scroll-top { position:fixed; z-index:35; inset:auto 1rem calc(var(--completion-dock-reserve, 0px) + 1rem) auto; display:grid; place-items:center; width:2.75rem; height:2.75rem; border:0; border-radius:.5rem; color:var(--ink); background:var(--tint); box-shadow:0 .25rem .75rem rgb(20 23 22 / .15); cursor:pointer; }
+.guide-scroll-top[hidden] { display:none; }
+.guide-scroll-top svg { width:1.25rem; height:1.25rem; }
+.guide-scroll-top:is(:hover, :focus-visible) { color:var(--accent); background:var(--paper); }
+@media(min-width:48.01rem) { .guide-scroll-top { inset-inline-end:20.5rem; inset-block-end:1rem; } }
+@media print { .guide-scroll-top { display:none; } }

@@ -1,15 +1,38 @@
 [![Like a Dragon: Kenzan! Side Content Guide](assets/kenzan-readme-hero.png)](https://neophoriac.github.io/kenzan-guide/)
 
-**Version 0.1.** This fan guide covers all 140 substories in the English translation of Like a Dragon: Kenzan! It includes detailed walkthroughs, an interactive map, story objective filters, and checklists for training, inventions, collectibles, and the Hozoin Coliseum, plus yūjo routes and Revelations.
+**Version 0.2.0.** A fan guide for the English translation of Like a Dragon: Kenzan!, covering all 140 substories and the game's side content.
 
-This fan project was vibe-coded with AI assistance while playing the English translation.
+This project was built with AI assistance while playing the English translation.
 
 - [Open the live Side Content Guide](https://neophoriac.github.io/kenzan-guide/)
 - [Open the interactive map](https://neophoriac.github.io/kenzan-guide/#quest-map)
+- [Open the standalone map](https://neophoriac.github.io/kenzan-guide/map.html)
 
-Progress and story objective preferences are saved in the browser.
+## Features
 
-Import a Kenzan `USERDATA` save file or choose your RPCS3 `savedata` folder in desktop Chrome or Edge to enable read-only auto-sync. The guide processes save files on your device and stores the resulting checkmarks in your browser.
+- Substory walkthroughs, story objective filters, quest milestones and guide-wide search.
+- An interactive Atlas map with quest steps, location photos, filters and links to individual places.
+- Completion checklists for training, inventions, collectibles, yūjo routes, Revelations and the Hozoin Coliseum.
+- All 227 completion weapons, with upgrade trees, comparisons, owned weapons and recipe requirement checks.
+- References for items, valuables, forging materials and turtle food, with uses, sources and in-game artwork.
+- My turtles, saved minigame records and an experimental turtle race planner. Planner results are estimates, so real races can differ.
+- Mobile controls and two tracker themes.
+
+## Import your progress
+
+Import a Kenzan `USERDATA` file from RPCS3, or connect its `savedata` folder for read-only auto-sync in desktop Chrome or Edge.
+
+For a save copied from a PS3, choose the save folder or its ZIP containing both `USERDATA` and `PARAM.PFD`. The guide decrypts it locally and shows a progress preview. PS3 decryption requires HTTPS or localhost.
+
+The guide never uploads or edits your save files. Progress and story objective preferences are stored in your browser. **Apply checkmarks** adds recognised completion marks while keeping your existing checks.
+
+## Read the source
+
+The [guide source](src/), [turtle race simulator](simulation/turtle-racing/) and build entry points are available for reading. [SOURCE.md](SOURCE.md) explains the layout and which build inputs are separate from this snapshot.
+
+The [PS3 import notes](docs/research/save-import-ps3.md) walk through validation, key unwrapping and decryption, including the separate PFD-header checks used by a full PFD verifier.
+
+## Credits
 
 Thanks to the guide authors and translation team who made this project possible.
 

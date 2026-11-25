@@ -1,0 +1,242 @@
+/* Trophy Cabinet */
+:is([data-completion-theme="trophy"], [data-completion-theme="hanafuda"]) .completion-overview {
+  grid-template-areas: 'score' 'cards' 'meter';
+  grid-template-rows: auto auto auto;
+}
+:is([data-completion-theme="trophy"], [data-completion-theme="hanafuda"]) .completion-overview:has(.completion-highlights[hidden]) {
+  grid-template-areas: 'score' 'meter';
+  grid-template-rows: auto auto;
+}
+:is([data-completion-theme="trophy"], [data-completion-theme="hanafuda"]) .completion-progress { display: contents; }
+:is([data-completion-theme="trophy"], [data-completion-theme="hanafuda"]) .completion-summary { grid-area: score; }
+:is([data-completion-theme="trophy"], [data-completion-theme="hanafuda"]) .completion-highlights { grid-area: cards; }
+:is([data-completion-theme="trophy"], [data-completion-theme="hanafuda"]) .completion-progress-track { grid-area: meter; }
+[data-completion-theme="trophy"] #completion-percent {
+  font-family: 'Source Sans 3', system-ui, sans-serif;
+  font-weight: 800;
+}
+[data-completion-theme="trophy"] #completion-bar { height: .48rem; }
+[data-completion-theme="trophy"] .completion-highlights,
+[data-completion-theme="hanafuda"] .completion-highlights,
+[data-completion-theme="bounty"] .completion-highlights {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 7.6rem), 1fr));
+}
+[data-completion-theme="trophy"] :is(.completion-highlight, .completion-category) {
+  background: #21182d;
+  border-radius: var(--ct-radius);
+}
+[data-completion-theme="trophy"] .completion-highlight,
+[data-completion-theme="hanafuda"] .completion-highlight,
+[data-completion-theme="bounty"] .completion-highlight {
+  height: 100%;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  text-align: center;
+}
+[data-completion-theme="trophy"] .completion-highlight { border: 1px solid #7d6084; padding: .55rem .45rem; }
+[data-completion-theme="trophy"] :is(.completion-highlight, .completion-category)::before {
+  content: '✧' / '';
+  display: grid;
+  place-items: center;
+  width: 2.1rem;
+  aspect-ratio: 1;
+  clip-path: polygon(50% 0%, 87% 14%, 100% 55%, 75% 93%, 25% 93%, 0 55%, 13% 14%);
+  background: linear-gradient(145deg, #ecc08a, #a2704e);
+  color: #382237;
+  font: 1.3rem/1 Georgia, serif;
+}
+[data-completion-theme="trophy"] .completion-highlights > li:nth-child(3n + 2) .completion-highlight::before,
+[data-completion-theme="trophy"] .completion-category:nth-child(3n + 2)::before {
+  content: '✦' / '';
+  background: linear-gradient(145deg, #fff1b0, #c79452);
+}
+[data-completion-theme="trophy"] .completion-highlights > li:nth-child(3n) .completion-highlight::before,
+[data-completion-theme="trophy"] .completion-category:nth-child(3n)::before {
+  content: '✷' / '';
+  background: linear-gradient(145deg, #e0d6f3, #9c84b0);
+}
+[data-completion-theme="trophy"] .completion-category::before { grid-column: 1 / -1; margin: .1rem auto .15rem; }
+
+/* Hanafuda */
+[data-completion-theme="hanafuda"] .completion-summary { justify-content: end; text-align: end; }
+[data-completion-theme="hanafuda"] #completion-percent { font-family: 'Source Sans 3', system-ui, sans-serif; }
+[data-completion-theme="hanafuda"] #completion-bar { height: .3rem; border-radius: 0; }
+[data-completion-theme="hanafuda"] :is(.completion-highlight, .completion-category) {
+  --ct-tile: #f3dbc1;
+  --ct-accent: #713741;
+  --ct-muted: #68404a;
+  --ct-line: #180e14;
+  background: var(--ct-tile);
+  border: 2px solid var(--ct-line);
+  color: #36232a;
+  padding: .35rem .4rem .45rem;
+  box-shadow: 0 .1rem .25rem #170b128c;
+}
+[data-completion-theme="hanafuda"] .completion-category:has(> input:not(:checked)) {
+  background: #dfc5af;
+  border-color: #563a46;
+}
+[data-completion-theme="hanafuda"] :is(.completion-highlight, .completion-category)::before {
+  content: '✿' / '';
+  display: grid;
+  grid-column: 1 / -1;
+  place-items: center;
+  align-self: start;
+  width: 100%;
+  height: 2.35rem;
+  background: #913849;
+  color: #fac1c7;
+  font: 1.55rem/1 Georgia, serif;
+  margin-block-end: .22rem;
+}
+[data-completion-theme="hanafuda"] .completion-highlights > li:nth-child(3n + 2) .completion-highlight::before,
+[data-completion-theme="hanafuda"] .completion-category:nth-child(3n + 2)::before {
+  content: '☾' / '';
+  background: #2e3246;
+  color: #ffe8b7;
+}
+[data-completion-theme="hanafuda"] .completion-highlights > li:nth-child(3n) .completion-highlight::before,
+[data-completion-theme="hanafuda"] .completion-category:nth-child(3n)::before {
+  content: '❧' / '';
+  background: #35443c;
+  color: #d9e6b8;
+}
+[data-completion-theme="hanafuda"] .completion-highlight:focus-visible,
+[data-completion-theme="hanafuda"] .completion-category :focus-visible { outline-color: #713741; }
+
+/* Blade Gauge */
+[data-completion-theme="blade"] :is(#completion-title, #completion-percent) { font-weight: 800; }
+[data-completion-theme="blade"] .completion-progress {
+  background: transparent;
+  border: 0;
+  padding: .3rem 0;
+}
+[data-completion-theme="blade"] .completion-progress-track { padding-inline-start: 2.6rem; }
+[data-completion-theme="blade"] .completion-progress-track::before {
+  content: '';
+  position: absolute;
+  inset: -.15rem auto -.15rem 0;
+  width: 2.45rem;
+  background: repeating-linear-gradient(135deg, #c7a56d 0 2px, #594c3c 2px 5px);
+  border-inline-end: .3rem solid #ddc591;
+  border-radius: .15rem;
+}
+[data-completion-theme="blade"] #completion-bar { clip-path: polygon(0 0, 100% 0, calc(100% - 1.8rem) 100%, 0 100%); }
+[data-completion-theme="blade"] .completion-highlight { border-block-end: 1px solid var(--ct-line); }
+[data-completion-theme="blade"] .completion-category {
+  border-width: 0 0 1px;
+  border-radius: 0;
+  background: transparent;
+}
+[data-completion-theme="blade"] .completion-category-meter { display: block; }
+[data-completion-theme="blade"] :is(.completion-highlight, .completion-category) .completion-category-meter {
+  height: .125rem;
+  --ct-fill: #b8eadf;
+}
+
+/* Celestial HUD */
+[data-completion-theme="celestial"] {
+  --ct-display: 'Arial Narrow', 'Source Sans 3', sans-serif;
+}
+[data-completion-theme="celestial"] #completion-title { font-weight: 750; }
+[data-completion-theme="celestial"] .completion-overview {
+  grid-template-columns: minmax(8.3rem, 1fr) minmax(0, 1.4fr);
+  align-items: center;
+  gap: clamp(.75rem, 4cqi, 2rem);
+  padding: .8rem min(5cqi, 2rem);
+  border: 1px solid var(--ct-line);
+  border-radius: var(--ct-radius);
+  background: radial-gradient(ellipse at 22% 52%, #392b59, #191830 72%);
+}
+[data-completion-theme="celestial"] .completion-progress {
+  width: min(100%, 11.2rem);
+  aspect-ratio: 1;
+  margin: auto;
+  display: grid;
+  place-items: center;
+  padding: 1.1rem;
+  border: 0;
+  background: transparent;
+}
+[data-completion-theme="celestial"] .completion-overview:not(:has(.completion-highlights:not([hidden]))) .completion-progress { grid-column: 1 / -1; }
+[data-completion-theme="celestial"] .completion-progress::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  border-radius: 50%;
+  background: conic-gradient(#a5eee2 0, #cdb4ff var(--ct-progress, 0%), #414565 0);
+  mask-image: radial-gradient(closest-side, transparent 84%, #000 86% 99%, transparent);
+}
+[data-completion-theme="celestial"] .completion-summary { display: grid; justify-items: center; gap: .2rem; text-align: center; }
+[data-completion-theme="celestial"] #completion-percent {
+  font-size: clamp(1.55rem, 6cqi, 3rem);
+  font-weight: 800;
+}
+[data-completion-theme="celestial"] #completion-total { font-size: .81rem; max-width: 11ch; line-height: 1.2; }
+[data-completion-theme="celestial"] .completion-progress-track {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+[data-completion-theme="celestial"] .completion-highlights li + li { border-block-start: 1px solid #5b527a; }
+[data-completion-theme="celestial"] .completion-category { border-radius: .16rem; box-shadow: inset 0 .1rem #66528163; }
+
+/* Bounty Board */
+[data-completion-theme="bounty"] .completion-progress {
+  --ct-accent: #833729;
+  --ct-muted: #4f3527;
+  --ct-track: #b89a72;
+  margin: .15rem .25rem .35rem;
+  background: linear-gradient(115deg, #f6e5c4, #dab587);
+  box-shadow: inset 0 0 1.1rem #a36a3880;
+  border-radius: 0;
+  border-color: transparent;
+  transform: rotate(-.8deg);
+  clip-path: polygon(0 .45rem, .55rem 0, 100% .05rem, 100% calc(100% - .5rem), calc(100% - .5rem) 100%, 0 100%);
+}
+[data-completion-theme="bounty"] #completion-bar { height: .33rem; border-radius: 0; }
+[data-completion-theme="bounty"] .completion-highlights { padding: .18rem .25rem; }
+[data-completion-theme="bounty"] .completion-highlight {
+  --ct-muted: #733b2c;
+  position: relative;
+  padding: .75rem .48rem .4rem;
+  color: #39281f;
+  background: #f0dfbd;
+  box-shadow: .12rem .12rem .35rem #21150f85;
+  transform: rotate(.8deg);
+}
+[data-completion-theme="bounty"] .completion-highlight::before {
+  content: '';
+  position: absolute;
+  inset: .19rem .3rem auto auto;
+  width: .28rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #854305;
+  box-shadow: .05rem .05rem .1rem #4a2818a0;
+}
+[data-completion-theme="bounty"] .completion-highlights li:nth-child(2) .completion-highlight { background: #e9cda5; transform: rotate(-1deg); }
+[data-completion-theme="bounty"] .completion-highlight-count { font-weight: 750; }
+[data-completion-theme="bounty"] .completion-category:has(> input:checked),
+[data-completion-theme="bounty"] .completion-category:has(> input:indeterminate) {
+  --ct-tile: #ead1aa;
+  --ct-accent: #713226;
+  --ct-muted: #493223;
+  color: #38231b;
+  background: linear-gradient(112deg, #f2e1c1, var(--ct-tile));
+  box-shadow: 0 .1rem .2rem #20120c8c;
+}
+
+@container completion (width < 27rem) {
+  [data-completion-theme="celestial"] .completion-overview {
+    grid-template-columns: 1fr;
+    gap: .5rem;
+  }
+  [data-completion-theme="celestial"] .completion-progress { width: 7.8rem; }
+}
+@media (forced-colors: active) {
+  [data-completion-theme="celestial"] .completion-progress-track { position: static; inline-size: 100%; block-size: auto; clip-path: none; }
+}

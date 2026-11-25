@@ -1,0 +1,626 @@
+{
+  "version": "0.2.0",
+  "scope": "readable-guide-source",
+  "files": [
+    {
+      "file": "build_atlas.cjs",
+      "bytes": 31268,
+      "sha256": "68b9b4b0ab28c638e56fd476e53d0c26e1fedbe18661ef99258d512c412bd512"
+    },
+    {
+      "file": "build_guide.cjs",
+      "bytes": 78100,
+      "sha256": "af4ab51ba8ab0c34baeae6401c6e8fb7af8915fbf783d59eb6ceafc469fcd23d"
+    },
+    {
+      "file": "build_pages.cjs",
+      "bytes": 28514,
+      "sha256": "3265a52c7eb0371d043c6ed7d830bcbd2ef427454b0c1fc13b602962f5ce5552"
+    },
+    {
+      "file": "content/README.public.md",
+      "bytes": 3135,
+      "sha256": "5892e85b223f4605cb3ef16fcedb7e6ac2fcfcb2076e106fb5c26d06c04bae13"
+    },
+    {
+      "file": "docs/research/save-import-ps3.md",
+      "bytes": 7931,
+      "sha256": "f980776cfec521241e4840f28f0763069852674fb9ec46b8bbfae39f9c1f172e"
+    },
+    {
+      "file": "simulation/turtle-racing/race-actor-geometry.cjs",
+      "bytes": 9819,
+      "sha256": "9dc6906fe59240eae30726841f27068799dc691511996ade0f0ac805936b2b04"
+    },
+    {
+      "file": "simulation/turtle-racing/race-ambience.cjs",
+      "bytes": 6333,
+      "sha256": "89058ab807574e265b163c255ed94cd256533aaca2857964ec64593fd7d570c7"
+    },
+    {
+      "file": "simulation/turtle-racing/race-autonomous-presentation.cjs",
+      "bytes": 7264,
+      "sha256": "132c143a70f9577ed0eec2a6b41982339773c1716193b96c9933acc7d170b39c"
+    },
+    {
+      "file": "simulation/turtle-racing/race-camera-motion.cjs",
+      "bytes": 20943,
+      "sha256": "5148371f3b725eb7bc5c44a2491110fa5289128be88fd2c31994dd6d26a89951"
+    },
+    {
+      "file": "simulation/turtle-racing/race-camera-optics.cjs",
+      "bytes": 1324,
+      "sha256": "339caed410084293bd1f472b364cabe050df65ea331963cad37bad0f39dd29f4"
+    },
+    {
+      "file": "simulation/turtle-racing/race-capture-start.cjs",
+      "bytes": 3462,
+      "sha256": "96622454d6c2f30c8d6e34000b968fbd8d08540c328b16d604a9407415d025d3"
+    },
+    {
+      "file": "simulation/turtle-racing/race-commentary-finish.cjs",
+      "bytes": 4015,
+      "sha256": "04166498d8584bc0cf9b820b1b2ea997a8efa2bdf5f6da19dee202686152af4f"
+    },
+    {
+      "file": "simulation/turtle-racing/race-commentary-standings-late.cjs",
+      "bytes": 5534,
+      "sha256": "d5b2570b722e3895a2c3b252819396d358b871b51b2e627855b184641c3cb2fd"
+    },
+    {
+      "file": "simulation/turtle-racing/race-commentary-state.cjs",
+      "bytes": 18009,
+      "sha256": "3553a2f917c94bb2774dea26803c2588ced60c8ead20c5898692efc1f2f8922f"
+    },
+    {
+      "file": "simulation/turtle-racing/race-crowd-state.cjs",
+      "bytes": 9576,
+      "sha256": "6ea1995f05b70e645e2202a37aaaabdfa432a784301b1cb23503e89daf40dbec"
+    },
+    {
+      "file": "simulation/turtle-racing/race-data.cjs",
+      "bytes": 9015,
+      "sha256": "eee007cdad733c2f19235a4f247f7c86209e7e712ed9e86366d6f14a84805b76"
+    },
+    {
+      "file": "simulation/turtle-racing/race-engine.cjs",
+      "bytes": 21396,
+      "sha256": "ee99d6f41eb825c2a5e8f0de329c464fc3bfb713be1a272aa8d5c0a4ef0af91e"
+    },
+    {
+      "file": "simulation/turtle-racing/race-model-noise.cjs",
+      "bytes": 5383,
+      "sha256": "a3d7ddfcc8773d525dd0a0587f43eccb63d642184110c511848b6d6ecad25c9b"
+    },
+    {
+      "file": "simulation/turtle-racing/race-model-scheduler.cjs",
+      "bytes": 6226,
+      "sha256": "2da284a075280577071188d878a1d665fd454d97804aec3848bab250c3fc5033"
+    },
+    {
+      "file": "simulation/turtle-racing/race-motion-clock.cjs",
+      "bytes": 2138,
+      "sha256": "0abe98baabebe1c69d24a4e274b00959b198a3c8ff21c1f6d923df3341ee17e5"
+    },
+    {
+      "file": "simulation/turtle-racing/race-planner-openings.json",
+      "bytes": 94849,
+      "sha256": "edf06bd35cf4cb2639853fe1d4c36f6964ba6de03264ef35ea1ec256ff808119"
+    },
+    {
+      "file": "simulation/turtle-racing/race-planner-root-curves.json",
+      "bytes": 332655,
+      "sha256": "8faef67e204a0bf58d89305f5dae8660d87ed91fadc061832924aa8c645a5724"
+    },
+    {
+      "file": "simulation/turtle-racing/race-planner-scenes.cjs",
+      "bytes": 7068,
+      "sha256": "556efd21a1e3cc54b7fc15bb07d21df51e49218d64d8f9de214824d53621268d"
+    },
+    {
+      "file": "simulation/turtle-racing/race-presentation.cjs",
+      "bytes": 5756,
+      "sha256": "0438b3ef35130c8cc5a14e000c59e0490fb69ba9bf9c00b6b63e500b7762a99c"
+    },
+    {
+      "file": "simulation/turtle-racing/race-racer-motion.cjs",
+      "bytes": 5654,
+      "sha256": "384336e6a2da13692caa81cd23f4a12d3e30820158626126304d58797a465633"
+    },
+    {
+      "file": "simulation/turtle-racing/race-scene-camera.cjs",
+      "bytes": 4848,
+      "sha256": "750e9c8604b461d48f43cdabb7276f08b387edd63ddc4a214da3131353db9bcb"
+    },
+    {
+      "file": "simulation/turtle-racing/race-scene-geometry.cjs",
+      "bytes": 7540,
+      "sha256": "b5d9f838dd059d8b97561b528f59ffa12e36f4d8a00ddfc2c24230519715345a"
+    },
+    {
+      "file": "simulation/turtle-racing/README.md",
+      "bytes": 906,
+      "sha256": "6449cf3cdc05b34c3a82bccaafdd8f9506ab68ee448695c51ea0385679021d85"
+    },
+    {
+      "file": "SOURCE.md",
+      "bytes": 3217,
+      "sha256": "75ddb83cc7568581c3e299a15209cd9d6ae0844bd65f219ab4e1c358893397c7"
+    },
+    {
+      "file": "src/activities/collectible-guide.cjs",
+      "bytes": 5544,
+      "sha256": "2e1ca8604a27fac4ba048ab51c19e7332e1f88186b87956aaf26b71e2d9b36e4"
+    },
+    {
+      "file": "src/activities/locker-key-guide.cjs",
+      "bytes": 5348,
+      "sha256": "5a8ab3d9c1b67a9e4ccb48210e5d5a2c54f1d9087d44efe4900c36a401449e47"
+    },
+    {
+      "file": "src/activities/revelation-guide.cjs",
+      "bytes": 11841,
+      "sha256": "ada6dae6a7093c19cf5d036800bf527a462ca6eef7e939264fe54494eb85170a"
+    },
+    {
+      "file": "src/activities/training-guide.cjs",
+      "bytes": 14032,
+      "sha256": "cb7c1c5bca48eed09b9cd7f45c3874d382683178b551debe2a6e724ca90e71af"
+    },
+    {
+      "file": "src/activities/training-records.js",
+      "bytes": 2964,
+      "sha256": "fec07977c734741df6b2d6d9b1d4073193d21a5828c0feba4eeae3558b0e672a"
+    },
+    {
+      "file": "src/activities/waterfall-scores.js",
+      "bytes": 2742,
+      "sha256": "f6e9bcba62d516d209ee1fc73007315dc065d786e20dce2b37227494e162697a"
+    },
+    {
+      "file": "src/activities/yujo-guide.cjs",
+      "bytes": 31314,
+      "sha256": "bffce04f031c38af8f643183f9ea354b927fbb837960b82f17eb755b46b4a169"
+    },
+    {
+      "file": "src/guide/browser-storage.css",
+      "bytes": 2031,
+      "sha256": "ebe80e03df5c3bbf6454d3ab68ba6e8f16771e0ecdc79767e06500151a3ecff5"
+    },
+    {
+      "file": "src/guide/browser-storage.js",
+      "bytes": 5444,
+      "sha256": "b68a9e21a321639c1bbce1d2d7c9da75c360bb53edce4346c757bb7397e24fe3"
+    },
+    {
+      "file": "src/guide/checklist-tables.cjs",
+      "bytes": 1921,
+      "sha256": "bc4acd8d5c24c4f7b6eb3cd555a6effe4f0cf06302606b4222ff3e82ee840fc1"
+    },
+    {
+      "file": "src/guide/checklist-tables.js",
+      "bytes": 7177,
+      "sha256": "8cbd13bc5ba6d91d41a23bd22ac65cbb99506a402da93c254cdc56c397808645"
+    },
+    {
+      "file": "src/guide/completion-controls.cjs",
+      "bytes": 1218,
+      "sha256": "711b77c693d190d7cc17d77f61e9069e3a420f7b65db0468ecfe7c1cf659d0de"
+    },
+    {
+      "file": "src/guide/font-styles.cjs",
+      "bytes": 2175,
+      "sha256": "d8b59ab48e127d9fd862e193f7efcfa8fe42e38ac4bed21d10c259d8ed2fd1dd"
+    },
+    {
+      "file": "src/guide/guide-item-links.cjs",
+      "bytes": 7900,
+      "sha256": "55ac8ff76c0e5b5e9f6d8db9ce3d1e10e27a1a28b8a67de44ff9aaf274216af9"
+    },
+    {
+      "file": "src/guide/guide-map-urls.js",
+      "bytes": 2141,
+      "sha256": "df00a14da995f107bf77cd4c4f347715f71b73b0e7a879054dcb5d15436c6028"
+    },
+    {
+      "file": "src/guide/guide-search.css",
+      "bytes": 2812,
+      "sha256": "e13c83b162316ed1162fa6c60290181949f909b152c04a684279f49f8a94d7fd"
+    },
+    {
+      "file": "src/guide/guide-search.js",
+      "bytes": 8973,
+      "sha256": "d63e4b08651ca38fc567e540c0d3c77c20e61ea2717b56599cffb9d31e5b6159"
+    },
+    {
+      "file": "src/guide/guide-tables.css",
+      "bytes": 6960,
+      "sha256": "fe0985a30795f53a96756060ca8d86ee9f2c779c7fcf45cdfdba50cb6ead701a"
+    },
+    {
+      "file": "src/guide/guide-tables.js",
+      "bytes": 11130,
+      "sha256": "fdb02e25251e9f3a0b554c54c44441897f798bbd0cbabbe6bdf050a5c0eaac6c"
+    },
+    {
+      "file": "src/guide/guide.css",
+      "bytes": 58014,
+      "sha256": "cc150ecf78219c423a11d38d70ecc339a0483bc6d608387e7e4a1afb4668c065"
+    },
+    {
+      "file": "src/guide/guide.js",
+      "bytes": 25346,
+      "sha256": "3f6864ade8e7238750b3cb8c7b5df2a49aed5b98a0ae8fa5fe7cb0afce1dcf22"
+    },
+    {
+      "file": "src/guide/lazy-details.cjs",
+      "bytes": 2273,
+      "sha256": "4ce929a780f77647c28c065d9c10e01bbf4e7d8a8ded74b0650b178809b77b9f"
+    },
+    {
+      "file": "src/guide/native-text.cjs",
+      "bytes": 2609,
+      "sha256": "37f56ebe3f6ad466e52805c18c180928ffa96f3963ccb5e0343c46ee1875d7c3"
+    },
+    {
+      "file": "src/guide/navigation-targets.cjs",
+      "bytes": 1566,
+      "sha256": "e4493eda682b55c03c9d558001567ad1df3fb5616eef56fc93cd8ddfcf64ba61"
+    },
+    {
+      "file": "src/guide/public-script-assets.cjs",
+      "bytes": 1417,
+      "sha256": "397a25b2682a7b74e9c8cc27a78b9210212605774cd3e48a2b0da7a7b54c2efd"
+    },
+    {
+      "file": "src/guide/public-source.cjs",
+      "bytes": 3079,
+      "sha256": "6545a3b469f612732d14e3c7059a796455733be18da5f0ccd4090cb1160aa42b"
+    },
+    {
+      "file": "src/guide/script-assets.cjs",
+      "bytes": 825,
+      "sha256": "b3ec9b76e923ce0686442cd515a6a2428499c7f8159e27dd78f5854548073613"
+    },
+    {
+      "file": "src/guide/scroll-to-top.css",
+      "bytes": 673,
+      "sha256": "df086c6991351b5cfc1bb007148c357529237e9ee8e1175ec5fc1e57a88d3569"
+    },
+    {
+      "file": "src/guide/scroll-to-top.js",
+      "bytes": 1500,
+      "sha256": "681fd53855b2ae36b9a0f2129ee9c5655f3a6cef886cbb689b51c1771d115301"
+    },
+    {
+      "file": "src/guide/search-data.cjs",
+      "bytes": 8287,
+      "sha256": "484dd0d6ffec7276f3b12cc3660b53c1849fb3a6d328b4b35eae8f3ae6c42913"
+    },
+    {
+      "file": "src/guide/search-index.js",
+      "bytes": 3431,
+      "sha256": "2e71f6cc32174d5b766b6df3a0fe6e7ed6dcd0b48b210dfa9dafa9929b20db45"
+    },
+    {
+      "file": "src/guide/search-worker-client.js",
+      "bytes": 2523,
+      "sha256": "04177177784f80bd94cc1bb55a0e5546aaa13d8eecfa0dd2a2de0168b57fe8d7"
+    },
+    {
+      "file": "src/guide/search-worker.js",
+      "bytes": 627,
+      "sha256": "20410af1ac4bacd2e291f60bcfd472531985ceea1c0909bd138ce0c478ac5cf4"
+    },
+    {
+      "file": "src/guide/view-assets.cjs",
+      "bytes": 1497,
+      "sha256": "7b15b0a16b52cd6b76aa7722b11c72f412cb12d584a87007666279fef0aa81cd"
+    },
+    {
+      "file": "src/guide/view-router.js",
+      "bytes": 6433,
+      "sha256": "09ee1e7137ade654cfdf93cc048be83ca0a84ef9e8f6cfb109a184ed05c4002f"
+    },
+    {
+      "file": "src/inventory/inventory-reference.cjs",
+      "bytes": 15147,
+      "sha256": "0b21352a4e488d9ce2f326aa5de20b70d1f161807b059a8c623c167177e27b44"
+    },
+    {
+      "file": "src/inventory/inventory-reference.css",
+      "bytes": 5443,
+      "sha256": "508fcaf14b0778a5d82512c96c7d611f6d2094cd3473cb5cdb0e173c7c9cb80c"
+    },
+    {
+      "file": "src/inventory/inventory-reference.js",
+      "bytes": 8026,
+      "sha256": "52c173804fabdf05819991da7c1019baee6463e4569bf75b95d0901b89c9baa9"
+    },
+    {
+      "file": "src/inventory/restaurant-guide.cjs",
+      "bytes": 3595,
+      "sha256": "e7464228523b0967f57db1683714cdec917d5dca5264dc495d684b5d290cba65"
+    },
+    {
+      "file": "src/map/atlas-facts.cjs",
+      "bytes": 310784,
+      "sha256": "af29dfe0b53eee063f55bbf53cc76de99188fe17d81992bf0faf40d66abcd31b"
+    },
+    {
+      "file": "src/map/atlas-previews.cjs",
+      "bytes": 58995,
+      "sha256": "db71c992acb807366db5e81d28c95a74310abba1da683042b69d56b375255b2e"
+    },
+    {
+      "file": "src/map/guide-artwork-names.cjs",
+      "bytes": 5940,
+      "sha256": "b55cdf3f604fb171876d3d8e539f113660d5b0a83ceb2f7814429cae5ce29a0d"
+    },
+    {
+      "file": "src/map/guide-map-links.cjs",
+      "bytes": 11697,
+      "sha256": "a6a0e7283367efff20166273e62d0f5d599d80e6f7551d9bb7c4e91e63b63c6c"
+    },
+    {
+      "file": "src/map/kenzan-atlas-adapter.js",
+      "bytes": 5208,
+      "sha256": "031d1bcfc86855201a98aa42d3bb53542baeb3a6e1347d4132939d3c82017095"
+    },
+    {
+      "file": "src/map/location-photos.cjs",
+      "bytes": 2452,
+      "sha256": "ac8c338c9f4e6a3c79cf358597accf7698f462520170ac691e9b6bab91756cf7"
+    },
+    {
+      "file": "src/map/quest-map.cjs",
+      "bytes": 5469,
+      "sha256": "d93854c1db0cf61947e0347cb701200f29dc8dc9877e3c7ba97df3b2ad2d43d0"
+    },
+    {
+      "file": "src/paths.cjs",
+      "bytes": 258,
+      "sha256": "dfe96ac6a2198185e81169cae36d4666de263d21fc7560e757437affa13bcdf2"
+    },
+    {
+      "file": "src/quests/quest-milestones.cjs",
+      "bytes": 12273,
+      "sha256": "09bd3da9f4fb4e754eaaf4326d7627e3b7add49eff1814085e8fcca1e6e3dfd7"
+    },
+    {
+      "file": "src/quests/quest-milestones.css",
+      "bytes": 2199,
+      "sha256": "98e87f4a0373bdf745d525474302973b560a966c69149245d097a8acac6b6139"
+    },
+    {
+      "file": "src/quests/quest-milestones.js",
+      "bytes": 22810,
+      "sha256": "cd425855f9cae95152dcb40ed432cd633e75e37e50a6c1a5937205d8ab15970d"
+    },
+    {
+      "file": "src/quests/quest-story.js",
+      "bytes": 1821,
+      "sha256": "b032f89ebdcaed44ef823b3b187fda9a32aa9df7631fb139546562533e3839d0"
+    },
+    {
+      "file": "src/quests/quest-walkthroughs.js",
+      "bytes": 2463,
+      "sha256": "621232c708360c17e9e81e80153fda348a402a1e31c79f8359dfb77412a03a56"
+    },
+    {
+      "file": "src/quests/story-availability.cjs",
+      "bytes": 5788,
+      "sha256": "acb84c56887292dfb6ca286f17d99a67120fcd54f7217ccf40933a9328a985e6"
+    },
+    {
+      "file": "src/quests/story-follow.js",
+      "bytes": 3766,
+      "sha256": "2ba4bd5b52059b550ce97e866d1468923a8320e8040b8c3175b071e4ad230ca6"
+    },
+    {
+      "file": "src/tracker/completion-classic-theme.css",
+      "bytes": 7121,
+      "sha256": "fff7ade86c888240da99516f2fb4d0c12947895036834b3bf80ef4ab3d243540"
+    },
+    {
+      "file": "src/tracker/completion-collectible-themes.css",
+      "bytes": 10098,
+      "sha256": "facda49d928091fe63c8bdb6603d513eb522e3e9e7a53627f918924e814fbd6c"
+    },
+    {
+      "file": "src/tracker/completion-drawer.css",
+      "bytes": 4265,
+      "sha256": "0ea2f9a506bde0edff79b37f80531765cd6ba8b1bf64a854b586e56f33729fff"
+    },
+    {
+      "file": "src/tracker/completion-drawer.js",
+      "bytes": 15761,
+      "sha256": "6497a2992c02eb8f9f1d5a356695ccf03ce87d08ba4695554be58225c919ff42"
+    },
+    {
+      "file": "src/tracker/completion-game-themes.css",
+      "bytes": 27966,
+      "sha256": "d78f034c7ff13872d840e70b2df60d85e23565091c783f7381c8083a14c41b0a"
+    },
+    {
+      "file": "src/tracker/completion-guide-theme.css",
+      "bytes": 17802,
+      "sha256": "36fefb9339d16d3b9ac94d385a25b03b03ec427af82aa0fdf78e932266f50b16"
+    },
+    {
+      "file": "src/tracker/completion-kenzan-themes.css",
+      "bytes": 15810,
+      "sha256": "4eba221fa95423b1e3c6ca65892fb40e64423c8cb4b75ad7e6db6f8c5e393f7c"
+    },
+    {
+      "file": "src/tracker/completion-theme-picker.css",
+      "bytes": 3623,
+      "sha256": "48a64569efb11337522a378f39cdd3f317acfde790e3cbc9396edf45187aa8b1"
+    },
+    {
+      "file": "src/tracker/completion-themes.css",
+      "bytes": 11460,
+      "sha256": "81f7029c18197f7cca6262c0bea5808eac34d1c32e6ecc59fc509ff23ad39191"
+    },
+    {
+      "file": "src/tracker/completion-tracker.js",
+      "bytes": 19360,
+      "sha256": "d38cb4113ca3479bd23396ea5b793fa1c0f2e47a984ee1ccc158f2bf0e6f0822"
+    },
+    {
+      "file": "src/tracker/save-crafting.js",
+      "bytes": 3775,
+      "sha256": "881a17bc8854512af4734a7a93cbe53fd1e21fc35bffa34b33befd05f1456f0c"
+    },
+    {
+      "file": "src/tracker/save-folder-sync.js",
+      "bytes": 28448,
+      "sha256": "b18f1e6a8e207556c443379e1edc2bc537a2c616dc23e218551c4c5cbc38e553"
+    },
+    {
+      "file": "src/tracker/save-ps3-crypto.js",
+      "bytes": 6570,
+      "sha256": "c3d95000c28a6dc710d4b8edf8ad483f48adbfb4cf906b1900c36760897f25b1"
+    },
+    {
+      "file": "src/tracker/save-ps3-input.js",
+      "bytes": 13031,
+      "sha256": "0ac1d13126a9eaa124c625e324c95330cd1dffefc7ffebcf5c36c0223d1e54a3"
+    },
+    {
+      "file": "src/tracker/save-quest-milestones.js",
+      "bytes": 8797,
+      "sha256": "c4eac267870804c3ef9d02038bca305f93fa0f9a01a9dfbec87d682089335e44"
+    },
+    {
+      "file": "src/tracker/save-story.js",
+      "bytes": 3116,
+      "sha256": "ff7ceddf973a88f0e0e825d3c877afb7e7ffc53b83a5fb26072f5a2b9aad035a"
+    },
+    {
+      "file": "src/tracker/save-sync.js",
+      "bytes": 72380,
+      "sha256": "24cff94f65746d3989e76f1ff80194f054313ad837ced7ade6ce1becce469c7e"
+    },
+    {
+      "file": "src/tracker/save-training-records.js",
+      "bytes": 4804,
+      "sha256": "77d38b1b6c6c2cacff4035815eb848647aacdc350a8c1881ddeeb26e112ea09e"
+    },
+    {
+      "file": "src/tracker/save-turtle-bucket.js",
+      "bytes": 6880,
+      "sha256": "cc51763766c430a0c45d930a1fb0992101c0d7110bef339b3caea5fe2921b435"
+    },
+    {
+      "file": "src/tracker/save-turtle-races.js",
+      "bytes": 5103,
+      "sha256": "9fca7c2b896b6bb53b6bf09001e9a7e92ea627adc7677d25df1ad89cf1d1776e"
+    },
+    {
+      "file": "src/tracker/save-waterfall.js",
+      "bytes": 1840,
+      "sha256": "9ef8e23311ed3f46d8442242bbec89b022d4f6f83bf68088e52131f99b70b789"
+    },
+    {
+      "file": "src/tracker/side-checklists.js",
+      "bytes": 11009,
+      "sha256": "ff627849a0af31571ef3f382dcac0ebe31ce418ef49b88cec0da5941812a17af"
+    },
+    {
+      "file": "src/turtles/turtle-card-tips.js",
+      "bytes": 14198,
+      "sha256": "b250bdb08573dc3ded03642de76d33908527df3b90e3f55fa028cf1b4ec9a70c"
+    },
+    {
+      "file": "src/turtles/turtle-foods.cjs",
+      "bytes": 13843,
+      "sha256": "d461aee7cbd6a055ab54d92a62e0079cc3167c394cd716ea02fd7f0e5f86bb89"
+    },
+    {
+      "file": "src/turtles/turtle-foods.css",
+      "bytes": 5124,
+      "sha256": "53d0309265cb646828dc396dc2d29af04b9bbea589ee95048c244b54b787e9f8"
+    },
+    {
+      "file": "src/turtles/turtle-foods.js",
+      "bytes": 8074,
+      "sha256": "f5c7efa455acbe68ec4d95cf594255c527acba2554079aa45f492473c3b98ee5"
+    },
+    {
+      "file": "src/turtles/turtle-race-planner.cjs",
+      "bytes": 2493,
+      "sha256": "30ce7a1860c15f0ffe45f16516879d65811ba280dd8424067cad2fff4c4f0b17"
+    },
+    {
+      "file": "src/turtles/turtle-race-planner.js",
+      "bytes": 18044,
+      "sha256": "9ba547aebd030c511ea78de75e23ad682ccf0bf1710e503edc79d82d4869929d"
+    },
+    {
+      "file": "src/turtles/turtle-race-worker-client.js",
+      "bytes": 3755,
+      "sha256": "c6872b10502c035156856b7e37a829b25c6bc907b7771fc80e60c74794b9c442"
+    },
+    {
+      "file": "src/turtles/turtle-race-worker.js",
+      "bytes": 1002,
+      "sha256": "0ef1fed9aaf8a4d1c4a40c655dab525f09b09e606a95253d78d3528e2af08e1f"
+    },
+    {
+      "file": "src/weapons/save-weapons.js",
+      "bytes": 6796,
+      "sha256": "fac52d7aea21b1106a5c7e8aa348cb50323e61b0618cc471e3763481e76f7fa7"
+    },
+    {
+      "file": "src/weapons/weapon-materials.cjs",
+      "bytes": 8466,
+      "sha256": "e6b5e27f740d4c22906516b42740a64bb975269ffa31d6540e9c656091f7dc9a"
+    },
+    {
+      "file": "src/weapons/weapon-materials.css",
+      "bytes": 7126,
+      "sha256": "560fc230b44bbdeeebb8f4660888ac75bf71a136ff3b2e2683a228837f594731"
+    },
+    {
+      "file": "src/weapons/weapon-materials.js",
+      "bytes": 8477,
+      "sha256": "1683d43c7f97f0c36c2e67975a85ce1dbe465c4d8c8ff38b578dd381bf580d48"
+    },
+    {
+      "file": "src/weapons/weapon-pair-picker.js",
+      "bytes": 14022,
+      "sha256": "499b4f735241694d5251943663f62a206244f6cfacf0beba6cf2d2944edc3e41"
+    },
+    {
+      "file": "src/weapons/weapon-pairs.js",
+      "bytes": 2787,
+      "sha256": "dea3666387cfc66a560868ce931c4e8bf96862ba7e55daf9dedec991cb081c35"
+    },
+    {
+      "file": "src/weapons/weapon-tools.js",
+      "bytes": 19737,
+      "sha256": "153af5afc401fdc808b865c960de7bb952e39dd1b1765c8483283acf476bccd2"
+    },
+    {
+      "file": "src/weapons/weapon-tree.cjs",
+      "bytes": 12916,
+      "sha256": "d4cf9e7af6a0623e0d1173f8c27aa336fe59e929717b33ac0b86f65cccb4453e"
+    },
+    {
+      "file": "src/weapons/weapon-tree.css",
+      "bytes": 32374,
+      "sha256": "d9ca3da5b5da7274c24956317552e2f0b5ec06b048ba99b247ec26bb679ed372"
+    },
+    {
+      "file": "src/weapons/weapon-tree.js",
+      "bytes": 57863,
+      "sha256": "88fd36032f51418d1c3f9a8d72391f6ea6d4dbd3c767730882cfcd7e41010449"
+    },
+    {
+      "file": "VERSION",
+      "bytes": 6,
+      "sha256": "1f930dd1f133c1f97a94fe3acb8db34372cf4c01ffdb2b3ff4ca72f9494121e9"
+    }
+  ]
+}

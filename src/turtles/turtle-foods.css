@@ -1,0 +1,57 @@
+.turtle-foods { container: turtle-food / inline-size; padding-block-start: 0; margin-block: 1.75rem 2.5rem; border-block: 1px solid var(--line); }
+.turtle-foods > summary { display: flex; align-items: baseline; gap: .65rem; padding-block: 1rem; cursor: pointer; }
+.turtle-foods > summary::before { content: ''; inline-size: .45rem; block-size: .45rem; margin-inline: .15rem .35rem; border-inline-end: 1.5px solid currentColor; border-block-end: 1.5px solid currentColor; transform: rotate(-45deg); align-self: center; flex: 0 0 auto; }
+.turtle-foods[open] > summary::before { transform: rotate(45deg); }
+.turtle-foods > summary > span { font: 500 1.85rem/1.2 'Instrument Serif', Georgia, serif; }
+.turtle-foods > summary > small { color: var(--muted); font-size: .8125rem; margin-inline-start: auto; text-align: end; }
+.turtle-foods > summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.turtle-food-body { padding-block-end: 1rem; }
+.turtle-food-body > :is(p, details) { max-inline-size: 75ch; }
+.turtle-food-body .forging-intro { margin-block: .25rem .75rem; }
+.turtle-food-key { margin-block: .75rem; font-size: .9375rem; }
+.turtle-food-care { margin-block: .75rem; color: var(--muted); font-size: .875rem; }
+.turtle-food-rules { margin-block: .75rem 1.25rem; font-size: .875rem; }
+.turtle-food-rules > summary { cursor: pointer; color: var(--accent); inline-size: fit-content; padding-block: .45rem; }
+.turtle-food-rules p { margin-block: .65rem; }
+.turtle-food-filters { grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr) minmax(0, 1fr); padding: 4px; margin-inline: -4px; }
+.turtle-food-filters .forging-search { grid-column: auto; }
+.turtle-food-effects { align-self: start; min-inline-size: 0; }
+.turtle-food-effects table { inline-size: 100%; max-inline-size: 28rem; margin: 0; border-collapse: collapse; table-layout: fixed; font-size: .875rem; font-variant-numeric: tabular-nums; }
+.turtle-food-effects caption { text-align: start; font-size: .8125rem; font-weight: 650; padding-block-end: .5rem; }
+.turtle-food-effects :is(th, td) { padding: .35rem .4rem; border: 0; background: transparent; text-align: end; vertical-align: baseline; overflow-wrap: anywhere; }
+.turtle-food-effects :is(th, td):first-child { text-align: start; padding-inline-start: 0; }
+.turtle-food-effects thead th { color: var(--muted); font-weight: 400; font-size: .8125rem; border-block-end: 1px solid var(--line); }
+.turtle-food-effects tbody th { font-weight: 500; }
+.turtle-food-effects tbody td { font-weight: 650; }
+.turtle-food-value-label { display: none; }
+.turtle-food-gain { color: #28523d; }
+.turtle-food-loss { color: var(--accent); }
+.turtle-food-row .turtle-food-note { margin-block: .5rem 0; color: var(--muted); font-size: .8125rem; }
+.turtle-food-no-gain { margin-block: .35rem; color: var(--muted); font-size: .9375rem; }
+.turtle-food-sources > summary > span { margin-inline-start: .35rem; color: var(--muted); font-size: .75rem; }
+.turtle-food-sources small { display: block; color: var(--muted); font-size: .8125rem; }
+.turtle-food-sources li > span { white-space: normal; overflow-wrap: anywhere; }
+.turtle-food-sources .forging-material-sources { font-size: .875rem; }
+.turtle-food-sources .forging-source-group + .forging-source-group { margin-block-start: 1.25rem; }
+.layout .turtle-food-sources a[href^="#quest-map"] { display: inline; min-inline-size: 0; min-block-size: 0; padding: 0; border: 0; border-radius: 0; background: transparent; box-shadow: none; color: var(--accent); font-size: inherit; line-height: inherit; text-align: start; font-weight: 600; }
+.layout .turtle-food-sources a[href^="#quest-map"]:is(:hover, [aria-current]) { background: transparent; text-decoration: underline; }
+@container turtle-food (max-width: 44rem) {
+  .turtle-food-filters { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .turtle-food-filters .forging-search { grid-column: 1 / -1; }
+}
+@container turtle-food (max-width: 32rem) {
+  .turtle-food-filters { grid-template-columns: minmax(0, 1fr); }
+  .turtle-food-filters .forging-search { grid-column: auto; }
+  .turtle-foods .forging-material-row { grid-template-columns: minmax(0, 1fr); gap: .75rem; }
+}
+@container turtle-food (max-width: 18rem) {
+  .turtle-food-effects table { display: block; }
+  .turtle-food-effects caption { display: block; inline-size: 100%; }
+  .turtle-food-effects thead { position: absolute; inline-size: 1px; block-size: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  .turtle-food-effects tbody { display: block; }
+  .turtle-food-effects tbody tr { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .15rem .75rem; padding-block: .65rem; border-block-start: 1px solid var(--line); }
+  .turtle-food-effects tbody th { grid-column: 1 / -1; padding: 0; font-weight: 600; }
+  .turtle-food-effects tbody td { display: grid; align-content: start; gap: .15rem; padding: 0; text-align: start; }
+  .turtle-food-effects :is(th, td) { overflow-wrap: normal; }
+  .turtle-food-value-label { display: block; font-size: .8125rem; font-weight: 400; color: var(--muted); }
+}

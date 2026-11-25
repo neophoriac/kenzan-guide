@@ -1,0 +1,76 @@
+/* Reference matrices keep their context; instructional records reflow by reading space. */
+.table-wrap[data-guide-table] { container: guide-table / inline-size; position: relative; isolation: isolate; scroll-padding-block: 3.5rem 1rem; }
+.table-wrap[data-guide-table]:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.guide-table-hint { margin: .45rem .55rem; color: var(--muted); font-size: .8125rem; line-height: 1.45; }
+.table-wrap[data-table-long]:not([data-table-layout='records']) { max-block-size: min(38rem, 72svh); overflow-y: auto; overscroll-behavior: contain; }
+.table-wrap[data-table-matrix] > .guide-reference-table { min-inline-size: 36rem; }
+.guide-reference-table { --guide-record-layout: 0; border-collapse: separate; border-spacing: 0; }
+.guide-reference-table thead th { position: sticky; inset-block-start: 0; z-index: 2; background: var(--tint); box-shadow: 0 1px 0 var(--line); }
+.guide-reference-table tbody > tr > :first-child { background: var(--tint); }
+.table-wrap[data-table-pin-identity] > .guide-reference-table tbody > tr > :first-child { position: sticky; inset-inline-start: 0; z-index: 1; }
+.table-wrap[data-table-pin-identity] > .guide-reference-table thead th:first-child { inset-inline-start: 0; z-index: 3; }
+.guide-reference-table td { background: var(--paper); }
+.guide-reference-table .guide-table-number { font-variant-numeric: tabular-nums; text-align: end; }
+.guide-reference-table td.guide-table-number { white-space: nowrap; }
+.guide-reference-table td.waterfall-score { white-space: normal; min-inline-size: 10rem; }
+.waterfall-score-value, .waterfall-score-note { display: block; }
+.waterfall-score-note { margin-block-start: .2rem; color: var(--muted); font-size: .875rem; line-height: 1.45; }
+.guide-reference-table .guide-table-instructions { min-inline-size: 17rem; }
+.guide-reference-table tbody > tr { scroll-margin-block: 3.5rem 1rem; }
+.guide-table-note { caption-side: bottom; padding: .5rem .55rem; text-align: start; font-size: .8125rem; color: var(--muted); }
+.restaurant-order-identity { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); align-items: center; gap: .65rem; min-inline-size: 0; }
+.restaurant-order-identity img { display: block; inline-size: 3.5rem; block-size: 3.5rem; object-fit: contain; }
+.restaurant-order-name { min-inline-size: 0; overflow-wrap: break-word; }
+.restaurant-order-description { max-inline-size: 65ch; margin: 0; color: var(--muted); font-size: .9375rem; font-weight: 400; line-height: 1.5; white-space: pre-line; }
+[data-table-no-requirements] :is(th, td).guide-table-empty-column { display: none; }
+@container guide-table (max-width: 42rem) {
+  .table-wrap .guide-table-records { --guide-record-layout: 1; display: block; min-inline-size: 0; }
+  .restaurant-orders > caption.guide-table-note { display: block; inline-size: 100%; }
+  .guide-table-records thead { position: absolute; inline-size: 1px; block-size: 1px; margin: -1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  .guide-table-records tbody { display: block; }
+  .guide-table-records tbody > tr { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .35rem .85rem; padding: .85rem .75rem 1rem; border-block-end: 1px solid var(--line); }
+  .guide-table-records tbody > tr:last-child { border-block-end: 0; }
+  .guide-table-records tbody > tr > :is(th, td) { display: block; position: static; min-inline-size: 0; padding: .15rem 0; border: 0; text-align: start; white-space: normal; background: transparent; overflow-wrap: break-word; }
+  .guide-table-records tbody > tr > :first-child { grid-column: 1 / -1; padding-block-end: .35rem; font-size: 1rem; font-weight: 700; }
+  .guide-table-records tbody .guide-table-instructions { grid-column: 1 / -1; min-inline-size: 0; }
+  .guide-table-records tbody td::before { content: attr(data-label); content: attr(data-label) / ''; display: block; margin-block-end: .2rem; color: var(--muted); font-size: .8125rem; line-height: 1.4; font-weight: 600; }
+  .guide-table-records tbody td:first-child::before { display: none; }
+  .guide-table-records td.guide-table-number { text-align: start; white-space: normal; }
+  .guide-table-records td.waterfall-score { min-inline-size: 0; }
+  .guide-table-records .quest-check { min-block-size: 2.75rem; max-inline-size: 100%; white-space: normal; line-height: 1.3; }
+}
+@container guide-table (max-width: 18rem) {
+  .guide-table-records tbody > tr { grid-template-columns: minmax(0, 1fr); }
+}
+@container guide-table (max-width: 12rem) {
+  .restaurant-order-identity { grid-template-columns: minmax(0, 1fr); gap: .5rem; justify-items: start; }
+  .restaurant-order-identity img { inline-size: 3rem; block-size: 3rem; }
+}
+/* Weapon comparisons use complete names alongside each reading on narrow panes. */
+.weapon-tools-panel[data-weapon-pane='compare'] { container: weapon-comparison / inline-size; }
+.weapon-compare-table .weapon-compare-label { display: none; }
+@container weapon-comparison (max-width: 32rem) {
+  .weapon-compare-table { display: block; }
+  .weapon-compare-table caption { display: block; inline-size: 100%; }
+  .weapon-compare-table thead { position: absolute; inline-size: 1px; block-size: 1px; margin: -1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  .weapon-compare-table tbody, .weapon-compare-table tbody tr { display: block; }
+  .weapon-compare-table tbody tr { margin-block-end: 1rem; }
+  .weapon-compare-table tbody th { display: block; inline-size: auto; padding: .5rem .65rem; }
+  .weapon-compare-table tbody tr > th:first-child { inline-size: auto; }
+  .weapon-compare-table tbody td { display: grid; grid-template-columns: minmax(0, 1fr) max-content; align-items: start; gap: .4rem .8rem; inline-size: auto; padding: .65rem; }
+  .weapon-compare-table .weapon-compare-label { display: block; min-inline-size: 0; font-size: .875rem; line-height: 1.45; overflow-wrap: break-word; }
+  .weapon-compare-table .weapon-compare-label > span { display: block; margin-block-end: .15rem; color: var(--muted); font-size: .75rem; }
+  .weapon-compare-table .weapon-compare-reading { min-inline-size: 2.5em; text-align: end; font-weight: 650; }
+  .weapon-compare-table .weapon-compare-reading small { font-weight: 400; }
+}
+@container weapon-comparison (max-width: 18rem) {
+  .weapon-compare-table tbody td { grid-template-columns: minmax(0, 1fr); gap: .35rem; }
+  .weapon-compare-table .weapon-compare-reading { text-align: start; }
+}
+@media print {
+  .guide-table-hint { display: none; }
+  .table-wrap[data-guide-table] { max-block-size: none !important; overflow: visible; container-type: normal; }
+  .guide-reference-table thead th, .guide-reference-table tbody > tr > :first-child { position: static; box-shadow: none; }
+  .table-wrap[data-table-matrix] > .guide-reference-table { min-inline-size: 0; }
+  .weapon-tools-panel[data-weapon-pane='compare'] { container-type: normal; }
+}

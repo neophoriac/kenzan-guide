@@ -1,0 +1,24 @@
+/* Panel, typography, grid, dots and native bars come from Gion Guidebook. */
+.quest-milestones { --guidebook-milestone-min: 8.5rem; }
+.quest-milestones-snapshot,
+.quest-milestones-complete,
+.quest-milestones-manual-note { color: var(--muted); font-size: .85rem; }
+.quest-milestones-snapshot time { font-variant-numeric: tabular-nums; }
+.quest-milestones-snapshot a { text-decoration: underline; }
+.quest-milestones-complete { font-weight: 650; }
+.quest-milestones-progress { margin-block: .5rem; }
+.quest-milestones-progress [data-milestone-progress-value] { font-variant-numeric: tabular-nums; }
+.quest-milestones h6 { margin: .8rem 0 .3rem; font-size: .9rem; }
+.quest-milestone-label { max-inline-size: 100%; font-weight: 650; }
+.quest-milestone-owned, .quest-milestone-guide { font-variant-numeric: tabular-nums; }
+.quest-milestones .guidebook-milestones [data-status="complete"] .guidebook-dot { border-color: var(--accent); background: var(--accent); }
+.quest-milestone-manual { display: inline-flex; align-items: center; justify-content: center; gap: .35rem; min-block-size: 2.75rem; padding: .15rem .3rem; font-size: .83rem; line-height: 1.2; color: var(--muted); cursor: pointer; }
+.quest-milestone-manual input { inline-size: 1rem; block-size: 1rem; margin: 0; accent-color: var(--accent); }
+.quest-milestone-manual:has(input:checked) { color: var(--accent); }
+.quest-milestone-manual input:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.quest-milestones-counters { margin: .25rem 0; padding: 0; list-style: none; color: var(--muted); font-size: .85rem; }
+.quest-milestones-help { margin-block: .65rem .25rem; color: var(--muted); font-size: .85rem; }
+.quest-milestones-help summary { inline-size: fit-content; max-inline-size: 100%; padding-block: .3rem; cursor: pointer; color: var(--accent); }
+.quest-milestones-evidence { padding-inline-start: 1.2rem; min-inline-size: 0; overflow-wrap: anywhere; }
+.quest-milestones-evidence :is(li, strong, span, small) { min-inline-size: 0; max-inline-size: 100%; overflow-wrap: anywhere; }
+.quest-milestones-evidence :is([data-milestone-evidence-fact], [data-milestone-owned], [data-milestone-guide]) { display: block; }
