@@ -1,166 +1,3 @@
-
-// These URLs work before JavaScript runs, including copied and new-tab links.
-function kenzanMapHref(data) {
-  const parameters = new URLSearchParams();
-  const fields = { mapQuest: 'quest', mapRevelation: 'activity', mapPlace: 'pin',
-    mapCollectible: 'collectible', mapArea: 'area', mapStreet: 'street' };
-  for (const [field, parameter] of Object.entries(fields)) {
-    if (data[field] !== undefined && data[field] !== '') parameters.set(parameter, data[field]);
-  }
-  if (data.mapLockerKey) parameters.set('pin', 'locker:' + data.mapLockerKey);
-  if (data.mapRevelation === 'shichigoro') parameters.set('pin', 'shichigoro');
-  if (/^\d+$/.test(String(data.mapStep)) && (parameters.has('quest') || parameters.has('activity'))) {
-    parameters.set('step', Number(data.mapStep) + 1);
-  }
-  return '#quest-map' + (parameters.size ? '?' + parameters : '');
-}
-
-if (typeof module !== 'undefined' && module.exports) {
-  const entities = { amp: '&', apos: "'", quot: '"', lt: '<', gt: '>' };
-  const decode = text => text.replace(/&(#x[\da-f]+|#\d+|amp|apos|quot|lt|gt);/gi, (entity, key) => {
-    if (!key.startsWith('#')) return entities[key.toLowerCase()] ?? entity;
-    const number = key[1].toLowerCase() === 'x' ? parseInt(key.slice(2), 16) : parseInt(key.slice(1), 10);
-    return number >= 0 && number <= 0x10ffff ? String.fromCodePoint(number) : entity;
-  });
-  function withGuideMapURLs(html) {
-    return html.replace(/<a\b(?:[^"'<>]|"[^"]*"|'[^']*')*>/gi, tag => {
-      if (!/\bhref\s*=(["'])#quest-map\1/i.test(tag)) return tag;
-      const data = {};
-      for (const [, name, , value] of tag.matchAll(/\bdata-map-([\w-]+)\s*=(["'])(.*?)\2/gi)) {
-        data['map-' + name.toLowerCase()] = decode(value);
-      }
-      const normalized = Object.fromEntries(Object.entries(data).map(([key, value]) =>
-        [key.replace(/-([a-z])/g, (_, letter) => letter.toUpperCase()), value]));
-      const href = kenzanMapHref(normalized).replaceAll('&', '&amp;').replaceAll('"', '&quot;');
-      return tag.replace(/\bhref\s*=(["'])#quest-map\1/i, `href="${href}"`);
-    });
-  }
-  module.exports = { kenzanMapHref, withGuideMapURLs };
-}
-
-
-const questProgressPrefix = 'kenzan-guide:done:';
-const storyWindowKey = 'kenzan-guide:story-window';
-
-function questStoryAvailability(story, id, checkpoint) {
-  if (!checkpoint) return '';
-  const { order, clock } = checkpoint;
-  const rule = story.quests[id];
-  if (!clock || order < rule.first) return null;
-  const phase = rule.continuations.find(item => order >= item.first
-    && (item.last === null || order <= item.last) && item.clocks.includes(clock));
-  if (phase) return phase.note;
-  if ((rule.last !== null && order > rule.last) || (rule.gion && order >= story.gionCloses)
-    || (rule.clocks && !rule.clocks.includes(clock))) return null;
-  return '';
-}
-
-function questPrerequisiteWarning(story, id, completed) {
-  const { all, any } = story.quests[id];
-  return all.some(required => !completed.has(required)) || (any.length > 0 && !any.some(required => completed.has(required)));
-}
-
-function questMapFilter(story, ids, completed, objective, hideCompleted, missableOnly) {
-  const checkpoint = story.checkpoints[objective];
-  const eligible = new Set();
-  const notes = {};
-  const unfinishedOnly = hideCompleted || missableOnly;
-  for (const id of ids) {
-    const done = completed.has(id);
-    const timing = questStoryAvailability(story, id, checkpoint);
-    if ((!unfinishedOnly || !done) && (!missableOnly || story.quests[id].missable) && timing !== null) eligible.add(id);
-    const prerequisiteWarning = !done && questPrerequisiteWarning(story, id, completed);
-    const text = [timing, prerequisiteWarning && 'Prerequisite completion is unconfirmed. See Requires.'].filter(Boolean).join(' ');
-    if (text) notes[id] = { text, prerequisiteWarning };
-  }
-  return { eligible, completed, notes, objective, checkpoint, hideCompleted, missableOnly, locked: Boolean(checkpoint && !checkpoint.clock) };
-}
-
-// Persist only the user's preference and the existing public checkpoint filter.
-// A fresh save read owns automatic adoption; remounting a view never replays a save.
-(() => {
-  const preferenceKey = 'kenzan-guide:follow-save-story';
-  const objectiveKey = 'kenzan-guide:story-window';
-
-  function createStoryFollower(storage, notifyObjective = () => {}) {
-    const listeners = new Set();
-    let checkpoints = new Map();
-    let latest;
-    function state() {
-      const preference = storage.getItem(preferenceKey);
-      const selection = storage.getItem(objectiveKey) || '';
-      return { enabled: preference === '1', visible: preference !== null,
-        selection, code: checkpoints.get(selection)?.code ?? selection,
-        waiting: latest?.waiting || (latest?.window === selection ? '' : 'save') };
-    }
-    function message() {
-      const { enabled, code, waiting } = state();
-      return !enabled ? 'Automatic updates off. Use & follow resumes them.'
-        : waiting === 'disconnected' ? `Following is on. Reconnect your save folder${code ? `; keeping ${code}` : ''}.`
-          : waiting === 'checkpoint' ? `Following is on. Waiting for a recognised checkpoint${code ? `; keeping ${code}` : ''}.`
-            : waiting === 'save' ? `Following is on. Waiting for a save read${code ? `; keeping ${code}` : ''}.`
-              : `Automatically following your saved checkpoint${code ? `: ${code}` : ''}. Updates after each save read.`;
-    }
-    function refresh() { for (const listener of listeners) listener(state()); }
-    function adopt(window) {
-      if (storage.getItem(objectiveKey) === window) return;
-      storage.setItem(objectiveKey, window);
-      notifyObjective();
-    }
-    return {
-      configure(known) { checkpoints = new Map(Object.entries(known)); },
-      state,
-      message,
-      refresh,
-      enable(window, source = 'manual') {
-        if (!checkpoints.has(window)) return false;
-        storage.setItem(preferenceKey, '1');
-        latest = { window, source, waiting: '' };
-        adopt(window);
-        refresh();
-        return true;
-      },
-      pause() {
-        if (!state().enabled) return;
-        storage.setItem(preferenceKey, '0');
-        refresh();
-      },
-      observe(story, source) {
-        const window = story?.mode === 'story' && checkpoints.has(story.window) ? story.window : undefined;
-        latest = { source, window, waiting: window ? '' : 'checkpoint' };
-        if (window && state().enabled) adopt(window);
-        refresh();
-      },
-      unavailable(source, reason) {
-        if (latest?.source !== source) return;
-        latest = { source, waiting: reason ?? (latest.waiting === 'disconnected' ? 'disconnected' : 'save') };
-        refresh();
-      },
-      subscribe(listener) {
-        listeners.add(listener);
-        listener(state());
-        return () => listeners.delete(listener);
-      },
-    };
-  }
-
-  if (typeof module === 'object' && module.exports) {
-    module.exports = { createStoryFollower, preferenceKey, objectiveKey };
-    return;
-  }
-  window.kenzanStoryFollow = createStoryFollower(window.kenzanStorage,
-    () => window.dispatchEvent(new StorageEvent('storage', { key: objectiveKey })));
-  // This single announcer lives outside the collapsible panels and both route hosts.
-  const announcement = document.querySelector('#story-follow-announcement');
-  if (announcement) window.kenzanStoryFollow.subscribe(state => {
-    const text = state.visible ? window.kenzanStoryFollow.message() : '';
-    if (announcement.textContent !== text) announcement.textContent = text;
-  });
-  window.addEventListener('storage', event => {
-    if (event.key === null || event.key === preferenceKey || event.key === objectiveKey) window.kenzanStoryFollow.refresh();
-  });
-})();
-
 (() => {
   function readStory(data, windows) {
     // Chapter comes from the native scenario row. The guide's finer windows
@@ -1249,6 +1086,146 @@ function questMapFilter(story, ids, completed, objective, hideCompleted, missabl
 })();
 
 (() => {
+  const scarecrowCourses = Object.freeze([
+    'single-formation', 'twin-formation', 'oni-formation', 'shinobi-formation',
+    'single-strength-formation', 'twin-strength-formation', 'great-strength-formation',
+    'enduring-strength-formation', 'enlightenment-formation', 'two-heavens-formation',
+    'ultimate-formation', 'purgatory-formation',
+  ]);
+  const jiraiyaCourses = Object.freeze([
+    'first-chamber', 'earth-chamber', 'water-chamber', 'fire-chamber',
+    'wind-chamber', 'heavenly-chamber', 'ultimate-chamber',
+  ]);
+  const trainingRankNames = Object.freeze([null, 'Novice Ninja', 'Average Ninja', 'Elite Ninja', 'Master Ninja']);
+
+  function readTrainingRecords(data) {
+    // The caller admits the full USERDATA header. This helper also works with
+    // DataViews into offset buffers; invalid/detached input is not an empty save.
+    try {
+      if (Object.prototype.toString.call(data) !== '[object DataView]' || data.byteLength < 0x981a) return undefined;
+      const flag = state => Boolean(data.getUint32(0x190 + 0x154 * 32 + (state >>> 5) * 4, false)
+        & (1 << (state & 31)));
+      const scarecrow = Object.fromEntries(scarecrowCourses.map((course, index) => {
+        // Completion consumer 0x2ecb60 returns the highest of four rank flags.
+        // Its first table entry is Master Ninja, then Elite/Average/Novice.
+        let rank = 0;
+        for (let position = 0; position < 4; position++) {
+          if (flag(37 + 4 * index + position)) { rank = 4 - position; break; }
+        }
+        const entries = Array.from({ length: 10 }, (_, place) => {
+          const at = 0x9384 + 80 * index + 8 * place;
+          return { ticks: data.getUint32(at, false), nameId: data.getUint32(at + 4, false), place: place + 1 };
+        });
+        const valid = entries.every(entry => entry.nameId <= 41);
+        // Result writer 0x13fa24 inserts (elapsed 30 Hz ticks, name 0), then
+        // sorts ten entries. NPC records use names 1..41. Multiple player
+        // entries can remain; the shortest listed one is the personal best.
+        const personal = valid ? entries.filter(entry => entry.nameId === 0 && entry.ticks > 0) : [];
+        const best = personal.reduce((winner, entry) => !winner || entry.ticks < winner.ticks ? entry : winner, undefined);
+        return [course, {
+          rank, rankName: trainingRankNames[rank], cleared: flag(19 + index),
+          status: rank ? 'recorded' : 'none',
+          // The native menu formats this saved counter with a divisor of 30.
+          // This mirrors its displayed time; it is not measured wall time or
+          // a claim about how an FPS patch advances the gameplay clock.
+          bestTimeTicks: best?.ticks ?? null, bestTime: best ? best.ticks / 30 : null,
+          leaderboardPlace: best?.place ?? null,
+          timeStatus: valid ? best ? 'recorded' : 'not-on-board' : 'unavailable',
+        }];
+      }));
+      const packed = data.getUint32(0x9744, false);
+      const jiraiya = Object.fromEntries(jiraiyaCourses.map((course, index) => {
+        const rank = (packed >>> (8 + 3 * index)) & 7;
+        const cleared = Boolean(packed & (1 << index));
+        const entries = Array.from({ length: 10 }, (_, place) => {
+          const at = 10 * index + place;
+          const identity = data.getUint8(0x97d4 + at);
+          // Native k_yabusame reader: two score bits share the name byte.
+          const score = data.getUint16(0x9748 + 2 * at, false) | ((identity & 0xc0) << 10);
+          return { nameId: identity & 0x3f, score, place: place + 1 };
+        });
+        const valid = rank <= 4 && entries.every(entry => entry.nameId <= 10);
+        // Name 0 is the player. The ten NPC defaults are not personal scores.
+        // This board retains only ten entries, so absence does not prove that
+        // the player never played or never earned a score on this course.
+        const personal = valid ? entries.filter(entry => entry.nameId === 0 && entry.score > 0) : [];
+        const best = personal.reduce((winner, entry) => !winner || entry.score > winner.score ? entry : winner, undefined);
+        return [course, {
+          rank: valid ? rank : null, rankName: valid ? trainingRankNames[rank] : null,
+          cleared, status: valid ? rank ? 'recorded' : 'none' : 'unavailable',
+          score: best?.score ?? null, leaderboardPlace: best?.place ?? null,
+          scoreStatus: valid ? best ? 'recorded' : 'not-on-board' : 'unavailable',
+        }];
+      }));
+      return { scarecrow, jiraiya };
+    } catch {
+      return undefined;
+    }
+  }
+
+  if (typeof module === 'object' && module.exports) {
+    module.exports = { readTrainingRecords, trainingRankNames, scarecrowCourses, jiraiyaCourses };
+  } else {
+    window.readKenzanTrainingRecords = readTrainingRecords;
+  }
+})();
+
+(() => {
+  // Saved ranks are independent of the player's entries on the ten-place
+  // boards. NPC defaults and a missing personal entry never become a record.
+  function formatTrainingTime(ticks) {
+    // Match the native display's separate truncated components. Rounding the
+    // whole duration would turn a 29-tick fraction into the wrong hundredths.
+    const minutes = Math.floor(ticks / 1800);
+    const seconds = Math.floor(ticks / 30) % 60;
+    const hundredths = Math.floor((ticks % 30) * 100 / 30);
+    return `${minutes}:${String(seconds).padStart(2, '0')}.${String(hundredths).padStart(2, '0')}`;
+  }
+
+  function trainingRecordText(record, kind) {
+    if (!record) return { value: 'Sync a gameplay save', note: '' };
+    const rank = record.status === 'recorded' && record.rankName ? record.rankName
+      : record.status === 'unavailable' ? 'Rank unavailable' : 'No rank recorded';
+    if (kind === 'scarecrow') {
+      if (record.timeStatus === 'recorded' && Number.isSafeInteger(record.bestTimeTicks) && record.bestTimeTicks > 0) {
+        return { value: formatTrainingTime(record.bestTimeTicks),
+          note: `Best rank: ${rank} · Board place ${record.leaderboardPlace} of 10` };
+      }
+      return { value: record.timeStatus === 'not-on-board' ? 'No personal time on this board' : 'Time unavailable',
+        note: `Best rank: ${rank}` };
+    }
+    if (record.scoreStatus === 'recorded' && Number.isInteger(record.score) && record.score > 0) {
+      return { value: `${record.score.toLocaleString()} points`,
+        note: `Best rank: ${rank} · Board place ${record.leaderboardPlace} of 10` };
+    }
+    return { value: record.scoreStatus === 'unavailable' ? 'Score unavailable' : 'No personal score on this board', note: rank };
+  }
+
+  function mountTrainingRecords(root = document) {
+    // Capture cells before the existing checklist owner detaches closed tables.
+    const cells = [...root.querySelectorAll('[data-training-record]')];
+    const helps = [...root.querySelectorAll('[data-training-record-help]')];
+    return snapshot => {
+      const records = snapshot?.trainingRecords;
+      for (const help of helps) help.hidden = Boolean(records);
+      for (const cell of cells) {
+        const kind = cell.dataset.trainingRecordKind;
+        const text = trainingRecordText(records?.[kind]?.[cell.dataset.trainingRecord], kind);
+        const value = cell.ownerDocument.createElement('strong');
+        value.className = 'waterfall-score-value';
+        value.textContent = text.value;
+        const note = cell.ownerDocument.createElement('span');
+        note.className = 'waterfall-score-note';
+        note.textContent = text.note;
+        cell.replaceChildren(value, ...(text.note ? [note] : []));
+      }
+    };
+  }
+  if (typeof module === 'object' && module.exports) module.exports = { trainingRecordText, mountTrainingRecords, formatTrainingTime };
+  else window.mountKenzanTrainingRecords = mountTrainingRecords;
+})();
+
+(() => {
   const inventoryOffset = 0x4850;
   const inventoryCount = 1000;
   const recordSize = 4;
@@ -1593,12 +1570,15 @@ function questMapFilter(story, ids, completed, objective, hideCompleted, missabl
   const multiplier = value => multipliers.format(value);
   const known = value => typeof value === 'number' && Number.isFinite(value);
   const byte = value => Number.isInteger(value) && value >= 0 && value <= 255;
+  const energyFactor = value => .75 + .25 * value / 255;
+  const percent = value => `${n(value * 100)}%`;
+  const paragraphs = (...parts) => parts.filter(Boolean).join('\n\n');
   const statNames = { stamina: 'Stamina', legPower: 'Leg Power', fullness: 'Fullness', water: 'Water', sand: 'Sand', mud: 'Mud' };
   const personalityNotes = {
     Timid: 'Can doze near the start or finish. Accepted cheering costs up to one trust point.',
     Normal: 'Its main mishap is slowing down. Form, trust and Fullness also affect mishaps.',
     Clumsy: 'Can hit the wall during a mishap. Accepted cheering can add one trust point, up to full trust.',
-    Unpredictable: 'Can show Timid, Normal or Clumsy racing behavior rather than one consistent style.',
+    Unpredictable: 'Can behave like a Timid, Normal or Clumsy turtle during races.',
     Awful: 'Especially prone to Clumsy-style mishaps. Form, trust and Fullness still matter.',
   };
   const patternNotes = {
@@ -1615,44 +1595,63 @@ function questMapFilter(story, ids, completed, objective, hideCompleted, missabl
 
   function statTip(turtle, key) {
     const label = statNames[key], stat = turtle[key];
-    const generic = key === 'stamina' ? 'Stamina supplies energy for running and cheering.'
-      : key === 'legPower' ? 'Leg Power supplies base running speed; this is not a speed percentage.'
-      : 'Fullness controls how much room it has for food.';
-    if (!byte(stat?.value) || !byte(stat?.max)) return `${label} values are unavailable. ${generic}`;
+    const generic = key === 'stamina' ? 'Energy for running and cheering.'
+      : key === 'legPower' ? 'Sets base running speed; the value is not a speed percentage.'
+      : 'Determines how much room it has for food.';
+    if (!byte(stat?.value) || !byte(stat?.max)) return paragraphs(`${label} values are unavailable.`, generic);
     const { value, max } = stat;
     let detail;
-    if (value > max) detail = `The current value is ${n(value-max)} above its saved trained limit.`;
+    if (value > max) detail = `${n(value-max)} above its saved trained limit.`;
     else if (key === 'fullness') detail = value === max ? 'Full: it cannot eat until Fullness drops.'
-      : `Not full, with ${n(max-value)} ${max-value === 1 ? 'point' : 'points'} of room for food.`;
-    else detail = value === max ? 'At its current trained maximum.'
-      : `${n(max-value)} ${max-value === 1 ? 'point' : 'points'} below its current trained maximum.`;
+      : `Room for ${n(max-value)} more Fullness ${max-value === 1 ? 'point' : 'points'}.`;
+    else detail = value === max ? 'At its trained maximum.'
+      : `${n(max-value)} ${max-value === 1 ? 'point' : 'points'} below its trained maximum.`;
+    let racing;
+    if (key === 'stamina') {
+      racing = `Starting pace factor: ${multiplier(energyFactor(value))}× before other factors. It falls as stamina drains. `
+        + (value < max ? `Refilling to ${n(max)} improves this starting factor by ${percent(energyFactor(max) / energyFactor(value) - 1)}.`
+          : 'Already full for this turtle; refilling cannot improve its starting stamina.');
+    } else if (key === 'legPower') {
+      racing = `Running pace factor: ${multiplier(.5 + .002 * value)}× on every track, before Form, stamina, terrain and mishaps. Higher Leg Power helps; this is not a speed percentage or a win forecast.`;
+    } else {
+      const atEntry = Math.max(0, value - 32) / 255;
+      racing = `After the usual 32-point reduction on race entry, pace penalties are:\n`
+        + `Normal ground ${percent(atEntry * .025)} · Sand ${percent(atEntry * .05)}\n`
+        + `Water ${percent(atEntry * .075)} · Mud ${percent(atEntry * .1)}`;
+      racing = paragraphs(racing, turtle.personality === 'Clumsy' || turtle.personality === 'Awful'
+        ? 'Being fuller can reduce wall-hit mishaps, so emptier is not always better.'
+        : turtle.personality === 'Timid' || turtle.personality === 'Normal'
+          ? 'Being fuller also increases the Fullness part of its main mishap check.'
+          : 'Fullness also affects mishaps differently for each personality.');
+    }
     const lowStamina = key === 'stamina' && value <= 15
-      ? ' Entering at 15 stamina or less costs up to eight trust points.' : '';
+      ? 'Entering at 15 stamina or less costs up to eight trust points.' : '';
     const emptyStamina = key === 'stamina' && value === 0
-      ? ' It can still move, but cannot start cheering at zero stamina.' : '';
-    return `${label} ${n(value)} / ${n(max)}. ${detail} ${generic}${lowStamina}${emptyStamina}`;
+      ? 'It can still move, but cannot start cheering at zero stamina.' : '';
+    return paragraphs(`${label} ${n(value)} / ${n(max)}. ${detail}`, racing, [lowStamina, emptyStamina].filter(Boolean).join(' '));
   }
 
   function terrainTip(turtle, key) {
     const stat = turtle.terrainStats?.[key], label = statNames[key];
     const generic = `Higher ${label} ability helps it keep speed on ${key} sections.`;
-    if (!byte(stat?.value) || !byte(stat?.max)) return `${label} values are unavailable. ${generic}`;
+    if (!byte(stat?.value) || !byte(stat?.max)) return paragraphs(`${label} values are unavailable.`, generic);
     const { value, max } = stat;
     const grade = value < 85 ? 'Low' : value < 170 ? 'Medium' : 'High';
     const threshold = value < 85 ? 85 : value < 170 ? 170 : null;
-    const next = threshold === null ? 'Already in the highest displayed grade.'
+    const next = threshold === null ? 'Highest displayed grade.'
       : `${n(threshold-value)} ${threshold-value === 1 ? 'point' : 'points'} to ${grade === 'Low' ? 'Medium' : 'High'} (${threshold})${max < threshold ? '; its trained limit must rise first' : ''}.`;
-    return `${label}: ${grade}, ${n(value)} / ${n(max)} trained limit. ${next} ${generic}`;
+    return paragraphs(`${label}: ${grade} · ${n(value)} / ${n(max)} trained limit.`,
+      `On ${key} only: ${multiplier(.5 + .5 * value / 255)}× running pace, ${percent(value / 255)} more than zero ${label} ability with other factors unchanged. This is not a win chance.`, next);
   }
 
   function growthTip(turtle, key) {
     const stat = ['water', 'sand', 'mud'].includes(key) ? turtle.terrainStats?.[key] : turtle[key];
     const ceiling = turtle.growth?.ceilings?.[key], label = statNames[key];
-    if (!byte(stat?.max) || !byte(ceiling)) return `${label} growth room is unavailable. It compares the trained limit with this turtle’s own ceiling.`;
+    if (!byte(stat?.max) || !byte(ceiling)) return paragraphs(`${label} growth room is unavailable.`, 'Compares its trained limit with its own ceiling.');
     const room = ceiling-stat.max;
-    if (room < 0) return `${label} limit ${n(stat.max)} is ${n(-room)} above its ceiling of ${n(ceiling)}. Feeding for this stat can lower the trained limit toward that ceiling.`;
-    if (room === 0) return `${label} limit ${n(stat.max)} has reached its ceiling. Food cannot raise that limit further${byte(stat.value) && stat.value < stat.max ? ', but the current stat still has room to refill' : ''}.`;
-    return `${label} limit ${n(stat.max)} can still gain ${n(room)} ${room === 1 ? 'point' : 'points'} before its ceiling of ${n(ceiling)}. This is room to raise the trained limit, not a promised gain from one meal.`;
+    if (room < 0) return paragraphs(`${label} limit ${n(stat.max)}: ${n(-room)} above its ceiling of ${n(ceiling)}.`, 'Feeding for this stat can lower the trained limit toward that ceiling.');
+    if (room === 0) return paragraphs(`${label} limit ${n(stat.max)}: ceiling reached.`, `Food cannot raise the limit further${byte(stat.value) && stat.value < stat.max ? ', but the current stat can still refill' : ''}.`);
+    return paragraphs(`${label} limit ${n(stat.max)}: ${n(room)} ${room === 1 ? 'point' : 'points'} below its ceiling of ${n(ceiling)}.`, 'Room to raise the trained limit, not a promised gain from one meal.');
   }
 
   function turtleCardTips(turtle) {
@@ -1660,22 +1659,25 @@ function questMapFilter(story, ids, completed, objective, hideCompleted, missabl
     const rank = turtle.rank ?? 'Unknown rank';
     const wins = Array.isArray(turtle.rankRaceWins) ? turtle.rankRaceWins.length : null;
     const rankTip = turtle.rankId >= 0 && turtle.rankId < 4 && wins !== null
-      ? `${rank}: ${Math.min(wins,3)} of 3 promotion stars. Stars count different events won at this rank, not repeat wins in the same event.`
-      : turtle.rankId === 4 ? `Yokozuna is the highest normal rank; it has no three-star promotion. ${wins === null ? 'Event-win history is unavailable.' : `${wins} different Yokozuna ${wins === 1 ? 'event' : 'events'} won.`}`
-        : turtle.rankId === 5 ? `Musabetsu is the open-rank category, with no further three-star promotion. ${wins === null ? 'Event-win history is unavailable.' : `${wins} different ${wins === 1 ? 'event' : 'events'} won here.`}`
+      ? paragraphs(`${rank}: ${Math.min(wins,3)} of 3 promotion stars.`, 'Stars count distinct events won at this rank. Repeat wins do not count.')
+      : turtle.rankId === 4 ? paragraphs('Yokozuna: highest normal rank, with no three-star promotion.', wins === null ? 'Event-win history is unavailable.' : `${wins} different Yokozuna ${wins === 1 ? 'event' : 'events'} won.`)
+        : turtle.rankId === 5 ? paragraphs('Musabetsu: open-rank category, with no further three-star promotion.', wins === null ? 'Event-win history is unavailable.' : `${wins} different ${wins === 1 ? 'event' : 'events'} won here.`)
           : 'Rank could not be read. Rank is the race class; ordinary promotion stars count distinct event wins.';
     const score = turtle.formScore;
-    const form = !known(score) ? 'The current Form score is unavailable. Better Form helps speed and reduces mishaps.'
-      : `Form score ${n(score)}: ${score < 40 ? 'Terrible (below 40)' : score < 50 ? 'Bad (40–49)' : score < 60 ? 'Okay (50–59)' : score < 80 ? 'Good (60–79)' : 'Excellent (80 and above)'}. Better Form helps speed and reduces mishaps. Feeding cycles Form; it can improve or worsen.`;
+    const form = !known(score) ? paragraphs('Current Form score unavailable.', 'Better Form helps speed and reduces mishaps.')
+      : paragraphs(`Form ${n(score)}: ${score < 40 ? 'Terrible (below 40)' : score < 50 ? 'Bad (40-49)' : score < 60 ? 'Okay (50-59)' : score < 80 ? 'Good (60-79)' : 'Excellent (80 and above)'}.`,
+        `Running pace factor: ${multiplier(.75 + score / 200)}×. Form 50 is the 1× baseline. Higher Form also reduces mishaps. This is a pace factor, not win odds.`,
+        'Feeding cycles Form and can improve or worsen it.');
     const growth = turtle.growth ?? {};
     const factor = known(growth.factor) ? growth.factor : null;
     const factorDifference = factor === null ? '' : factor === 1 ? 'the same as the 1× base'
       : `${n(Math.abs(factor-1)*100)}% ${factor > 1 ? 'above' : 'below'} the 1× base`;
     const life = turtle.lifespan;
-    const lifespan = life?.eternal ? 'This turtle does not age. Feeding and racing do not consume a normal lifespan.'
+    const lifespan = life?.eternal ? paragraphs('This turtle does not age.', 'Feeding and racing do not consume a normal lifespan.')
       : known(life?.remaining) && known(life?.initial) && life.initial > 0 && life.remaining >= 0 && life.remaining <= life.initial
-        ? `${n(life.remaining)} of ${n(life.initial)} life units remain (${n(life.remaining/life.initial*100)}%). ${life.remaining === 0 ? 'Its recorded lifespan has run out. ' : ''}Feeding uses one unit; entering a race uses two. These are life units, not real-time minutes.`
-        : 'Remaining lifespan is unavailable. For ordinary turtles, feeding uses one life unit and entering a race uses two.';
+        ? paragraphs(`${n(life.remaining)} of ${n(life.initial)} life units left (${n(life.remaining/life.initial*100)}%).`,
+          life.remaining === 0 ? 'Its recorded lifespan has run out.' : '', 'Feeding uses one unit; entering a race uses two. Life units are not real-time minutes.')
+        : paragraphs('Remaining lifespan unavailable.', 'For ordinary turtles, feeding uses one life unit; entering a race uses two.');
     const streaks = known(turtle.winStreak) && known(turtle.lossStreak)
       ? turtle.winStreak === 0 && turtle.lossStreak === 0 ? 'No current win or loss streak. A win ends a loss streak; a loss ends a win streak.'
         : turtle.winStreak > 0 && turtle.lossStreak === 0 ? `Currently on a ${turtle.winStreak}-win streak: consecutive first-place finishes. Losing ends this streak.`
@@ -1683,25 +1685,30 @@ function questMapFilter(story, ids, completed, objective, hideCompleted, missabl
             : `${turtle.winStreak} consecutive wins and ${turtle.lossStreak} consecutive losses recorded. A win ends a loss streak; a loss ends a win streak.`
       : 'Current streaks are unavailable. They count consecutive wins or losses.';
     return {
-      trust: trust === null ? 'Trust is unavailable. More trust helps reduce racing mishaps.'
-        : `Trust ${trust} / 255. ${trust === 255 ? 'At full trust.' : `${255-trust} more ${255-trust === 1 ? 'point' : 'points'} to full trust.`} The hearts show trust; more trust helps reduce racing mishaps.`,
+      trust: trust === null ? paragraphs('Trust unavailable.', 'More trust helps reduce racing mishaps.')
+        : paragraphs(`Trust ${trust} / 255. ${trust === 255 ? 'Full trust.' : `${255-trust} ${255-trust === 1 ? 'point' : 'points'} from full trust.`} The hearts show trust.`,
+          trust === 0 ? 'No trust-based reduction in mishaps yet.' : `The trust part of a mishap check is ${percent(1 - (1.3 - .6 * trust / 255) / 1.3)} lower than at zero trust, with other inputs unchanged.`,
+          'This is not the overall mishap probability: Form, Fullness and personality still matter.',
+          byte(turtle.stamina?.value) && turtle.stamina.value <= 15 ? 'Entering at 15 stamina or less costs up to eight trust points before racing.' : ''),
       feedBonus: typeof turtle.recentRaceFeedBonus !== 'boolean' ? 'The post-race feeding bonus status is unavailable.'
-        : `Post-race bonus ${turtle.recentRaceFeedBonus ? 'active' : 'inactive'} when you saved. ${turtle.recentRaceFeedBonus ? trust === null ? 'A qualifying feed can add up to 16 trust.' : trust === 255 ? 'Trust is full, so it cannot add trust now.' : `A qualifying feed can add up to ${Math.min(16,255-trust)} trust at your current trust value.` : 'No extra trust from this bonus is recorded.'} Total stat/growth changes must be nonnegative; the initial meal Fullness is left out.`,
+        : paragraphs(`Post-race bonus ${turtle.recentRaceFeedBonus ? 'active' : 'inactive'} when you saved.`,
+          turtle.recentRaceFeedBonus ? trust === null ? 'A qualifying feed can add up to 16 trust.' : trust === 255 ? 'Trust is full, so it cannot add trust now.' : `A qualifying feed can add up to ${Math.min(16,255-trust)} trust at this trust value.` : 'No extra trust from this bonus is recorded.',
+          'Total stat/growth changes must be nonnegative. Initial meal Fullness is left out.'),
       rank: rankTip, form,
       personality: turtle.personality && personalityNotes[turtle.personality]
-        ? `${turtle.personality}: ${personalityNotes[turtle.personality]}`
+        ? paragraphs(`${turtle.personality}.`, personalityNotes[turtle.personality])
         : 'Personality could not be read. It affects racing mishaps and responses to cheering.',
       stamina: statTip(turtle, 'stamina'), legPower: statTip(turtle, 'legPower'), fullness: statTip(turtle, 'fullness'),
       water: terrainTip(turtle, 'water'), sand: terrainTip(turtle, 'sand'), mud: terrainTip(turtle, 'mud'),
       rating: !byte(turtle.savedRating) || turtle.savedRating > 100 ? 'The Turtle Master’s saved rating is unavailable.'
-        : turtle.savedRating === 0 ? 'Unevaluated: no Turtle Master appraisal is recorded. This does not mean the turtle has a rating of zero.'
-          : `The Turtle Master last rated this turtle ${turtle.savedRating} / 100. This is his saved appraisal, not a continuously updated score.`,
-      record: known(turtle.wins) && known(turtle.races) ? `${n(turtle.wins)} first-place ${turtle.wins === 1 ? 'finish' : 'finishes'} from ${n(turtle.races)} race ${turtle.races === 1 ? 'entry' : 'entries'}. This is its saved race record, not a forecast of its next result.` : 'Race record is unavailable. It counts wins and total races entered.',
+        : turtle.savedRating === 0 ? paragraphs('Unevaluated: no Turtle Master appraisal recorded.', 'This does not mean its rating is zero.')
+          : paragraphs(`Last Turtle Master appraisal: ${turtle.savedRating} / 100.`, 'This saved appraisal does not update continuously or account for this race’s terrain, current Form or opponents. It is not a win chance.'),
+      record: known(turtle.wins) && known(turtle.races) ? paragraphs(`${n(turtle.wins)} first-place ${turtle.wins === 1 ? 'finish' : 'finishes'} in ${n(turtle.races)} race ${turtle.races === 1 ? 'entry' : 'entries'}.`, 'Saved race record, not a forecast of its next result.') : paragraphs('Race record unavailable.', 'Counts wins and total races entered.'),
       streaks,
-      growthPattern: growth.pattern && patternNotes[growth.pattern] ? `${growth.pattern}: ${life?.eternal ? 'This turtle does not age, so it does not progress through the pattern’s age stages.' : patternNotes[growth.pattern]}${factor === null ? '' : ` Its current age multiplier is ${multiplier(factor)}×.`}` : 'Growth pattern is unavailable. It describes when food growth is most effective during this turtle’s life.',
+      growthPattern: growth.pattern && patternNotes[growth.pattern] ? paragraphs(`${growth.pattern}.`, life?.eternal ? 'This turtle does not age or progress through the pattern’s age stages.' : patternNotes[growth.pattern], factor === null ? '' : `Current age multiplier: ${multiplier(factor)}×.`) : paragraphs('Growth pattern unavailable.', 'Describes when food growth is most effective during its life.'),
       growthFactor: factor === null ? 'The food growth factor is unavailable; no multiplier can be inferred.'
-        : `Current age multiplier: ${multiplier(factor)}×, ${factorDifference}. It scales positive and negative stat/growth changes before trust, rounding and limits. Initial meal Fullness is not scaled.`,
-      growthOutlook: growth.outlook && outlookNotes[growth.outlook] ? `${growth.outlook}: ${life?.eternal ? 'This is its native growth hint, but Eternal turtles do not age; it does not predict future improvement.' : `${outlookNotes[growth.outlook]} This is the calculated food-growth hint, not a race prediction.`}` : 'The growth outlook is unavailable. It is a hint about how food growth may change with age.',
+        : paragraphs(`Current age multiplier: ${multiplier(factor)}×, ${factorDifference}.`, 'Scales positive and negative stat/growth changes before trust, rounding and limits. Initial meal Fullness is not scaled.'),
+      growthOutlook: growth.outlook && outlookNotes[growth.outlook] ? paragraphs(`${growth.outlook}.`, life?.eternal ? 'Native growth hint. Eternal turtles do not age, so it does not predict future improvement.' : `${outlookNotes[growth.outlook]} A calculated food-growth hint, not a race prediction.`) : paragraphs('Growth outlook unavailable.', 'Hints at how food growth may change with age.'),
       growth: Object.fromEntries(Object.keys(statNames).map(key => [key, growthTip(turtle,key)])),
       lifespan,
     };
@@ -1743,6 +1750,8 @@ function questMapFilter(story, ids, completed, objective, hideCompleted, missabl
     ? require('./save-turtle-races.js').readTurtleRaceResults : window.readKenzanTurtleRaceResults;
   const readWaterfallRecords = typeof module === 'object' && module.exports
     ? require('./save-waterfall.js').readWaterfallRecords : window.readKenzanWaterfallRecords;
+  const readTrainingRecords = typeof module === 'object' && module.exports
+    ? require('./save-training-records.js').readTrainingRecords : window.readKenzanTrainingRecords;
   // Chapter and the three chapter flags tested by each native rescue actor, in KAME flag order.
   const turtleRescueWindows = [
     { chapter: 1, opens: 32, closes: 36, completes: 59 },
@@ -1790,6 +1799,7 @@ function questMapFilter(story, ids, completed, objective, hideCompleted, missabl
     return {
       yabusame: readYabusameScores(data),
       waterfall: readWaterfallRecords(data),
+      trainingRecords: readTrainingRecords(data),
       progress, yujo: readYujo(data, substories), guidebook: readGuidebook(data, substories),
       story,
       minigames: readMinigameSummary(data, progress),
@@ -2098,6 +2108,7 @@ function questMapFilter(story, ids, completed, objective, hideCompleted, missabl
           story: snapshot.story, yujo: snapshot.yujo, guidebook: snapshot.guidebook, source, kind: key, observedAt, acquired,
           yabusame: snapshot.yabusame,
           waterfall: snapshot.waterfall,
+          trainingRecords: snapshot.trainingRecords,
           minigames: snapshot.minigames,
           playerLevel: snapshot.playerLevel,
           turtles: snapshot.turtles,
@@ -2258,27 +2269,47 @@ function questMapFilter(story, ids, completed, objective, hideCompleted, missabl
     function position() {
       if (!anchor) return;
       const bounds = anchor.getBoundingClientRect();
-      const viewportWidth = document.documentElement.clientWidth;
-      const viewportHeight = window.innerHeight;
-      if (!bounds.width || !bounds.height || bounds.right <= 0 || bounds.left >= viewportWidth
-        || bounds.bottom <= 0 || bounds.top >= viewportHeight) {
+      const visualViewport = window.visualViewport;
+      const viewportLeft = visualViewport?.offsetLeft ?? 0;
+      const viewportTop = visualViewport?.offsetTop ?? 0;
+      const viewportWidth = visualViewport?.width ?? document.documentElement.clientWidth;
+      const viewportHeight = visualViewport?.height ?? window.innerHeight;
+      if (!bounds.width || !bounds.height || bounds.right <= viewportLeft || bounds.left >= viewportLeft + viewportWidth
+        || bounds.bottom <= viewportTop || bounds.top >= viewportTop + viewportHeight) {
         hide();
         return;
       }
+      tooltip.style.maxHeight = Math.max(0, Math.min(560, viewportHeight - 16)) + 'px';
+      tooltip.style.maxWidth = Math.max(0, viewportWidth - 16) + 'px';
       const width = tooltip.offsetWidth;
-      const height = tooltip.offsetHeight;
+      let height = tooltip.offsetHeight;
       const left = bounds.left + (bounds.width - width) / 2;
-      const above = bounds.top - height - 6;
-      const top = above >= 8 ? above : bounds.bottom + 6;
-      tooltip.style.left = Math.max(8, Math.min(left, viewportWidth - width - 8)) + 'px';
-      tooltip.style.top = Math.max(8, Math.min(top, viewportHeight - height - 8)) + 'px';
+      const aboveRoom = Math.max(0, bounds.top - viewportTop - 14);
+      const belowRoom = Math.max(0, viewportTop + viewportHeight - bounds.bottom - 14);
+      const placeAbove = height <= aboveRoom || (height > belowRoom && aboveRoom >= belowRoom);
+      // Keep the stat button reachable even in a short landscape viewport.
+      // The callout scrolls within the larger free side instead of covering it.
+      const room = placeAbove ? aboveRoom : belowRoom;
+      if (height > room) {
+        tooltip.style.maxHeight = room + 'px';
+        height = tooltip.offsetHeight;
+      }
+      const top = placeAbove ? bounds.top - height - 6 : bounds.bottom + 6;
+      tooltip.style.left = Math.max(viewportLeft + 8, Math.min(left, viewportLeft + viewportWidth - width - 8)) + 'px';
+      tooltip.style.top = Math.max(viewportTop + 8, Math.min(top, viewportTop + viewportHeight - height - 8)) + 'px';
     }
 
     function show(button, pin = false) {
       clearTimeout(dismissTimer);
       pinned = pin || (anchor === button && pinned);
       anchor = button;
-      tooltip.textContent = button.dataset.turtleStatTip;
+      const parts = button.dataset.turtleStatTip.split('\n\n').map(text => {
+        const paragraph = document.createElement('p');
+        paragraph.textContent = text;
+        return paragraph;
+      });
+      tooltip.replaceChildren(...parts);
+      tooltip.scrollTop = 0;
       tooltip.hidden = false;
       position();
     }
@@ -2319,6 +2350,8 @@ function questMapFilter(story, ids, completed, objective, hideCompleted, missabl
     }, options);
     window.addEventListener('scroll', position, { capture: true, signal });
     window.addEventListener('resize', position, options);
+    window.visualViewport?.addEventListener('resize', position, options);
+    window.visualViewport?.addEventListener('scroll', position, options);
     signal.addEventListener('abort', () => {
       hide();
       tooltip.remove();
@@ -2594,12 +2627,16 @@ function questMapFilter(story, ids, completed, objective, hideCompleted, missabl
     const picker = section.querySelector('#save-sync-file');
     const choose = section.querySelector('#save-sync-choose');
     const apply = section.querySelector('#save-sync-apply');
+    const review = section.querySelector('#save-sync-review');
+    const ps3Folder = section.querySelector('#save-ps3-folder');
+    const ps3Zip = section.querySelector('#save-ps3-zip');
     const status = section.querySelector('#save-sync-status');
     const preview = section.querySelector('#save-sync-preview');
     // Keep references when closed checklist tables detach their bodies.
     const yabusameScoreHelp = document.querySelector('[data-yabusame-score-help]');
     const yabusameScores = [...document.querySelectorAll('[data-yabusame-score]')];
     const updateWaterfall = window.mountKenzanWaterfallScores();
+    const updateTrainingRecords = window.mountKenzanTrainingRecords();
     const updateYujo = yujoProgressView();
     const updateGuidebook = guidebookProgressView();
     const updateMinigames = minigameProgressView();
@@ -2610,6 +2647,8 @@ function questMapFilter(story, ids, completed, objective, hideCompleted, missabl
     const updateTurtleRacePlanner = mountTurtleRacePlanner(turtleSection, signal);
     let reviewed = session.reviewed;
     let readId = 0;
+    let manualRead;
+    signal.addEventListener('abort', () => manualRead?.abort(), { once: true });
     let latestStory;
     let savedWindow;
     const options = { signal };
@@ -2617,6 +2656,7 @@ function questMapFilter(story, ids, completed, objective, hideCompleted, missabl
     function setStatus(message, keep = true) {
       session.status = keep ? message : '';
       status.textContent = message;
+      review.hidden = !message && !reviewed.length;
     }
 
     function refreshStoryAction() {
@@ -2852,31 +2892,80 @@ function questMapFilter(story, ids, completed, objective, hideCompleted, missabl
         : shown.size ? 'All recognized progress in this save is already checked.' : 'No supported goals are marked complete in this save.', false);
     }
 
-    choose.addEventListener('click', () => picker.click(), options);
-    picker.addEventListener('change', async () => {
-      const [file] = picker.files;
-      picker.value = '';
-      if (!file) return;
+    // One transaction owner for both import paths: starting another selection
+    // cancels the old decode; stale work cannot publish a snapshot or preview.
+    async function importManually(load, message) {
       const currentRead = ++readId;
+      manualRead?.abort();
+      manualRead = new AbortController();
+      const readSignal = manualRead.signal;
+      const live = () => !signal.aborted && !readSignal.aborted && currentRead === readId;
       session.reviewed = reviewed = [];
       preview.hidden = true;
       apply.disabled = true;
-      setStatus('Reading save…', false);
+      review.setAttribute('aria-busy', 'true');
+      setStatus(message, false);
       try {
-        if (!await hasSaveHeader(file)) {
-          throw new Error('Choose a Kenzan USERDATA file from a gameplay slot or the system save.');
-        }
-        if (signal.aborted || currentRead !== readId) return;
-        const buffer = await file.arrayBuffer();
-        if (signal.aborted || currentRead !== readId) return;
+        const buffer = await load(readSignal, message => { if (live()) setStatus(message, false); });
+        if (!live()) return;
         const parsed = parse(buffer);
         session.reviewed = reviewed = parsed.progress;
         if (parsed.story || parsed.weapons || parsed.crafting) showStory('manual', 'Imported save', parsed);
         renderPreview();
       } catch (error) {
-        if (signal.aborted || currentRead !== readId) return;
+        if (!live()) return;
         setStatus(error.name === 'SecurityError' ? 'Browser storage is unavailable. Open the guide in a browser that allows it to save progress.' : error.message);
+      } finally {
+        if (live()) review.removeAttribute('aria-busy');
       }
+    }
+
+    choose.addEventListener('click', () => picker.click(), options);
+    picker.addEventListener('change', () => {
+      const [file] = picker.files;
+      picker.value = '';
+      if (!file) return;
+      importManually(async readSignal => {
+        if (!await hasSaveHeader(file)) {
+          throw new Error('This file could not be read as an RPCS3 save. Choose its USERDATA file. For a save copied from a PS3, use Import a PS3 save instead.');
+        }
+        readSignal.throwIfAborted();
+        return file.arrayBuffer();
+      }, 'Reading save…');
+    }, options);
+
+    async function loadPS3(files, readSignal, announce) {
+      let input, decoder;
+      try {
+        [input, decoder] = await Promise.all([
+          import(new URL('assets/save-ps3-input.1dc9ecb9c982b36e.js', document.baseURI)),
+          import(new URL('assets/save-ps3-crypto.e7d6931d056c6719.js', document.baseURI)),
+        ]);
+      } catch {
+        throw new Error('The PS3 importer could not load. Reload the guide, or open it over HTTPS or on localhost, then try again.');
+      }
+      readSignal.throwIfAborted();
+      const pair = await input.readPS3SaveFiles(files, { signal: readSignal });
+      readSignal.throwIfAborted();
+      let plain = pair.userdata;
+      if (!await hasSaveHeader(new File([plain], 'USERDATA'))) {
+        readSignal.throwIfAborted();
+        announce('Decrypting PS3 save…');
+        plain = await decoder.decryptPS3Save(pair, { signal: readSignal });
+        readSignal.throwIfAborted();
+        if (!await hasSaveHeader(new File([plain], 'USERDATA'))) {
+          throw new Error('The decrypted file is not a supported Kenzan save. Choose USERDATA and PARAM.PFD from the same Kenzan save folder.');
+        }
+      }
+      readSignal.throwIfAborted();
+      return plain.buffer.slice(plain.byteOffset, plain.byteOffset + plain.byteLength);
+    }
+    section.querySelector('#save-ps3-folder-choose').addEventListener('click', () => ps3Folder.click(), options);
+    section.querySelector('#save-ps3-zip-choose').addEventListener('click', () => ps3Zip.click(), options);
+    for (const input of [ps3Folder, ps3Zip]) input.addEventListener('change', () => {
+      const files = [...input.files];
+      input.value = '';
+      if (files.length) importManually((readSignal, announce) => loadPS3(files, readSignal, announce), 'Reading PS3 save…');
     }, options);
 
     apply.addEventListener('click', () => {
@@ -2953,6 +3042,7 @@ function questMapFilter(story, ids, completed, objective, hideCompleted, missabl
         cell.textContent = score ? score.toLocaleString() : '—';
       }
       updateWaterfall(state.latest);
+      updateTrainingRecords(state.latest);
       // A manual import remains usable if the remembered folder needs reconnecting.
       updateYujo(state.latest);
       updateGuidebook(state.latest);
@@ -2989,158 +3079,3 @@ function questMapFilter(story, ids, completed, objective, hideCompleted, missabl
   window.mountKenzanSaveSync = mountSaveSync;
 })();
 
-const kenzanViews = (() => {
-  const hosts = { guide: document.querySelector('#guide-view'), map: document.querySelector('#quest-map') };
-  const status = document.querySelector('#view-status');
-  const files = kenzanViewAssets;
-  const loads = new Map();
-  const definitions = new Map();
-  const filters = {};
-  const states = { guide: { filters, sidebar: {} }, map: { filters, sidebar: {} } };
-  let current;
-  let sequence = 0;
-  let mapLink;
-  let atlasRuntime;
-  let navigationFrame;
-
-  const mapSharePrefix = '#quest-map?';
-  const viewForHash = hash => hash === '#quest-map' || hash.startsWith(mapSharePrefix) ? 'map' : 'guide';
-
-  function register(view, html, css, initialize) {
-    definitions.set(view, { html, css, initialize });
-  }
-
-  function loadScript(source) {
-    return new Promise((resolve, reject) => {
-      const script = document.createElement('script');
-      script.src = source;
-      script.onload = () => { script.remove(); resolve(); };
-      script.onerror = () => { script.remove(); reject(new Error('Could not load ' + source)); };
-      document.head.append(script);
-    });
-  }
-
-  function load(view) {
-    if (loads.has(view)) return loads.get(view);
-    const { script, runtime } = files[view];
-    if (runtime && !atlasRuntime) {
-      atlasRuntime = loadScript(runtime).catch(error => {
-        atlasRuntime = undefined;
-        throw error;
-      });
-    }
-    const loading = Promise.allSettled([loadScript(script), runtime ? atlasRuntime : undefined]).then(results => {
-      const failure = results.find(result => result.status === 'rejected');
-      if (failure || !definitions.has(view)) {
-        definitions.delete(view);
-        throw failure?.reason ?? new Error('Could not initialize ' + script);
-      }
-    }).finally(() => loads.delete(view));
-    loads.set(view, loading);
-    return loading;
-  }
-
-  function unmount() {
-    if (!current) return;
-    const { view, lifetime, style } = current;
-    lifetime.abort();
-    hosts[view].hidden = true;
-    hosts[view].replaceChildren();
-    style.remove();
-    current = undefined;
-  }
-
-  function mount(view) {
-    const { html, css, initialize } = definitions.get(view);
-    definitions.delete(view);
-    const host = hosts[view];
-    const style = document.createElement('style');
-    style.dataset.viewStyle = view;
-    style.textContent = css;
-    document.head.append(style);
-    host.innerHTML = html;
-    const lifetime = new AbortController();
-    current = { view, lifetime, style };
-    // Lay out the guide after its initial filters and restored controls are in place.
-    if (view === 'map') host.hidden = false;
-    current.ui = initialize(lifetime.signal, states[view]);
-    host.hidden = false;
-  }
-
-  async function open(initial = false) {
-    const route = ++sequence;
-    const address = location.href;
-    const hash = location.hash;
-    const view = viewForHash(hash);
-    const link = mapLink ?? (hash.startsWith(mapSharePrefix) ? { share: hash.slice(mapSharePrefix.length) } : undefined);
-    mapLink = undefined;
-    if (current?.view !== view && (loads.has(view) || !definitions.has(view))) {
-      const loadingStatus = setTimeout(() => {
-        if (route !== sequence || current) return;
-        status.textContent = view === 'map' ? 'Loading interactive map…' : 'Loading side content guide…';
-        status.hidden = false;
-      }, 150);
-      try {
-        await load(view);
-      } catch (error) {
-        if (route !== sequence) return;
-        status.textContent = error.message + '. Check the assets folder and reload the page.';
-        status.hidden = false;
-        return;
-      } finally {
-        clearTimeout(loadingStatus);
-      }
-    }
-    if (route !== sequence || address !== location.href) {
-      if (view !== viewForHash(location.hash)) definitions.delete(view);
-      return;
-    }
-    status.hidden = true;
-    const changed = current?.view !== view;
-    if (changed) {
-      if (current?.view === 'guide') current.ui.rememberScroll();
-      unmount();
-      mount(view);
-    }
-    if (view === 'map') {
-      if (changed) window.scrollTo(0, 0);
-      if (changed || link) current.ui.open(link);
-      if (changed && !initial) current.ui.focusSelection?.();
-    } else {
-      const returning = !hash || hash === '#guide' || hash === states.guide.hash;
-      current.ui.open({ reveal: !initial, restoreScroll: changed && returning ? states.guide.scroll : undefined,
-        focus: changed && !initial });
-      states.guide.hash = hash;
-    }
-  }
-
-  function start() {
-    document.addEventListener('click', event => {
-      const anchor = event.target.closest('a[href]');
-      if (!anchor || event.defaultPrevented || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
-      const destination = new URL(anchor.href, location.href);
-      if (destination.origin !== location.origin || destination.pathname !== location.pathname
-        || viewForHash(destination.hash) !== 'map') return;
-      if (current?.view === 'guide') current.ui.rememberScroll();
-      // Retain old data links; current links already carry a complete URL.
-      mapLink = destination.hash === '#quest-map' ? { ...anchor.dataset } : undefined;
-      if (destination.href === location.href) { event.preventDefault(); open(); }
-    });
-    history.scrollRestoration = 'manual';
-    // One traversal can emit popstate and hashchange. Coalesce the pair, but do
-    // not deduplicate against an old URL: in-panel history writes also exist.
-    const navigate = () => {
-      if (navigationFrame) cancelAnimationFrame(navigationFrame);
-      navigationFrame = requestAnimationFrame(() => { navigationFrame = undefined; open(); });
-    };
-    window.addEventListener('hashchange', navigate);
-    window.addEventListener('popstate', navigate);
-    window.addEventListener('kenzan:route-change', navigate);
-    open(true);
-  }
-
-  return { register, start };
-})();
-
-mountKenzanStorageNotice();
-kenzanViews.start();
